@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://byque4w54oowj"]
+
+[ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://bdd0p6qo4x3q4" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
+albedo_texture = ExtResource("2_rkbax")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oul6g"]
+material = SubResource("StandardMaterial3D_g1dw6")
+
+[node name="Player" type="CharacterBody3D" unique_id=963069731]
+script = ExtResource("1_oul6g")
+
+[node name="PlayerCollisionShape" type="CollisionShape3D" parent="." unique_id=2037021631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_kqu6x")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=1228324182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_oul6g")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1936895929]
+
+[node name="PlayerCamera" type="Camera3D" parent="CameraPivot" unique_id=2136261068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1)
