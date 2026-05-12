@@ -23,6 +23,10 @@ GameManager="*uid://bwi3f03vnopsn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 kick={
