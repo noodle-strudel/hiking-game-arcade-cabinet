@@ -13,25 +13,33 @@ enum gamestates {
 	,LOSE			#the rock has landed, and the player has 'lost'. 
 }
 
-#global variables. These are visible to scripts in other places. (e.g., GameManager.state = GameManager.gamestates.IDLE)
+#signals
+#DOCUMENTATION FROM MELODY:
+# if you want your script to listen to any of this script's signals, do this:
+# 1. write a line like this in the script's _ready() function:
+#    GameManager.signalname.connect(_signal_handling_function_name)
+# 2. then, implement the function that handles receiving that signal. 
+# Check res://ui/ui.gd for an example, including arguements. 
+signal decrement_kicks_remaining(new_kick_count) #a kick just happened. 
+signal cabinet_is_idle #no input detected for a while. 
+#signal gamestate_update(state) #might be useful.
+
+#global variables. These are visible to scripts in other places.
+# (e.g., GameManager.state = GameManager.gamestates.IDLE)
 var state := gamestates.IDLE
 var kicks_remaining := 1000000
 
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
 	#TODO: load in kicks remaining info from database singleton/node
+	pass
 
 #restarts the idle timer when input is detected.
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	%IdleTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
 	if Input.is_action_just_pressed("test_kick"):
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
@@ -43,18 +51,14 @@ func _process(_delta: float) -> void:
 #TODO implement
 func begin_contract_signing() -> void:
 	state = gamestates.CONTRACT
-	pass
 
 func _decrement_kicks_remaining() -> void:
 	kicks_remaining -= 1
-	#TODO: write kick(s)/score/timestamp to database
-	var ui_ref = $"/root/UI" #TODO: change when we know where UI lives. 
-	if ui_ref != null:
-		$"../UI".update_kicks_remaining(kicks_remaining)
-
+	decrement_kicks_remaining.emit(kicks_remaining)
 
 #handles the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
 	state = gamestates.IDLE
+	cabinet_is_idle.emit()
 	#TODO: reset other state information
 	#TODO: start idle rock-orbiting camera
