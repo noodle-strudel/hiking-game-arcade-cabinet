@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://h6hlf65en0ak"]
 
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
-[ext_resource type="Script" uid="uid://7bus15v20jc0" path="res://levels/game_world.gd" id="2_m1504"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_m1504"]
+sky_material = SubResource("ProceduralSkyMaterial_l8qe7")
+
+[sub_resource type="Environment" id="Environment_ifaiv"]
+background_mode = 2
+sky = SubResource("Sky_m1504")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5k4jt"]
 size = Vector2(50, 50)
@@ -13,14 +24,20 @@ data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0,
 [node name="Main" type="Node" unique_id=2092767996]
 script = ExtResource("1_l8qe7")
 
-[node name="GameWorld" type="MeshInstance3D" parent="." unique_id=1101693235]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1148101598]
+environment = SubResource("Environment_ifaiv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706405380]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GameWorldTest" type="StaticBody3D" parent="." unique_id=1553821658]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="GameWorld" type="MeshInstance3D" parent="GameWorldTest" unique_id=1101693235]
 mesh = SubResource("PlaneMesh_5k4jt")
-script = ExtResource("2_m1504")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GameWorld" unique_id=1553821658]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/StaticBody3D" unique_id=983096745]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorldTest" unique_id=983096745]
 shape = SubResource("ConcavePolygonShape3D_wdj6m")
 debug_color = Color(18.00266, 0.0041400148, 11.012321, 0.9607843)
 
