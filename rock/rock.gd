@@ -13,6 +13,9 @@ var ending_rock_vertices = PackedVector3Array()
 # rock shapes; used in interpolation algorithm
 var vertex_dists: Array[float]
 
+# vector to use for the kick impulse
+var kick_vector = Vector3(0.25, 0.1, 0.25)
+
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
 func _interpolate(start: PackedVector3Array, end: PackedVector3Array,\
@@ -23,6 +26,12 @@ func _interpolate(start: PackedVector3Array, end: PackedVector3Array,\
 		out.push_back(start[i].lerp(end[i],\
 				progress ** (0.002 / (dists[i] ** 2))))
 	return out
+	
+# randomizes the dimensions of a Vector3 (for kick impulse)
+func _vec_noise(input: Vector3, amt: float) -> Vector3:
+	return Vector3(input.x + randfn(0, amt),\
+			input.y + randfn(0, amt),\
+			input.z + randfn(0, amt))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,14 +43,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# only change rock shape when kicked
+	# when rock is kicked
 	if Input.is_action_just_pressed("test_kick"):
 		progress += 0.01
 		if progress > 1:
 			progress = 1
 		print(progress)
+		
+		# change the rock shape
 		current_rock_vertices =\
 				_interpolate(starting_rock_vertices, ending_rock_vertices,\
 				vertex_dists, progress)
-				
 		$CurrentRockCollision.shape.set_faces(current_rock_vertices)
+		
+		# apply impulse force (kick rock)
+		$".".apply_impulse(_vec_noise(kick_vector, 0.05))
