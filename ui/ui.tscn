@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
 [ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
+[ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
+[ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 
 [node name="UI" type="Control" unique_id=593103497]
 layout_mode = 3
@@ -107,8 +109,113 @@ theme_override_font_sizes/font_size = 36
 text = "Kick a rock!"
 horizontal_alignment = 1
 
+[node name="ContractMenu" type="Control" parent="." unique_id=594308252]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KickingMenu" type="Control" parent="." unique_id=245014388]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PowerBar" type="Control" parent="KickingMenu" unique_id=59645324]
+anchors_preset = 0
+offset_left = 1736.0
+offset_top = 984.0
+offset_right = 1776.0
+offset_bottom = 1024.0
+
+[node name="Kickbar" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=450234943]
+texture = ExtResource("5_obcwv")
+
+[node name="KickbarInd" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=1824383345]
+z_index = 1
+texture = ExtResource("6_bo1jx")
+
+[node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="ScoreMenu/ScoreElem" unique_id=1329148394]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 144.0
+offset_right = 1392.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 120
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="RoundScore" type="Label" parent="ScoreMenu/ScoreElem" unique_id=864323069]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 1664.0
+offset_bottom = 524.0941
+theme_override_font_sizes/font_size = 100
+text = "27"
+horizontal_alignment = 1
+
+[node name="ScoreBG" type="ColorRect" parent="ScoreMenu/ScoreElem" unique_id=1481968747]
+z_index = -1
+layout_mode = 0
+offset_left = 696.0
+offset_top = 128.0
+offset_right = 1224.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KicksRemainingLabel" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=1254226915]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 1664.0
+offset_bottom = 677.0
+theme_override_font_sizes/font_size = 120
+text = "KICKS REMAINING:"
+horizontal_alignment = 1
+
+[node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 256.0
+offset_top = 688.0
+offset_right = 1664.0
+offset_bottom = 892.0941
+theme_override_font_sizes/font_size = 100
+text = "999999"
+horizontal_alignment = 1
+
+[node name="KicksRemainingBG" type="ColorRect" parent="ScoreMenu/KicksRemainingElem" unique_id=1095988415]
+z_index = -1
+layout_mode = 0
+offset_left = 376.0
+offset_top = 496.0
+offset_right = 1544.0
+offset_bottom = 848.0
+color = Color(0, 0, 0, 0.1882353)

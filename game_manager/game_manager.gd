@@ -10,7 +10,7 @@ enum gamestates {
 	,CONTRACT		#The player is signing the 'contract'.
 	,KICKING		#the player is aiming their kick
 	,ROCK_KICKED	#the rock has been kicked, and the camera follows it. 
-	,LOSE			#the rock has landed, and the player has 'lost'. 
+	,SCORING		#the rock has landed, and the player has 'lost'. Show scoring. 
 }
 
 #signals
@@ -45,7 +45,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_kick"):
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
-		
+	if Input.is_action_just_pressed("test_scoring_sequence"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.SCORING)	
 	#come back from idle
 	if state == gamestates.IDLE and Input.is_anything_pressed():
 		begin_contract_signing()
