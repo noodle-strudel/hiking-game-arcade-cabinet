@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bwi3f03vnopsn"]
+[gd_scene format=3 uid="uid://c36a8wo7m50y6"]
 
-[ext_resource type="Script" uid="uid://dq6ogpam0nleh" path="res://game_manager/game_manager.gd" id="1_70yv6"]
+[ext_resource type="Script" path="res://game_manager/game_manager.gd" id="1_70yv6"]
 [ext_resource type="AudioStream" uid="uid://c4ldvycrbs1t3" path="res://sound/universfield-new-notification-010-352755.mp3" id="2_smx3j"]
 
 [node name="GameManager" type="Node" unique_id=1060832270]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://h6hlf65en0ak"]
+
+[ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
+[ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_m1504"]
+sky_material = SubResource("ProceduralSkyMaterial_l8qe7")
+
+[sub_resource type="Environment" id="Environment_ifaiv"]
+background_mode = 2
+sky = SubResource("Sky_m1504")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_l8qe7"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m1504"]
+data = PackedVector3Array(-25, 0.5, 25, 25, 0.5, 25, -25, -0.5, 25, 25, 0.5, 25, 25, -0.5, 25, -25, -0.5, 25, 25, 0.5, -25, -25, 0.5, -25, 25, -0.5, -25, -25, 0.5, -25, -25, -0.5, -25, 25, -0.5, -25, 25, 0.5, 25, 25, 0.5, -25, 25, -0.5, 25, 25, 0.5, -25, 25, -0.5, -25, 25, -0.5, 25, -25, 0.5, -25, -25, 0.5, 25, -25, -0.5, -25, -25, 0.5, 25, -25, -0.5, 25, -25, -0.5, -25, 25, 0.5, 25, -25, 0.5, 25, 25, 0.5, -25, -25, 0.5, 25, -25, 0.5, -25, 25, 0.5, -25, -25, -0.5, 25, 25, -0.5, 25, -25, -0.5, -25, 25, -0.5, 25, 25, -0.5, -25, -25, -0.5, -25)
+
+[node name="Main" type="Node" unique_id=2092767996]
+script = ExtResource("1_l8qe7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1148101598]
+environment = SubResource("Environment_ifaiv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706405380]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GameWorldTest" type="StaticBody3D" parent="." unique_id=1553821658]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="GameWorld" type="MeshInstance3D" parent="GameWorldTest" unique_id=1101693235]
+mesh = SubResource("BoxMesh_l8qe7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorldTest" unique_id=1118338106]
+shape = SubResource("ConcavePolygonShape3D_m1504")
+
+[node name="Player" parent="." unique_id=963069731 instance=ExtResource("3_l8qe7")]
+
+[node name="Rock" parent="." unique_id=659760540 instance=ExtResource("3_m1504")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.146704, -3.4466362)
+contact_monitor = true
+
+[node name="TestCameraPivot" type="Node3D" parent="." unique_id=1217787917]
+transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.062, 0, 0)
+current = true
