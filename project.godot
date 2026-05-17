@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Capstone Rock Kicking"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.13725491, 0.12941177, 0.23921569, 1)
+boot_splash/image="uid://cbc7vta6tf7at"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +24,7 @@ GameManager="*uid://c36a8wo7m50y6"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 
 [filesystem]
 
