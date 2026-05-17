@@ -21,8 +21,8 @@ enum gamestates {
 # 2. then, implement the function that handles receiving that signal. 
 # Check res://ui/ui.gd for an example, including arguements. 
 signal decrement_kicks_remaining(new_kick_count) #a kick just happened. 
-signal cabinet_is_idle #no input detected for a while. 
-#signal gamestate_update(state) #might be useful.
+#signal cabinet_is_idle #no input detected for a while. #depreciated
+signal gamestate_update(state) #the state has changed. Used for idle as well
 
 #global variables. These are visible to scripts in other places.
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
@@ -33,6 +33,8 @@ var kicks_remaining := 1000000
 func _ready() -> void:
 	#TODO: load in kicks remaining info from database singleton/node
 	pass
+	#
+	
 
 #restarts the idle timer when input is detected.
 func _input(_event: InputEvent) -> void:
@@ -50,7 +52,9 @@ func _process(_delta: float) -> void:
 
 #TODO implement
 func begin_contract_signing() -> void:
-	state = gamestates.CONTRACT
+	_switch_state(gamestates.CONTRACT)
+	#
+
 
 func _decrement_kicks_remaining() -> void:
 	kicks_remaining -= 1
@@ -58,7 +62,11 @@ func _decrement_kicks_remaining() -> void:
 
 #handles the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
-	state = gamestates.IDLE
-	cabinet_is_idle.emit()
+	_switch_state(gamestates.IDLE)
 	#TODO: reset other state information
 	#TODO: start idle rock-orbiting camera
+
+#switches the current state and emits an update signal. 
+func _switch_state(target_state: GameManager.gamestates):
+	state = target_state
+	gamestate_update.emit(state)

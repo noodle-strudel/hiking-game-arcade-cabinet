@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_nb4k0")
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -85,6 +86,7 @@ text = "PRESS ANY BUTTON"
 horizontal_alignment = 1
 
 [node name="TitleBG" type="ColorRect" parent="IdleMenu" unique_id=2010918473]
+z_index = -1
 layout_mode = 0
 offset_left = 448.0
 offset_top = 128.0
@@ -106,6 +108,7 @@ text = "Kick a rock!"
 horizontal_alignment = 1
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
