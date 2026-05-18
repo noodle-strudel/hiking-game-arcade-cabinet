@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
+[ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,3 +54,5 @@ transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0
 [node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.062, 0, 0)
 current = true
+
+[node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]

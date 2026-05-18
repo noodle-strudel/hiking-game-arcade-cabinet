@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
+[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
+[ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
+[ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 
 [node name="UI" type="Control" unique_id=593103497]
 layout_mode = 3
@@ -11,7 +16,206 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nb4k0")
 
-[node name="KicksRemainingLabel" type="Label" parent="." unique_id=1415539826]
-layout_mode = 0
+[node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="LodomoLogoNoBg" type="Sprite2D" parent="IdleMenu" unique_id=1974129174]
+position = Vector2(1824, 1048)
+scale = Vector2(0.026353605, 0.026353603)
+texture = ExtResource("2_ks8t7")
+
+[node name="RCKLogo" type="Sprite2D" parent="IdleMenu" unique_id=929290594]
+position = Vector2(1824, 955.0002)
+scale = Vector2(0.1171875, 0.1171875)
+texture = ExtResource("3_wl5ax")
+
+[node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
+layout_mode = 0
+offset_left = 1752.0
+offset_top = 808.0
+offset_right = 1900.0
+offset_bottom = 883.0
+theme = ExtResource("4_vkava")
+text = "PSU
+CS Capstone
+Spring/Summer '26"
+horizontal_alignment = 2
+
+[node name="CabinetArtCredits" type="Label" parent="IdleMenu" unique_id=1621690979]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1000.0
+offset_right = 134.0
+offset_bottom = 1075.0
+theme = ExtResource("4_vkava")
+text = "Cabinet artwork
+Made by
+Mike Bennett "
+
+[node name="KicksRemainingLabel" type="Label" parent="IdleMenu" unique_id=1415539826]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 208.0
+offset_top = 848.0
+offset_right = 1712.0
+offset_bottom = 985.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "KICKS REMAINING: 1000000"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 144.0
+offset_right = 1392.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 120
+text = "[INSERT TITLE]"
+horizontal_alignment = 1
+
+[node name="PressAnyButton" type="Label" parent="IdleMenu" unique_id=2071500843]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 1664.0
+offset_bottom = 524.0941
+theme_override_font_sizes/font_size = 100
+text = "PRESS ANY BUTTON"
+horizontal_alignment = 1
+
+[node name="TitleBG" type="ColorRect" parent="IdleMenu" unique_id=2010918473]
+z_index = -1
+layout_mode = 0
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 1472.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="SubtitlePivot" type="Node2D" parent="IdleMenu" unique_id=1440264362]
+position = Vector2(1496, 512)
+
+[node name="Subtitle" type="Label" parent="IdleMenu/SubtitlePivot" unique_id=556071282]
+offset_left = -128.0
+offset_top = -28.0
+offset_right = 128.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Kick a rock!"
+horizontal_alignment = 1
+
+[node name="ContractMenu" type="Control" parent="." unique_id=594308252]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KickingMenu" type="Control" parent="." unique_id=245014388]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PowerBar" type="Control" parent="KickingMenu" unique_id=59645324]
+anchors_preset = 0
+offset_left = 1736.0
+offset_top = 984.0
+offset_right = 1776.0
+offset_bottom = 1024.0
+
+[node name="Kickbar" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=450234943]
+texture = ExtResource("5_obcwv")
+
+[node name="KickbarInd" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=1824383345]
+z_index = 1
+texture = ExtResource("6_bo1jx")
+
+[node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="ScoreMenu/ScoreElem" unique_id=1329148394]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 144.0
+offset_right = 1392.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 120
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="RoundScore" type="Label" parent="ScoreMenu/ScoreElem" unique_id=864323069]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 1664.0
+offset_bottom = 524.0941
+theme_override_font_sizes/font_size = 100
+text = "27"
+horizontal_alignment = 1
+
+[node name="ScoreBG" type="ColorRect" parent="ScoreMenu/ScoreElem" unique_id=1481968747]
+z_index = -1
+layout_mode = 0
+offset_left = 696.0
+offset_top = 128.0
+offset_right = 1224.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KicksRemainingLabel" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=1254226915]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 1664.0
+offset_bottom = 677.0
+theme_override_font_sizes/font_size = 120
+text = "KICKS REMAINING:"
+horizontal_alignment = 1
+
+[node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 256.0
+offset_top = 688.0
+offset_right = 1664.0
+offset_bottom = 892.0941
+theme_override_font_sizes/font_size = 100
+text = "999999"
+horizontal_alignment = 1
+
+[node name="KicksRemainingBG" type="ColorRect" parent="ScoreMenu/KicksRemainingElem" unique_id=1095988415]
+z_index = -1
+layout_mode = 0
+offset_left = 376.0
+offset_top = 496.0
+offset_right = 1544.0
+offset_bottom = 848.0
+color = Color(0, 0, 0, 0.1882353)
