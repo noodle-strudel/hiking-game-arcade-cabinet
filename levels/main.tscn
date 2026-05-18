@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
+[ext_resource type="PackedScene" uid="uid://b6jve5xwmpj3m" path="res://level_grids/park/park_grid.tscn" id="4_m1504"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
@@ -35,12 +36,14 @@ shadow_enabled = true
 
 [node name="GameWorldTest" type="StaticBody3D" parent="." unique_id=1553821658]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+visible = false
 
 [node name="GameWorld" type="MeshInstance3D" parent="GameWorldTest" unique_id=1101693235]
 mesh = SubResource("BoxMesh_l8qe7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorldTest" unique_id=1118338106]
 shape = SubResource("ConcavePolygonShape3D_m1504")
+disabled = true
 
 [node name="Player" parent="." unique_id=963069731 instance=ExtResource("3_l8qe7")]
 
@@ -52,7 +55,8 @@ contact_monitor = true
 transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.062, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 34.087, 0, 0)
 current = true
 
+[node name="ParkGrid" parent="." unique_id=891737648 instance=ExtResource("4_m1504")]
 [node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]
