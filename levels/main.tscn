@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
-[ext_resource type="PackedScene" uid="uid://b6jve5xwmpj3m" path="res://level_grids/park/park_grid.tscn" id="4_m1504"]
+[ext_resource type="PackedScene" uid="uid://b6jve5xwmpj3m" path="res://level_grids/park/park_grid.tscn" id="4_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
@@ -58,5 +58,7 @@ transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 34.087, 0, 0)
 current = true
 
-[node name="ParkGrid" parent="." unique_id=891737648 instance=ExtResource("4_m1504")]
+[node name="ParkGrid" parent="TestCameraPivot" unique_id=891737648 instance=ExtResource("4_ifaiv")]
+transform = Transform3D(0.8145512, 0.5800919, 0, -0.5800919, 0.8145512, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]
