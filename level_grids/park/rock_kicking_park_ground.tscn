@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ch1up"]
 size = Vector3(845.162, 10, 1067.062)
 
-[node name="ParkGround" unique_id=471953652 instance=ExtResource("1_ch1up")]
+[node name="ParkGround" unique_id=1191626429 instance=ExtResource("1_ch1up")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1430353779]
 

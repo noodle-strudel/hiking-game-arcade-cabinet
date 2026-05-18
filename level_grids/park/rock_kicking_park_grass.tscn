@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d37u6wpiakj2k"]
+
+[ext_resource type="PackedScene" uid="uid://bk6htrul5ucp1" path="res://level_grids/park/rock_kicking_park_grass.glb" id="1_81qb2"]
+
+[node name="Grass" unique_id=1375106860 instance=ExtResource("1_81qb2")]
