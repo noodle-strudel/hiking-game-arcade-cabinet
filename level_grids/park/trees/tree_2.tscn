@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://tnnn463vw6kv"]
+
+[ext_resource type="PackedScene" uid="uid://c7m1j784nn68d" path="res://level_grids/park/trees/tree_2.glb" id="1_jjjga"]
+
+[node name="Tree2" unique_id=1880160439 instance=ExtResource("1_jjjga")]

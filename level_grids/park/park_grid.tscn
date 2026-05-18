@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b6jve5xwmpj3m"]
+
+[ext_resource type="PackedScene" uid="uid://d2wc55e67n2ba" path="res://level_grids/park/rock_kicking_park_ground.tscn" id="1_ekkde"]
+[ext_resource type="PackedScene" uid="uid://b7m07t43bcsxl" path="res://level_grids/park/trees/tree_1.tscn" id="2_nh41s"]
+[ext_resource type="PackedScene" uid="uid://tnnn463vw6kv" path="res://level_grids/park/trees/tree_2.tscn" id="3_ptyal"]
+
+[node name="ParkGrid" type="Node3D" unique_id=891737648]
+
+[node name="rock_kicking_park_ground" parent="." unique_id=471953652 instance=ExtResource("1_ekkde")]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1181867733]
+
+[node name="tree_1" parent="." unique_id=244286554 instance=ExtResource("2_nh41s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.636467, -7.6293945e-06, -29.317606)
+
+[node name="tree_2" parent="." unique_id=1880160439 instance=ExtResource("3_ptyal")]
+transform = Transform3D(0.9999881, 0.0004821739, -0.004862736, -0.0004649126, 0.99999356, 0.0035491819, 0.004864417, -0.0035468782, 0.9999819, -38.828438, 0, -3.681366)
