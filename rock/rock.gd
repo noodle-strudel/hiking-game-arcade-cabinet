@@ -2,20 +2,24 @@ extends RigidBody3D
 
 """
 Notes from Yollaine:
-I changed the CurrentRockCollision's shape type to be ConvexPolygonShape3D which allows the rock
-to actually collide with the floor rather than just fall through it which is what was happening
-with the ConcavePolygonShape3D.
+I changed the CurrentRockCollision's shape type to be ConvexPolygonShape3D which allows
+the rock to actually collide with the floor rather than just fall through it which is
+what was happening with the ConcavePolygonShape3D.
 
-ConcavePolygonShape3D uses the set_points() function which luckily takes PackedVector3Arrays. So it
-was quite easy to switch over to using that. However, I notice that the mesh's edges are constantly
-appearing and disappearing with each kick interpolation but it doesn't seem to mess with the
-collision of the rock itself. Hopefully this won't become a problem in the future as this is the
-only solution I see working right now.
+ConcavePolygonShape3D uses the set_points() function which luckily takes
+PackedVector3Arrays. So it was quite easy to switch over to using that. However, I
+notice that the mesh's edges are constantly appearing and disappearing with each kick
+interpolation but it doesn't seem to mess with the collision of the rock itself.
+Hopefully this won't become a problem in the future as this is the only solution I see
+working right now.
 """
-
 
 # how far along in the interpolation the shape of the rock is
 @export var progress: float = 0.0
+
+# camera-related parameters
+@export_range(0, 1) var mouse_sensitivity = 0.01
+@export var tilt_limit = PI / 3
 
 # vector arrays for current, starting, and spherical ending rock shapes,
 # respectively
@@ -29,6 +33,11 @@ var vertex_dists: Array[float]
 
 # vector to use for the kick impulse
 var kick_vector = Vector3(0.25, 0.1, 0.25)
+
+# position of the rock on previous frame
+# (check if this is different from current rock pos so that the camera pos
+# isn't necessarily set on every frame)
+var last_rock_pos = Vector3()
 
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
@@ -55,10 +64,12 @@ func _ready() -> void:
 		vertex_dists.push_back(starting_rock_vertices[i].distance_to(\
 				ending_rock_vertices[i]))
 	
-	#TODO: Eventually the starting rock vertices will depend on the number of kicks left which 
-	#perhaps the progress variable can be changed based on that
+	# TODO: Eventually the starting rock vertices will depend on the number
+	# of kicks left which perhaps the progress variable can be changed
+	# based on that
 	
-	#For now, the rock starts with the starting rock vertices. To be deleted later
+	# For now, the rock starts with the starting rock vertices
+	# To be deleted later
 	$CurrentRockCollision.shape.set_points(starting_rock_vertices)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -77,5 +88,21 @@ func _physics_process(delta: float) -> void:
 		$CurrentRockCollision.shape.set_points(current_rock_vertices)
 		
 		# apply impulse force (kick rock)
-		$".".apply_impulse(_vec_noise(kick_vector, 0.05))
-		#self.apply_impulse(Vector3(0.0, 10.0, 0.0)) #used for testing. ~mw
+		self.apply_impulse(_vec_noise(kick_vector, 0.05))
+	
+	# update rock camera position if rock has moved
+	if self.position != last_rock_pos:
+		$RockCameraPivot.position = self.position
+		%RockCamera.look_at(self.position)
+	
+	# update previous rock position
+	last_rock_pos = self.position
+
+# test function to move the camera around with mouse
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		$RockCameraPivot.rotation.x -= event.screen_relative.y * mouse_sensitivity
+		$RockCameraPivot.rotation.y += event.screen_relative.x * mouse_sensitivity
+		# keep camera vertical rotation from being too extreme
+		$RockCameraPivot.rotation.x = clampf($RockCameraPivot.rotation.x,\
+				-tilt_limit, tilt_limit)
