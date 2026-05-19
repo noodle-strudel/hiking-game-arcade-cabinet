@@ -78,3 +78,4 @@ func _physics_process(delta: float) -> void:
 		
 		# apply impulse force (kick rock)
 		$".".apply_impulse(_vec_noise(kick_vector, 0.05))
+		#self.apply_impulse(Vector3(0.0, 10.0, 0.0)) #used for testing. ~mw

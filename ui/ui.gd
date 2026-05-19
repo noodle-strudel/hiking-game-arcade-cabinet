@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
 
-func _on_change_state(state: GameManager.gamestates):
+func _on_change_state(state: GameManager.gamestates) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
@@ -46,7 +46,7 @@ func _on_change_state(state: GameManager.gamestates):
 			_scoring_sequence()
 
 
-func _scoring_sequence():
+func _scoring_sequence() -> void:
 	$ScoreMenu.visible = true
 	await get_tree().create_timer(1).timeout
 	%ScoreElem.visible = true
@@ -57,7 +57,7 @@ func _scoring_sequence():
 
 
 
-func _clear_ui():
+func _clear_ui() -> void:
 	var menus = get_children()
 	for menu in menus:
 		menu.visible = false
