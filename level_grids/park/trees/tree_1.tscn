@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b7m07t43bcsxl"]
 
 [ext_resource type="PackedScene" uid="uid://byixuqmu6hr46" path="res://level_grids/park/trees/tree_1.glb" id="1_8qsuc"]
+[ext_resource type="ArrayMesh" uid="uid://b6ybupingnimk" path="res://level_grids/park/trees/tree_1.tres" id="2_1gw4l"]
 
-[node name="Tree1" unique_id=797296980 instance=ExtResource("1_8qsuc")]
+[node name="Tree1" unique_id=302701205 instance=ExtResource("1_8qsuc")]
 
-[node name="Needles" parent="." index="0" unique_id=292436344]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015497208, 0.01696968, 0.0042238235)
+[node name="ConiferTree" parent="." index="0" unique_id=1869710399]
+mesh = ExtResource("2_1gw4l")
