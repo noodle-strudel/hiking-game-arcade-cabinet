@@ -46,5 +46,6 @@ func _begin_kicking() -> void:
 #handles kicking the rock when the state changes. 
 func _kick_rock() -> void:
 	if rock:
+		#TODO: move the _vec_noise method from rock.gd to here
 		var direction_to_rock := Vector3(rock.position - self.position)
 		rock.apply_impulse(direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0))
