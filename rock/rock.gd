@@ -93,6 +93,7 @@ func _physics_process(delta: float) -> void:
 	# update rock camera position if rock has moved
 	if self.position != last_rock_pos:
 		$RockCameraPivot.position = self.position
+		%RockCamera.look_at(self.position)
 	
 	# update previous rock position
 	last_rock_pos = self.position
