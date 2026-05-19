@@ -56,7 +56,6 @@ transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0
 
 [node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
 transform = Transform3D(-4.3711392e-08, -2.9802322e-08, 1.0000002, 0, 1.0000002, 2.9802322e-08, -1, -1.776357e-15, -4.3711392e-08, 16.367886, -0.59585285, -9.536743e-07)
-current = true
 
 [node name="ParkGrid" parent="." unique_id=891737648 instance=ExtResource("4_ifaiv")]
 transform = Transform3D(1.0000001, -2.9802322e-08, 0, 2.9802322e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)

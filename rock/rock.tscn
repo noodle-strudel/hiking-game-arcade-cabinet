@@ -21,7 +21,6 @@ margin = 0.1
 
 [node name="RockCamera" type="Camera3D" parent="RockCameraPivot/RockCameraArm" unique_id=1064253504]
 unique_name_in_owner = true
-current = true
 fov = 45.0
 
 [node name="StartingRockMesh" type="MeshInstance3D" parent="." unique_id=419606833]
