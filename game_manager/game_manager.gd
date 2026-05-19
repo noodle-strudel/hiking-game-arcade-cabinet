@@ -45,12 +45,14 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_kick"):
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
-	if Input.is_action_just_pressed("test_scoring_sequence"):
-		$TestSoundPlayer.play()
-		_switch_state(gamestates.SCORING)	
+	
 	#come back from idle
 	if state == gamestates.IDLE and Input.is_anything_pressed():
 		begin_contract_signing()
+	
+	
+	#TEST CODE FOR STATE SWITCHING.
+	_test_state_handler() #Allows keys 1-5 to force update the gamestate. 
 
 #TODO implement
 func begin_contract_signing() -> void:
@@ -72,3 +74,21 @@ func _on_idle_timer_timeout() -> void:
 func _switch_state(target_state: GameManager.gamestates):
 	state = target_state
 	gamestate_update.emit(state)
+
+#
+func _test_state_handler() -> void:
+	if Input.is_action_just_pressed("test_set_state_idle"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.IDLE)	
+	if Input.is_action_just_pressed("test_set_state_contract"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.CONTRACT)	
+	if Input.is_action_just_pressed("test_set_state_kicking"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.KICKING)	
+	if Input.is_action_just_pressed("test_set_state_rock_kicked"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.ROCK_KICKED)	
+	if Input.is_action_just_pressed("test_set_state_scoring"):
+		$TestSoundPlayer.play()
+		_switch_state(gamestates.SCORING)	
