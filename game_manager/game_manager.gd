@@ -46,6 +46,11 @@ func _process(_delta: float) -> void:
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
 	
+	#kicks remaining is saved every 5 kicks
+	if kicks_remaining % 5 == 0:
+		SaveLoad.content_to_save.remaining_kicks = kicks_remaining
+		SaveLoad._save()
+	
 	#come back from idle
 	if state == gamestates.IDLE and Input.is_anything_pressed():
 		begin_contract_signing()
