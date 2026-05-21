@@ -30,7 +30,8 @@ func _process(_delta: float) -> void:
 #called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
-
+	%KicksRemainingFancy.text = (str(kick_count))
+	
 func _on_change_state(state: GameManager.gamestates) -> void:
 	_clear_ui()
 	match state:
@@ -47,6 +48,7 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 
 
 func _scoring_sequence() -> void:
+	$ScoreMenu/ScoreElem/RoundScore.text = (str(GameManager.last_score))
 	$ScoreMenu.visible = true
 	await get_tree().create_timer(1).timeout
 	%ScoreElem.visible = true

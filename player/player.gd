@@ -83,3 +83,5 @@ func _kick_rock() -> void:
 		var impulse_vector = direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
+		#report kick to game manager
+		GameManager.report_kick(impulse_vector.length())
