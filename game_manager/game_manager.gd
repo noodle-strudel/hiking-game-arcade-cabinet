@@ -45,9 +45,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_kick"):
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
-	
-	#kicks remaining is saved every 5 kicks
-	if kicks_remaining % 5 == 0:
 		SaveLoad.content_to_save.remaining_kicks = kicks_remaining
 		SaveLoad._save()
 	
