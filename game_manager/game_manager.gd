@@ -47,6 +47,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_kick"):
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
+		SaveLoad.content_to_save.remaining_kicks = kicks_remaining
+		SaveLoad._save()
 	
 	#come back from idle
 	if state == gamestates.IDLE and Input.is_anything_pressed():
