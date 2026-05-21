@@ -28,6 +28,8 @@ signal gamestate_update(state) #the state has changed. Used for idle as well
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
 var state := gamestates.IDLE
 var kicks_remaining := 1000000
+var last_kick_strength := 0.0
+var last_score := 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,10 +74,17 @@ func _on_idle_timer_timeout() -> void:
 
 #switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates):
+	if state == gamestates.ROCK_KICKED:
+		_decrement_kicks_remaining()
 	state = target_state
 	gamestate_update.emit(state)
 
 #
+func report_kick(kick_strength: float) -> void:
+	last_kick_strength = kick_strength
+	last_score = int(last_kick_strength * 20)
+
+#TEST
 func _test_state_handler() -> void:
 	if Input.is_action_just_pressed("test_set_state_idle"):
 		$TestSoundPlayer.play()

@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
 [ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
+[ext_resource type="AudioStream" uid="uid://cmpbvkw0lv2di" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
 
 [node name="UI" type="Control" unique_id=593103497]
 layout_mode = 3
@@ -16,12 +17,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nb4k0")
+metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="LodomoLogoNoBg" type="Sprite2D" parent="IdleMenu" unique_id=1974129174]
 position = Vector2(1824, 1048)
@@ -55,6 +58,17 @@ theme = ExtResource("4_vkava")
 text = "Cabinet artwork
 Made by
 Mike Bennett "
+
+[node name="KevinMacleodCredits" type="Label" parent="IdleMenu" unique_id=1387012563]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 72.0
+theme = ExtResource("4_vkava")
+theme_override_font_sizes/font_size = 12
+text = "\"New Hero in Town\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/ "
+autowrap_mode = 2
 
 [node name="KicksRemainingLabel" type="Label" parent="IdleMenu" unique_id=1415539826]
 unique_name_in_owner = true
@@ -116,12 +130,14 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="PowerBar" type="Control" parent="KickingMenu" unique_id=59645324]
 anchors_preset = 0
@@ -142,12 +158,14 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
 unique_name_in_owner = true
@@ -222,3 +240,27 @@ offset_top = 496.0
 offset_right = 1544.0
 offset_bottom = 848.0
 color = Color(0, 0, 0, 0.1882353)
+
+[node name="LoremIpsum" type="Label" parent="ScoreMenu" unique_id=1662281954]
+visible = false
+layout_mode = 0
+offset_left = 448.0
+offset_top = 1080.0
+offset_right = 1472.0
+offset_bottom = 4905.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper aliquam nibh id euismod. Phasellus venenatis, orci ut semper facilisis, erat risus facilisis nisi, a viverra arcu purus nec urna. Cras consectetur magna diam, a luctus nibh porta nec. Sed eu sagittis sem. Aliquam interdum ex sit amet velit euismod vulputate. Sed suscipit lectus quis sem posuere, vitae auctor lectus cursus. Aenean scelerisque risus nulla, sed commodo ligula mattis a. Donec leo felis, mollis ut convallis ullamcorper, ornare sed enim.
+
+Quisque scelerisque venenatis purus in tempor. Pellentesque vel lorem nisl. Nullam dapibus aliquam est, non hendrerit nulla sagittis a. Morbi consequat, odio vel lobortis faucibus, enim arcu fringilla ligula, nec dictum neque velit vitae mauris. Sed sit amet tortor a risus feugiat congue. Praesent semper, sapien in maximus aliquet, eros lorem cursus dui, sit amet dignissim ante neque vel arcu. Nulla vehicula imperdiet nibh, vel congue lorem rhoncus vel. Aliquam erat volutpat.
+
+In hac habitasse platea dictumst. Nam tincidunt justo vehicula, euismod sem id, finibus dolor. Morbi ut dui ligula. Pellentesque tempus velit nec faucibus viverra. Proin mattis a nibh ut auctor. Phasellus risus velit, eleifend non molestie vel, semper a sapien. Nunc porttitor mi ex. Integer tincidunt feugiat lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque posuere congue risus in sodales. Cras rhoncus purus sapien. Ut metus erat, ultricies a justo quis, consectetur hendrerit diam.
+
+Mauris fringilla neque at euismod auctor. Aliquam eleifend purus in eros tristique pretium. Aliquam erat volutpat. Quisque mattis dui nec suscipit auctor. Maecenas sit amet congue sapien, ut mattis est. Nullam pulvinar mauris vel neque fringilla, vitae posuere metus luctus. In hac habitasse platea dictumst. Aliquam fringilla dolor orci, scelerisque fermentum nunc efficitur vitae. Integer egestas ultricies purus vel consectetur. Fusce imperdiet vitae nulla nec mollis. In egestas, lectus quis ultrices mollis, erat felis dignissim dolor, vel gravida lorem orci in risus. Nam porttitor magna et libero faucibus condimentum.
+
+Vivamus ullamcorper posuere libero vitae dignissim. Mauris aliquam lacus at turpis fermentum, et condimentum nunc aliquet. Nullam finibus mollis vestibulum. Nullam pulvinar maximus velit nec molestie. Etiam neque augue, commodo sed efficitur in, accumsan quis lectus. In vehicula est sed bibendum malesuada. Vivamus egestas, augue a mattis lobortis, velit dolor faucibus ante, at blandit justo nisi nec velit. Suspendisse viverra condimentum nunc. Curabitur iaculis dictum augue, vitae tincidunt ipsum maximus sed. Etiam pharetra, justo in luctus dictum, ex nibh laoreet dui, a sagittis metus tellus a arcu. Curabitur felis tellus, ullamcorper vel elit a, dapibus sagittis felis. Vestibulum sapien odio, feugiat nec velit ac, convallis luctus augue. Mauris ut lacus ornare, egestas ligula eget, gravida augue. "
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
+stream = ExtResource("7_bo1jx")

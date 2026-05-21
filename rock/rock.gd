@@ -50,11 +50,7 @@ func _interpolate(start: PackedVector3Array, end: PackedVector3Array,\
 				progress ** (0.002 / (dists[i] ** 2))))
 	return out
 	
-# randomizes the dimensions of a Vector3 (for kick impulse)
-func _vec_noise(input: Vector3, amt: float) -> Vector3:
-	return Vector3(input.x + randfn(0, amt),\
-			input.y + randfn(0, amt),\
-			input.z + randfn(0, amt))
+# _vec_noise has been moved to player.gd
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,7 +84,7 @@ func _physics_process(delta: float) -> void:
 		$CurrentRockCollision.shape.set_points(current_rock_vertices)
 		
 		# apply impulse force (kick rock)
-		self.apply_impulse(_vec_noise(kick_vector, 0.05))
+		self.apply_impulse(kick_vector)
 	
 	# update rock camera position if rock has moved
 	if self.position != last_rock_pos:

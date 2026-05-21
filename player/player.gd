@@ -18,6 +18,7 @@ var current_x_rotation: float = 0.0
 const buddy_rock_path = "../Rock"
 var rock = null
 var kick_scalar = 5.0 #relative force of kick.
+var kick_deviance = 0.5
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
@@ -68,9 +69,19 @@ func _begin_kicking() -> void:
 	if rock:
 		self.position = rock.position + Vector3(0.0, 0.0, 1.0)
 
+# randomizes the dimensions of a Vector3 (for kick impulse)
+func _vec_noise(input: Vector3, amt: float) -> Vector3:
+	return Vector3(input.x + randfn(0, amt),\
+			input.y + randfn(0, amt),\
+			input.z + randfn(0, amt))
+
 #handles kicking the rock when the state changes. 
 func _kick_rock() -> void:
 	if rock:
-		#TODO: move the _vec_noise method from rock.gd to here
 		var direction_to_rock := Vector3(rock.position - self.position)
-		rock.apply_impulse(direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0))
+		direction_to_rock = direction_to_rock.normalized() #fixes issues
+		var impulse_vector = direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0)
+		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
+		rock.apply_impulse(impulse_vector)
+		#report kick to game manager
+		GameManager.report_kick(impulse_vector.length())
