@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var max_left: float = 45.0
 @export var max_right: float = -45.0
 @export var max_up: float = 45.0
-@export var max_down: float = -45.0
+@export var max_down: float = -60.0
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
 
