@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmpbvkw0lv2di"
+path="res://.godot/imported/New Hero in Town.mp3-25005285122ce354562b1fe13dc36592.mp3str"
+
+[deps]
+
+source_file="res://sound/New Hero in Town.mp3"
+dest_files=["res://.godot/imported/New Hero in Town.mp3-25005285122ce354562b1fe13dc36592.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
