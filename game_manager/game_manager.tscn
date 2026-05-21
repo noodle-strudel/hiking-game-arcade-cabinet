@@ -11,6 +11,6 @@ stream = ExtResource("2_smx3j")
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=713889181]
 unique_name_in_owner = true
-wait_time = 0.5
+wait_time = 60.0
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
