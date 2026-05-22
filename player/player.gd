@@ -17,6 +17,7 @@ var current_x_rotation: float = 0.0
 # variables
 const buddy_rock_path = "../Rock"
 var rock = null
+var bar = null
 var kick_scalar = 5.0 #relative force of kick.
 var kick_deviance = 0.5
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
 	if get_node(buddy_rock_path):
 		rock = get_node(buddy_rock_path)
+		bar = get_node("../UI/KickingMenu/PowerBar/KickbarInd")
 		$RockTeeSpringArm.add_excluded_object(rock) #
 	else:
 		print("ERROR: no Rock node sibling to Player.")
@@ -61,6 +63,7 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 		GameManager.gamestates.KICKING:
 			_begin_kicking()
 		GameManager.gamestates.ROCK_KICKED:
+			kick_scalar = abs(bar.position.x / 15)
 			_kick_rock()
 
 
@@ -80,7 +83,7 @@ func _kick_rock() -> void:
 	if rock:
 		var direction_to_rock := Vector3(rock.position - self.position)
 		direction_to_rock = direction_to_rock.normalized() #fixes issues
-		var impulse_vector = direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0)
+		var impulse_vector = direction_to_rock * kick_scalar + Vector3(0.0, kick_scalar, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
 		#report kick to game manager
