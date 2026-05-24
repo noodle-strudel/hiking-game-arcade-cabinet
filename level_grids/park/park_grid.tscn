@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://cxm6svas8ov56" path="res://level_grids/park/park_grid.gd" id="1_mo2hw"]
 [ext_resource type="PackedScene" uid="uid://b7m07t43bcsxl" path="res://level_grids/park/trees/tree_1.tscn" id="2_nh41s"]
 [ext_resource type="MultiMesh" uid="uid://w1quvow81a22" path="res://level_grids/park/top_grass_multi_mesh.tres" id="3_mo2hw"]
-[ext_resource type="MultiMesh" path="res://level_grids/park/trees/conifer_multimesh.tres" id="3_odci8"]
+[ext_resource type="MultiMesh" uid="uid://c6npwrkpyrgk2" path="res://level_grids/park/trees/conifer_multimesh.tres" id="3_odci8"]
 [ext_resource type="PackedScene" uid="uid://tnnn463vw6kv" path="res://level_grids/park/trees/tree_2.tscn" id="3_ptyal"]
 [ext_resource type="MultiMesh" uid="uid://du0pkcpavje21" path="res://level_grids/park/bottom_grass_multi_mesh.tres" id="4_1caeb"]
-[ext_resource type="MultiMesh" path="res://level_grids/park/deciduous_multimesh.tres" id="4_4niwr"]
+[ext_resource type="MultiMesh" uid="uid://c77sx7gogsfpy" path="res://level_grids/park/deciduous_multimesh.tres" id="4_4niwr"]
 [ext_resource type="PackedScene" uid="uid://d37u6wpiakj2k" path="res://level_grids/park/rock_kicking_park_grass.tscn" id="4_ptyal"]
 
 [node name="ParkGrid" type="Node3D" unique_id=891737648]
@@ -36,6 +36,8 @@ visible = false
 
 [node name="rock_kicking_park_grass" parent="." unique_id=1237603337 instance=ExtResource("4_ptyal")]
 visible = false
+
+[node name="ConiferStaticBodies" type="Node3D" parent="." unique_id=587983899]
 
 [editable path="rock_kicking_park_ground"]
 [editable path="tree_1"]
