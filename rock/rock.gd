@@ -75,6 +75,7 @@ func _ready() -> void:
 	# For now, the rock starts with the starting rock vertices
 	# To be deleted later
 	$CurrentRockCollision.shape.set_points(starting_rock_vertices)
+	$CurrentRockMesh.mesh = _set_color_mesh(starting_rock_vertices)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
