@@ -115,4 +115,3 @@ mariadb -u root -p Godot_Test < dump_Godot_Test_full.sql
 # On the Windows Host run in PowerShell
 Test-NetConnection -ComputerName "the VM's IP" -Port 3306
 # If it takes a second to complete but it successful, ARP table was probably the issue, it should connect now.
-
