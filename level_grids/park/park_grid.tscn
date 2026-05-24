@@ -37,7 +37,10 @@ visible = false
 [node name="rock_kicking_park_grass" parent="." unique_id=1237603337 instance=ExtResource("4_ptyal")]
 visible = false
 
-[node name="ConiferStaticBodies" type="Node3D" parent="." unique_id=587983899]
+[node name="TreeStaticBodies" type="Node3D" parent="." unique_id=587983899]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1299634898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 534.1549)
 
 [editable path="rock_kicking_park_ground"]
 [editable path="tree_1"]

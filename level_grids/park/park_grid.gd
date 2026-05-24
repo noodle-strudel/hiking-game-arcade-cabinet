@@ -1,8 +1,22 @@
 extends Node3D
 
+# multimeshes for the trees
 @onready var conifer_tree_multimesh: MultiMesh = $ConiferTrees.multimesh
 @onready var deciduous_tree_multimesh: MultiMesh = $DeciduousTrees.multimesh
+
+# static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
+
+"""PUBLIC VARIABLES SINCE THE PARK GRID ACTS LIKE A CONTAINER OF INFO LIKE A NODE"""
+var top: Vector3 = Vector3(0, 0, -555.845)
+var left: Vector3 = Vector3(-415.146, 0, 0)
+var right: Vector3 = Vector3(424.854, 0, 0)
+var bottom: Vector3 = Vector3(0, 0, 534.155)
+var top_left: Vector3 = top + left
+var top_right: Vector3 = top + right
+var bottom_left: Vector3 = bottom + left
+var bottom_right: Vector3 = bottom + right
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,18 +27,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+# adds a staticbody3d for each tree. I read that it can be more efficient this way
+# than adding a ton of collision shapes to a single staticbody3d. Plus i'm able to
+# add the transform to the staticbody3d much easier than a collisionshape3d.
+# TODO: experiment with making a shape for the deciduous tree
 func _add_collision_to_trees() -> void:
 	for i in range(conifer_tree_multimesh.instance_count):
 		var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
 		conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
-		$ConiferStaticBodies.add_child(conifer_collision)
+		$TreeStaticBodies.add_child(conifer_collision)
 		
 	for i in range(deciduous_tree_multimesh.instance_count):
-		var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
-		conifer_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
-		$ConiferStaticBodies.add_child(conifer_collision)
+		var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
+		deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
+		$TreeStaticBodies.add_child(deciduous_collision)
 
-# iterates through each multimesh and makes its basis an identity matrix
+# iterates through each multimesh and makes its basis an identity matrix, then
+# saves it to the file system. for development only
 func _make_trees_point_up() -> void:
 	for i in range(conifer_tree_multimesh.instance_count):
 		var current_transform: Transform3D = conifer_tree_multimesh.get_instance_transform(i)
