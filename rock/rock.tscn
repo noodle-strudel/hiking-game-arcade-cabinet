@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b1bxa4xvkfyet"]
 
-[ext_resource type="ArrayMesh" uid="uid://dpyvjwbn3j2cu" path="res://rock/rock_start1.res" id="1_5kusr"]
 [ext_resource type="Script" uid="uid://byjp861kr5qkp" path="res://rock/rock.gd" id="1_74c8a"]
 [ext_resource type="Shape3D" uid="uid://da5rftwrgbjns" path="res://rock/rock_start1.tres" id="2_74c8a"]
-[ext_resource type="ArrayMesh" uid="uid://bxaeqt21n0w5y" path="res://rock/rock_sphere.res" id="2_4035w"]
 [ext_resource type="Shape3D" uid="uid://dqgcufyoo3fal" path="res://rock/rock_sphere.tres" id="5_t0tji"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t0tji"]
@@ -23,20 +21,12 @@ margin = 0.1
 unique_name_in_owner = true
 fov = 45.0
 
-[node name="StartingRockMesh" type="MeshInstance3D" parent="." unique_id=419606833]
-visible = false
-mesh = ExtResource("1_5kusr")
-
 [node name="StartingRockCollision" type="CollisionShape3D" parent="." unique_id=704148240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 visible = false
 shape = ExtResource("2_74c8a")
 disabled = true
 debug_fill = false
-
-[node name="SphericalRockMesh" type="MeshInstance3D" parent="." unique_id=2098094051]
-visible = false
-mesh = ExtResource("2_4035w")
 
 [node name="SphericalRockCollision" type="CollisionShape3D" parent="." unique_id=737656211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
@@ -47,7 +37,6 @@ debug_fill = false
 
 [node name="CurrentRockMesh" type="MeshInstance3D" parent="." unique_id=1782139663]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-mesh = ExtResource("1_5kusr")
 
 [node name="CurrentRockCollision" type="CollisionShape3D" parent="." unique_id=292276580]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
