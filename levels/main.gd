@@ -6,7 +6,9 @@ extends Node
 ]
 
 const _grid_x_dimension = 2 * 415.146
-const _grid_z_dimension = 2 * 555.845 
+#const _grid_z_dimension = 2 * 555.845 #seam position as reported by yollaine
+const _grid_z_dimension = 2 * 545.1 #estimated actual seam (small gap)
+
 
 #stores references to the instantiated level grid parts
 var _level_grid = [
@@ -17,7 +19,7 @@ var _level_grid = [
 	# v
 
 #position of the rock within the grid. 
-var grid_position = [0, 0]
+var grid_position = [0, 0] #x,z
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,7 +51,10 @@ func _change_camera(state: GameManager.gamestates) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	#thoughts: add by origin offset, divide by square size, floor, etc
+	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
+	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
+	print(grid_position)
 
 #chooses a level segment to add
 func _select_level_segment():
