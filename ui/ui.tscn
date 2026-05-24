@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
 [ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
+[ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://cmpbvkw0lv2di" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
 
 [node name="UI" type="Control" unique_id=593103497]
@@ -145,6 +146,7 @@ offset_left = 1736.0
 offset_top = 984.0
 offset_right = 1776.0
 offset_bottom = 1024.0
+script = ExtResource("6_pa1oa")
 
 [node name="Kickbar" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=450234943]
 texture = ExtResource("5_obcwv")
@@ -264,3 +266,5 @@ metadata/_edit_lock_ = true
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
+
+[connection signal="visibility_changed" from="KickingMenu/PowerBar" to="KickingMenu/PowerBar" method="_indicator_activity_change"]
