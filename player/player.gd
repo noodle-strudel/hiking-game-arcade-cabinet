@@ -25,10 +25,14 @@ func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
 	if get_node(buddy_rock_path):
 		rock = get_node(buddy_rock_path)
-		bar = get_node("../UI/KickingMenu/PowerBar/KickbarInd")
 		$RockTeeSpringArm.add_excluded_object(rock) #
 	else:
 		print("ERROR: no Rock node sibling to Player.")
+		
+	if get_node("../UI/KickingMenu/PowerBar/KickbarInd"):
+		bar = get_node("../UI/KickingMenu/PowerBar/KickbarInd")
+	else:
+		print("ERROR: no Kickbar node sibling to Player.")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -63,7 +67,8 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 		GameManager.gamestates.KICKING:
 			_begin_kicking()
 		GameManager.gamestates.ROCK_KICKED:
-			kick_scalar = abs(bar.position.x / 15)
+			if bar:
+				kick_scalar = abs(bar.position.x / 15)
 			_kick_rock()
 
 
