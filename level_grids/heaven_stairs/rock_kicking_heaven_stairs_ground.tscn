@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ceiqgn5tw0xv4"]
+
+[ext_resource type="PackedScene" uid="uid://c1auq6je6gdgp" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.glb" id="1_cl6fo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gmsl"]
+size = Vector3(826.844, 50.052246, 1108.243)
+
+[node name="rock_kicking_heaven_stairs_ground" unique_id=300283865 instance=ExtResource("1_cl6fo")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1260886492]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1789050744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.973877, 0)
+shape = SubResource("BoxShape3D_1gmsl")
