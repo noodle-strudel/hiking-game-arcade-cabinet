@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		if rock:
 			rock.linear_velocity = Vector3(0.0,0.0,0.0) #to counteract accumulating gravity
 			rock.set_position($RockTeeSpringArm/TeePos.get_global_position())
-
+	
 	#fall.
 	move_and_slide()
 
@@ -62,6 +62,10 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 			_begin_kicking()
 		GameManager.gamestates.ROCK_KICKED:
 			_kick_rock()
+			
+			# reset the max rotation of the player based on the current y pos
+			max_left = (rad_to_deg(current_y_rotation) + 45.0)
+			max_right = (rad_to_deg(current_y_rotation) - 45.0)
 
 
 #moves the player to the rock when the state changes. 
