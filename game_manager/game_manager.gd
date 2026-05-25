@@ -59,7 +59,7 @@ func _process(_delta: float) -> void:
 #TODO implement
 func begin_contract_signing() -> void:
 	_switch_state(gamestates.CONTRACT)
-	#
+	#signal is sent, main recieves
 
 
 func _decrement_kicks_remaining() -> void:

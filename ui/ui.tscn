@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
+[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://cmpbvkw0lv2di" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
@@ -127,11 +128,72 @@ text = "Kick a rock!"
 horizontal_alignment = 1
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
+
+[node name="Contract" type="Label" parent="ContractMenu" unique_id=1916097480]
+visible = false
+layout_mode = 0
+offset_left = 804.0
+offset_top = 19.0
+offset_right = 1176.0
+offset_bottom = 1056.0
+theme_override_fonts/font = ExtResource("6_ay4pc")
+theme_override_font_sizes/font_size = 33
+text = "     The Official Rulings
+You agree hereby that the
+kick which you are about
+to commence is to be the
+first and only kick you will
+commit upon the rock
+during this period of
+twenty four hours
+commonly refered to as
+one day. Any kicks further
+which you commit to the
+rock must be, if at all,
+commenced on a day
+which occurs after the one
+which is peresent?
+           I AGREE"
+
+[node name="TheLetterSpinner" type="Control" parent="ContractMenu" unique_id=400664939]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Letter1" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=1702668583]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 496.0
+offset_right = 865.0
+offset_bottom = 542.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
+
+[node name="Letter2" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=1685922779]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 496.0
+offset_right = 887.0
+offset_bottom = 542.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
+
+[node name="Letter3" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=872545628]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 495.0
+offset_right = 924.0
+offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
 visible = false
@@ -267,4 +329,5 @@ metadata/_edit_lock_ = true
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
 
+[connection signal="visibility_changed" from="ContractMenu" to="." method="contract_sequence"]
 [connection signal="visibility_changed" from="KickingMenu/PowerBar" to="KickingMenu/PowerBar" method="_indicator_activity_change"]
