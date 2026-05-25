@@ -10,6 +10,7 @@ var content_to_save : Dictionary = {
 
 #Loads the save on game startup
 func _ready() -> void:
+	GameManager.decrement_kicks_remaining.connect(_on_kick_save)
 	_load()
 
 #Save function opens the file and writes the data to save to it
@@ -27,3 +28,7 @@ func _load() -> void:
 		
 		var save_data = data.duplicate()
 		GameManager.kicks_remaining = save_data.remaining_kicks
+
+func _on_kick_save(kicks_remaining:int) -> void:
+	content_to_save.remaining_kicks = kicks_remaining
+	_save()

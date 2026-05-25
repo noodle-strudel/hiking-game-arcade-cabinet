@@ -49,8 +49,16 @@ func _interpolate(start: PackedVector3Array, end: PackedVector3Array,\
 		out.push_back(start[i].lerp(end[i],\
 				progress ** (0.002 / (dists[i] ** 2))))
 	return out
-	
-# _vec_noise has been moved to player.gd
+
+# update shape of visible color mesh from the PackedVector3Array used by the
+# collision mesh
+func _set_color_mesh(src: PackedVector3Array) -> ArrayMesh:
+	var surf_tool = SurfaceTool.new()
+	surf_tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for i in src:
+		surf_tool.add_vertex(i)
+	surf_tool.generate_normals()
+	return surf_tool.commit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,6 +75,7 @@ func _ready() -> void:
 	# For now, the rock starts with the starting rock vertices
 	# To be deleted later
 	$CurrentRockCollision.shape.set_points(starting_rock_vertices)
+	$CurrentRockMesh.mesh = _set_color_mesh(starting_rock_vertices)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -82,6 +91,7 @@ func _physics_process(delta: float) -> void:
 				_interpolate(starting_rock_vertices, ending_rock_vertices,\
 				vertex_dists, progress)
 		$CurrentRockCollision.shape.set_points(current_rock_vertices)
+		$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
 		
 		# apply impulse force (kick rock)
 		self.apply_impulse(kick_vector)

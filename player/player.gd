@@ -17,6 +17,7 @@ var current_x_rotation: float = 0.0
 # variables
 const buddy_rock_path = "../Rock"
 var rock = null
+var bar = null
 var kick_scalar = 5.0 #relative force of kick.
 var kick_deviance = 0.5
 
@@ -27,6 +28,11 @@ func _ready() -> void:
 		$RockTeeSpringArm.add_excluded_object(rock) #
 	else:
 		print("ERROR: no Rock node sibling to Player.")
+		
+	if get_node("../UI/KickingMenu/PowerBar/KickbarInd"):
+		bar = get_node("../UI/KickingMenu/PowerBar/KickbarInd")
+	else:
+		print("ERROR: no Kickbar node sibling to Player.")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate left and right.
 	var input_y = Input.get_axis("joystick_right", "joystick_left")
 	current_y_rotation += input_y * rotation_speed * delta # Update tracking variable.
-	current_y_rotation = clamp(current_y_rotation, deg_to_rad(max_right), deg_to_rad(max_left)) # Apply clamps.
+	#current_y_rotation = clamp(current_y_rotation, deg_to_rad(max_right), deg_to_rad(max_left)) # Apply clamps.
 	rotation.y = current_y_rotation # Apply rotation to player.
 	
 	# Rotate up and down.
@@ -61,6 +67,8 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 		GameManager.gamestates.KICKING:
 			_begin_kicking()
 		GameManager.gamestates.ROCK_KICKED:
+			if bar:
+				kick_scalar = abs(bar.position.x / 15)
 			_kick_rock()
 			
 			# reset the max rotation of the player based on the current y pos
@@ -84,7 +92,7 @@ func _kick_rock() -> void:
 	if rock:
 		var direction_to_rock := Vector3(rock.position - self.position)
 		direction_to_rock = direction_to_rock.normalized() #fixes issues
-		var impulse_vector = direction_to_rock*kick_scalar + Vector3(0.0, kick_scalar, 0.0)
+		var impulse_vector = direction_to_rock * kick_scalar + Vector3(0.0, kick_scalar, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
 		#report kick to game manager

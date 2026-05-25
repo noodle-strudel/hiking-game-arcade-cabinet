@@ -48,9 +48,9 @@ func _on_change_state(state: GameManager.gamestates) -> void:
 		GameManager.gamestates.CONTRACT:
 			pass
 		GameManager.gamestates.KICKING:
-			pass
+			$KickingMenu.visible = true
 		GameManager.gamestates.ROCK_KICKED:
-			pass
+			$KickingMenu.visible = false
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 
