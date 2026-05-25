@@ -49,7 +49,7 @@ func _process(_delta: float) -> void:
 		_decrement_kicks_remaining()
 	
 	#come back from idle
-	if state == gamestates.IDLE and Input.is_anything_pressed():
+	if state == gamestates.IDLE and Input.is_action_just_pressed("start"):
 		begin_contract_signing()
 	
 	

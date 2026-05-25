@@ -46,6 +46,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("i_accept"):
 			spinstep += 1
 			if(spinstep == 5):
+				spinstep = 0
+				$ContractMenu/TheLetterSpinner.visible = false
 				true # TODO make this move to the kick phase
 
 

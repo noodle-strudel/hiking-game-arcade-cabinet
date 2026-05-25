@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
 [ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
+[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
 [ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
@@ -40,11 +41,12 @@ texture = ExtResource("3_wl5ax")
 
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
-offset_left = 1752.0
-offset_top = 808.0
-offset_right = 1900.0
-offset_bottom = 883.0
+offset_left = 1741.0
+offset_top = 788.0
+offset_right = 1919.0
+offset_bottom = 893.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "PSU
 CS Capstone
 Spring/Summer '26"
@@ -52,11 +54,12 @@ horizontal_alignment = 2
 
 [node name="CabinetArtCredits" type="Label" parent="IdleMenu" unique_id=1621690979]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 1000.0
-offset_right = 134.0
-offset_bottom = 1075.0
+offset_left = 4.0
+offset_top = 974.0
+offset_right = 158.0
+offset_bottom = 1079.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "Cabinet artwork
 Made by
 Mike Bennett "
@@ -66,6 +69,7 @@ layout_mode = 0
 offset_right = 384.0
 offset_bottom = 72.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 12
 text = "\"New Hero in Town\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
@@ -80,8 +84,9 @@ offset_top = 848.0
 offset_right = 1712.0
 offset_bottom = 985.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 80
-text = "KICKS REMAINING: 1000000"
+text = "KICKS REMAINING:1000000"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
@@ -101,6 +106,7 @@ offset_left = 256.0
 offset_top = 320.0
 offset_right = 1664.0
 offset_bottom = 524.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "PRESS ANY BUTTON"
 horizontal_alignment = 1
@@ -123,6 +129,7 @@ offset_top = -28.0
 offset_right = 128.0
 offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
 text = "Kick a rock!"
 horizontal_alignment = 1
@@ -225,7 +232,6 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -233,7 +239,6 @@ metadata/_edit_lock_ = true
 
 [node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -244,6 +249,7 @@ offset_left = 528.0
 offset_top = 144.0
 offset_right = 1392.0
 offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
 text = "SCORE"
 horizontal_alignment = 1
@@ -254,6 +260,7 @@ offset_left = 256.0
 offset_top = 320.0
 offset_right = 1664.0
 offset_bottom = 524.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "27"
 horizontal_alignment = 1
@@ -269,7 +276,6 @@ color = Color(0, 0, 0, 0.1882353)
 
 [node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -280,18 +286,19 @@ offset_left = 256.0
 offset_top = 512.0
 offset_right = 1664.0
 offset_bottom = 677.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
 text = "KICKS REMAINING:"
 horizontal_alignment = 1
 
 [node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = 256.0
 offset_top = 688.0
 offset_right = 1664.0
 offset_bottom = 892.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "999999"
 horizontal_alignment = 1
@@ -306,13 +313,13 @@ offset_bottom = 848.0
 color = Color(0, 0, 0, 0.1882353)
 
 [node name="LoremIpsum" type="Label" parent="ScoreMenu" unique_id=1662281954]
-visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 1080.0
 offset_right = 1472.0
 offset_bottom = 4905.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 40
 text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper aliquam nibh id euismod. Phasellus venenatis, orci ut semper facilisis, erat risus facilisis nisi, a viverra arcu purus nec urna. Cras consectetur magna diam, a luctus nibh porta nec. Sed eu sagittis sem. Aliquam interdum ex sit amet velit euismod vulputate. Sed suscipit lectus quis sem posuere, vitae auctor lectus cursus. Aenean scelerisque risus nulla, sed commodo ligula mattis a. Donec leo felis, mollis ut convallis ullamcorper, ornare sed enim.
 
