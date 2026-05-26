@@ -25,7 +25,7 @@ signal grid_position_changed(shift: Vector2i)
 
 #position of the rock within the grid.
 var grid_position := [0, 0] #x,z
-var _last_grid_position := grid_position
+var _last_grid_position := grid_position.duplicate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,11 +36,12 @@ func _ready() -> void:
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
 			#instantiate
-			_level_grid[z+1][x+1] = _select_level_segment().instantiate()
+			_level_grid[z+1][x+1] = _select_level_segment().instantiate() #TODO REFACTOR
 			#parent
 			self.add_child(_level_grid[z+1][x+1])
-			#position TODO
-			_level_grid[z+1][x+1].position = Vector3(z*_grid_x_dimension, 0.0, x*_grid_z_dimension)
+			#position
+			#TODO DO DIFFERENTLY
+			_level_grid[z+1][x+1].position = Vector3(x*_grid_x_dimension, 0.0, z*_grid_z_dimension)
 
 # Camera changes based on gamestate.
 func _change_camera(state: GameManager.gamestates) -> void:
@@ -59,34 +60,58 @@ func _change_camera(state: GameManager.gamestates) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#handle grid position
-	_last_grid_position = grid_position
+	_last_grid_position = grid_position.duplicate()
 	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
 	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
 	#if the coordinate has changed
+	#print(grid_position)
 	if _last_grid_position[0] != grid_position[0] or _last_grid_position[1] != grid_position[1]:
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1] - _last_grid_position[1])
-		grid_position_changed.emit()
+		grid_position_changed.emit(shift)
 
 #chooses a level segment to add
 func _select_level_segment():
 	return _level_segments.pick_random()
 	
-func _load_chunks() -> void:
-	pass
+func _instantiate_chunk():
+	var chunk = _select_level_segment().instantiate()
+	return chunk
 
 #process:
 #catch unloading side
 #move 6
 #instantiate in new chunks
+#unload
 func _on_grid_position_changed(shift) -> void:
-	#x, z
-	#x direction
-	if shift[0] == 1:
-		pass
-	elif shift[0] == -1:
-		pass
-	#z direction
-	if shift[1] == 1:
-		pass
-	elif shift[1] == -1:
-		pass
+	#shift is ordered x, z
+	var unloaded_chunks := []
+	
+	#catch unloaded chunks
+	for chunk_z in range(3): #0, 1, 2
+		var unload_ind_z = -chunk_z + 1
+		for chunk_x in range(3): #0, 1, 2
+			var unload_ind_x = -chunk_x + 1
+			if shift[0] == unload_ind_x or shift[1] == unload_ind_z:
+				unloaded_chunks.append(_level_grid[chunk_z][chunk_x])
+	
+	#copy chunks to their new location in _level_grid, or instantiate a new chunk
+	for chunk_z in range((1-shift[1]),(1+(2*shift[1])),(shift[1])):
+		for chunk_x in range((1-shift[0]),(1+(2*shift[0])),(shift[0])):
+			var target_chunk_coord_x = chunk_x+shift[0]
+			var target_chunk_coord_z = chunk_z+shift[1]
+			var in_bounds = true
+			#bounds check
+			if target_chunk_coord_x < 0 or target_chunk_coord_x >= 3:
+				in_bounds = false
+			if target_chunk_coord_z < 0 or target_chunk_coord_x >=3:
+				in_bounds = false
+			if in_bounds:
+				#if in bounds, copy existing chunk over
+				_level_grid[chunk_z][chunk_x] = _level_grid[chunk_z+shift[1]][chunk_x+shift[0]]
+			else:
+				#otherwise, instantiate a new chunk
+				_level_grid[chunk_z][chunk_x] = _instantiate_chunk()
+	
+	#unload old chunks
+	for chunk in unloaded_chunks:
+		chunk.queue_free()
