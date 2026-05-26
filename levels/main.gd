@@ -87,15 +87,21 @@ func _on_grid_position_changed(shift) -> void:
 	var unloaded_chunks := []
 	
 	#catch unloaded chunks
+	#BUG: we want to only match against nonzero shift values. must fix #FIXED MUST TEST
 	for chunk_z in range(3): #0, 1, 2
 		var unload_ind_z = -chunk_z + 1
 		for chunk_x in range(3): #0, 1, 2
 			var unload_ind_x = -chunk_x + 1
-			if shift[0] == unload_ind_x or shift[1] == unload_ind_z:
+			#if shift[0] == unload_ind_x or shift[1] == unload_ind_z:
+			if (shift[0] != 0 and shift[0] == unload_ind_x) or (shift[1] != 0 and shift[1] == unload_ind_z):
 				unloaded_chunks.append(_level_grid[chunk_z][chunk_x])
 	
+	#unload old chunks
+	for chunk in unloaded_chunks:
+		chunk.queue_free()
+	
 	#copy chunks to their new location in _level_grid, or instantiate a new chunk
-	for chunk_z in range((1-shift[1]),(1+(2*shift[1])),(shift[1])):
+	for chunk_z in range((1-shift[1]),(1+(2*shift[1])),(shift[1])): #0, 1, or 2 (forwards or backwards)
 		for chunk_x in range((1-shift[0]),(1+(2*shift[0])),(shift[0])):
 			var target_chunk_coord_x = chunk_x+shift[0]
 			var target_chunk_coord_z = chunk_z+shift[1]
@@ -110,8 +116,10 @@ func _on_grid_position_changed(shift) -> void:
 				_level_grid[chunk_z][chunk_x] = _level_grid[chunk_z+shift[1]][chunk_x+shift[0]]
 			else:
 				#otherwise, instantiate a new chunk
-				_level_grid[chunk_z][chunk_x] = _instantiate_chunk()
+				var new_chunk = _instantiate_chunk()
+				_level_grid[chunk_z][chunk_x] = new_chunk
+				self.add_child(new_chunk)
+				#TODO TEST
+				new_chunk.position = Vector3((grid_position[0] + chunk_x - 1)*_grid_x_dimension, 0.0, (grid_position[1] + chunk_z - 1)*_grid_z_dimension)
 	
-	#unload old chunks
-	for chunk in unloaded_chunks:
-		chunk.queue_free()
+	
