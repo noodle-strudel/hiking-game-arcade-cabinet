@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate left and right.
 	var input_y = Input.get_axis("joystick_right", "joystick_left")
 	current_y_rotation += input_y * rotation_speed * delta # Update tracking variable.
+	#current_y_rotation = clamp(current_y_rotation, deg_to_rad(max_right), deg_to_rad(max_left)) # Apply clamps.
 	rotation.y = current_y_rotation # Apply rotation to player.
 	
 	# Rotate up and down.
@@ -60,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	#fall.
 	move_and_slide()
 
-func _on_change_state(state: GameManager.gamestates) -> void:
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	$RockTeeSpringArm/TeePos.remote_path = ""
 	match state:
 		GameManager.gamestates.KICKING:

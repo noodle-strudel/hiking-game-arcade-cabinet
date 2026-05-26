@@ -10,6 +10,9 @@
 [ext_resource type="MultiMesh" uid="uid://c77sx7gogsfpy" path="res://level_grids/park/deciduous_multimesh.tres" id="4_4niwr"]
 [ext_resource type="PackedScene" uid="uid://d37u6wpiakj2k" path="res://level_grids/park/rock_kicking_park_grass.tscn" id="4_ptyal"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_odci8"]
+size = Vector3(886.2334, 65.99302, 1088.3652)
+
 [node name="ParkGrid" type="Node3D" unique_id=891737648]
 script = ExtResource("1_mo2hw")
 
@@ -39,8 +42,13 @@ visible = false
 
 [node name="TreeStaticBodies" type="Node3D" parent="." unique_id=587983899]
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=1299634898]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 534.1549)
+[node name="OOBBarrier" type="Area3D" parent="." unique_id=698100028]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=1074059991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -81.13844, -18.642231)
+shape = SubResource("BoxShape3D_odci8")
+
+[connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 
 [editable path="rock_kicking_park_ground"]
 [editable path="tree_1"]

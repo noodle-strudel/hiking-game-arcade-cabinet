@@ -10,7 +10,8 @@ enum gamestates {
 	,CONTRACT		#The player is signing the 'contract'.
 	,KICKING		#the player is aiming their kick
 	,ROCK_KICKED	#the rock has been kicked, and the camera follows it. 
-	,SCORING		#the rock has landed, and the player has 'lost'. Show scoring. 
+	,SCORING		#the rock has landed, and the player has 'lost'. Show scoring.
+	,ROCK_OOB		#the rock has gone out of bounds or in a lake
 }
 
 #signals
@@ -22,7 +23,7 @@ enum gamestates {
 # Check res://ui/ui.gd for an example, including arguements. 
 signal decrement_kicks_remaining(new_kick_count) #a kick just happened. 
 #signal cabinet_is_idle #no input detected for a while. #depreciated
-signal gamestate_update(state) #the state has changed. Used for idle as well
+signal gamestate_update(state, cause) #the state has changed. Used for idle as well
 
 #global variables. These are visible to scripts in other places.
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
@@ -72,12 +73,28 @@ func _on_idle_timer_timeout() -> void:
 	#TODO: reset other state information
 	#TODO: start idle rock-orbiting camera
 
+# Public function to allow the state to be switched from any script.
+# Perhaps adds spaghetti code but this is in the context of the OOB
+# barrier being able to make the rock reset when it falls out of the 
+# world/in water.
+func switch_state_to(target_state: GameManager.gamestates, cause: String = ""):
+	if cause:
+		_switch_state_with_cause(target_state, cause)
+	else:
+		_switch_state(target_state)
+
 #switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates):
 	if state == gamestates.ROCK_KICKED:
 		_decrement_kicks_remaining()
 	state = target_state
-	gamestate_update.emit(state)
+	gamestate_update.emit(state, "")
+
+func _switch_state_with_cause(target_state: GameManager.gamestates, cause: String):
+	if state == gamestates.ROCK_KICKED:
+		_decrement_kicks_remaining()
+	state = target_state
+	gamestate_update.emit(state, cause)
 
 #
 func report_kick(kick_strength: float) -> void:

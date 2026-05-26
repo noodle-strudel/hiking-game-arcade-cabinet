@@ -5,6 +5,9 @@ extends Node
 	preload("res://level_grids/park/park_grid.tscn")
 ]
 
+@onready var player_camera = $Player/CameraPivot/PlayerCamera
+@onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
+
 # width and breadth of the level segments
 const _grid_x_dimension := 2 * 415.146
 #const _grid_z_dimension := 2 * 555.845 #seam position as reported by yollaine
@@ -41,18 +44,31 @@ func _ready() -> void:
 			_level_grid[z+1][x+1].position = Vector3(x*_grid_x_dimension, 0.0, z*_grid_z_dimension)
 
 # Camera changes based on gamestate.
-func _change_camera(state: GameManager.gamestates) -> void:
+func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
+			rock_camera.make_current()
 		GameManager.gamestates.CONTRACT:
-			$Player/CameraPivot/PlayerCamera.make_current()
+			player_camera.make_current()
 		GameManager.gamestates.KICKING:
-			$Player/CameraPivot/PlayerCamera.make_current()
+			player_camera.make_current()
 		GameManager.gamestates.ROCK_KICKED:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
+			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
+			rock_camera.make_current()
+		GameManager.gamestates.ROCK_OOB:
+			_handle_oob(cause)
+			
+
+func _handle_oob(cause: String) -> void:
+	#TODO: freeze the rock's camera in place. aka stop updating the position.
+	#INFO: this would be in a function created after May 26.
+	#rock_camera.freeze_position() <-- not implemented yet
+	
+	# reset the rock's position to the player's position
+	$Rock.position = $Player.position
+	print("OOB: ", cause)
+	GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
