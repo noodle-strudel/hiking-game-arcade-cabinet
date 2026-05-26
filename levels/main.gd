@@ -114,11 +114,11 @@ func _on_grid_position_changed(shift) -> void:
 			#bounds check
 			if target_chunk_coord_x < 0 or target_chunk_coord_x >= 3:
 				in_bounds = false
-			if target_chunk_coord_z < 0 or target_chunk_coord_x >=3:
+			if target_chunk_coord_z < 0 or target_chunk_coord_z >=3:
 				in_bounds = false
 			if in_bounds:
 				#if in bounds, copy existing chunk over
-				_level_grid[chunk_z][chunk_x] = _level_grid[chunk_z+shift[1]][chunk_x+shift[0]]
+				_level_grid[chunk_z][chunk_x] = _level_grid[target_chunk_coord_z][target_chunk_coord_x]
 			else:
 				#otherwise, instantiate a new chunk
 				var new_chunk = _instantiate_chunk()
