@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv5w0nhx5fvoh"
+path="res://.godot/imported/rock_kick_1.wav-cd43a1f01d37fb49a0ca7ee69d973e83.sample"
+
+[deps]
+
+source_file="res://sound/rock kicks/rock_kick_1.wav"
+dest_files=["res://.godot/imported/rock_kick_1.wav-cd43a1f01d37fb49a0ca7ee69d973e83.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
