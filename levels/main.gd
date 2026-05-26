@@ -37,10 +37,7 @@ func _ready() -> void:
 		for x in range(-1, 2, 1):
 			#instantiate
 			_level_grid[z+1][x+1] = _instantiate_chunk()
-			#parent
-			self.add_child(_level_grid[z+1][x+1])
 			#position
-			#TODO DO DIFFERENTLY
 			_level_grid[z+1][x+1].position = Vector3(x*_grid_x_dimension, 0.0, z*_grid_z_dimension)
 
 # Camera changes based on gamestate.
@@ -64,7 +61,6 @@ func _process(delta: float) -> void:
 	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
 	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
 	#if the coordinate has changed
-	#print(grid_position)
 	if _last_grid_position[0] != grid_position[0] or _last_grid_position[1] != grid_position[1]:
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1] - _last_grid_position[1])
 		grid_position_changed.emit(shift)
@@ -75,6 +71,7 @@ func _select_level_segment():
 	
 func _instantiate_chunk():
 	var chunk = _select_level_segment().instantiate()
+	self.add_child(chunk)
 	return chunk
 
 #process:
@@ -126,6 +123,5 @@ func _on_grid_position_changed(shift) -> void:
 				#otherwise, instantiate a new chunk
 				var new_chunk = _instantiate_chunk()
 				_level_grid[chunk_z][chunk_x] = new_chunk
-				self.add_child(new_chunk)
 				new_chunk.position = Vector3((grid_position[0] + chunk_x - 1)*_grid_x_dimension, 0.0, (grid_position[1] + chunk_z - 1)*_grid_z_dimension)
 				
