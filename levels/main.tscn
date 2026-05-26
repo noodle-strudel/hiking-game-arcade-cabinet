@@ -69,3 +69,5 @@ visible = false
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=761771399]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
+
+[node name="OOBTimer" type="Timer" parent="." unique_id=1801968399]

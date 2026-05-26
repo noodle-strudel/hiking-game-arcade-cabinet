@@ -58,3 +58,8 @@ func _make_trees_point_up() -> void:
 		deciduous_tree_multimesh.set_instance_transform(i, new_transform)
 	ResourceSaver.save(conifer_tree_multimesh, "res://conifer_multimesh.tres")
 	ResourceSaver.save(deciduous_tree_multimesh, "res://deciduous_multimesh.tres")
+
+
+func _on_oob_barrier_body_entered(body: Node3D) -> void:
+	if body.name == "Rock":
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "fell through the ground")

@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0.13725491, 0.12941177, 0.23921569, 1)
 boot_splash/image="uid://cbc7vta6tf7at"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://rpfpmovmm3w4"
+
 [autoload]
 
 GameManager="*uid://c36a8wo7m50y6"

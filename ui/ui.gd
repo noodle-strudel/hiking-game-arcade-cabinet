@@ -38,8 +38,9 @@ func _process(delta: float) -> void:
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
-	
-func _on_change_state(state: GameManager.gamestates) -> void:
+
+# enable and disable UI elements. cause is mostly used for OOB causes
+func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
