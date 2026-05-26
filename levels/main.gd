@@ -36,7 +36,7 @@ func _ready() -> void:
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
 			#instantiate
-			_level_grid[z+1][x+1] = _select_level_segment().instantiate() #TODO REFACTOR
+			_level_grid[z+1][x+1] = _instantiate_chunk()
 			#parent
 			self.add_child(_level_grid[z+1][x+1])
 			#position
@@ -79,48 +79,38 @@ func _instantiate_chunk():
 
 #process:
 #catch unloading side
-#move 6
-#instantiate in new chunks
 #unload
+#copy-move 9
+# > if any are oob, instantiate in new chunk
+#methodology: Everything is done together, and the code works even if you somehow move over the diagonal
+#between chunks even in a single frame. 
+#it uses the shift value to calculate which chunks to unload, which direction to copy from, 
+#and what ORDER it needs to iterate over the chunks to avoid copy problems.
 func _on_grid_position_changed(shift) -> void:
 	#shift is ordered x, z
 	var unloaded_chunks := []
 	
 	#catch unloaded chunks
-	#BUG: we want to only match against nonzero shift values. must fix #FIXED MUST TEST
 	for chunk_z in range(3): #0, 1, 2
 		var unload_ind_z = -chunk_z + 1
 		for chunk_x in range(3): #0, 1, 2
 			var unload_ind_x = -chunk_x + 1
-			#if shift[0] == unload_ind_x or shift[1] == unload_ind_z:
 			if (shift[0] != 0 and shift[0] == unload_ind_x) or (shift[1] != 0 and shift[1] == unload_ind_z):
 				unloaded_chunks.append(_level_grid[chunk_z][chunk_x])
-				print("DEBUG: I'm catching the chunk in level grid %d,%d (z,x) for an unload." % [chunk_z, chunk_x]) 
 	
 	#unload old chunks
 	for chunk in unloaded_chunks:
 		chunk.queue_free()
-		print("DEBUG: I'm unloading a chunk!")
 	
-	print("DEBUG: COPY STAGE:")
-	#copy chunks to their new location in _level_grid, or instantiate a new chunk
-	#BUG nothing executes in the nested for loops. TODO FIX
-	#print("chunk_z start stop step: (%d, %d, %d)" % [(1-shift[1]),(1+(2*shift[1])),(shift[1])])
-	#print("chunk_x start stop step: (%d, %d, %d)" % [(1-shift[0]),(1+(2*shift[0])),(shift[0])])
-	
-	#determine step ranges
-	var z_range := range(0,3,1)
+	#determine step ranges (directionality matters)
+	var z_range := range(0,3,1) #default case
 	if shift[1]:
 		z_range = range((1-shift[1]),(1+(2*shift[1])),(shift[1]))
 	var x_range := range(0,3,1)
 	if shift[0]:
 		x_range = range((1-shift[0]),(1+(2*shift[0])),(shift[0]))
-	print("DEBUG: z and x ranges are (respectively):")
-	print(z_range)
-	print(x_range)
-	for chunk_z in z_range: #iterates 0, 1, or 2 (forwards or backwards)
+	for chunk_z in z_range:
 		for chunk_x in x_range:
-			print("\nI'm trying to copy from %d,%d to %d,%d (z,x)" % [chunk_z+shift[1],chunk_x+shift[0],chunk_z,chunk_x])
 			var target_chunk_coord_x = chunk_x+shift[0]
 			var target_chunk_coord_z = chunk_z+shift[1]
 			var in_bounds = true
@@ -129,19 +119,13 @@ func _on_grid_position_changed(shift) -> void:
 				in_bounds = false
 			if target_chunk_coord_z < 0 or target_chunk_coord_x >=3:
 				in_bounds = false
-			print("I think this one is in bounds:")
-			print(in_bounds)
 			if in_bounds:
-				print("Copying!")
 				#if in bounds, copy existing chunk over
 				_level_grid[chunk_z][chunk_x] = _level_grid[chunk_z+shift[1]][chunk_x+shift[0]]
 			else:
-				print("lets make a new chunk")
 				#otherwise, instantiate a new chunk
 				var new_chunk = _instantiate_chunk()
 				_level_grid[chunk_z][chunk_x] = new_chunk
 				self.add_child(new_chunk)
-				#TODO TEST
 				new_chunk.position = Vector3((grid_position[0] + chunk_x - 1)*_grid_x_dimension, 0.0, (grid_position[1] + chunk_z - 1)*_grid_z_dimension)
-	
-	
+				
