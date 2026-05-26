@@ -7,15 +7,15 @@ extends Node3D
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
-"""PUBLIC VARIABLES SINCE THE PARK GRID ACTS LIKE A CONTAINER OF INFO LIKE A NODE"""
-var top: Vector3 = Vector3(0, 0, -555.845)
-var left: Vector3 = Vector3(-415.146, 0, 0)
-var right: Vector3 = Vector3(424.854, 0, 0)
-var bottom: Vector3 = Vector3(0, 0, 534.155)
-var top_left: Vector3 = top + left
-var top_right: Vector3 = top + right
-var bottom_left: Vector3 = bottom + left
-var bottom_right: Vector3 = bottom + right
+"""PUBLIC CONSTANTS SINCE THE PARK GRID ACTS LIKE A CONTAINER OF INFO LIKE A NODE"""
+const top: Vector3 = Vector3(0, 0, -555.845)
+const left: Vector3 = Vector3(-415.146, 0, 0)
+const right: Vector3 = Vector3(424.854, 0, 0)
+const bottom: Vector3 = Vector3(0, 0, 534.155)
+const top_left: Vector3 = top + left
+const top_right: Vector3 = top + right
+const bottom_left: Vector3 = bottom + left
+const bottom_right: Vector3 = bottom + right
 
 
 # Called when the node enters the scene tree for the first time.
@@ -58,3 +58,8 @@ func _make_trees_point_up() -> void:
 		deciduous_tree_multimesh.set_instance_transform(i, new_transform)
 	ResourceSaver.save(conifer_tree_multimesh, "res://conifer_multimesh.tres")
 	ResourceSaver.save(deciduous_tree_multimesh, "res://deciduous_multimesh.tres")
+
+
+func _on_oob_barrier_body_entered(body: Node3D) -> void:
+	if body.name == "Rock":
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "fell through the ground")
