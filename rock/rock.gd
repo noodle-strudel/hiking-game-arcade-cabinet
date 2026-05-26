@@ -18,8 +18,12 @@ working right now.
 @export var progress: float = 0.0
 
 # camera-related parameters
-@export_range(0, 1) var mouse_sensitivity = 0.01
-@export var tilt_limit = PI / 3
+
+# rotate 1 degree per frame, one turn every 6 seconds
+@export var rotation_speed = TAU / 360
+
+# camera tilted 30 degrees down on idle
+@export var tilt_down = TAU / 12
 
 # vector arrays for current, starting, and spherical ending rock shapes,
 # respectively
@@ -96,19 +100,13 @@ func _physics_process(delta: float) -> void:
 		# apply impulse force (kick rock)
 		self.apply_impulse(kick_vector)
 	
-	# update rock camera position if rock has moved
-	if self.position != last_rock_pos:
+	# orbit camera if rock has moved less than 1 micron
+	if self.position.distance_to(last_rock_pos) < 0.000001:
+		$RockCameraPivot.rotation.y += rotation_speed
+		$RockCameraPivot.rotation.x = -tilt_down
+	# update set rock camera pivot and update last rock position
+	else:
 		$RockCameraPivot.position = self.position
-		%RockCamera.look_at(self.position)
-	
-	# update previous rock position
-	last_rock_pos = self.position
-
-# test function to move the camera around with mouse
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		$RockCameraPivot.rotation.x -= event.screen_relative.y * mouse_sensitivity
-		$RockCameraPivot.rotation.y += event.screen_relative.x * mouse_sensitivity
-		# keep camera vertical rotation from being too extreme
-		$RockCameraPivot.rotation.x = clampf($RockCameraPivot.rotation.x,\
-				-tilt_limit, tilt_limit)
+		last_rock_pos = self.position
+	# always make rock camera look at rock
+	%RockCamera.look_at(self.position)
