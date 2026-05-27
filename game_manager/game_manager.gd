@@ -26,7 +26,7 @@ signal gamestate_update(state) #the state has changed. Used for idle as well
 
 #global variables. These are visible to scripts in other places.
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
-var distance_kicked := 0
+var distance_kicked := 0.0
 var state := gamestates.IDLE
 var kicks_remaining := 1000000
 var last_kick_strength := 0.0
@@ -91,6 +91,11 @@ func report_kick(kick_strength: float) -> void:
 # Get score for scoring gamestate.
 func report_score():
 	last_score = int((last_kick_strength + distance_kicked) * 20)
+	print(
+		"Kick Stength: ", last_kick_strength,
+		" | Distance Kicked: ", distance_kicked,
+		" | Score: ", last_score
+	)
 	
 #TEST
 func _test_state_handler() -> void:
