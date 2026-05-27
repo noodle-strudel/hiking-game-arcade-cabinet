@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bjp2iry1qb504"
-path="res://.godot/imported/rock_start2.glb-6666583092503722698ea091a4f22b23.scn"
+uid="uid://c1auq6je6gdgp"
+path="res://.godot/imported/rock_kicking_heaven_stairs_ground.glb-04624b3f0e889dfd0fc19426c24355f7.scn"
 
 [deps]
 
-source_file="res://rock/glb/rock_start2.glb"
-dest_files=["res://.godot/imported/rock_start2.glb-6666583092503722698ea091a4f22b23.scn"]
+source_file="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.glb"
+dest_files=["res://.godot/imported/rock_kicking_heaven_stairs_ground.glb-04624b3f0e889dfd0fc19426c24355f7.scn"]
 
 [params]
 

@@ -5,6 +5,7 @@ extends Control
 var _start_time := 0.0
 var lorem_ipsum_scroll := false
 var lorem_ipsum_reset_pos = null
+var spinstep = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,21 +33,38 @@ func _process(delta: float) -> void:
 	#scroll the game over text
 	if lorem_ipsum_scroll:
 		$ScoreMenu/LoremIpsum.position.y -= delta * 100
+	if Input.is_action_just_pressed("i_accept"):
+		$ContractMenu/Contract.visible = false
+		$ContractMenu/TheLetterSpinner.visible = true
+	if $ContractMenu/TheLetterSpinner.visible:
+		if(spinstep < 2):
+			$ContractMenu/TheLetterSpinner/Letter1.text = char((randi() % 26) + 65)
+		if(spinstep < 3):
+			$ContractMenu/TheLetterSpinner/Letter2.text = char((randi() % 26) + 65)
+		if(spinstep < 4):
+			$ContractMenu/TheLetterSpinner/Letter3.text = char((randi() % 26) + 65)
+		if Input.is_action_just_pressed("i_accept"):
+			spinstep += 1
+			if(spinstep == 5):
+				spinstep = 0
+				$ContractMenu/TheLetterSpinner.visible = false
+				true # TODO make this move to the kick phase
 
 
 #called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
-	
-func _on_change_state(state: GameManager.gamestates) -> void:
+
+# enable and disable UI elements. cause is mostly used for OOB causes
+func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleMenu.visible = true
 			lorem_ipsum_reset()
 		GameManager.gamestates.CONTRACT:
-			pass
+			$ContractMenu.visible = true
 		GameManager.gamestates.KICKING:
 			$KickingMenu.visible = true
 		GameManager.gamestates.ROCK_KICKED:
@@ -84,3 +102,9 @@ func _clear_ui() -> void:
 	%ScoreElem.visible = false
 	%KicksRemainingElem.visible = false
 	%KicksRemainingFancy.visible = false
+
+func contract_sequence():
+	$ContractMenu/Contract.visible = true
+	$ContractMenu/TheLetterSpinner/Letter1.visible = true
+	$ContractMenu/TheLetterSpinner/Letter2.visible = true
+	$ContractMenu/TheLetterSpinner/Letter3.visible = true

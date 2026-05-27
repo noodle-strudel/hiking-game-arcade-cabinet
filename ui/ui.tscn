@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
 [ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
+[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://ch74p1cl6yjkx" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
+[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://4r5bctl60ogl" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://cmpbvkw0lv2di" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
@@ -39,11 +41,12 @@ texture = ExtResource("3_wl5ax")
 
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
-offset_left = 1752.0
-offset_top = 808.0
-offset_right = 1900.0
-offset_bottom = 883.0
+offset_left = 1741.0
+offset_top = 788.0
+offset_right = 1919.0
+offset_bottom = 893.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "PSU
 CS Capstone
 Spring/Summer '26"
@@ -51,11 +54,12 @@ horizontal_alignment = 2
 
 [node name="CabinetArtCredits" type="Label" parent="IdleMenu" unique_id=1621690979]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 1000.0
-offset_right = 134.0
-offset_bottom = 1075.0
+offset_left = 4.0
+offset_top = 974.0
+offset_right = 158.0
+offset_bottom = 1079.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "Cabinet artwork
 Made by
 Mike Bennett "
@@ -65,6 +69,7 @@ layout_mode = 0
 offset_right = 384.0
 offset_bottom = 72.0
 theme = ExtResource("4_vkava")
+theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 12
 text = "\"New Hero in Town\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
@@ -79,8 +84,9 @@ offset_top = 848.0
 offset_right = 1712.0
 offset_bottom = 985.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 80
-text = "KICKS REMAINING: 1000000"
+text = "KICKS REMAINING:1000000"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
@@ -100,6 +106,7 @@ offset_left = 256.0
 offset_top = 320.0
 offset_right = 1664.0
 offset_bottom = 524.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "PRESS ANY BUTTON"
 horizontal_alignment = 1
@@ -122,16 +129,78 @@ offset_top = -28.0
 offset_right = 128.0
 offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
 text = "Kick a rock!"
 horizontal_alignment = 1
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
+
+[node name="Contract" type="Label" parent="ContractMenu" unique_id=1916097480]
+visible = false
+layout_mode = 0
+offset_left = 804.0
+offset_top = 19.0
+offset_right = 1176.0
+offset_bottom = 1056.0
+theme_override_fonts/font = ExtResource("6_ay4pc")
+theme_override_font_sizes/font_size = 33
+text = "     The Official Rulings
+You agree hereby that the
+kick which you are about
+to commence is to be the
+first and only kick you will
+commit upon the rock
+during this period of
+twenty four hours
+commonly refered to as
+one day. Any kicks further
+which you commit to the
+rock must be, if at all,
+commenced on a day
+which occurs after the one
+which is peresent?
+           I AGREE"
+
+[node name="TheLetterSpinner" type="Control" parent="ContractMenu" unique_id=400664939]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Letter1" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=1702668583]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 496.0
+offset_right = 865.0
+offset_bottom = 542.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
+
+[node name="Letter2" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=1685922779]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 496.0
+offset_right = 887.0
+offset_bottom = 542.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
+
+[node name="Letter3" type="Label" parent="ContractMenu/TheLetterSpinner" unique_id=872545628]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 495.0
+offset_right = 924.0
+offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 33
+text = "A"
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
 visible = false
@@ -163,7 +232,6 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -171,7 +239,6 @@ metadata/_edit_lock_ = true
 
 [node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -182,6 +249,7 @@ offset_left = 528.0
 offset_top = 144.0
 offset_right = 1392.0
 offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
 text = "SCORE"
 horizontal_alignment = 1
@@ -192,6 +260,7 @@ offset_left = 256.0
 offset_top = 320.0
 offset_right = 1664.0
 offset_bottom = 524.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "27"
 horizontal_alignment = 1
@@ -207,7 +276,6 @@ color = Color(0, 0, 0, 0.1882353)
 
 [node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -218,18 +286,19 @@ offset_left = 256.0
 offset_top = 512.0
 offset_right = 1664.0
 offset_bottom = 677.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
 text = "KICKS REMAINING:"
 horizontal_alignment = 1
 
 [node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = 256.0
 offset_top = 688.0
 offset_right = 1664.0
 offset_bottom = 892.0941
+theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "999999"
 horizontal_alignment = 1
@@ -244,13 +313,13 @@ offset_bottom = 848.0
 color = Color(0, 0, 0, 0.1882353)
 
 [node name="LoremIpsum" type="Label" parent="ScoreMenu" unique_id=1662281954]
-visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 1080.0
 offset_right = 1472.0
 offset_bottom = 4905.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 40
 text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper aliquam nibh id euismod. Phasellus venenatis, orci ut semper facilisis, erat risus facilisis nisi, a viverra arcu purus nec urna. Cras consectetur magna diam, a luctus nibh porta nec. Sed eu sagittis sem. Aliquam interdum ex sit amet velit euismod vulputate. Sed suscipit lectus quis sem posuere, vitae auctor lectus cursus. Aenean scelerisque risus nulla, sed commodo ligula mattis a. Donec leo felis, mollis ut convallis ullamcorper, ornare sed enim.
 
@@ -267,4 +336,5 @@ metadata/_edit_lock_ = true
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
 
+[connection signal="visibility_changed" from="ContractMenu" to="." method="contract_sequence"]
 [connection signal="visibility_changed" from="KickingMenu/PowerBar" to="KickingMenu/PowerBar" method="_indicator_activity_change"]

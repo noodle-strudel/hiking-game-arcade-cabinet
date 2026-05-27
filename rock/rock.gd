@@ -18,8 +18,12 @@ working right now.
 @export var progress: float = 0.0
 
 # camera-related parameters
-@export_range(0, 1) var mouse_sensitivity = 0.01
-@export var tilt_limit = PI / 3
+
+# rotate 1 degree per frame, one turn every 6 seconds
+@export var rotation_speed = TAU / 360
+
+# camera tilted 30 degrees down on idle
+@export var tilt_down = TAU / 12
 
 # vector arrays for current, starting, and spherical ending rock shapes,
 # respectively
@@ -60,6 +64,21 @@ func _set_color_mesh(src: PackedVector3Array) -> ArrayMesh:
 	surf_tool.generate_normals()
 	return surf_tool.commit()
 
+func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void:
+	match new_state:
+		GameManager.gamestates.ROCK_KICKED:
+			progress += 0.01
+			if progress > 1:
+				progress = 1
+			print(progress)
+			
+			# change the rock shape
+			current_rock_vertices =\
+					_interpolate(starting_rock_vertices, ending_rock_vertices,\
+					vertex_dists, progress)
+			$CurrentRockCollision.shape.set_points(current_rock_vertices)
+			$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	starting_rock_vertices = $StartingRockCollision.shape.get_faces()
@@ -68,6 +87,7 @@ func _ready() -> void:
 		vertex_dists.push_back(starting_rock_vertices[i].distance_to(\
 				ending_rock_vertices[i]))
 	
+	GameManager.gamestate_update.connect(_on_change_state)
 	# TODO: Eventually the starting rock vertices will depend on the number
 	# of kicks left which perhaps the progress variable can be changed
 	# based on that
@@ -79,36 +99,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# when rock is kicked
-	if Input.is_action_just_pressed("test_kick"):
-		progress += 0.01
-		if progress > 1:
-			progress = 1
-		print(progress)
-		
-		# change the rock shape
-		current_rock_vertices =\
-				_interpolate(starting_rock_vertices, ending_rock_vertices,\
-				vertex_dists, progress)
-		$CurrentRockCollision.shape.set_points(current_rock_vertices)
-		$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
-		
-		# apply impulse force (kick rock)
-		self.apply_impulse(kick_vector)
-	
-	# update rock camera position if rock has moved
-	if self.position != last_rock_pos:
+	# orbit camera if rock has moved less than 1 micron
+	if self.position.distance_to(last_rock_pos) < 0.000001:
+		$RockCameraPivot.rotation.y += rotation_speed
+		$RockCameraPivot.rotation.x = -tilt_down
+	# update set rock camera pivot and update last rock position
+	else:
 		$RockCameraPivot.position = self.position
-		%RockCamera.look_at(self.position)
-	
-	# update previous rock position
-	last_rock_pos = self.position
-
-# test function to move the camera around with mouse
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		$RockCameraPivot.rotation.x -= event.screen_relative.y * mouse_sensitivity
-		$RockCameraPivot.rotation.y += event.screen_relative.x * mouse_sensitivity
-		# keep camera vertical rotation from being too extreme
-		$RockCameraPivot.rotation.x = clampf($RockCameraPivot.rotation.x,\
-				-tilt_limit, tilt_limit)
+		last_rock_pos = self.position
+	# always make rock camera look at rock
+	%RockCamera.look_at(self.position)

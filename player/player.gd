@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	#fall.
 	move_and_slide()
 
-func _on_change_state(state: GameManager.gamestates) -> void:
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	$RockTeeSpringArm/TeePos.remote_path = ""
 	match state:
 		GameManager.gamestates.KICKING:
