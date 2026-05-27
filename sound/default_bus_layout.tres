@@ -1,8 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://rpfpmovmm3w4"]
 
 [resource]
-bus/0/send = &"BGM"
-bus/1/name = &"BGM"
+bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false

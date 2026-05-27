@@ -87,7 +87,7 @@ func _scoring_sequence() -> void:
 	await get_tree().create_timer(1).timeout
 	$ScoreMenu/LoremIpsum.visible = true
 	lorem_ipsum_scroll = true
-	$ScoreMenu/EpicMusicPlayer.play()
+	AudioManager.play_track(AudioManager.game_over_music)
 
 func lorem_ipsum_reset() -> void:
 	lorem_ipsum_scroll = false
