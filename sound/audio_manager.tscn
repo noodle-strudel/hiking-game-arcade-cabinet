@@ -11,6 +11,9 @@ game_over_music = ExtResource("3_38hvt")
 
 [node name="MusicTimeOut" type="Timer" parent="." unique_id=433671395]
 unique_name_in_owner = true
-wait_time = 15.0
+wait_time = 30.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1004960369]
+bus = &"Music"
 
 [connection signal="timeout" from="MusicTimeOut" to="." method="_on_music_time_out_timeout"]
