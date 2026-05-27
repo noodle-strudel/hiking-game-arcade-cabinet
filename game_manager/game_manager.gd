@@ -26,6 +26,7 @@ signal gamestate_update(state) #the state has changed. Used for idle as well
 
 #global variables. These are visible to scripts in other places.
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
+var distance_kicked := 0
 var state := gamestates.IDLE
 var kicks_remaining := 1000000
 var last_kick_strength := 0.0
@@ -79,11 +80,18 @@ func _switch_state(target_state: GameManager.gamestates):
 	state = target_state
 	gamestate_update.emit(state)
 
-#
+func report_distance(kick_distance: float) -> void:
+	distance_kicked = kick_distance
+	report_score()
+	
+# Get kick strength.
 func report_kick(kick_strength: float) -> void:
 	last_kick_strength = kick_strength
-	last_score = int(last_kick_strength * 20)
-
+	
+# Get score for scoring gamestate.
+func report_score():
+	last_score = int((last_kick_strength + distance_kicked) * 20)
+	
 #TEST
 func _test_state_handler() -> void:
 	if Input.is_action_just_pressed("test_set_state_idle"):

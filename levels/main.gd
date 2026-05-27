@@ -54,6 +54,7 @@ func _change_camera(state: GameManager.gamestates) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 		GameManager.gamestates.SCORING:
+			GameManager.report_distance($Player.global_position.distance_to($Rock.global_position))
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
