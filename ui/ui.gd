@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 			if(spinstep == 5):
 				spinstep = 0
 				$ContractMenu/TheLetterSpinner.visible = false
-				true # TODO make this move to the kick phase
+				GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 #called when signal recieved
@@ -71,6 +71,12 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$KickingMenu.visible = false
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
+		GameManager.gamestates.ROCK_OOB:
+			$OOBText.text = cause
+			$OOBText.visible = true
+			await get_tree().create_timer(2).timeout
+			$OOBText.visible = false
+			GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 func _scoring_sequence() -> void:

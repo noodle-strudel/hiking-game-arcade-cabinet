@@ -74,6 +74,11 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			# reset the max rotation of the player based on the current y pos
 			max_left = (rad_to_deg(current_y_rotation) + 45.0)
 			max_right = (rad_to_deg(current_y_rotation) - 45.0)
+		GameManager.gamestates.ROCK_OOB:
+			if rock:
+				await get_tree().create_timer(0.1).timeout
+				rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
+				rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
 
 
 #moves the player to the rock when the state changes. 
