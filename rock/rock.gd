@@ -81,14 +81,14 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 	camera_orbiting = false
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
-      $KickTimer.start()
-      progress = _get_progress()
+			$KickTimer.start()
+			progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
 			print("Progress: ", progress)
 			
 			# change the rock shape
 			_update_rock()
-    GameManager.gamestates.IDLE:
+		GameManager.gamestates.IDLE:
 			camera_orbiting = true
 
 # Called when the node enters the scene tree for the first time.
