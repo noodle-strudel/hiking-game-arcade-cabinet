@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
 [ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Texture2D" uid="uid://bdd0p6qo4x3q4" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bu4bheipqa0yt" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://bmx4hr0mhwfom" path="res://player/legs/rock_kicking_legs.tscn" id="3_g1dw6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -36,3 +37,6 @@ spring_length = 3.0
 margin = 0.25
 
 [node name="TeePos" type="RemoteTransform3D" parent="RockTeeSpringArm" unique_id=1595413319]
+
+[node name="Legs" parent="." unique_id=1856558340 instance=ExtResource("3_g1dw6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.16517448, -0.5)
