@@ -336,6 +336,7 @@ metadata/_edit_lock_ = true
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
+bus = &"Music"
 
 [node name="OOBText" type="Label" parent="." unique_id=596672533]
 visible = false
