@@ -20,28 +20,30 @@ working right now.
 # camera-related parameters
 
 # rotate 1 degree per frame, one turn every 6 seconds
-@export var rotation_speed = TAU / 360
+@export var rotation_speed := (TAU / 360) * 0.3
 
 # camera tilted 30 degrees down on idle
-@export var tilt_down = TAU / 12
+@export var tilt_down := TAU / 12
+
+var camera_orbiting := true
 
 # vector arrays for current, starting, and spherical ending rock shapes,
 # respectively
-var current_rock_vertices = PackedVector3Array()
-var starting_rock_vertices = PackedVector3Array()
-var ending_rock_vertices = PackedVector3Array()
+var current_rock_vertices := PackedVector3Array()
+var starting_rock_vertices := PackedVector3Array()
+var ending_rock_vertices := PackedVector3Array()
 
 # array to store distance between corresponding vertices of current and ending
 # rock shapes; used in interpolation algorithm
 var vertex_dists: Array[float]
 
 # vector to use for the kick impulse
-var kick_vector = Vector3(0.25, 0.1, 0.25)
+var kick_vector := Vector3(0.25, 0.1, 0.25)
 
 # position of the rock on previous frame
 # (check if this is different from current rock pos so that the camera pos
 # isn't necessarily set on every frame)
-var last_rock_pos = Vector3()
+var last_rock_pos := Vector3()
 
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
@@ -76,14 +78,18 @@ func _update_rock() -> void:
 	$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
 
 func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void:
+	camera_orbiting = false
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
-			progress = _get_progress()
+      $KickTimer.start()
+      progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
 			print("Progress: ", progress)
 			
 			# change the rock shape
 			_update_rock()
+    GameManager.gamestates.IDLE:
+			camera_orbiting = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -101,14 +107,18 @@ func _ready() -> void:
 	_update_rock()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	# orbit camera if rock has moved less than 1 micron
-	if self.position.distance_to(last_rock_pos) < 0.000001:
+func _physics_process(_delta: float) -> void:
+	# report to the game manager when the rock has come to a rest after being kicked
+	if GameManager.state == GameManager.gamestates.ROCK_KICKED and $KickTimer.get_time_left() == 0.0 and self.position.distance_to(last_rock_pos) < 0.000001:
+		GameManager.switch_state_to(GameManager.gamestates.SCORING, "rock came to a rest after being kicked")
+	#calculate movement since last frame
+	last_rock_pos = self.position
+	#orbit camera
+	if camera_orbiting:
 		$RockCameraPivot.rotation.y += rotation_speed
 		$RockCameraPivot.rotation.x = -tilt_down
 	# update set rock camera pivot and update last rock position
-	else:
-		$RockCameraPivot.position = self.position
-		last_rock_pos = self.position
+	$RockCameraPivot.position = self.position
+
 	# always make rock camera look at rock
 	%RockCamera.look_at(self.position)
