@@ -63,21 +63,27 @@ func _set_color_mesh(src: PackedVector3Array) -> ArrayMesh:
 		surf_tool.add_vertex(i)
 	surf_tool.generate_normals()
 	return surf_tool.commit()
+	
+func _get_progress() -> float:
+	return 1.0 - (float(GameManager.kicks_remaining) / 1000000) # progress is based off kicks remaining
+	
+func _update_rock() -> void:
+	current_rock_vertices =\
+			_interpolate(starting_rock_vertices, ending_rock_vertices,\
+			vertex_dists, progress)
+			
+	$CurrentRockCollision.shape.set_points(current_rock_vertices)
+	$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
 
 func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void:
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
-			progress += 0.01
-			if progress > 1:
-				progress = 1
-			print(progress)
+			progress = _get_progress()
+			progress = clamp(progress, 0.0, 1.0)
+			print("Progress: ", progress)
 			
 			# change the rock shape
-			current_rock_vertices =\
-					_interpolate(starting_rock_vertices, ending_rock_vertices,\
-					vertex_dists, progress)
-			$CurrentRockCollision.shape.set_points(current_rock_vertices)
-			$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
+			_update_rock()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,14 +94,11 @@ func _ready() -> void:
 				ending_rock_vertices[i]))
 	
 	GameManager.gamestate_update.connect(_on_change_state)
-	# TODO: Eventually the starting rock vertices will depend on the number
-	# of kicks left which perhaps the progress variable can be changed
-	# based on that
 	
-	# For now, the rock starts with the starting rock vertices
-	# To be deleted later
-	$CurrentRockCollision.shape.set_points(starting_rock_vertices)
-	$CurrentRockMesh.mesh = _set_color_mesh(starting_rock_vertices)
+	progress = _get_progress()
+	progress = clamp(progress, 0.0, 1.0)
+	
+	_update_rock()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
