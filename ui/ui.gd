@@ -73,6 +73,12 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			$RockKickedMenu.visible = true
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
+		GameManager.gamestates.ROCK_OOB:
+			$OOBText.text = cause
+			$OOBText.visible = true
+			await get_tree().create_timer(2).timeout
+			$OOBText.visible = false
+			GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 func _scoring_sequence() -> void:
