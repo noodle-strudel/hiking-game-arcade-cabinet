@@ -65,8 +65,6 @@ func _decrement_kicks_remaining() -> void:
 func _on_idle_timer_timeout() -> void:
 	if state != gamestates.IDLE:
 		_switch_state(gamestates.IDLE)
-	#TODO: reset other state information
-	#TODO: start idle rock-orbiting camera
 
 # Public function to allow the state to be switched from any script.
 # Perhaps adds spaghetti code but this is in the context of the OOB

@@ -111,3 +111,7 @@ func _clear_ui() -> void:
 	$ContractMenu/Contract.visible = true
 	%LetterSpinner.visible = false
 	
+
+
+func _on_epic_music_player_finished() -> void:
+	GameManager.switch_state_to(GameManager.gamestates.IDLE, "scoring sequence finished")
