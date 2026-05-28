@@ -38,11 +38,14 @@ func _ready() -> void:
 	#TODO: load in kicks remaining info from database singleton/node
 	pass
 	#
+	#_switch_state(gamestates.IDLE)
 	
 
 #restarts the idle timer when input is detected.
 func _input(_event: InputEvent) -> void:
 	%IdleTimer.start()
+	if state == gamestates.IDLE and Input.is_action_just_pressed("kick"):
+		_switch_state(gamestates.CONTRACT)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -50,18 +53,8 @@ func _process(_delta: float) -> void:
 		$TestSoundPlayer.play()
 		_decrement_kicks_remaining()
 	
-	#come back from idle
-	if state == gamestates.IDLE and Input.is_action_just_pressed("start"):
-		begin_contract_signing()
-	
-	
 	#TEST CODE FOR STATE SWITCHING.
 	_test_state_handler() #Allows keys 1-5 to force update the gamestate. 
-
-#TODO implement
-func begin_contract_signing() -> void:
-	_switch_state(gamestates.CONTRACT)
-	#signal is sent, main recieves
 
 
 func _decrement_kicks_remaining() -> void:
@@ -70,7 +63,8 @@ func _decrement_kicks_remaining() -> void:
 
 #handles the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
-	_switch_state(gamestates.IDLE)
+	if state != gamestates.IDLE:
+		_switch_state(gamestates.IDLE)
 	#TODO: reset other state information
 	#TODO: start idle rock-orbiting camera
 
@@ -79,19 +73,10 @@ func _on_idle_timer_timeout() -> void:
 # barrier being able to make the rock reset when it falls out of the 
 # world/in water.
 func switch_state_to(target_state: GameManager.gamestates, cause: String = ""):
-	if cause:
-		_switch_state_with_cause(target_state, cause)
-	else:
 		_switch_state(target_state)
 
 #switches the current state and emits an update signal. 
-func _switch_state(target_state: GameManager.gamestates):
-	if state == gamestates.ROCK_KICKED:
-		_decrement_kicks_remaining()
-	state = target_state
-	gamestate_update.emit(state, "")
-
-func _switch_state_with_cause(target_state: GameManager.gamestates, cause: String):
+func _switch_state(target_state: GameManager.gamestates, cause: String = ""):
 	if state == gamestates.ROCK_KICKED:
 		_decrement_kicks_remaining()
 	state = target_state
