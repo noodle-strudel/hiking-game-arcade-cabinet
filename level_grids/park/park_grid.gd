@@ -30,15 +30,17 @@ func _process(delta: float) -> void:
 # add the transform to the staticbody3d much easier than a collisionshape3d.
 # TODO: experiment with making a shape for the deciduous tree
 func add_collision_to_trees() -> void:
-	for i in range(conifer_tree_multimesh.instance_count):
-		var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
-		conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
-		$TreeStaticBodies.add_child(conifer_collision)
-		
-	for i in range(deciduous_tree_multimesh.instance_count):
-		var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
-		deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
-		$TreeStaticBodies.add_child(deciduous_collision)
+	print($TreeStaticBodies.get_children())
+	if (!$TreeStaticBodies.get_children()):
+		for i in range(conifer_tree_multimesh.instance_count):
+			var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
+			conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
+			$TreeStaticBodies.add_child(conifer_collision)
+			
+		for i in range(deciduous_tree_multimesh.instance_count):
+			var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
+			deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
+			$TreeStaticBodies.add_child(deciduous_collision)
 
 func remove_collision_from_trees() -> void:
 	for child in $TreeStaticBodies.get_children():

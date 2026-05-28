@@ -42,6 +42,7 @@ func _ready() -> void:
 			_level_grid[z+1][x+1] = _instantiate_chunk()
 			#position
 			_level_grid[z+1][x+1].position = Vector3(x*_grid_x_dimension, 0.0, z*_grid_z_dimension)
+	_level_grid[1][1].add_collision_to_trees()
 
 # Camera changes based on gamestate.
 func _change_camera(state: GameManager.gamestates, cause: String) -> void:
@@ -142,4 +143,4 @@ func _on_grid_position_changed(shift) -> void:
 				var new_chunk = _instantiate_chunk()
 				_level_grid[chunk_z][chunk_x] = new_chunk
 				new_chunk.position = Vector3((grid_position[0] + chunk_x - 1)*_grid_x_dimension, 0.0, (grid_position[1] + chunk_z - 1)*_grid_z_dimension)
-				
+	_level_grid[1][1].add_collision_to_trees()
