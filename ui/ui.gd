@@ -60,7 +60,7 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingFancy.text = (str(kick_count))
 
 # enable and disable UI elements. cause is mostly used for OOB causes
-func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
+func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
