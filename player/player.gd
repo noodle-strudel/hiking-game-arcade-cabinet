@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var max_down: float = -60.0
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
+@onready var legs = $Legs
 
 # Track rotation
 var current_y_rotation: float = 0.0
@@ -94,3 +95,6 @@ func _kick_rock() -> void:
 		rock.apply_impulse(impulse_vector)
 		#report kick to game manager
 		GameManager.report_kick(impulse_vector.length())
+		
+		#play kick animation
+		legs.play_kick()

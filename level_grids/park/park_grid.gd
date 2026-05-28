@@ -17,30 +17,34 @@ const top_right: Vector3 = top + right
 const bottom_left: Vector3 = bottom + left
 const bottom_right: Vector3 = bottom + right
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_add_collision_to_trees()
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-# adds a staticbody3d for each tree. I read that it can be more efficient this way
+# adds a staticbody3d for each tree in a radius around a given point. I read that it can be more efficient this way
 # than adding a ton of collision shapes to a single staticbody3d. Plus i'm able to
 # add the transform to the staticbody3d much easier than a collisionshape3d.
 # TODO: experiment with making a shape for the deciduous tree
-func _add_collision_to_trees() -> void:
-	for i in range(conifer_tree_multimesh.instance_count):
-		var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
-		conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
-		$TreeStaticBodies.add_child(conifer_collision)
-		
-	for i in range(deciduous_tree_multimesh.instance_count):
-		var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
-		deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
-		$TreeStaticBodies.add_child(deciduous_collision)
+func add_collision_to_trees() -> void:
+	print($TreeStaticBodies.get_children())
+	if (!$TreeStaticBodies.get_children()):
+		for i in range(conifer_tree_multimesh.instance_count):
+			var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
+			conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
+			$TreeStaticBodies.add_child(conifer_collision)
+			
+		for i in range(deciduous_tree_multimesh.instance_count):
+			var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
+			deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
+			$TreeStaticBodies.add_child(deciduous_collision)
+
+func remove_collision_from_trees() -> void:
+	for child in $TreeStaticBodies.get_children():
+		child.queue_free()
 
 # iterates through each multimesh and makes its basis an identity matrix, then
 # saves it to the file system. for development only

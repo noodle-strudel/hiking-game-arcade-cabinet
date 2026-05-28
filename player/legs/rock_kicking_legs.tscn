@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bmx4hr0mhwfom"]
+
+[ext_resource type="PackedScene" uid="uid://b6loasietrkqn" path="res://player/legs/rock_kicking_legs.glb" id="1_oyolu"]
+[ext_resource type="Script" uid="uid://dbs1as54d2pvl" path="res://player/legs/rock_kicking_legs.gd" id="2_t0wxg"]
+
+[node name="Legs" unique_id=1856558340 instance=ExtResource("1_oyolu")]
+script = ExtResource("2_t0wxg")
