@@ -3,8 +3,6 @@ extends CharacterBody3D
 
 # Player rotation limits in degrees.
 @export var rotation_speed: float = 2.0
-@export var max_left: float = 45.0
-@export var max_right: float = -45.0
 @export var max_up: float = 45.0
 @export var max_down: float = -60.0
 
@@ -42,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate left and right.
 	var input_y = Input.get_axis("joystick_right", "joystick_left")
 	current_y_rotation += input_y * rotation_speed * delta # Update tracking variable.
-	#current_y_rotation = clamp(current_y_rotation, deg_to_rad(max_right), deg_to_rad(max_left)) # Apply clamps.
+	#removed horizontal clamps.
 	rotation.y = current_y_rotation # Apply rotation to player.
 	
 	# Rotate up and down.
@@ -58,6 +56,13 @@ func _physics_process(delta: float) -> void:
 			rock.linear_velocity = Vector3(0.0,0.0,0.0) #to counteract accumulating gravity
 			rock.set_position($RockTeeSpringArm/TeePos.get_global_position())
 	
+	#handle kickingthe rock
+	if GameManager.state == GameManager.gamestates.KICKING and Input.is_action_just_pressed("kick"):
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
+		if bar:
+			kick_scalar = abs(bar.position.x / 15)
+		_kick_rock()
+	
 	#fall.
 	move_and_slide()
 
@@ -66,19 +71,6 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	match state:
 		GameManager.gamestates.KICKING:
 			_begin_kicking()
-		GameManager.gamestates.ROCK_KICKED:
-			if bar:
-				kick_scalar = abs(bar.position.x / 15)
-			_kick_rock()
-			
-			# reset the max rotation of the player based on the current y pos
-			max_left = (rad_to_deg(current_y_rotation) + 45.0)
-			max_right = (rad_to_deg(current_y_rotation) - 45.0)
-		GameManager.gamestates.ROCK_OOB:
-			if rock:
-				await get_tree().create_timer(0.1).timeout
-				rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
-				rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
 
 
 #moves the player to the rock when the state changes. 
