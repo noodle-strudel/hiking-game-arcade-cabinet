@@ -7,7 +7,7 @@ var lorem_ipsum_scroll := false
 var lorem_ipsum_reset_pos = null
 var spinstep = 0
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time.yyyyyyyy
 func _ready() -> void:
 	#connect signals
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
@@ -22,6 +22,7 @@ func _ready() -> void:
 	lorem_ipsum_reset_pos = $ScoreMenu/LoremIpsum.position
 	#
 	_clear_ui()
+	$IdleMenu.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,42 +34,43 @@ func _process(delta: float) -> void:
 	#scroll the game over text
 	if lorem_ipsum_scroll:
 		$ScoreMenu/LoremIpsum.position.y -= delta * 100
-	if Input.is_action_just_pressed("i_accept"):
+	#hide the contract after it is signed and go to the letter spinner
+	if GameManager.state == GameManager.gamestates.CONTRACT and Input.is_action_just_pressed("i_accept"):
 		$ContractMenu/Contract.visible = false
-		$ContractMenu/TheLetterSpinner.visible = true
-	if $ContractMenu/TheLetterSpinner.visible:
+		%LetterSpinner.visible = true
+	#Handle the letter spinner
+	if %LetterSpinner.visible:
 		if(spinstep < 2):
-			$ContractMenu/TheLetterSpinner/Letter1.text = char((randi() % 26) + 65)
+			%LetterSpinner/Letter1.text = char((randi() % 26) + 65)
 		if(spinstep < 3):
-			$ContractMenu/TheLetterSpinner/Letter2.text = char((randi() % 26) + 65)
+			%LetterSpinner/Letter2.text = char((randi() % 26) + 65)
 		if(spinstep < 4):
-			$ContractMenu/TheLetterSpinner/Letter3.text = char((randi() % 26) + 65)
-		if Input.is_action_just_pressed("i_accept"):
+			%LetterSpinner/Letter3.text = char((randi() % 26) + 65)
+		if Input.is_action_just_pressed("i_accept") or Input.is_action_just_pressed("kick"):
 			spinstep += 1
 			if(spinstep == 5):
 				spinstep = 0
-				$ContractMenu/TheLetterSpinner.visible = false
-				true # TODO make this move to the kick phase
+				GameManager.switch_state_to(GameManager.gamestates.KICKING, "contract signed")
 
 
 #called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
+	
 	%KicksRemainingFancy.text = (str(kick_count))
 
 # enable and disable UI elements. cause is mostly used for OOB causes
-func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleMenu.visible = true
-			lorem_ipsum_reset()
 		GameManager.gamestates.CONTRACT:
 			$ContractMenu.visible = true
 		GameManager.gamestates.KICKING:
 			$KickingMenu.visible = true
 		GameManager.gamestates.ROCK_KICKED:
-			$KickingMenu.visible = false
+			$RockKickedMenu.visible = true
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 
@@ -96,15 +98,20 @@ func lorem_ipsum_reset() -> void:
 	$ScoreMenu/EpicMusicPlayer.stop()
 
 func _clear_ui() -> void:
+	#hide each menu
 	var menus = get_children()
 	for menu in menus:
 		menu.visible = false
+	#reset for scoring sequence
 	%ScoreElem.visible = false
 	%KicksRemainingElem.visible = false
 	%KicksRemainingFancy.visible = false
-
-func contract_sequence():
+	lorem_ipsum_reset()
+	#reset for contract sequence 
 	$ContractMenu/Contract.visible = true
-	$ContractMenu/TheLetterSpinner/Letter1.visible = true
-	$ContractMenu/TheLetterSpinner/Letter2.visible = true
-	$ContractMenu/TheLetterSpinner/Letter3.visible = true
+	%LetterSpinner.visible = false
+	
+
+
+func _on_epic_music_player_finished() -> void:
+	GameManager.switch_state_to(GameManager.gamestates.IDLE, "scoring sequence finished")

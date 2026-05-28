@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
 [ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Texture2D" uid="uid://bdd0p6qo4x3q4" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://blhf8iu60c1cn" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -27,7 +27,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="CameraPivot" unique_id=2136261068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
-current = true
 far = 1000.0
 
 [node name="RockTeeSpringArm" type="SpringArm3D" parent="." unique_id=34960226]
