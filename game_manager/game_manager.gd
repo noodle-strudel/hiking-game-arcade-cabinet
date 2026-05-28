@@ -70,11 +70,11 @@ func _on_idle_timer_timeout() -> void:
 # Perhaps adds spaghetti code but this is in the context of the OOB
 # barrier being able to make the rock reset when it falls out of the 
 # world/in water.
-func switch_state_to(target_state: GameManager.gamestates, cause: String = ""):
+func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
 		_switch_state(target_state)
 
 #switches the current state and emits an update signal. 
-func _switch_state(target_state: GameManager.gamestates, cause: String = ""):
+func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> void:
 	if state == gamestates.ROCK_KICKED:
 		_decrement_kicks_remaining()
 	state = target_state
@@ -89,7 +89,7 @@ func report_kick(kick_strength: float) -> void:
 	last_kick_strength = kick_strength
 	
 # Get score for scoring gamestate.
-func report_score():
+func report_score() -> void:
 	last_score = int((last_kick_strength + distance_kicked) * 20)
 	print(
 		"Kick Stength: ", last_kick_strength,

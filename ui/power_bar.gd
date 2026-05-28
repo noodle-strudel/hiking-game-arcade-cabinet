@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 				direction = 0
 
 # Function to change whether the indicator should be moving or not.
-func _on_change_state(state: GameManager.gamestates, _cause: String):
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	if state == GameManager.gamestates.KICKING:
 		$KickbarInd.position.x = 0
 		active = true

@@ -107,7 +107,7 @@ func _clear_ui() -> void:
 	%KicksRemainingElem.visible = false
 	%KicksRemainingFancy.visible = false
 	lorem_ipsum_reset()
-	#reset for contract sequence
+	#reset for contract sequence 
 	$ContractMenu/Contract.visible = true
 	%LetterSpinner.visible = false
 	
