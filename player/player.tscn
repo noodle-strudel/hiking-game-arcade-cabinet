@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
 [ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Texture2D" uid="uid://bdd0p6qo4x3q4" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://blhf8iu60c1cn" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 

@@ -335,5 +335,3 @@ metadata/_edit_lock_ = true
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
-
-[connection signal="visibility_changed" from="KickingMenu/PowerBar" to="KickingMenu/PowerBar" method="_indicator_activity_change"]
