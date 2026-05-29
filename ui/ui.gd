@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 #called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
-	
+	%KicksRemainingGameplay.text = ("KICKS REMAINING: " + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
 
 # enable and disable UI elements. cause is mostly used for OOB causes
@@ -74,7 +74,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
-			$OOBText.text = cause
+			$OOBText.text = cause #cause is currently not being set before entering OOB state, unfixed because I can't find where OOB state is set
 			$OOBText.visible = true
 			await get_tree().create_timer(2).timeout
 			$OOBText.visible = false

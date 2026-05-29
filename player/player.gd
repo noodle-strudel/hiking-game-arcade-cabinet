@@ -72,6 +72,11 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	match state:
 		GameManager.gamestates.KICKING:
 			_begin_kicking()
+		GameManager.gamestates.ROCK_OOB:
+			await get_tree().create_timer(0.1).timeout
+			if(rock):
+				rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
+				rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
 
 
 #moves the player to the rock when the state changes. 
