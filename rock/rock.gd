@@ -108,9 +108,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	# report to the game manager when the rock has come to a rest after being kicked
-	if GameManager.state == GameManager.gamestates.ROCK_KICKED\
-			and $KickTimer.get_time_left() == 0.0\
-			and self.position.distance_to(last_rock_pos) < 0.000001:
+	if GameManager.state == GameManager.gamestates.ROCK_KICKED and\
+			$KickTimer.get_time_left() == 0.0 and\
+			self.position.distance_to(last_rock_pos) < 0.000001:
 		GameManager.switch_state_to(GameManager.gamestates.SCORING,\
 				"rock came to a rest after being kicked")
 	# calculate movement since last frame

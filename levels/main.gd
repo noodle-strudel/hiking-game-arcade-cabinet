@@ -15,9 +15,9 @@ const _grid_z_dimension := 2 * 545.1 # estimated actual seam (small gap)
 
 # stores references to the instantiated level grid parts
 var _level_grid = [
-	[null, null, null] # +x->
-	,[null, null, null]
-	,[null, null, null]
+	[null, null, null], # +x->
+	[null, null, null],
+	[null, null, null]
 ]	# +z
 	# v
 # signal emitted from _process when the rock moves to a new "chunk".
@@ -39,10 +39,10 @@ func _ready() -> void:
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
 			# instantiate
-			_level_grid[z+1][x+1] = _instantiate_chunk()
+			_level_grid[z + 1][x + 1] = _instantiate_chunk()
 			# position
-			_level_grid[z+1][x+1].position = Vector3(x*_grid_x_dimension, 0.0,\
-					z*_grid_z_dimension)
+			_level_grid[z + 1][x + 1].position =\
+					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
 	_level_grid[1][1].add_collision_to_trees()
 
 # Camera changes based on gamestate.
@@ -57,8 +57,8 @@ func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			GameManager.report_distance($Player.global_position.distance_to(\
-					$Rock.global_position))
+			GameManager.report_distance(\
+					$Player.global_position.distance_to($Rock.global_position))
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
@@ -80,16 +80,16 @@ func _process(delta: float) -> void:
 	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
 	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
 	# if the coordinate has changed
-	if _last_grid_position[0] != grid_position[0] or _last_grid_position[1] !=\
-			grid_position[1]:
+	if _last_grid_position[0] != grid_position[0] or\
+			_last_grid_position[1] != grid_position[1]:
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
 
 # chooses a level segment to add
 func _select_level_segment() -> PackedScene:
-	print("DEBUG: the return type in _select_level_segment is ", type_string(typeof(\
-			_level_segments.pick_random())))
+	print("DEBUG: the return type in _select_level_segment is ",\
+			type_string(typeof(_level_segments.pick_random())))
 	return _level_segments.pick_random()
 	
 func _instantiate_chunk() -> Node3D:
@@ -117,8 +117,8 @@ func _on_grid_position_changed(shift) -> void:
 		var unload_ind_z = -chunk_z + 1
 		for chunk_x in range(3): # 0, 1, 2
 			var unload_ind_x = -chunk_x + 1
-			if (shift[0] != 0 and shift[0] == unload_ind_x) or (shift[1] != 0 and\
-					shift[1] == unload_ind_z):
+			if (shift[0] != 0 and shift[0] == unload_ind_x) or\
+					(shift[1] != 0 and shift[1] == unload_ind_z):
 				unloaded_chunks.append(_level_grid[chunk_z][chunk_x])
 	
 	# unload old chunks
@@ -126,7 +126,7 @@ func _on_grid_position_changed(shift) -> void:
 		chunk.queue_free()
 	
 	# determine step ranges (directionality matters)
-	var z_range := range(0, 3, 1) #default case
+	var z_range := range(0, 3, 1) # default case
 	if shift[1]:
 		z_range = range((1 - shift[1]),(1 + (2 * shift[1])),(shift[1]))
 	var x_range := range(0, 3, 1)
@@ -150,7 +150,8 @@ func _on_grid_position_changed(shift) -> void:
 				# otherwise, instantiate a new chunk
 				var new_chunk = _instantiate_chunk()
 				_level_grid[chunk_z][chunk_x] = new_chunk
-				new_chunk.position = Vector3((grid_position[0] + chunk_x - 1)\
-						* _grid_x_dimension, 0.0, (grid_position[1] + chunk_z - 1)\
-						* _grid_z_dimension)
+				new_chunk.position = Vector3(\
+						(grid_position[0] + chunk_x - 1) * _grid_x_dimension,\
+						0.0,\
+						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
 	_level_grid[1][1].add_collision_to_trees()
