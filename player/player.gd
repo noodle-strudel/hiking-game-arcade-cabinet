@@ -17,14 +17,14 @@ var current_x_rotation: float = 0.0
 const buddy_rock_path = "../Rock"
 var rock = null
 var bar = null
-var kick_scalar = 5.0 #relative force of kick.
+var kick_scalar = 5.0 # relative force of kick
 var kick_deviance = 0.5
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
 	if get_node(buddy_rock_path):
 		rock = get_node(buddy_rock_path)
-		$RockTeeSpringArm.add_excluded_object(rock) #
+		$RockTeeSpringArm.add_excluded_object(rock)
 	else:
 		print("ERROR: no Rock node sibling to Player.")
 		
@@ -47,24 +47,27 @@ func _physics_process(delta: float) -> void:
 	# Rotate up and down.
 	var input_x = Input.get_axis("joystick_down", "joystick_up")
 	current_x_rotation += input_x * rotation_speed * delta # Update tracking variable.
-	current_x_rotation = clamp(current_x_rotation, deg_to_rad(max_down), deg_to_rad(max_up)) # Apply clamps.
+	current_x_rotation = clamp(current_x_rotation, deg_to_rad(max_down),\
+			deg_to_rad(max_up)) # Apply clamps.
 	camera.rotation.x = current_x_rotation # Apply rotation to camera.
 	
-	#handle keeping the rock in front of the player when ready to kick.
-	#if the rock's height needs to be adjusted, change the Margin value in $RockTeeSpringArm's inspector.
+	# handle keeping the rock in front of the player when ready to kick.
+	# if the rock's height needs to be adjusted, change the Margin value
+	# 	in $RockTeeSpringArm's inspector.
 	if GameManager.state == GameManager.gamestates.KICKING:
 		if rock:
-			rock.linear_velocity = Vector3(0.0,0.0,0.0) #to counteract accumulating gravity
+			rock.linear_velocity = Vector3(0.0,0.0,0.0) # counteract accumulating gravity
 			rock.set_position($RockTeeSpringArm/TeePos.get_global_position())
 	
-	#handle kickingthe rock
-	if GameManager.state == GameManager.gamestates.KICKING and Input.is_action_just_pressed("kick"):
+	# handle kicking the rock
+	if GameManager.state == GameManager.gamestates.KICKING and\
+			Input.is_action_just_pressed("kick"):
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
 		if bar:
 			kick_scalar = abs(bar.position.x / 15)
 		_kick_rock()
 	
-	#fall.
+	# fall.
 	move_and_slide()
 
 func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
@@ -74,7 +77,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			_begin_kicking()
 
 
-#moves the player to the rock when the state changes. 
+# moves the player to the rock when the state changes. 
 func _begin_kicking() -> void:
 	if rock:
 		self.position = rock.position + Vector3(0.0, 0.0, 1.0)
@@ -85,16 +88,17 @@ func _vec_noise(input: Vector3, amt: float) -> Vector3:
 			input.y + randfn(0, amt),\
 			input.z + randfn(0, amt))
 
-#handles kicking the rock when the state changes. 
+# handles kicking the rock when the state changes. 
 func _kick_rock() -> void:
 	if rock:
 		var direction_to_rock := Vector3(rock.position - self.position)
 		direction_to_rock = direction_to_rock.normalized() #fixes issues
-		var impulse_vector = direction_to_rock * kick_scalar + Vector3(0.0, kick_scalar, 0.0)
+		var impulse_vector = direction_to_rock * kick_scalar + Vector3(0.0, kick_scalar,\
+			0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
-		#report kick to game manager
+		# report kick to game manager
 		GameManager.report_kick(impulse_vector.length())
 		
-		#play kick animation
+		# play kick animation
 		legs.play_kick()
