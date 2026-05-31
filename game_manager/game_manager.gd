@@ -1,31 +1,31 @@
-#This globally loaded scene manages the state of the game. 
-#To access this node's globally visible variables/functions, do this:
-# var number = GameManager.kicks_remaining
-# GameManager.lose()
-#contact Melody if you have questions
+# This globally loaded scene manages the state of the game. 
+# To access this node's globally visible variables/functions, do this:
+# 	var number = GameManager.kicks_remaining
+# 	GameManager.lose()
+# contact Melody if you have questions
 extends Node
 
 enum gamestates {
-	IDLE 			#The cabinet is idle (no input recieved for a while). 
-	,CONTRACT		#The player is signing the 'contract'.
-	,KICKING		#the player is aiming their kick
-	,ROCK_KICKED	#the rock has been kicked, and the camera follows it. 
-	,SCORING		#the rock has landed, and the player has 'lost'. Show scoring.
-	,ROCK_OOB		#the rock has gone out of bounds or in a lake
+	IDLE,			# The cabinet is idle (no input recieved for a while). 
+	CONTRACT,		# The player is signing the 'contract'.
+	KICKING, 		# The player is aiming their kick
+	ROCK_KICKED, 	# The rock has been kicked, and the camera follows it. 
+	SCORING, 		# The rock has landed, and the player has 'lost'. Show scoring.
+	ROCK_OOB,		# The rock has gone out of bounds or in a lake
 }
 
-#signals
-#DOCUMENTATION FROM MELODY:
-# if you want your script to listen to any of this script's signals, do this:
-# 1. write a line like this in the script's _ready() function:
-#    GameManager.signalname.connect(_signal_handling_function_name)
-# 2. then, implement the function that handles receiving that signal. 
-# Check res://ui/ui.gd for an example, including arguements. 
-signal decrement_kicks_remaining(new_kick_count) #a kick just happened. 
-#signal cabinet_is_idle #no input detected for a while. #depreciated
-signal gamestate_update(state, cause) #the state has changed. Used for idle as well
+# signals
+# DOCUMENTATION FROM MELODY:
+# 	if you want your script to listen to any of this script's signals, do this:
+# 	1. write a line like this in the script's _ready() function:
+# 		GameManager.signalname.connect(_signal_handling_function_name)
+# 		2. then, implement the function that handles receiving that signal. 
+# 	Check res://ui/ui.gd for an example, including arguements. 
+signal decrement_kicks_remaining(new_kick_count) # a kick just happened. 
+# signal cabinet_is_idle #no input detected for a while. #deprecated
+signal gamestate_update(state, cause) # the state has changed. Used for idle as well
 
-#global variables. These are visible to scripts in other places.
+# global variables. These are visible to scripts in other places.
 # (e.g., GameManager.state = GameManager.gamestates.IDLE)
 var distance_kicked := 0.0
 var state := gamestates.IDLE
@@ -41,7 +41,7 @@ func _ready() -> void:
 	#_switch_state(gamestates.IDLE)
 	
 
-#restarts the idle timer when input is detected.
+# restarts the idle timer when input is detected.
 func _input(_event: InputEvent) -> void:
 	%IdleTimer.start()
 	if state == gamestates.IDLE and Input.is_action_just_pressed("kick"):
@@ -54,14 +54,14 @@ func _process(_delta: float) -> void:
 		_decrement_kicks_remaining()
 	
 	#TEST CODE FOR STATE SWITCHING.
-	_test_state_handler() #Allows keys 1-5 to force update the gamestate. 
+	_test_state_handler() # Allows keys 1-5 to force update the gamestate. 
 
 
 func _decrement_kicks_remaining() -> void:
 	kicks_remaining -= 1
 	decrement_kicks_remaining.emit(kicks_remaining)
 
-#handles the cabinet going to IDLE mode.
+# handles the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
 	if state != gamestates.IDLE:
 		_switch_state(gamestates.IDLE)
@@ -73,7 +73,7 @@ func _on_idle_timer_timeout() -> void:
 func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
 		_switch_state(target_state)
 
-#switches the current state and emits an update signal. 
+# switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> void:
 	if state == gamestates.ROCK_KICKED:
 		_decrement_kicks_remaining()
