@@ -80,6 +80,7 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 	camera_orbiting = false
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
+			$KickSoundPlayer.play()
 			$KickTimer.start()
 			progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
