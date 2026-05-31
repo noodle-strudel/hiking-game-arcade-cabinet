@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://daxg5bm344es2"]
+
+[ext_resource type="Script" uid="uid://cja5rwrkymd1e" path="res://events/coin_event/coin_event.gd" id="1_1r1eu"]
+
+[node name="CoinEvent" type="Node" unique_id=1346081188]
+process_mode = 3
+script = ExtResource("1_1r1eu")
