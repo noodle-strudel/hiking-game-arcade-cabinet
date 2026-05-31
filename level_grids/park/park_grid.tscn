@@ -19,22 +19,29 @@ script = ExtResource("1_mo2hw")
 [node name="rock_kicking_park_ground" parent="." unique_id=1702439857 instance=ExtResource("1_ekkde")]
 
 [node name="ConiferTrees" type="MultiMeshInstance3D" parent="." unique_id=1181867733]
-visibility_range_end = 1000.0
+cast_shadow = 0
+lod_bias = 0.05
+visibility_range_end = 500.0
 multimesh = ExtResource("3_odci8")
 
 [node name="DeciduousTrees" type="MultiMeshInstance3D" parent="." unique_id=1408845802]
-visibility_range_end = 1000.0
+cast_shadow = 0
+lod_bias = 0.05
+visibility_range_end = 500.0
 multimesh = ExtResource("4_4niwr")
 
 [node name="TopGrass" type="MultiMeshInstance3D" parent="." unique_id=1061562248]
-visibility_range_end = 1000.0
+cast_shadow = 0
+visibility_range_end = 500.0
 multimesh = ExtResource("3_mo2hw")
 
 [node name="BottomGrass" type="MultiMeshInstance3D" parent="." unique_id=1784097861]
-visibility_range_end = 1000.0
+cast_shadow = 0
+visibility_range_end = 500.0
 multimesh = ExtResource("4_1caeb")
 
 [node name="tree_1" parent="." unique_id=302701205 instance=ExtResource("2_nh41s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.088612, 50.387085, -14.858989)
 visible = false
 
 [node name="tree_2" parent="." unique_id=1880160439 instance=ExtResource("3_ptyal")]
@@ -55,6 +62,3 @@ shape = SubResource("BoxShape3D_odci8")
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 
 [editable path="rock_kicking_park_ground"]
-[editable path="tree_1"]
-[editable path="tree_2"]
-[editable path="rock_kicking_park_grass"]

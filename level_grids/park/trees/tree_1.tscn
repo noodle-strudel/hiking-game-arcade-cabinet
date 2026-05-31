@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b7m07t43bcsxl"]
 
-[ext_resource type="PackedScene" uid="uid://dytqhfg2xsw3i" path="res://level_grids/park/trees/tree_1.glb" id="1_8qsuc"]
+[ext_resource type="PackedScene" uid="uid://2ohcsfvbu03e" path="res://level_grids/park/trees/tree_1.glb" id="1_8qsuc"]
+[ext_resource type="ArrayMesh" uid="uid://b6ybupingnimk" path="res://level_grids/park/trees/tree_1.tres" id="2_1gw4l"]
 
 [node name="Tree1" unique_id=1359784276 instance=ExtResource("1_8qsuc")]
 
-[node name="ConiferTree" parent="." index="0" unique_id=720025157]
+[node name="ConiferTree" parent="." index="0" unique_id=79735821]
 lod_bias = 0.01
 visibility_range_end = 1000.0
+mesh = ExtResource("2_1gw4l")

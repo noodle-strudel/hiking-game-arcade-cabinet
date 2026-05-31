@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://tnnn463vw6kv"]
 
-[ext_resource type="PackedScene" uid="uid://c7m1j784nn68d" path="res://level_grids/park/trees/tree_2.glb" id="1_jjjga"]
+[ext_resource type="PackedScene" uid="uid://dlery4sn8oj4j" path="res://level_grids/park/trees/tree_2.glb" id="1_jjjga"]
+[ext_resource type="ArrayMesh" uid="uid://c2trph8lpnmku" path="res://level_grids/park/trees/tree_2.tres" id="2_i2os7"]
 
 [node name="Tree2" unique_id=1880160439 instance=ExtResource("1_jjjga")]
+
+[node name="DeciduousTree" parent="." index="0" unique_id=318238829]
+lod_bias = 0.05
+mesh = ExtResource("2_i2os7")
