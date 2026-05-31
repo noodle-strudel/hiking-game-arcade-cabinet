@@ -116,6 +116,13 @@ start={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="rock"
+3d_physics/layer_3="ground"
+3d_physics/layer_4="trees"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

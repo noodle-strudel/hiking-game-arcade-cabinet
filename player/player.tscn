@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
 [ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://bu4bheipqa0yt" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bmx4hr0mhwfom" path="res://player/legs/rock_kicking_legs.tscn" id="3_g1dw6"]
-[ext_resource type="Texture2D" uid="uid://blhf8iu60c1cn" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -13,6 +13,7 @@ albedo_texture = ExtResource("2_rkbax")
 material = SubResource("StandardMaterial3D_g1dw6")
 
 [node name="Player" type="CharacterBody3D" unique_id=963069731]
+collision_mask = 12
 script = ExtResource("1_oul6g")
 
 [node name="PlayerCollisionShape" type="CollisionShape3D" parent="." unique_id=2037021631]
@@ -31,11 +32,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 far = 1000.0
 
 [node name="RockTeeSpringArm" type="SpringArm3D" parent="." unique_id=34960226]
-transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, -1, 0, 1, 1.3113416e-07, 0, 2, -1)
-spring_length = 3.0
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.3, 0)
+spring_length = 1.5
 margin = 0.25
 
 [node name="TeePos" type="RemoteTransform3D" parent="RockTeeSpringArm" unique_id=1595413319]
 
 [node name="Legs" parent="." unique_id=1856558340 instance=ExtResource("3_g1dw6")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.16517448, -0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.001, -0.5)

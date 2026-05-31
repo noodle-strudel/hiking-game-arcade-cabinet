@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 # add the transform to the staticbody3d much easier than a collisionshape3d.
 # TODO: experiment with making a shape for the deciduous tree
 func add_collision_to_trees() -> void:
+	return
 	print($TreeStaticBodies.get_children())
 	if (!$TreeStaticBodies.get_children()):
 		for i in range(conifer_tree_multimesh.instance_count):
