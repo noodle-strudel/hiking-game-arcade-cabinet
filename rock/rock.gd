@@ -3,21 +3,19 @@ extends RigidBody3D
 """
 Notes from Yollaine:
 I changed the CurrentRockCollision's shape type to be ConvexPolygonShape3D which allows
-the rock to actually collide with the floor rather than just fall through it which is
-what was happening with the ConcavePolygonShape3D.
+the rock to actually collide with the floor rather than just fall through it which is what
+was happening with the ConcavePolygonShape3D.
 
 ConcavePolygonShape3D uses the set_points() function which luckily takes
-PackedVector3Arrays. So it was quite easy to switch over to using that. However, I
-notice that the mesh's edges are constantly appearing and disappearing with each kick
-interpolation but it doesn't seem to mess with the collision of the rock itself.
-Hopefully this won't become a problem in the future as this is the only solution I see
-working right now.
+PackedVector3Arrays. So it was quite easy to switch over to using that. However, I notice
+that the mesh's edges are constantly appearing and disappearing with each kick
+interpolation but it doesn't seem to mess with the collision of the rock itself. Hopefully
+this won't become a problem in the future as this is the only solution I see working right
+now.
 """
 
 # how far along in the interpolation the shape of the rock is
 @export var progress: float = 0.0
-
-# camera-related parameters
 
 # rotate 1 degree per frame, one turn every 6 seconds
 @export var rotation_speed := (TAU / 360) * 0.3
@@ -67,7 +65,8 @@ func _set_color_mesh(src: PackedVector3Array) -> ArrayMesh:
 	return surf_tool.commit()
 	
 func _get_progress() -> float:
-	return 1.0 - (float(GameManager.kicks_remaining) / 1000000) # progress is based off kicks remaining
+	# progress is based off kicks remaining
+	return 1.0 - (float(GameManager.kicks_remaining) / 1000000)
 	
 func _update_rock() -> void:
 	current_rock_vertices =\
@@ -81,6 +80,7 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 	camera_orbiting = false
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
+			$KickSoundPlayer.play()
 			$KickTimer.start()
 			progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
@@ -109,11 +109,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	# report to the game manager when the rock has come to a rest after being kicked
-	if GameManager.state == GameManager.gamestates.ROCK_KICKED and $KickTimer.get_time_left() == 0.0 and self.position.distance_to(last_rock_pos) < 0.000001:
-		GameManager.switch_state_to(GameManager.gamestates.SCORING, "rock came to a rest after being kicked")
-	#calculate movement since last frame
+	if GameManager.state == GameManager.gamestates.ROCK_KICKED and\
+			$KickTimer.get_time_left() == 0.0 and\
+			self.position.distance_to(last_rock_pos) < 0.000001:
+		GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT,\
+				"rock came to a rest after being kicked")
+	# calculate movement since last frame
 	last_rock_pos = self.position
-	#orbit camera
+	# orbit camera
 	if camera_orbiting:
 		$RockCameraPivot.rotation.y += rotation_speed
 		$RockCameraPivot.rotation.x = -tilt_down

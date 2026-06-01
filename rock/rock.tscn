@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://byjp861kr5qkp" path="res://rock/rock.gd" id="1_74c8a"]
 [ext_resource type="Shape3D" uid="uid://da5rftwrgbjns" path="res://rock/rock_start1.tres" id="2_74c8a"]
+[ext_resource type="AudioStream" uid="uid://d148p2odcv3om" path="res://sound/rock kicks/rock_kick_1.wav" id="4_s8qyk"]
+[ext_resource type="AudioStream" uid="uid://bm3c5pfg76rue" path="res://sound/rock kicks/rock_kick_2.wav" id="5_8h60t"]
 [ext_resource type="Shape3D" uid="uid://dqgcufyoo3fal" path="res://rock/rock_sphere.tres" id="5_t0tji"]
+[ext_resource type="AudioStream" uid="uid://bcnglam3fsq51" path="res://sound/rock kicks/rock_kick_3.wav" id="6_5ohwm"]
+[ext_resource type="AudioStream" uid="uid://bwljwvoud7ws4" path="res://sound/rock kicks/rock_kick_4.wav" id="7_ekxie"]
+[ext_resource type="AudioStream" uid="uid://c8omaexfx5akj" path="res://sound/rock kicks/rock_kick_5.wav" id="8_5sx86"]
+[ext_resource type="AudioStream" uid="uid://b5ni8sn8xvf4q" path="res://sound/rock kicks/rock_kick_6.wav" id="9_8bl0y"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t0tji"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4035w"]
+streams_count = 6
+stream_0/stream = ExtResource("4_s8qyk")
+stream_1/stream = ExtResource("5_8h60t")
+stream_2/stream = ExtResource("6_5ohwm")
+stream_3/stream = ExtResource("7_ekxie")
+stream_4/stream = ExtResource("8_5sx86")
+stream_5/stream = ExtResource("9_8bl0y")
 
 [node name="Rock" type="RigidBody3D" unique_id=659760540]
 collision_layer = 3
@@ -48,3 +63,6 @@ shape = SubResource("ConvexPolygonShape3D_t0tji")
 
 [node name="KickTimer" type="Timer" parent="." unique_id=1706361559]
 one_shot = true
+
+[node name="KickSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=427568160]
+stream = SubResource("AudioStreamRandomizer_4035w")
