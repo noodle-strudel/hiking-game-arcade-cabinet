@@ -71,7 +71,7 @@ func _on_idle_timer_timeout() -> void:
 # barrier being able to make the rock reset when it falls out of the 
 # world/in water.
 func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
-		_switch_state(target_state)
+		_switch_state(target_state, cause)
 
 # switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> void:
