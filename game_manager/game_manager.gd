@@ -50,7 +50,7 @@ func _input(_event: InputEvent) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_kick"):
-		$TestSoundPlayer.play()
+		# $TestSoundPlayer.play()
 		_decrement_kicks_remaining()
 	
 	#TEST CODE FOR STATE SWITCHING.
@@ -109,7 +109,7 @@ func _test_state_handler() -> void:
 		$TestSoundPlayer.play()
 		_switch_state(gamestates.KICKING)	
 	if Input.is_action_just_pressed("test_set_state_rock_kicked"):
-		$TestSoundPlayer.play()
+		# $TestSoundPlayer.play()
 		_switch_state(gamestates.ROCK_KICKED)	
 	if Input.is_action_just_pressed("test_set_state_scoring"):
 		$TestSoundPlayer.play()
