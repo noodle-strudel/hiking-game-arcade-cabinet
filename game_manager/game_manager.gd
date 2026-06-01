@@ -9,7 +9,8 @@ enum gamestates {
 	IDLE,			# The cabinet is idle (no input recieved for a while). 
 	CONTRACT,		# The player is signing the 'contract'.
 	KICKING, 		# The player is aiming their kick
-	ROCK_KICKED, 	# The rock has been kicked, and the camera follows it. 
+	ROCK_KICKED, 	# The rock has been kicked, and the camera follows it.
+  POSTKICK_EVENT,	# Used during some events, as a buffer between ROCK_KICKED and SCORING
 	SCORING, 		# The rock has landed, and the player has 'lost'. Show scoring.
 	ROCK_OOB,		# The rock has gone out of bounds or in a lake
 }
