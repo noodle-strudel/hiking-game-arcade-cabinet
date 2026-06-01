@@ -74,7 +74,11 @@ theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 12
 text = "\"New Hero in Town\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/ "
+http://creativecommons.org/licenses/by/4.0/ 
+
+\"Crossing the Divide\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/"
 autowrap_mode = 2
 
 [node name="KicksRemainingLabel" type="Label" parent="IdleMenu" unique_id=1415539826]
