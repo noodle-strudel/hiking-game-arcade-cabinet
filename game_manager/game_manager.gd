@@ -10,6 +10,7 @@ enum gamestates {
 	,CONTRACT		#The player is signing the 'contract'.
 	,KICKING		#the player is aiming their kick
 	,ROCK_KICKED	#the rock has been kicked, and the camera follows it. 
+	,POSTKICK_EVENT	#used during some events, as a buffer between ROCK_KICKED and SCORING
 	,SCORING		#the rock has landed, and the player has 'lost'. Show scoring.
 	,ROCK_OOB		#the rock has gone out of bounds or in a lake
 }

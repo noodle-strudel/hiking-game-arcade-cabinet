@@ -45,8 +45,15 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			pass
 		GameManager.gamestates.SCORING:
+			pass
+		GameManager.gamestates.POSTKICK_EVENT:
+			var postkick_event = null
 			match event_value:
 				1: #coin event
-					print("DEBUG: I'm here lmao")
-					var coin_event = known_events[1].instantiate()
-					self.add_child(coin_event)
+					postkick_event = known_events[1].instantiate()
+					self.add_child(postkick_event)
+			if postkick_event:
+				await postkick_event.tree_exiting
+				GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
+			else:
+				GameManager.switch_state_to(GameManager.gamestates.SCORING, "no post kick event")

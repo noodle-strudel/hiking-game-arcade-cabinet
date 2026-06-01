@@ -85,13 +85,11 @@ func _process(delta: float) -> void:
 
 #chooses a level segment to add
 func _select_level_segment() -> PackedScene:
-	print("DEBUG: the return type in _select_level_segment is ", type_string(typeof(_level_segments.pick_random())))
 	return _level_segments.pick_random()
 	
 func _instantiate_chunk() -> Node3D:
 	var chunk = _select_level_segment().instantiate()
 	self.add_child(chunk)
-	print("DEBUG: type of chunk is ", type_string(typeof(chunk)))
 	return chunk
 
 #process:

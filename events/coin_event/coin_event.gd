@@ -6,13 +6,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 #write all necessary code for the event to happen here
 func _event_function() -> void:
 	print("wohoo I'm a coin")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(5).timeout
 	print("don't spend me all in one place!")
 	
 	#do not remove. Defined in event_base.gd
