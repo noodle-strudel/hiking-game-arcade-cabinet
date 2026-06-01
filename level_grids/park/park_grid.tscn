@@ -19,15 +19,19 @@ script = ExtResource("1_mo2hw")
 [node name="rock_kicking_park_ground" parent="." unique_id=1702439857 instance=ExtResource("1_ekkde")]
 
 [node name="ConiferTrees" type="MultiMeshInstance3D" parent="." unique_id=1181867733]
+visibility_range_end = 1000.0
 multimesh = ExtResource("3_odci8")
 
 [node name="DeciduousTrees" type="MultiMeshInstance3D" parent="." unique_id=1408845802]
+visibility_range_end = 1000.0
 multimesh = ExtResource("4_4niwr")
 
 [node name="TopGrass" type="MultiMeshInstance3D" parent="." unique_id=1061562248]
+visibility_range_end = 1000.0
 multimesh = ExtResource("3_mo2hw")
 
 [node name="BottomGrass" type="MultiMeshInstance3D" parent="." unique_id=1784097861]
+visibility_range_end = 1000.0
 multimesh = ExtResource("4_1caeb")
 
 [node name="tree_1" parent="." unique_id=302701205 instance=ExtResource("2_nh41s")]

@@ -26,6 +26,7 @@ buses/default_bus_layout="uid://rpfpmovmm3w4"
 GameManager="*uid://c36a8wo7m50y6"
 SaveLoad="*uid://cjwdmcv61acn2"
 EventManager="*uid://dxx2hnhes27by"
+AudioManager="*uid://by3s0jh1hdkqs"
 
 [display]
 
@@ -126,3 +127,4 @@ start={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true

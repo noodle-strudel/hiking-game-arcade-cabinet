@@ -24,6 +24,7 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -225,6 +226,15 @@ texture = ExtResource("5_obcwv")
 z_index = 1
 texture = ExtResource("6_bo1jx")
 
+[node name="KicksRemainingGameplay" type="Label" parent="KickingMenu" unique_id=1256247876]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 140
+text = "Plabolnbar!"
+
 [node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
 visible = false
 anchors_preset = 0
@@ -233,6 +243,7 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -336,5 +347,17 @@ metadata/_edit_lock_ = true
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
+bus = &"Music"
+
+[node name="OOBText" type="Label" parent="." unique_id=596672533]
+visible = false
+layout_mode = 0
+offset_left = 422.0
+offset_top = 436.0
+offset_right = 1498.0
+offset_bottom = 573.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 100
+text = "<: placeholder smile 	:)"
 
 [connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
