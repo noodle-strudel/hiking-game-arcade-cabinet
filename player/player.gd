@@ -15,6 +15,7 @@ var current_x_rotation: float = 0.0
 
 # variables
 const buddy_rock_path = "../Rock"
+const kick_bar_path = "../UI/KickingMenu/PowerBar/KickbarInd"
 var rock = null
 var bar = null
 var kick_scalar = 5.0 #relative force of kick.
@@ -28,8 +29,8 @@ func _ready() -> void:
 	else:
 		print("ERROR: no Rock node sibling to Player.")
 		
-	if get_node("../UI/KickingMenu/PowerBar/KickbarInd"):
-		bar = get_node("../UI/KickingMenu/PowerBar/KickbarInd")
+	if get_node(kick_bar_path):
+		bar = get_node(kick_bar_path)
 	else:
 		print("ERROR: no Kickbar node sibling to Player.")
 
@@ -54,7 +55,8 @@ func _physics_process(delta: float) -> void:
 	#if the rock's height needs to be adjusted, change the Margin value in $RockTeeSpringArm's inspector.
 	if GameManager.state == GameManager.gamestates.KICKING:
 		if rock:
-			rock.linear_velocity = Vector3(0.0,0.0,0.0) #to counteract accumulating gravity
+			rock.linear_velocity = Vector3(0.0, 0.0, 0.0) #to counteract accumulating gravity
+			rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
 			rock.set_position($RockTeeSpringArm/TeePos.get_global_position())
 	
 	#handle kickingthe rock

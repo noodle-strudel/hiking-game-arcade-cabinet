@@ -32,8 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 far = 1000.0
 
 [node name="RockTeeSpringArm" type="SpringArm3D" parent="." unique_id=34960226]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.3, 0)
-spring_length = 1.5
+transform = Transform3D(0.9999998, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2, -0.99999994)
+collision_mask = 12
+spring_length = 3.0
 margin = 0.25
 
 [node name="TeePos" type="RemoteTransform3D" parent="RockTeeSpringArm" unique_id=1595413319]

@@ -19,7 +19,6 @@ script = ExtResource("1_mo2hw")
 [node name="rock_kicking_park_ground" parent="." unique_id=1702439857 instance=ExtResource("1_ekkde")]
 
 [node name="ConiferTrees" type="MultiMeshInstance3D" parent="." unique_id=1181867733]
-cast_shadow = 0
 lod_bias = 0.05
 visibility_range_end = 500.0
 multimesh = ExtResource("3_odci8")
