@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://byjp861kr5qkp" path="res://rock/rock.gd" id="1_74c8a"]
 [ext_resource type="Shape3D" uid="uid://da5rftwrgbjns" path="res://rock/rock_start1.tres" id="2_74c8a"]
-[ext_resource type="AudioStream" uid="uid://d148p2odcv3om" path="res://sound/rock kicks/rock_kick_1.wav" id="4_s8qyk"]
-[ext_resource type="AudioStream" uid="uid://bm3c5pfg76rue" path="res://sound/rock kicks/rock_kick_2.wav" id="5_8h60t"]
+[ext_resource type="PackedScene" uid="uid://c7nmf134bw5ud" path="res://rock/trail/rock_kick_trail.tscn" id="4_8h60t"]
+[ext_resource type="AudioStream" uid="uid://cv5w0nhx5fvoh" path="res://sound/rock kicks/rock_kick_1.wav" id="4_s8qyk"]
+[ext_resource type="AudioStream" uid="uid://c8lxs7k86af4s" path="res://sound/rock kicks/rock_kick_2.wav" id="5_8h60t"]
 [ext_resource type="Shape3D" uid="uid://dqgcufyoo3fal" path="res://rock/rock_sphere.tres" id="5_t0tji"]
-[ext_resource type="AudioStream" uid="uid://bcnglam3fsq51" path="res://sound/rock kicks/rock_kick_3.wav" id="6_5ohwm"]
-[ext_resource type="AudioStream" uid="uid://bwljwvoud7ws4" path="res://sound/rock kicks/rock_kick_4.wav" id="7_ekxie"]
-[ext_resource type="AudioStream" uid="uid://c8omaexfx5akj" path="res://sound/rock kicks/rock_kick_5.wav" id="8_5sx86"]
-[ext_resource type="AudioStream" uid="uid://b5ni8sn8xvf4q" path="res://sound/rock kicks/rock_kick_6.wav" id="9_8bl0y"]
+[ext_resource type="AudioStream" uid="uid://bkqofjw7wcdro" path="res://sound/rock kicks/rock_kick_3.wav" id="6_5ohwm"]
+[ext_resource type="AudioStream" uid="uid://dvk08cj235rah" path="res://sound/rock kicks/rock_kick_4.wav" id="7_ekxie"]
+[ext_resource type="AudioStream" uid="uid://b8ebf0gs8kga0" path="res://sound/rock kicks/rock_kick_5.wav" id="8_5sx86"]
+[ext_resource type="AudioStream" uid="uid://x8yi5d37j3pt" path="res://sound/rock kicks/rock_kick_6.wav" id="9_8bl0y"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t0tji"]
 
@@ -56,6 +57,8 @@ debug_fill = false
 
 [node name="CurrentRockMesh" type="MeshInstance3D" parent="." unique_id=1782139663]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="RockKickTrail" parent="CurrentRockMesh" unique_id=1294450291 instance=ExtResource("4_8h60t")]
 
 [node name="CurrentRockCollision" type="CollisionShape3D" parent="." unique_id=292276580]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
