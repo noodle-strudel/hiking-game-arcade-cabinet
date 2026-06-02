@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4gentdxrtoy" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://c4i55cf37h8j1" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
+[ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="13_diyc5"]
 
 [node name="UI" type="Control" unique_id=593103497]
 process_mode = 1
@@ -363,5 +364,15 @@ offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
+
+[node name="EventElements" type="Control" parent="." unique_id=446795581]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinSprite" type="Sprite2D" parent="EventElements" unique_id=587077864]
+visible = false
+position = Vector2(955, 475)
+texture = ExtResource("13_diyc5")
 
 [connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
