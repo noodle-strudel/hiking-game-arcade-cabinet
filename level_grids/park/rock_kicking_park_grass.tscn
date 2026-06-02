@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d37u6wpiakj2k"]
 
-[ext_resource type="PackedScene" uid="uid://bk6htrul5ucp1" path="res://level_grids/park/rock_kicking_park_grass.glb" id="1_81qb2"]
+[ext_resource type="PackedScene" uid="uid://dmkeys4ufoqay" path="res://level_grids/park/glb/rock_kicking_park_grass.glb" id="1_81qb2"]
 
-[node name="Grass" unique_id=1237603337 instance=ExtResource("1_81qb2")]
+[node name="Grass" unique_id=1279084180 instance=ExtResource("1_81qb2")]
 
-[node name="Grass" parent="." index="0" unique_id=1260286568]
-transform = Transform3D(-1.0425166e-07, 1.89, 0, -2.385, -8.261453e-08, 0, 0, 0, 1, 0, 0, 0)
+[node name="Grass" parent="." index="0" unique_id=1899800917]
+transform = Transform3D(2.385, 0, 0, 0, 1.89, 0, 0, 0, 1, 0, 0, 0)
