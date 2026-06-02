@@ -12,6 +12,10 @@
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://c4i55cf37h8j1" path="res://sound/New Hero in Town.mp3" id="7_bo1jx"]
 
+[sub_resource type="Theme" id="Theme_bi8hs"]
+default_font = ExtResource("6_ay4pc")
+default_font_size = 40
+
 [node name="UI" type="Control" unique_id=593103497]
 process_mode = 1
 layout_mode = 3
@@ -327,26 +331,31 @@ offset_right = 1544.0
 offset_bottom = 848.0
 color = Color(0, 0, 0, 0.1882353)
 
-[node name="LoremIpsum" type="Label" parent="ScoreMenu" unique_id=1662281954]
+[node name="GameOverText" type="RichTextLabel" parent="ScoreMenu" unique_id=212186964]
+unique_name_in_owner = true
+editor_description = "game over scroll. text size about 40"
 layout_mode = 0
 offset_left = 448.0
 offset_top = 1080.0
 offset_right = 1472.0
-offset_bottom = 5523.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("6_ay4pc")
-theme_override_font_sizes/font_size = 40
-text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper aliquam nibh id euismod. Phasellus venenatis, orci ut semper facilisis, erat risus facilisis nisi, a viverra arcu purus nec urna. Cras consectetur magna diam, a luctus nibh porta nec. Sed eu sagittis sem. Aliquam interdum ex sit amet velit euismod vulputate. Sed suscipit lectus quis sem posuere, vitae auctor lectus cursus. Aenean scelerisque risus nulla, sed commodo ligula mattis a. Donec leo felis, mollis ut convallis ullamcorper, ornare sed enim.
+offset_bottom = 4160.0
+theme = SubResource("Theme_bi8hs")
+bbcode_enabled = true
+text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
 
-Quisque scelerisque venenatis purus in tempor. Pellentesque vel lorem nisl. Nullam dapibus aliquam est, non hendrerit nulla sagittis a. Morbi consequat, odio vel lobortis faucibus, enim arcu fringilla ligula, nec dictum neque velit vitae mauris. Sed sit amet tortor a risus feugiat congue. Praesent semper, sapien in maximus aliquet, eros lorem cursus dui, sit amet dignissim ante neque vel arcu. Nulla vehicula imperdiet nibh, vel congue lorem rhoncus vel. Aliquam erat volutpat.
+Be not disheartened by its pretentions, traveller. T’is a pityable rock. Thour’t possessed of a power unthinkable to the likes of it. The rock is stalwart, stable, unmoved by time — but not unmoved by thee. Thou’rt mortal, and as such, thou’rt born of fire and flame, and hold command over the song of change itself. T’is a terrible curse, to burn for but a moment in history... but the fire in thy veins is bright and strong. The will to forge, to interrupt, to [i]change[/i], is thine birthright. Cherish that power and foster it in thine heart. A stone can outlast a kingdom — but fire can speak a kingdom into being. Forget not thine voice: If thee can speak forth a story of change, it can be made so. 
 
-In hac habitasse platea dictumst. Nam tincidunt justo vehicula, euismod sem id, finibus dolor. Morbi ut dui ligula. Pellentesque tempus velit nec faucibus viverra. Proin mattis a nibh ut auctor. Phasellus risus velit, eleifend non molestie vel, semper a sapien. Nunc porttitor mi ex. Integer tincidunt feugiat lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque posuere congue risus in sodales. Cras rhoncus purus sapien. Ut metus erat, ultricies a justo quis, consectetur hendrerit diam.
+What, it remains, spurred thine pilgrimage to this humble shrine? Didst thee seek truth? Didst thou knoweth already the power of which thour’t possessed? Didst thou chance upon this place at the behest of fickle fate? Thou’rt urged to ponder the question. In the bright tapestry of thine history, this modest moment will remain. Forget not thine own sway over the story of self. T’is more malleable than one wouldst imagine. 
 
-Mauris fringilla neque at euismod auctor. Aliquam eleifend purus in eros tristique pretium. Aliquam erat volutpat. Quisque mattis dui nec suscipit auctor. Maecenas sit amet congue sapien, ut mattis est. Nullam pulvinar mauris vel neque fringilla, vitae posuere metus luctus. In hac habitasse platea dictumst. Aliquam fringilla dolor orci, scelerisque fermentum nunc efficitur vitae. Integer egestas ultricies purus vel consectetur. Fusce imperdiet vitae nulla nec mollis. In egestas, lectus quis ultrices mollis, erat felis dignissim dolor, vel gravida lorem orci in risus. Nam porttitor magna et libero faucibus condimentum.
+To the rock, thine affairs are a meagre sort. Be troubled not by its stoic facade, pilgrim. Despite the firmness of its body and the steadiness of its stance, it remains forever changed by thine hand. Or perhaps, instead, thine foot. However trifling be thine contribution, it stands in turn with each pilgrim’s efforts afore thee, and with each humble kick yet to come. 
 
-Vivamus ullamcorper posuere libero vitae dignissim. Mauris aliquam lacus at turpis fermentum, et condimentum nunc aliquet. Nullam finibus mollis vestibulum. Nullam pulvinar maximus velit nec molestie. Etiam neque augue, commodo sed efficitur in, accumsan quis lectus. In vehicula est sed bibendum malesuada. Vivamus egestas, augue a mattis lobortis, velit dolor faucibus ante, at blandit justo nisi nec velit. Suspendisse viverra condimentum nunc. Curabitur iaculis dictum augue, vitae tincidunt ipsum maximus sed. Etiam pharetra, justo in luctus dictum, ex nibh laoreet dui, a sagittis metus tellus a arcu. Curabitur felis tellus, ullamcorper vel elit a, dapibus sagittis felis. Vestibulum sapien odio, feugiat nec velit ac, convallis luctus augue. Mauris ut lacus ornare, egestas ligula eget, gravida augue. "
+Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth.
+"
+scroll_active = false
 autowrap_mode = 2
-metadata/_edit_lock_ = true
+
+[node name="Bottom" type="Marker2D" parent="ScoreMenu/GameOverText" unique_id=1447911126]
+position = Vector2(-8, 3080)
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")
@@ -362,8 +371,5 @@ offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1447911126]
-position = Vector2(904, 5528)
 
 [connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
