@@ -1,7 +1,7 @@
 extends Node
 
 @export var idle_music: AudioStreamWAV
-@export var game_over_music: AudioStreamMP3
+@export var game_over_music: AudioStreamWAV
 @onready var bgm_player: AudioStreamPlayer = $MusicPlayer
 @onready var music_bus_idx: int = AudioServer.get_bus_index("Music")
 
