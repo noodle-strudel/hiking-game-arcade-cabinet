@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://duuj8y4ltnxx4"]
 
 [ext_resource type="Script" uid="uid://dbvaxllvh5a5m" path="res://addons/vaportrail/example/example_scene.gd" id="1_2hso6"]
-[ext_resource type="Texture2D" uid="uid://gn7hoa3umle6" path="res://addons/vaportrail/example/tr0n.png" id="1_6iu73"]
-[ext_resource type="Texture2D" uid="uid://6hiavd5uxq8r" path="res://addons/vaportrail/example/normal.png" id="2_m823o"]
+[ext_resource type="Texture2D" uid="uid://y3qrjh3xg175" path="res://addons/vaportrail/example/tr0n.png" id="1_6iu73"]
+[ext_resource type="Texture2D" uid="uid://cyevh4mkjdml6" path="res://addons/vaportrail/example/normal.png" id="2_m823o"]
 [ext_resource type="Script" uid="uid://ck8eb0fy28vat" path="res://addons/vaportrail/example/Camera.gd" id="3_tpcue"]
-[ext_resource type="Texture2D" uid="uid://cwt2x4v85inl2" path="res://addons/vaportrail/example/vaportrail.png" id="4_romn7"]
+[ext_resource type="Texture2D" uid="uid://g5pjrqcrbxm8" path="res://addons/vaportrail/example/vaportrail.png" id="4_romn7"]
 [ext_resource type="PackedScene" uid="uid://c7nmf134bw5ud" path="res://rock/trail/rock_kick_trail.tscn" id="5_4frb0"]
 [ext_resource type="Material" uid="uid://d2t24uwhp8nwq" path="res://addons/vaportrail/example/Trail.tres" id="5_romn7"]
 
@@ -184,7 +184,7 @@ curve = SubResource("Curve3D_1cqmv")
 metadata/_edit_group_ = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=849745484]
-transform = Transform3D(0.818762, 0.022474268, 0.57367903, -9.313142e-10, 0.99920964, -0.03914612, -0.57411736, 0.032051075, 0.8181369, -1.27339, 0.403995, 0.598389)
+transform = Transform3D(0.818762, 0.022474268, 0.57367903, -9.313142e-10, 0.9992096, -0.03914612, -0.57411736, 0.03205107, 0.8181369, -1.27339, 0.403995, 0.598389)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D" unique_id=1688953862]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, -1.8626451e-09, 0, 1.8626451e-09, 1.0000001, 0, 0, 0)
@@ -220,9 +220,9 @@ visual/size = 0.2
 visual/size_curve = SubResource("Curve_romn7")
 visual/minimum_onscreen_size = 20.0
 transform = Transform3D(1.0000005, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
-visible = false
 
 [node name="RockKickTrail" parent="Path3D4/PathFollow3D/MeshInstance3D" unique_id=1294450291 instance=ExtResource("5_4frb0")]
+visible = false
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=1547108366]
 transform = Transform3D(-0.22554617, 1.9717872e-08, -0.9742325, -8.742278e-08, -1, 0, -0.9742325, 8.517011e-08, 0.22554617, 0, 0.8261885, 0)
@@ -230,7 +230,7 @@ curve = SubResource("Curve3D_1cqmv")
 metadata/_edit_group_ = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=1725303615]
-transform = Transform3D(0.8187647, 0.022474278, 0.57367986, -9.3131725e-10, 0.99921, -0.039146177, -0.57411927, 0.032051086, 0.8181381, -1.27339, 0.403995, 0.598389)
+transform = Transform3D(0.8187647, 0.022474276, 0.57367986, -9.3131725e-10, 0.99920994, -0.039146177, -0.57411927, 0.032051083, 0.8181381, -1.27339, 0.403995, 0.598389)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D3/PathFollow3D" unique_id=551836805]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, -1.8626451e-09, 0, 1.8626451e-09, 1.0000001, 0, 0, 0)
