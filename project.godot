@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://rpfpmovmm3w4"
 
 GameManager="*uid://c36a8wo7m50y6"
 SaveLoad="*uid://cjwdmcv61acn2"
+EventManager="*uid://dxx2hnhes27by"
 AudioManager="*uid://by3s0jh1hdkqs"
 
 [display]
@@ -115,6 +116,13 @@ start={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="rock"
+3d_physics/layer_3="ground"
+3d_physics/layer_4="trees"
 
 [physics]
 

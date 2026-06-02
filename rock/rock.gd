@@ -112,7 +112,7 @@ func _physics_process(_delta: float) -> void:
 	if GameManager.state == GameManager.gamestates.ROCK_KICKED and\
 			$KickTimer.get_time_left() == 0.0 and\
 			self.position.distance_to(last_rock_pos) < 0.000001:
-		GameManager.switch_state_to(GameManager.gamestates.SCORING,\
+		GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT,\
 				"rock came to a rest after being kicked")
 	# calculate movement since last frame
 	last_rock_pos = self.position

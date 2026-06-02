@@ -9,9 +9,9 @@ extends Node
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 
 # width and breadth of the level segments
-const _grid_x_dimension := 2 * 415.146
+const _grid_x_dimension := 2 * 250.0
 #const _grid_z_dimension := 2 * 555.845 # seam position as reported by yollaine
-const _grid_z_dimension := 2 * 545.1 # estimated actual seam (small gap)
+const _grid_z_dimension := 2 * 250.0 # estimated actual seam (small gap)
 
 # stores references to the instantiated level grid parts
 var _level_grid = [
@@ -88,14 +88,11 @@ func _process(delta: float) -> void:
 
 # chooses a level segment to add
 func _select_level_segment() -> PackedScene:
-	print("DEBUG: the return type in _select_level_segment is ",\
-			type_string(typeof(_level_segments.pick_random())))
 	return _level_segments.pick_random()
 	
 func _instantiate_chunk() -> Node3D:
 	var chunk = _select_level_segment().instantiate()
 	self.add_child(chunk)
-	print("DEBUG: type of chunk is ", type_string(typeof(chunk)))
 	return chunk
 
 # process:

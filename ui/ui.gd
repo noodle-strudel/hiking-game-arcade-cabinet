@@ -3,8 +3,9 @@ extends Control
 
 # variables
 var _start_time := 0.0
-var lorem_ipsum_scroll := false
-var lorem_ipsum_reset_pos = null
+var game_over_text_scroll := false
+@onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
+@onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 var spinstep = 0
 
 # Called when the node enters the scene tree for the first time.yyyyyyyy
@@ -17,9 +18,7 @@ func _ready() -> void:
 	
 	# get start time
 	_start_time = Time.get_unix_time_from_system()
-	
-	lorem_ipsum_reset_pos = $ScoreMenu/LoremIpsum.position
-	
+		
 	_clear_ui()
 	$IdleMenu.visible = true
 
@@ -31,8 +30,8 @@ func _process(delta: float) -> void:
 		var spin = 0.01 * sin(time_delta * 4)
 		$IdleMenu/SubtitlePivot.rotation -= spin
 	# scroll the game over text
-	if lorem_ipsum_scroll:
-		$ScoreMenu/LoremIpsum.position.y -= delta * 100
+	if game_over_text_scroll:
+		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	# hide the contract after it is signed and go to the letter spinner
 	if GameManager.state == GameManager.gamestates.CONTRACT and\
 			Input.is_action_just_pressed("i_accept"):
@@ -58,7 +57,7 @@ func _process(delta: float) -> void:
 # called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
-	
+	%KicksRemainingGameplay.text = ("KICKS REMAINING: " + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
 
 # enable and disable UI elements. cause is mostly used for OOB causes
@@ -76,7 +75,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
-			$OOBText.text = cause
+			$OOBText.text = cause #cause is currently not being set before entering OOB state, unfixed because I can't find where OOB state is set
 			$OOBText.visible = true
 			await get_tree().create_timer(2).timeout
 			$OOBText.visible = false
@@ -95,17 +94,17 @@ func _scoring_sequence() -> void:
 	
 	# long, drawn out ending animation #TODO make fancier.
 	await get_tree().create_timer(1).timeout
-	$ScoreMenu/LoremIpsum.visible = true
-	lorem_ipsum_scroll = true
+	%GameOverText.visible = true
+	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
-	await get_tree().create_timer(45).timeout
+	await get_tree().create_timer(50).timeout
 	AudioManager.fade_out_music()
 
 
-func lorem_ipsum_reset() -> void:
-	lorem_ipsum_scroll = false
-	$ScoreMenu/LoremIpsum.visible = false
-	$ScoreMenu/LoremIpsum.position = lorem_ipsum_reset_pos
+func game_over_text_reset() -> void:
+	game_over_text_scroll = false
+	%GameOverText.visible = false
+	%GameOverText.position = game_over_text_reset_pos
 	$ScoreMenu/EpicMusicPlayer.stop()
 
 func _clear_ui() -> void:
@@ -117,7 +116,7 @@ func _clear_ui() -> void:
 	%ScoreElem.visible = false
 	%KicksRemainingElem.visible = false
 	%KicksRemainingFancy.visible = false
-	lorem_ipsum_reset()
+	game_over_text_reset()
 	# reset for contract sequence 
 	$ContractMenu/Contract.visible = true
 	%LetterSpinner.visible = false
