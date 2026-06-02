@@ -331,15 +331,18 @@ offset_right = 1544.0
 offset_bottom = 848.0
 color = Color(0, 0, 0, 0.1882353)
 
-[node name="GameOverText" type="RichTextLabel" parent="ScoreMenu" unique_id=212186964]
+[node name="GameOverText" type="Node2D" parent="ScoreMenu" unique_id=1607665622]
 unique_name_in_owner = true
+z_index = 2
+
+[node name="GameOverTextContents" type="RichTextLabel" parent="ScoreMenu/GameOverText" unique_id=212186964]
 editor_description = "game over scroll. text size about 40"
-layout_mode = 0
 offset_left = 448.0
 offset_top = 1080.0
 offset_right = 1472.0
 offset_bottom = 4160.0
 theme = SubResource("Theme_bi8hs")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
 
@@ -355,7 +358,15 @@ scroll_active = false
 autowrap_mode = 2
 
 [node name="Bottom" type="Marker2D" parent="ScoreMenu/GameOverText" unique_id=1447911126]
-position = Vector2(-8, 3080)
+position = Vector2(440, 4160)
+
+[node name="BackgroundColor" type="ColorRect" parent="ScoreMenu/GameOverText" unique_id=547787572]
+z_index = -1
+offset_left = 424.0
+offset_top = 1064.0
+offset_right = 1488.0
+offset_bottom = 4192.0
+color = Color(0.96405727, 0.70715535, 0.36109638, 1)
 
 [node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
 stream = ExtResource("7_bo1jx")

@@ -4,7 +4,7 @@ extends Control
 # variables
 var _start_time := 0.0
 var game_over_text_scroll := false
-@onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.position.y + 1080) / 55.0)
+@onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 var spinstep = 0
 
