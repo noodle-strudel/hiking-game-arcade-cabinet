@@ -98,7 +98,7 @@ func _scoring_sequence() -> void:
 	$ScoreMenu/LoremIpsum.visible = true
 	lorem_ipsum_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
-	await get_tree().create_timer(45).timeout
+	await get_tree().create_timer(50).timeout
 	AudioManager.fade_out_music()
 
 

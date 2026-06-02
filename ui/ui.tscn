@@ -247,7 +247,6 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -333,7 +332,7 @@ layout_mode = 0
 offset_left = 448.0
 offset_top = 1080.0
 offset_right = 1472.0
-offset_bottom = 4905.0
+offset_bottom = 5523.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 40
@@ -363,5 +362,8 @@ offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1447911126]
+position = Vector2(904, 5528)
 
 [connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
