@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://byw0o05euut33" path="res://sound/audio_manager.gd" id="1_s2nsv"]
 [ext_resource type="AudioStream" uid="uid://clr6mhawfwlh1" path="res://sound/broken_rock_kicking_chords.wav" id="2_5f358"]
-[ext_resource type="AudioStream" uid="uid://c4i55cf37h8j1" path="res://sound/New Hero in Town.mp3" id="3_38hvt"]
+[ext_resource type="AudioStream" uid="uid://b4lt7ulgkdgwg" path="res://sound/rock_gameover.wav" id="3_5f358"]
 [ext_resource type="AudioStream" uid="uid://dgh0w425tx0in" path="res://sound/Crossing%20the%20Divide.mp3" id="4_38hvt"]
 
 [node name="AudioManager" type="Node" unique_id=1267904737]
 script = ExtResource("1_s2nsv")
 idle_music = ExtResource("2_5f358")
-game_over_music = ExtResource("3_38hvt")
+game_over_music = ExtResource("3_5f358")
 background_music = ExtResource("4_38hvt")
 
 [node name="MusicTimeOut" type="Timer" parent="." unique_id=433671395]
