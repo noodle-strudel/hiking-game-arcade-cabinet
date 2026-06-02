@@ -10,7 +10,7 @@ enum gamestates {
 	CONTRACT,		# The player is signing the 'contract'.
 	KICKING, 		# The player is aiming their kick
 	ROCK_KICKED, 	# The rock has been kicked, and the camera follows it.
-  POSTKICK_EVENT,	# Used during some events, as a buffer between ROCK_KICKED and SCORING
+	POSTKICK_EVENT,	# Used during some events, as a buffer between ROCK_KICKED and SCORING
 	SCORING, 		# The rock has landed, and the player has 'lost'. Show scoring.
 	ROCK_OOB,		# The rock has gone out of bounds or in a lake
 }
@@ -36,10 +36,7 @@ var last_score := 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#TODO: load in kicks remaining info from database singleton/node
-	pass
-	#
-	#_switch_state(gamestates.IDLE)
+	gamestate_update.connect(_on_change_state)
 	
 
 # restarts the idle timer when input is detected.
@@ -97,7 +94,12 @@ func report_score() -> void:
 		" | Distance Kicked: ", distance_kicked,
 		" | Score: ", last_score
 	)
-	
+
+func _on_change_state(_state: gamestates, _cause: String) -> void:
+	match _state:
+		gamestates.SCORING:
+			%IdleTimer.start()
+
 #TEST
 func _test_state_handler() -> void:
 	if Input.is_action_just_pressed("test_set_state_idle"):
