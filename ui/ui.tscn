@@ -11,11 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://cp4gentdxrtoy" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://coav6axwdya05" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
-[ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="13_diyc5"]
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
 default_font_size = 40
+
+[sub_resource type="FontVariation" id="FontVariation_bi8hs"]
+base_font = ExtResource("6_ay4pc")
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
 
 [node name="UI" type="Control" unique_id=593103497]
 process_mode = 1
@@ -344,6 +347,7 @@ offset_right = 1472.0
 offset_bottom = 4160.0
 theme = SubResource("Theme_bi8hs")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/italics_font = SubResource("FontVariation_bi8hs")
 bbcode_enabled = true
 text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
 
@@ -383,16 +387,5 @@ offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
-
-[node name="EventElements" type="Control" parent="." unique_id=446795581]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CoinSprite" type="Sprite2D" parent="EventElements" unique_id=587077864]
-visible = false
-position = Vector2(955, 475)
-texture = ExtResource("13_diyc5")
 
 [connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
