@@ -43,6 +43,9 @@ var kick_vector := Vector3(0.25, 0.1, 0.25)
 # isn't necessarily set on every frame)
 var last_rock_pos := Vector3()
 
+# position of rock on second-to-previous frame (for calculating deceleration)
+var second_rock_pos := Vector3()
+
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
 func _interpolate(start: PackedVector3Array, end: PackedVector3Array,\
@@ -114,7 +117,13 @@ func _physics_process(_delta: float) -> void:
 			self.position.distance_to(last_rock_pos) < 0.000001:
 		GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT,\
 				"rock came to a rest after being kicked")
-	# calculate movement since last frame
+	# if rock was vertically falling before but suddenly lost a bunch of vertical speed,
+	# then make the dust particles emit
+	if last_rock_pos.y - second_rock_pos.y < -0.25 and\
+			self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3:
+		$RockCameraPivot/RockCameraArm/RockDustParticles.emitting = true
+	# update old rock positions
+	second_rock_pos = last_rock_pos
 	last_rock_pos = self.position
 	# orbit camera
 	if camera_orbiting:
