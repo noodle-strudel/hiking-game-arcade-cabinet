@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://daxg5bm344es2"]
 
 [ext_resource type="Script" uid="uid://cja5rwrkymd1e" path="res://events/coin_event/coin_event.gd" id="1_1r1eu"]
+[ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="2_7p5nr"]
 
 [node name="CoinEvent" type="Node" unique_id=1346081188]
 process_mode = 3
 script = ExtResource("1_1r1eu")
+
+[node name="TheCoin" type="Sprite2D" parent="." unique_id=961068099]
+visible = false
+position = Vector2(973, 523)
+texture = ExtResource("2_7p5nr")
