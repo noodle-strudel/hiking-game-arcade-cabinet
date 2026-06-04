@@ -119,8 +119,10 @@ func _physics_process(_delta: float) -> void:
 				"rock came to a rest after being kicked")
 	# if rock was vertically falling before but suddenly lost a bunch of vertical speed,
 	# then make the dust particles emit
-	if last_rock_pos.y - second_rock_pos.y < -0.25 and\
-			self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3:
+	if (
+		last_rock_pos.y - second_rock_pos.y < -0.05 and\
+		self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3
+	):
 		$RockCameraPivot/RockCameraArm/RockDustParticles.emitting = true
 	# update old rock positions
 	second_rock_pos = last_rock_pos
