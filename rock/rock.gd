@@ -125,3 +125,6 @@ func _physics_process(_delta: float) -> void:
 
 	# always make rock camera look at rock
 	%RockCamera.look_at(self.position)
+	
+	# control the ssize of the rock's trail
+	%RockKickTrail.size = clamp((self.linear_velocity.length() / 20 ) - 0.3, 0.0, 0.3)

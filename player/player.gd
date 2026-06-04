@@ -18,7 +18,7 @@ const buddy_rock_path = "../Rock"
 const kick_bar_path = "../UI/KickingMenu/PowerBar/KickbarInd"
 var rock = null
 var bar = null
-var kick_scalar = 5.0 # relative force of kick
+var kick_scalar = 10.0 # relative force of kick
 var kick_deviance = 0.5
 
 func _ready() -> void:
