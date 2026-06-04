@@ -2,7 +2,13 @@ extends Node
 
 # informs the script of what scenes can be instantiated as segments in a level
 @onready var _level_segments = [
-	preload("res://level_grids/park/park_grid.tscn")
+	preload("res://level_grids/park/park_grid.tscn"),
+	#preload("res://level_grids/heaven_stairs/heaven_grid.tscn")
+]
+
+# what scenes can be instantiated when the number of kicks go down
+@onready var _low_level_segments = [
+	preload("res://level_grids/heaven_stairs/heaven_grid.tscn")
 ]
 
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
@@ -43,7 +49,9 @@ func _ready() -> void:
 			# position
 			_level_grid[z + 1][x + 1].position =\
 					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
-	_level_grid[1][1].add_collision_to_trees()
+	# Check if the active grid is a ParkGrid
+	if _level_grid[1][1] is ParkGrid:
+		_level_grid[1][1].add_collision_to_trees()
 
 # Camera changes based on gamestate.
 func _change_camera(state: GameManager.gamestates, cause: String) -> void:
@@ -88,6 +96,9 @@ func _process(delta: float) -> void:
 
 # chooses a level segment to add
 func _select_level_segment() -> PackedScene:
+	# once kicks remaining goes low enough, pick different segments
+	if GameManager.kicks_remaining < 10000:
+		return _low_level_segments.pick_random()
 	return _level_segments.pick_random()
 	
 func _instantiate_chunk() -> Node3D:
@@ -151,4 +162,6 @@ func _on_grid_position_changed(shift) -> void:
 						(grid_position[0] + chunk_x - 1) * _grid_x_dimension,\
 						0.0,\
 						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
-	_level_grid[1][1].add_collision_to_trees()
+	# Check if the active grid is a ParkGrid
+	if _level_grid[1][1] is ParkGrid:
+		_level_grid[1][1].add_collision_to_trees()

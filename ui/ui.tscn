@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://cp4gentdxrtoy" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
-[ext_resource type="AudioStream" uid="uid://b4lt7ulgkdgwg" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
+[ext_resource type="AudioStream" uid="uid://coav6axwdya05" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
 [ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="13_diyc5"]
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
@@ -385,6 +385,7 @@ theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
 
 [node name="EventElements" type="Control" parent="." unique_id=446795581]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

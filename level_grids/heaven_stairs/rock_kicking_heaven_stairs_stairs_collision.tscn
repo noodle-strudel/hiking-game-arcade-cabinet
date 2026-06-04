@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dx6a1el0gppws"]
+
+[ext_resource type="PackedScene" uid="uid://bme7jiiq008ld" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_stairs_collision.glb" id="1_srami"]
+
+[node name="rock_kicking_heaven_stairs_stairs_collision" unique_id=296698396 instance=ExtResource("1_srami")]
+
+[node name="stairs" parent="." index="0" unique_id=438850130]
+collision_layer = 4
+collision_mask = 2

@@ -2,15 +2,21 @@
 
 [ext_resource type="Material" uid="uid://d2t24uwhp8nwq" path="res://addons/vaportrail/example/Trail.tres" id="1_msqi7"]
 
+[sub_resource type="Curve" id="Curve_hqr82"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Gradient" id="Gradient_4frb0"]
 offsets = PackedFloat32Array(0, 0.46417445, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="RockKickTrail" type="VaporTrail" unique_id=1294450291]
+config/geometry_nodepath = NodePath(".")
 config/num_points = 60
 config/update_interval = 0.05
 visual/material = ExtResource("1_msqi7")
-visual/size = 0.1
+visual/size = 0.2
+visual/size_curve = SubResource("Curve_hqr82")
 visual/color_gradient = SubResource("Gradient_4frb0")
 visual/uv_shift = -0.5
 transform = Transform3D(1.0000005, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
