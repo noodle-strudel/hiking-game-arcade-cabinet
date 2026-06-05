@@ -112,18 +112,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	# report to the game manager when the rock has come to a rest after being kicked
-	if GameManager.state == GameManager.gamestates.ROCK_KICKED and\
-			$KickTimer.get_time_left() == 0.0 and\
-			self.position.distance_to(last_rock_pos) < 0.000001:
+	if (
+		GameManager.state == GameManager.gamestates.ROCK_KICKED and\
+		$KickTimer.get_time_left() == 0.0 and\
+		self.position.distance_to(last_rock_pos) < 0.000001
+	):
 		GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT,\
 				"rock came to a rest after being kicked")
 	# if rock was vertically falling before but suddenly lost a bunch of vertical speed,
-	# then make the dust particles emit
+	# then emit the dust particles
 	if (
 		last_rock_pos.y - second_rock_pos.y < -0.05 and\
 		self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3
 	):
-		$RockCameraPivot/RockCameraArm/RockDustParticles.emitting = true
+		%RockDustParticles.emitting = true
 	# update old rock positions
 	second_rock_pos = last_rock_pos
 	last_rock_pos = self.position
