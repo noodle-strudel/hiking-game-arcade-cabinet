@@ -1,4 +1,5 @@
 extends Node3D
+class_name ParkGrid
 
 # multimeshes for the trees
 @onready var conifer_tree_multimesh: MultiMesh = $ConiferTrees.multimesh
@@ -32,8 +33,7 @@ func _process(delta: float) -> void:
 # add the transform to the staticbody3d much easier than a collisionshape3d.
 # TODO: experiment with making a shape for the deciduous tree
 func add_collision_to_trees() -> void:
-	print($TreeStaticBodies.get_children())
-	if (!$TreeStaticBodies.get_children()):
+	if !$TreeStaticBodies.get_children():
 		for i in range(conifer_tree_multimesh.instance_count):
 			var conifer_collision: StaticBody3D = conifer_collision_body.instantiate()
 			conifer_collision.set_transform(conifer_tree_multimesh.get_instance_transform(i))
@@ -74,4 +74,8 @@ func _save_convex_from_concave(concave: ConcavePolygonShape3D) -> void:
 
 func _on_oob_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
-		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "fell through the ground")
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell through the ground...")
+
+func _on_lake_barrier_body_entered(body: Node3D) -> void:
+	if body.name == "Rock":
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell in the lake...")
