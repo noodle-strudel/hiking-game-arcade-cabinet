@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
-[ext_resource type="PackedScene" uid="uid://b6jve5xwmpj3m" path="res://level_grids/park/park_grid.tscn" id="4_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
@@ -68,11 +67,6 @@ transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0
 
 [node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
 transform = Transform3D(-4.3711392e-08, -2.9802322e-08, 1.0000002, 0, 1.0000002, 2.9802322e-08, -1, -1.776357e-15, -4.3711392e-08, 16.367886, -0.59585285, -9.536743e-07)
-
-[node name="ParkGrid" parent="." unique_id=891737648 instance=ExtResource("4_ifaiv")]
-unique_name_in_owner = true
-transform = Transform3D(1.0000001, -2.9802322e-08, 0, 2.9802322e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-visible = false
 
 [node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]
 
