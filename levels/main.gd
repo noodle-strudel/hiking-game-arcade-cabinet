@@ -7,7 +7,7 @@ extends Node
 ]
 
 # what scenes can be instantiated when the number of kicks go down
-@onready var _low_level_segments = [
+@onready var _low_kick_level_segments = [
 	preload("res://level_grids/heaven_stairs/heaven_grid.tscn")
 ]
 
@@ -87,9 +87,17 @@ func _process(delta: float) -> void:
 	_last_grid_position = grid_position.duplicate()
 	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
 	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
+	
+	print("x: ",grid_position[0],", y: ", grid_position[1])
 	# if the coordinate has changed
-	if _last_grid_position[0] != grid_position[0] or\
-			_last_grid_position[1] != grid_position[1]:
+	if (
+		_last_grid_position[0] != grid_position[0] or
+		_last_grid_position[1] != grid_position[1]
+	):
+		if _level_grid[1][1] is ParkGrid:
+			# deload all tree collisions
+			_level_grid[1][1].remove_collision_from_trees()
+		
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
@@ -98,7 +106,7 @@ func _process(delta: float) -> void:
 func _select_level_segment() -> PackedScene:
 	# once kicks remaining goes low enough, pick different segments
 	if GameManager.kicks_remaining < 10000:
-		return _low_level_segments.pick_random()
+		return _low_kick_level_segments.pick_random()
 	return _level_segments.pick_random()
 	
 func _instantiate_chunk() -> Node3D:
@@ -125,8 +133,10 @@ func _on_grid_position_changed(shift) -> void:
 		var unload_ind_z = -chunk_z + 1
 		for chunk_x in range(3): # 0, 1, 2
 			var unload_ind_x = -chunk_x + 1
-			if (shift[0] != 0 and shift[0] == unload_ind_x) or\
-					(shift[1] != 0 and shift[1] == unload_ind_z):
+			if (
+				(shift[0] != 0 and shift[0] == unload_ind_x) or
+				(shift[1] != 0 and shift[1] == unload_ind_z)
+			):
 				unloaded_chunks.append(_level_grid[chunk_z][chunk_x])
 	
 	# unload old chunks
@@ -158,9 +168,9 @@ func _on_grid_position_changed(shift) -> void:
 				# otherwise, instantiate a new chunk
 				var new_chunk = _instantiate_chunk()
 				_level_grid[chunk_z][chunk_x] = new_chunk
-				new_chunk.position = Vector3(\
-						(grid_position[0] + chunk_x - 1) * _grid_x_dimension,\
-						0.0,\
+				new_chunk.position = Vector3(
+						(grid_position[0] + chunk_x - 1) * _grid_x_dimension,
+						0.0,
 						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
 	# Check if the active grid is a ParkGrid
 	if _level_grid[1][1] is ParkGrid:

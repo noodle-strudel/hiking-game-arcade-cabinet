@@ -5,9 +5,12 @@ extends CharacterBody3D
 @export var rotation_speed: float = 2.0
 @export var max_up: float = 45.0
 @export var max_down: float = -60.0
+@export var kick_scalar = 10.0 # relative force of kick
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
 @onready var legs = $Legs
+
+
 
 # Track rotation
 var current_y_rotation: float = 0.0
@@ -18,7 +21,7 @@ const buddy_rock_path = "../Rock"
 const kick_bar_path = "../UI/KickingMenu/PowerBar/KickbarInd"
 var rock = null
 var bar = null
-var kick_scalar = 10.0 # relative force of kick
+var kick_bar_multiplier = 0.0
 var kick_deviance = 0.5
 
 func _ready() -> void:
@@ -67,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			Input.is_action_just_pressed("kick"):
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
 		if bar:
-			kick_scalar = abs(bar.position.x / 15)
+			kick_bar_multiplier = abs(bar.position.x / 15)
 		_kick_rock()
 	
 	# fall.
@@ -102,7 +105,7 @@ func _kick_rock() -> void:
 		var direction_to_rock := Vector3(rock.position - self.position)
 		direction_to_rock = direction_to_rock.normalized() #fixes issues
 		var impulse_vector =\
-				direction_to_rock * kick_scalar + Vector3(0.0, kick_scalar, 0.0)
+				direction_to_rock * kick_scalar + Vector3(0.0, kick_bar_multiplier, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
 		# report kick to game manager

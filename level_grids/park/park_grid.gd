@@ -8,16 +8,6 @@ class_name ParkGrid
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
-"""PUBLIC CONSTANTS SINCE THE PARK GRID ACTS LIKE A CONTAINER OF INFO LIKE A NODE"""
-const top: Vector3 = Vector3(0, 0, -250.0)
-const left: Vector3 = Vector3(-250.0, 0, 0)
-const right: Vector3 = Vector3(250.0, 0, 0)
-const bottom: Vector3 = Vector3(0, 0, -250.0)
-const top_left: Vector3 = top + left
-const top_right: Vector3 = top + right
-const bottom_left: Vector3 = bottom + left
-const bottom_right: Vector3 = bottom + right
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#_make_trees_point_up()
@@ -47,6 +37,9 @@ func add_collision_to_trees() -> void:
 func remove_collision_from_trees() -> void:
 	for child in $TreeStaticBodies.get_children():
 		child.queue_free()
+		
+		# stagger queue_free to avoid lag spike
+		await get_tree().physics_frame
 
 # iterates through each multimesh and makes its basis an identity matrix, then
 # saves it to the file system. for development only
