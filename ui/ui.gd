@@ -20,7 +20,8 @@ func _ready() -> void:
 	_start_time = Time.get_unix_time_from_system()
 		
 	_clear_ui()
-	$IdleMenu.visible = true
+	$IdleMenu.show()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,21 +35,22 @@ func _process(delta: float) -> void:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	# hide the contract after it is signed and go to the letter spinner
 	if GameManager.state == GameManager.gamestates.CONTRACT and\
-			Input.is_action_just_pressed("i_accept"):
-		$ContractMenu/Contract.visible = false
-		%LetterSpinner.visible = true
+			Input.is_action_just_pressed("confirm"):
+		$ContractMenu/ContractContainer.hide()
+		%LetterSpinner.show()
 	# Handle the letter spinner
 	if %LetterSpinner.visible:
 		if(spinstep < 2):
-			%LetterSpinner/Letter1.text = char((randi() % 26) + 65)
+			%Letter1.text = char((randi() % 26) + 65)
 		if(spinstep < 3):
-			%LetterSpinner/Letter2.text = char((randi() % 26) + 65)
+			%Letter2.text = char((randi() % 26) + 65)
 		if(spinstep < 4):
-			%LetterSpinner/Letter3.text = char((randi() % 26) + 65)
-		if Input.is_action_just_pressed("i_accept") or\
+			%Letter3.text = char((randi() % 26) + 65)
+		if Input.is_action_just_pressed("confirm") or\
 				Input.is_action_just_pressed("kick"):
 			spinstep += 1
-			if(spinstep == 5):
+			if spinstep == 4:
+				await get_tree().create_timer(2).timeout
 				spinstep = 0
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 						"contract signed")
@@ -60,41 +62,43 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 	%KicksRemainingGameplay.text = ("KICKS REMAINING: " + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
 
+
 # enable and disable UI elements. cause is mostly used for OOB causes
 func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
-			$IdleMenu.visible = true
+			$IdleMenu.show()
 		GameManager.gamestates.CONTRACT:
-			$ContractMenu.visible = true
+			$ContractMenu.show()
+			$ContractMenu/ContractContainer.show()
 		GameManager.gamestates.KICKING:
-			$KickingMenu.visible = true
+			$KickingMenu.show()
 		GameManager.gamestates.ROCK_KICKED:
-			$RockKickedMenu.visible = true
+			$RockKickedMenu.show()
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
 			$OOBText.text = cause #cause is currently not being set before entering OOB state, unfixed because I can't find where OOB state is set
-			$OOBText.visible = true
+			$OOBText.show()
 			await get_tree().create_timer(2).timeout
-			$OOBText.visible = false
+			$OOBText.hide()
 			GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 func _scoring_sequence() -> void:
 	$ScoreMenu/ScoreElem/RoundScore.text = (str(GameManager.last_score))
-	$ScoreMenu.visible = true
+	$ScoreMenu.show()
 	await get_tree().create_timer(1).timeout
-	%ScoreElem.visible = true
+	%ScoreElem.show()
 	await get_tree().create_timer(1).timeout
-	%KicksRemainingElem.visible = true
+	%KicksRemainingElem.show()
 	await get_tree().create_timer(1).timeout
-	%KicksRemainingFancy.visible = true
+	%KicksRemainingFancy.show()
 	
 	# long, drawn out ending animation #TODO make fancier.
 	await get_tree().create_timer(1).timeout
-	%GameOverText.visible = true
+	%GameOverText.show()
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
 	await get_tree().create_timer(50).timeout
@@ -103,24 +107,24 @@ func _scoring_sequence() -> void:
 
 func game_over_text_reset() -> void:
 	game_over_text_scroll = false
-	%GameOverText.visible = false
+	%GameOverText.hide()
 	%GameOverText.position = game_over_text_reset_pos
 	$ScoreMenu/EpicMusicPlayer.stop()
+
 
 func _clear_ui() -> void:
 	# hide each menu
 	var menus = get_children()
 	for menu in menus:
-		menu.visible = false
+		menu.hide()
 	# reset for scoring sequence
-	%ScoreElem.visible = false
-	%KicksRemainingElem.visible = false
-	%KicksRemainingFancy.visible = false
+	%ScoreElem.hide()
+	%KicksRemainingElem.hide()
+	%KicksRemainingFancy.hide()
 	game_over_text_reset()
 	# reset for contract sequence 
-	$ContractMenu/Contract.visible = true
-	%LetterSpinner.visible = false
-	
+	%Contract.show()
+	%LetterSpinner.hide()
 
 
 func _on_epic_music_player_finished() -> void:

@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			Input.is_action_just_pressed("kick"):
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
 		if bar:
-			kick_bar_multiplier = abs(bar.position.x / 15)
+			kick_bar_multiplier = abs(bar.position.x / 80)
 		_kick_rock()
 	
 	# fall.
@@ -105,7 +105,7 @@ func _kick_rock() -> void:
 		var direction_to_rock := Vector3(rock.position - self.position)
 		direction_to_rock = direction_to_rock.normalized() #fixes issues
 		var impulse_vector =\
-				direction_to_rock * kick_scalar + Vector3(0.0, kick_bar_multiplier, 0.0)
+				direction_to_rock * (kick_scalar * kick_bar_multiplier) + Vector3(0.0, kick_scalar * kick_bar_multiplier / 2, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
 		# report kick to game manager

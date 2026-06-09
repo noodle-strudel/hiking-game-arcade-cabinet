@@ -88,7 +88,7 @@ func _process(delta: float) -> void:
 	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
 	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
 	
-	print("x: ",grid_position[0],", y: ", grid_position[1])
+	#print("x: ",grid_position[0],", y: ", grid_position[1])
 	# if the coordinate has changed
 	if (
 		_last_grid_position[0] != grid_position[0] or
