@@ -32,7 +32,6 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -149,72 +148,98 @@ horizontal_alignment = 1
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Contract" type="Label" parent="ContractMenu" unique_id=1916097480]
-layout_mode = 0
-offset_left = 804.0
-offset_top = 19.0
-offset_right = 1176.0
-offset_bottom = 1056.0
+[node name="ContractContainer" type="MarginContainer" parent="ContractMenu" unique_id=84038302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 480
+theme_override_constants/margin_right = 480
+
+[node name="PanelContainer" type="PanelContainer" parent="ContractMenu/ContractContainer" unique_id=204343490]
+layout_mode = 2
+
+[node name="Contract" type="Label" parent="ContractMenu/ContractContainer/PanelContainer" unique_id=1916097480]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 33
-text = "     The Official Rulings
-You agree hereby that the
-kick which you are about
-to commence is to be the
-first and only kick you will
-commit upon the rock
-during this period of
-twenty four hours
-commonly refered to as
-one day. Any kicks further
-which you commit to the
-rock must be, if at all,
-commenced on a day
-which occurs after the one
-which is peresent?
-           I AGREE"
+text = "The Official Rulings
+
+You agree hereby that the kick which you are about to commence is to be the first and only kick you will commit upon the rockduring this period of twenty four hours commonly refered to as one day. Any kicks further which you commit to the rock must be, if at all, commenced on a day which occurs after the one which is present?
+
+I AGREE"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="LetterSpinner" type="Control" parent="ContractMenu" unique_id=400664939]
 unique_name_in_owner = true
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Letter1" type="Label" parent="ContractMenu/LetterSpinner" unique_id=1702668583]
-layout_mode = 0
-offset_left = 812.0
-offset_top = 496.0
-offset_right = 865.0
-offset_bottom = 542.0
+[node name="CenterContainer" type="CenterContainer" parent="ContractMenu/LetterSpinner" unique_id=1556148380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ContractMenu/LetterSpinner/CenterContainer" unique_id=1381784538]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer" unique_id=73069558]
+layout_mode = 2
+
+[node name="InitialsTitle" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=282279328]
+layout_mode = 2
+text = "Enter your name."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=797882866]
+layout_mode = 2
+alignment = 1
+
+[node name="Letter1" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1702668583]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 33
 text = "A"
 
-[node name="Letter2" type="Label" parent="ContractMenu/LetterSpinner" unique_id=1685922779]
-layout_mode = 0
-offset_left = 847.0
-offset_top = 496.0
-offset_right = 887.0
-offset_bottom = 542.0
+[node name="Letter2" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1685922779]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 33
 text = "A"
 
-[node name="Letter3" type="Label" parent="ContractMenu/LetterSpinner" unique_id=872545628]
-layout_mode = 0
-offset_left = 884.0
-offset_top = 495.0
-offset_right = 924.0
-offset_bottom = 541.0
+[node name="Letter3" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=872545628]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 33
 text = "A"
+
+[node name="InitialsInstructions" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=1775663025]
+layout_mode = 2
+text = "Press Confirm Thrice"
+horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
 visible = false
@@ -255,6 +280,7 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -351,9 +377,9 @@ theme_override_fonts/italics_font = SubResource("FontVariation_bi8hs")
 bbcode_enabled = true
 text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
 
-Be not disheartened by its pretentions, traveller. ‘Tis a pityable rock. Thour’t possessed of a power unthinkable to the likes of it. The rock is stalwart, stable, unmoved by time — but not unmoved by thee. Thou’rt mortal, and as such, thou’rt born of fire and flame, and hold command over the song of change itself. ‘Tis a terrible curse, to burn for but a moment in history... but the fire in thy veins is bright and strong. The will to forge, to interrupt, to [i]change[/i], is thine birthright. Cherish that power and foster it in thine heart. A stone can outlast a kingdom — but fire can speak a kingdom into being. Forget not thine voice: If thee can speak forth a story of change, it can be made so. 
+Be not disheartened by its pretentions, traveller. ‘Tis a pityable rock. Thou'rt possessed of a power unthinkable to the likes of it. The rock is stalwart, stable, unmoved by time — but not unmoved by thee. Thou’rt mortal, and as such, thou’rt born of fire and flame, and hold command over the song of change itself. ‘Tis a terrible curse, to burn for but a moment in history... but the fire in thy veins is bright and strong. The will to forge, to interrupt, to [i]change[/i], is thine birthright. Cherish that power and foster it in thine heart. A stone can outlast a kingdom — but fire can speak a kingdom into being. Forget not thine voice: If thee can speak forth a story of change, it can be made so. 
 
-What, it remains, spurred thine pilgrimage to this humble shrine? Didst thee seek truth? Didst thou knoweth already the power of which thour’t possessed? Didst thou chance upon this place at the behest of fickle fate? Thou’rt urged to ponder the question. In the bright tapestry of thine history, this modest moment will remain. Forget not thine own sway over the story of self. ‘Tis more malleable than one wouldst imagine. 
+What, it remains, spurred thine pilgrimage to this humble shrine? Didst thee seek truth? Didst thou knoweth already the power of which thou'rt possessed? Didst thou chance upon this place at the behest of fickle fate? Thou’rt urged to ponder the question. In the bright tapestry of thine history, this modest moment will remain. Forget not thine own sway over the story of self. ‘Tis more malleable than one wouldst imagine. 
 
 To the rock, thine affairs are a meagre sort. Be troubled not by its stoic facade, pilgrim. Despite the firmness of its body and the steadiness of its stance, it remains forever changed by thine hand. Or perhaps, instead, thine foot. However trifling be thine contribution, it stands in turn with each pilgrim’s efforts afore thee, and with each humble kick yet to come. 
 

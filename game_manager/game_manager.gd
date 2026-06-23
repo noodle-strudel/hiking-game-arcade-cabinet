@@ -6,7 +6,7 @@
 extends Node
 ## States of the game.
 enum gamestates {
-	## The cabinet is idle (no input recieved for a while). 
+	## The cabinet is idle (no input received for a while). 
 	IDLE,
 	## The player is signing the 'contract'.
 	CONTRACT,
