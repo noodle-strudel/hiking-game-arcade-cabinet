@@ -24,12 +24,6 @@ ambient_light_energy = 0.5
 reflected_light_source = 1
 tonemap_mode = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_l8qe7"]
-size = Vector3(50, 1, 50)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m1504"]
-data = PackedVector3Array(-25, 0.5, 25, 25, 0.5, 25, -25, -0.5, 25, 25, 0.5, 25, 25, -0.5, 25, -25, -0.5, 25, 25, 0.5, -25, -25, 0.5, -25, 25, -0.5, -25, -25, 0.5, -25, -25, -0.5, -25, 25, -0.5, -25, 25, 0.5, 25, 25, 0.5, -25, 25, -0.5, 25, 25, 0.5, -25, 25, -0.5, -25, 25, -0.5, 25, -25, 0.5, -25, -25, 0.5, 25, -25, -0.5, -25, -25, 0.5, 25, -25, -0.5, 25, -25, -0.5, -25, 25, 0.5, 25, -25, 0.5, 25, 25, 0.5, -25, -25, 0.5, 25, -25, 0.5, -25, 25, 0.5, -25, -25, -0.5, 25, 25, -0.5, 25, -25, -0.5, -25, 25, -0.5, 25, 25, -0.5, -25, -25, -0.5, -25)
-
 [node name="Main" type="Node" unique_id=2092767996]
 script = ExtResource("1_l8qe7")
 
@@ -41,18 +35,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 light_color = Color(1, 0.9607843, 0.9019608, 1)
 light_energy = 1.5
 shadow_enabled = true
-
-[node name="GameWorldTest" type="StaticBody3D" parent="." unique_id=1553821658]
-editor_description = "NOTE FROM MELODY: This can be removed. "
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
-visible = false
-
-[node name="GameWorld" type="MeshInstance3D" parent="GameWorldTest" unique_id=1101693235]
-mesh = SubResource("BoxMesh_l8qe7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorldTest" unique_id=1118338106]
-shape = SubResource("ConcavePolygonShape3D_m1504")
-disabled = true
 
 [node name="Player" parent="." unique_id=963069731 instance=ExtResource("3_l8qe7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68.46544, 0)
