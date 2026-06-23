@@ -14,6 +14,9 @@ const fade_time := 2.0
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_state_change)
+	
+	# play idle music on game boot-up
+	play_track(idle_music)
 
 #plays the specified track passed in when called with AudioManager.play_track()
 func play_track(track) -> void:
