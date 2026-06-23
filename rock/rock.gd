@@ -1,19 +1,5 @@
 extends RigidBody3D
 
-"""
-Notes from Yollaine:
-I changed the CurrentRockCollision's shape type to be ConvexPolygonShape3D which allows
-the rock to actually collide with the floor rather than just fall through it which is what
-was happening with the ConcavePolygonShape3D.
-
-ConcavePolygonShape3D uses the set_points() function which luckily takes
-PackedVector3Arrays. So it was quite easy to switch over to using that. However, I notice
-that the mesh's edges are constantly appearing and disappearing with each kick
-interpolation but it doesn't seem to mess with the collision of the rock itself. Hopefully
-this won't become a problem in the future as this is the only solution I see working right
-now.
-"""
-
 # how far along in the interpolation the shape of the rock is
 @export var progress: float = 0.0
 
@@ -139,5 +125,5 @@ func _physics_process(_delta: float) -> void:
 	# always make rock camera look at rock
 	%RockCamera.look_at(self.position)
 	
-	# control the ssize of the rock's trail
+	# control the size of the rock's trail
 	%RockKickTrail.size = clamp((self.linear_velocity.length() / 20 ) - 0.3, 0.0, 0.3)
