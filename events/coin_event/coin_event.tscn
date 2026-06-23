@@ -8,9 +8,10 @@
 process_mode = 3
 script = ExtResource("1_1r1eu")
 
-[node name="PLACEHOLDER" type="CanvasLayer" parent="." unique_id=395449107]
+[node name="CoinCanvas" type="CanvasLayer" parent="." unique_id=395449107]
+visible = false
 
-[node name="CoinSprite3d" parent="PLACEHOLDER" unique_id=2082827829 instance=ExtResource("2_c6fie")]
+[node name="CoinSprite3d" parent="CoinCanvas" unique_id=2082827829 instance=ExtResource("2_c6fie")]
 position = Vector2(960, 540)
 
 [node name="TheCoin" type="Sprite2D" parent="." unique_id=961068099]
