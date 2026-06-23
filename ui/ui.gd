@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 	# get start time
 	_start_time = Time.get_unix_time_from_system()
-		
+	
 	_clear_ui()
 	$IdleMenu.show()
 
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 				Input.is_action_just_pressed("kick"):
 			spinstep += 1
 			if spinstep == 4:
+				# wait 2 seconds before continuing to kick state
 				await get_tree().create_timer(2).timeout
 				spinstep = 0
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
@@ -79,7 +80,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
-			$OOBText.text = cause #cause is currently not being set before entering OOB state, unfixed because I can't find where OOB state is set
+			$OOBText.text = cause
 			$OOBText.show()
 			await get_tree().create_timer(2).timeout
 			$OOBText.hide()

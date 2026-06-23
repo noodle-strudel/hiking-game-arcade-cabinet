@@ -103,7 +103,9 @@ func _vec_noise(input: Vector3, amt: float) -> Vector3:
 func _kick_rock() -> void:
 	if rock:
 		var direction_to_rock := Vector3(rock.position - self.position)
-		direction_to_rock = direction_to_rock.normalized() #fixes issues
+		
+		# fixes inconsistent rock force due to rock distance
+		direction_to_rock = direction_to_rock.normalized() 
 		var impulse_vector =\
 				direction_to_rock * (kick_scalar * kick_bar_multiplier) + Vector3(0.0, kick_scalar * kick_bar_multiplier / 2, 0.0)
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
