@@ -2,10 +2,10 @@
 extends Control
 
 # variables
-var _start_time := 0.0
-var game_over_text_scroll := false
 @onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
+var _start_time := 0.0
+var game_over_text_scroll := false
 var spinstep = 0
 
 # Called when the node enters the scene tree for the first time.yyyyyyyy
@@ -40,12 +40,13 @@ func _process(delta: float) -> void:
 		%LetterSpinner.show()
 	# Handle the letter spinner
 	if %LetterSpinner.visible:
-		if(spinstep < 2):
-			%Letter1.text = char((randi() % 26) + 65)
-		if(spinstep < 3):
-			%Letter2.text = char((randi() % 26) + 65)
-		if(spinstep < 4):
-			%Letter3.text = char((randi() % 26) + 65)
+		match spinstep:
+			1:
+				%Letter1.text = char((randi() % 26) + 65)
+			2:
+				%Letter2.text = char((randi() % 26) + 65)
+			3:
+				%Letter3.text = char((randi() % 26) + 65)
 		if Input.is_action_just_pressed("confirm") or\
 				Input.is_action_just_pressed("kick"):
 			spinstep += 1
@@ -86,7 +87,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBText.hide()
 			GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
-
+# Scoring sequence function, delays so that entire score screen does not show at once
 func _scoring_sequence() -> void:
 	$ScoreMenu/ScoreElem/RoundScore.text = (str(GameManager.last_score))
 	$ScoreMenu.show()

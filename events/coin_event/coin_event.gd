@@ -7,15 +7,14 @@ var chance = 0
 func _ready() -> void:
 	super._ready()
 	chance = randi() % 100
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-#write all necessary code for the event to happen here
+# write all necessary code for the event to happen here
 func _event_function() -> void:
-	if(chance != 99):
+	if chance != 99:
 		$CoinCanvas.visible = true
 	else:
 		$TheCoin.visible = true
