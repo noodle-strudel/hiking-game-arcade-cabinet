@@ -1,4 +1,4 @@
-extends Node3D
+extends Grid
 class_name ParkGrid
 
 # multimeshes for the trees
