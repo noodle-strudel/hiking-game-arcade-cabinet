@@ -8,7 +8,7 @@ extends Node
 
 # what scenes can be instantiated when the number of kicks go down
 @onready var _low_kick_level_segments = [
-	preload("res://level_grids/heaven_stairs/heaven_grid.tscn")
+	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn")
 ]
 
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
