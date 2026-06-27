@@ -12,6 +12,42 @@
 [ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://coav6axwdya05" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
 
+[sub_resource type="Animation" id="Animation_bi8hs"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubtitlePivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_hrmpd"]
+resource_name = "swing_subtitle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubtitlePivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0, -0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7jpl"]
+_data = {
+&"RESET": SubResource("Animation_bi8hs"),
+&"swing_subtitle": SubResource("Animation_hrmpd")
+}
+
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
 default_font_size = 40
@@ -145,6 +181,10 @@ theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
 text = "Kick a rock!"
 horizontal_alignment = 1
+
+[node name="IdleAnimationPlayer" type="AnimationPlayer" parent="IdleMenu" unique_id=1144452728]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_x7jpl")
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
 visible = false

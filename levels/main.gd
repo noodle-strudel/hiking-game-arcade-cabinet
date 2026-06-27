@@ -85,20 +85,18 @@ func _instantiate_chunk() -> Node3D:
 	self.add_child(chunk)
 	return chunk
 
+# CHUNK LOADING AND UNLOADING
 # Methodology & Process:
 # All loading and unloading is done using shift to calculate chunk changes. 
 # shift is used to calculate which chunks to unload, which direction to copy from,
 # and what ORDER it needs to iterate over the chunks to avoid copy problems.
-# This way, all loading and unloading code is written once, and work given any
+# This way, all loading and unloading code is written once, and works given any
 # direction change. 
 # Steps:
 # 1. Catch unloading side
 # 2. Unload those chunks
 # 3. Copy & move the 9 chunks in the shift direction into their new position in _current_chunks
 #   a. If any are out of range of _current_chunks, instantiate a new chunk
-# it uses the shift value to calculate which chunks to unload,
-# 	which direction to copy from, and what ORDER it needs to iterate over the chunks
-# 	to avoid copy problems.
 ## Event handler for when the rock moves to a new chunk. 
 ## Handles all loading, unloading, and internal organization of chunks. 
 func _on_grid_position_changed(shift) -> void:
