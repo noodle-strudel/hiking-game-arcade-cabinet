@@ -30,14 +30,17 @@ func _process(delta: float) -> void:
 		var time_delta = Time.get_unix_time_from_system() - _start_time
 		var spin = 0.01 * sin(time_delta * 4)
 		$IdleMenu/SubtitlePivot.rotation -= spin
+	
 	# scroll the game over text
 	if game_over_text_scroll:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
+	
 	# hide the contract after it is signed and go to the letter spinner
 	if GameManager.state == GameManager.gamestates.CONTRACT and\
 			Input.is_action_just_pressed("confirm"):
 		$ContractMenu/ContractContainer.hide()
 		%LetterSpinner.show()
+	
 	# Handle the letter spinner
 	if %LetterSpinner.visible:
 		match spinstep:
@@ -87,8 +90,10 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBText.hide()
 			GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
-# Scoring sequence function, delays so that entire score screen does not show at once
+# Scoring sequence function
 func _scoring_sequence() -> void:
+	
+	# Sets the score and then brings up score screen elements, delays for pacing
 	$ScoreMenu/ScoreElem/RoundScore.text = (str(GameManager.last_score))
 	$ScoreMenu.show()
 	await get_tree().create_timer(1).timeout
@@ -115,15 +120,18 @@ func game_over_text_reset() -> void:
 
 
 func _clear_ui() -> void:
+	
 	# hide each menu
 	var menus = get_children()
 	for menu in menus:
 		menu.hide()
+	
 	# reset for scoring sequence
 	%ScoreElem.hide()
 	%KicksRemainingElem.hide()
 	%KicksRemainingFancy.hide()
 	game_over_text_reset()
+	
 	# reset for contract sequence 
 	%Contract.show()
 	%LetterSpinner.hide()
