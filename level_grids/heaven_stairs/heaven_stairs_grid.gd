@@ -1,5 +1,5 @@
 extends Grid
-class_name HeavenGrid
+class_name HeavenStairsGrid
 
 
 # Called when the node enters the scene tree for the first time.
