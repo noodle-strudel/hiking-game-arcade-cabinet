@@ -15,7 +15,7 @@ signal grid_position_changed(shift: Vector2i)
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down
 @onready var _low_kick_level_segments = [
-	preload("res://level_grids/heaven_stairs/heaven_grid.tscn")
+	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn")
 ]
 
 # Cameras

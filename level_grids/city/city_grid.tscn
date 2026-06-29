@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1ni2tvtypn0e"]
+
+[ext_resource type="Script" uid="uid://c3rhtpge0dahn" path="res://level_grids/city/city_grid.gd" id="1_pwxke"]
+
+[node name="CityGrid" type="Node3D" unique_id=728285244]
+script = ExtResource("1_pwxke")

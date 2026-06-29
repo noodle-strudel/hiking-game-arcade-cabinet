@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btvbo3xw6hjni"]
+
+[ext_resource type="Script" uid="uid://bxekbqhhcn8o4" path="res://level_grids/heaven_stairs/heaven_stairs_grid.gd" id="1_11yik"]
+[ext_resource type="PackedScene" uid="uid://ceiqgn5tw0xv4" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.tscn" id="2_um1ff"]
+
+[node name="HeavenStairsGrid" type="Node3D" unique_id=1881476687]
+script = ExtResource("1_11yik")
+
+[node name="rock_kicking_heaven_stairs_ground" parent="." unique_id=300283865 instance=ExtResource("2_um1ff")]

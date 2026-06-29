@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c4it0lnmwl2mv"]
+
+[ext_resource type="Script" uid="uid://cii1rdj5uqmvr" path="res://level_grids/heaven/heaven_grid.gd" id="1_2vwia"]
+
+[node name="HeavenGrid" type="Node3D" unique_id=1660421812]
+script = ExtResource("1_2vwia")
