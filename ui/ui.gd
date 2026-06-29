@@ -16,21 +16,13 @@ func _ready() -> void:
 	# set initial text
 	_on_update_kicks_remaining(GameManager.kicks_remaining) #TODO: more elegant solution.
 	
-	# get start time
-	_start_time = Time.get_unix_time_from_system()
-	
 	_clear_ui()
 	$IdleMenu.show()
+	%IdleAnimationPlayer.play("swing_subtitle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# rotate the subtitle
-	if $IdleMenu.visible:
-		var time_delta = Time.get_unix_time_from_system() - _start_time
-		var spin = 0.01 * sin(time_delta * 4)
-		$IdleMenu/SubtitlePivot.rotation -= spin
-	
 	# scroll the game over text
 	if game_over_text_scroll:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
@@ -74,6 +66,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleMenu.show()
+			%IdleAnimationPlayer.play("swing_subtitle")
 		GameManager.gamestates.CONTRACT:
 			$ContractMenu.show()
 			$ContractMenu/ContractContainer.show()
