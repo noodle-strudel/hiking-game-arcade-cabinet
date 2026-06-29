@@ -12,14 +12,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	# moving the kickbar indicator
-	if(active):
-		if(direction == 0):
+	if active :
+		if direction == 0:
 			$KickbarInd.move_local_x(-delta * 75)
-			if($KickbarInd.position.x <= -115):
+			if $KickbarInd.position.x <= -115:
 				direction = 1
 		else:
 			$KickbarInd.move_local_x(delta * 75)
-			if($KickbarInd.position.x >= 80):
+			if $KickbarInd.position.x >= 80:
 				direction = 0
 
 # Function to change whether the indicator should be moving or not.
