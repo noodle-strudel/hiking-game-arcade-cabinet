@@ -51,6 +51,8 @@ func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.KICKING:
 			player_camera.make_current()
 		GameManager.gamestates.ROCK_KICKED:
+			# wait a moment before switching camera to rock camera
+			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
 			GameManager.report_distance(
