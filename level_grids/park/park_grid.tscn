@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tnnn463vw6kv" path="res://level_grids/park/trees/tree_2.tscn" id="3_ptyal"]
 [ext_resource type="MultiMesh" path="res://level_grids/park/trees/deciduous_multimesh.tres" id="4_mo2hw"]
 [ext_resource type="PackedScene" uid="uid://d37u6wpiakj2k" path="res://level_grids/park/rock_kicking_park_grass.tscn" id="4_ptyal"]
+[ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final_wip.tscn" id="8_1caeb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p072"]
 resource_name = "grass"
@@ -68,6 +69,7 @@ size = Vector3(123.61458, 6.9086914, 90.772675)
 script = ExtResource("1_mo2hw")
 
 [node name="rock_kicking_park_ground_new" parent="." unique_id=1262688511 instance=ExtResource("2_mo2hw")]
+visible = false
 
 [node name="ConiferTrees" type="MultiMeshInstance3D" parent="." unique_id=1181867733]
 lod_bias = 0.05
@@ -127,6 +129,8 @@ debug_fill = false
 transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1, 2.6277485e-09, 0.90830386, -2.069921e-09, 0.4183111, 97.30779, -8.355211, -105.437614)
 shape = SubResource("BoxShape3D_mo2hw")
 debug_fill = false
+
+[node name="rock_kicking_park_ground_final_wip" parent="." unique_id=666659489 instance=ExtResource("8_1caeb")]
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]

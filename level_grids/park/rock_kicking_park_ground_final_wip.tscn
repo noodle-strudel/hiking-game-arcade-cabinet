@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://chq1boetvfray"]
+
+[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/final_WIP/rock_kicking_park_ground_final_wip.glb" id="1_ii4a6"]
+
+[node name="rock_kicking_park_ground_final_wip" unique_id=666659489 instance=ExtResource("1_ii4a6")]
