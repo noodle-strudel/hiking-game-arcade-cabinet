@@ -53,8 +53,13 @@ func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			GameManager.report_distance(
-					$Player.global_position.distance_to($Rock.global_position))
+			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
+			
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:

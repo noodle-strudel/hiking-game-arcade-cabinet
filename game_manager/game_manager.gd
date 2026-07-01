@@ -12,7 +12,7 @@ signal gamestate_update(state, cause) # the state has changed. Used for idle as 
 @onready var state := gamestates.IDLE
 var distance_kicked := 0.0
 var kicks_remaining := 1000000
-var last_kick_strength := 0.0
+var current_kick_strength := 0.0
 var last_score := 100
 
 ## States of the game.
@@ -40,26 +40,15 @@ enum gamestates {
 func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
 		_switch_state(target_state, cause)
 
-## Used by main.gd to report the distance of the last kick. 
-func report_distance(kick_distance: float) -> void:
-	distance_kicked = kick_distance
-	report_score()
-
-
-## Used by player.gd to report the strength of the last kick. 
-func report_kick(kick_strength: float) -> void:
-	last_kick_strength = kick_strength
-
-
 ## Updates last_score to the newest score calculation. 
-func report_score() -> void:
-	last_score = int((last_kick_strength + distance_kicked) * 20)
+func report_score(kick_strength: float, kick_distance: float) -> void:
+	last_score = int((kick_strength + kick_distance) * 20)
 	print(
-		"Kick Stength: ", last_kick_strength,
-		" | Distance Kicked: ", distance_kicked,
+		"Kick Stength: ", kick_strength,
+		" | Distance Kicked: ", kick_distance,
 		" | Score: ", last_score
 	)
-
+	
 ## Decrements the kicks remaining and emits a signal.
 func _decrement_kicks_remaining() -> void:
 	kicks_remaining -= 1
