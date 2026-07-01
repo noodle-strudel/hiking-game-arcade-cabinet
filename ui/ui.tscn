@@ -78,7 +78,6 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -141,6 +140,7 @@ offset_top = 848.0
 offset_right = 1712.0
 offset_bottom = 985.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.2784314, 0.2509804, 1)
 theme_override_fonts/normal_font = ExtResource("5_bo1jx")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
@@ -338,6 +338,7 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -371,14 +372,14 @@ theme_override_font_sizes/font_size = 100
 text = "27"
 horizontal_alignment = 1
 
-[node name="ScoreBG" type="ColorRect" parent="ScoreMenu/ScoreElem" unique_id=1481968747]
+[node name="ScoreBG" type="Panel" parent="ScoreMenu/ScoreElem" unique_id=1365707913]
 z_index = -1
 layout_mode = 0
 offset_left = 696.0
 offset_top = 128.0
 offset_right = 1224.0
 offset_bottom = 480.0
-color = Color(0, 0, 0, 0.1882353)
+theme_override_styles/panel = ExtResource("9_diyc5")
 
 [node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
 unique_name_in_owner = true
@@ -409,14 +410,14 @@ theme_override_font_sizes/font_size = 100
 text = "999999"
 horizontal_alignment = 1
 
-[node name="KicksRemainingBG" type="ColorRect" parent="ScoreMenu/KicksRemainingElem" unique_id=1095988415]
+[node name="KicksRemainingBG" type="Panel" parent="ScoreMenu/KicksRemainingElem" unique_id=725896772]
 z_index = -1
 layout_mode = 0
 offset_left = 376.0
 offset_top = 496.0
 offset_right = 1544.0
 offset_bottom = 848.0
-color = Color(0, 0, 0, 0.1882353)
+theme_override_styles/panel = ExtResource("9_diyc5")
 
 [node name="GameOverText" type="Node2D" parent="ScoreMenu" unique_id=1607665622]
 unique_name_in_owner = true
