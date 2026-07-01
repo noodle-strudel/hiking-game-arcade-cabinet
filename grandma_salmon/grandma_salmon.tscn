@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfqylqja5e3ny"]
+
+[ext_resource type="Script" uid="uid://cc0stayb0d3ru" path="res://grandma_salmon/grandma_salmon.gd" id="1_m3kgo"]
+
+[node name="GrandmaSalmon" type="Node2D" unique_id=596151515]
+script = ExtResource("1_m3kgo")
