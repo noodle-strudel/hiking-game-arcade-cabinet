@@ -57,3 +57,6 @@ editor_description = "NOTE FROM MELODY: This can be removed. "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
 
 [node name="OOBTimer" type="Timer" parent="." unique_id=1801968399]
+
+[node name="PanningCamera" type="Camera3D" parent="." unique_id=907329462]
+transform = Transform3D(0.67739165, 0.42932162, 0.597347, 0.054711007, 0.7803777, -0.62291074, -0.73358524, 0.45463586, 0.50513256, 26.520473, 59.4533, 21.257294)

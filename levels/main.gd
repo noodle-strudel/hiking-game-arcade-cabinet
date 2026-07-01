@@ -21,6 +21,7 @@ signal grid_position_changed(shift: Vector2i)
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
+@onready var pan_camera = $PanningCamera
 
 # Width and breadth of the level segments
 const _grid_x_dimension := 2 * 250.0
@@ -29,6 +30,9 @@ const _grid_z_dimension := 2 * 250.0
 ## Current chunk displacement since game was instantiated. Ordered x, z. 
 var grid_position := [0, 0] # x,z
 var _last_grid_position := grid_position.duplicate()
+
+# variable to track when the panning camera needs to start panning
+var to_pan = false
 
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
@@ -46,6 +50,9 @@ func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			rock_camera.make_current()
+			await get_tree().create_timer(60).timeout
+			to_pan = true
+			pan_camera.make_current()
 		GameManager.gamestates.CONTRACT:
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
@@ -213,3 +220,5 @@ func _process(_delta: float) -> void:
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
+	
+	# 
