@@ -42,10 +42,12 @@ var _current_chunks = [
 
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
-func _change_camera(state: GameManager.gamestates, cause: String) -> void:
+func _event_handler(state: GameManager.gamestates, cause: String) -> void:
+	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
 			rock_camera.make_current()
+			%UIAnimator.play("idle_float")
 		GameManager.gamestates.CONTRACT:
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
@@ -178,7 +180,7 @@ func _on_grid_position_changed(shift) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
-	GameManager.gamestate_update.connect(_change_camera)
+	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	# load the first grid
 	for z in range(-1, 2, 1):

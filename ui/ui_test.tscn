@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dedtd7j0w0rid"]
+
+[ext_resource type="Texture2D" uid="uid://cg0crbglmnl4s" path="res://ui/stylebox_test2.png" id="1_h6tqd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yiam0"]
+texture = ExtResource("1_h6tqd")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="UITest" type="Control" unique_id=1839477212]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=2009625671]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 136.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yiam0")
