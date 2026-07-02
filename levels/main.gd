@@ -64,8 +64,13 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			GameManager.report_distance(
-					$Player.global_position.distance_to($Rock.global_position))
+			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
+			
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
