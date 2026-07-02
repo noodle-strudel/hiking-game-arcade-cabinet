@@ -32,6 +32,23 @@ var last_rock_pos: Vector3
 # position of rock on second-to-previous frame (for calculating deceleration)
 var second_rock_pos: Vector3
 
+"""Rock's Eyes's Control Functions"""
+
+# align the rock's eyes with the camera
+# NOTE: I've noticed it acts a little wonky when ran just once and needs to be
+# called multiple times for the eyes to actually look at the camera
+func rock_eyes_look_at(camera: Camera3D) -> void:
+	$RockEyes.look_at(camera.global_position, Vector3.UP)
+
+# play the rock's eye's wink anim and return the signal to wait for
+# ex. 
+# await rock.rock_eyes_wink()
+func rock_eyes_wink() -> Signal:
+	$RockEyes/AnimationPlayer.play("wink")
+	return $RockEyes/AnimationPlayer.animation_finished
+
+"""Rock's Functions"""
+
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
 func _interpolate(
@@ -144,6 +161,7 @@ func _physics_process(_delta: float) -> void:
 
 	# update set rock camera pivot and update last rock position
 	$RockCameraPivot.position = self.position
+	$RockEyes.position = self.position
 
 	# always make rock camera look at rock
 	%RockCamera.look_at(self.position)

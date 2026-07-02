@@ -20,6 +20,7 @@ signal grid_position_changed(shift: Vector2i)
 
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
+@onready var rock = $Rock
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 
 # Width and breadth of the level segments
@@ -51,6 +52,12 @@ func _change_camera(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.KICKING:
 			player_camera.make_current()
 		GameManager.gamestates.ROCK_KICKED:
+			
+			#TODO: Remove this block when working on the winking event, this is
+			#just an example
+			await rock.rock_eyes_wink()
+			rock.rock_eyes_look_at(player_camera)
+			
 			# wait a moment before switching camera to rock camera
 			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
