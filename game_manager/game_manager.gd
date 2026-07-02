@@ -10,7 +10,6 @@ signal decrement_kicks_remaining(new_kick_count)
 signal gamestate_update(state, cause) # the state has changed. Used for idle as well
 
 @onready var state := gamestates.IDLE
-var distance_kicked := 0.0
 var kicks_remaining := 1000000
 var current_kick_strength := 0.0
 var last_score := 100
