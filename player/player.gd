@@ -1,28 +1,30 @@
 # Manages player movement & kicking controls. 
 extends CharacterBody3D
 
+# Variables
 # Player rotation limits in degrees.
 @export var rotation_speed: float = 2.0
 @export var max_up: float = 45.0
 @export var max_down: float = -60.0
-@export var kick_scalar = 10.0 # relative force of kick
+
+# Relative force of kick.
+@export var kick_scalar: float = 10.0 
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
-@onready var legs = $Legs
-
-
+@onready var legs: Node3D = $Legs
 
 # Track rotation
 var current_y_rotation: float = 0.0
 var current_x_rotation: float = 0.0
 
-# variables
-const buddy_rock_path = "../Rock"
-const kick_bar_path = "../UI/KickingMenu/PowerBar/KickbarInd"
-var rock = null
-var bar = null
-var kick_bar_multiplier = 0.0
-var kick_deviance = 0.5
+var rock: Node = null
+var bar: Node = null
+var kick_bar_multiplier: float = 0.0
+var kick_deviance: float = 0.5
+
+# Constants
+const buddy_rock_path: String = "../Rock"
+const kick_bar_path: String = "../UI/KickingMenu/PowerBar/KickbarInd"
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
@@ -44,36 +46,50 @@ func _physics_process(delta: float) -> void:
 	
 	# Rotate left and right.
 	var input_y = Input.get_axis("joystick_right", "joystick_left")
-	current_y_rotation += input_y * rotation_speed * delta # Update tracking variable.
-	#removed horizontal clamps.
-	rotation.y = current_y_rotation # Apply rotation to player.
+	
+	# Update tracking variable.
+	current_y_rotation += input_y * rotation_speed * delta 
+	
+	# Apply rotation to player.
+	rotation.y = current_y_rotation 
 	
 	# Rotate up and down.
 	var input_x = Input.get_axis("joystick_down", "joystick_up")
-	current_x_rotation += input_x * rotation_speed * delta # Update tracking variable.
-	# Apply clamps.
-	current_x_rotation =\
-		clamp(current_x_rotation, deg_to_rad(max_down), deg_to_rad(max_up))
-	camera.rotation.x = current_x_rotation # Apply rotation to camera.
 	
-	# handle keeping the rock in front of the player when ready to kick.
-	# if the rock's height needs to be adjusted, change the Margin value
-	# 	in $RockTeeSpringArm's inspector.
+	# Update tracking variable.
+	current_x_rotation += input_x * rotation_speed * delta 
+	
+	# Apply clamps.
+	current_x_rotation = clamp(
+		current_x_rotation, 
+		deg_to_rad(max_down), 
+		deg_to_rad(max_up)
+	)
+		
+	# Apply rotation to camera.
+	camera.rotation.x = current_x_rotation 
+	
+	# Handle keeping the rock in front of the player when ready to kick.
+	# If the rock's height needs to be adjusted, change the Margin value
+	# in $RockTeeSpringArm's inspector.
 	if GameManager.state == GameManager.gamestates.KICKING:
 		if rock:
-			rock.linear_velocity = Vector3(0.0, 0.0, 0.0) #to counteract accumulating gravity
+			# Counteract accumulating gravity.
+			rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
 			rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
 			rock.set_position($RockTeeSpringArm/TeePos.get_global_position())
 	
-	# handle kicking the rock
-	if GameManager.state == GameManager.gamestates.KICKING and\
-			Input.is_action_just_pressed("kick"):
+	# Handle kicking the rock.
+	if (
+		GameManager.state == GameManager.gamestates.KICKING and
+		Input.is_action_just_pressed("kick")
+	):
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
 		if bar:
 			kick_bar_multiplier = abs(bar.position.x / 80)
 		_kick_rock()
-	
-	# fall.
+		
+	# Fall
 	move_and_slide()
 
 func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
@@ -83,35 +99,39 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			_begin_kicking()
 		GameManager.gamestates.ROCK_OOB:
 			await get_tree().create_timer(0.1).timeout
-			if(rock):
+			if rock:
 				rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
 				rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
 
-
-# moves the player to the rock when the state changes. 
+# Moves the player to the rock when the state changes. 
 func _begin_kicking() -> void:
 	if rock:
 		self.position = rock.position + Vector3(0.0, 0.0, 1.0)
 
-# randomizes the dimensions of a Vector3 (for kick impulse)
+# Randomizes the dimensions of a Vector3 (for kick impulse).
 func _vec_noise(input: Vector3, amt: float) -> Vector3:
-	return Vector3(input.x + randfn(0, amt),\
-			input.y + randfn(0, amt),\
-			input.z + randfn(0, amt))
+	return Vector3(
+		input.x + randfn(0, amt), 
+		input.y + randfn(0, amt), 
+		input.z + randfn(0, amt)
+	)
 
-# handles kicking the rock when the state changes. 
+# Handles kicking the rock when the state changes. 
 func _kick_rock() -> void:
 	if rock:
-		var direction_to_rock := Vector3(rock.position - self.position)
+		var direction_to_rock: Vector3 = rock.position - self.position
 		
-		# fixes inconsistent rock force due to rock distance
+		# Fixes inconsistent rock force due to rock distance
 		direction_to_rock = direction_to_rock.normalized() 
-		var impulse_vector =\
-				direction_to_rock * (kick_scalar * kick_bar_multiplier) + Vector3(0.0, kick_scalar * kick_bar_multiplier / 2, 0.0)
+		
+		var total_kick: float = kick_scalar * kick_bar_multiplier
+		var impulse_vector: Vector3 = (direction_to_rock * total_kick) + Vector3(0.0, total_kick / 2, 0.0)
+		
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
-		# report kick to game manager
-		GameManager.report_kick(impulse_vector.length())
 		
-		# play kick animation
+		# Get kick strength.
+		GameManager.current_kick_strength = impulse_vector.length()
+		
+		# Play kick animation
 		legs.play_kick()

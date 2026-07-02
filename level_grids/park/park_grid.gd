@@ -1,4 +1,4 @@
-extends Node3D
+extends Grid
 class_name ParkGrid
 
 # multimeshes for the trees
@@ -7,16 +7,6 @@ class_name ParkGrid
 
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	#_make_trees_point_up()
-	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 # adds a staticbody3d for each tree in a radius around a given point. I read that it can be more efficient this way
 # than adding a ton of collision shapes to a single staticbody3d. Plus i'm able to
@@ -40,6 +30,16 @@ func remove_collision_from_trees() -> void:
 		
 		# stagger queue_free to avoid lag spike
 		await get_tree().physics_frame
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#_make_trees_point_up()
+	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
 # iterates through each multimesh and makes its basis an identity matrix, then
 # saves it to the file system. for development only

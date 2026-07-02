@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://btvbo3xw6hjni"]
-
-[ext_resource type="PackedScene" uid="uid://ceiqgn5tw0xv4" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.tscn" id="1_vg6jt"]
-
-[node name="HeavenGrid" type="Node3D" unique_id=1881476687]
-
-[node name="rock_kicking_heaven_stairs_ground" parent="." unique_id=300283865 instance=ExtResource("1_vg6jt")]
