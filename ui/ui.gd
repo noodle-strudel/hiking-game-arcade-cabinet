@@ -4,6 +4,7 @@ extends Control
 # variables
 @onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
+@onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
@@ -37,11 +38,14 @@ func _process(delta: float) -> void:
 	if %LetterSpinner.visible:
 		match spinstep:
 			1:
-				%Letter1.text = char((randi() % 26) + 65)
+				%Letter1.text = _random_uppercase()
+				%Letter2.text = _random_uppercase()
+				%Letter3.text = _random_uppercase()
 			2:
-				%Letter2.text = char((randi() % 26) + 65)
+				%Letter2.text = _random_uppercase()
+				%Letter3.text = _random_uppercase()
 			3:
-				%Letter3.text = char((randi() % 26) + 65)
+				%Letter3.text = _random_uppercase()
 		if Input.is_action_just_pressed("confirm") or\
 				Input.is_action_just_pressed("kick"):
 			spinstep += 1
@@ -52,11 +56,15 @@ func _process(delta: float) -> void:
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 						"contract signed")
 
+# used for letter spinner. Returns a random uppercase character.
+func _random_uppercase() -> String:
+	return char((randi() % 26) + 65)
 
 # called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
-	%KicksRemainingLabel.text = ("KICKS REMAINING: " + str(kick_count))
-	%KicksRemainingGameplay.text = ("KICKS REMAINING: " + str(kick_count))
+	var kicks_remaining_str := "KICKS REMAINING: "
+	%KicksRemainingLabel.text = (kicks_remaining_bbcode + str(kick_count))
+	%KicksRemainingGameplay.text = (kicks_remaining_str + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
 
 
