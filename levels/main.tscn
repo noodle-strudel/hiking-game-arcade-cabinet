@@ -22,7 +22,64 @@ ambient_light_source = 2
 ambient_light_color = Color(0.9019608, 0.8745098, 0.827451, 1)
 ambient_light_energy = 0.5
 reflected_light_source = 1
-tonemap_mode = 2
+
+[sub_resource type="Animation" id="Animation_ifaiv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICamera:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICamera:offset:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_m1504"]
+resource_name = "idle_float"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICamera:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.23082653, 2.859749, 0.36666667, -4.542696, -10, -0.7666667, 0.2010527, 0.76666665, -0.20105267, 10, -0.70005155, -0.04037974, 0.6666665, 0.038454056, 0, -0.3333335, 4.162468, 0, 0),
+"times": PackedFloat32Array(0, 1.4666667, 4.5, 6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICamera:offset:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.23333333, 4.162468, 10, -0.24997285, -0.10973773, 0.5833334, 0.25608253, -10, -0.54984707, -0.45170906, 0.54999995, 0.45183468, 10, -0.48333335, -0.3968048, 0.5500002, -0.3968048, -10, -0.5500002, -0.20105267, 0.25, 0, 0, -0.13832834, -2.5778964, 0.19999981, 3.7272098),
+"times": PackedFloat32Array(0, 0.75, 2.25, 3.75, 5.25, 6)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ifaiv"]
+_data = {
+&"RESET": SubResource("Animation_ifaiv"),
+&"idle_float": SubResource("Animation_m1504")
+}
 
 [node name="Main" type="Node" unique_id=2092767996]
 script = ExtResource("1_l8qe7")
@@ -32,7 +89,7 @@ environment = SubResource("Environment_ifaiv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706405380]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(1, 0.9607843, 0.9019608, 1)
+light_color = Color(0.9999997, 0.923587, 0.8082503, 1)
 light_energy = 1.5
 shadow_enabled = true
 
@@ -50,8 +107,6 @@ transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0
 [node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
 transform = Transform3D(-4.3711392e-08, -2.9802322e-08, 1.0000002, 0, 1.0000002, 2.9802322e-08, -1, -1.776357e-15, -4.3711392e-08, 16.367886, -0.59585285, -9.536743e-07)
 
-[node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]
-
 [node name="Marker3D" type="Marker3D" parent="." unique_id=761771399]
 editor_description = "NOTE FROM MELODY: This can be removed. "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
@@ -59,4 +114,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
 [node name="OOBTimer" type="Timer" parent="." unique_id=1801968399]
 
 [node name="PanningCamera" type="Camera3D" parent="." unique_id=907329462]
-transform = Transform3D(0.67739165, 0.42932162, 0.597347, 0.054711007, 0.7803777, -0.62291074, -0.73358524, 0.45463586, 0.50513256, 26.520473, 59.4533, 21.257294)
+transform = Transform3D(0.67739165, 0.4293216, 0.59734714, 0.054711007, 0.78037757, -0.6229105, -0.73358524, 0.45463577, 0.5051327, 26.520473, 59.4533, 21.257294)
+
+[node name="UI" parent="." unique_id=593103497 instance=ExtResource("4_m1504")]
+
+[node name="UIAnimator" type="AnimationPlayer" parent="." unique_id=1784718339]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ifaiv")
+autoplay = &"idle_float"
+speed_scale = 0.2
+
+[node name="UICamera" type="Camera2D" parent="." unique_id=906835892]
+unique_name_in_owner = true
+position = Vector2(960, 540)

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://ch2gxx5ye1o18"]
+
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="1_lqhlg"]
+
+[resource]
+default_font = ExtResource("1_lqhlg")
+default_font_size = 200

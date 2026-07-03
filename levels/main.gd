@@ -20,6 +20,7 @@ signal grid_position_changed(shift: Vector2i)
 
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
+@onready var rock = $Rock
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 @onready var pan_camera = $PanningCamera
 
@@ -32,7 +33,7 @@ var grid_position := [0, 0] # x,z
 var _last_grid_position := grid_position.duplicate()
 
 # variable to track when the panning camera needs to start panning
-var to_pan = false
+var to_pan = 0
 
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
@@ -46,22 +47,38 @@ var _current_chunks = [
 
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
-func _change_camera(state: GameManager.gamestates, cause: String) -> void:
+func _event_handler(state: GameManager.gamestates, cause: String) -> void:
+	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
+			to_pan = 0
 			rock_camera.make_current()
+			%UIAnimator.play("idle_float")
 			await get_tree().create_timer(60).timeout
-			to_pan = true
+			to_pan = 1
 			pan_camera.make_current()
 		GameManager.gamestates.CONTRACT:
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
 			player_camera.make_current()
 		GameManager.gamestates.ROCK_KICKED:
+			
+			#TODO: Remove this block when working on the winking event, this is
+			#just an example
+			await rock.rock_eyes_wink()
+			rock.rock_eyes_look_at(player_camera)
+			
+			# wait a moment before switching camera to rock camera
+			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			GameManager.report_distance(
-					$Player.global_position.distance_to($Rock.global_position))
+			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
+			
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
@@ -185,7 +202,7 @@ func _on_grid_position_changed(shift) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
-	GameManager.gamestate_update.connect(_change_camera)
+	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	# load the first grid
 	for z in range(-1, 2, 1):
@@ -221,4 +238,20 @@ func _process(_delta: float) -> void:
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
 	
-	# 
+	# panning camera stuff
+	if to_pan > 0:
+		if to_pan == 1:
+			pan_camera.position = $Player.position
+			pan_camera.position.y += 20
+			pan_camera.position.x += 30
+			pan_camera.look_at($Player.position)
+			to_pan = 2
+		pan_camera.rotate_y(0.001)
+		if to_pan == 2:
+			pan_camera.position.x += 0.1
+			if pan_camera.position.x > $Player.position.x + 100:
+				to_pan = 3
+		if to_pan == 3:
+			pan_camera.position.x += -0.1
+			if pan_camera.position.x < $Player.position.x - 100:
+				to_pan = 2

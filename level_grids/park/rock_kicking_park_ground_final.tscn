@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chq1boetvfray"]
+
+[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/final_WIP/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
+[ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_ur3tk"]
+
+[node name="rock_kicking_park_ground_final" unique_id=1390192939 instance=ExtResource("1_v3cmg")]
+
+[node name="rock_kicking_park_ground_collision" parent="." index="5" unique_id=1306554932 instance=ExtResource("2_ur3tk")]

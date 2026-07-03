@@ -14,5 +14,6 @@ stream = ExtResource("2_smx3j")
 unique_name_in_owner = true
 process_mode = 1
 wait_time = 60.0
+autostart = true
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
