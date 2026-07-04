@@ -36,10 +36,10 @@ animations = [{
 "texture": ExtResource("8_c2g7d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_bt3g1")
+"texture": ExtResource("6_2ayfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2ayfw")
+"texture": ExtResource("7_bt3g1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_jnirr")
