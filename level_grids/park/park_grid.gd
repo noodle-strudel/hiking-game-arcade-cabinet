@@ -47,8 +47,21 @@ func _make_trees_point_up() -> void:
 	for i in range(conifer_tree_multimesh.instance_count):
 		var current_transform: Transform3D = conifer_tree_multimesh.get_instance_transform(i)
 		var default_basis = Basis()
+		var nudge: Vector3 = Vector3.ZERO
 		var new_transform = Transform3D(default_basis, current_transform.origin)
 		conifer_tree_multimesh.set_instance_transform(i, new_transform)
+		
+		# attempt to space out the trees
+		# this is probably a really bad algo time complexity-wise 
+		# so this should not be used multiple times
+		for j in range(conifer_tree_multimesh.instance_count):
+			var compare_transform: Transform3D = conifer_tree_multimesh.get_instance_transform(j)
+			if compare_transform.origin != current_transform.origin:
+				if compare_transform.origin.distance_to(current_transform.origin) < 5:
+					nudge += current_transform.origin.direction_to(compare_transform.origin).normalized()
+					print(nudge.length())
+					new_transform = Transform3D(default_basis, current_transform.origin + nudge)
+					conifer_tree_multimesh.set_instance_transform(i, new_transform)
 		
 	for i in range(deciduous_tree_multimesh.instance_count):
 		var current_transform: Transform3D = deciduous_tree_multimesh.get_instance_transform(i)

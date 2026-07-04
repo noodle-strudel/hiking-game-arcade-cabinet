@@ -125,6 +125,7 @@ start={
 3d_physics/layer_2="rock"
 3d_physics/layer_3="ground"
 3d_physics/layer_4="trees"
+3d_physics/layer_5="player_barrier"
 
 [physics]
 
