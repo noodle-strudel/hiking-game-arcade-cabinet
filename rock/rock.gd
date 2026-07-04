@@ -38,8 +38,9 @@ var second_rock_pos: Vector3
 # NOTE: I've noticed it acts a little wonky when ran just once and needs to be
 # called multiple times for the eyes to actually look at the camera
 func rock_eyes_look_at(camera: Camera3D) -> void:
-	$RockEyes.look_at(camera.global_position, Vector3.UP)
-
+	for i in range(3):
+		$RockEyes.look_at(camera.global_position, Vector3.UP)
+		await get_tree().process_frame
 # play the rock's eye's wink anim and return the signal to wait for
 # ex. 
 # await rock.rock_eyes_wink()
@@ -47,6 +48,14 @@ func rock_eyes_wink() -> Signal:
 	$RockEyes/AnimationPlayer.play("wink")
 	return $RockEyes/AnimationPlayer.animation_finished
 
+func wink_at_camera(camera: Camera3D) -> void:
+	for i in range(3):
+		rock_eyes_look_at(camera)
+		await get_tree().process_frame
+	
+	await rock_eyes_wink()
+	$RockEyes.rotation = Vector3.ZERO
+	
 """Rock's Functions"""
 
 # interpolates the entire shape of the rock;
