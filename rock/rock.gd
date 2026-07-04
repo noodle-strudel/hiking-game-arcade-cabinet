@@ -140,7 +140,7 @@ func _physics_process(_delta: float) -> void:
 		GameManager.switch_state_to(
 			GameManager.gamestates.POSTKICK_EVENT,
 			"rock came to a rest after being kicked"
-		)  
+		)
 
 	# if rock was vertically falling before but suddenly lost a bunch of vertical speed,
 	# then emit the dust particles
