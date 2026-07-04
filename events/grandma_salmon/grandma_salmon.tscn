@@ -59,7 +59,7 @@ animations = [{
 script = ExtResource("1_m3kgo")
 metadata/_custom_type_script = "uid://rdvxw5w1g4li"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145389845]
+[node name="SalmonBody" type="Sprite2D" parent="." unique_id=145389845]
 position = Vector2(960, 648)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_rusq1")
@@ -68,8 +68,7 @@ texture = ExtResource("2_rusq1")
 position = Vector2(960, 154)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_oteel")
-frame = 8
-frame_progress = 0.37009305
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=221657564]
+[node name="GSSpeech" type="AudioStreamPlayer2D" parent="." unique_id=221657564]
 stream = ExtResource("10_7en0j")
+autoplay = true
