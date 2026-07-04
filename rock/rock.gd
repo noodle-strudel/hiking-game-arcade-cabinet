@@ -47,7 +47,7 @@ func rock_eyes_wink() -> Signal:
 	$RockEyes/AnimationPlayer.play("wink")
 	return $RockEyes/AnimationPlayer.animation_finished
 
-# the rock winks at the player camera and winks, then goes back to original direction
+# the rock eyes face the player camera and winks, then goes back to original direction
 func wink_at_camera(camera: Camera3D) -> void:
 	rock_eyes_look_at(camera)
 	await get_tree().process_frame
