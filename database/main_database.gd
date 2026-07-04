@@ -1,6 +1,7 @@
 extends Node
 
-# must be made global before release
+# must be made global before release and placed second in order,
+# below GameManager and above SaveLoads
 # or we discuss some other way to have it enter the scene tree
 # only before release as it will cause errors if MariaDB server isn't installed
 
@@ -12,6 +13,19 @@ var ed: Dictionary = {
 	"db_port": 3306,
 	"db_user": "root",
 }
+var initials : String = ""
+
+func set_initials(first, second, third) -> void:
+	initials = first + second + third
+
+func get_kicks() -> Variant:
+	var stmt : String = "SELECT COUNT(*) FROM kicks;"
+	var kicks_done : Variant = kick_db.query(stmt)
+	if kick_db.last_error != MariaDBConnector.ErrorCode.OK:
+		printerr("ERROR %d on SELECT" % [kick_db.last_error])
+	else:
+		return kicks_done[0]["COUNT(*)"]
+	return null
 
 # on ready connects to the datababse and listens for the kick decrement signal
 func _ready() -> void:
@@ -29,7 +43,8 @@ func _ready() -> void:
 # Kick number is auto incrementing so doesn't need a value
 # Timestamp defaults to current time so also doesn't need a value
 func _on_kick_insert(kicks_remaining: int) -> void:
-	var stmt : String = "INSERT INTO kicks (score) VALUES (%d);" % GameManager.last_score
+	var format_stmt : String = "INSERT INTO kicks (score, initials) VALUES (%d, \"%s\");"
+	var stmt : String = format_stmt % [GameManager.last_score, initials]
 	var res : Dictionary = kick_db.execute_command(stmt)
 	if kick_db.last_error != MariaDBConnector.ErrorCode.OK:
 		printerr("ERROR %d on INSERT" % [kick_db.last_error])
