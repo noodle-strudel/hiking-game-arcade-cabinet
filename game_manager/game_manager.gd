@@ -43,7 +43,7 @@ func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -
 func report_score(kick_strength: float, kick_distance: float) -> void:
 	last_score = int((kick_strength + kick_distance) * 20)
 	print(
-		"Kick Stength: ", kick_strength,
+		"Kick Strength: ", kick_strength,
 		" | Distance Kicked: ", kick_distance,
 		" | Score: ", last_score
 	)

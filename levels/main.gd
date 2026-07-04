@@ -71,6 +71,9 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 				kick_distance
 			)
 			
+			# emit UI's score calculated signal
+			$UI.score_calculated.emit()
+			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:

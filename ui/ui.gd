@@ -9,6 +9,9 @@ var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
+# emitted with main.gd when current score is done updating
+signal score_calculated
+
 # Called when the node enters the scene tree for the first time.yyyyyyyy
 func _ready() -> void:
 	# connect signals
@@ -83,6 +86,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			$RockKickedMenu.show()
 		GameManager.gamestates.SCORING:
+			await score_calculated
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
 			$OOBText.text = cause
