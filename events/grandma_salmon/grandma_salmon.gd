@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _event_function() -> void:
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(12).timeout
 	_event_cleanup()

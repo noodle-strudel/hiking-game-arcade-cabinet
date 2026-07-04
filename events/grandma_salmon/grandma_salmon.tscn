@@ -56,6 +56,7 @@ animations = [{
 }]
 
 [node name="GrandmaSalmon" type="Node" unique_id=1661899621]
+process_mode = 3
 script = ExtResource("1_m3kgo")
 metadata/_custom_type_script = "uid://rdvxw5w1g4li"
 
@@ -68,7 +69,8 @@ texture = ExtResource("2_rusq1")
 position = Vector2(960, 154)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_oteel")
+autoplay = "default"
 
-[node name="GSSpeech" type="AudioStreamPlayer2D" parent="." unique_id=221657564]
+[node name="GSSpeech" type="AudioStreamPlayer" parent="." unique_id=317227279]
 stream = ExtResource("10_7en0j")
 autoplay = true
