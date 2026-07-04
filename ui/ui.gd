@@ -51,6 +51,8 @@ func _process(delta: float) -> void:
 				Input.is_action_just_pressed("kick"):
 			spinstep += 1
 			if spinstep == 4:
+				# checks to see if the db script is loaded
+				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
 				# wait 2 seconds before continuing to kick state
