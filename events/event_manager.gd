@@ -51,9 +51,25 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			match event_value:
 				1: #coin event
 					postkick_event = known_events[1].instantiate()
-					self.add_child(postkick_event)
+					self.add_child(postkick_event)	
 			if postkick_event:
 				await postkick_event.tree_exiting
+			
+			# Get the player and rock nodes from the main scene.
+			var main_scene = get_tree().current_scene
+			var player = main_scene.get_node("Player")
+			var rock = main_scene.get_node("Rock")
+			
+			# Caluculate the distance kicked.
+			var kick_distance = player.global_position.distance_to(rock.global_position)
+			
+			# Report the score.
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+
+			if postkick_event:
 				GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
 			else:
 				GameManager.switch_state_to(GameManager.gamestates.SCORING, "no post kick event")

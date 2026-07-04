@@ -64,13 +64,6 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
-			
-			GameManager.report_score(
-				GameManager.current_kick_strength,
-				kick_distance
-			)
-			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
@@ -194,6 +187,8 @@ func _on_grid_position_changed(shift) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
+	if GameManager.gamestate_update.is_connected(_event_handler):
+		GameManager.gamestate_update.disconnect(_event_handler)
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	# load the first grid
