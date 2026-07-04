@@ -51,7 +51,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			match event_value:
 				1: #coin event
 					postkick_event = known_events[1].instantiate()
-					self.add_child(postkick_event)	
+					self.add_child(postkick_event)
 			if postkick_event:
 				await postkick_event.tree_exiting
 			

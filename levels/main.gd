@@ -187,8 +187,6 @@ func _on_grid_position_changed(shift) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
-	if GameManager.gamestate_update.is_connected(_event_handler):
-		GameManager.gamestate_update.disconnect(_event_handler)
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	# load the first grid
