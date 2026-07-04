@@ -63,6 +63,8 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			# wait a moment before switching camera to rock camera
 			await get_tree().create_timer(0.5).timeout
 			rock_camera.make_current()
+		GameManager.gamestates.POSTKICK_EVENT:
+			pass
 		GameManager.gamestates.SCORING:
 			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
 			
