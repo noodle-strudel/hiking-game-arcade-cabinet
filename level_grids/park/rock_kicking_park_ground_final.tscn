@@ -5,7 +5,4 @@
 
 [node name="rock_kicking_park_ground_final" unique_id=1390192939 instance=ExtResource("1_v3cmg")]
 
-[node name="GroundIntactTrees" parent="." index="1" unique_id=1273170152]
-visible = false
-
 [node name="rock_kicking_park_ground_collision" parent="." index="5" unique_id=1306554932 instance=ExtResource("2_ur3tk")]
