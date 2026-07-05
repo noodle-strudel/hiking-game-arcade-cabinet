@@ -1,27 +1,10 @@
 [gd_scene format=3 uid="uid://h6hlf65en0ak"]
 
-[ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main.gd" id="1_l8qe7"]
+[ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
+[ext_resource type="PackedScene" uid="uid://c0wsiphcbx5ot" path="res://levels/main/main_directional_light_3d.tscn" id="3_qy63d"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8qe7"]
-sky_top_color = Color(0.101960786, 0.4509804, 0.9098039, 1)
-sky_horizon_color = Color(0.627451, 0.76862746, 1, 1)
-sky_cover_modulate = Color(0.99291617, 0.85408795, 0.93122673, 1)
-ground_bottom_color = Color(0.12033074, 0.123748414, 0.034290284, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_m1504"]
-sky_material = SubResource("ProceduralSkyMaterial_l8qe7")
-
-[sub_resource type="Environment" id="Environment_ifaiv"]
-background_mode = 2
-sky = SubResource("Sky_m1504")
-ambient_light_source = 2
-ambient_light_color = Color(0.9019608, 0.8745098, 0.827451, 1)
-ambient_light_energy = 0.5
-reflected_light_source = 1
 
 [sub_resource type="Animation" id="Animation_ifaiv"]
 length = 0.001
@@ -84,14 +67,9 @@ _data = {
 [node name="Main" type="Node" unique_id=2092767996]
 script = ExtResource("1_l8qe7")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1148101598]
-environment = SubResource("Environment_ifaiv")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1130854390]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706405380]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.9999997, 0.923587, 0.8082503, 1)
-light_energy = 1.5
-shadow_enabled = true
+[node name="MainDirectionalLight3D" parent="." unique_id=1239897250 instance=ExtResource("3_qy63d")]
 
 [node name="Player" parent="." unique_id=963069731 instance=ExtResource("3_l8qe7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68.46544, 0)
