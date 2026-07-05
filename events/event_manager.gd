@@ -3,12 +3,13 @@ extends Node
 # signal sent when an event finishes (currently unused)
 signal event_clear
 
+# a ceiling for rolling the event value. 
+const max_event_value = 1
 # a random number that gets rolled for every new kick attempt. 
 # value determines if an event occurs, and which one. 
 # 0 always means no event. 
 var event_value = 0
-# a ceiling for rolling the event value. 
-const max_event_value = 1
+
 #rng class used for generating random numbers
 var event_rng = RandomNumberGenerator.new()
 
