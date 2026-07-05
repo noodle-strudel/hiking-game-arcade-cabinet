@@ -2,11 +2,11 @@ extends Grid
 class_name ParkGrid
 
 # multimeshes for the trees
-@onready var conifer_tree_multimesh: MultiMesh = $ConiferTrees.multimesh
-@onready var deciduous_tree_multimesh: MultiMesh = $DeciduousTrees.multimesh
+@onready var conifer_tree_multimesh: MultiMesh = %ConiferTrees.multimesh
+@onready var deciduous_tree_multimesh: MultiMesh = %DeciduousTrees.multimesh
 
 # small amount of deciduous trees in the "no tree" part of the park mesh
-@onready var deciduous_tree_sparse_multimesh: MultiMesh = $DeciduousTreesSparseNoTrees.multimesh
+@onready var deciduous_tree_sparse_multimesh: MultiMesh = %DeciduousTreesSparseNoTrees.multimesh
 
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")

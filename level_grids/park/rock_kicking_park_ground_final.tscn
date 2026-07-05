@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chq1boetvfray"]
 
-[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/final_WIP/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
+[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
 [ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_ur3tk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v3cmg"]

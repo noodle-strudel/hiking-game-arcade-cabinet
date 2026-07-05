@@ -313,44 +313,51 @@ script = ExtResource("1_mo2hw")
 
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1390192939 instance=ExtResource("7_odci8")]
 
-[node name="ConiferTrees" type="MultiMeshInstance3D" parent="." unique_id=943242760]
+[node name="MultiMeshes" type="Node3D" parent="." unique_id=233172872]
+
+[node name="ConiferTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=943242760]
+unique_name_in_owner = true
 multimesh = ExtResource("3_odci8")
 
-[node name="DeciduousTrees" type="MultiMeshInstance3D" parent="." unique_id=713287574]
+[node name="DeciduousTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=713287574]
+unique_name_in_owner = true
 multimesh = ExtResource("4_4niwr")
 
-[node name="DeciduousTreesSparseNoTrees" type="MultiMeshInstance3D" parent="." unique_id=882463235]
+[node name="DeciduousTreesSparseNoTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=882463235]
+unique_name_in_owner = true
 multimesh = SubResource("MultiMesh_dcs0m")
 
-[node name="GrassOnNoTrees" type="MultiMeshInstance3D" parent="." unique_id=1015194685]
+[node name="GrassOnNoTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1015194685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.93148, 13.642296, -0.26107407)
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_83o32")
 
-[node name="GrassOnTrees" type="MultiMeshInstance3D" parent="." unique_id=1612322844]
+[node name="GrassOnTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1612322844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.93148, 13.642296, -0.26107407)
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_hmyo0")
 
-[node name="FlowersOnNoTrees" type="MultiMeshInstance3D" parent="." unique_id=1321335176]
+[node name="FlowersOnNoTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1321335176]
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_1caeb")
 
-[node name="FlowersOnTrees" type="MultiMeshInstance3D" parent="." unique_id=1322457597]
+[node name="FlowersOnTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1322457597]
 multimesh = SubResource("MultiMesh_d31dc")
 
-[node name="tree_1" parent="." unique_id=302701205 instance=ExtResource("2_nh41s")]
+[node name="MeshReferences" type="Node3D" parent="." unique_id=772147818]
+
+[node name="tree_1" parent="MeshReferences" unique_id=302701205 instance=ExtResource("2_nh41s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.088612, 50.387085, -14.858989)
 visible = false
 
-[node name="tree_2" parent="." unique_id=1880160439 instance=ExtResource("3_ptyal")]
+[node name="tree_2" parent="MeshReferences" unique_id=1880160439 instance=ExtResource("3_ptyal")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
-[node name="rock_kicking_park_grass" parent="." unique_id=1279084180 instance=ExtResource("4_ptyal")]
+[node name="rock_kicking_park_grass" parent="MeshReferences" unique_id=1279084180 instance=ExtResource("4_ptyal")]
 visible = false
 
-[node name="DaisyFlower" parent="." unique_id=1557794057 instance=ExtResource("7_1caeb")]
+[node name="DaisyFlower" parent="MeshReferences" unique_id=1557794057 instance=ExtResource("7_1caeb")]
 
 [node name="TreeStaticBodies" type="Node3D" parent="." unique_id=587983899]
 visible = false
@@ -386,7 +393,7 @@ debug_fill = false
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]
 
 [editable path="rock_kicking_park_ground_final"]
-[editable path="tree_1"]
-[editable path="tree_2"]
-[editable path="rock_kicking_park_grass"]
-[editable path="DaisyFlower"]
+[editable path="MeshReferences/tree_1"]
+[editable path="MeshReferences/tree_2"]
+[editable path="MeshReferences/rock_kicking_park_grass"]
+[editable path="MeshReferences/DaisyFlower"]
