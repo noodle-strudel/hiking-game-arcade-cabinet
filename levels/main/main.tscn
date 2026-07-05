@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://h6hlf65en0ak"]
 
 [ext_resource type="Script" uid="uid://bj4mesca8ldc0" path="res://levels/main/main.gd" id="1_l8qe7"]
+[ext_resource type="Environment" uid="uid://cq0cqx53ssgss" path="res://levels/main/main_environment.tres" id="2_3ymrs"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="3_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
 [ext_resource type="PackedScene" uid="uid://c0wsiphcbx5ot" path="res://levels/main/main_directional_light_3d.tscn" id="3_qy63d"]
@@ -68,6 +69,7 @@ _data = {
 script = ExtResource("1_l8qe7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1130854390]
+environment = ExtResource("2_3ymrs")
 
 [node name="MainDirectionalLight3D" parent="." unique_id=1239897250 instance=ExtResource("3_qy63d")]
 

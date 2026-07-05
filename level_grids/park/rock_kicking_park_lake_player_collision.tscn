@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://fgdc2cn1lpp"]
-
-[ext_resource type="PackedScene" uid="uid://dbcakj6p1aul7" path="res://level_grids/park/glb/rock_kicking_park_lake_player_collision.glb" id="1_qgqxc"]
-
-[node name="rock_kicking_park_lake_player_collision" unique_id=941414161 instance=ExtResource("1_qgqxc")]
-
-[node name="GroundLakesBarrier" parent="." index="0" unique_id=593675193]
-collision_layer = 0
-collision_mask = 0

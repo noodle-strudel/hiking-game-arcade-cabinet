@@ -5,6 +5,9 @@ class_name ParkGrid
 @onready var conifer_tree_multimesh: MultiMesh = $ConiferTrees.multimesh
 @onready var deciduous_tree_multimesh: MultiMesh = $DeciduousTrees.multimesh
 
+# small amount of deciduous trees in the "no tree" part of the park mesh
+@onready var deciduous_tree_sparse_multimesh: MultiMesh = $DeciduousTreesSparseNoTrees.multimesh
+
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
@@ -22,6 +25,11 @@ func add_collision_to_trees() -> void:
 		for i in range(deciduous_tree_multimesh.instance_count):
 			var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
 			deciduous_collision.set_transform(deciduous_tree_multimesh.get_instance_transform(i))
+			$TreeStaticBodies.add_child(deciduous_collision)
+		
+		for i in range(deciduous_tree_sparse_multimesh.instance_count):
+			var deciduous_collision: StaticBody3D = conifer_collision_body.instantiate()
+			deciduous_collision.set_transform(deciduous_tree_sparse_multimesh.get_instance_transform(i))
 			$TreeStaticBodies.add_child(deciduous_collision)
 
 func remove_collision_from_trees() -> void:
@@ -41,13 +49,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# iterates through each multimesh and makes its basis an identity matrix, then
-# saves it to the file system. for development only
-func _make_trees_point_up() -> void:
+func _space_out_trees() -> void:
+	# conifer trees
+	var nudge: Vector3 = Vector3.ZERO
 	for i in range(conifer_tree_multimesh.instance_count):
 		var current_transform: Transform3D = conifer_tree_multimesh.get_instance_transform(i)
 		var default_basis = Basis()
-		var nudge: Vector3 = Vector3.ZERO
 		var new_transform = Transform3D(default_basis, current_transform.origin)
 		conifer_tree_multimesh.set_instance_transform(i, new_transform)
 		
@@ -62,6 +69,16 @@ func _make_trees_point_up() -> void:
 					print(nudge.length())
 					new_transform = Transform3D(default_basis, current_transform.origin + nudge)
 					conifer_tree_multimesh.set_instance_transform(i, new_transform)
+	
+
+# iterates through each multimesh and makes its basis an identity matrix, then
+# saves it to the file system. for development only
+func _make_trees_point_up() -> void:
+	for i in range(conifer_tree_multimesh.instance_count):
+		var current_transform: Transform3D = conifer_tree_multimesh.get_instance_transform(i)
+		var default_basis = Basis()
+		var new_transform = Transform3D(default_basis, current_transform.origin)
+		conifer_tree_multimesh.set_instance_transform(i, new_transform)
 		
 	for i in range(deciduous_tree_multimesh.instance_count):
 		var current_transform: Transform3D = deciduous_tree_multimesh.get_instance_transform(i)

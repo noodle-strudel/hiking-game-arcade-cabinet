@@ -11,7 +11,7 @@ signal grid_position_changed(shift: Vector2i)
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
-	preload("res://level_grids/heaven/heaven_grid.tscn")
+	#preload("res://level_grids/heaven/heaven_grid.tscn")
 ]
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down
