@@ -2,19 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cxm6svas8ov56" path="res://level_grids/park/park_grid.gd" id="1_mo2hw"]
 [ext_resource type="PackedScene" uid="uid://b7m07t43bcsxl" path="res://level_grids/park/trees/tree_1.tscn" id="2_nh41s"]
+[ext_resource type="PackedScene" uid="uid://covkxoiopbpb0" path="res://level_grids/park/trees/conifer_tree_collision_body.tscn" id="3_4niwr"]
 [ext_resource type="MultiMesh" uid="uid://c8ikjqskbv1aj" path="res://level_grids/park/trees/conifer_multimesh.tres" id="3_odci8"]
 [ext_resource type="PackedScene" uid="uid://tnnn463vw6kv" path="res://level_grids/park/trees/tree_2.tscn" id="3_ptyal"]
 [ext_resource type="MultiMesh" uid="uid://dhcy30nltgxyc" path="res://level_grids/park/trees/deciduous_multimesh.tres" id="4_4niwr"]
-[ext_resource type="ArrayMesh" uid="uid://c2trph8lpnmku" path="res://level_grids/park/trees/tree_2.tres" id="4_odci8"]
 [ext_resource type="PackedScene" uid="uid://d37u6wpiakj2k" path="res://level_grids/park/rock_kicking_park_grass.tscn" id="4_ptyal"]
+[ext_resource type="MultiMesh" uid="uid://b8hgibuowkqa3" path="res://level_grids/park/trees/deciduous_sparse_multimesh.tres" id="5_83o32"]
 [ext_resource type="PackedScene" uid="uid://bks51bjfps7db" path="res://level_grids/park/rock_kicking_park_flower.tscn" id="7_1caeb"]
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
-
-[sub_resource type="MultiMesh" id="MultiMesh_dcs0m"]
-transform_format = 1
-instance_count = 10
-mesh = ExtResource("4_odci8")
-buffer = PackedFloat32Array(-0.4254867, -0.004709107, -0.90605754, -219.18848, -0.0011987236, 1.0009887, -0.0046395743, 1.8295951, 0.906069, -0.0008870778, -0.42548743, -10.940753, 0.14243416, -0.026238613, -0.99046725, -19.804602, 0.046122108, 0.99974036, -0.019851666, 1.4747834, 0.98974055, -0.042812075, 0.14346378, -75.243034, -0.40408006, 0.082346626, 0.9121072, 12.950111, 0.123936795, 0.9926913, -0.034715615, 5.7987914, -0.907392, 0.098916836, -0.4109215, 38.39696, 0.27626863, 0.0035565265, 0.9621144, 140.06158, 0.007750555, 1.0009525, -0.0059256465, 1.7801973, -0.96208966, 0.009084906, 0.27622804, -56.94178, 0.13568644, 0.04057153, 0.99093115, -31.599365, 0.006220987, 1.0001079, -0.041799076, 5.7973633, -0.99174184, 0.011824313, 0.13531335, 66.70365, -0.17400166, -0.00028278757, 0.985761, -138.14664, 0.007254112, 1.0009727, 0.0015676111, 1.8119969, -0.9857343, 0.0074161715, -0.17399482, 216.08087, 0.33269876, 0.019701837, 0.9438881, 44.17149, -0.007139322, 1.0008062, -0.018373443, 1.9305315, -0.94406664, -0.0006252763, 0.33277473, -115.69903, 0.4326286, -0.07489529, 0.89956915, -33.845837, 0.010592229, 0.99790156, 0.07798801, 8.852744, -0.9026193, -0.02418721, 0.4320818, 0.364837, 0.20074858, -0.0047542322, 0.9806523, -216.06155, -0.0020145709, 1.0009844, 0.005265203, 1.8241773, -0.98066163, -0.0030295455, 0.20073578, 100.887794, -0.76540226, 0.008125976, 0.6450538, 128.51224, 0.012067979, 1.0009258, 0.0017104908, 1.7009037, -0.6449921, 0.009084623, -0.7654435, -42.45685)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -308,8 +303,14 @@ size = Vector3(500, 54.3339, 500)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mo2hw"]
 size = Vector3(123.61458, 6.9086914, 90.772675)
 
-[node name="ParkGrid" type="Node3D" unique_id=891737648]
+[node name="ParkGrid" type="Node3D" unique_id=891737648 node_paths=PackedStringArray("object_collisions_node")]
 script = ExtResource("1_mo2hw")
+object_collisions_node = NodePath("TreeStaticBodies")
+mulmesh_col_dict = Dictionary[MultiMesh, PackedScene]({
+ExtResource("3_odci8"): ExtResource("3_4niwr"),
+ExtResource("4_4niwr"): ExtResource("3_4niwr"),
+ExtResource("5_83o32"): ExtResource("3_4niwr")
+})
 
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1390192939 instance=ExtResource("7_odci8")]
 
@@ -325,7 +326,7 @@ multimesh = ExtResource("4_4niwr")
 
 [node name="DeciduousTreesSparseNoTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=882463235]
 unique_name_in_owner = true
-multimesh = SubResource("MultiMesh_dcs0m")
+multimesh = ExtResource("5_83o32")
 
 [node name="GrassOnNoTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1015194685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.93148, 13.642296, -0.26107407)
