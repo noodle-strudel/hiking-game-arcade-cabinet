@@ -11,11 +11,12 @@ signal grid_position_changed(shift: Vector2i)
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
+	#preload("res://level_grids/heaven/heaven_grid.tscn")
 ]
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down
 @onready var _low_kick_level_segments = [
-	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn")
+	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn"),
 ]
 
 # Cameras
@@ -184,9 +185,7 @@ func _on_grid_position_changed(shift) -> void:
 						0.0,
 						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
 	
-	# Check if the active grid is a ParkGrid
-	if _current_chunks[1][1] is ParkGrid:
-		_current_chunks[1][1].add_collision_to_trees()
+	_current_chunks[1][1].add_collision_to_multimeshes()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -203,9 +202,7 @@ func _ready() -> void:
 			# position
 			_current_chunks[z + 1][x + 1].position =\
 					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
-	# Check if the active grid is a ParkGrid
-	if _current_chunks[1][1] is ParkGrid:
-		_current_chunks[1][1].add_collision_to_trees()
+	_current_chunks[1][1].add_collision_to_multimeshes()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -221,9 +218,7 @@ func _process(_delta: float) -> void:
 		_last_grid_position[0] != grid_position[0] or
 		_last_grid_position[1] != grid_position[1]
 	):
-		if _current_chunks[1][1] is ParkGrid:
-			# deload all tree collisions
-			_current_chunks[1][1].remove_collision_from_trees()
+		_current_chunks[1][1].remove_collisions_from_multimeshes()
 		
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
 				- _last_grid_position[1])

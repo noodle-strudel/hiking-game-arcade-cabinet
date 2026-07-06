@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://vodwlpnm4yi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pwjbw"]
+radius = 2.0092773
+height = 6.7399216
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uh3nv"]
+radius = 1.324707
+height = 8.349531
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xqrur"]
+radius = 0.89160156
+height = 4.6463428
+
+[node name="HeavenTreeCollisionBody" type="StaticBody3D" unique_id=514638712]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=240110775]
+transform = Transform3D(1, 0, 0, 0, 0.9513581, -0.3080873, 0, 0.3080873, 0.9513581, -0.716733, 3.3095503, 0.85380167)
+shape = SubResource("CapsuleShape3D_pwjbw")
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1322984171]
+transform = Transform3D(1, 0, 0, 0, 0.9737739, 0.22751817, 0, -0.22751817, 0.9737739, -0.49596965, 8.82409, 1.5156456)
+shape = SubResource("CapsuleShape3D_uh3nv")
+debug_color = Color(0, 0.5950001, 0.7, 0.9607843)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=704758595]
+transform = Transform3D(1, 0, 0, 0, -0.3866627, 0.9222213, 0, -0.9222213, -0.3866627, -0.49596965, 9.974204, 3.6934721)
+shape = SubResource("CapsuleShape3D_xqrur")
+debug_color = Color(0, 0.5950001, 0.7, 0.9607843)

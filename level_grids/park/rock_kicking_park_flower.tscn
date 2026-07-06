@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bks51bjfps7db"]
+
+[ext_resource type="PackedScene" uid="uid://chvos043oqq6x" path="res://level_grids/park/glb/rock_kicking_park_flower.glb" id="1_ndc1s"]
+
+[node name="DaisyFlower" unique_id=1557794057 instance=ExtResource("1_ndc1s")]

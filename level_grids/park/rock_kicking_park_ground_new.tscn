@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://drnkhp7lcwaoo"]
-
-[ext_resource type="PackedScene" uid="uid://1t5eq2y86o4a" path="res://level_grids/park/glb/rock_kicking_park_ground_new.glb" id="1_rvxu5"]
-[ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_rvxu5"]
-
-[node name="rock_kicking_park_ground_new" unique_id=1906963477 instance=ExtResource("1_rvxu5")]
-
-[node name="rock_kicking_park_ground_collision" parent="." index="5" unique_id=1125028460 instance=ExtResource("2_rvxu5")]
