@@ -32,7 +32,7 @@ func get_kicks() -> Variant:
 		return kicks_done[0]["COUNT(*)"]
 	return null
 
-# on ready connects to the datababse and listens for the kick decrement signal
+# on ready connects to the database and listens for the kick decrement signal
 func _ready() -> void:
 	GameManager.decrement_kicks_remaining.connect(_on_kick_insert)
 	var err : MariaDBConnector.ErrorCode = kick_db.connect_db(ed["db_host"],
