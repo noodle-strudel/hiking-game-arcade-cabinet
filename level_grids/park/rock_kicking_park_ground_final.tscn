@@ -1,8 +1,47 @@
 [gd_scene format=3 uid="uid://chq1boetvfray"]
 
-[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/final_WIP/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
+[ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
 [ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_ur3tk"]
 
-[node name="rock_kicking_park_ground_final" unique_id=1390192939 instance=ExtResource("1_v3cmg")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v3cmg"]
+radius = 46.15088
+height = 126.22461
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur3tk"]
+radius = 35.500977
+height = 108.23235
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m2pyc"]
+radius = 24.771973
+height = 85.54587
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ruhub"]
+radius = 31.572266
+height = 120.01367
+
+[node name="rock_kicking_park_ground_final" unique_id=1980193487 instance=ExtResource("1_v3cmg")]
 
 [node name="rock_kicking_park_ground_collision" parent="." index="5" unique_id=1306554932 instance=ExtResource("2_ur3tk")]
+
+[node name="PlayerLakeBarriers" type="StaticBody3D" parent="." index="6" unique_id=2048207281]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerLakeBarriers" index="0" unique_id=717573519]
+transform = Transform3D(0.86450297, -0.5026277, -2.1970553e-08, 0, -4.371138e-08, 1, -0.5026277, -0.86450297, -3.7788624e-08, 96.31598, -1.527298e-05, -104.72201)
+shape = SubResource("CapsuleShape3D_v3cmg")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlayerLakeBarriers" index="1" unique_id=902914103]
+transform = Transform3D(0.79955906, -0.60058784, -2.6252525e-08, -1.7856924e-15, -4.3711385e-08, 1, -0.60058784, -0.79955906, -3.4949824e-08, -161.38142, -1.4869578e-05, 168.81848)
+shape = SubResource("CapsuleShape3D_ur3tk")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PlayerLakeBarriers" index="2" unique_id=2013356899]
+transform = Transform3D(0.98124236, -0.19277892, -8.426639e-09, -1.992615e-15, -4.371138e-08, 1, -0.19277892, -0.98124236, -4.2891457e-08, -197.12692, -1.5365407e-05, 121.8034)
+shape = SubResource("CapsuleShape3D_m2pyc")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PlayerLakeBarriers" index="3" unique_id=2089681079]
+transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.371138e-08, 1, 0.31871116, -0.9478521, -4.143192e-08, -190.64984, -1.5372045e-05, -5.253171)
+shape = SubResource("CapsuleShape3D_ruhub")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)

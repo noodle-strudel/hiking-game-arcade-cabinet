@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://de0cqgfuv80fn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s44rv"]
+radius = 1.7983398
+height = 4.9990234
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hhbh6"]
+radius = 1.2646484
+height = 5.7841797
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0sa7"]
+radius = 1.2646484
+height = 10.474609
+
+[node name="DeciduousTreeCollisionBody" type="StaticBody3D" unique_id=640454464]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1704687167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7011719, 0)
+shape = SubResource("CapsuleShape3D_s44rv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=76920322]
+transform = Transform3D(0.9415999, 0.33673373, 0, -0.33673373, 0.9415999, 0, 0, 0, 1, 0.44373155, 4.1990914, 0)
+shape = SubResource("CapsuleShape3D_hhbh6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1957681285]
+transform = Transform3D(0.9966915, -0.081277534, 0, 0.081277534, 0.9966915, 0, 0, 0, 1, 0.29297805, 10.641956, 0)
+shape = SubResource("CapsuleShape3D_m0sa7")
