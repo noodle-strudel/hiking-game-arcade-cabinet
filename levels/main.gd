@@ -62,22 +62,11 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			player_camera.make_current()
 		GameManager.gamestates.ROCK_KICKED:
 			
-			#TODO: Remove this block when working on the winking event, this is
-			#just an example
-			await rock.rock_eyes_wink()
-			rock.rock_eyes_look_at(player_camera)
-			
 			# wait a moment before switching camera to rock camera
 			await get_tree().create_timer(0.5).timeout
+			await rock.wink_at_camera(player_camera) 
 			rock_camera.make_current()
 		GameManager.gamestates.SCORING:
-			var kick_distance: float = $Player.global_position.distance_to($Rock.global_position)
-			
-			GameManager.report_score(
-				GameManager.current_kick_strength,
-				kick_distance
-			)
-			
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
