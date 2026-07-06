@@ -2,6 +2,7 @@
 class_name Event extends Node
 ## Base class for events to occur. Provides a template for making events.
 # to use, create a node of type "Event" and define a _event_function() function in its script. 
+# IMPORTANT: THE NODE YOU CREATE MUST BE SET TO PROCESS MODE "Always"!!!
 
 # signal for when the event has completed
 signal event_done

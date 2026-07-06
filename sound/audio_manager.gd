@@ -12,12 +12,6 @@ const mute_db := -30.0
 const default_volume_db := -5.0
 const fade_time := 2.0
 
-func _ready() -> void:
-	GameManager.gamestate_update.connect(_on_state_change)
-	
-	# play idle music on game boot-up
-	play_track(idle_music)
-
 # plays the specified track passed in when called with AudioManager.play_track()
 func play_track(track) -> void:
 	# Makes sure the track is not null or already playing before fading in and playing it
@@ -58,6 +52,12 @@ func fade_in_music() -> void:
 func set_music_volume(volume_db: float) -> void:
 	# simple function to allow seting the volume on the music bus
 	AudioServer.set_bus_volume_db(music_bus_idx, volume_db)
+
+func _ready() -> void:
+	GameManager.gamestate_update.connect(_on_state_change)
+	
+	# play idle music on game boot-up
+	play_track(idle_music)
 
 func _on_state_change(state : GameManager.gamestates, _cause:String):
 	# if the background music is playing this stores how far into the
