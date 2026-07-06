@@ -4,21 +4,22 @@ extends Node
 signal event_clear
 
 # a ceiling for rolling the event value. 
-const max_event_value = 1
+const max_event_value = 2
+
+# list of events this script can instantiate
+var known_events = [
+	null,
+	preload("res://events/coin_event/coin_event.tscn"),
+	preload("res://events/grandma_salmon/grandma_salmon.tscn"),
+]
+
 # a random number that gets rolled for every new kick attempt. 
 # value determines if an event occurs, and which one. 
 # 0 always means no event. 
 var event_value = 0
 
-#rng class used for generating random numbers
+# rng class used for generating random numbers
 var event_rng = RandomNumberGenerator.new()
-
-# list of events this script can instantiate
-var known_events = [
-	null,
-	preload("res://events/coin_event/coin_event.tscn")
-]
-
 
 # returns a random number for event determination
 func _roll_event_rng() -> int:
@@ -28,6 +29,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			event_value = _roll_event_rng()
+			
 			print("DEBUG: rolled event value ", event_value)
 		GameManager.gamestates.CONTRACT:
 			pass
@@ -39,10 +41,11 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			pass
 		GameManager.gamestates.POSTKICK_EVENT:
 			var postkick_event = null
-			match event_value:
-				1: # coin event
-					postkick_event = known_events[1].instantiate()
-					self.add_child(postkick_event)
+			
+			if (event_value != 0):
+				postkick_event = known_events[event_value].instantiate()
+				self.add_child(postkick_event)
+				
 			if postkick_event:
 				await postkick_event.tree_exiting
 			

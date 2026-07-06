@@ -9,6 +9,41 @@
 [ext_resource type="Texture2D" uid="uid://bghc4pi1337fc" path="res://events/grandma_salmon/grandma_head/grandma_head4.png" id="6_2ayfw"]
 [ext_resource type="Texture2D" uid="uid://8hfs3plneagy" path="res://events/grandma_salmon/grandma_head/grandma_head5.png" id="7_bt3g1"]
 [ext_resource type="Texture2D" uid="uid://c5mgohwd4utgg" path="res://events/grandma_salmon/grandma_head/grandma_head6.png" id="8_c2g7d"]
+[ext_resource type="AudioStream" uid="uid://w8o5ut4leosk" path="res://sound/grandma_salmon_character_test.wav" id="10_7en0j"]
+
+[sub_resource type="Animation" id="Animation_7en0j"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandmaSalmonSprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_jnirr"]
+resource_name = "default"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandmaSalmonSprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1080, 0, 0, 0.06666667, -1006.3124, 0, -0.497, 0, 0.2973567, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ayfw"]
+_data = {
+&"RESET": SubResource("Animation_7en0j"),
+&"default": SubResource("Animation_jnirr")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oteel"]
 animations = [{
@@ -35,10 +70,10 @@ animations = [{
 "texture": ExtResource("8_c2g7d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_bt3g1")
+"texture": ExtResource("6_2ayfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2ayfw")
+"texture": ExtResource("7_bt3g1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_jnirr")
@@ -55,17 +90,30 @@ animations = [{
 }]
 
 [node name="GrandmaSalmon" type="Node" unique_id=1661899621]
+process_mode = 3
 script = ExtResource("1_m3kgo")
 metadata/_custom_type_script = "uid://rdvxw5w1g4li"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145389845]
+[node name="GSSpeech" type="AudioStreamPlayer" parent="." unique_id=317227279]
+stream = ExtResource("10_7en0j")
+autoplay = true
+
+[node name="GSCanvas" type="CanvasLayer" parent="." unique_id=1697597644]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GSCanvas" unique_id=186813967]
+libraries/ = SubResource("AnimationLibrary_2ayfw")
+autoplay = &"default"
+
+[node name="GrandmaSalmonSprite" type="Node2D" parent="GSCanvas" unique_id=1709411706]
+
+[node name="SalmonBody" type="Sprite2D" parent="GSCanvas/GrandmaSalmonSprite" unique_id=145389845]
 position = Vector2(960, 648)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_rusq1")
 
-[node name="GrandmaHead" type="AnimatedSprite2D" parent="." unique_id=1210538197]
+[node name="GrandmaHead" type="AnimatedSprite2D" parent="GSCanvas/GrandmaSalmonSprite" unique_id=1210538197]
+unique_name_in_owner = true
 position = Vector2(960, 154)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_oteel")
-frame = 8
-frame_progress = 0.37009305
+autoplay = "default"

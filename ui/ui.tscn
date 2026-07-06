@@ -14,7 +14,7 @@
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
-[ext_resource type="AudioStream" uid="uid://coav6axwdya05" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
+[ext_resource type="AudioStream" uid="uid://b4lt7ulgkdgwg" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")

@@ -67,6 +67,8 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			await get_tree().create_timer(0.5).timeout
 			await rock.wink_at_camera(player_camera) 
 			rock_camera.make_current()
+		GameManager.gamestates.POSTKICK_EVENT:
+			pass
 		GameManager.gamestates.SCORING:
 			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
@@ -191,6 +193,7 @@ func _ready() -> void:
 	# connect signals
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
+	GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
 	# load the first grid
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
