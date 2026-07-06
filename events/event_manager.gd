@@ -38,8 +38,6 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			event_value = _roll_event_rng()
-			#TEST overriding value
-			event_value = 2
 			
 			print("DEBUG: rolled event value ", event_value)
 		GameManager.gamestates.CONTRACT:
