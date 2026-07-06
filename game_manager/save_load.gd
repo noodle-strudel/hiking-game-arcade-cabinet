@@ -3,6 +3,8 @@ extends Node
 # Saves are made to the Godot appdata folder in app_userdata
 const save_location = "user://SaveFile.json"
 
+# This variable allows the script to handle what to do when the db is loaded or not
+@onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
 # Dictionary allows for adding more variables to save easily
 var content_to_save : Dictionary = {
 	"remaining_kicks" : 0
@@ -27,7 +29,12 @@ func _load() -> void:
 		file.close()
 		
 		var save_data = data.duplicate()
-		GameManager.kicks_remaining = save_data.remaining_kicks
+		# if the database is loaded the kicks remaining is loaded to match the database
+		if is_instance_valid(db_loaded):
+			var kicks_done : int = db_loaded.get_kicks()
+			GameManager.kicks_remaining = 1000000 - kicks_done
+		else:
+			GameManager.kicks_remaining = save_data.remaining_kicks
 
 func _on_kick_save(kicks_remaining:int) -> void:
 	content_to_save.remaining_kicks = kicks_remaining
