@@ -1,36 +1,27 @@
 extends Node
 
-#list of events this script can instantiate
+# signal sent when an event finishes (currently unused)
+signal event_clear
+
+# a ceiling for rolling the event value. 
+const max_event_value = 2
+
+# list of events this script can instantiate
 var known_events = [
 	null,
 	preload("res://events/coin_event/coin_event.tscn"),
 	preload("res://events/grandma_salmon/grandma_salmon.tscn"),
 ]
 
-#a random number that gets rolled for every new kick attempt. 
-#value determines if an event occurs, and which one. 
-#0 always means no event. 
+# a random number that gets rolled for every new kick attempt. 
+# value determines if an event occurs, and which one. 
+# 0 always means no event. 
 var event_value = 0
-#a ceiling for rolling the event value. 
-const max_event_value = 2
 
-#rng class used for generating random numbers
+# rng class used for generating random numbers
 var event_rng = RandomNumberGenerator.new()
 
-#signals
-#signal sent when an event finishes
-signal event_clear
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-	GameManager.gamestate_update.connect(_on_change_state)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-#returns a random number for event determination
+# returns a random number for event determination
 func _roll_event_rng() -> int:
 	return event_rng.randi_range(0, max_event_value)
 
@@ -57,6 +48,30 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 				
 			if postkick_event:
 				await postkick_event.tree_exiting
+			
+			# Get the player and rock nodes from the main scene.
+			var main_scene = get_tree().current_scene
+			var player = main_scene.get_node("Player")
+			var rock = main_scene.get_node("Rock")
+			
+			# Caluculate the distance kicked.
+			var kick_distance = player.global_position.distance_to(rock.global_position)
+			
+			# Report the score.
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+
+			if postkick_event:
 				GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
 			else:
 				GameManager.switch_state_to(GameManager.gamestates.SCORING, "no post kick event")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	GameManager.gamestate_update.connect(_on_change_state)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass

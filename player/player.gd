@@ -130,7 +130,7 @@ func _kick_rock() -> void:
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
 		rock.apply_impulse(impulse_vector)
 		
-		# Get kick strength.
+		# Get kick strength to use for calculating the kick score.
 		GameManager.current_kick_strength = impulse_vector.length()
 		
 		# Play kick animation
