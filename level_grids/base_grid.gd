@@ -7,7 +7,10 @@ class_name Grid
 ## Dictionary pairs of multimeshes and corresponding StaticBody3D packed scenes.
 @export var mulmesh_col_dict: Dictionary[MultiMesh, PackedScene]
 
-# adds a staticbody3d for each multimesh object.
+# adds a staticbody3d for each multimesh object. 
+# I read that it can be more efficient this way than adding a ton of collision 
+# shapes to a single staticbody3d. Plus i'm able to add the transform to the 
+# staticbody3d much easier than a collisionshape3d.
 func add_collision_to_multimeshes() -> void:
 	if object_collisions_node and !object_collisions_node.get_children():
 		for mulmesh in mulmesh_col_dict:
