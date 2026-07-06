@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5gp7eqk8egcm"]
+
+[ext_resource type="Script" uid="uid://c5xtvfscaqr74" path="res://events/event_template/event_template.gd" id="1_8w153"]
+
+[node name="EventTemplate" type="Node" unique_id=2118420529]
+process_mode = 3
+script = ExtResource("1_8w153")
+metadata/_custom_type_script = "uid://rdvxw5w1g4li"
