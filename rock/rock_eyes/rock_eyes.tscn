@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bc1ejppxhquvx"]
 
-[ext_resource type="PackedScene" uid="uid://8ganaitxcmwh" path="res://rock/eyes/rock_eyes.glb" id="1_njr0x"]
-[ext_resource type="ArrayMesh" uid="uid://vvgkj1oab6g6" path="res://rock/eyes/rock_eyes_open_mesh.tres" id="2_sx0id"]
-[ext_resource type="ArrayMesh" uid="uid://b3cm0d7iym67" path="res://rock/eyes/rock_eyes_wink_mesh.tres" id="3_qjkdc"]
+[ext_resource type="PackedScene" uid="uid://8ganaitxcmwh" path="res://rock/rock_eyes/rock_eyes.glb" id="1_njr0x"]
+[ext_resource type="ArrayMesh" uid="uid://vvgkj1oab6g6" path="res://rock/rock_eyes/rock_eyes_open_mesh.tres" id="2_sx0id"]
+[ext_resource type="ArrayMesh" uid="uid://b3cm0d7iym67" path="res://rock/rock_eyes/rock_eyes_wink_mesh.tres" id="3_qjkdc"]
 
 [sub_resource type="Animation" id="Animation_qjkdc"]
 length = 0.001
