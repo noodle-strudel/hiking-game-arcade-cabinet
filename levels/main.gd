@@ -22,6 +22,7 @@ signal grid_position_changed(shift: Vector2i)
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
 @onready var rock = $Rock
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
+@onready var pan_camera = $PanningCamera
 
 # Width and breadth of the level segments
 const _grid_x_dimension := 2 * 250.0
@@ -30,6 +31,9 @@ const _grid_z_dimension := 2 * 250.0
 ## Current chunk displacement since game was instantiated. Ordered x, z. 
 var grid_position := [0, 0] # x,z
 var _last_grid_position := grid_position.duplicate()
+
+# variable to track what the panning camera should be doing
+var camera_pan_state = 0
 
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
@@ -47,9 +51,12 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
+			camera_pan_state = 0
 			rock_camera.make_current()
 			%UIAnimator.play("idle_float")
+			$PanTimer.start(60)
 		GameManager.gamestates.CONTRACT:
+			$PanTimer.stop()
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
 			player_camera.make_current()
@@ -229,3 +236,25 @@ func _process(_delta: float) -> void:
 		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
+	
+# panning camera stuff
+func _panning_camera() -> void:
+	pan_camera.rotate_y(0.001)
+	if camera_pan_state == 0:
+		pan_camera.make_current()
+		camera_pan_state = 1
+	elif camera_pan_state == 1:
+		pan_camera.position = $Player.position
+		pan_camera.position.y += 20
+		pan_camera.position.x += 30
+		pan_camera.look_at($Player.position)
+		camera_pan_state = 2
+	elif camera_pan_state == 2:
+		pan_camera.position.x += 0.1
+		if pan_camera.position.x > $Player.position.x + 100:
+			camera_pan_state = 3
+	elif camera_pan_state == 3:
+		pan_camera.position.x += -0.1
+		if pan_camera.position.x < $Player.position.x - 100:
+			camera_pan_state = 2
+	$PanTimer.start(0.001)
