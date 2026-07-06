@@ -8,6 +8,7 @@
 [ext_resource type="MultiMesh" uid="uid://dhcy30nltgxyc" path="res://level_grids/park/trees/deciduous_multimesh.tres" id="4_4niwr"]
 [ext_resource type="PackedScene" uid="uid://d37u6wpiakj2k" path="res://level_grids/park/rock_kicking_park_grass.tscn" id="4_ptyal"]
 [ext_resource type="MultiMesh" uid="uid://b8hgibuowkqa3" path="res://level_grids/park/trees/deciduous_sparse_multimesh.tres" id="5_83o32"]
+[ext_resource type="PackedScene" uid="uid://de0cqgfuv80fn" path="res://level_grids/park/trees/deciduous_tree_collision_body.tscn" id="5_dcs0m"]
 [ext_resource type="PackedScene" uid="uid://bks51bjfps7db" path="res://level_grids/park/rock_kicking_park_flower.tscn" id="7_1caeb"]
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
 
@@ -308,8 +309,8 @@ script = ExtResource("1_mo2hw")
 object_collisions_node = NodePath("TreeStaticBodies")
 mulmesh_col_dict = Dictionary[MultiMesh, PackedScene]({
 ExtResource("3_odci8"): ExtResource("3_4niwr"),
-ExtResource("4_4niwr"): ExtResource("3_4niwr"),
-ExtResource("5_83o32"): ExtResource("3_4niwr")
+ExtResource("4_4niwr"): ExtResource("5_dcs0m"),
+ExtResource("5_83o32"): ExtResource("5_dcs0m")
 })
 
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1390192939 instance=ExtResource("7_odci8")]
