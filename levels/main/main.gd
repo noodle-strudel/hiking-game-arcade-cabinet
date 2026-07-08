@@ -39,6 +39,9 @@ var camera_pan_state = 0
 # variable to track if the rock should be being followed by the player
 var follow_rock = false
 
+# variable for stopping the player from rotating while rock kicks
+var y_rotation_hold = 0.0
+
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
 ## Ordered as z, x. [1,1] is the current center of the grid.
@@ -70,9 +73,10 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			
 			# wait a moment before switching camera to rock camera
 			follow_rock = true
+			y_rotation_hold = $Player.current_y_rotation
 			await get_tree().create_timer(0.5).timeout
-			follow_rock = false
 			await rock.wink_at_camera(player_camera) 
+			follow_rock = false
 			rock_camera.make_current()
 		GameManager.gamestates.POSTKICK_EVENT:
 			pass
@@ -234,6 +238,7 @@ func _process(_delta: float) -> void:
 	# player vision follows the rock.
 	if follow_rock:
 		$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		$Player.current_y_rotation = y_rotation_hold
 	
 # panning camera stuff
 func _panning_camera() -> void:
