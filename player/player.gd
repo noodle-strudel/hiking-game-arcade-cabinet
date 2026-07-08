@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var max_down: float = -60.0
 
 # Relative force of kick.
-@export var kick_scalar: float = 10.0 
+@export var kick_scalar: float = 0.1
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
 @onready var legs: Node3D = $Legs
@@ -19,12 +19,16 @@ var current_x_rotation: float = 0.0
 
 var rock: Node = null
 var bar: Node = null
-var kick_bar_multiplier: float = 0.0
+
 var kick_deviance: float = 0.5
 
 # Constants
+## fallback value for kick strength (out of 100). 
+const kick_multiplier: float = 100.0
+## extra amount added to worst kick possible, to make sure the rock moves a bit
+const kick_bias := 0.1
 const buddy_rock_path: String = "../Rock"
-const kick_bar_path: String = "../UI/KickingMenu/PowerBar/KickbarInd"
+const kick_bar_path: String = "../UI/KickingMenu/Kickbar"
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
@@ -84,10 +88,12 @@ func _physics_process(delta: float) -> void:
 		GameManager.state == GameManager.gamestates.KICKING and
 		Input.is_action_just_pressed("kick")
 	):
-		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED)
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED, "player just kicked rock")
+		var multiplier = kick_multiplier
 		if bar:
-			kick_bar_multiplier = abs(bar.position.x / 80)
-		_kick_rock()
+			multiplier = bar.value
+			print("fetched value " + str(multiplier) + " from kickbar")
+		_kick_rock(multiplier)
 		
 	# Fall
 	move_and_slide()
@@ -117,14 +123,15 @@ func _vec_noise(input: Vector3, amt: float) -> Vector3:
 	)
 
 # Handles kicking the rock when the state changes. 
-func _kick_rock() -> void:
+func _kick_rock(multiplier := kick_multiplier) -> void:
 	if rock:
 		var direction_to_rock: Vector3 = rock.position - self.position
 		
 		# Fixes inconsistent rock force due to rock distance
 		direction_to_rock = direction_to_rock.normalized() 
+		var pretotal_kick = ((multiplier * (1 - kick_bias)) + (kick_multiplier * kick_bias))
+		var total_kick: float = kick_scalar * pretotal_kick
 		
-		var total_kick: float = kick_scalar * kick_bar_multiplier
 		var impulse_vector: Vector3 = (direction_to_rock * total_kick) + Vector3(0.0, total_kick / 2, 0.0)
 		
 		impulse_vector = _vec_noise(impulse_vector, kick_deviance)
