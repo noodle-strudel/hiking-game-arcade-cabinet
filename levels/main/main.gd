@@ -36,6 +36,9 @@ var _last_grid_position := grid_position.duplicate()
 # variable to track what the panning camera should be doing
 var camera_pan_state = 0
 
+# variable to track if the rock should be being followed by the player
+var follow_rock = false
+
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
 ## Ordered as z, x. [1,1] is the current center of the grid.
@@ -66,9 +69,9 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			
 			# wait a moment before switching camera to rock camera
-			await get_tree().create_timer(0.25).timeout
-			player_camera.look_at(rock.position)
-			await get_tree().create_timer(0.25).timeout
+			follow_rock = true
+			await get_tree().create_timer(0.5).timeout
+			follow_rock = false
 			await rock.wink_at_camera(player_camera) 
 			rock_camera.make_current()
 		GameManager.gamestates.POSTKICK_EVENT:
@@ -228,6 +231,10 @@ func _process(_delta: float) -> void:
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
 	
+	# player vision follows the rock.
+	if follow_rock:
+		$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+	
 # panning camera stuff
 func _panning_camera() -> void:
 	
@@ -296,3 +303,4 @@ func _panning_camera() -> void:
 	
 	# A way to keep the function calling itself
 	$PanTimer.start(0.001)
+	
