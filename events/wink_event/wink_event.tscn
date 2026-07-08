@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://desy1lkjhmmce"]
+
+[ext_resource type="Script" uid="uid://brljhfdlkwy75" path="res://events/wink_event/wink_event.gd" id="1_nij0m"]
+
+[node name="EventTemplate" type="Node" unique_id=2118420529]
+process_mode = 3
+script = ExtResource("1_nij0m")
+metadata/_custom_type_script = "uid://rdvxw5w1g4li"
