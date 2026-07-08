@@ -34,7 +34,7 @@ func get_kicks() -> Variant:
 
 # on ready connects to the database and listens for the kick decrement signal
 func _ready() -> void:
-	GameManager.decrement_kicks_remaining.connect(_on_kick_insert)
+	GameManager.scoring_complete.connect(_on_score_insert)
 	var err : MariaDBConnector.ErrorCode = kick_db.connect_db(ed["db_host"],
 			ed["db_port"],
 			ed["db_name"],
@@ -44,13 +44,13 @@ func _ready() -> void:
 	if err != MariaDBConnector.ErrorCode.OK:
 		push_error(err)
 
-# When kicks are decremented inserts the score into the database
+# When score is calculated inserts the score into the database
 # Kick number is auto incrementing so doesn't need a value
 # Timestamp defaults to current time so also doesn't need a value
 # Initials of the kick are now also sent to the database
-func _on_kick_insert(kicks_remaining: int) -> void:
+func _on_score_insert(score: int) -> void:
 	var format_stmt : String = "INSERT INTO kicks (score, initials) VALUES (%d, \"%s\");"
-	var stmt : String = format_stmt % [GameManager.last_score, initials]
+	var stmt : String = format_stmt % [score, initials]
 	var res : Dictionary = kick_db.execute_command(stmt)
 	if kick_db.last_error != MariaDBConnector.ErrorCode.OK:
 		printerr("ERROR %d on INSERT" % [kick_db.last_error])

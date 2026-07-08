@@ -8,6 +8,8 @@ extends Node
 signal decrement_kicks_remaining(new_kick_count)
 ## Emitted when the game state has changed. Use (state, cause) as needed. 
 signal gamestate_update(state, cause) # the state has changed. Used for idle as well
+## Emitted when the game has finished scoring.
+signal scoring_complete(score)
 
 @onready var state := gamestates.IDLE
 var kicks_remaining := 1000000
@@ -47,6 +49,7 @@ func report_score(kick_strength: float, kick_distance: float) -> void:
 		" | Distance Kicked: ", kick_distance,
 		" | Score: ", last_score
 	)
+	scoring_complete.emit(last_score)
 	
 ## Decrements the kicks remaining and emits a signal.
 func _decrement_kicks_remaining() -> void:
