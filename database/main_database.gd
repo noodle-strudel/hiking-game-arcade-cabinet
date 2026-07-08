@@ -15,6 +15,11 @@ var ed: Dictionary = {
 }
 var initials : String = ""
 
+var connected: bool = false
+
+func db_connected() -> bool:
+	return connected
+
 # takes the initials passed from the spinner and makes the full string of initials
 func set_initials(first, second, third) -> void:
 	initials = first + second + third
@@ -43,6 +48,9 @@ func _ready() -> void:
 			MariaDBConnector.AUTH_TYPE_MYSQL_NATIVE, false)
 	if err != MariaDBConnector.ErrorCode.OK:
 		push_error(err)
+		connected = false
+	else:
+		connected = true
 
 # When kicks are decremented inserts the score into the database
 # Kick number is auto incrementing so doesn't need a value
