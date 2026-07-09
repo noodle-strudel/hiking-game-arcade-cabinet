@@ -50,10 +50,11 @@ func rock_eyes_wink() -> Signal:
 # the rock eyes face the player camera and winks, then goes back to original direction
 func wink_at_camera(camera: Camera3D) -> void:
 	rock_eyes_look_at(camera)
-	await get_tree().process_frame
+	await get_tree().create_timer(0.3).timeout
 	
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
+	await get_tree().create_timer(0.3)
 	
 """Rock's Functions"""
 

@@ -4,13 +4,14 @@ extends Node
 signal event_clear
 
 # a ceiling for rolling the event value. 
-const max_event_value = 2
+const max_event_value = 3
 
 # list of events this script can instantiate
 var known_events = [
 	null,
 	preload("res://events/coin_event/coin_event.tscn"),
 	preload("res://events/grandma_salmon/grandma_salmon.tscn"),
+	preload("res://events/wink_event/wink_event.tscn"),
 ]
 
 # a random number that gets rolled for every new kick attempt. 
@@ -36,13 +37,22 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.KICKING:
 			pass
 		GameManager.gamestates.ROCK_KICKED:
-			pass
+			var rock_event = null
+			
+			if event_value == 3:
+				rock_event = known_events[event_value].instantiate()
+				await get_tree().create_timer(0.4).timeout
+				self.add_child(rock_event)
+			
+			if rock_event:
+				await rock_event.tree_exiting
+				
 		GameManager.gamestates.SCORING:
 			pass
 		GameManager.gamestates.POSTKICK_EVENT:
 			var postkick_event = null
 			
-			if (event_value != 0):
+			if (event_value != 0 && event_value != 3):
 				postkick_event = known_events[event_value].instantiate()
 				self.add_child(postkick_event)
 				
