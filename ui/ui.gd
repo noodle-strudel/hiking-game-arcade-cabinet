@@ -6,15 +6,22 @@ extends Control
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
+
+const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
+const OOB_EFFECT_SUF = "[/outline_size][/wave]"
+
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
-# Called when the node enters the scene tree for the first time.yyyyyyyy
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
 	GameManager.gamestate_update.connect(_on_change_state)
+	# need to wait for parent to be ready to avoid race condition
+	await $"..".ready
+	$"..".rock_followcam_activated.connect(hide_kicking_ui)
 	# set initial text
 	_on_update_kicks_remaining(GameManager.kicks_remaining) #TODO: more elegant solution.
 	
@@ -85,16 +92,27 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$ContractMenu/ContractContainer.show()
 		GameManager.gamestates.KICKING:
 			$KickingMenu.show()
+			%KickbarAnimator.play("RESET")
+			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
+			%KickbarAnimator.pause()
+			if %Kickbar.value >= 97.0:
+				print("critical kick!")
+				%Kickbar.value = 100.0
 			$RockKickedMenu.show()
+			$KickingMenu.show()
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
-			$OOBText.text = cause
-			$OOBText.show()
-			await get_tree().create_timer(2).timeout
-			$OOBText.hide()
-			GameManager.switch_state_to(GameManager.gamestates.KICKING)
+			$OOBCenterContainer.show()
+			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
+			var tween = get_tree().create_tween()
+			tween.tween_property(%OOBText, "modulate", Color.WHITE, 1).set_trans(Tween.TRANS_LINEAR)
+			await get_tree().create_timer(4).timeout
+			tween = get_tree().create_tween()
+			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
+			await get_tree().create_timer(1.5).timeout
+			$OOBCenterContainer.hide()
 
 # Scoring sequence function
 func _scoring_sequence() -> void:
@@ -123,7 +141,6 @@ func game_over_text_reset() -> void:
 	game_over_text_scroll = false
 	%GameOverText.hide()
 	%GameOverText.position = game_over_text_reset_pos
-	$ScoreMenu/EpicMusicPlayer.stop()
 
 
 func _clear_ui() -> void:
@@ -143,6 +160,5 @@ func _clear_ui() -> void:
 	%Contract.show()
 	%LetterSpinner.hide()
 
-
-func _on_epic_music_player_finished() -> void:
-	GameManager.switch_state_to(GameManager.gamestates.IDLE, "scoring sequence finished")
+func hide_kicking_ui():
+	$KickingMenu.hide()

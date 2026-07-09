@@ -7,6 +7,8 @@ extends Node
 ## ex: if the rock has moved to the next chunk in the -z direction,
 ## shift will be (0, -1)
 signal grid_position_changed(shift: Vector2i)
+## used by ui script to hide kicking ui after camera switch
+signal rock_followcam_activated
 
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
@@ -78,26 +80,34 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			follow_rock = true
 			y_rotation_hold = $Player.current_y_rotation
 			await get_tree().create_timer(0.5).timeout
-			await rock.wink_at_camera(player_camera) 
 			follow_rock = false
 			rock_camera.make_current()
+			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
 			pass
 		GameManager.gamestates.SCORING:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 
-
-# handles the rock going out of bounds.
+# handle camera and state transition when rock goes out of bounds.
 func _handle_oob(_cause: String) -> void:
-	#TODO: freeze the rock's camera in place. aka stop updating the position.
-	#INFO: this would be in a function created after May 26.
-	#rock_camera.freeze_position() <-- not implemented yet
-	
+	$Rock.camera_follow(false)
+	await get_tree().create_timer(1).timeout
 	# reset the rock's position to the player's position
 	$Rock.position = $Player.position + Vector3(1, 1, 1)
+	$Rock.camera_follow(true)
+	await get_tree().create_timer(4.5).timeout
+	
+	#TODO: change to whatever state fits the situation the best.
+	GameManager.switch_state_to(GameManager.gamestates.KICKING)
+	# do specific stuff if a word is in the cause
+	#ex.
+	#if "lake" in _cause:
+	#	print(3)
+	#if "ground" in  _cause:
+	#	print(4)
+
 
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)

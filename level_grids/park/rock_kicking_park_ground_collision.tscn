@@ -2021,8 +2021,24 @@ collision_mask = 2
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape3D" parent="GroundCollision_502" parent_id_path=PackedInt32Array(234523719) index="0" unique_id=817570765]
+[node name="GroundCollision_502" parent="." index="502" unique_id=234523719]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" parent="GroundCollision_502" index="0" unique_id=817570765]
 debug_color = Color(0.88, 0.2904, 0.44762653, 1)
 
-[node name="CollisionShape3D" parent="GroundCollision_503" parent_id_path=PackedInt32Array(1583750220) index="0" unique_id=1841938401]
+[node name="GroundCollision_503" parent="." index="503" unique_id=1583750220]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" parent="GroundCollision_503" index="0" unique_id=1841938401]
 debug_color = Color(0.8784314, 0.23921569, 0.5803922, 1)
+
+[node name="GroundCollision_504" parent="." index="504" unique_id=15539730]
+collision_layer = 4
+collision_mask = 2
+
+[node name="GroundCollision_505" parent="." index="505" unique_id=123895608]
+collision_layer = 4
+collision_mask = 2
