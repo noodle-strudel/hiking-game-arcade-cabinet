@@ -14,6 +14,7 @@ func _ready() -> void:
 	# connect signals
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
 	GameManager.gamestate_update.connect(_on_change_state)
+	# need to wait for parent to be ready to avoid race condition
 	await $"..".ready
 	$"..".rock_followcam_activated.connect(hide_kicking_ui)
 	# set initial text
