@@ -39,8 +39,9 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			var rock_event = null
 			
-			if event_value != 0:
+			if event_value == 3:
 				rock_event = known_events[event_value].instantiate()
+				await get_tree().create_timer(0.4).timeout
 				self.add_child(rock_event)
 			
 			if rock_event:

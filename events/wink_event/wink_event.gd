@@ -16,18 +16,16 @@ func _event_function() -> void:
 	# Get the rock node from the main scene and the rock camera.
 	var main_scene = get_tree().current_scene
 	var rock = main_scene.get_node("Rock")
+	var rock_eyes = rock.get_node("RockEyes")
 	var rock_camera = main_scene.get_node("Rock/RockCameraPivot/RockCameraArm/RockCamera")
 	
-	# Let the kick impulse happen first
+	rock_eyes.show()
+	# Let the kick impulse happen first.
 	await get_tree().create_timer(0.5).timeout
-
-	# Switch camera to the flying rock
-	rock_camera.make_current()
 	
-	# Freeze game and have the rock wink.
-	get_tree().paused = true
+	# Have the rock wink.
 	await rock.wink_at_camera(rock_camera)
-	get_tree().paused = false
+	rock_eyes.hide()
 	
-	# Do not remove. Defined in event_base.gd
+	# Do not remove. Defined in event_base.gd.
 	_event_cleanup()
