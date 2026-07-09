@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bc1ejppxhquvx"]
 
-[ext_resource type="PackedScene" uid="uid://8ganaitxcmwh" path="res://rock/rock_eyes/rock_eyes.glb" id="1_njr0x"]
+[ext_resource type="PackedScene" uid="uid://vrfpfy84q3ev" path="res://rock/rock_eyes/rock_eyes.glb" id="1_njr0x"]
 [ext_resource type="ArrayMesh" uid="uid://vvgkj1oab6g6" path="res://rock/rock_eyes/rock_eyes_open_mesh.tres" id="2_sx0id"]
 [ext_resource type="ArrayMesh" uid="uid://b3cm0d7iym67" path="res://rock/rock_eyes/rock_eyes_wink_mesh.tres" id="3_qjkdc"]
 
@@ -44,7 +44,7 @@ _data = {
 [node name="RockEyes" unique_id=1613886241 instance=ExtResource("1_njr0x")]
 top_level = true
 
-[node name="Roundcube" parent="." index="0" unique_id=117263763]
+[node name="Roundcube" parent="." index="0" unique_id=1182115554]
 transform = Transform3D(3, 0, 0, 0, 2.9999998, 0, 0, 0, 2.9999998, 0, 0, 0)
 mesh = ExtResource("2_sx0id")
 
