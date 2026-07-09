@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bc1ejppxhquvx"]
 
-[ext_resource type="PackedScene" uid="uid://8ganaitxcmwh" path="res://rock/rock_eyes/rock_eyes.glb" id="1_njr0x"]
+[ext_resource type="PackedScene" uid="uid://vrfpfy84q3ev" path="res://rock/rock_eyes/rock_eyes.glb" id="1_njr0x"]
 [ext_resource type="ArrayMesh" uid="uid://vvgkj1oab6g6" path="res://rock/rock_eyes/rock_eyes_open_mesh.tres" id="2_sx0id"]
 [ext_resource type="ArrayMesh" uid="uid://b3cm0d7iym67" path="res://rock/rock_eyes/rock_eyes_wink_mesh.tres" id="3_qjkdc"]
 
@@ -21,7 +21,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ovwmn"]
 resource_name = "wink"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -29,10 +28,10 @@ tracks/0/path = NodePath("Roundcube:mesh")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_qjkdc"), ExtResource("2_sx0id")]
+"values": [ExtResource("3_qjkdc"), ExtResource("2_sx0id"), ExtResource("3_qjkdc")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_awcfk"]
@@ -43,8 +42,9 @@ _data = {
 
 [node name="RockEyes" unique_id=1613886241 instance=ExtResource("1_njr0x")]
 top_level = true
+visible = false
 
-[node name="Roundcube" parent="." index="0" unique_id=117263763]
+[node name="Roundcube" parent="." index="0" unique_id=1182115554]
 transform = Transform3D(3, 0, 0, 0, 2.9999998, 0, 0, 0, 2.9999998, 0, 0, 0)
 mesh = ExtResource("2_sx0id")
 
