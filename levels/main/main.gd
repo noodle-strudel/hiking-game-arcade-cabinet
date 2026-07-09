@@ -25,6 +25,9 @@ signal grid_position_changed(shift: Vector2i)
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 @onready var pan_camera = $PanningCamera
 
+# the tween, used for tweening
+@onready var tween = get_tree().create_tween()
+
 # Width and breadth of the level segments
 const _grid_x_dimension := 2 * 250.0
 const _grid_z_dimension := 2 * 250.0 
@@ -255,55 +258,31 @@ func _panning_camera() -> void:
 		
 		# sets the pan camera to properly look at the player
 		pan_camera.position = $Player.position
-		pan_camera.position.y += 20
-		pan_camera.position.x += 30
+		pan_camera.position.y += 30
+		pan_camera.position.x += 45
 		pan_camera.look_at($Player.position)
-		camera_pan_state = 2
+		camera_pan_state = 3
 		
 	# moves the pan cam in one direction, until too far from the player
 	elif camera_pan_state == 2:
-		
-		# easing the camera after switching directions
-		if pan_camera.position.x < $Player.position.x - 98:
-			pan_camera.position.x += 0.0125
-		elif pan_camera.position.x < $Player.position.x - 95:
-			pan_camera.position.x += 0.025
-		elif pan_camera.position.x < $Player.position.x - 90:
-			pan_camera.position.x += 0.05
-		
-		# normal movement and easing before switch
-		elif pan_camera.position.x < $Player.position.x + 90:
-			pan_camera.position.x += 0.1
-		elif pan_camera.position.x < $Player.position.x + 95:
-			pan_camera.position.x += 0.05
-		elif pan_camera.position.x < $Player.position.x + 98:
-			pan_camera.position.x += 0.025
-		elif pan_camera.position.x <= $Player.position.x + 100:
-			pan_camera.position.x += 0.0125
-		elif pan_camera.position.x > $Player.position.x + 100:
+		if !tween.is_valid(): 
+			tween = get_tree().create_tween()
+			tween.set_ease(Tween.EASE_IN_OUT)
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.tween_property(pan_camera, "position:x", $Player.position.x + 100, 30)
+		if pan_camera.position.x > $Player.position.x + 99 :
+			tween.kill()
 			camera_pan_state = 3
 			
 	# moves the pan cam in other direction
 	elif camera_pan_state == 3:
-		
-		# easing the camera after switching directions
-		if pan_camera.position.x > $Player.position.x + 98:
-			pan_camera.position.x -= 0.0125
-		elif pan_camera.position.x > $Player.position.x + 95:
-			pan_camera.position.x -= 0.025
-		elif pan_camera.position.x > $Player.position.x + 90:
-			pan_camera.position.x -= 0.05
-			
-		# normal camera movement and easing before switch
-		elif pan_camera.position.x > $Player.position.x - 90:
-			pan_camera.position.x -= 0.1
-		elif pan_camera.position.x > $Player.position.x - 95:
-			pan_camera.position.x -= 0.05
-		elif pan_camera.position.x > $Player.position.x - 98:
-			pan_camera.position.x -= 0.025
-		elif pan_camera.position.x >= $Player.position.x - 100:
-			pan_camera.position.x -= 0.0125
-		elif pan_camera.position.x < $Player.position.x - 100:
+		if !tween.is_valid(): 
+			tween = get_tree().create_tween()
+			tween.set_ease(Tween.EASE_IN_OUT)
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.tween_property(pan_camera, "position:x", $Player.position.x - 100, 30)
+		if pan_camera.position.x < $Player.position.x - 99 :
+			tween.kill()
 			camera_pan_state = 2
 	
 	# A way to keep the function calling itself
