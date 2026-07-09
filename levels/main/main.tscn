@@ -94,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
 [node name="OOBTimer" type="Timer" parent="." unique_id=1801968399]
 
 [node name="PanTimer" type="Timer" parent="." unique_id=684105652]
-wait_time = 60.0
+wait_time = 30.0
 
 [node name="PanningCamera" type="Camera3D" parent="." unique_id=907329462]
 transform = Transform3D(0.67739165, 0.4293216, 0.59734714, 0.054711007, 0.78037757, -0.6229105, -0.73358524, 0.45463577, 0.5051327, 26.520473, 59.4533, 21.257294)
