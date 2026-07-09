@@ -7,6 +7,8 @@ extends Node
 ## ex: if the rock has moved to the next chunk in the -z direction,
 ## shift will be (0, -1)
 signal grid_position_changed(shift: Vector2i)
+## used by ui script to hide kicking ui after camera switch
+signal rock_followcam_activated
 
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
@@ -65,12 +67,11 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			
 			# wait a moment before switching camera to rock camera
 			await get_tree().create_timer(0.5).timeout
-			await rock.wink_at_camera(player_camera) 
 			rock_camera.make_current()
+			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
 			pass
 		GameManager.gamestates.SCORING:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
