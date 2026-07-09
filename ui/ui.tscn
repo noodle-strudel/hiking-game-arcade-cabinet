@@ -6,15 +6,14 @@
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
 [ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
 [ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
-[ext_resource type="Texture2D" uid="uid://b0gwhc34otsnk" path="res://ui/kickbar/kickbar.png" id="5_obcwv"]
 [ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
-[ext_resource type="Texture2D" uid="uid://cp4gentdxrtoy" path="res://ui/kickbar/kickbar_ind.png" id="6_bo1jx"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
-[ext_resource type="Script" uid="uid://cqryfh8plk3hy" path="res://ui/power_bar.gd" id="6_pa1oa"]
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
-[ext_resource type="AudioStream" uid="uid://b4lt7ulgkdgwg" path="res://sound/rock_gameover.wav" id="11_bi8hs"]
+[ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
+[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
+[ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
@@ -58,6 +57,42 @@ _data = {
 &"swing_subtitle": SubResource("Animation_hrmpd")
 }
 
+[sub_resource type="Animation" id="Animation_74toj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kickbar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_co7pv"]
+resource_name = "power_modulate"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kickbar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1, 50, 100, -0.2, 0, 0.2, 0, 0, -0.1, 50, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 1.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7nxp"]
+_data = {
+&"RESET": SubResource("Animation_74toj"),
+&"power_modulate": SubResource("Animation_co7pv")
+}
+
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
 default_font_size = 40
@@ -78,6 +113,7 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -300,35 +336,38 @@ text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="PowerBar" type="Control" parent="KickingMenu" unique_id=59645324]
-anchors_preset = 0
-offset_left = 1736.0
-offset_top = 984.0
-offset_right = 1776.0
-offset_bottom = 1024.0
-script = ExtResource("6_pa1oa")
-
-[node name="Kickbar" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=450234943]
-texture = ExtResource("5_obcwv")
-
-[node name="KickbarInd" type="Sprite2D" parent="KickingMenu/PowerBar" unique_id=1824383345]
-z_index = 1
-texture = ExtResource("6_bo1jx")
-
 [node name="KicksRemainingGameplay" type="Label" parent="KickingMenu" unique_id=1256247876]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 140
 text = "Plabolnbar!"
+
+[node name="Kickbar" type="TextureProgressBar" parent="KickingMenu" unique_id=487345547]
+unique_name_in_owner = true
+editor_description = "Special thanks to my wife, Beatrice Warfel, for the help drawing this. She made excellent concept art. "
+layout_mode = 0
+offset_left = 1608.0
+offset_top = 280.0
+offset_right = 1864.0
+offset_bottom = 1048.0
+step = 0.1
+fill_mode = 3
+texture_under = ExtResource("16_co7pv")
+texture_over = ExtResource("17_x7nxp")
+texture_progress = ExtResource("18_3lbto")
+
+[node name="KickbarAnimator" type="AnimationPlayer" parent="KickingMenu" unique_id=207523349]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_x7nxp")
 
 [node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
 visible = false
@@ -456,10 +495,6 @@ offset_right = 1488.0
 offset_bottom = 4192.0
 color = Color(0.96405727, 0.70715535, 0.36109638, 1)
 
-[node name="EpicMusicPlayer" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1930468936]
-stream = ExtResource("11_bi8hs")
-bus = &"Music"
-
 [node name="OOBText" type="Label" parent="." unique_id=596672533]
 visible = false
 layout_mode = 0
@@ -470,5 +505,3 @@ offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "<: placeholder smile 	:)"
-
-[connection signal="finished" from="ScoreMenu/EpicMusicPlayer" to="." method="_on_epic_music_player_finished"]
