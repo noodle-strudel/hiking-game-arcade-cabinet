@@ -26,7 +26,7 @@ signal grid_position_changed(shift: Vector2i)
 @onready var pan_camera = $PanningCamera
 
 # the tween, used for tweening
-@onready var tween = get_tree().create_tween()
+@onready var tween: Tween = get_tree().create_tween()
 
 # Width and breadth of the level segments
 const _grid_x_dimension := 2 * 250.0
@@ -64,7 +64,7 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			camera_pan_state = 0
 			rock_camera.make_current()
 			%UIAnimator.play("idle_float")
-			$PanTimer.start(60)
+			$PanTimer.start(30)
 		GameManager.gamestates.CONTRACT:
 			
 			# Pan timer stops so that the panning camera doesn't keep moving
