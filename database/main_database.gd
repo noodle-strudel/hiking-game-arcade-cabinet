@@ -1,9 +1,7 @@
 extends Node
 
-# must be made global before release and placed second in order,
+# must be placed second in order on autoloads,
 # below GameManager and above SaveLoads
-# or we discuss some other way to have it enter the scene tree
-# only before release as it will cause errors if MariaDB server isn't installed
 
 var kick_db : MariaDBConnector = MariaDBConnector.new()
 var ed: Dictionary = {

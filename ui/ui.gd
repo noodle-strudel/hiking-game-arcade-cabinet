@@ -6,6 +6,11 @@ extends Control
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
+
+const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
+const OOB_EFFECT_SUF = "[/outline_size][/wave]"
+
+var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
@@ -99,11 +104,15 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
-			$OOBText.text = cause
-			$OOBText.show()
-			await get_tree().create_timer(2).timeout
-			$OOBText.hide()
-			GameManager.switch_state_to(GameManager.gamestates.KICKING)
+			$OOBCenterContainer.show()
+			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
+			var tween = get_tree().create_tween()
+			tween.tween_property(%OOBText, "modulate", Color.WHITE, 1).set_trans(Tween.TRANS_LINEAR)
+			await get_tree().create_timer(4).timeout
+			tween = get_tree().create_tween()
+			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
+			await get_tree().create_timer(1.5).timeout
+			$OOBCenterContainer.hide()
 
 # Scoring sequence function
 func _scoring_sequence() -> void:

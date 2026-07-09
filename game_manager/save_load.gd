@@ -30,7 +30,7 @@ func _load() -> void:
 		
 		var save_data = data.duplicate()
 		# if the database is loaded the kicks remaining is loaded to match the database
-		if is_instance_valid(db_loaded):
+		if is_instance_valid(db_loaded) and db_loaded.kick_db.is_connected_db:
 			var kicks_done : int = db_loaded.get_kicks()
 			GameManager.kicks_remaining = 1000000 - kicks_done
 		else:
