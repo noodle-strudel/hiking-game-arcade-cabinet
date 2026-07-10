@@ -301,8 +301,11 @@ buffer = PackedFloat32Array(-0.70771766, 0.0003993771, 0.70791006, 101.30089, -0
 [sub_resource type="BoxShape3D" id="BoxShape3D_odci8"]
 size = Vector3(500, 54.3339, 500)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_83o32"]
+size = Vector3(156.71487, 6.9086914, 89.29925)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_mo2hw"]
-size = Vector3(123.61458, 6.9086914, 90.772675)
+size = Vector3(145.47469, 6.9086914, 97.76622)
 
 [node name="ParkGrid" type="Node3D" unique_id=891737648 node_paths=PackedStringArray("object_collisions_node")]
 script = ExtResource("1_mo2hw")
@@ -313,7 +316,7 @@ ExtResource("4_4niwr"): ExtResource("5_dcs0m"),
 ExtResource("5_83o32"): ExtResource("5_dcs0m")
 })
 
-[node name="rock_kicking_park_ground_final" parent="." unique_id=1390192939 instance=ExtResource("7_odci8")]
+[node name="rock_kicking_park_ground_final" parent="." unique_id=1980193487 instance=ExtResource("7_odci8")]
 
 [node name="MultiMeshes" type="Node3D" parent="." unique_id=233172872]
 
@@ -362,33 +365,36 @@ visible = false
 [node name="DaisyFlower" parent="MeshReferences" unique_id=1557794057 instance=ExtResource("7_1caeb")]
 
 [node name="TreeStaticBodies" type="Node3D" parent="." unique_id=587983899]
-visible = false
 
 [node name="OOBBarrier" type="Area3D" parent="." unique_id=698100028]
-visible = false
 collision_layer = 0
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=1074059991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406334, -18.642231)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
 shape = SubResource("BoxShape3D_odci8")
 
 [node name="LakeBarrier" type="Area3D" parent="." unique_id=458920335]
-visible = false
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LakeBarrier" unique_id=103520406]
-transform = Transform3D(0.52089053, 0, -0.8536236, 0, 1, 0, 0.8536236, 0, 0.52089053, -170.52249, -7.107581, 151.97379)
-shape = SubResource("BoxShape3D_mo2hw")
+transform = Transform3D(0.52089053, 0, -0.8536236, 0, 1, 0, 0.8536236, 0, 0.52089053, -169.47473, -4.826729, 152.27649)
+shape = SubResource("BoxShape3D_83o32")
+debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
 debug_fill = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="LakeBarrier" unique_id=320522417]
-transform = Transform3D(-0.5863017, 0, -0.8100929, 0, 1, 0, 0.8100929, 0, -0.5863017, -187.93736, -6.754656, -5.24661)
+transform = Transform3D(-0.5863017, 0, -0.8100929, 0, 1, 0, 0.8100929, 0, -0.5863017, -187.93736, -4.6638756, -5.24661)
 shape = SubResource("BoxShape3D_mo2hw")
+debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
 debug_fill = false
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="LakeBarrier" unique_id=1791892304]
-transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1, 2.6277485e-09, 0.90830386, -2.069921e-09, 0.4183111, 97.30779, -8.355211, -105.437614)
+transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1, 2.6277485e-09, 0.90830386, -2.069921e-09, 0.4183111, 92.74619, -4.553791, -106.98323)
 shape = SubResource("BoxShape3D_mo2hw")
+debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
 debug_fill = false
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]

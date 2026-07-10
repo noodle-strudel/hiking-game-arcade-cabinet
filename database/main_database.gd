@@ -1,9 +1,7 @@
 extends Node
 
-# must be made global before release and placed second in order,
+# must be placed second in order on autoloads,
 # below GameManager and above SaveLoads
-# or we discuss some other way to have it enter the scene tree
-# only before release as it will cause errors if MariaDB server isn't installed
 
 var kick_db : MariaDBConnector = MariaDBConnector.new()
 var ed: Dictionary = {
@@ -34,7 +32,7 @@ func get_kicks() -> Variant:
 
 # on ready connects to the database and listens for the kick decrement signal
 func _ready() -> void:
-	GameManager.decrement_kicks_remaining.connect(_on_kick_insert)
+	GameManager.gamestate_update.connect(_on_score_insert)
 	var err : MariaDBConnector.ErrorCode = kick_db.connect_db(ed["db_host"],
 			ed["db_port"],
 			ed["db_name"],
@@ -44,16 +42,17 @@ func _ready() -> void:
 	if err != MariaDBConnector.ErrorCode.OK:
 		push_error(err)
 
-# When kicks are decremented inserts the score into the database
+# When state switches to scoring inserts the score into the database
 # Kick number is auto incrementing so doesn't need a value
 # Timestamp defaults to current time so also doesn't need a value
 # Initials of the kick are now also sent to the database
-func _on_kick_insert(kicks_remaining: int) -> void:
-	var format_stmt : String = "INSERT INTO kicks (score, initials) VALUES (%d, \"%s\");"
-	var stmt : String = format_stmt % [GameManager.last_score, initials]
-	var res : Dictionary = kick_db.execute_command(stmt)
-	if kick_db.last_error != MariaDBConnector.ErrorCode.OK:
-		printerr("ERROR %d on INSERT" % [kick_db.last_error])
-	else:
-		print("rows affected:", res["affected_rows"])
-		print("Last Inserted ID:", res["last_insert_id"])
+func _on_score_insert(state : GameManager.gamestates, _cause : String) -> void:
+	if state == GameManager.gamestates.SCORING:
+		var format_stmt : String = "INSERT INTO kicks (score, initials) VALUES (%d, \"%s\");"
+		var stmt : String = format_stmt % [GameManager.last_score, initials]
+		var res : Dictionary = kick_db.execute_command(stmt)
+		if kick_db.last_error != MariaDBConnector.ErrorCode.OK:
+			printerr("ERROR %d on INSERT" % [kick_db.last_error])
+		else:
+			print("rows affected:", res["affected_rows"])
+			print("Last Inserted ID:", res["last_insert_id"])

@@ -10,6 +10,7 @@ extends RigidBody3D
 @export var tilt_down: float = TAU / 12
 
 var camera_orbiting: bool = true
+var camera_follow_rock: bool = true
 
 # vector arrays for current, starting, and spherical ending rock shapes,
 # respectively
@@ -50,12 +51,17 @@ func rock_eyes_wink() -> Signal:
 # the rock eyes face the player camera and winks, then goes back to original direction
 func wink_at_camera(camera: Camera3D) -> void:
 	rock_eyes_look_at(camera)
-	await get_tree().process_frame
+	await get_tree().create_timer(0.3).timeout
 	
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
+	await get_tree().create_timer(0.3)
 	
 """Rock's Functions"""
+
+# toggle whether the camera follows the rock or not
+func camera_follow(switch: bool) -> void:
+	camera_follow_rock = true if switch == true else false
 
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
@@ -109,6 +115,7 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 	camera_orbiting = false
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
+			%RockKickTrail.show()
 			$KickSoundPlayer.play()
 			$KickTimer.start()
 			progress = _get_progress()
@@ -119,6 +126,8 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 			_update_rock()
 		GameManager.gamestates.IDLE:
 			camera_orbiting = true
+		_:
+			%RockKickTrail.hide()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -166,13 +175,16 @@ func _physics_process(_delta: float) -> void:
 	if camera_orbiting:
 		$RockCameraPivot.rotation.y += rotation_speed
 		$RockCameraPivot.rotation.x = -tilt_down
+	
+	if camera_follow_rock:
+		# update set rock camera pivot and update last rock position
+		$RockCameraPivot.position = self.position
+		$RockEyes.position = self.position
 
-	# update set rock camera pivot and update last rock position
-	$RockCameraPivot.position = self.position
-	$RockEyes.position = self.position
-
-	# always make rock camera look at rock
-	%RockCamera.look_at(self.position)
+		# always make rock camera look at rock
+		%RockCamera.look_at(self.position)
+	else:
+		pass
 
 	# control the size of the rock's trail
 	%RockKickTrail.size = clamp((self.linear_velocity.length() / 20 ) - 0.3, 0.0, 0.3)

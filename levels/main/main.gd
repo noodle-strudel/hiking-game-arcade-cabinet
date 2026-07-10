@@ -7,6 +7,8 @@ extends Node
 ## ex: if the rock has moved to the next chunk in the -z direction,
 ## shift will be (0, -1)
 signal grid_position_changed(shift: Vector2i)
+## used by ui script to hide kicking ui after camera switch
+signal rock_followcam_activated
 
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
@@ -25,6 +27,9 @@ signal grid_position_changed(shift: Vector2i)
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 @onready var pan_camera = $PanningCamera
 
+# the tween, used for tweening
+@onready var tween: Tween = get_tree().create_tween()
+
 # Width and breadth of the level segments
 const _grid_x_dimension := 2 * 250.0
 const _grid_z_dimension := 2 * 250.0 
@@ -35,6 +40,12 @@ var _last_grid_position := grid_position.duplicate()
 
 # variable to track what the panning camera should be doing
 var camera_pan_state = 0
+
+# variable to track if the rock should be being followed by the player
+var follow_rock = false
+
+# variable for stopping the player from rotating while rock kicks
+var y_rotation_hold = 0.0
 
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
@@ -55,8 +66,10 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			camera_pan_state = 0
 			rock_camera.make_current()
 			%UIAnimator.play("idle_float")
-			$PanTimer.start(60)
+			$PanTimer.start(30)
 		GameManager.gamestates.CONTRACT:
+			
+			# Pan timer stops so that the panning camera doesn't keep moving
 			$PanTimer.stop()
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
@@ -64,26 +77,37 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_KICKED:
 			
 			# wait a moment before switching camera to rock camera
+			follow_rock = true
+			y_rotation_hold = $Player.current_y_rotation
 			await get_tree().create_timer(0.5).timeout
-			await rock.wink_at_camera(player_camera) 
+			follow_rock = false
 			rock_camera.make_current()
+			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
 			pass
 		GameManager.gamestates.SCORING:
-			$Rock/RockCameraPivot/RockCameraArm/RockCamera.make_current()
 			rock_camera.make_current()
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 
-
-# handles the rock going out of bounds.
+# handle camera and state transition when rock goes out of bounds.
 func _handle_oob(_cause: String) -> void:
-	#TODO: freeze the rock's camera in place. aka stop updating the position.
-	#INFO: this would be in a function created after May 26.
-	#rock_camera.freeze_position() <-- not implemented yet
-	
+	$Rock.camera_follow(false)
+	await get_tree().create_timer(1).timeout
 	# reset the rock's position to the player's position
 	$Rock.position = $Player.position + Vector3(1, 1, 1)
+	$Rock.camera_follow(true)
+	await get_tree().create_timer(4.5).timeout
+	
+	#TODO: change to whatever state fits the situation the best.
+	GameManager.switch_state_to(GameManager.gamestates.KICKING)
+	# do specific stuff if a word is in the cause
+	#ex.
+	#if "lake" in _cause:
+	#	print(3)
+	#if "ground" in  _cause:
+	#	print(4)
+
 
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
@@ -224,24 +248,53 @@ func _process(_delta: float) -> void:
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
 	
+	# player vision follows the rock.
+	if follow_rock:
+		$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		$Player.current_y_rotation = y_rotation_hold
+	
 # panning camera stuff
 func _panning_camera() -> void:
+	
+	# cameras cannot have velocity, thus workarounds
+	# rotation minorly changed every call
 	pan_camera.rotate_y(0.001)
 	if camera_pan_state == 0:
+		
+		# sets the pan camera to be current, nothing else to allow slight delay
 		pan_camera.make_current()
 		camera_pan_state = 1
 	elif camera_pan_state == 1:
+		
+		# sets the pan camera to properly look at the player
 		pan_camera.position = $Player.position
-		pan_camera.position.y += 20
-		pan_camera.position.x += 30
+		pan_camera.position.y += 30
+		pan_camera.position.x += 45
 		pan_camera.look_at($Player.position)
-		camera_pan_state = 2
+		camera_pan_state = 3
+		
+	# moves the pan cam in one direction, until too far from the player
 	elif camera_pan_state == 2:
-		pan_camera.position.x += 0.1
-		if pan_camera.position.x > $Player.position.x + 100:
+		if !tween.is_valid(): 
+			tween = get_tree().create_tween()
+			tween.set_ease(Tween.EASE_IN_OUT)
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.tween_property(pan_camera, "position:x", $Player.position.x + 100, 30)
+		if pan_camera.position.x > $Player.position.x + 99 :
+			tween.kill()
 			camera_pan_state = 3
+			
+	# moves the pan cam in other direction
 	elif camera_pan_state == 3:
-		pan_camera.position.x += -0.1
-		if pan_camera.position.x < $Player.position.x - 100:
+		if !tween.is_valid(): 
+			tween = get_tree().create_tween()
+			tween.set_ease(Tween.EASE_IN_OUT)
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.tween_property(pan_camera, "position:x", $Player.position.x - 100, 30)
+		if pan_camera.position.x < $Player.position.x - 99 :
+			tween.kill()
 			camera_pan_state = 2
+	
+	# A way to keep the function calling itself
 	$PanTimer.start(0.001)
+	

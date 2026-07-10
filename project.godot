@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://rpfpmovmm3w4"
 [autoload]
 
 GameManager="*uid://c36a8wo7m50y6"
+MainDatabase="*uid://by51tfxeksaue"
 SaveLoad="*uid://cjwdmcv61acn2"
 EventManager="*uid://dxx2hnhes27by"
 AudioManager="*uid://by3s0jh1hdkqs"
