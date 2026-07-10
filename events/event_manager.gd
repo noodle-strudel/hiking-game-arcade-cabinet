@@ -1,6 +1,6 @@
 extends Node
 
-# signal sent when an event finishes (currently unused) #OLD
+# signal sent when an event finishes 
 signal event_clear
 
 
@@ -96,6 +96,9 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.POSTKICK_EVENT:
 			if _event_is_of_type(event_types.POST_KICK):
 				_run_event()
+				# this line is needed because the compiler hates me.
+				# fixes timing issue. 
+				await event_clear
 			
 			# Get the player and rock nodes from the main scene.
 			var main_scene = get_tree().current_scene
@@ -111,7 +114,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 				kick_distance
 			)
 			
-			# post kick event handling done
+			# post kick event handling done  
 			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event handler finished")
 			
 		GameManager.gamestates.SCORING:
@@ -131,14 +134,16 @@ func _event_is_of_type(event_type: event_types) -> bool:
 			event_types.POST_KICK:
 				if event_value >= event_indices[2] and event_value < total_event_count:
 					return true
-	return false
+	return false 
 
 # called from the state handler, where the code for determining event timing lives. 
 # instantiates the rolled event. 
-func _run_event() -> void:
+func _run_event():
 	var event = known_events[event_value].instantiate()
 	self.add_child(event)
-	await event.tree_exiting
+	await event.event_finished
+	#print("The event is done!")
+	event_clear.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -165,10 +170,10 @@ func _ready() -> void:
 	else:
 		max_event_value = total_event_count
 	
-	print("DEBUG: event indices: " + str(event_indices))
-	print("DEBUG: known events: " + str(known_events))
-	print("DEBUG: total event count: " + str(total_event_count))
-	print("DEBUG: max_event_value: " + str(max_event_value))
+	#print("DEBUG: event indices: " + str(event_indices))
+	#print("DEBUG: known events: " + str(known_events))
+	#print("DEBUG: total event count: " + str(total_event_count))
+	#print("DEBUG: max_event_value: " + str(max_event_value))
 
 
 

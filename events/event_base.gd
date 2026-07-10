@@ -4,8 +4,9 @@ class_name Event extends Node
 # to use, create a node of type "Event" and define a _event_function() function in its script. 
 # IMPORTANT: THE NODE YOU CREATE MUST BE SET TO PROCESS MODE "Always"!!!
 
-# signal for when the event has completed
-signal event_done
+## signal for when the event has completed.
+## used by the event manager. 
+signal event_finished
 
 # IF YOU WISH TO CREATE AN EVENT:
 # create a script for that extends "Event", and define this function in it. The event_manager will handle
@@ -21,14 +22,16 @@ func _event_cleanup() -> void:
 	# unpause the game
 	get_tree().paused = false
 	
-	# rune self from tree
+	# signal to event_manager that we're done
+	event_finished.emit()
+	
+	# prune self from tree
 	self.queue_free()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
-	event_done.connect(_event_cleanup)
 	
 	# pause the game
 	get_tree().paused = true
