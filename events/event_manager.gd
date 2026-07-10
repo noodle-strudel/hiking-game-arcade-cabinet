@@ -33,9 +33,9 @@ const post_kick_events := [
 ## List of known event types in order of definition/timing. 
 ## Informs the meaning of event_indices.
 enum event_types {
-	ON_KICK_EVENT,
-	DURING_KICK_EVENT,
-	POST_KICK_EVENT
+	ON_KICK,
+	DURING_KICK,
+	POST_KICK
 }
 
 
@@ -84,29 +84,18 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.KICKING:
 			pass
 		GameManager.gamestates.ROCK_KICKED:
-			#if _event_is_of_type("on_kick_event")
+			# handle on kick events
+			if _event_is_of_type(event_types.ON_KICK):
+				_run_event()
 			
+			await get_tree().create_timer(0.4).timeout
+			# handle during kick events
+			if _event_is_of_type(event_types.DURING_KICK):
+				_run_event()
 			
-			# TODO: OLD
-			var rock_event = null
-			
-			if event_value == 3:
-				rock_event = known_events[event_value].instantiate()
-				await get_tree().create_timer(0.4).timeout
-				self.add_child(rock_event)
-			
-			if rock_event:
-				await rock_event.tree_exiting
-				
 		GameManager.gamestates.POSTKICK_EVENT:
-			var postkick_event = null
-			
-			if (event_value != 0 && event_value != 3):
-				postkick_event = known_events[event_value].instantiate()
-				self.add_child(postkick_event)
-				
-			if postkick_event:
-				await postkick_event.tree_exiting
+			if _event_is_of_type(event_types.POST_KICK):
+				_run_event()
 			
 			# Get the player and rock nodes from the main scene.
 			var main_scene = get_tree().current_scene
@@ -122,10 +111,9 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 				kick_distance
 			)
 			
-			if postkick_event:
-				GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
-			else:
-				GameManager.switch_state_to(GameManager.gamestates.SCORING, "no post kick event")
+			# post kick event handling done
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event handler finished")
+			
 		GameManager.gamestates.SCORING:
 			pass
 
@@ -134,16 +122,23 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 # see event_types definition.
 func _event_is_of_type(event_type: event_types) -> bool:	
 	match event_type:
-			event_types.ON_KICK_EVENT:
+			event_types.ON_KICK:
 				if event_value >= event_indices[0] and event_value < event_indices[1]:
 					return true
-			event_types.DURING_KICK_EVENT:
+			event_types.DURING_KICK:
 				if event_value >= event_indices[1] and event_value < event_indices[2]:
 					return true
-			event_types.POST_KICK_EVENT:
+			event_types.POST_KICK:
 				if event_value >= event_indices[2] and event_value < total_event_count:
 					return true
 	return false
+
+# called from the state handler, where the code for determining event timing lives. 
+# instantiates the rolled event. 
+func _run_event() -> void:
+	var event = known_events[event_value].instantiate()
+	self.add_child(event)
+	await event.tree_exiting
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
