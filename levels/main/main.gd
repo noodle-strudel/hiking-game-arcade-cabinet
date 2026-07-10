@@ -84,9 +84,20 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			rock_camera.make_current()
 			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
-			pass
+			await EventManager.on_postkick_event_done
+			
+			# Caluculate the distance kicked.
+			var kick_distance = $Player.global_position.distance_to($Rock.global_position)
+			
+			# Report the score.
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
 		GameManager.gamestates.SCORING:
-			rock_camera.make_current()
+			pass
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 

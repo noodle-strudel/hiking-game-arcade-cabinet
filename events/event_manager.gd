@@ -1,7 +1,7 @@
 extends Node
 
-# signal sent when an event finishes (currently unused)
-signal event_clear
+# signal sent when post kick event finishes 
+signal on_postkick_event_done
 
 # a ceiling for rolling the event value. 
 const max_event_value = 3
@@ -58,25 +58,9 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 				
 			if postkick_event:
 				await postkick_event.tree_exiting
-			
-			# Get the player and rock nodes from the main scene.
-			var main_scene = get_tree().current_scene
-			var player = main_scene.get_node("Player")
-			var rock = main_scene.get_node("Rock")
-			
-			# Caluculate the distance kicked.
-			var kick_distance = player.global_position.distance_to(rock.global_position)
-			
-			# Report the score.
-			GameManager.report_score(
-				GameManager.current_kick_strength,
-				kick_distance
-			)
-
-			if postkick_event:
-				GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
+				on_postkick_event_done.emit()
 			else:
-				GameManager.switch_state_to(GameManager.gamestates.SCORING, "no post kick event")
+				on_postkick_event_done.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

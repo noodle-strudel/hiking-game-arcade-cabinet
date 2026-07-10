@@ -14,7 +14,7 @@ config/name="Capstone Rock Kicking"
 run/main_scene="uid://h6hlf65en0ak"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.13725491, 0.12941177, 0.23921569, 1)
-boot_splash/image="uid://cbc7vta6tf7at"
+boot_splash/image="uid://ckr8i4abxpkty"
 config/icon="res://icon.svg"
 
 [audio]
