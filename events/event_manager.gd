@@ -1,14 +1,32 @@
 extends Node
+# NOTE: If you are adding a new event, simply design the event and add it to the
+# appropriate list of known events. For example, if you wanted to add a new
+# post-kick event, add it to the post_kick_events array. 
+
+# NOTE: If you are adding an event that has different timing to an existing
+# type already covered by this script, you must update code in a few places. 
+# 1. Add a new array for the event type, like on_kick_events. 
+# 2. Add that array to event_lists IN THE CORRECT SEQUENCE ORDER. 
+#    for example, if you added a contract event timing it would go first. 
+# 3. Update the event_types enum, again making sure it is in the same correct
+#    sequence order.
+# 4. Update the _event_is_of_type() function. Add the match case in the correct
+#    place, and update the indices accordingly. 
+#    The last bounds in the sequence is total_event_count. 
+#    For example, if you were to add a new event timing between ON_KICK and
+#    DURING_KICK, you would need to update all subsequent indices in the if statements. 
+#    Hopefully, the pattern should be intuitive.
+# 5. Lastly, add code to run the event type in the _on_change_state handler. 
+#    Follow the examples. 
+#    If you are experiencing a timing issue, try waiting for the event_clear signal
+#    after calling _run_event(). 
+# Feel free to ping me if you need help! -Melody
+
 
 # signal sent when an event finishes 
 signal event_clear
 
-
-
-
 # lists of known events. 
-# NOTE: if a new kind of event timing is added, it will need to be added
-# to event_lists below. 
 ## events that occur right after the rock is kicked (ex: rock says "ouch!")
 const on_kick_events := [
 	
@@ -17,12 +35,12 @@ const on_kick_events := [
 const during_kick_events := [
 	preload("res://events/wink_event/wink_event.tscn")
 ]
-## 
+## events that occur just after the rock has come to a rest (ex: coin event)
 const post_kick_events := [
 	preload("res://events/coin_event/coin_event.tscn"),
 	preload("res://events/grandma_salmon/grandma_salmon.tscn"),
 ]
-# NOTE: THIS MUST BE UPDATED IF A NEW EVENT TIMING IS ADDED
+# NOTE: MUST BE UPDATED IF NEW EVENT TYPE IS ADDED
 ## Ragged array of all known event lists. 
 ## Each sub-array is a different event timing. 
 @onready var event_lists := [ 
@@ -30,6 +48,7 @@ const post_kick_events := [
 	during_kick_events,
 	post_kick_events
 ]
+# NOTE: MUST BE UPDATED IF NEW EVENT TYPE IS ADDED
 ## List of known event types in order of definition/timing. 
 ## Informs the meaning of event_indices.
 enum event_types {
@@ -37,7 +56,6 @@ enum event_types {
 	DURING_KICK,
 	POST_KICK
 }
-
 
 ## full concatenated list of all known events. calculated in _ready().
 ## separate from event_lists, which is a ragged array. 
@@ -53,7 +71,6 @@ var event_indices := []
 var total_event_count := 0
 ## a ceiling for rolling the event value. Initialized in _ready().
 var max_event_value := 0 
-
 
 ## a random number that gets rolled for every new kick attempt. 
 ## value determines if an event occurs, and which one. 
@@ -138,11 +155,10 @@ func _event_is_of_type(event_type: event_types) -> bool:
 
 # called from the state handler, where the code for determining event timing lives. 
 # instantiates the rolled event. 
-func _run_event():
+func _run_event() -> void:
 	var event = known_events[event_value].instantiate()
 	self.add_child(event)
 	await event.event_finished
-	#print("The event is done!")
 	event_clear.emit()
 
 # Called when the node enters the scene tree for the first time.
