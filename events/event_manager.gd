@@ -31,12 +31,14 @@ const post_kick_events := [
 	post_kick_events
 ]
 ## List of known event types in order of definition/timing. 
-## Informs the meaning of event_indices
-const event_types := [
-	"on_kick_event",
-	"during_kick_event",
-	"post_kick_event"
-]
+## Informs the meaning of event_indices.
+enum event_types {
+	ON_KICK_EVENT,
+	DURING_KICK_EVENT,
+	POST_KICK_EVENT
+}
+
+
 ## full concatenated list of all known events. calculated in _ready().
 ## separate from event_lists, which is a ragged array. 
 var known_events := []
@@ -82,6 +84,10 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.KICKING:
 			pass
 		GameManager.gamestates.ROCK_KICKED:
+			#if _event_is_of_type("on_kick_event")
+			
+			
+			# TODO: OLD
 			var rock_event = null
 			
 			if event_value == 3:
@@ -124,21 +130,17 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			pass
 
 # NOTE: MUST BE UPDATED IF NEW EVENT TYPE IS ADDED
-# returns true if the provided event_value is an event of the provided event_type. 
+# returns true if the current event_value is an event of the provided event_type. 
 # see event_types definition.
-func _event_is_of_type(event_value : int, event_type: String) -> bool:
-	# check passed in values
-	assert((event_value >= 0 and event_value <= max_event_value), "bad event_value passed")
-	assert(event_type in event_types, "unknown event_type")
-	
+func _event_is_of_type(event_type: event_types) -> bool:	
 	match event_type:
-			"on_kick_event":
+			event_types.ON_KICK_EVENT:
 				if event_value >= event_indices[0] and event_value < event_indices[1]:
 					return true
-			"during_kick_event":
+			event_types.DURING_KICK_EVENT:
 				if event_value >= event_indices[1] and event_value < event_indices[2]:
 					return true
-			"post_kick_event":
+			event_types.POST_KICK_EVENT:
 				if event_value >= event_indices[2] and event_value < total_event_count:
 					return true
 	return false
