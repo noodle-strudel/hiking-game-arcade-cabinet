@@ -11,8 +11,19 @@ class_name ParkGrid
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
+@onready var spawn_points: Array[Marker3D]
+
+func get_spawn_position() -> Vector3:
+	var marker = spawn_points.pick_random()
+	print("ROCKSPAWN #", marker.name)
+	return marker.global_position
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawn_points = []
+	for child in $SpawnPoints.get_children():
+		if child is Marker3D:
+			spawn_points.append(child)
 	#_make_trees_point_up()
 	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
 	pass

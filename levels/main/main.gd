@@ -227,6 +227,12 @@ func _ready() -> void:
 			_current_chunks[z + 1][x + 1].position =\
 					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
 	_current_chunks[1][1].add_collision_to_multimeshes()
+	
+	# Spawn rock at a random location in park
+	var park_grid: ParkGrid = _current_chunks[1][1]
+	rock.linear_velocity = Vector3.ZERO
+	rock.angular_velocity = Vector3.ZERO
+	rock.global_position = park_grid.get_spawn_position()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
