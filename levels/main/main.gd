@@ -60,6 +60,7 @@ var _current_chunks = [
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
+	print("main: ", state)
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
@@ -84,7 +85,9 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			rock_camera.make_current()
 			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
-			await EventManager.on_postkick_event_done
+			print("main: POSTKICK_EVENT")
+			await EventManager.event_clear
+			print("main: EVENT IS DONE")
 			
 			# Caluculate the distance kicked.
 			var kick_distance = $Player.global_position.distance_to($Rock.global_position)
