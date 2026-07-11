@@ -122,7 +122,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			var player = main_scene.get_node("Player")
 			var rock = main_scene.get_node("Rock")
 			
-			# Caluculate the distance kicked.
+			# Calculate the distance kicked.
 			var kick_distance = player.global_position.distance_to(rock.global_position)
 			
 			# Report the score.
