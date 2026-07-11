@@ -98,6 +98,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.pause()
 			if %Kickbar.value >= 97.0:
 				print("critical kick!")
+				$KickingMenu/WowPlayer.play()
 				%Kickbar.value = 100.0
 			$RockKickedMenu.show()
 			$KickingMenu.show()
