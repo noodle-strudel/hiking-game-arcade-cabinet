@@ -36,12 +36,6 @@ func _process(delta: float) -> void:
 	if game_over_text_scroll:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	
-	# hide the contract after it is signed and go to the letter spinner
-	if GameManager.state == GameManager.gamestates.CONTRACT and\
-			Input.is_action_just_pressed("confirm"):
-		$ContractMenu/ContractContainer.hide()
-		%LetterSpinner.show()
-	
 	# Handle the letter spinner
 	if %LetterSpinner.visible:
 		match spinstep:
@@ -67,6 +61,13 @@ func _process(delta: float) -> void:
 				spinstep = 0
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 						"contract signed")
+
+# sign player contract
+func _input(event: InputEvent) -> void:
+	if GameManager.state == GameManager.gamestates.CONTRACT and \
+			event.is_action_pressed("confirm"):
+		$ContractMenu/ContractContainer.hide()
+		%LetterSpinner.show()
 
 # used for letter spinner. Returns a random uppercase character.
 func _random_uppercase() -> String:

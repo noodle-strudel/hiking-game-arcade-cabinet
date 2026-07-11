@@ -12,7 +12,7 @@ class_name ParkGrid
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
 # Array of spawn points where the rock can spawn when the game boots up.
-@onready var spawn_points: Array[Marker3D]
+var spawn_points: Array[Marker3D]
 
 # Randomly chooses 1 of the 3 random spawn locations.
 func get_spawn_position() -> Vector3:
@@ -22,7 +22,6 @@ func get_spawn_position() -> Vector3:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawn_points = []
 	for child in $SpawnPoints.get_children():
 		if child is Marker3D:
 			spawn_points.append(child)
