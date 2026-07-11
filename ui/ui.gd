@@ -62,7 +62,7 @@ func _process(delta: float) -> void:
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 						"contract signed")
 
-# sign player contract
+# hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
 	if GameManager.state == GameManager.gamestates.CONTRACT and \
 			event.is_action_pressed("confirm"):
