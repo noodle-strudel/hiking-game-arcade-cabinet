@@ -229,8 +229,8 @@ func _ready() -> void:
 	_current_chunks[1][1].add_collision_to_multimeshes()
 	
 	# Spawn rock and player at a random location in park. 
-	var park_grid: ParkGrid = _current_chunks[1][1]
-	var spawn_position: Vector3 = park_grid.get_spawn_position()
+	var grid: Grid = _current_chunks[1][1]
+	var spawn_position: Vector3 = grid.get_spawn_position()
 	rock.linear_velocity = Vector3.ZERO
 	rock.angular_velocity = Vector3.ZERO
 	rock.global_position = spawn_position

@@ -7,6 +7,15 @@ class_name Grid
 ## Dictionary pairs of multimeshes and corresponding StaticBody3D packed scenes.
 @export var mulmesh_col_dict: Dictionary[MultiMesh, PackedScene]
 
+# Array of spawn points where the rock can spawn when the game boots up.
+var spawn_points: Array[Marker3D]
+
+# Randomly chooses 1 of the 3 random spawn locations.
+func get_spawn_position() -> Vector3:
+	var marker = spawn_points.pick_random()
+	print("Spawn: ", marker.name)
+	return marker.global_position
+
 # adds a staticbody3d for each multimesh object. 
 # I read that it can be more efficient this way than adding a ton of collision 
 # shapes to a single staticbody3d. Plus i'm able to add the transform to the 
@@ -29,8 +38,12 @@ func remove_collisions_from_multimeshes() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	var spawn_point := get_node_or_null("SpawnPoints")
+	
+	if spawn_point:
+		for child in spawn_point.get_children():
+			if child is Marker3D:
+				spawn_points.append(child)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
