@@ -2,13 +2,14 @@ extends Node3D
 class_name Grid
 
 signal modify_multimesh_complete
-var modifying_multimeshes: bool = false
 
 ## The node that will hold all the StaticBody3D nodes.
 @export var object_collisions_node: Node3D
 
 ## Dictionary pairs of multimeshes and corresponding StaticBody3D packed scenes.
 @export var mulmesh_col_dict: Dictionary[MultiMesh, PackedScene]
+
+var modifying_multimeshes: bool = false
 
 # adds a staticbody3d for each multimesh object. 
 # I read that it can be more efficient this way than adding a ton of collision 
