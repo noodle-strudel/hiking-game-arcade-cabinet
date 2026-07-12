@@ -26,8 +26,7 @@ func _ready() -> void:
 		if child is Marker3D:
 			spawn_points.append(child)
 	#_make_trees_point_up()
-	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
-	pass
+	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
