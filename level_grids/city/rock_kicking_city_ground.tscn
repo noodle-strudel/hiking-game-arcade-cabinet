@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bwf4wtl2rtgv"]
+
+[ext_resource type="PackedScene" uid="uid://7wdnk8anw5wg" path="res://level_grids/city/glb/rock_kicking_city_ground.glb" id="1_0goqq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snin2"]
+size = Vector3(500, 1.5, 500)
+
+[node name="rock_kicking_city_ground" unique_id=947447146 instance=ExtResource("1_0goqq")]
+
+[node name="GroundBoundary" type="StaticBody3D" parent="." index="2" unique_id=655862368]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundBoundary" index="0" unique_id=590429812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+shape = SubResource("BoxShape3D_snin2")

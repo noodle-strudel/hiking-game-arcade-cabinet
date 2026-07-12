@@ -11,7 +11,7 @@ script = ExtResource("2_bs5ym")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.08972429, 1.0416775, 3.2219126)
 remote_path = NodePath("../rock_start1")
 
-[node name="Skeleton3D" parent="WaterHandArmature" parent_id_path=PackedInt32Array(1117479843) index="0" unique_id=1468479000]
+[node name="Skeleton3D" parent="WaterHandArmature" parent_id_path=PackedInt32Array(1555692120) index="0" unique_id=915097484]
 bones/0/position = Vector3(-4.669979e-16, -2.1031716, -1.5107288)
 bones/1/position = Vector3(1.4449281e-14, 1.340582, 0.5542364)
 bones/1/rotation = Quaternion(0.3883466, 1.09852955e-07, 4.6294517e-08, 0.9215134)
@@ -39,4 +39,4 @@ bones/17/rotation = Quaternion(0.25813726, -0.00335716, -0.012563686, 0.9660208)
 bones/18/rotation = Quaternion(0.25815907, 7.712002e-09, 1.15680026e-08, 0.9661024)
 
 [node name="rock_start1" parent="." index="2" unique_id=1446544703 instance=ExtResource("2_vcii2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.08972429, 1.0416775, 3.2219126)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.08162807, 0.8755295, 3.0569267)
