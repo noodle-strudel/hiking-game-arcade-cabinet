@@ -61,7 +61,6 @@ var _current_chunks = [
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
-	print("main: ", state)
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
