@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://de0cqgfuv80fn" path="res://level_grids/park/trees/deciduous_tree_collision_body.tscn" id="5_dcs0m"]
 [ext_resource type="PackedScene" uid="uid://bks51bjfps7db" path="res://level_grids/park/rock_kicking_park_flower.tscn" id="7_1caeb"]
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
+[ext_resource type="PackedScene" uid="uid://chm1hfhkurw7w" path="res://events/water_hand/water_hand.tscn" id="12_dcs0m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -396,6 +397,9 @@ transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1,
 shape = SubResource("BoxShape3D_mo2hw")
 debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
 debug_fill = false
+
+[node name="WaterHand" parent="." unique_id=1007176116 instance=ExtResource("12_dcs0m")]
+transform = Transform3D(0.5218884, 1.1222266e-10, -0.85301393, -2.1590199e-10, 1, -5.3410737e-13, 0.85301393, 1.8444521e-10, 0.5218884, 83.87826, 5.6551137, -75.835785)
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]
