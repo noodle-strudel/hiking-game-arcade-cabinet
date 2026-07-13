@@ -62,7 +62,6 @@ func wink_at_camera(camera: Camera3D) -> void:
 
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
-	await get_tree().create_timer(0.3).timeout
 
 """Rock's Functions"""
 
