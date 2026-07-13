@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ctbdb270lq04k"]
+
+[ext_resource type="Script" uid="uid://k87nqahfre33" path="res://events/ouch_event/ouch_event.gd" id="1_gg66y"]
+[ext_resource type="AudioStream" uid="uid://bvp5ys4201ne2" path="res://sound/rock_ouch.wav" id="2_a5yxg"]
+
+[node name="OuchEvent" type="Node" unique_id=2118420529]
+process_mode = 3
+script = ExtResource("1_gg66y")
+metadata/_custom_type_script = "uid://rdvxw5w1g4li"
+
+[node name="OuchPlayer" type="AudioStreamPlayer" parent="." unique_id=1763483044]
+stream = ExtResource("2_a5yxg")
+bus = &"SFX"

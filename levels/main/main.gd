@@ -13,7 +13,8 @@ signal rock_followcam_activated
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
-	#preload("res://level_grids/heaven/heaven_grid.tscn")
+	#preload("res://level_grids/heaven/heaven_grid.tscn"),
+	#preload("res://level_grids/city/city_grid.tscn")
 ]
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down
@@ -84,9 +85,21 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			rock_camera.make_current()
 			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
-			pass
+			# wait for any events to be done
+			await EventManager.event_clear
+			
+			# Caluculate the distance kicked.
+			var kick_distance = $Player.global_position.distance_to($Rock.global_position)
+			
+			# Report the score.
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+			
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
 		GameManager.gamestates.SCORING:
-			rock_camera.make_current()
+			pass
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 
@@ -227,6 +240,14 @@ func _ready() -> void:
 			_current_chunks[z + 1][x + 1].position =\
 					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
 	_current_chunks[1][1].add_collision_to_multimeshes()
+	
+	# Spawn rock and player at a random location in park. 
+	var grid: Grid = _current_chunks[1][1]
+	var spawn_position: Vector3 = grid.get_spawn_position()
+	rock.linear_velocity = Vector3.ZERO
+	rock.angular_velocity = Vector3.ZERO
+	rock.global_position = spawn_position
+	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

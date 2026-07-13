@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpfys"]
 size = Vector3(500, 1.5, 500)
 
-[node name="rock_kicking_heaven_ground" unique_id=703005095 instance=ExtResource("1_dpfys")]
+[node name="rock_kicking_heaven_ground" unique_id=72431058 instance=ExtResource("1_dpfys")]
 
 [node name="GroundBoundary" type="StaticBody3D" parent="." index="2" unique_id=1222800252]
 collision_layer = 4
