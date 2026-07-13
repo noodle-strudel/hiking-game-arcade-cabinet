@@ -10,5 +10,4 @@ metadata/_custom_type_script = "uid://rdvxw5w1g4li"
 
 [node name="OuchPlayer" type="AudioStreamPlayer" parent="." unique_id=1763483044]
 stream = ExtResource("2_a5yxg")
-volume_db = 10.0
 bus = &"SFX"

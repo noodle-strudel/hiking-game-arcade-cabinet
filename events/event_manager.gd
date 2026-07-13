@@ -28,7 +28,7 @@ signal event_clear
 # lists of known events. 
 ## events that occur right after the rock is kicked (ex: rock says "ouch!")
 const on_kick_events := [
-	
+	preload("res://events/ouch_event/ouch_event.tscn")
 ]
 ## events that occur while the rock is traveling (ex: rock wink event)
 const during_kick_events := [
