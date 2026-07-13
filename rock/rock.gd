@@ -9,11 +9,13 @@ extends RigidBody3D
 # camera tilted 30 degrees down on idle
 @export var tilt_down: float = TAU / 12
 
+# how much of the previous camera follow direction to add to the new one on each frame
+@export var camera_follow_smoothing: float = 0.985
+
 var camera_orbiting: bool = true
 var camera_follow_rock: bool = true
 
-# vector arrays for current, starting, and spherical ending rock shapes,
-# respectively
+# vector arrays for current, starting, and spherical ending rock shapes, respectively
 var current_rock_vertices: PackedVector3Array
 var starting_rock_vertices: PackedVector3Array
 var ending_rock_vertices: PackedVector3Array
@@ -30,8 +32,13 @@ var kick_vector := Vector3(0.25, 0.1, 0.25)
 # isn't necessarily set on every frame)
 var last_rock_pos: Vector3
 
-# position of rock on second-to-previous frame (for calculating deceleration)
+# position of rock on second-to-previous frame
+# (for calculating deceleration and initial rock camera following direction)
 var second_rock_pos: Vector3
+
+# direction rock camera pivot was pointing to on previous frame before limiting pitch
+# (used to calculate and becomes new pointing direction on each frame)
+var last_pre_rock_camera_heading: Vector3
 
 """Rock's Eyes's Control Functions"""
 
@@ -52,16 +59,25 @@ func rock_eyes_wink() -> Signal:
 func wink_at_camera(camera: Camera3D) -> void:
 	rock_eyes_look_at(camera)
 	await get_tree().create_timer(0.3).timeout
-	
+
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
-	await get_tree().create_timer(0.3)
-	
+	await get_tree().create_timer(0.3).timeout
+
 """Rock's Functions"""
 
-# toggle whether the camera follows the rock or not
+# toggle whether the camera follows the rock or not and initialize camera follow angle
 func camera_follow(switch: bool) -> void:
-	camera_follow_rock = true if switch == true else false
+	if switch == true:
+		camera_follow_rock = true
+
+		# initialize rock camera following direction
+		# (using previous and second-to-previous positions here
+		# since I don't know when in the physics process cycle this code will be ran)
+		last_pre_rock_camera_heading = second_rock_pos.direction_to(last_rock_pos)
+		$RockCameraPivot.look_at(last_pre_rock_camera_heading + $RockCameraPivot.position)
+	else:
+		camera_follow_rock = false
 
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
@@ -69,16 +85,16 @@ func _interpolate(
 	start: PackedVector3Array,
 	end: PackedVector3Array,
 	dists: Array[float],
-	progress: float
+	prog: float
 ) -> PackedVector3Array:
-	progress = clamp(progress, 0, 1)
+	prog = clamp(prog, 0, 1)
 	var out = PackedVector3Array()
 
 	# generate interpolated vertices
 	for i in range(start.size()):
 		out.push_back(
 			start[i].lerp(end[i],
-			progress ** (0.002 / (dists[i] ** 2)))
+			prog ** (0.002 / (dists[i] ** 2)))
 		)
 
 	return out
@@ -167,24 +183,35 @@ func _physics_process(_delta: float) -> void:
 	):
 		%RockDustParticles.emitting = true
 
-	# update old rock positions
-	second_rock_pos = last_rock_pos
-	last_rock_pos = self.position
-
 	# orbit camera
 	if camera_orbiting:
 		$RockCameraPivot.rotation.y += rotation_speed
 		$RockCameraPivot.rotation.x = -tilt_down
 	
 	if camera_follow_rock:
-		# update set rock camera pivot and update last rock position
+		# update set rock camera pivot and rock eyes, and update last rock position
 		$RockCameraPivot.position = self.position
 		$RockEyes.position = self.position
 
+		# if rock camera is not orbiting and is moving,
+		# trail rock camera behind rock, with smoothing
+		if self.position.distance_to(last_rock_pos) >= 0.000001 and not camera_orbiting:
+			last_pre_rock_camera_heading = last_rock_pos.direction_to(
+				self.position
+			).slerp(last_pre_rock_camera_heading, camera_follow_smoothing) 
+
+			$RockCameraPivot.look_at(
+				last_pre_rock_camera_heading + $RockCameraPivot.position
+			)
+			
+			$RockCameraPivot.rotation.x = max(6, $RockCameraPivot.rotation.x)
+
 		# always make rock camera look at rock
 		%RockCamera.look_at(self.position)
-	else:
-		pass
+
+	# update old rock positions
+	second_rock_pos = last_rock_pos
+	last_rock_pos = self.position
 
 	# control the size of the rock's trail
 	%RockKickTrail.size = clamp((self.linear_velocity.length() / 20 ) - 0.3, 0.0, 0.3)
