@@ -13,7 +13,8 @@ signal rock_followcam_activated
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
-	#preload("res://level_grids/heaven/heaven_grid.tscn")
+	#preload("res://level_grids/heaven/heaven_grid.tscn"),
+	#preload("res://level_grids/city/city_grid.tscn")
 ]
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down
@@ -84,9 +85,21 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			rock_camera.make_current()
 			rock_followcam_activated.emit()
 		GameManager.gamestates.POSTKICK_EVENT:
-			pass
+			# wait for any events to be done
+			await EventManager.event_clear
+			
+			# Caluculate the distance kicked.
+			var kick_distance = $Player.global_position.distance_to($Rock.global_position)
+			
+			# Report the score.
+			GameManager.report_score(
+				GameManager.current_kick_strength,
+				kick_distance
+			)
+			
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event finished")
 		GameManager.gamestates.SCORING:
-			rock_camera.make_current()
+			pass
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 

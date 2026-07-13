@@ -23,7 +23,6 @@ extends Node
 # Feel free to ping me if you need help! -Melody
 
 
-# signal sent when an event finishes 
 signal event_clear
 
 # lists of known events. 
@@ -114,25 +113,12 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			if _event_is_of_type(event_types.POST_KICK):
 				_run_event()
 				# this line is needed because the compiler hates me.
-				# fixes timing issue. 
-				await event_clear
-			
-			# Get the player and rock nodes from the main scene.
-			var main_scene = get_tree().current_scene
-			var player = main_scene.get_node("Player")
-			var rock = main_scene.get_node("Rock")
-			
-			# Calculate the distance kicked.
-			var kick_distance = player.global_position.distance_to(rock.global_position)
-			
-			# Report the score.
-			GameManager.report_score(
-				GameManager.current_kick_strength,
-				kick_distance
-			)
-			
-			# post kick event handling done  
-			GameManager.switch_state_to(GameManager.gamestates.SCORING, "post kick event handler finished")
+				# fixes timing issue.
+			else:
+				# emit that the event_manager is done with an event even if it
+				# technically didnt happen
+				await get_tree().process_frame
+				event_clear.emit()
 			
 		GameManager.gamestates.SCORING:
 			pass
