@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://chm1hfhkurw7w"]
+
+[ext_resource type="PackedScene" uid="uid://csoddv1015bka" path="res://events/water_hand/glb/water_hand.glb" id="1_i0ufm"]
+[ext_resource type="Script" uid="uid://cx8djw844jq0a" path="res://events/water_hand/water_hand.gd" id="2_bs5ym"]
+[ext_resource type="PackedScene" uid="uid://b5kqmfqgyw3a7" path="res://rock/glb/rock_start1.glb" id="2_vcii2"]
+
+[node name="WaterHand" unique_id=830669671 instance=ExtResource("1_i0ufm")]
+script = ExtResource("2_bs5ym")
+
+[node name="RockSnatchPos" type="RemoteTransform3D" parent="." index="0" unique_id=1535267581]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.08972429, 1.0416775, 3.2219126)
+remote_path = NodePath("../rock_start1")
+
+[node name="Skeleton3D" parent="WaterHandArmature" parent_id_path=PackedInt32Array(1555692120) index="0" unique_id=915097484]
+bones/0/position = Vector3(-4.669979e-16, -2.1031716, -1.5107288)
+bones/1/position = Vector3(1.4449281e-14, 1.340582, 0.5542364)
+bones/1/rotation = Quaternion(0.3883466, 1.09852955e-07, 4.6294517e-08, 0.9215134)
+bones/2/rotation = Quaternion(0.066043794, 1.687539e-14, 1.5746066e-08, 0.99781674)
+bones/3/position = Vector3(0.8245618, 0.42139503, 0.01648862)
+bones/3/rotation = Quaternion(0.2947824, -0.4872077, -0.14222653, 0.80963176)
+bones/4/rotation = Quaternion(0.06893863, -0.006887051, 0.037146933, 0.9969053)
+bones/5/rotation = Quaternion(0.069240436, -0.0023905484, 0.101877004, 0.99238163)
+bones/6/position = Vector3(0.5784689, 2.1752508, 0.078697056)
+bones/6/rotation = Quaternion(0.33702695, -0.13113628, -0.044891026, 0.9312363)
+bones/7/rotation = Quaternion(0.3493197, -0.0022743905, -0.0061007114, 0.936981)
+bones/8/rotation = Quaternion(0.34932724, 4.9696025e-10, -2.4227254e-09, 0.9370009)
+bones/9/position = Vector3(0.09409539, 2.1459186, -0.048739523)
+bones/9/rotation = Quaternion(0.3486996, -0.00086154987, 0.0023157236, 0.9372313)
+bones/10/rotation = Quaternion(0.34869668, -0.0008615264, -0.002315649, 0.9372324)
+bones/11/rotation = Quaternion(0.34869778, -8.119965e-11, -2.1821302e-10, 0.93723524)
+bones/12/rotation = Quaternion(0.34869778, -8.1199686e-11, -2.1821307e-10, 0.93723524)
+bones/13/position = Vector3(-0.37224025, 2.0124922, -0.017683843)
+bones/13/rotation = Quaternion(0.31622952, 0.11454244, 0.041077085, 0.9408462)
+bones/14/rotation = Quaternion(0.32554024, 0.0010554921, 0.0030656501, 0.94552267)
+bones/15/rotation = Quaternion(0.32554197, 1.3372988e-08, 2.3747833e-09, 0.9455276)
+bones/16/position = Vector3(-0.76704895, 1.4986193, 0.34865013)
+bones/16/rotation = Quaternion(0.1900419, 0.33196554, 0.08656997, 0.91988516)
+bones/17/rotation = Quaternion(0.25813726, -0.00335716, -0.012563686, 0.9660208)
+bones/18/rotation = Quaternion(0.25815907, 7.712002e-09, 1.15680026e-08, 0.9661024)
+
+[node name="rock_start1" parent="." index="2" unique_id=1446544703 instance=ExtResource("2_vcii2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.08162807, 0.8755295, 3.0569267)
