@@ -13,9 +13,9 @@ class_name ParkGrid
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super()
 	#_make_trees_point_up()
 	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
