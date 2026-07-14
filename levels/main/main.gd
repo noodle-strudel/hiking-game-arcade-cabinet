@@ -271,7 +271,14 @@ func _process(_delta: float) -> void:
 	
 	# player vision follows the rock.
 	if follow_rock:
-		$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		if $Player.position.angle_to(rock.position) > $Player.current_x_rotation:
+			$Player.current_x_rotation +=\
+				($Player.position.angle_to(rock.position) - $Player.current_x_rotation) / 15
+		elif $Player.current_x_rotation > $Player.position.angle_to(rock.position):
+			$Player.current_x_rotation -=\
+				($Player.current_x_rotation - $Player.position.angle_to(rock.position)) / 25
+		else:
+			$Player.current_x_rotation = $Player.position.angle_to(rock.position)
 		$Player.current_y_rotation = y_rotation_hold
 	
 # panning camera stuff
