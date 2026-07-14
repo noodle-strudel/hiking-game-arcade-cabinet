@@ -38,6 +38,7 @@ enum gamestates {
 ## Switches the game state to target_state
 func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
 		_switch_state(target_state, cause)
+		print("DEBUG: state switch requested with cause \"" + cause + "\"")
 
 ## Updates last_score to the newest score calculation. 
 func report_score(kick_strength: float, kick_distance: float) -> void:

@@ -110,7 +110,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				get_tree().paused = true
 				ui_camera.apply_shake(2)
 				%CriticalHitPlayer.play()
-				await get_tree().create_timer(0.4).timeout
+				await get_tree().create_timer(0.3).timeout
 				get_tree().paused = false
 				
 				# wow sound effect

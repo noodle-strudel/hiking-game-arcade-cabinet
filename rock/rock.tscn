@@ -87,6 +87,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_t0tji")
 
 [node name="KickTimer" type="Timer" parent="." unique_id=1706361559]
+wait_time = 1.65
 one_shot = true
 
 [node name="KickSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=427568160]

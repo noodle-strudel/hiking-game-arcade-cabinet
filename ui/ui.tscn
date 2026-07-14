@@ -11,11 +11,11 @@
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
+[ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
 [ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
 [ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
 [ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
-[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="AudioStream" uid="uid://mk64m2dcfjon" path="res://sound/rock_kick_critical/rock_kick_critical3.wav" id="18_74toj"]
 
@@ -377,7 +377,7 @@ step = 0.1
 allow_greater = true
 fill_mode = 3
 texture_under = ExtResource("16_co7pv")
-texture_over = ExtResource("17_x7nxp")
+texture_over = ExtResource("13_74toj")
 texture_progress = ExtResource("18_3lbto")
 
 [node name="KickbarAnimator" type="AnimationPlayer" parent="KickingMenu" unique_id=207523349]

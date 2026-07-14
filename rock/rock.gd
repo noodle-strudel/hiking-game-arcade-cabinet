@@ -1,5 +1,8 @@
 extends RigidBody3D
 
+#used by wink event. 
+signal descending
+
 # how far along in the interpolation the shape of the rock is
 @export var progress: float = 0.0
 
@@ -181,6 +184,9 @@ func _physics_process(_delta: float) -> void:
 		self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3
 	):
 		%RockDustParticles.emitting = true
+	
+	if second_rock_pos.y > last_rock_pos.y:
+		descending.emit()
 
 	# orbit camera
 	if camera_orbiting:
