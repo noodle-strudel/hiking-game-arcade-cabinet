@@ -106,11 +106,18 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 # handle camera and state transition when rock goes out of bounds.
 func _handle_oob(_cause: String) -> void:
 	$Rock.camera_follow(false)
-	await get_tree().create_timer(1).timeout
+	if "snatch" in _cause:
+		await get_tree().create_timer(6).timeout
+	else:
+		await get_tree().create_timer(1).timeout
 	# reset the rock's position to the player's position
 	$Rock.position = $Player.position + Vector3(1, 1, 1)
 	$Rock.camera_follow(true)
-	await get_tree().create_timer(4.5).timeout
+	
+	if "snatch" in _cause:
+		await get_tree().create_timer(2).timeout
+	else:
+		await get_tree().create_timer(4.5).timeout
 	
 	#TODO: change to whatever state fits the situation the best.
 	GameManager.switch_state_to(GameManager.gamestates.KICKING)

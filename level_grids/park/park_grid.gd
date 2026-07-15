@@ -11,6 +11,8 @@ class_name ParkGrid
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
+@onready var water_hand: PackedScene = preload("res://events/water_hand/water_hand.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
@@ -74,3 +76,42 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell in the lake...")
+
+
+func _on_lake_hand_barrier_body_entered(body: Node3D) -> void:
+	$LakeBarrier.set_monitoring(false)
+	if body.name == "Rock":
+		# create a ray that will intersect with the lake and allow the water hand
+		# time to spawn and snatch the rock
+		body.camera_follow(false)
+		await get_tree().process_frame
+		var space_state = get_world_3d().direct_space_state
+		var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
+			body.global_position, 
+			body.global_position + body.linear_velocity, 
+			body.get_collision_mask())
+		query.set_collide_with_areas(true)
+		var result = space_state.intersect_ray(query)
+		if result:
+			await get_tree().process_frame
+			var water_hand_instance: Node3D = water_hand.instantiate()
+			water_hand_instance.global_position = result.position
+			
+			# calculate the angle between (0,0,1) and the linear velocity
+			water_hand_instance.rotate(Vector3.UP, Vector3.FORWARD.angle_to(body.linear_velocity))
+			add_child(water_hand_instance)
+			var col_layer_reset = body.collision_layer
+			var col_mask_reset = body.collision_mask
+			body.collision_layer = 0
+			body.collision_mask = 0
+			await get_tree().create_timer(0.5).timeout
+			water_hand_instance.snatch_object(body.get_path())
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock was snatched into the lake...")
+			await get_tree().create_timer(2.5).timeout
+			water_hand_instance.go_under_water()
+			await get_tree().create_timer(2.5).timeout
+			water_hand_instance.release_object()
+			body.linear_velocity = Vector3.ZERO
+			body.collision_mask = col_mask_reset
+			body.collision_layer = col_layer_reset
+			$LakeBarrier.set_monitoring(true)
