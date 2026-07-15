@@ -12,6 +12,7 @@ extends CharacterBody3D
 
 @onready var camera: Camera3D = $CameraPivot/PlayerCamera
 @onready var legs: Node3D = $Legs
+@onready var locked_rotation: bool = false
 
 # Track rotation
 var current_y_rotation: float = 0.0
@@ -48,30 +49,32 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	# Rotate left and right.
-	var input_y = Input.get_axis("joystick_right", "joystick_left")
-	
-	# Update tracking variable.
-	current_y_rotation += input_y * rotation_speed * delta 
-	
-	# Apply rotation to player.
-	rotation.y = current_y_rotation 
-	
-	# Rotate up and down.
-	var input_x = Input.get_axis("joystick_down", "joystick_up")
-	
-	# Update tracking variable.
-	current_x_rotation += input_x * rotation_speed * delta 
-	
-	# Apply clamps.
-	current_x_rotation = clamp(
-		current_x_rotation, 
-		deg_to_rad(max_down), 
-		deg_to_rad(max_up)
-	)
+	# If statement making it so player can only rotate in specific states.
+	if !locked_rotation: 
+		# Rotate left and right.
+		var input_y = Input.get_axis("joystick_right", "joystick_left")
 		
-	# Apply rotation to camera.
-	camera.rotation.x = current_x_rotation 
+		# Update tracking variable.
+		current_y_rotation += input_y * rotation_speed * delta 
+		
+		# Apply rotation to player.
+		rotation.y = current_y_rotation 
+		
+		# Rotate up and down.
+		var input_x = Input.get_axis("joystick_down", "joystick_up")
+		
+		# Update tracking variable.
+		current_x_rotation += input_x * rotation_speed * delta 
+		
+		# Apply clamps.
+		current_x_rotation = clamp(
+			current_x_rotation, 
+			deg_to_rad(max_down), 
+			deg_to_rad(max_up)
+		)
+			
+		# Apply rotation to camera.
+		camera.rotation.x = current_x_rotation 
 	
 	# Handle keeping the rock in front of the player when ready to kick.
 	# If the rock's height needs to be adjusted, change the Margin value
@@ -100,19 +103,35 @@ func _physics_process(delta: float) -> void:
 
 func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	$RockTeeSpringArm/TeePos.remote_path = ""
+	locked_rotation = true
 	match state:
-		GameManager.gamestates.KICKING:
-			_begin_kicking()
+		GameManager.gamestates.KICKING: 
+			locked_rotation = false
 		GameManager.gamestates.ROCK_OOB:
 			await get_tree().create_timer(0.1).timeout
 			if rock:
 				rock.angular_velocity = Vector3(0.0, 0.0, 0.0)
 				rock.linear_velocity = Vector3(0.0, 0.0, 0.0)
+		GameManager.gamestates.MOVE_TO_ROCK:
+			look_at(rock.global_position)
+			_go_to_rock()
 
-# Moves the player to the rock when the state changes. 
-func _begin_kicking() -> void:
+# Function that makes the player move to the rock after scoring
+func _go_to_rock() -> void:
+	var tween = create_tween()
 	if rock:
-		self.position = rock.position + Vector3(0.0, 0.0, 1.0)
+		var goal_posiiton = rock.global_position + Vector3(0.0, 0.0, 1.0)
+		
+		legs.play_run()
+		# Tween that moves the player to the rock 1 away in Z direction.
+		tween.tween_property(self,
+			"global_position",
+			goal_posiiton,
+			10)
+		# Lambda function to stop the walk animation and switch to the idle state.
+		tween.tween_callback(func():
+			legs.stop_run()
+			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock"))
 
 # Randomizes the dimensions of a Vector3 (for kick impulse).
 func _vec_noise(input: Vector3, amt: float) -> Vector3:
