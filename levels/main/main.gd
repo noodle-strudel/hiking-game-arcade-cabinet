@@ -244,9 +244,14 @@ func _ready() -> void:
 	# Spawn rock and player at a random location in park. 
 	var grid: Grid = _current_chunks[1][1]
 	var spawn_position: Vector3 = grid.get_spawn_position()
+	var random_y = deg_to_rad(randf_range(0.0, 360.0))
+	
 	rock.linear_velocity = Vector3.ZERO
 	rock.angular_velocity = Vector3.ZERO
 	rock.global_position = spawn_position
+	
+	$Player.current_y_rotation = random_y
+	print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 
 
