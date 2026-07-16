@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://de0cqgfuv80fn" path="res://level_grids/park/trees/deciduous_tree_collision_body.tscn" id="5_dcs0m"]
 [ext_resource type="PackedScene" uid="uid://bks51bjfps7db" path="res://level_grids/park/rock_kicking_park_flower.tscn" id="7_1caeb"]
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
+[ext_resource type="AudioStream" uid="uid://5j63st1210h8" path="res://sound/sploosh/sploosh_irl.wav" id="12_d31dc"]
+[ext_resource type="AudioStream" uid="uid://cdvs6fsd3puel" path="res://sound/sploosh/sploosh_voice.wav" id="13_pelwe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -307,6 +309,12 @@ size = Vector3(156.71487, 6.9086914, 89.29925)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mo2hw"]
 size = Vector3(145.47469, 6.9086914, 97.76622)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hmyo0"]
+streams_count = 2
+stream_0/stream = ExtResource("12_d31dc")
+stream_0/weight = 2.0
+stream_1/stream = ExtResource("13_pelwe")
+
 [node name="ParkGrid" type="Node3D" unique_id=891737648 node_paths=PackedStringArray("object_collisions_node")]
 script = ExtResource("1_mo2hw")
 object_collisions_node = NodePath("TreeStaticBodies")
@@ -407,6 +415,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.45649, 10, -150)
 
 [node name="Spawn3" type="Marker3D" parent="SpawnPoints" unique_id=761468851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 10, 115)
+
+[node name="Sploosh" type="AudioStreamPlayer" parent="." unique_id=559710098]
+stream = SubResource("AudioStreamRandomizer_hmyo0")
+bus = &"SFX"
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]

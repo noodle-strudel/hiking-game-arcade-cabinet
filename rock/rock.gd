@@ -205,7 +205,6 @@ func _physics_process(_delta: float) -> void:
 			last_pre_rock_camera_heading = last_rock_pos.direction_to(
 				self.position
 			).slerp(last_pre_rock_camera_heading, camera_follow_smoothing) 
-			print("rock speed:", self.position.distance_to(last_rock_pos))
 			$RockCameraPivot.look_at(
 				last_pre_rock_camera_heading + $RockCameraPivot.position
 			)
