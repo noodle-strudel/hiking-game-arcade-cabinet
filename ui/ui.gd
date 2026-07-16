@@ -160,7 +160,7 @@ func _scoring_sequence() -> void:
 	AudioManager.play_track(AudioManager.game_over_music)
 	await get_tree().create_timer(50).timeout
 	AudioManager.fade_out_music()
-	GameManager.switch_state_to(GameManager.gamestates.IDLE, "scoring sequence finished")
+	GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
 
 
 func game_over_text_reset() -> void:

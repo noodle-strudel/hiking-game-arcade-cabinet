@@ -111,4 +111,7 @@ speed_scale = 0.2
 unique_name_in_owner = true
 position = Vector2(960, 540)
 
+[node name="PlayerWalkCamera" type="Camera3D" parent="." unique_id=1914187723]
+fov = 100.0
+
 [connection signal="timeout" from="PanTimer" to="." method="_panning_camera"]

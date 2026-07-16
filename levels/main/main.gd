@@ -27,6 +27,7 @@ signal rock_followcam_activated
 @onready var rock = $Rock
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 @onready var pan_camera = $PanningCamera
+@onready var walk_camera = $PlayerWalkCamera
 
 # the tween, used for tweening
 @onready var tween: Tween = get_tree().create_tween()
@@ -102,6 +103,18 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			pass
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
+		GameManager.gamestates.MOVE_TO_ROCK:
+			var midpoint = ($Player.global_position + $Rock.global_position) / 2.0
+			var walk_direction = $Player.global_position\
+					.direction_to($Rock.global_position)
+			var right = walk_direction.cross(Vector3.UP).normalized()
+			
+			# Sets the camera for the walking scene off to the right looking at the midpoint
+			# between the player and the rock. (Adjust PlayerWalkCamera FOV to see more)
+			walk_camera.global_position = midpoint + (right * 7.5) + Vector3(0.0, 3.0, 0.0)
+			walk_camera.look_at(midpoint)
+			walk_camera.make_current()
+
 
 # handle camera and state transition when rock goes out of bounds.
 func _handle_oob(_cause: String) -> void:
