@@ -68,6 +68,9 @@ func wink_at_camera(camera: Camera3D) -> void:
 
 """Rock's Functions"""
 
+func get_trajectory() -> Vector3:
+	return position - last_rock_pos
+
 # toggle whether the camera follows the rock or not and initialize camera follow angle
 func camera_follow(switch: bool) -> void:
 	if switch == true:

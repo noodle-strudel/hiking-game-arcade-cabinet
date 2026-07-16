@@ -31,6 +31,8 @@ enum gamestates {
 	SCORING,
 	## The rock has gone out of bounds or in a lake
 	ROCK_OOB,
+	## Used when the player is moving to the rock.
+	MOVE_TO_ROCK,
 }
 
 
@@ -72,7 +74,7 @@ func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> 
 ## Signal handler for when the gamestate changes.
 func _on_change_state(_state: gamestates, _cause: String) -> void:
 	match _state:
-		gamestates.SCORING:
+		gamestates.MOVE_TO_ROCK:
 			%IdleTimer.start()
 
 

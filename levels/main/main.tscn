@@ -114,4 +114,7 @@ process_mode = 3
 position = Vector2(960, 540)
 script = ExtResource("7_q42nm")
 
+[node name="PlayerWalkCamera" type="Camera3D" parent="." unique_id=1914187723]
+fov = 100.0
+
 [connection signal="timeout" from="PanTimer" to="." method="_panning_camera"]
