@@ -7,7 +7,6 @@ extends Control
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
 @onready var ui_camera := $"../UICamera"
-@onready var rock = $"../Rock"
 
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
@@ -115,7 +114,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				
 				# wow sound effect
 				await get_tree().create_timer(0.5).timeout
-				#$KickingMenu/WowPlayer.play()
+				$KickingMenu/WowPlayer.play()
 			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
