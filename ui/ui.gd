@@ -14,6 +14,12 @@ var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
+var rock_names = [
+	"Digi-Christosphere",
+	"Rocksane",
+	"Johnrockubgenklhimershmidt"
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
@@ -56,11 +62,27 @@ func _process(delta: float) -> void:
 				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
-				# wait 2 seconds before continuing to kick state
+				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
 				spinstep = 0
+				%LetterSpinner.visible = false
+				$RockSelect.visible = true
+			
+			# rock select
+	if $RockSelect.visible:
+		
+		# left and right make new name
+		if Input.is_action_just_pressed("joystick_left"):
+			$RockSelect/RockName.text = rock_names.pick_random()
+		elif Input.is_action_just_pressed("joystick_right"):
+			$RockSelect/RockName.text = rock_names.pick_random()
+			
+			# enter continues to gameplay
+		elif Input.is_action_just_pressed("confirm") or\
+			Input.is_action_just_pressed("kick"):
+				$RockSelect.visible = false
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
-						"contract signed")
+				"contract signed")
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
