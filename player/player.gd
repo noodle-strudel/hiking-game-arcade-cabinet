@@ -123,15 +123,19 @@ func _go_to_rock() -> void:
 		var goal_posiiton = rock.global_position + Vector3(0.0, 0.0, 1.0)
 		
 		legs.play_run()
+		
 		# Tween that moves the player to the rock 1 away in Z direction.
 		tween.tween_property(self,
 			"global_position",
 			goal_posiiton,
-			10)
+			10
+			)
+		
 		# Lambda function to stop the walk animation and switch to the idle state.
 		tween.tween_callback(func():
 			legs.stop_run()
-			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock"))
+			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock")
+			)
 
 # Randomizes the dimensions of a Vector3 (for kick impulse).
 func _vec_noise(input: Vector3, amt: float) -> Vector3:
