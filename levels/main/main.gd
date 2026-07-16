@@ -285,6 +285,8 @@ func _process(_delta: float) -> void:
 		# hold player camera on rock
 		else:
 			$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		
+		# stop player from looking left/right
 		$Player.current_y_rotation = y_rotation_hold
 	
 # panning camera stuff

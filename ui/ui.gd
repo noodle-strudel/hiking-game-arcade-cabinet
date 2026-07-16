@@ -14,6 +14,7 @@ var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
+# list of rock names
 var rock_names = [
 	"Digi-Christosphere",
 	"Rocksane",
