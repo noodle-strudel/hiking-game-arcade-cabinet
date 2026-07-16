@@ -6,6 +6,7 @@ extends Control
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
+@onready var ui_camera := $"../UICamera"
 
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
@@ -120,13 +121,24 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
 			%KickbarAnimator.pause()
-			if %Kickbar.value >= 97.0:
-				print("critical kick!")
-				await get_tree().create_timer(0.5).timeout
-				$KickingMenu/WowPlayer.play()
-				%Kickbar.value = 100.0
 			$RockKickedMenu.show()
 			$KickingMenu.show()
+			ui_camera.apply_shake(0.1)
+			if %Kickbar.value >= 97.0:
+				print("critical kick!")
+				%Kickbar.value = 200.0
+				
+				# add juice
+				get_tree().paused = true
+				ui_camera.apply_shake(2)
+				%CriticalHitPlayer.play()
+				await get_tree().create_timer(0.3).timeout
+				get_tree().paused = false
+				
+				# wow sound effect
+				await get_tree().create_timer(0.5).timeout
+				$KickingMenu/WowPlayer.play()
+			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
