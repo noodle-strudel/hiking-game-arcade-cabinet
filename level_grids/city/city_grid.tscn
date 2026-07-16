@@ -207,3 +207,8 @@ shape = SubResource("BoxShape3D_7jwlh")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=256310888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209, 19.5, -184.5)
 shape = SubResource("BoxShape3D_j1l30")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1754269554]
+
+[node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=1941683748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.426922, 0)
