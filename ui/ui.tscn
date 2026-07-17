@@ -19,9 +19,9 @@
 [ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="AudioStream" uid="uid://mk64m2dcfjon" path="res://sound/rock_kick_critical/rock_kick_critical3.wav" id="18_74toj"]
-[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
+[ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
@@ -104,10 +104,11 @@ _data = {
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mf2ns"]
 playback_mode = 1
-streams_count = 3
+streams_count = 4
 stream_0/stream = ExtResource("15_ju45i")
 stream_1/stream = ExtResource("16_74toj")
 stream_2/stream = ExtResource("17_co7pv")
+stream_3/stream = ExtResource("19_bw7v0")
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
@@ -409,6 +410,7 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 stream = ExtResource("18_74toj")
 pitch_scale = 0.86
+bus = &"SFX"
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
 visible = false
