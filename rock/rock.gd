@@ -15,6 +15,10 @@ signal descending
 # how much of the previous camera follow direction to add to the new one on each frame
 @export var camera_follow_smoothing: float = 0.985
 
+# how fast the rock needs to be going in meters per frame
+# for the camera angle to follow the rock direction
+@export var camera_follow_threshold: float = 0.025
+
 var camera_orbiting: bool = true
 var camera_follow_rock: bool = true
 
@@ -201,13 +205,15 @@ func _physics_process(_delta: float) -> void:
 		$RockCameraPivot.position = self.position
 		$RockEyes.position = self.position
 
-		# if rock camera is not orbiting and is moving,
+		# if rock camera is not orbiting and is moving at or faster than threshold speed,
 		# trail rock camera behind rock, with smoothing
-		if self.position.distance_to(last_rock_pos) >= 0.000001 and not camera_orbiting:
+		if (
+			self.position.distance_to(last_rock_pos) >= camera_follow_threshold and\
+			not camera_orbiting
+		):
 			last_pre_rock_camera_heading = last_rock_pos.direction_to(
 				self.position
 			).slerp(last_pre_rock_camera_heading, camera_follow_smoothing) 
-
 			$RockCameraPivot.look_at(
 				last_pre_rock_camera_heading + $RockCameraPivot.position
 			)

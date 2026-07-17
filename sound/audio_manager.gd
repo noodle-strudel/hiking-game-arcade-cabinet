@@ -10,7 +10,7 @@ var bgm_position := 0.0
 
 const mute_db := -30.0
 const default_volume_db := -5.0
-const fade_time := 2.0
+const fade_time := 3.5
 
 # plays the specified track passed in when called with AudioManager.play_track()
 func play_track(track) -> void:

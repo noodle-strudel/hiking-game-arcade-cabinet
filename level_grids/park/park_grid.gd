@@ -75,6 +75,7 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
+		$Sploosh.play()
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell in the lake...")
 
 
