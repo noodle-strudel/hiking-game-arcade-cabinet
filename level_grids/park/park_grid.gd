@@ -75,7 +75,7 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
-		$Sploosh.play()
+		$LakeSplooshSFX.play()
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell in the lake...")
 
 
@@ -140,7 +140,9 @@ func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 	)
 	await get_tree().create_timer(2.5).timeout
 	water_hand_instance.go_under_water()
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(0.1).timeout
+	$LakeSplooshSFX.play()
+	await get_tree().create_timer(2.4).timeout
 	
 	# this times up with _handle_oob in main. release the rock and reset velocity
 	water_hand_instance.release_object()
