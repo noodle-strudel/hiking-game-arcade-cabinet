@@ -24,6 +24,7 @@ height = 120.01367
 [node name="rock_kicking_park_ground_collision" parent="." index="5" unique_id=1306554932 instance=ExtResource("2_ur3tk")]
 
 [node name="PlayerLakeBarriers" type="StaticBody3D" parent="." index="6" unique_id=2048207281]
+visible = false
 collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerLakeBarriers" index="0" unique_id=717573519]

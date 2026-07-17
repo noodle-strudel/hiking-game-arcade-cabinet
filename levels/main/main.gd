@@ -27,6 +27,7 @@ signal rock_followcam_activated
 @onready var rock = $Rock
 @onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
 @onready var pan_camera = $PanningCamera
+@onready var walk_camera = $PlayerWalkCamera
 
 # the tween, used for tweening
 @onready var tween: Tween = get_tree().create_tween()
@@ -102,15 +103,34 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			pass
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
+		GameManager.gamestates.MOVE_TO_ROCK:
+			var midpoint = ($Player.global_position + $Rock.global_position) / 2.0
+			var walk_direction = $Player.global_position\
+					.direction_to($Rock.global_position)
+			var right = walk_direction.cross(Vector3.UP).normalized()
+			
+			# Sets the camera for the walking scene off to the right looking at the midpoint
+			# between the player and the rock. (Adjust PlayerWalkCamera FOV to see more)
+			walk_camera.global_position = midpoint + (right * 7.5) + Vector3(0.0, 3.0, 0.0)
+			walk_camera.look_at(midpoint)
+			walk_camera.make_current()
+
 
 # handle camera and state transition when rock goes out of bounds.
 func _handle_oob(_cause: String) -> void:
 	$Rock.camera_follow(false)
-	await get_tree().create_timer(1).timeout
+	if "snatch" in _cause:
+		await get_tree().create_timer(6).timeout
+	else:
+		await get_tree().create_timer(1).timeout
 	# reset the rock's position to the player's position
 	$Rock.position = $Player.position + Vector3(1, 1, 1)
 	$Rock.camera_follow(true)
-	await get_tree().create_timer(4.5).timeout
+	
+	if "snatch" in _cause:
+		await get_tree().create_timer(2).timeout
+	else:
+		await get_tree().create_timer(4.5).timeout
 	
 	#TODO: change to whatever state fits the situation the best.
 	GameManager.switch_state_to(GameManager.gamestates.KICKING)
@@ -244,9 +264,14 @@ func _ready() -> void:
 	# Spawn rock and player at a random location in park. 
 	var grid: Grid = _current_chunks[1][1]
 	var spawn_position: Vector3 = grid.get_spawn_position()
+	var random_y = deg_to_rad(randf_range(0.0, 360.0))
+	
 	rock.linear_velocity = Vector3.ZERO
 	rock.angular_velocity = Vector3.ZERO
 	rock.global_position = spawn_position
+	
+	$Player.current_y_rotation = random_y
+	print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 
 
@@ -271,7 +296,22 @@ func _process(_delta: float) -> void:
 	
 	# player vision follows the rock.
 	if follow_rock:
-		$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		
+		# pull player camera up
+		if $Player.position.angle_to(rock.position) > $Player.current_x_rotation:
+			$Player.current_x_rotation +=\
+				($Player.position.angle_to(rock.position) - $Player.current_x_rotation) / 25
+				
+		# pull player camera down
+		elif $Player.current_x_rotation > $Player.position.angle_to(rock.position):
+			$Player.current_x_rotation -=\
+				($Player.current_x_rotation - $Player.position.angle_to(rock.position)) / 15
+		
+		# hold player camera on rock
+		else:
+			$Player.current_x_rotation = $Player.position.angle_to(rock.position)
+		
+		# stop player from looking left/right
 		$Player.current_y_rotation = y_rotation_hold
 	
 # panning camera stuff

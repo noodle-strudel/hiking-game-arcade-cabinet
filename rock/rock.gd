@@ -1,5 +1,8 @@
 extends RigidBody3D
 
+# used by wink event.
+signal descending
+
 # how far along in the interpolation the shape of the rock is
 @export var progress: float = 0.0
 
@@ -68,6 +71,9 @@ func wink_at_camera(camera: Camera3D) -> void:
 	$RockEyes.rotation = Vector3.ZERO
 
 """Rock's Functions"""
+
+func get_trajectory() -> Vector3:
+	return position - last_rock_pos
 
 # toggle whether the camera follows the rock or not and initialize camera follow angle
 func camera_follow(switch: bool) -> void:
@@ -185,6 +191,9 @@ func _physics_process(_delta: float) -> void:
 		self.position.y - last_rock_pos.y > (last_rock_pos.y - second_rock_pos.y) / 3
 	):
 		%RockDustParticles.emitting = true
+	
+	if second_rock_pos.y > last_rock_pos.y:
+		descending.emit()
 
 	# orbit camera
 	if camera_orbiting:

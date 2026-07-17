@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1bxa4xvkfyet" path="res://rock/rock.tscn" id="3_m1504"]
 [ext_resource type="PackedScene" uid="uid://c0wsiphcbx5ot" path="res://levels/main/main_directional_light_3d.tscn" id="3_qy63d"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
+[ext_resource type="Script" uid="uid://cnkdbpt5vosf1" path="res://ui/ui_camera.gd" id="7_q42nm"]
 
 [sub_resource type="Animation" id="Animation_ifaiv"]
 length = 0.001
@@ -109,6 +110,11 @@ speed_scale = 0.2
 
 [node name="UICamera" type="Camera2D" parent="." unique_id=906835892]
 unique_name_in_owner = true
+process_mode = 3
 position = Vector2(960, 540)
+script = ExtResource("7_q42nm")
+
+[node name="PlayerWalkCamera" type="Camera3D" parent="." unique_id=1914187723]
+fov = 100.0
 
 [connection signal="timeout" from="PanTimer" to="." method="_panning_camera"]
