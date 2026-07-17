@@ -6,6 +6,7 @@ extends Control
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
+@onready var ui_camera := $"../UICamera"
 
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
@@ -13,6 +14,13 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
+
+# list of rock names
+var rock_names = [
+	"Digi-Christosphere",
+	"Rocksane",
+	"Johnrockubgenklhimershmidt"
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,11 +64,27 @@ func _process(delta: float) -> void:
 				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
-				# wait 2 seconds before continuing to kick state
+				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
 				spinstep = 0
+				%LetterSpinner.visible = false
+				$RockSelect.visible = true
+			
+			# rock select
+	if $RockSelect.visible:
+		
+		# left and right make new name
+		if Input.is_action_just_pressed("joystick_left"):
+			$RockSelect/RockName.text = rock_names.pick_random()
+		elif Input.is_action_just_pressed("joystick_right"):
+			$RockSelect/RockName.text = rock_names.pick_random()
+			
+			# enter continues to gameplay
+		elif Input.is_action_just_pressed("confirm") or\
+			Input.is_action_just_pressed("kick"):
+				$RockSelect.visible = false
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
-						"contract signed")
+				"contract signed")
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
@@ -97,13 +121,24 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
 			%KickbarAnimator.pause()
-			if %Kickbar.value >= 97.0:
-				print("critical kick!")
-				await get_tree().create_timer(0.5).timeout
-				$KickingMenu/WowPlayer.play()
-				%Kickbar.value = 100.0
 			$RockKickedMenu.show()
 			$KickingMenu.show()
+			ui_camera.apply_shake(0.1)
+			if %Kickbar.value >= 97.0:
+				print("critical kick!")
+				%Kickbar.value = 200.0
+				
+				# add juice
+				get_tree().paused = true
+				ui_camera.apply_shake(2)
+				%CriticalHitPlayer.play()
+				await get_tree().create_timer(0.3).timeout
+				get_tree().paused = false
+				
+				# wow sound effect
+				await get_tree().create_timer(0.5).timeout
+				$KickingMenu/WowPlayer.play()
+			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 		GameManager.gamestates.ROCK_OOB:
@@ -137,7 +172,7 @@ func _scoring_sequence() -> void:
 	AudioManager.play_track(AudioManager.game_over_music)
 	await get_tree().create_timer(50).timeout
 	AudioManager.fade_out_music()
-	GameManager.switch_state_to(GameManager.gamestates.IDLE, "scoring sequence finished")
+	GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
 
 
 func game_over_text_reset() -> void:

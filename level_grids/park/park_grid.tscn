@@ -315,6 +315,15 @@ stream_0/stream = ExtResource("12_d31dc")
 stream_0/weight = 2.0
 stream_1/stream = ExtResource("13_pelwe")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcs0m"]
+size = Vector3(156.71487, 6.9086914, 89.29925)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d31dc"]
+size = Vector3(156.71487, 6.9086914, 89.29925)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pelwe"]
+size = Vector3(156.71487, 6.9086914, 89.29925)
+
 [node name="ParkGrid" type="Node3D" unique_id=891737648 node_paths=PackedStringArray("object_collisions_node")]
 script = ExtResource("1_mo2hw")
 object_collisions_node = NodePath("TreeStaticBodies")
@@ -384,25 +393,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
 shape = SubResource("BoxShape3D_odci8")
 
 [node name="LakeBarrier" type="Area3D" parent="." unique_id=458920335]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LakeBarrier" unique_id=103520406]
 transform = Transform3D(0.52089053, 0, -0.8536236, 0, 1, 0, 0.8536236, 0, 0.52089053, -169.47473, -4.826729, 152.27649)
 shape = SubResource("BoxShape3D_83o32")
-debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
+debug_color = Color(0.7894723, 0.43300483, 0.024829106, 1)
 debug_fill = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="LakeBarrier" unique_id=320522417]
 transform = Transform3D(-0.5863017, 0, -0.8100929, 0, 1, 0, 0.8100929, 0, -0.5863017, -187.93736, -4.6638756, -5.24661)
 shape = SubResource("BoxShape3D_mo2hw")
-debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
+debug_color = Color(0.7894723, 0.43300483, 0.024829106, 1)
 debug_fill = false
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="LakeBarrier" unique_id=1791892304]
 transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1, 2.6277485e-09, 0.90830386, -2.069921e-09, 0.4183111, 92.74619, -4.553791, -106.98323)
 shape = SubResource("BoxShape3D_mo2hw")
-debug_color = Color(0.6466583, 0.482235, 0.27914518, 1)
+debug_color = Color(0.7894723, 0.43300483, 0.024829106, 1)
 debug_fill = false
 
 [node name="SpawnPoints" type="Node3D" parent="." unique_id=1156476625]
@@ -416,12 +425,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.45649, 10, -150)
 [node name="Spawn3" type="Marker3D" parent="SpawnPoints" unique_id=761468851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 10, 115)
 
-[node name="Sploosh" type="AudioStreamPlayer" parent="." unique_id=559710098]
+[node name="LakeHandBarrier" type="Area3D" parent="." unique_id=243689702]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LakeHandBarrier" unique_id=1347519217]
+transform = Transform3D(0.52089053, 0, -0.8536236, 0, 1, 0, 0.8536236, 0, 0.52089053, -169.47473, -2.1221352, 152.27649)
+shape = SubResource("BoxShape3D_dcs0m")
+debug_color = Color(0.75304717, 0.40044868, 0.59142756, 1)
+debug_fill = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LakeHandBarrier" unique_id=740471934]
+transform = Transform3D(-0.5863017, 0, -0.8100929, 0, 1, 0, 0.8100929, 0, -0.5863017, -187.93736, -1.9592819, -5.24661)
+shape = SubResource("BoxShape3D_d31dc")
+debug_color = Color(0.75304717, 0.40044868, 0.59142756, 1)
+debug_fill = false
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LakeHandBarrier" unique_id=823565214]
+transform = Transform3D(0.4183111, 1.9397444e-09, -0.90830386, 1.0687011e-09, 1, 2.6277485e-09, 0.90830386, -2.069921e-09, 0.4183111, 92.74619, -1.8491974, -106.98323)
+shape = SubResource("BoxShape3D_pelwe")
+debug_color = Color(0.75304717, 0.40044868, 0.59142756, 1)
+debug_fill = false
+
+[node name="LakeSplooshSFX" type="AudioStreamPlayer" parent="." unique_id=559710098]
 stream = SubResource("AudioStreamRandomizer_hmyo0")
 bus = &"SFX"
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]
+[connection signal="body_entered" from="LakeHandBarrier" to="." method="_on_lake_hand_barrier_body_entered"]
 
 [editable path="rock_kicking_park_ground_final"]
 [editable path="MeshReferences/tree_1"]
