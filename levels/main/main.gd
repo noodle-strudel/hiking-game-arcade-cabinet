@@ -251,6 +251,7 @@ func _ready() -> void:
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
+	
 	# load the first grid
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
@@ -271,8 +272,44 @@ func _ready() -> void:
 	rock.global_position = spawn_position
 	
 	$Player.current_y_rotation = random_y
-	print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
+	if GameManager.DEBUG:
+		print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
+	
+	# Console commands that allow us to do many things and adding more is very easy
+	Console.pause_enabled = true
+	Console.add_command("tp",
+		_console_teleport,
+		)
+	Console.add_command("set_kicks",
+		_console_set_kick,
+		["kicks remaining"],
+		1,
+		"Set kicks remaining"
+		)
+	Console.add_command("set_event",
+		_console_set_event,
+		["event number"],
+		1,
+		"Set active event (use a number)"
+		)
+	Console.add_command("set_state",
+		_console_set_state,
+		["state"],
+		1,
+		"Set active gamestate"
+		)
+	Console.add_command_autocomplete_list("set_state",
+		["IDLE",
+		"CONTRACT",
+		"KICKING",
+		"ROCK_KICKED",
+		"POSTKICK_EVENT",
+		"SCORING",
+		"ROCK_OOB",
+		"MOVE_TO_ROCK",
+		]
+		)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -358,4 +395,47 @@ func _panning_camera() -> void:
 	
 	# A way to keep the function calling itself
 	$PanTimer.start(0.001)
-	
+
+# Teleport the player to the rock, if you wish to move around by kicking the rock
+# and don't want to wait for the walking this is how
+func _console_teleport() -> void:
+	$Player.position = $Rock.position + Vector3(0.0, 0.0, 1.0)
+
+# Set the kicks remaining, you need to kick the rock to trigger the change
+# so set the number 1 higher than you want
+func _console_set_kick(kick: String) -> void:
+	GameManager.kicks_remaining = kick.to_int()
+
+# Set the event that is currently active with a number
+# This can be changed to be similar to the state change command but,
+# that would be easier to do when the events are done being added
+func _console_set_event(event: String) -> void:
+	EventManager.event_value = event.to_int()
+	if EventManager.event_value < EventManager.total_event_count:
+		Console.print_line("That means event: " + str(EventManager.known_events[EventManager.event_value]))
+	else:
+		Console.print_line("That means event: NO_EVENT")
+
+# Set the current state of the game, we still have the 1-5 number keys but those
+# don't cover all gamestates currently in the game, when typing the command
+# you can hit tab to cycle through the states, they are case sensitive
+func _console_set_state(state: String) -> void:
+	match state:
+		"IDLE":
+			GameManager.switch_state_to(GameManager.gamestates.IDLE, "Console")
+		"CONTRACT":
+			GameManager.switch_state_to(GameManager.gamestates.CONTRACT, "Console")
+		"KICKING":
+			GameManager.switch_state_to(GameManager.gamestates.KICKING, "Console")
+		"ROCK_KICKED":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED, "Console")
+		"POSTKICK_EVENT":
+			GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT, "Console")
+		"SCORING":
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "Console")
+		"ROCK_OOB":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "Console")
+		"MOVE_TO_ROCK":
+			GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "Console")
+		_:
+			Console.print_line("State not recognized")

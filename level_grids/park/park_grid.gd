@@ -40,7 +40,8 @@ func _space_out_trees() -> void:
 			if compare_transform.origin != current_transform.origin:
 				if compare_transform.origin.distance_to(current_transform.origin) < 5:
 					nudge += current_transform.origin.direction_to(compare_transform.origin).normalized()
-					print(nudge.length())
+					if GameManager.DEBUG:
+						print(nudge.length())
 					new_transform = Transform3D(default_basis, current_transform.origin + nudge)
 					conifer_tree_multimesh.set_instance_transform(i, new_transform)
 	

@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 
 func _event_function() -> void:
 	# TEST
-	print(" yo im winkin here!")
+	if GameManager.DEBUG:
+		print(" yo im winkin here!")
 	
 	# Get the rock node from the main scene and the rock camera.
 	var main_scene = get_tree().current_scene
