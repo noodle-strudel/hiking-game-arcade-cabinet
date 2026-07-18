@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dedtd7j0w0rid"]
 
-[ext_resource type="Texture2D" uid="uid://cg0crbglmnl4s" path="res://ui/stylebox_test2.png" id="1_h6tqd"]
+[ext_resource type="Texture2D" uid="uid://b1iacxd25r4lv" path="res://ui/stylebox_test2.png" id="1_h6tqd"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="2_t2wjo"]
 [ext_resource type="Texture2D" uid="uid://bo6pq362n8awl" path="res://ui/texturebar_test_over.png" id="3_0igws"]
 [ext_resource type="Texture2D" uid="uid://bylrjecfi6df3" path="res://ui/texturebar_test_fill.png" id="4_p3pnu"]
+[ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="5_0igws"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yiam0"]
 texture = ExtResource("1_h6tqd")
@@ -52,3 +53,11 @@ value = 95.0
 texture_under = ExtResource("3_0igws")
 texture_over = ExtResource("3_0igws")
 texture_progress = ExtResource("4_p3pnu")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1882823505]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 82.0
+offset_right = 1328.0
+offset_bottom = 960.0
+theme = ExtResource("5_0igws")
