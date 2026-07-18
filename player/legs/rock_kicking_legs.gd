@@ -4,3 +4,9 @@ extends Node3D
 
 func play_kick() -> void:
 	_anim.play("PantsKick")
+
+func play_run() -> void:
+	_anim.play("PantsRun")
+
+func stop_run() -> void:
+	_anim.stop()

@@ -11,12 +11,18 @@
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
-[ext_resource type="AudioStream" uid="uid://dlnrsdv3shykd" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
-[ext_resource type="AudioStream" uid="uid://co101l7s7hfym" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
+[ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
+[ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
+[ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
+[ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
-[ext_resource type="AudioStream" uid="uid://dq01vfr0c0ul1" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
-[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
+[ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
+[ext_resource type="AudioStream" uid="uid://mk64m2dcfjon" path="res://sound/rock_kick_critical/rock_kick_critical3.wav" id="18_74toj"]
+[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
+[ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
+[ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
+[ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
@@ -116,7 +122,7 @@ base_font = ExtResource("5_bo1jx")
 variation_transform = Transform2D(1, 0.125, 0, 1, 0, 0)
 
 [node name="UI" type="Control" unique_id=593103497]
-process_mode = 1
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -329,18 +335,21 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="Letter2" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1685922779]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="Letter3" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=872545628]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="InitialsInstructions" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=1775663025]
@@ -350,6 +359,7 @@ text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -373,9 +383,10 @@ offset_top = 280.0
 offset_right = 1864.0
 offset_bottom = 1048.0
 step = 0.1
+allow_greater = true
 fill_mode = 3
 texture_under = ExtResource("16_co7pv")
-texture_over = ExtResource("17_x7nxp")
+texture_over = ExtResource("13_74toj")
 texture_progress = ExtResource("18_3lbto")
 
 [node name="KickbarAnimator" type="AnimationPlayer" parent="KickingMenu" unique_id=207523349]
@@ -393,6 +404,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
+
+[node name="CriticalHitPlayer" type="AudioStreamPlayer" parent="RockKickedMenu" unique_id=514299503]
+unique_name_in_owner = true
+stream = ExtResource("18_74toj")
+pitch_scale = 0.86
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
 visible = false
@@ -540,3 +556,31 @@ fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RockSelect" type="Control" parent="." unique_id=1040165911]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Light" type="Sprite2D" parent="RockSelect" unique_id=1155343369]
+position = Vector2(1000, 500)
+texture = ExtResource("18_x7nxp")
+
+[node name="LeftArrow" type="Sprite2D" parent="RockSelect" unique_id=609268752]
+position = Vector2(500, 500)
+texture = ExtResource("19_3lbto")
+
+[node name="RightArrow" type="Sprite2D" parent="RockSelect" unique_id=665876310]
+position = Vector2(1500, 500)
+texture = ExtResource("20_c3fg2")
+
+[node name="RockName" type="Label" parent="RockSelect" unique_id=594532141]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 732.0
+offset_right = 1467.0
+offset_bottom = 932.0
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 100
+text = "Digi-Christosphere"

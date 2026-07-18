@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byw0o05euut33" path="res://sound/audio_manager.gd" id="1_s2nsv"]
 [ext_resource type="AudioStream" uid="uid://clr6mhawfwlh1" path="res://sound/broken_rock_kicking_chords.wav" id="2_5f358"]
-[ext_resource type="AudioStream" uid="uid://coav6axwdya05" path="res://sound/rock_gameover.wav" id="3_5f358"]
+[ext_resource type="AudioStream" uid="uid://bpp6t3jpo58sg" path="res://sound/rock_gameover.wav" id="3_5f358"]
 [ext_resource type="AudioStream" uid="uid://dgh0w425tx0in" path="res://sound/Crossing%20the%20Divide.mp3" id="4_38hvt"]
 
 [node name="AudioManager" type="Node" unique_id=1267904737]
@@ -13,7 +13,7 @@ background_music = ExtResource("4_38hvt")
 
 [node name="MusicTimeOut" type="Timer" parent="." unique_id=433671395]
 unique_name_in_owner = true
-wait_time = 30.0
+wait_time = 43.25
 autostart = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1004960369]
