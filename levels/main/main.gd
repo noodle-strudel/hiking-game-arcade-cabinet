@@ -132,15 +132,14 @@ func _handle_oob(_cause: String) -> void:
 	else:
 		await get_tree().create_timer(4.5).timeout
 	
-	#TODO: change to whatever state fits the situation the best.
-	GameManager.switch_state_to(GameManager.gamestates.KICKING)
-	# do specific stuff if a word is in the cause
-	#ex.
-	#if "lake" in _cause:
-	#	print(3)
-	#if "ground" in  _cause:
-	#	print(4)
-
+	# Player kicks rock into lake, gets a score of 0, and their turn ends.
+	if "lake" in _cause:
+		GameManager.last_score = 0
+		GameManager.switch_state_to(GameManager.gamestates.SCORING, "rock landed in lake")
+	
+	# Player kicks rock and it falls through the ground, the player gets to kick again.
+	elif "ground" in _cause:
+		GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
