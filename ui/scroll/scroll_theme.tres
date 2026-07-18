@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://3yduj250t35d"]
+
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="1_nanb0"]
+
+[resource]
+default_font = ExtResource("1_nanb0")
