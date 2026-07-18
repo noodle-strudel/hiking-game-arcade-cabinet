@@ -11,6 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
+[ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
 [ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
 [ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
@@ -334,18 +335,21 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="Letter2" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1685922779]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="Letter3" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=872545628]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="InitialsInstructions" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=1775663025]
