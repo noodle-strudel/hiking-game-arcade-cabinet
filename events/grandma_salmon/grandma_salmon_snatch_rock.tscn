@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bly5dxci5r8ix"]
+
+[ext_resource type="Texture2D" uid="uid://dfbya2jyi4oy" path="res://events/grandma_salmon/salmon_body.png" id="1_s8ck0"]
+[ext_resource type="Texture2D" uid="uid://clatxilrji2dv" path="res://events/grandma_salmon/grandma_head/grandma_head0.png" id="2_0b25u"]
+[ext_resource type="Texture2D" uid="uid://c4mxlu8v2lyae" path="res://events/grandma_salmon/grandma_head/grandma_head1.png" id="3_orsj5"]
+[ext_resource type="Texture2D" uid="uid://bxbncrba2r5iu" path="res://events/grandma_salmon/grandma_head/grandma_head2.png" id="4_yhvf0"]
+[ext_resource type="Texture2D" uid="uid://chg2erqf1vv1a" path="res://events/grandma_salmon/grandma_head/grandma_head3.png" id="5_xawfa"]
+[ext_resource type="Texture2D" uid="uid://bghc4pi1337fc" path="res://events/grandma_salmon/grandma_head/grandma_head4.png" id="6_ywnww"]
+[ext_resource type="Texture2D" uid="uid://8hfs3plneagy" path="res://events/grandma_salmon/grandma_head/grandma_head5.png" id="7_fw5th"]
+[ext_resource type="Texture2D" uid="uid://c5mgohwd4utgg" path="res://events/grandma_salmon/grandma_head/grandma_head6.png" id="8_gniq4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_veemj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0b25u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_orsj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yhvf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xawfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywnww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fw5th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gniq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywnww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fw5th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xawfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yhvf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_orsj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0a0ec"]
+viewport_path = NodePath("SubViewport")
+
+[node name="GrandmaSalmonSnatch" type="Node3D" unique_id=1470527940]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1933689996]
+transparent_bg = true
+size = Vector2i(350, 1080)
+
+[node name="GrandmaSalmonSprite" type="Node2D" parent="SubViewport" unique_id=357428462]
+
+[node name="SalmonBody" type="Sprite2D" parent="SubViewport/GrandmaSalmonSprite" unique_id=1942030945]
+position = Vector2(170.09998, 648)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_s8ck0")
+
+[node name="GrandmaHead" type="AnimatedSprite2D" parent="SubViewport/GrandmaSalmonSprite" unique_id=1404892241]
+unique_name_in_owner = true
+position = Vector2(170.09998, 154)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_veemj")
+autoplay = "default"
+
+[node name="GramdmaSalmon3D" type="Sprite3D" parent="." unique_id=230725349]
+texture = SubResource("ViewportTexture_0a0ec")
