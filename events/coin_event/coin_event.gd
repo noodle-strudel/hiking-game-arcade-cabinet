@@ -16,11 +16,15 @@ func _process(_delta: float) -> void:
 func _event_function() -> void:
 	if chance != 99:
 		%CoinCanvas.visible = true
+		%CoinSprite3d.play("appear")
+		await get_tree().create_timer(0.5).timeout
+		%CoinSprite3d.play("spin")
+		await get_tree().create_timer(4.5).timeout
+		%CoinCanvas.visible = false
 	else:
 		%TheCoin.visible = true
-	await get_tree().create_timer(5).timeout
-	%CoinCanvas.visible = false
-	%TheCoin.visible = false
-	
+		await get_tree().create_timer(5).timeout
+		%TheCoin.visible = false
+
 	#do not remove. Defined in event_base.gd
 	_event_cleanup()

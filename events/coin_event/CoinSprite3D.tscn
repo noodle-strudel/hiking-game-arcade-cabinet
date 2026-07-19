@@ -1,6 +1,31 @@
 [gd_scene format=3 uid="uid://dxtbapeftx4kd"]
 
 [ext_resource type="Texture2D" uid="uid://c8bj3y04h18q8" path="res://events/coin_event/coin_3d_spritesheet.png" id="1_sfcgg"]
+[ext_resource type="Texture2D" uid="uid://o6sjefojyuj5" path="res://events/coin_event/coin_3d_appear_spritesheet.png" id="1_vjws3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg3eg"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fly2c"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ght7s"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phaiq"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwhxg"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3c4k"]
+atlas = ExtResource("1_vjws3")
+region = Rect2(128, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjws3"]
 atlas = ExtResource("1_sfcgg")
@@ -102,6 +127,29 @@ region = Rect2(192, 320, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hg3eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fly2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ght7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phaiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwhxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3c4k")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vjws3")
 }, {
 "duration": 1.0,
@@ -174,7 +222,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_vasaf")
 }],
 "loop": true,
-"name": &"default",
+"name": &"spin",
 "speed": 12.0
 }]
 
@@ -182,5 +230,4 @@ animations = [{
 texture_filter = 1
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_nk5j0")
-autoplay = "default"
-frame_progress = 0.031862173
+animation = &"appear"
