@@ -15,12 +15,12 @@ func _process(_delta: float) -> void:
 # write all necessary code for the event to happen here
 func _event_function() -> void:
 	if chance != 99:
-		$CoinCanvas.visible = true
+		%CoinCanvas.visible = true
 	else:
-		$TheCoin.visible = true
+		%TheCoin.visible = true
 	await get_tree().create_timer(5).timeout
-	$CoinCanvas.visible = false
-	$TheCoin.visible = false
+	%CoinCanvas.visible = false
+	%TheCoin.visible = false
 	
 	#do not remove. Defined in event_base.gd
 	_event_cleanup()

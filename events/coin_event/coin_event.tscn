@@ -2,19 +2,75 @@
 
 [ext_resource type="Script" uid="uid://cja5rwrkymd1e" path="res://events/coin_event/coin_event.gd" id="1_1r1eu"]
 [ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="2_7p5nr"]
+[ext_resource type="Shader" uid="uid://cw6tjrbphdd1t" path="res://events/coin_event/coin_event.gdshader" id="2_c1hqx"]
 [ext_resource type="PackedScene" uid="uid://dxtbapeftx4kd" path="res://events/coin_event/CoinSprite3D.tscn" id="2_c6fie"]
+[ext_resource type="Texture2D" uid="uid://ssgfuiektndn" path="res://events/coin_event/transition_mask/tmask0.png" id="3_p13yq"]
+[ext_resource type="Texture2D" uid="uid://bp1htsxl4idsw" path="res://events/coin_event/transition_mask/tmask1.png" id="4_3u7pc"]
+[ext_resource type="Texture2D" uid="uid://ba5art1ftsko0" path="res://events/coin_event/transition_mask/tmask2.png" id="5_escwy"]
+[ext_resource type="Texture2D" uid="uid://bsx5836xd0nx2" path="res://events/coin_event/transition_mask/tmask3.png" id="6_a6ki8"]
+[ext_resource type="Texture2D" uid="uid://cw7xi4ljhnjor" path="res://events/coin_event/transition_mask/tmask4.png" id="7_vl0aq"]
+[ext_resource type="Texture2D" uid="uid://cr7bqy4v3oocv" path="res://events/coin_event/transition_mask/tmask5.png" id="8_rq3pi"]
+[ext_resource type="Texture2D" uid="uid://dx7njvpss2vty" path="res://events/coin_event/transition_mask/tmask6.png" id="9_omefx"]
+[ext_resource type="Texture2D" uid="uid://d0m7jg5475ojc" path="res://events/coin_event/transition_mask/tmask7.png" id="10_ewxsi"]
+[ext_resource type="Texture2D" uid="uid://ckag4j0x2eblb" path="res://events/coin_event/transition_mask/tmask8.png" id="11_bcdbv"]
+[ext_resource type="Texture2D" uid="uid://b2rfq7brybsst" path="res://events/coin_event/transition_mask/tmask9.png" id="12_pwgbq"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mmi4k"]
+frames = 10
+one_shot = true
+frame_0/texture = ExtResource("3_p13yq")
+frame_0/duration = 0.08
+frame_1/texture = ExtResource("4_3u7pc")
+frame_1/duration = 0.09
+frame_2/texture = ExtResource("5_escwy")
+frame_2/duration = 0.08
+frame_3/texture = ExtResource("6_a6ki8")
+frame_3/duration = 0.08
+frame_4/texture = ExtResource("7_vl0aq")
+frame_4/duration = 0.09
+frame_5/texture = ExtResource("8_rq3pi")
+frame_5/duration = 0.08
+frame_6/texture = ExtResource("9_omefx")
+frame_6/duration = 0.08
+frame_7/texture = ExtResource("10_ewxsi")
+frame_7/duration = 0.09
+frame_8/texture = ExtResource("11_bcdbv")
+frame_8/duration = 0.08
+frame_9/texture = ExtResource("12_pwgbq")
+frame_9/duration = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_riyr6"]
+shader = ExtResource("2_c1hqx")
+shader_parameter/mask = SubResource("AnimatedTexture_mmi4k")
 
 [node name="CoinEvent" type="Node" unique_id=1346081188]
 process_mode = 3
 script = ExtResource("1_1r1eu")
 
-[node name="CoinCanvas" type="CanvasLayer" parent="." unique_id=395449107]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1414327302]
+material = SubResource("ShaderMaterial_riyr6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1357541494]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="CoinCanvas" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=395449107]
+unique_name_in_owner = true
 visible = false
 
-[node name="CoinSprite3d" parent="CoinCanvas" unique_id=2082827829 instance=ExtResource("2_c6fie")]
+[node name="CoinSprite3d" parent="SubViewportContainer/SubViewport/CoinCanvas" unique_id=2082827829 instance=ExtResource("2_c6fie")]
+unique_name_in_owner = true
 position = Vector2(960, 540)
 
-[node name="TheCoin" type="Sprite2D" parent="." unique_id=961068099]
+[node name="TheCoin" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=961068099]
+unique_name_in_owner = true
 visible = false
 position = Vector2(973, 523)
 texture = ExtResource("2_7p5nr")
