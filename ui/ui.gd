@@ -127,6 +127,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleMenu.show()
+			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
 		GameManager.gamestates.CONTRACT:
 			$ContractMenu.show()
