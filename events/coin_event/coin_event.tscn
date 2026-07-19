@@ -3,13 +3,15 @@
 [ext_resource type="Script" uid="uid://cja5rwrkymd1e" path="res://events/coin_event/coin_event.gd" id="1_1r1eu"]
 [ext_resource type="Texture2D" uid="uid://xt2va506xkme" path="res://events/coin_event/coingPlaceholder.png" id="2_7p5nr"]
 [ext_resource type="PackedScene" uid="uid://dxtbapeftx4kd" path="res://events/coin_event/CoinSprite3D.tscn" id="2_c6fie"]
+[ext_resource type="AudioStream" uid="uid://lga2fd0m71x7" path="res://sound/coin_sounds/coin_sfx.wav" id="4_mmi4k"]
+[ext_resource type="AudioStream" uid="uid://0oulsyhfd36x" path="res://sound/coin_sounds/coing_sfx.wav" id="5_riyr6"]
 
 [sub_resource type="Animation" id="Animation_c1hqx"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CoinCanvas/CoinSprite3d:position:y")
+tracks/0/path = NodePath("CoinCanvas/CoinSprite3D:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TheCoin:position:y")
+tracks/1/path = NodePath("Coing:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +37,7 @@ length = 5.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CoinCanvas/CoinSprite3d:position:y")
+tracks/0/path = NodePath("CoinCanvas/CoinSprite3D:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,7 +48,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TheCoin:position:y")
+tracks/1/path = NodePath("Coing:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -69,11 +71,11 @@ script = ExtResource("1_1r1eu")
 unique_name_in_owner = true
 visible = false
 
-[node name="CoinSprite3d" parent="CoinCanvas" unique_id=2082827829 instance=ExtResource("2_c6fie")]
+[node name="CoinSprite3D" parent="CoinCanvas" unique_id=2082827829 instance=ExtResource("2_c6fie")]
 unique_name_in_owner = true
 position = Vector2(960, 540)
 
-[node name="TheCoin" type="Sprite2D" parent="." unique_id=961068099]
+[node name="Coing" type="Sprite2D" parent="." unique_id=961068099]
 unique_name_in_owner = true
 visible = false
 position = Vector2(973, 523)
@@ -82,3 +84,12 @@ texture = ExtResource("2_7p5nr")
 [node name="CoinMovement" type="AnimationPlayer" parent="." unique_id=1508709659]
 libraries/ = SubResource("AnimationLibrary_c1hqx")
 autoplay = &"coin_fall"
+
+[node name="CoinSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=288562353]
+stream = ExtResource("4_mmi4k")
+volume_db = -1.0
+bus = &"SFX"
+
+[node name="CoingSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=854991613]
+stream = ExtResource("5_riyr6")
+bus = &"SFX"
