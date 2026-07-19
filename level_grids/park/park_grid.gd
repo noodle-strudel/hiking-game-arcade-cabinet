@@ -82,9 +82,10 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
 		$LakeSplooshSFX.play()
+		
 		# ensure the rock doesn't trigger other area2ds during this.
 		# NOTE: For some reason making the barriers not monitoring only works
-		# at the stop which is why i had to set the rock's stuff instead
+		# at the top which is why i had to set the rock's stuff instead
 		var rock_col_layer_reset = body.collision_layer
 		var rock_col_mask_reset = body.collision_mask
 		body.collision_layer = 0
@@ -145,7 +146,7 @@ func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 	
 	# ensure the rock doesn't trigger other area2ds during this.
 	# NOTE: For some reason making the barriers not monitoring only works
-	# at the stop which is why i had to set the rock's stuff instead
+	# at the top which is why i had to set the rock's stuff instead
 	var rock_col_layer_reset = body.collision_layer
 	var rock_col_mask_reset = body.collision_mask
 	body.collision_layer = 0
