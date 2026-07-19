@@ -280,25 +280,25 @@ func _ready() -> void:
 	Console.pause_enabled = true
 	Console.add_command("tp",
 		_console_teleport,
-		)
+	)
 	Console.add_command("set_kicks",
 		_console_set_kick,
 		["kicks remaining"],
 		1,
 		"Set kicks remaining"
-		)
+	)
 	Console.add_command("set_event",
 		_console_set_event,
 		["event number"],
 		1,
 		"Set active event (use a number)"
-		)
+	)
 	Console.add_command("set_state",
 		_console_set_state,
 		["state"],
 		1,
 		"Set active gamestate"
-		)
+	)
 	Console.add_command_autocomplete_list("set_state",
 		["IDLE",
 		"CONTRACT",
@@ -309,7 +309,7 @@ func _ready() -> void:
 		"ROCK_OOB",
 		"MOVE_TO_ROCK",
 		]
-		)
+	)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

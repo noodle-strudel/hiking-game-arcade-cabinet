@@ -56,9 +56,11 @@ func _process(delta: float) -> void:
 				%Letter3.text = _random_uppercase()
 			3:
 				%Letter3.text = _random_uppercase()
-		if (Input.is_action_just_pressed("confirm") or\
-				Input.is_action_just_pressed("kick")) and\
-				!GameManager.console_open:
+		if (
+			(Input.is_action_just_pressed("confirm") or\
+			Input.is_action_just_pressed("kick")) and\
+			!GameManager.console_open
+		):
 			spinstep += 1
 			if spinstep == 4:
 				# checks to see if the db script is loaded
@@ -90,9 +92,11 @@ func _process(delta: float) -> void:
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
-	if GameManager.state == GameManager.gamestates.CONTRACT and \
-			event.is_action_pressed("confirm") and \
-			!GameManager.console_open:
+	if (
+		GameManager.state == GameManager.gamestates.CONTRACT and
+		event.is_action_pressed("confirm") and
+		!GameManager.console_open
+	):
 		$ContractMenu/ContractContainer.hide()
 		%LetterSpinner.show()
 
