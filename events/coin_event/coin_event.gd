@@ -1,7 +1,7 @@
 extends Event
 
 # variable for doing rng to decide which coin to show.
-var chance = 0
+var chance: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
