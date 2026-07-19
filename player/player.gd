@@ -129,13 +129,13 @@ func _go_to_rock() -> void:
 			"global_position",
 			goal_posiiton,
 			10
-			)
+		)
 		
 		# Lambda function to stop the walk animation and switch to the idle state.
 		tween.tween_callback(func():
 			legs.stop_run()
 			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock")
-			)
+		)
 
 # Randomizes the dimensions of a Vector3 (for kick impulse).
 func _vec_noise(input: Vector3, amt: float) -> Vector3:

@@ -22,6 +22,10 @@ signal rock_followcam_activated
 	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn"),
 ]
 
+@onready var grandma_salmon_helper_scene: PackedScene = preload(
+	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
+)
+
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
 @onready var rock = $Rock
@@ -123,9 +127,26 @@ func _handle_oob(_cause: String) -> void:
 		await get_tree().create_timer(6).timeout
 	else:
 		await get_tree().create_timer(1).timeout
-	# reset the rock's position to the player's position
-	$Rock.position = $Player.position + Vector3(1, 1, 1)
+	
+	# summon grandma salmon to assist in moving the rock
+	var g_sam: GrandmaSalmonHelper = grandma_salmon_helper_scene.instantiate()
+	add_child(g_sam)
+	g_sam.look_at(rock_camera.global_position)
+	
+	# save rock pos before its overridden by the remote transform
+	var rock_pos_ref = rock.global_position
+	g_sam.snatch_object(rock.get_path())  
+	g_sam.move_obj(rock_pos_ref, $Player.position + Vector3(1, 1, 1))
+	
+	# wait for grandma to emerge
+	await get_tree().create_timer(0.5).timeout
 	$Rock.camera_follow(true)
+	
+	await g_sam.on_movement_finished
+	rock.linear_velocity = Vector3.ZERO
+	rock.global_position = g_sam.get_snatcher_pos()
+	g_sam.release_object()
+	g_sam.queue_free()
 	
 	if "snatch" in _cause:
 		await get_tree().create_timer(2).timeout
