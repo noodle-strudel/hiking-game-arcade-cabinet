@@ -22,6 +22,10 @@ signal rock_followcam_activated
 	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn"),
 ]
 
+@onready var grandma_salmon_helper_scene: PackedScene = preload(
+	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
+)
+
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
 @onready var rock = $Rock
@@ -123,24 +127,40 @@ func _handle_oob(_cause: String) -> void:
 		await get_tree().create_timer(6).timeout
 	else:
 		await get_tree().create_timer(1).timeout
-	# reset the rock's position to the player's position
-	$Rock.position = $Player.position + Vector3(1, 1, 1)
+	
+	# summon grandma salmon to assist in moving the rock
+	var g_sam: GrandmaSalmonHelper = grandma_salmon_helper_scene.instantiate()
+	add_child(g_sam)
+	g_sam.look_at(rock_camera.global_position)
+	
+	# save rock pos before its overridden by the remote transform
+	var rock_pos_ref = rock.global_position
+	g_sam.snatch_object(rock.get_path())  
+	g_sam.move_obj(rock_pos_ref, $Player.position + Vector3(1, 1, 1))
+	
+	# wait for grandma to emerge
+	await get_tree().create_timer(0.5).timeout
 	$Rock.camera_follow(true)
+	
+	await g_sam.on_movement_finished
+	rock.linear_velocity = Vector3.ZERO
+	rock.global_position = g_sam.get_snatcher_pos()
+	g_sam.release_object()
+	g_sam.queue_free()
 	
 	if "snatch" in _cause:
 		await get_tree().create_timer(2).timeout
 	else:
 		await get_tree().create_timer(4.5).timeout
 	
-	#TODO: change to whatever state fits the situation the best.
-	GameManager.switch_state_to(GameManager.gamestates.KICKING)
-	# do specific stuff if a word is in the cause
-	#ex.
-	#if "lake" in _cause:
-	#	print(3)
-	#if "ground" in  _cause:
-	#	print(4)
-
+	# Player kicks rock into lake, gets a score of 0, and their turn ends.
+	if "lake" in _cause:
+		GameManager.last_score = 0
+		GameManager.switch_state_to(GameManager.gamestates.SCORING, "rock landed in lake")
+	
+	# Player kicks rock and it falls through the ground, the player gets to kick again.
+	elif "ground" in _cause:
+		GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
@@ -251,6 +271,7 @@ func _ready() -> void:
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
 	GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
+	
 	# load the first grid
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
@@ -271,8 +292,44 @@ func _ready() -> void:
 	rock.global_position = spawn_position
 	
 	$Player.current_y_rotation = random_y
-	print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
+	if GameManager.DEBUG:
+		print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
+	
+	# Console commands that allow us to do many things and adding more is very easy
+	Console.pause_enabled = true
+	Console.add_command("tp",
+		_console_teleport,
+	)
+	Console.add_command("set_kicks",
+		_console_set_kick,
+		["kicks remaining"],
+		1,
+		"Set kicks remaining"
+	)
+	Console.add_command("set_event",
+		_console_set_event,
+		["event number"],
+		1,
+		"Set active event (use a number)"
+	)
+	Console.add_command("set_state",
+		_console_set_state,
+		["state"],
+		1,
+		"Set active gamestate"
+	)
+	Console.add_command_autocomplete_list("set_state",
+		["IDLE",
+		"CONTRACT",
+		"KICKING",
+		"ROCK_KICKED",
+		"POSTKICK_EVENT",
+		"SCORING",
+		"ROCK_OOB",
+		"MOVE_TO_ROCK",
+		]
+	)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -358,4 +415,47 @@ func _panning_camera() -> void:
 	
 	# A way to keep the function calling itself
 	$PanTimer.start(0.001)
-	
+
+# Teleport the player to the rock, if you wish to move around by kicking the rock
+# and don't want to wait for the walking this is how
+func _console_teleport() -> void:
+	$Player.position = $Rock.position + Vector3(0.0, 0.0, 1.0)
+
+# Set the kicks remaining, you need to kick the rock to trigger the change
+# so set the number 1 higher than you want
+func _console_set_kick(kick: String) -> void:
+	GameManager.kicks_remaining = kick.to_int()
+
+# Set the event that is currently active with a number
+# This can be changed to be similar to the state change command but,
+# that would be easier to do when the events are done being added
+func _console_set_event(event: String) -> void:
+	EventManager.event_value = event.to_int()
+	if EventManager.event_value < EventManager.total_event_count:
+		Console.print_line("That means event: " + str(EventManager.known_events[EventManager.event_value]))
+	else:
+		Console.print_line("That means event: NO_EVENT")
+
+# Set the current state of the game, we still have the 1-5 number keys but those
+# don't cover all gamestates currently in the game, when typing the command
+# you can hit tab to cycle through the states, they are case sensitive
+func _console_set_state(state: String) -> void:
+	match state:
+		"IDLE":
+			GameManager.switch_state_to(GameManager.gamestates.IDLE, "Console")
+		"CONTRACT":
+			GameManager.switch_state_to(GameManager.gamestates.CONTRACT, "Console")
+		"KICKING":
+			GameManager.switch_state_to(GameManager.gamestates.KICKING, "Console")
+		"ROCK_KICKED":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED, "Console")
+		"POSTKICK_EVENT":
+			GameManager.switch_state_to(GameManager.gamestates.POSTKICK_EVENT, "Console")
+		"SCORING":
+			GameManager.switch_state_to(GameManager.gamestates.SCORING, "Console")
+		"ROCK_OOB":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "Console")
+		"MOVE_TO_ROCK":
+			GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "Console")
+		_:
+			Console.print_line("State not recognized")

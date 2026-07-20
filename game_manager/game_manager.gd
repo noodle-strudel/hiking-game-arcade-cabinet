@@ -13,6 +13,8 @@ signal gamestate_update(state, cause) # the state has changed. Used for idle as 
 var kicks_remaining := 1000000
 var current_kick_strength := 0.0
 var last_score := 100
+var DEBUG := OS.is_debug_build()
+var console_open := false
 
 ## States of the game.
 ## Can be IDLE, CONTRACT, KICKING, ROCK_KICKED, POSTKICK_EVENT, SCORING, or ROCK_OOB
@@ -40,16 +42,18 @@ enum gamestates {
 ## Switches the game state to target_state
 func switch_state_to(target_state: GameManager.gamestates, cause: String = "") -> void:
 		_switch_state(target_state, cause)
-		print("DEBUG: state switch requested with cause \"" + cause + "\"")
+		if DEBUG:
+			print("DEBUG: state switch requested with cause \"" + cause + "\"")
 
 ## Updates last_score to the newest score calculation. 
 func report_score(kick_strength: float, kick_distance: float) -> void:
 	last_score = int((kick_strength + kick_distance) * 20)
-	print(
-		"Kick Strength: ", kick_strength,
-		" | Distance Kicked: ", kick_distance,
-		" | Score: ", last_score
-	)
+	if DEBUG:
+		print(
+			"Kick Strength: ", kick_strength,
+			" | Distance Kicked: ", kick_distance,
+			" | Score: ", last_score
+		)
 	
 ## Decrements the kicks remaining and emits a signal.
 func _decrement_kicks_remaining() -> void:
@@ -80,38 +84,49 @@ func _on_change_state(_state: gamestates, _cause: String) -> void:
 
 ## Enables use of number keys 1-5 to set the game state. 
 func _test_state_handler() -> void:
-	if Input.is_action_just_pressed("test_set_state_idle"):
-		$TestSoundPlayer.play()
-		_switch_state(gamestates.IDLE)	
-	if Input.is_action_just_pressed("test_set_state_contract"):
-		$TestSoundPlayer.play()
-		_switch_state(gamestates.CONTRACT)	
-	if Input.is_action_just_pressed("test_set_state_kicking"):
-		$TestSoundPlayer.play()
-		_switch_state(gamestates.KICKING)	
-	if Input.is_action_just_pressed("test_set_state_rock_kicked"):
-		# $TestSoundPlayer.play()
-		_switch_state(gamestates.ROCK_KICKED)	
-	if Input.is_action_just_pressed("test_set_state_scoring"):
-		$TestSoundPlayer.play()
-		_switch_state(gamestates.SCORING)	
+	if !console_open:
+		if Input.is_action_just_pressed("test_set_state_idle"):
+			$TestSoundPlayer.play()
+			_switch_state(gamestates.IDLE)	
+		if Input.is_action_just_pressed("test_set_state_contract"):
+			$TestSoundPlayer.play()
+			_switch_state(gamestates.CONTRACT)	
+		if Input.is_action_just_pressed("test_set_state_kicking"):
+			$TestSoundPlayer.play()
+			_switch_state(gamestates.KICKING)	
+		if Input.is_action_just_pressed("test_set_state_rock_kicked"):
+			# $TestSoundPlayer.play()
+			_switch_state(gamestates.ROCK_KICKED)	
+		if Input.is_action_just_pressed("test_set_state_scoring"):
+			$TestSoundPlayer.play()
+			_switch_state(gamestates.SCORING)	
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gamestate_update.connect(_on_change_state)
+	Console.console_opened.connect(_console_open)
+	Console.console_closed.connect(_console_closed)
 
+# Sets the console open value to true to stop console input being used in the game
+func _console_open() -> void:
+	console_open = true
+
+# Sets the console open value to false allowing game input to work again
+func _console_closed() -> void:
+	console_open = false
 
 # Restarts the idle timer when input is detected.
 func _input(_event: InputEvent) -> void:
-	%IdleTimer.start()
-	if state == gamestates.IDLE and Input.is_action_just_pressed("kick"):
-		_switch_state(gamestates.CONTRACT)
+	if !console_open:
+		%IdleTimer.start()
+		if state == gamestates.IDLE and Input.is_action_just_pressed("kick"):
+			_switch_state(gamestates.CONTRACT)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("test_kick"):
+	if Input.is_action_just_pressed("test_kick") and !console_open:
 		# $TestSoundPlayer.play()
 		_decrement_kicks_remaining()
 	

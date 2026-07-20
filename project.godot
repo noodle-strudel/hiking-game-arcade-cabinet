@@ -28,6 +28,7 @@ MainDatabase="*uid://by51tfxeksaue"
 SaveLoad="*uid://cjwdmcv61acn2"
 EventManager="*uid://dxx2hnhes27by"
 AudioManager="*uid://by3s0jh1hdkqs"
+Console="*uid://ouiu5xh1cs8n"
 
 [display]
 
@@ -35,6 +36,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position=Vector2i(0, -183)
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/console/plugin.cfg")
 
 [filesystem]
 

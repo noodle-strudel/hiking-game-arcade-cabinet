@@ -145,7 +145,8 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 			$KickTimer.start()
 			progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
-			print("Progress: ", progress)
+			if GameManager.DEBUG:
+				print("Progress: ", progress)
 
 			# change the rock shape
 			_update_rock()
