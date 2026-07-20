@@ -13,15 +13,15 @@
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
 [ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
-[ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
-[ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
+[ext_resource type="AudioStream" uid="uid://ddlrv46io7eaf" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
+[ext_resource type="AudioStream" uid="uid://b4naxivjwf8hn" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
-[ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
+[ext_resource type="AudioStream" uid="uid://cfithcpao02bg" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
-[ext_resource type="AudioStream" uid="uid://mk64m2dcfjon" path="res://sound/rock_kick_critical/rock_kick_critical3.wav" id="18_74toj"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
-[ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
+[ext_resource type="AudioStream" uid="uid://c5eu7levnxlva" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
+[ext_resource type="AudioStream" uid="uid://d0abv2vjjtqso" path="res://sound/rock_kicks/rock_kick_critical.wav" id="20_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
@@ -408,7 +408,7 @@ metadata/_edit_lock_ = true
 
 [node name="CriticalHitPlayer" type="AudioStreamPlayer" parent="RockKickedMenu" unique_id=514299503]
 unique_name_in_owner = true
-stream = ExtResource("18_74toj")
+stream = ExtResource("20_bw7v0")
 pitch_scale = 0.86
 bus = &"SFX"
 
