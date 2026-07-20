@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
@@ -14,17 +14,17 @@
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
 [ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
-[ext_resource type="AudioStream" uid="uid://ddlrv46io7eaf" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
-[ext_resource type="AudioStream" uid="uid://b4naxivjwf8hn" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
+[ext_resource type="AudioStream" uid="uid://dlnrsdv3shykd" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
+[ext_resource type="AudioStream" uid="uid://co101l7s7hfym" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
-[ext_resource type="AudioStream" uid="uid://cfithcpao02bg" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
+[ext_resource type="AudioStream" uid="uid://dq01vfr0c0ul1" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
-[ext_resource type="AudioStream" uid="uid://c5eu7levnxlva" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
-[ext_resource type="AudioStream" uid="uid://d0abv2vjjtqso" path="res://sound/rock_kicks/rock_kick_critical.wav" id="20_bw7v0"]
+[ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
+[ext_resource type="AudioStream" uid="uid://by6anoacrxf63" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
@@ -462,7 +462,7 @@ metadata/_edit_lock_ = true
 
 [node name="CriticalHitPlayer" type="AudioStreamPlayer" parent="RockKickedMenu" unique_id=514299503]
 unique_name_in_owner = true
-stream = ExtResource("20_bw7v0")
+stream = ExtResource("21_rkf1o")
 pitch_scale = 0.86
 bus = &"SFX"
 
