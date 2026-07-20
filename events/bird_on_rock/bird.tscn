@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cu1ootebjc2er"]
+
+[ext_resource type="PackedScene" uid="uid://d3h3ma0jabtcu" path="res://events/bird_on_rock/glb/bird.glb" id="1_g12lo"]
+
+[node name="Bird" unique_id=1301465810 instance=ExtResource("1_g12lo")]
+
+[node name="BirdWings" parent="." index="1" unique_id=1692760993]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)

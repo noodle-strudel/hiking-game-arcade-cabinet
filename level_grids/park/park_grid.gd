@@ -11,8 +11,14 @@ class_name ParkGrid
 # static body collision shape for the trees
 @onready var conifer_collision_body: PackedScene = preload("res://level_grids/park/trees/conifer_tree_collision_body.tscn")
 
-@onready var water_hand: PackedScene = preload("res://events/water_hand/water_hand.tscn")
+@onready var water_hand_scene: PackedScene = preload("res://events/water_hand/water_hand.tscn")
 
+var event_rng = RandomNumberGenerator.new()
+
+# returns a random number for water hand determination
+func _roll_event_rng() -> int:
+	return event_rng.randi_range(1, 10)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
@@ -77,10 +83,27 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
 		$LakeSplooshSFX.play()
+		
+		# ensure the rock doesn't trigger other area2ds during this.
+		# NOTE: For some reason making the barriers not monitoring only works
+		# at the top which is why i had to set the rock's stuff instead
+		var rock_col_layer_reset = body.collision_layer
+		var rock_col_mask_reset = body.collision_mask
+		body.collision_layer = 0
+		body.collision_mask = 0
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell in the lake...")
+		await get_tree().create_timer(2).timeout
+	
+		# reset rock's collisions so it can interact with the world again
+		body.collision_mask = rock_col_mask_reset
+		body.collision_layer = rock_col_layer_reset
 
 
 func _on_lake_hand_barrier_body_entered(body: Node3D) -> void:
+	# if an even number is rolled, no water hand event
+	if _roll_event_rng() % 2 == 0:
+		return
+	
 	$LakeBarrier.set_monitoring(false)
 	if body.name == "Rock":
 		
@@ -90,7 +113,6 @@ func _on_lake_hand_barrier_body_entered(body: Node3D) -> void:
 			
 
 # helper functions to make water hand event readable
-
 func _create_water_hand(body: Node3D) -> Dictionary:
 	# LOTS of assumptions being made here. 
 	#TODO: Polish and clean up the data type assumptions
@@ -110,7 +132,8 @@ func _create_water_hand(body: Node3D) -> Dictionary:
 
 func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 	await get_tree().process_frame
-	var water_hand_instance: Node3D = water_hand.instantiate()
+	var water_hand_instance: Node3D = water_hand_scene.instantiate()
+	add_child(water_hand_instance)
 	water_hand_instance.global_position = result.position
 	
 	# spin like a top until the hand is facing the player
@@ -120,11 +143,11 @@ func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 		# FORWARD is the vector the hand is on in its scene
 		Vector3.FORWARD.angle_to(body.linear_velocity)
 	)
-	add_child(water_hand_instance)
+	
 	
 	# ensure the rock doesn't trigger other area2ds during this.
 	# NOTE: For some reason making the barriers not monitoring only works
-	# at the stop which is why i had to set the rock's stuff instead
+	# at the top which is why i had to set the rock's stuff instead
 	var rock_col_layer_reset = body.collision_layer
 	var rock_col_mask_reset = body.collision_mask
 	body.collision_layer = 0
@@ -148,6 +171,7 @@ func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 	# this times up with _handle_oob in main. release the rock and reset velocity
 	water_hand_instance.release_object()
 	body.linear_velocity = Vector3.ZERO
+	await get_tree().create_timer(2).timeout
 	
 	# reset rock's collisions so it can interact with the world again
 	body.collision_mask = rock_col_mask_reset
