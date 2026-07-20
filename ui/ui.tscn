@@ -289,7 +289,6 @@ offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
-text = "Kick a rock!"
 horizontal_alignment = 1
 
 [node name="IdleAnimationPlayer" type="AnimationPlayer" parent="IdleMenu" unique_id=1144452728]

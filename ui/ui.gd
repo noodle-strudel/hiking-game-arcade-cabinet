@@ -7,6 +7,7 @@ extends Control
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
 @onready var ui_camera := $"../UICamera"
+@onready var subtitle : Label = $IdleMenu/SubtitlePivot/Subtitle
 
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
@@ -22,6 +23,20 @@ var rock_names = [
 	"Johnrockubgenklhimershmidt"
 ]
 
+# list of subtitles
+var menu_subtitles = [
+	"Kick a rock!",
+	"The worlds first official\nrock erosion by means\nof podiatric impact\nsimulator!",
+	"Kick Rocks!",
+	"Stone Punting!",
+	"Make this rock ROUND!",
+	"You have been\nsummoned to kick\nthis sacred stone..."
+]
+
+# Picks a randome sibtitle for the menu.
+func _get_random_subtitle() -> void:
+	subtitle.text = menu_subtitles.pick_random()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
@@ -35,6 +50,7 @@ func _ready() -> void:
 	
 	_clear_ui()
 	$IdleMenu.show()
+	_get_random_subtitle()
 	%IdleAnimationPlayer.play("swing_subtitle")
 
 
@@ -118,6 +134,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleMenu.show()
+			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
 		GameManager.gamestates.CONTRACT:
 			$ContractMenu.show()
