@@ -56,8 +56,11 @@ func _process(delta: float) -> void:
 				%Letter3.text = _random_uppercase()
 			3:
 				%Letter3.text = _random_uppercase()
-		if Input.is_action_just_pressed("confirm") or\
-				Input.is_action_just_pressed("kick"):
+		if (
+			(Input.is_action_just_pressed("confirm") or\
+			Input.is_action_just_pressed("kick")) and\
+			!GameManager.console_open
+		):
 			spinstep += 1
 			if spinstep == 4:
 				# checks to see if the db script is loaded
@@ -74,22 +77,26 @@ func _process(delta: float) -> void:
 	if $RockSelect.visible:
 		
 		# left and right make new name
-		if Input.is_action_just_pressed("joystick_left"):
-			$RockSelect/RockName.text = rock_names.pick_random()
-		elif Input.is_action_just_pressed("joystick_right"):
-			$RockSelect/RockName.text = rock_names.pick_random()
-			
-			# enter continues to gameplay
-		elif Input.is_action_just_pressed("confirm") or\
-			Input.is_action_just_pressed("kick"):
-				$RockSelect.visible = false
-				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
-				"contract signed")
+		if !GameManager.console_open:
+			if Input.is_action_just_pressed("joystick_left"):
+				$RockSelect/RockName.text = rock_names.pick_random()
+			elif Input.is_action_just_pressed("joystick_right"):
+				$RockSelect/RockName.text = rock_names.pick_random()
+				
+				# enter continues to gameplay
+			elif Input.is_action_just_pressed("confirm") or\
+				Input.is_action_just_pressed("kick"):
+					$RockSelect.visible = false
+					GameManager.switch_state_to(GameManager.gamestates.KICKING,\
+					"contract signed")
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
-	if GameManager.state == GameManager.gamestates.CONTRACT and \
-			event.is_action_pressed("confirm"):
+	if (
+		GameManager.state == GameManager.gamestates.CONTRACT and
+		event.is_action_pressed("confirm") and
+		!GameManager.console_open
+	):
 		$ContractMenu/ContractContainer.hide()
 		%LetterSpinner.show()
 
@@ -125,7 +132,8 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$KickingMenu.show()
 			ui_camera.apply_shake(0.1)
 			if %Kickbar.value >= 97.0:
-				print("critical kick!")
+				if GameManager.DEBUG:
+					print("critical kick!")
 				%Kickbar.value = 200.0
 				
 				# add juice
@@ -171,8 +179,12 @@ func _scoring_sequence() -> void:
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
 	await get_tree().create_timer(50).timeout
-	AudioManager.fade_out_music()
-	GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
+	
+	# Condition so the state switching and music cutting on the timers only happens
+	# if the game is still in the scoring state
+	if GameManager.state == GameManager.gamestates.SCORING:
+		AudioManager.fade_out_music()
+		GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
 
 
 func game_over_text_reset() -> void:

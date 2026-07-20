@@ -36,12 +36,12 @@ func _ready() -> void:
 	if get_node(buddy_rock_path):
 		rock = get_node(buddy_rock_path)
 		$RockTeeSpringArm.add_excluded_object(rock)
-	else:
+	elif GameManager.DEBUG:
 		print("ERROR: no Rock node sibling to Player.")
 		
 	if get_node(kick_bar_path):
 		bar = get_node(kick_bar_path)
-	else:
+	elif GameManager.DEBUG:
 		print("ERROR: no Kickbar node sibling to Player.")
 
 func _physics_process(delta: float) -> void:
@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	# If statement making it so player can only rotate in specific states.
-	if !locked_rotation: 
+	if !locked_rotation and !GameManager.console_open: 
 		# Rotate left and right.
 		var input_y = Input.get_axis("joystick_right", "joystick_left")
 		
@@ -89,13 +89,15 @@ func _physics_process(delta: float) -> void:
 	# Handle kicking the rock.
 	if (
 		GameManager.state == GameManager.gamestates.KICKING and
-		Input.is_action_just_pressed("kick")
+		Input.is_action_just_pressed("kick") and
+		!GameManager.console_open
 	):
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_KICKED, "player just kicked rock")
 		var multiplier = kick_multiplier
 		if bar:
 			multiplier = bar.value
-			print("fetched value " + str(multiplier) + " from kickbar")
+			if GameManager.DEBUG:
+				print("fetched value " + str(multiplier) + " from kickbar")
 		_kick_rock(multiplier)
 		
 	# Fall
@@ -129,13 +131,13 @@ func _go_to_rock() -> void:
 			"global_position",
 			goal_posiiton,
 			10
-			)
+		)
 		
 		# Lambda function to stop the walk animation and switch to the idle state.
 		tween.tween_callback(func():
 			legs.stop_run()
 			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock")
-			)
+		)
 
 # Randomizes the dimensions of a Vector3 (for kick impulse).
 func _vec_noise(input: Vector3, amt: float) -> Vector3:

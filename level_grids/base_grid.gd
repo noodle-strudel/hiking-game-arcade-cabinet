@@ -17,7 +17,8 @@ var spawn_points: Array[Marker3D]
 # Randomly chooses 1 of the 3 random spawn locations.
 func get_spawn_position() -> Vector3:
 	var marker = spawn_points.pick_random()
-	print("Spawn: ", marker.name)
+	if GameManager.DEBUG:
+		print("Spawn: ", marker.name)
 	return marker.global_position
 
 # adds a staticbody3d for each multimesh object. 
@@ -51,7 +52,8 @@ func remove_collisions_from_multimeshes() -> void:
 
 func _await_modification() -> void:
 	if modifying_multimeshes:
-		print("GRID: multimesh deletion occuring, please wait")
+		if GameManager.DEBUG:
+			print("GRID: multimesh deletion occuring, please wait")
 		await modify_multimesh_complete
 
 # Called when the node enters the scene tree for the first time.
