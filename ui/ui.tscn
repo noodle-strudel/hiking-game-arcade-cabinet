@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
-[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/letter_spinner_title_theme.tres" id="9_os0ka"]
+[ext_resource type="Texture2D" uid="uid://3mqwme5wqchk" path="res://ui/redarrow.png" id="10_0avjw"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/letter_spinner_theme.tres" id="10_diyc5"]
 [ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
@@ -19,9 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="AudioStream" uid="uid://mk64m2dcfjon" path="res://sound/rock_kick_critical/rock_kick_critical3.wav" id="18_74toj"]
-[ext_resource type="Texture2D" uid="uid://byfldd2s6j063" path="res://ui/kickbar/kickbar_foot_over.png" id="17_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
+[ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
@@ -64,6 +65,42 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_bi8hs"),
 &"swing_subtitle": SubResource("Animation_hrmpd")
+}
+
+[sub_resource type="Animation" id="Animation_rkf1o"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%RedArrow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fgtw6"]
+resource_name = "float_arrow"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%RedArrow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(784, -0.24999972, 0.67932045, 0.16666667, -0.45288086, 817.2658, -0.08433549, -2.1874518, 0.099999994, 2.59375, 784, -0.13333333, 2.1408691, 0, 0),
+"times": PackedFloat32Array(0, 0.8, 1.6)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_br2v7"]
+_data = {
+&"RESET": SubResource("Animation_rkf1o"),
+&"float_arrow": SubResource("Animation_fgtw6")
 }
 
 [sub_resource type="Animation" id="Animation_74toj"]
@@ -260,7 +297,6 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_x7jpl")
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -270,7 +306,6 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="ContractContainer" type="MarginContainer" parent="ContractMenu" unique_id=84038302]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,14 +314,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 480
 theme_override_constants/margin_right = 480
+metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="ContractMenu/ContractContainer" unique_id=204343490]
 layout_mode = 2
+theme = ExtResource("20_bw7v0")
 
 [node name="Contract" type="Label" parent="ContractMenu/ContractContainer/PanelContainer" unique_id=1916097480]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 33
 text = "The Official Rulings
@@ -297,14 +335,25 @@ I AGREE"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="RedArrow" type="Sprite2D" parent="ContractMenu/ContractContainer" unique_id=1894272422]
+unique_name_in_owner = true
+position = Vector2(0, 864)
+texture = ExtResource("10_0avjw")
+
+[node name="ArrowAnimator" type="AnimationPlayer" parent="ContractMenu/ContractContainer" unique_id=794704970]
+libraries/ = SubResource("AnimationLibrary_br2v7")
+autoplay = &"float_arrow"
+
 [node name="LetterSpinner" type="Control" parent="ContractMenu" unique_id=400664939]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="ContractMenu/LetterSpinner" unique_id=1556148380]
 layout_mode = 1
@@ -316,7 +365,7 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="ContractMenu/LetterSpinner/CenterContainer" unique_id=1381784538]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("9_diyc5")
+theme = ExtResource("20_bw7v0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer" unique_id=73069558]
 layout_mode = 2
@@ -324,6 +373,7 @@ layout_mode = 2
 [node name="InitialsTitle" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=282279328]
 layout_mode = 2
 theme = ExtResource("9_os0ka")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Enter your name."
 horizontal_alignment = 1
 
@@ -335,6 +385,7 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_colors/font_color = Color(0.23529412, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
@@ -342,6 +393,7 @@ text = "A"
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_colors/font_color = Color(0.23529412, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
@@ -349,12 +401,14 @@ text = "A"
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("10_diyc5")
+theme_override_colors/font_color = Color(0.23529412, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_74toj")
 text = "A"
 
 [node name="InitialsInstructions" type="Label" parent="ContractMenu/LetterSpinner/CenterContainer/PanelContainer/VBoxContainer" unique_id=1775663025]
 layout_mode = 2
 theme = ExtResource("9_os0ka")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
@@ -496,12 +550,28 @@ theme_override_styles/panel = ExtResource("9_diyc5")
 unique_name_in_owner = true
 z_index = 2
 
-[node name="GameOverTextContents" type="RichTextLabel" parent="ScoreMenu/GameOverText" unique_id=212186964]
+[node name="Bottom" type="Marker2D" parent="ScoreMenu/GameOverText" unique_id=1447911126]
+position = Vector2(440, 4160)
+
+[node name="BackgroundColor" type="ColorRect" parent="ScoreMenu/GameOverText" unique_id=547787572]
+visible = false
+z_index = -1
+offset_left = 424.0
+offset_top = 1064.0
+offset_right = 1488.0
+offset_bottom = 4192.0
+color = Color(0.96405727, 0.70715535, 0.36109638, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreMenu/GameOverText" unique_id=1608483669]
+offset_left = 298.0
+offset_top = 1024.0
+offset_right = 1592.0
+offset_bottom = 4296.0
+theme = ExtResource("20_bw7v0")
+
+[node name="GameOverTextContents" type="RichTextLabel" parent="ScoreMenu/GameOverText/PanelContainer" unique_id=212186964]
 editor_description = "game over scroll. text size about 40"
-offset_left = 448.0
-offset_top = 1080.0
-offset_right = 1472.0
-offset_bottom = 4160.0
+layout_mode = 2
 theme = SubResource("Theme_bi8hs")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/italics_font = SubResource("FontVariation_bi8hs")
@@ -517,17 +587,6 @@ To the rock, thine affairs are a meagre sort. Be troubled not by its stoic facad
 Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth."
 scroll_active = false
 autowrap_mode = 2
-
-[node name="Bottom" type="Marker2D" parent="ScoreMenu/GameOverText" unique_id=1447911126]
-position = Vector2(440, 4160)
-
-[node name="BackgroundColor" type="ColorRect" parent="ScoreMenu/GameOverText" unique_id=547787572]
-z_index = -1
-offset_left = 424.0
-offset_top = 1064.0
-offset_right = 1488.0
-offset_bottom = 4192.0
-color = Color(0.96405727, 0.70715535, 0.36109638, 1)
 
 [node name="OOBCenterContainer" type="CenterContainer" parent="." unique_id=846102454]
 layout_mode = 1
