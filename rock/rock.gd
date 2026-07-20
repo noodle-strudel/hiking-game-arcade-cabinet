@@ -66,7 +66,7 @@ func rock_eyes_wink() -> Signal:
 func wink_at_camera(camera: Camera3D) -> void:
 	rock_eyes_look_at(camera)
 	await get_tree().create_timer(0.3).timeout
-
+	$WinkSoundPlayer.play()
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
 

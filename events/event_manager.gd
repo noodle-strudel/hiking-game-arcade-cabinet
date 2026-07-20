@@ -79,9 +79,11 @@ var event_value = 0
 ## rng class used for generating random numbers.
 var event_rng = RandomNumberGenerator.new()
 
+
 # returns a random number for event determination
 func _roll_event_rng() -> int:
 	return event_rng.randi_range(0, max_event_value)
+
 
 # state change handler
 func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
@@ -103,12 +105,12 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 			# handle on kick events
 			if _event_is_of_type(event_types.ON_KICK):
 				_run_event()
-			
+
 			await get_tree().create_timer(0.4).timeout
 			# handle during kick events
 			if _event_is_of_type(event_types.DURING_KICK):
 				_run_event()
-			
+
 		GameManager.gamestates.POSTKICK_EVENT:
 			if _event_is_of_type(event_types.POST_KICK):
 				_run_event()
@@ -119,9 +121,10 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 				# technically didnt happen
 				await get_tree().process_frame
 				event_clear.emit()
-			
+
 		GameManager.gamestates.SCORING:
 			pass
+
 
 # NOTE: MUST BE UPDATED IF NEW EVENT TYPE IS ADDED
 # returns true if the current event_value is an event of the provided event_type. 
@@ -139,6 +142,7 @@ func _event_is_of_type(event_type: event_types) -> bool:
 					return true
 	return false 
 
+
 # called from the state handler, where the code for determining event timing lives. 
 # instantiates the rolled event. 
 func _run_event() -> void:
@@ -147,36 +151,36 @@ func _run_event() -> void:
 	await event.event_finished
 	event_clear.emit()
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# connect signals
 	GameManager.gamestate_update.connect(_on_change_state)
-	
+
 	# roll rng in case "switch to idle state on game load" code is removed. 
 	event_value = _roll_event_rng()
-	
+
 	# preprocess known event data
 	for event_type_list in event_lists:
 		# calculate start index of the current kind of events in known_events
 		event_indices.append(known_events.size())
-		
+
 		# concatenate all known events into known_events
 		known_events += event_type_list
-		
+
 		# update total number of events
 		total_event_count = known_events.size()
-	
+
 	# calculate max roll for event rng
 	if event_chance > 0.0 and event_chance <= 1.0:
 		max_event_value = (total_event_count / event_chance)
 	else:
 		max_event_value = total_event_count
-	
+
 	#print("DEBUG: event indices: " + str(event_indices))
 	#print("DEBUG: known events: " + str(known_events))
 	#print("DEBUG: total event count: " + str(total_event_count))
 	#print("DEBUG: max_event_value: " + str(max_event_value))
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
