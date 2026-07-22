@@ -84,11 +84,11 @@ func _process(delta: float) -> void:
 				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
-				spin_letters = false
-				spinstep = 0
 				
 				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
+				spin_letters = false
+				spinstep = 0
 				%LetterSpinner.visible = false
 				$RockSelect.visible = true
 			
@@ -107,10 +107,10 @@ func _process(delta: float) -> void:
 				Input.is_action_just_pressed("kick")
 			):
 					$RockSelect.visible = false
-					spin_letters = true
 					await get_tree().create_timer(0.1).timeout
 					GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 					"contract signed")
+					spin_letters = true
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
