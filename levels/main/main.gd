@@ -17,10 +17,16 @@ signal rock_followcam_activated
 	#preload("res://level_grids/city/city_grid.tscn")
 ]
 
-## List of scenes that can be instantiated as chunks when the number of kicks go down
+## List of scenes that can be instantiated as chunks when the number of kicks go down.
+## Currently unused.
 @onready var _low_kick_level_segments = [
 	preload("res://level_grids/heaven_stairs/heaven_stairs_grid.tscn"),
 ]
+
+# fallback option to keep the chunk code from breaking in extreme circumstances. 
+@onready var _none_level_segment = preload("res://level_grids/none/none_level_grid.tscn")
+
+@onready var _purgatory = preload("res://levels/purgatory/purgatory.tscn")
 
 @onready var grandma_salmon_helper_scene: PackedScene = preload(
 	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
@@ -162,13 +168,56 @@ func _handle_oob(_cause: String) -> void:
 	elif "ground" in _cause:
 		GameManager.switch_state_to(GameManager.gamestates.KICKING)
 
+# PURGATORY CODE=================================
+
+# environment switcher
+func _load_heaven_environment() -> void:
+	# switch environment
+	$WorldEnvironment.set_environment(load("res://levels/heaven_environment.tres"))
+
+# replaces all chunks in _current_chunks with the none chunk. 
+# do not use if not in purgatory/heaven state.
+func _empty_level_chunks() -> void:
+	for chunk_z in range(3):
+		for chunk_x in range(3):
+			_current_chunks[chunk_z][chunk_x].queue_free()
+			_current_chunks[chunk_z][chunk_x] = _none_level_segment.instantiate()
+
+# switches to purgatory.
+func load_purgatory() -> void:
+	# switch environment
+	_load_heaven_environment()
+	
+	# unload level chunks/replace with none
+	_empty_level_chunks()
+	
+	# instantiate purgatory
+	var purgatory = _purgatory.instantiate()
+	self.add_child(purgatory)
+	
+	# teleport player and rock
+	var spawn_position = purgatory.get_node("Spawnpoint").position
+	rock.position = spawn_position
+	$Player.position = spawn_position + Vector3(0.0, 0.0, 1.0)
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
 func _select_level_segment() -> PackedScene:
+	var selected_segment = null
+	
 	# once kicks remaining goes low enough, pick different segments
-	if GameManager.kicks_remaining < 10000:
-		return _low_kick_level_segments.pick_random()
-	return _level_segments.pick_random()
+	if GameManager.kicks_remaining < GameManager.purgatory_kick_count:
+		# purgatory functionality has changed. Now exists as static 3x3 grid with bounds
+		#selected_segment = _low_kick_level_segments.pick_random()
+		selected_segment = _none_level_segment
+	else:
+		selected_segment = _level_segments.pick_random()
+	
+	# fallback
+	if selected_segment == null:
+		selected_segment = _none_level_segment
+	
+	return selected_segment
+	
 
 ## Chooses a new chunk based on current information, adds it to the tree,
 ## and returns the reference. 
@@ -264,9 +313,14 @@ func _on_grid_position_changed(shift) -> void:
 	
 	_current_chunks[1][1].add_collision_to_multimeshes()
 
+func _get_spawn() -> Vector3:
+	var grid: Grid = _current_chunks[1][1]
+	var spawn_position: Vector3 = grid.get_spawn_position()
+	return spawn_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	# connect signals
 	GameManager.gamestate_update.connect(_event_handler)
 	grid_position_changed.connect(_on_grid_position_changed)
@@ -283,8 +337,7 @@ func _ready() -> void:
 	_current_chunks[1][1].add_collision_to_multimeshes()
 	
 	# Spawn rock and player at a random location in park. 
-	var grid: Grid = _current_chunks[1][1]
-	var spawn_position: Vector3 = grid.get_spawn_position()
+	var spawn_position = _get_spawn()
 	var random_y = deg_to_rad(randf_range(0.0, 360.0))
 	
 	rock.linear_velocity = Vector3.ZERO
@@ -295,6 +348,10 @@ func _ready() -> void:
 	if GameManager.DEBUG:
 		print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
+	
+	# load purgatory if under kick threshold
+	if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
+		load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
 	Console.pause_enabled = true

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2mn354yutuxr"]
+
+[ext_resource type="Script" uid="uid://btqtb227fcb3p" path="res://level_grids/none/none_level_grid.gd" id="1_uppvs"]
+
+[node name="NoneLevelGrid" type="Node3D" unique_id=801339518]
+script = ExtResource("1_uppvs")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=865239373]
+
+[node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=553573404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 0)
