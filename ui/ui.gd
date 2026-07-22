@@ -103,7 +103,8 @@ func _process(delta: float) -> void:
 				$RockSelect/RockName.text = rock_names.pick_random()
 				
 			# enter continues to gameplay
-			elif (Input.is_action_just_pressed("confirm") or
+			elif (
+				Input.is_action_just_pressed("confirm") or
 				Input.is_action_just_pressed("kick")
 			):
 					$RockSelect.visible = false
