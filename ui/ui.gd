@@ -14,7 +14,8 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
 var _start_time := 0.0
 var game_over_text_scroll := false
-var spinstep = 0
+var spinstep := 0
+var spin_letters := true
 
 # list of rock names
 var rock_names = [
@@ -61,7 +62,7 @@ func _process(delta: float) -> void:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	
 	# Handle the letter spinner
-	if %LetterSpinner.visible:
+	if %LetterSpinner.visible and spin_letters:
 		match spinstep:
 			1:
 				%Letter1.text = _random_uppercase()
@@ -73,8 +74,8 @@ func _process(delta: float) -> void:
 			3:
 				%Letter3.text = _random_uppercase()
 		if (
-			(Input.is_action_just_pressed("confirm") or\
-			Input.is_action_just_pressed("kick")) and\
+			(Input.is_action_just_pressed("confirm") or
+			Input.is_action_just_pressed("kick")) and
 			!GameManager.console_open
 		):
 			spinstep += 1
@@ -83,9 +84,11 @@ func _process(delta: float) -> void:
 				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
+				spin_letters = false
+				spinstep = 0
+				
 				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
-				spinstep = 0
 				%LetterSpinner.visible = false
 				$RockSelect.visible = true
 			
@@ -99,16 +102,20 @@ func _process(delta: float) -> void:
 			elif Input.is_action_just_pressed("joystick_right"):
 				$RockSelect/RockName.text = rock_names.pick_random()
 				
-				# enter continues to gameplay
-			elif Input.is_action_just_pressed("confirm") or\
-				Input.is_action_just_pressed("kick"):
+			# enter continues to gameplay
+			elif (Input.is_action_just_pressed("confirm") or
+				Input.is_action_just_pressed("kick")
+			):
 					$RockSelect.visible = false
+					spin_letters = true
+					await get_tree().create_timer(0.1).timeout
 					GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 					"contract signed")
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
 	if (
+		spin_letters and
 		GameManager.state == GameManager.gamestates.CONTRACT and
 		event.is_action_pressed("confirm") and
 		!GameManager.console_open
