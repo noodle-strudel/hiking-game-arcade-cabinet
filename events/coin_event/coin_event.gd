@@ -6,7 +6,6 @@ var chance: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
-	chance = randi() % 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -14,6 +13,7 @@ func _process(_delta: float) -> void:
 
 # write all necessary code for the event to happen here
 func _event_function() -> void:
+	chance = randi_range(0, 99)
 	if chance != 99:
 		%CoinCanvas.visible = true
 		%CoinSprite3D.play("appear")

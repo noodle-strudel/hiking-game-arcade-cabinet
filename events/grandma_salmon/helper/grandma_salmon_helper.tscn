@@ -67,24 +67,24 @@ viewport_path = NodePath("SubViewport")
 script = ExtResource("1_61jmn")
 movement_curve = SubResource("Curve_bmar1")
 
-[node name="GrandmaSalmonSprite" type="Node2D" parent="." unique_id=357428462]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1933689996]
+transparent_bg = true
+size = Vector2i(350, 1080)
 
-[node name="SalmonBody" type="Sprite2D" parent="GrandmaSalmonSprite" unique_id=1942030945]
+[node name="GrandmaSalmonSprite" type="Node2D" parent="SubViewport" unique_id=357428462]
+
+[node name="SalmonBody" type="Sprite2D" parent="SubViewport/GrandmaSalmonSprite" unique_id=1942030945]
 position = Vector2(170.09998, 648)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_o2d6c")
 
-[node name="GrandmaHead" type="AnimatedSprite2D" parent="GrandmaSalmonSprite" unique_id=1404892241]
+[node name="GrandmaHead" type="AnimatedSprite2D" parent="SubViewport/GrandmaSalmonSprite" unique_id=1404892241]
 position = Vector2(170.09998, 154)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_veemj")
 autoplay = "default"
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1933689996]
-transparent_bg = true
-size = Vector2i(350, 1080)
-
-[node name="GramdmaSalmon3D" type="Sprite3D" parent="." unique_id=230725349]
+[node name="GrandmaSalmon3D" type="Sprite3D" parent="." unique_id=230725349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.265737, 0)
 texture = SubResource("ViewportTexture_0a0ec")
 
