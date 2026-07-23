@@ -51,7 +51,7 @@ func _ready() -> void:
 	look_target = rock.position
 	
 	# DEBUG not displaying correctly. temp workaround
-	_hide_sprite()
+	#_hide_sprite()
 	
 	# run sequence
 	ascension_sequence()

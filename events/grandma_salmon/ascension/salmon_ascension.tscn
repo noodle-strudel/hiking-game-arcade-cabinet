@@ -70,6 +70,7 @@ script = ExtResource("1_bqwpo")
 
 [node name="AscensionCamera" type="Camera3D" parent="." unique_id=1889672955]
 transform = Transform3D(1, 0, 0, 0, 0.8244424, 0.56594586, 0, -0.56594586, 0.8244424, 0, 39, 39)
+fov = 25.0
 
 [node name="GrandmaSalmonHelper" parent="." unique_id=1470527940 instance=ExtResource("2_g8673")]
 
@@ -77,6 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8244424, 0.56594586, 0, -0.56594586, 0.824
 gizmo_extents = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GrandmaSalmonHelper" unique_id=1693332407]
+visible = false
 mesh = SubResource("BoxMesh_soa1f")
 surface_material_override/0 = SubResource("StandardMaterial3D_kxtrs")
 
