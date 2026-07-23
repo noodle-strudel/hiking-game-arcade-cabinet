@@ -90,7 +90,7 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 				var ascender = salmon_ascender.instantiate()
 				self.add_child(ascender)
 				await ascender.ascension_complete
-				load_purgatory()
+				_load_purgatory()
 				$UI.show()
 				
 				# go back to regular idle state stuff
@@ -200,7 +200,7 @@ func _empty_level_chunks() -> void:
 			_current_chunks[chunk_z][chunk_x] = _none_level_segment.instantiate()
 
 # switches to purgatory.
-func load_purgatory() -> void:
+func _load_purgatory() -> void:
 	# switch environment
 	_load_heaven_environment()
 	
@@ -367,7 +367,7 @@ func _ready() -> void:
 	
 	# load purgatory if under kick threshold
 	if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
-		load_purgatory()
+		_load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
 	Console.pause_enabled = true

@@ -3,9 +3,9 @@ extends Node3D
 # emitted when sequence is done and salmon gone high up
 signal ascension_complete
 
+@onready var salmon_helper = $GrandmaSalmonHelper
 var look_target = null
 var rock = null
-@onready var salmon_helper = $GrandmaSalmonHelper
 
 func ascension_sequence() -> void:
 	# create camera/make current
