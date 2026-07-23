@@ -12,10 +12,10 @@ signal rock_followcam_activated
 
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
-	#preload("res://level_grids/park/park_grid.tscn"),
+	preload("res://level_grids/park/park_grid.tscn"),
 	#preload("res://level_grids/heaven/heaven_grid.tscn"),
 	#preload("res://level_grids/city/city_grid.tscn"),
-	preload("res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn")
+	#preload("res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn")
 ]
 
 ## List of scenes that can be instantiated as chunks when the number of kicks go down.
