@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://djwghxa35n41r"]
+
+[ext_resource type="PackedScene" uid="uid://bdseq5q6b8op7" path="res://level_grids/purgatory/surrounding_grids/rock_kicking_purgatory_ground_2.tscn" id="1_myiqe"]
+
+[node name="Purgatory2Grid" type="Node3D" unique_id=1844927662]
+
+[node name="rock_kicking_purgatory_ground_2" parent="." unique_id=182392870 instance=ExtResource("1_myiqe")]
