@@ -16,12 +16,17 @@ var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep = 0
 
-# list of rock names
+# list of rock names, rock name tracker, rock name total
 var rock_names = [
 	"Digi-Christosphere",
 	"Rocksane",
-	"Johnrockubgenklhimershmidt"
+	"Johnrockubgenklhimershmidt",
+	"Spherald",
+	"Marock",
+	"Spheranie"
 ]
+var cur_name = 0
+var name_tot = 6
 
 # list of subtitles
 var menu_subtitles = [
@@ -95,9 +100,15 @@ func _process(delta: float) -> void:
 		# left and right make new name
 		if !GameManager.console_open:
 			if Input.is_action_just_pressed("joystick_left"):
-				$RockSelect/RockName.text = rock_names.pick_random()
+				cur_name -= 1
+				if cur_name < 0:
+					cur_name = name_tot - 1
+				$RockSelect/RockName.text = rock_names[cur_name]
 			elif Input.is_action_just_pressed("joystick_right"):
-				$RockSelect/RockName.text = rock_names.pick_random()
+				cur_name += 1
+				if cur_name >= name_tot:
+					cur_name = 0
+				$RockSelect/RockName.text = rock_names[cur_name]
 				
 				# enter continues to gameplay
 			elif Input.is_action_just_pressed("confirm") or\
