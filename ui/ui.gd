@@ -74,8 +74,7 @@ func _process(delta: float) -> void:
 			3:
 				%Letter3.text = _random_uppercase()
 		if (
-			(Input.is_action_just_pressed("confirm") or
-			Input.is_action_just_pressed("kick")) and
+			Input.is_action_just_pressed("confirm") and
 			!GameManager.console_open
 		):
 			spinstep += 1
@@ -103,15 +102,12 @@ func _process(delta: float) -> void:
 				$RockSelect/RockName.text = rock_names.pick_random()
 				
 			# enter continues to gameplay
-			elif (
-				Input.is_action_just_pressed("confirm") or
-				Input.is_action_just_pressed("kick")
-			):
-					$RockSelect.visible = false
-					await get_tree().create_timer(0.1).timeout
-					GameManager.switch_state_to(GameManager.gamestates.KICKING,\
-					"contract signed")
-					spin_letters = true
+			elif Input.is_action_just_pressed("confirm"):
+				$RockSelect.visible = false
+				await get_tree().create_timer(0.1).timeout
+				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
+				"contract signed")
+				spin_letters = true
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
