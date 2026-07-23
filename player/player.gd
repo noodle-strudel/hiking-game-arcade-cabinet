@@ -57,9 +57,6 @@ func _physics_process(delta: float) -> void:
 		# Update tracking variable.
 		current_y_rotation += input_y * rotation_speed * delta 
 		
-		# Apply rotation to player.
-		rotation.y = current_y_rotation 
-		
 		# Rotate up and down.
 		var input_x = Input.get_axis("joystick_down", "joystick_up")
 		
@@ -72,9 +69,13 @@ func _physics_process(delta: float) -> void:
 			deg_to_rad(max_down), 
 			deg_to_rad(max_up)
 		)
-			
-		# Apply rotation to camera.
-		camera.rotation.x = current_x_rotation 
+			 
+	
+	# Apply rotation to player.
+	rotation.y = current_y_rotation 
+	
+	# Apply rotation to camera.
+	camera.rotation.x = current_x_rotation 
 	
 	# Handle keeping the rock in front of the player when ready to kick.
 	# If the rock's height needs to be adjusted, change the Margin value
