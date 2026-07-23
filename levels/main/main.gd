@@ -32,6 +32,8 @@ signal rock_followcam_activated
 	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
 )
 
+@onready var salmon_ascender := preload("res://events/grandma_salmon/ascension/salmon_ascension.tscn")
+
 # Cameras
 @onready var player_camera = $Player/CameraPivot/PlayerCamera
 @onready var rock = $Rock
@@ -69,16 +71,30 @@ var _current_chunks = [
 ]	# +z
 	# v
 
+func _regular_idle_actions() -> void:
+	camera_pan_state = 0
+	rock_camera.make_current()
+	%UIAnimator.play("idle_float")
+	$PanTimer.start(30)	
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
-			camera_pan_state = 0
-			rock_camera.make_current()
-			%UIAnimator.play("idle_float")
-			$PanTimer.start(30)
+			if GameManager.kicks_remaining != GameManager.purgatory_kick_count:
+				_regular_idle_actions()
+			else:
+				# do salmon purgatory sequence
+				$UI.hide()
+				var ascender = salmon_ascender.instantiate()
+				self.add_child(ascender)
+				await ascender.ascension_complete
+				load_purgatory()
+				$UI.show()
+				
+				# go back to regular idle state stuff
+				_regular_idle_actions()
 		GameManager.gamestates.CONTRACT:
 			
 			# Pan timer stops so that the panning camera doesn't keep moving

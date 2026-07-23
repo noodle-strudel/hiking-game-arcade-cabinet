@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cto2xh0ab20hl"]
+
+[ext_resource type="Script" uid="uid://ccp2hh73iswfo" path="res://events/grandma_salmon/ascension/salmon_ascension.gd" id="1_bqwpo"]
+[ext_resource type="PackedScene" uid="uid://bly5dxci5r8ix" path="res://events/grandma_salmon/helper/grandma_salmon_helper.tscn" id="2_g8673"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_soa1f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxtrs"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_g8673"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandmaSalmonHelper:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandmaSalmonHelper:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_soa1f"]
+resource_name = "float_to_rock"
+length = 3.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandmaSalmonHelper:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2, 2, 0),
+"points": PackedFloat32Array(-45.036827, 0, 0, 0.5, 7.506138, -37.128708, -0.0888889, -1.4823818, 0.027777772, 0.4632442, -33.36307, 0, -6.0829506, 0, 1.7379836, -21.197172, -0.072222225, -1.0476328, 0.31111112, 4.5128794, -18.30053, -0.04353744, -5.5489454, 0.100000024, 12.74523, -6.7139573, -0.0539675, 1.594511, 0.16666663, -4.924293, -7.293286, 0, 4.8463054, 0, -10.717579, -6.424293, -0.0498948, 0.5492042, 0.5, -5.5036216, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 0.7, 1.1333333, 1.5333333, 1.8666667, 2.1333334, 2.4333334, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandmaSalmonHelper:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2, 2, 2, 2, 2, 2, 0),
+"points": PackedFloat32Array(48.296673, 0, 0, 0.5, -8.049445, 40.21166, -0.0888889, 1.3717535, 0.29999998, -6.372616, 30.942402, -0.0410693, 1.99858, 0.33333337, -16.2212, 28.914751, -0.017285818, 1.3519133, 0.0333333, -2.6069775, 22.252472, -0.05501276, -1.2748185, 0.20000005, 4.63463, 18.486837, -0.0666666, 0.57932854, 0.09016623, -0.7835388, 7.7692575, -0.044226054, -0.8967482, 0.10000014, 2.0276499, 7.7692575, -0.04444444, 0.366302, 0.07222223, -0.5952409, 2, -0.0666666, 21.700794, 0, 0),
+"times": PackedFloat32Array(0, 0.6666667, 0.8666667, 1.2333333, 1.5333333, 2.0333333, 2.3, 2.5666666, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxtrs"]
+_data = {
+&"RESET": SubResource("Animation_g8673"),
+&"float_to_rock": SubResource("Animation_soa1f")
+}
+
+[node name="SalmonAscension" type="Node3D" unique_id=265109335]
+script = ExtResource("1_bqwpo")
+
+[node name="AscensionCamera" type="Camera3D" parent="." unique_id=1889672955]
+transform = Transform3D(1, 0, 0, 0, 0.8244424, 0.56594586, 0, -0.56594586, 0.8244424, 0, 39, 39)
+
+[node name="GrandmaSalmonHelper" parent="." unique_id=1470527940 instance=ExtResource("2_g8673")]
+
+[node name="Marker3D" type="Marker3D" parent="GrandmaSalmonHelper" unique_id=554836171]
+gizmo_extents = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrandmaSalmonHelper" unique_id=1693332407]
+mesh = SubResource("BoxMesh_soa1f")
+surface_material_override/0 = SubResource("StandardMaterial3D_kxtrs")
+
+[node name="SalmonAnimator" type="AnimationPlayer" parent="." unique_id=550154841]
+libraries/ = SubResource("AnimationLibrary_kxtrs")
