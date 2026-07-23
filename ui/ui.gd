@@ -14,14 +14,20 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
 var _start_time := 0.0
 var game_over_text_scroll := false
-var spinstep = 0
+var spinstep := 0
+var spin_letters := true
 
-# list of rock names
+# list of rock names, rock name tracker, rock name total
 var rock_names = [
 	"Digi-Christosphere",
 	"Rocksane",
-	"Johnrockubgenklhimershmidt"
+	"Johnrockubgenklhimershmidt",
+	"Spherald",
+	"Marock",
+	"Spheranie"
 ]
+var cur_name = 0
+var name_tot = 6
 
 # list of subtitles
 var menu_subtitles = [
@@ -61,7 +67,7 @@ func _process(delta: float) -> void:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	
 	# Handle the letter spinner
-	if %LetterSpinner.visible:
+	if %LetterSpinner.visible and spin_letters:
 		match spinstep:
 			1:
 				%Letter1.text = _random_uppercase()
@@ -73,8 +79,7 @@ func _process(delta: float) -> void:
 			3:
 				%Letter3.text = _random_uppercase()
 		if (
-			(Input.is_action_just_pressed("confirm") or\
-			Input.is_action_just_pressed("kick")) and\
+			Input.is_action_just_pressed("confirm") and
 			!GameManager.console_open
 		):
 			spinstep += 1
@@ -83,8 +88,10 @@ func _process(delta: float) -> void:
 				# and sends the initials to the database to be inserted
 				if is_instance_valid(db_loaded):
 					db_loaded.set_initials(%Letter1.text, %Letter2.text, %Letter3.text)
+				
 				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
+				spin_letters = false
 				spinstep = 0
 				%LetterSpinner.visible = false
 				$RockSelect.visible = true
@@ -95,20 +102,28 @@ func _process(delta: float) -> void:
 		# left and right make new name
 		if !GameManager.console_open:
 			if Input.is_action_just_pressed("joystick_left"):
-				$RockSelect/RockName.text = rock_names.pick_random()
+				cur_name -= 1
+				if cur_name < 0:
+					cur_name = name_tot - 1
+				$RockSelect/RockName.text = rock_names[cur_name]
 			elif Input.is_action_just_pressed("joystick_right"):
-				$RockSelect/RockName.text = rock_names.pick_random()
+				cur_name += 1
+				if cur_name >= name_tot:
+					cur_name = 0
+				$RockSelect/RockName.text = rock_names[cur_name]
 				
-				# enter continues to gameplay
-			elif Input.is_action_just_pressed("confirm") or\
-				Input.is_action_just_pressed("kick"):
-					$RockSelect.visible = false
-					GameManager.switch_state_to(GameManager.gamestates.KICKING,\
-					"contract signed")
+			# enter continues to gameplay
+			elif Input.is_action_just_pressed("confirm"):
+				$RockSelect.visible = false
+				await get_tree().create_timer(0.1).timeout
+				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
+				"contract signed")
+				spin_letters = true
 
 # hide the contract after it is signed and go to the letter spinner
 func _input(event: InputEvent) -> void:
 	if (
+		spin_letters and
 		GameManager.state == GameManager.gamestates.CONTRACT and
 		event.is_action_pressed("confirm") and
 		!GameManager.console_open
