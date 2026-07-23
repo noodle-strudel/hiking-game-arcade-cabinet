@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ceiqgn5tw0xv4"]
 
-[ext_resource type="PackedScene" uid="uid://c1auq6je6gdgp" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.glb" id="1_cl6fo"]
-[ext_resource type="PackedScene" uid="uid://dx6a1el0gppws" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_stairs_collision.tscn" id="2_1gmsl"]
+[ext_resource type="PackedScene" uid="uid://c1auq6je6gdgp" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_heaven_stairs_ground.glb" id="1_cl6fo"]
+[ext_resource type="PackedScene" uid="uid://dx6a1el0gppws" path="res://level_grids/purgatory/rock_kicking_heaven_stairs_stairs_collision.tscn" id="2_1gmsl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1gmsl"]
 size = Vector3(500, 10.182495, 500)
 
-[node name="rock_kicking_heaven_stairs_ground" unique_id=300283865 instance=ExtResource("1_cl6fo")]
+[node name="rock_kicking_heaven_stairs_ground" unique_id=722045352 instance=ExtResource("1_cl6fo")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1260886492]
 collision_layer = 4

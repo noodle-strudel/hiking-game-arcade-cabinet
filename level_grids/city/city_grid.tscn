@@ -19,6 +19,7 @@ size = Vector3(31, 40, 76)
 script = ExtResource("1_pwxke")
 
 [node name="rock_kicking_city_ground" parent="." unique_id=947447146 instance=ExtResource("2_4tptt")]
+metadata/_edit_lock_ = true
 
 [node name="TownhouseCollisions" type="Node3D" parent="." unique_id=749799169]
 
@@ -61,32 +62,6 @@ shape = SubResource("BoxShape3D_4tptt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, -21.5)
 shape = SubResource("BoxShape3D_4tptt")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="TownhouseCollisions" unique_id=1435644839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182, 0, 92)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D4" unique_id=469259953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, 21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D4" unique_id=455393975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, -21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="TownhouseCollisions" unique_id=13784674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 92)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D5" unique_id=1119057275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, 21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D5" unique_id=1067118785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, -21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
 [node name="StaticBody3D6" type="StaticBody3D" parent="TownhouseCollisions" unique_id=1359186180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 92)
 collision_layer = 4
@@ -97,19 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, 21.5)
 shape = SubResource("BoxShape3D_4tptt")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D6" unique_id=2060797568]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, -21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="TownhouseCollisions" unique_id=1587880365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 92)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D7" unique_id=1140550291]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, 21.5)
-shape = SubResource("BoxShape3D_4tptt")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="TownhouseCollisions/StaticBody3D7" unique_id=1619397700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.5, -21.5)
 shape = SubResource("BoxShape3D_4tptt")
 

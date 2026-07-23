@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bdseq5q6b8op7"]
+
+[ext_resource type="PackedScene" uid="uid://bmamwcd1ln50b" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_2.glb" id="1_ivsu8"]
+
+[node name="rock_kicking_purgatory_ground_2" unique_id=182392870 instance=ExtResource("1_ivsu8")]
