@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://8jbisriheixs"]
+
+[ext_resource type="Script" uid="uid://d87ask3bxs1u" path="res://events/bird_on_rock/bird_event.gd" id="1_x7rdp"]
+[ext_resource type="PackedScene" uid="uid://cu1ootebjc2er" path="res://events/bird_on_rock/bird.tscn" id="2_ewtyl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7rdp"]
+radius = 0.12747192
+height = 0.25494385
+
+[node name="BirdEvent" type="Node3D" unique_id=1600814115]
+process_mode = 3
+script = ExtResource("1_x7rdp")
+
+[node name="BirdBody" type="CharacterBody3D" parent="." unique_id=26908361]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+collision_layer = 32
+collision_mask = 12
+floor_constant_speed = true
+floor_snap_length = 0.3
+
+[node name="BirdCollision" type="CollisionShape3D" parent="BirdBody" unique_id=264062824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12747192, 0)
+shape = SubResource("CapsuleShape3D_x7rdp")
+
+[node name="Bird" parent="BirdBody" unique_id=1301465810 instance=ExtResource("2_ewtyl")]
+unique_name_in_owner = true
+
+[node name="DetectGround" type="RayCast3D" parent="BirdBody/Bird" unique_id=2128856514]
+target_position = Vector3(0, -50, 0)
+collision_mask = 4

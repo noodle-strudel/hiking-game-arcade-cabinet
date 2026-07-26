@@ -134,6 +134,7 @@ start={
 3d_physics/layer_3="ground"
 3d_physics/layer_4="trees"
 3d_physics/layer_5="player_barrier"
+3d_physics/layer_6="bird"
 
 [physics]
 
