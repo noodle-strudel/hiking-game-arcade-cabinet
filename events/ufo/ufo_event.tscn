@@ -6,4 +6,4 @@
 [node name="UfoEvent" type="Node3D" unique_id=1693400780]
 script = ExtResource("1_6sgvp")
 
-[node name="Ufo" parent="." unique_id=351704284 instance=ExtResource("2_6sgvp")]
+[node name="Ufo" parent="." unique_id=516286238 instance=ExtResource("2_6sgvp")]
