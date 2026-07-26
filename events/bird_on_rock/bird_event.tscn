@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://d87ask3bxs1u" path="res://events/bird_on_rock/bird_event.gd" id="1_x7rdp"]
 [ext_resource type="PackedScene" uid="uid://cu1ootebjc2er" path="res://events/bird_on_rock/bird.tscn" id="2_ewtyl"]
 
+[sub_resource type="Curve" id="Curve_x7rdp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.04738295), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7rdp"]
 radius = 0.12747192
 height = 0.25494385
@@ -10,6 +14,7 @@ height = 0.25494385
 [node name="BirdEvent" type="Node3D" unique_id=1600814115]
 process_mode = 3
 script = ExtResource("1_x7rdp")
+movement_curve = SubResource("Curve_x7rdp")
 
 [node name="BirdBody" type="CharacterBody3D" parent="." unique_id=26908361]
 unique_name_in_owner = true
@@ -29,3 +34,6 @@ unique_name_in_owner = true
 [node name="DetectGround" type="RayCast3D" parent="BirdBody/Bird" unique_id=2128856514]
 target_position = Vector3(0, -50, 0)
 collision_mask = 4
+
+[node name="BirdCamera" type="Camera3D" parent="." unique_id=232699698]
+fov = 90.0
