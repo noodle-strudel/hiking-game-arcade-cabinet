@@ -15,7 +15,7 @@ func ascension_sequence() -> void:
 	$SalmonAnimator.play("float_to_rock")
 	await $SalmonAnimator.animation_finished
 		 
-	#camera zoom
+	# camera zoom
 	$SalmonAnimator.play("camera_zoom")
 	await $SalmonAnimator.animation_finished
 	
