@@ -1,9 +1,5 @@
-[gd_scene format=3 uid="uid://jdyfpa1cp1l7"]
+[gd_scene format=3 uid="uid://c02v8i408fi1l"]
 
-[ext_resource type="Script" uid="uid://cdweoj053bxt6" path="res://events/ufo/ufo_event.gd" id="1_6sgvp"]
-[ext_resource type="PackedScene" uid="uid://cb2ot0idhtgtg" path="res://events/ufo/ufo.glb" id="2_6sgvp"]
+[ext_resource type="PackedScene" uid="uid://cb2ot0idhtgtg" path="res://events/ufo/glb/ufo.glb" id="2_6sgvp"]
 
-[node name="UfoEvent" type="Node3D" unique_id=1693400780]
-script = ExtResource("1_6sgvp")
-
-[node name="Ufo" parent="." unique_id=516286238 instance=ExtResource("2_6sgvp")]
+[node name="Ufo" unique_id=1814835929 instance=ExtResource("2_6sgvp")]
