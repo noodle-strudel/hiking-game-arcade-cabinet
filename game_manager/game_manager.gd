@@ -15,6 +15,8 @@ var current_kick_strength := 0.0
 var last_score := 100
 var DEBUG := OS.is_debug_build()
 var console_open := false
+# Number of kicks, at or below which the player will play in purgatory.
+const purgatory_kick_count = 10000
 
 ## States of the game.
 ## Can be IDLE, CONTRACT, KICKING, ROCK_KICKED, POSTKICK_EVENT, SCORING, or ROCK_OOB

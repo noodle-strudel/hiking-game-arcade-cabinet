@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdseq5q6b8op7"]
+
+[ext_resource type="PackedScene" uid="uid://bmamwcd1ln50b" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_2.glb" id="1_ivsu8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivsu8"]
+size = Vector3(500, 3.2120361, 500)
+
+[node name="rock_kicking_purgatory_ground_2" unique_id=182392870 instance=ExtResource("1_ivsu8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=42824983]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=794999756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.440613, 0)
+shape = SubResource("BoxShape3D_ivsu8")
