@@ -175,6 +175,7 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -470,6 +471,7 @@ pitch_scale = 0.86
 bus = &"SFX"
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

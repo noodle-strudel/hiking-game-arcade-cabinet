@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://u3nwxpvtet0x"]
 
-[ext_resource type="PackedScene" uid="uid://btvbo3xw6hjni" path="res://level_grids/heaven_stairs/heaven_stairs_grid.tscn" id="1_t8kri"]
+[ext_resource type="PackedScene" uid="uid://btvbo3xw6hjni" path="res://level_grids/purgatory/heaven_stairs_grid.tscn" id="1_t8kri"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1g5ov"]
 
@@ -35,6 +35,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 500)
 
 [node name="WorldBounds" type="StaticBody3D" parent="." unique_id=138385476]
+collision_layer = 20
+collision_mask = 19
 
 [node name="WorldBound" type="CollisionShape3D" parent="WorldBounds" unique_id=1738728852]
 shape = SubResource("WorldBoundaryShape3D_1g5ov")

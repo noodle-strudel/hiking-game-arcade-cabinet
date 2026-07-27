@@ -14,6 +14,10 @@ func ascension_sequence() -> void:
 	# animate helper moving to rock
 	$SalmonAnimator.play("float_to_rock")
 	await $SalmonAnimator.animation_finished
+		 
+	# camera zoom
+	$SalmonAnimator.play("camera_zoom")
+	await $SalmonAnimator.animation_finished
 	
 	# get salmon helper to pick up rock
 	var rock_pos_ref = rock.global_position
