@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://kwqhkijusw5c"]
 
 [ext_resource type="PackedScene" uid="uid://cmx7h1tr170y0" path="res://level_grids/heaven/glbs/rock_kicking_heaven_tree.glb" id="1_40edq"]
+[ext_resource type="ArrayMesh" uid="uid://dvac6rpb42idu" path="res://level_grids/heaven/trees/heaven_tree_array_mesh.tres" id="2_alp67"]
 
 [node name="HeavenTree" unique_id=1694715765 instance=ExtResource("1_40edq")]
+
+[node name="HeavenTreeReal" parent="." index="0" unique_id=334476518]
+mesh = ExtResource("2_alp67")

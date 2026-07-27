@@ -14,7 +14,7 @@ signal rock_followcam_activated
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
 	#preload("res://level_grids/heaven/heaven_grid.tscn"),
-	#preload("res://level_grids/city/city_grid.tscn"),
+	preload("res://level_grids/city/city_grid.tscn"),
 	#preload("res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn")
 ]
 
