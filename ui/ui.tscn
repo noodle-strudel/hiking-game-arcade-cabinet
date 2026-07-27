@@ -1,31 +1,33 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://bbdgdrfbf8h5m" path="res://ui/kick_rocks_title_beta.png" id="4_c44sx"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/resources/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/resources/letter_spinner_title_theme.tres" id="9_os0ka"]
-[ext_resource type="Texture2D" uid="uid://3mqwme5wqchk" path="res://ui/redarrow.png" id="10_0avjw"]
+[ext_resource type="Texture2D" uid="uid://bgqmgio4yicuh" path="res://ui/redarrow.png" id="10_0avjw"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/resources/letter_spinner_theme.tres" id="10_diyc5"]
 [ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
-[ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
-[ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
+[ext_resource type="AudioStream" uid="uid://dlnrsdv3shykd" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
+[ext_resource type="AudioStream" uid="uid://co101l7s7hfym" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
-[ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
+[ext_resource type="AudioStream" uid="uid://dq01vfr0c0ul1" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
-[ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
+[ext_resource type="AudioStream" uid="uid://c5eu7levnxlva" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 [ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
+[ext_resource type="AudioStream" uid="uid://cv12s1lxk6s" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
 [ext_resource type="Texture2D" uid="uid://c76i2b7ohlw5l" path="res://ui/rock_select/rock2D.png" id="26_fgtw6"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
@@ -144,12 +146,13 @@ _data = {
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mf2ns"]
 playback_mode = 1
-streams_count = 5
+streams_count = 6
 stream_0/stream = ExtResource("15_ju45i")
 stream_1/stream = ExtResource("16_74toj")
 stream_2/stream = ExtResource("17_co7pv")
 stream_3/stream = ExtResource("19_bw7v0")
 stream_4/stream = ExtResource("21_br2v7")
+stream_5/stream = ExtResource("23_k48q6")
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
@@ -175,7 +178,6 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -190,6 +192,16 @@ texture = ExtResource("2_ks8t7")
 position = Vector2(1809.4144, 951.0002)
 scale = Vector2(0.1171875, 0.1171875)
 texture = ExtResource("3_wl5ax")
+
+[node name="KickRocksTitle" type="TextureRect" parent="IdleMenu" unique_id=1775985413]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 88.0
+offset_right = 1384.0
+offset_bottom = 304.0
+texture = ExtResource("4_c44sx")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
@@ -248,6 +260,7 @@ horizontal_alignment = 1
 custom_effects = [SubResource("RichTextEffect_x7jpl")]
 
 [node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
+visible = false
 layout_mode = 0
 offset_left = 528.0
 offset_top = 144.0
