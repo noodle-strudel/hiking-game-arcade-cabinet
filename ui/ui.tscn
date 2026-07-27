@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
 [ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
+[ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
 [ext_resource type="Texture2D" uid="uid://c76i2b7ohlw5l" path="res://ui/rock_select/rock2D.png" id="26_fgtw6"]
 
@@ -143,11 +144,12 @@ _data = {
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mf2ns"]
 playback_mode = 1
-streams_count = 4
+streams_count = 5
 stream_0/stream = ExtResource("15_ju45i")
 stream_1/stream = ExtResource("16_74toj")
 stream_2/stream = ExtResource("17_co7pv")
 stream_3/stream = ExtResource("19_bw7v0")
+stream_4/stream = ExtResource("21_br2v7")
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
