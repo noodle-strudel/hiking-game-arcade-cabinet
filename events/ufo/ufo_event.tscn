@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c02v8i408fi1l"]
+
+[ext_resource type="PackedScene" uid="uid://cb2ot0idhtgtg" path="res://events/ufo/glb/ufo.glb" id="2_6sgvp"]
+
+[node name="Ufo" unique_id=1814835929 instance=ExtResource("2_6sgvp")]

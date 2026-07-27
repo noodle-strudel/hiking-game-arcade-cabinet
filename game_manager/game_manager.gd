@@ -122,7 +122,11 @@ func _console_closed() -> void:
 func _input(_event: InputEvent) -> void:
 	if !console_open:
 		%IdleTimer.start()
-		if state == gamestates.IDLE and Input.is_action_just_pressed("kick"):
+		if (
+			state == gamestates.IDLE and 
+			(Input.is_action_just_pressed("kick") or 
+			Input.is_action_just_pressed("confirm"))
+		):
 			_switch_state(gamestates.CONTRACT)
 
 

@@ -1,7 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://cfbrs0b2018fc"]
-
-[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="1_btmb1"]
-
-[resource]
-default_font = ExtResource("1_btmb1")
-default_font_size = 100

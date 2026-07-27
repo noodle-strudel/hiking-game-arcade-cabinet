@@ -32,10 +32,35 @@ tracks/1/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AscensionCamera:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_kxtrs"]
+resource_name = "camera_zoom"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AscensionCamera:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(75, 0, 0, 0.13233334, -44, 25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.001, 1)
+}
 
 [sub_resource type="Animation" id="Animation_soa1f"]
 resource_name = "float_to_rock"
-length = 3.5
+length = 3.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,6 +87,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kxtrs"]
 _data = {
 &"RESET": SubResource("Animation_g8673"),
+&"camera_zoom": SubResource("Animation_kxtrs"),
 &"float_to_rock": SubResource("Animation_soa1f")
 }
 
@@ -70,7 +96,6 @@ script = ExtResource("1_bqwpo")
 
 [node name="AscensionCamera" type="Camera3D" parent="." unique_id=1889672955]
 transform = Transform3D(1, 0, 0, 0, 0.8244424, 0.56594586, 0, -0.56594586, 0.8244424, 0, 39, 39)
-fov = 25.0
 
 [node name="GrandmaSalmonHelper" parent="." unique_id=1470527940 instance=ExtResource("2_g8673")]
 
