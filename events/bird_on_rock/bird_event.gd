@@ -4,6 +4,7 @@ extends Event
 @export var speed: float = 1.5
 
 @onready var rock: Node = get_node("/root/Main/Rock")
+@onready var player: Node = get_node("/root/Main/Player")
 @onready var raycast_down: RayCast3D = $BirdBody/Bird/DetectGround
 @onready var camera: Camera3D = $BirdCamera
 
@@ -64,6 +65,7 @@ func _physics_process(delta: float) -> void:
 				
 			var weight = hop_timer / hop_duration
 			if movement_curve != null:
+				
 				# Bounces the visual mesh only so physics and
 				# Collision remain on the ground as it moves
 				# Multiplier controls hop height.
@@ -87,7 +89,7 @@ func _start_hop() -> void:
 	
 	# Post bird on rock code
 	# changes camera and starts look around animation
-	camera.global_position = %BirdBody.global_position + Vector3(-2.0, 0.5, 0.0)
+	camera.global_position = %BirdBody.global_position + Vector3(-3.0, 1.0, -1.0)
 	camera.look_at(%BirdBody.global_position)
 	camera.fov = 50.0
 	%Bird/AnimationPlayer.play("look_around")
@@ -104,6 +106,8 @@ func _process_hop(weight: float) -> void:
 
 func _event_function() -> void:
 	# Define your event code in here.
+	
+	player.hide()
 	
 	# Bird spawns in the air and warps down to the ground
 	# This is done to avoid spawning already in the ground
@@ -125,8 +129,10 @@ func _event_function() -> void:
 	camera.make_current()
 	
 	# timer for the event it takes about 15-20 seconds to get to the rock
-	# the 80 other seconds is how long it stays and can be adjusted
-	await get_tree().create_timer(100).timeout
+	# the rest is how long it stays and can be adjusted
+	await $StopTimer.timeout
+	
+	player.show()
 	
 	# Do not remove. Defined in event_base.gd
 	_event_cleanup()

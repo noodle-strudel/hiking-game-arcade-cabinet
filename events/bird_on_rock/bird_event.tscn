@@ -18,7 +18,7 @@ movement_curve = SubResource("Curve_x7rdp")
 
 [node name="BirdBody" type="CharacterBody3D" parent="." unique_id=26908361]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 0, 0, 0)
 collision_layer = 32
 collision_mask = 12
 floor_constant_speed = true
@@ -37,3 +37,7 @@ collision_mask = 4
 
 [node name="BirdCamera" type="Camera3D" parent="." unique_id=232699698]
 fov = 90.0
+
+[node name="StopTimer" type="Timer" parent="." unique_id=1683762321]
+wait_time = 20.0
+autostart = true
