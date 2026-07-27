@@ -6,14 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1gmsl"]
 size = Vector3(500, 10.182495, 500)
 
-[node name="rock_kicking_heaven_stairs_ground" unique_id=722045352 instance=ExtResource("1_cl6fo")]
+[node name="rock_kicking_heaven_stairs_ground" unique_id=257232089 instance=ExtResource("1_cl6fo")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1260886492]
+[node name="rock_kicking_heaven_stairs_stairs_collision" parent="." index="7" unique_id=1710628151 instance=ExtResource("2_1gmsl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8" unique_id=1260886492]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1789050744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.032019, 0)
 shape = SubResource("BoxShape3D_1gmsl")
-
-[node name="rock_kicking_heaven_stairs_stairs_collision" parent="." index="4" unique_id=296698396 instance=ExtResource("2_1gmsl")]

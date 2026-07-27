@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://btvbo3xw6hjni"]
 
-[ext_resource type="Script" uid="uid://bxekbqhhcn8o4" path="res://level_grids/heaven_stairs/heaven_stairs_grid.gd" id="1_11yik"]
-[ext_resource type="PackedScene" uid="uid://ceiqgn5tw0xv4" path="res://level_grids/heaven_stairs/rock_kicking_heaven_stairs_ground.tscn" id="2_um1ff"]
+[ext_resource type="Script" uid="uid://bxekbqhhcn8o4" path="res://level_grids/purgatory/heaven_stairs_grid.gd" id="1_11yik"]
+[ext_resource type="PackedScene" uid="uid://ceiqgn5tw0xv4" path="res://level_grids/purgatory/rock_kicking_heaven_stairs_ground.tscn" id="2_um1ff"]
 
 [node name="HeavenStairsGrid" type="Node3D" unique_id=1881476687]
 script = ExtResource("1_11yik")
 
-[node name="rock_kicking_heaven_stairs_ground" parent="." unique_id=300283865 instance=ExtResource("2_um1ff")]
+[node name="rock_kicking_heaven_stairs_ground" parent="." unique_id=257232089 instance=ExtResource("2_um1ff")]
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1020032516]
+
+[node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=1250885066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 13, 0)
