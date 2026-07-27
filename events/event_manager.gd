@@ -38,6 +38,7 @@ const during_kick_events := [
 const post_kick_events := [
 	preload("res://events/coin_event/coin_event.tscn"),
 	preload("res://events/grandma_salmon/grandma_salmon.tscn"),
+	preload("res://events/bird_on_rock/bird_event.tscn")
 ]
 # NOTE: MUST BE UPDATED IF NEW EVENT TYPE IS ADDED
 ## Ragged array of all known event lists. 
