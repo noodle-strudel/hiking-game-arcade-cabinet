@@ -76,7 +76,7 @@ func _regular_idle_actions() -> void:
 	camera_pan_state = 0
 	rock_camera.make_current()
 	%UIAnimator.play("idle_float")
-	$PanTimer.start(30)	
+	$PanTimer.start(30)
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
@@ -141,6 +141,9 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			walk_camera.global_position = midpoint + (right * 7.5) + Vector3(0.0, 3.0, 0.0)
 			walk_camera.look_at(midpoint)
 			walk_camera.make_current()
+		GameManager.gamestates.ROCK_PERFECTED:
+			if GameManager.DEBUG:
+				print("MAIN: Kicks remaining at 0! Commence the forever sequence!")
 
 
 # handle camera and state transition when rock goes out of bounds.
@@ -402,6 +405,7 @@ func _ready() -> void:
 		"SCORING",
 		"ROCK_OOB",
 		"MOVE_TO_ROCK",
+		"ROCK_PERFECTED",
 		]
 	)
 
@@ -531,5 +535,7 @@ func _console_set_state(state: String) -> void:
 			GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "Console")
 		"MOVE_TO_ROCK":
 			GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "Console")
+		"ROCK_PERFECTED":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_PERFECTED, "Console")
 		_:
 			Console.print_line("State not recognized")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d0dlxteywr352"]
+
+[ext_resource type="PackedScene" uid="uid://dtd3lr0c8qix2" path="res://level_grids/purgatory/glbs/rock_kicking_heaven_gate.glb" id="1_72ttt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_72ttt"]
+radius = 26.0
+height = 78.71753
+
+[node name="rock_kicking_heaven_gate" unique_id=642460360 instance=ExtResource("1_72ttt")]
+
+[node name="Skeleton3D" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(785664253) index="0" unique_id=656508323]
+bones/1/rotation = Quaternion(0.35550484, 0.61034596, -0.61168, 0.35628897)
+bones/2/rotation = Quaternion(-0.7056782, -0.70558685, -0.046398845, -0.044863712)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=786220535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.358765, 0)
+shape = SubResource("CapsuleShape3D_72ttt")

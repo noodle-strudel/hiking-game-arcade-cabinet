@@ -191,6 +191,9 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(1.5).timeout
 			$OOBCenterContainer.hide()
+		GameManager.gamestates.ROCK_PERFECTED:
+			if GameManager.DEBUG:
+				print("UI: Show text that pops up when kicks_remaning <= 0")
 
 # Scoring sequence function
 func _scoring_sequence() -> void:
