@@ -32,7 +32,8 @@ const on_kick_events := [
 ]
 ## events that occur while the rock is traveling (ex: rock wink event)
 const during_kick_events := [
-	preload("res://events/wink_event/wink_event.tscn")
+	preload("res://events/wink_event/wink_event.tscn"),
+	preload("res://events/ufo/ufo_event.tscn")
 ]
 ## events that occur just after the rock has come to a rest (ex: coin event)
 const post_kick_events := [
