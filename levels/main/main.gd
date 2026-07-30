@@ -62,6 +62,9 @@ var follow_rock = false
 # variable for stopping the player from rotating while rock kicks
 var y_rotation_hold = 0.0
 
+# holds the reference to purgatory level, when instantiated
+var purgatory = null
+
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
 ## Ordered as z, x. [1,1] is the current center of the grid.
@@ -76,10 +79,11 @@ func _regular_idle_actions() -> void:
 	camera_pan_state = 0
 	rock_camera.make_current()
 	%UIAnimator.play("idle_float")
-	$PanTimer.start(30)	
+	$PanTimer.start(30)
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
+	$PanTimer.stop()
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
@@ -209,7 +213,7 @@ func _load_purgatory() -> void:
 	_empty_level_chunks()
 	
 	# instantiate purgatory
-	var purgatory = _purgatory.instantiate()
+	purgatory = _purgatory.instantiate()
 	self.add_child(purgatory)
 	
 	# teleport player and rock
@@ -456,6 +460,7 @@ func _panning_camera() -> void:
 		# sets the pan camera to be current, nothing else to allow slight delay
 		pan_camera.make_current()
 		camera_pan_state = 1
+		$StairsTimer.start(30.0)
 	elif camera_pan_state == 1:
 		
 		# sets the pan camera to properly look at the player
@@ -533,3 +538,23 @@ func _console_set_state(state: String) -> void:
 			GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "Console")
 		_:
 			Console.print_line("State not recognized")
+
+
+func _on_stairs_timer_timeout() -> void:
+	if (
+		GameManager.kicks_remaining <= GameManager.purgatory_kick_count and
+		GameManager.kicks_remaining > GameManager.heaven_kick_count
+	):
+		# double check that purgatory is loaded
+		if not purgatory:
+			print("ERROR: tried to go to purgatory stairs camera but no purgatory was found.")
+			return
+		
+		# kick off animation
+		purgatory.stairs_camera_dolly()
+		await purgatory.stairs_camera_finished
+		
+		# go back to rock camera
+		_regular_idle_actions()
+	else:
+		_regular_idle_actions()
