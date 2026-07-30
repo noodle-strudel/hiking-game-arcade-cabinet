@@ -14,8 +14,9 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
 var _start_time := 0.0
 var game_over_text_scroll := false
-var spinstep := 0
+var spinstep := 1
 var spin_letters := true
+var select_rock := true
 
 # list of rock names, rock name tracker, rock name total
 var rock_names = [
@@ -67,7 +68,7 @@ func _process(delta: float) -> void:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	
 	# Handle the letter spinner
-	if %LetterSpinner.visible and spin_letters:
+	elif spin_letters:
 		match spinstep:
 			1:
 				%Letter1.text = _random_uppercase()
@@ -92,13 +93,13 @@ func _process(delta: float) -> void:
 				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
 				spin_letters = false
-				spinstep = 0
+				spinstep = 1
 				%LetterSpinner.visible = false
 				$RockSelect.visible = true
+				select_rock = true
 			
 			# rock select
-	if $RockSelect.visible:
-		
+	elif select_rock:
 		# left and right make new name
 		if !GameManager.console_open:
 			if Input.is_action_just_pressed("joystick_left"):
@@ -118,18 +119,18 @@ func _process(delta: float) -> void:
 				await get_tree().create_timer(0.1).timeout
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 				"contract signed")
-				spin_letters = true
+				select_rock = false
+	else:
+		# hide the contract after it is signed and go to the letter spinner
+		if (
+			GameManager.state == GameManager.gamestates.CONTRACT and
+			Input.is_action_just_pressed("confirm") and
+			!GameManager.console_open
+		):
+			$ContractMenu/ContractContainer.hide()
+			%LetterSpinner.show()
+			spin_letters = true
 
-# hide the contract after it is signed and go to the letter spinner
-func _input(event: InputEvent) -> void:
-	if (
-		spin_letters and
-		GameManager.state == GameManager.gamestates.CONTRACT and
-		event.is_action_pressed("confirm") and
-		!GameManager.console_open
-	):
-		$ContractMenu/ContractContainer.hide()
-		%LetterSpinner.show()
 
 # used for letter spinner. Returns a random uppercase character.
 func _random_uppercase() -> String:
@@ -148,6 +149,10 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
+			# reset state variables
+			spin_letters = false
+			select_rock = false
+			
 			$IdleMenu.show()
 			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
