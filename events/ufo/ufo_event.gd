@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 func _event_function() -> void:
 	# Define your event code in here.
-	var spawn_position = main._get_spawn()
+	var spawn_position = main.get_spawn()
 	
 	# Waits for rock to be at peak of kick to do the ufo
 	get_tree().paused = false
