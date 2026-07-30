@@ -72,6 +72,11 @@ var _current_chunks = [
 ]	# +z
 	# v
 
+func get_spawn() -> Vector3:
+	var grid: Grid = _current_chunks[1][1]
+	var spawn_position: Vector3 = grid.get_spawn_position()
+	return spawn_position
+
 func _regular_idle_actions() -> void:
 	camera_pan_state = 0
 	rock_camera.make_current()
@@ -331,11 +336,6 @@ func _on_grid_position_changed(shift) -> void:
 	
 	_current_chunks[1][1].add_collision_to_multimeshes()
 
-func _get_spawn() -> Vector3:
-	var grid: Grid = _current_chunks[1][1]
-	var spawn_position: Vector3 = grid.get_spawn_position()
-	return spawn_position
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -355,7 +355,7 @@ func _ready() -> void:
 	_current_chunks[1][1].add_collision_to_multimeshes()
 	
 	# Spawn rock and player at a random location in park. 
-	var spawn_position = _get_spawn()
+	var spawn_position = get_spawn()
 	var random_y = deg_to_rad(randf_range(0.0, 360.0))
 	
 	rock.linear_velocity = Vector3.ZERO

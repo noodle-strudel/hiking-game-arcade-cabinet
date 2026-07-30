@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c02v8i408fi1l"]
+
+[ext_resource type="PackedScene" uid="uid://c16jdq05dhip8" path="res://events/ufo/glb/ufo.glb" id="2_6sgvp"]
+
+[node name="Ufo" unique_id=1198938713 instance=ExtResource("2_6sgvp")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Cube" parent="." index="0" unique_id=515986986]
+visible = false
+
+[node name="Beam" parent="." index="1" unique_id=905748557]
+transform = Transform3D(5.316, 0, 0, 0, 29.2, 0, 0, 0, 5.316, 0.111404926, -0.35095432, -0.22889438)
+"blend_shapes/Key 1" = 0.29861048
