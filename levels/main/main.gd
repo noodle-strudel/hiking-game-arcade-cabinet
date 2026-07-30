@@ -93,6 +93,7 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 				await ascender.ascension_complete
 				_load_purgatory()
 				$UI.show()
+				$UI/KickingMenu/KicksRemainingPurgatory.show()
 				
 				# go back to regular idle state stuff
 				_regular_idle_actions()
