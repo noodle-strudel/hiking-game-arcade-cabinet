@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://dtd3lr0c8qix2" path="res://level_grids/purgatory/glbs/rock_kicking_heaven_gate.glb" id="1_72ttt"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_72ttt"]
-radius = 26.0
-height = 78.71753
+[node name="rock_kicking_heaven_gate" unique_id=1420451879 instance=ExtResource("1_72ttt")]
 
-[node name="rock_kicking_heaven_gate" unique_id=540526612 instance=ExtResource("1_72ttt")]
+[node name="@StaticBody3D@24975" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(413551277) index="1" unique_id=477300364]
+collision_layer = 4
+collision_mask = 3
 
-[node name="Skeleton3D" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(1156039386) index="1" unique_id=431240200]
-bones/1/rotation = Quaternion(0.35316893, 0.6130437, -0.61170053, 0.3539374)
-bones/2/rotation = Quaternion(-0.6822707, -0.68375397, -0.18280977, -0.18321544)
+[node name="Skeleton3D" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(413551277) index="2" unique_id=1518511576]
+bones/1/rotation = Quaternion(0.70633274, 3.037892e-06, 3.0312515e-06, 0.70788)
+bones/2/rotation = Quaternion(-0.49945325, -0.50054616, 0.4994588, 0.50054073)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=786220535]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.358765, 0)
-shape = SubResource("CapsuleShape3D_72ttt")
+[node name="@StaticBody3D@24976" parent="heaven_gates_armature/Skeleton3D" index="1" unique_id=442047787]
+collision_layer = 4
+collision_mask = 3

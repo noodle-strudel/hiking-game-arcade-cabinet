@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://u3nwxpvtet0x"]
 
+[ext_resource type="Script" uid="uid://gr8goho20k63" path="res://levels/purgatory/purgatory.gd" id="1_obhct"]
 [ext_resource type="PackedScene" uid="uid://btvbo3xw6hjni" path="res://level_grids/purgatory/heaven_stairs_grid.tscn" id="1_t8kri"]
 [ext_resource type="PackedScene" uid="uid://bpg2u1ca2tbpy" path="res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn" id="2_t8kri"]
 [ext_resource type="PackedScene" uid="uid://djwghxa35n41r" path="res://level_grids/purgatory/surrounding_grids/purgatory_2_grid.tscn" id="3_v8757"]
@@ -7,6 +8,7 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1g5ov"]
 
 [node name="Purgatory" type="Node3D" unique_id=1706957216]
+script = ExtResource("1_obhct")
 
 [node name="LevelSegments" type="Node3D" parent="." unique_id=1804678474]
 
