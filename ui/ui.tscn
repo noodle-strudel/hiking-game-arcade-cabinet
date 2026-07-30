@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
 [ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
@@ -15,10 +15,10 @@
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/resources/letter_spinner_theme.tres" id="10_diyc5"]
 [ext_resource type="FontFile" uid="uid://xbon27tgb7g1" path="res://fonts/ModernDOS8x16.ttf" id="12_74toj"]
 [ext_resource type="Texture2D" uid="uid://c533y6fwruim4" path="res://ui/kickbar/kickbar_foot_over_hairy.png" id="13_74toj"]
-[ext_resource type="AudioStream" uid="uid://doeenmehn20lr" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
-[ext_resource type="AudioStream" uid="uid://bawwx50inaepg" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
+[ext_resource type="AudioStream" uid="uid://ddlrv46io7eaf" path="res://sound/rock_wow/rock_wow_al.wav" id="15_ju45i"]
+[ext_resource type="AudioStream" uid="uid://b4naxivjwf8hn" path="res://sound/rock_wow/rock_wow_mk.wav" id="16_74toj"]
 [ext_resource type="Texture2D" uid="uid://cj2q4rtpxdr2d" path="res://ui/kickbar/kickbar_foot_under.png" id="16_co7pv"]
-[ext_resource type="AudioStream" uid="uid://dvq0lhhsld7ea" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
+[ext_resource type="AudioStream" uid="uid://cfithcpao02bg" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
@@ -178,6 +178,7 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -195,9 +196,9 @@ texture = ExtResource("3_wl5ax")
 
 [node name="KickRocksTitle" type="TextureRect" parent="IdleMenu" unique_id=1775985413]
 layout_mode = 0
-offset_left = 552.0
+offset_left = 632.0
 offset_top = 88.0
-offset_right = 1384.0
+offset_right = 1328.0
 offset_bottom = 304.0
 texture = ExtResource("4_k48q6")
 expand_mode = 1
@@ -431,7 +432,6 @@ text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -469,6 +469,19 @@ libraries/ = SubResource("AnimationLibrary_x7nxp")
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_mf2ns")
 bus = &"SFX"
+
+[node name="KicksRemainingPurgatory" type="Label" parent="KickingMenu" unique_id=672734483]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -601.0
+offset_top = 878.0
+offset_right = 1173.0
+offset_bottom = 1065.0
+theme_override_fonts/font = ExtResource("6_ay4pc")
+theme_override_font_sizes/font_size = 100
+text = "I can't handle the pressure."
+horizontal_alignment = 2
 
 [node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
 visible = false

@@ -138,9 +138,11 @@ func _random_uppercase() -> String:
 # called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	var kicks_remaining_str := "KICKS REMAINING: "
+	var purgatory_kicks = kick_count - 8000
 	%KicksRemainingLabel.text = (kicks_remaining_bbcode + str(kick_count))
 	%KicksRemainingGameplay.text = (kicks_remaining_str + str(kick_count))
 	%KicksRemainingFancy.text = (str(kick_count))
+	%KicksRemainingPurgatory.text =("UNTIL THE CHANGE: " + str(purgatory_kicks))
 
 
 # enable and disable UI elements. cause is mostly used for OOB causes
