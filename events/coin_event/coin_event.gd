@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 # write all necessary code for the event to happen here
 func _event_function() -> void:
 	chance = randi_range(0, 99)
-	if chance != 99:
+	if chance != 27:
 		%CoinCanvas.visible = true
 		%CoinSprite3D.play("appear")
 		$CoinSFXPlayer.play()
