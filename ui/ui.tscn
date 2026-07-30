@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
-[ext_resource type="Texture2D" uid="uid://bbdgdrfbf8h5m" path="res://ui/kick_rocks_title_beta.png" id="4_c44sx"]
+[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
 [ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
@@ -196,11 +196,11 @@ texture = ExtResource("3_wl5ax")
 
 [node name="KickRocksTitle" type="TextureRect" parent="IdleMenu" unique_id=1775985413]
 layout_mode = 0
-offset_left = 552.0
+offset_left = 632.0
 offset_top = 88.0
-offset_right = 1384.0
+offset_right = 1328.0
 offset_bottom = 304.0
-texture = ExtResource("4_c44sx")
+texture = ExtResource("4_k48q6")
 expand_mode = 1
 stretch_mode = 4
 
