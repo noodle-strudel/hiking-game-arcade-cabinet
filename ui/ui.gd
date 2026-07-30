@@ -15,8 +15,8 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep := 1
-var spin_letters := true
-var select_rock := true
+var spin_letters := false
+var select_rock := false
 
 # list of rock names, rock name tracker, rock name total
 var rock_names = [
