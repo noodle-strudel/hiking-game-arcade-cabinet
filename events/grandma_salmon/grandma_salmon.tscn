@@ -10,15 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://8hfs3plneagy" path="res://events/grandma_salmon/grandma_head/grandma_head5.png" id="7_bt3g1"]
 [ext_resource type="Texture2D" uid="uid://c5mgohwd4utgg" path="res://events/grandma_salmon/grandma_head/grandma_head6.png" id="8_c2g7d"]
 [ext_resource type="AudioStream" uid="uid://w8o5ut4leosk" path="res://sound/grandma_salmon_character_test.wav" id="10_7en0j"]
-[ext_resource type="Texture2D" uid="uid://c5saoq17fx21" path="res://events/grandma_salmon/salmon_tail/salmon_tail0.png" id="11_vw4a5"]
-[ext_resource type="Texture2D" uid="uid://cjn28ygi11abf" path="res://events/grandma_salmon/salmon_tail/salmon_tail1.png" id="12_x5ohi"]
-[ext_resource type="Texture2D" uid="uid://df7cac6chnw3a" path="res://events/grandma_salmon/salmon_tail/salmon_tail2.png" id="13_66up2"]
-[ext_resource type="Texture2D" uid="uid://dfrfvt0qviovh" path="res://events/grandma_salmon/salmon_tail/salmon_tail3.png" id="14_d1nto"]
-[ext_resource type="Texture2D" uid="uid://dsu3y6gua88fs" path="res://events/grandma_salmon/salmon_tail/salmon_tail4.png" id="15_p6v5m"]
-[ext_resource type="Texture2D" uid="uid://dhamututcs7o6" path="res://events/grandma_salmon/salmon_tail/salmon_tail6.png" id="16_4mpdw"]
-[ext_resource type="Texture2D" uid="uid://vf380eq3iik7" path="res://events/grandma_salmon/salmon_tail/salmon_tail5.png" id="17_t6bc6"]
-[ext_resource type="Texture2D" uid="uid://7iv0wfu626bw" path="res://events/grandma_salmon/salmon_tail/salmon_tail7.png" id="18_u7pru"]
-[ext_resource type="Texture2D" uid="uid://btfrlctxwlv1t" path="res://events/grandma_salmon/salmon_tail/salmon_tail8.png" id="19_4cgve"]
+[ext_resource type="Texture2D" uid="uid://0njgjlaqx052" path="res://events/grandma_salmon/salmon_tail/salmon_tail0.png" id="11_vw4a5"]
+[ext_resource type="Texture2D" uid="uid://dx3humufnqi4n" path="res://events/grandma_salmon/salmon_tail/salmon_tail1.png" id="12_x5ohi"]
+[ext_resource type="Texture2D" uid="uid://c2ht21tx74sd" path="res://events/grandma_salmon/salmon_tail/salmon_tail2.png" id="13_66up2"]
+[ext_resource type="Texture2D" uid="uid://dcs1xgr6oyh68" path="res://events/grandma_salmon/salmon_tail/salmon_tail3.png" id="14_d1nto"]
+[ext_resource type="Texture2D" uid="uid://bqep1vfsu18td" path="res://events/grandma_salmon/salmon_tail/salmon_tail4.png" id="15_p6v5m"]
+[ext_resource type="Texture2D" uid="uid://y8rk1ia5cqn1" path="res://events/grandma_salmon/salmon_tail/salmon_tail6.png" id="16_4mpdw"]
+[ext_resource type="Texture2D" uid="uid://ch3cckwx6uyq0" path="res://events/grandma_salmon/salmon_tail/salmon_tail5.png" id="17_t6bc6"]
+[ext_resource type="Texture2D" uid="uid://fxwxadj5it00" path="res://events/grandma_salmon/salmon_tail/salmon_tail7.png" id="18_u7pru"]
+[ext_resource type="Texture2D" uid="uid://bfv1o370pcmjb" path="res://events/grandma_salmon/salmon_tail/salmon_tail8.png" id="19_4cgve"]
 
 [sub_resource type="Animation" id="Animation_7en0j"]
 length = 0.001
@@ -117,20 +117,41 @@ animations = [{
 "texture": ExtResource("15_p6v5m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_4mpdw")
+"texture": ExtResource("14_d1nto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_66up2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x5ohi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vw4a5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_t6bc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4mpdw")
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_u7pru")
 }, {
 "duration": 1.0,
 "texture": ExtResource("19_4cgve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u7pru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4mpdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t6bc6")
 }],
 "loop": true,
 "name": &"default",
-"speed": 60.0
+"speed": 20.0
 }]
 
 [node name="GrandmaSalmon" type="Node" unique_id=1661899621]
@@ -151,20 +172,20 @@ autoplay = &"default"
 [node name="GrandmaSalmonSprite" type="Node2D" parent="GSCanvas" unique_id=1709411706]
 
 [node name="SalmonBody" type="Sprite2D" parent="GSCanvas/GrandmaSalmonSprite" unique_id=1402377849]
-position = Vector2(960, 579)
+position = Vector2(960, 575)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_rusq1")
 
 [node name="GrandmaHead" type="AnimatedSprite2D" parent="GSCanvas/GrandmaSalmonSprite" unique_id=1210538197]
 unique_name_in_owner = true
-position = Vector2(960, 154)
+position = Vector2(960, 150)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_oteel")
 autoplay = "default"
 
 [node name="SalmonTail" type="AnimatedSprite2D" parent="GSCanvas/GrandmaSalmonSprite" unique_id=1767435809]
 unique_name_in_owner = true
-position = Vector2(960.00006, 991.00006)
+position = Vector2(960, 1008)
 scale = Vector2(0.95, 0.95)
 sprite_frames = SubResource("SpriteFrames_jnirr")
 autoplay = "default"
