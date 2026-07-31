@@ -4,7 +4,7 @@
 [ext_resource type="Environment" uid="uid://bus2m8qdrkt37" path="res://levels/heaven_environment.tres" id="2_2o6nn"]
 [ext_resource type="MultiMesh" uid="uid://fp3dw7gcdide" path="res://level_grids/heaven/trees/heaven_trees_multimesh.tres" id="2_4jrem"]
 [ext_resource type="PackedScene" uid="uid://b3yffegp20fju" path="res://level_grids/heaven/rock_kicking_heaven_ground.tscn" id="2_i2yr5"]
-[ext_resource type="PackedScene" uid="uid://b88oj3uqidd27" path="res://level_grids/heaven/glbs/rock_kicking_heaven_tree.glb" id="3_3t3dr"]
+[ext_resource type="PackedScene" uid="uid://cmx7h1tr170y0" path="res://level_grids/heaven/glbs/rock_kicking_heaven_tree.glb" id="3_3t3dr"]
 [ext_resource type="PackedScene" uid="uid://vodwlpnm4yi" path="res://level_grids/heaven/trees/heaven_tree_collision_body.tscn" id="3_ay441"]
 
 [node name="HeavenGrid" type="Node3D" unique_id=1660421812 node_paths=PackedStringArray("object_collisions_node")]

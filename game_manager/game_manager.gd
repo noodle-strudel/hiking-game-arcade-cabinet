@@ -38,6 +38,8 @@ enum gamestates {
 	ROCK_OOB,
 	## Used when the player is moving to the rock.
 	MOVE_TO_ROCK,
+	## Kicks remaining is 0 and the rock is a perfect sphere.
+	ROCK_PERFECTED,
 }
 
 
