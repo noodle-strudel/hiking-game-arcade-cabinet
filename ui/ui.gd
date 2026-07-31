@@ -167,7 +167,6 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
 			%KickbarAnimator.pause()
-			$RockKickedMenu.show()
 			$KickingMenu.show()
 			ui_camera.apply_shake(0.1)
 			if %Kickbar.value >= 97.0:
@@ -178,13 +177,14 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				# add juice
 				get_tree().paused = true
 				ui_camera.apply_shake(2)
-				%CriticalHitPlayer.play()
-				await get_tree().create_timer(0.3).timeout
+				$"../Rock".play_kick(true) # critical kick sound
 				get_tree().paused = false
 				
 				# wow sound effect
 				await get_tree().create_timer(0.5).timeout
 				$KickingMenu/WowPlayer.play()
+			else:
+				$"../Rock".play_kick(false) # normal kick sound
 			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()

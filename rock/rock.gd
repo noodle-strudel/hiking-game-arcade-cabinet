@@ -70,6 +70,16 @@ func wink_at_camera(camera: Camera3D) -> void:
 	await rock_eyes_wink()
 	$RockEyes.rotation = Vector3.ZERO
 
+"""Rock's Sound Function"""
+
+func play_kick(critical: bool) -> void:
+	if critical:
+		$CriticalHitPlayer.play()
+		print("Critical kick sound")
+	else:
+		$KickSoundPlayer.play()
+		print("Normal kick sound")
+
 """Rock's Functions"""
 
 func get_trajectory() -> Vector3:
@@ -141,7 +151,6 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 	match new_state:
 		GameManager.gamestates.ROCK_KICKED:
 			%RockKickTrail.show()
-			$KickSoundPlayer.play()
 			$KickTimer.start()
 			progress = _get_progress()
 			progress = clamp(progress, 0.0, 1.0)
