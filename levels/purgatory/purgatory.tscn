@@ -1,37 +1,99 @@
 [gd_scene format=3 uid="uid://u3nwxpvtet0x"]
 
+[ext_resource type="Script" uid="uid://gr8goho20k63" path="res://levels/purgatory/purgatory.gd" id="1_obhct"]
 [ext_resource type="PackedScene" uid="uid://btvbo3xw6hjni" path="res://level_grids/purgatory/heaven_stairs_grid.tscn" id="1_t8kri"]
+[ext_resource type="PackedScene" uid="uid://bpg2u1ca2tbpy" path="res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn" id="2_t8kri"]
+[ext_resource type="PackedScene" uid="uid://djwghxa35n41r" path="res://level_grids/purgatory/surrounding_grids/purgatory_2_grid.tscn" id="3_v8757"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1g5ov"]
 
+[sub_resource type="Curve3D" id="Curve3D_t8kri"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -85, 20, 0, 0, 0, 0, 0, 0, 0, 2500, 750, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_v8757"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPath/CameraPathFollower:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_obhct"]
+resource_name = "ascend_stairs"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPath/CameraPathFollower:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.3]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraPath/CameraPathFollower/StairsCamera")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cheet"]
+_data = {
+&"RESET": SubResource("Animation_v8757"),
+&"ascend_stairs": SubResource("Animation_obhct")
+}
+
 [node name="Purgatory" type="Node3D" unique_id=1706957216]
+script = ExtResource("1_obhct")
 
 [node name="LevelSegments" type="Node3D" parent="." unique_id=1804678474]
 
-[node name="HeavenStairsGrid1" parent="LevelSegments" unique_id=1881476687 instance=ExtResource("1_t8kri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, -500)
+[node name="HeavenStairsGrid" parent="LevelSegments" unique_id=234700890 instance=ExtResource("1_t8kri")]
 
-[node name="HeavenStairsGrid2" parent="LevelSegments" unique_id=414120325 instance=ExtResource("1_t8kri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
-
-[node name="HeavenStairsGrid3" parent="LevelSegments" unique_id=1382706909 instance=ExtResource("1_t8kri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, -500)
-
-[node name="HeavenStairsGrid4" parent="LevelSegments" unique_id=1643542262 instance=ExtResource("1_t8kri")]
+[node name="Purgatory1Grid" parent="LevelSegments" unique_id=1903450354 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, 0)
 
-[node name="HeavenStairsGrid5" parent="LevelSegments" unique_id=234700890 instance=ExtResource("1_t8kri")]
+[node name="Purgatory1Grid2" parent="LevelSegments" unique_id=619843542 instance=ExtResource("2_t8kri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
 
-[node name="HeavenStairsGrid6" parent="LevelSegments" unique_id=1883455554 instance=ExtResource("1_t8kri")]
+[node name="Purgatory1Grid3" parent="LevelSegments" unique_id=148861430 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 0)
 
-[node name="HeavenStairsGrid7" parent="LevelSegments" unique_id=1989805749 instance=ExtResource("1_t8kri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, 500)
-
-[node name="HeavenStairsGrid8" parent="LevelSegments" unique_id=1599576852 instance=ExtResource("1_t8kri")]
+[node name="Purgatory1Grid4" parent="LevelSegments" unique_id=1450469670 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
 
-[node name="HeavenStairsGrid9" parent="LevelSegments" unique_id=1091412292 instance=ExtResource("1_t8kri")]
+[node name="Purgatory2Grid" parent="LevelSegments" unique_id=1844927662 instance=ExtResource("3_v8757")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, -500)
+
+[node name="Purgatory2Grid2" parent="LevelSegments" unique_id=1119662220 instance=ExtResource("3_v8757")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, -500)
+
+[node name="Purgatory2Grid3" parent="LevelSegments" unique_id=1734457104 instance=ExtResource("3_v8757")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, 500)
+
+[node name="Purgatory2Grid4" parent="LevelSegments" unique_id=880115643 instance=ExtResource("3_v8757")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 500)
 
 [node name="WorldBounds" type="StaticBody3D" parent="." unique_id=138385476]
@@ -59,3 +121,17 @@ shape = SubResource("WorldBoundaryShape3D_1g5ov")
 
 [node name="Spawnpoint" type="Marker3D" parent="." unique_id=241125567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.406, 1, 0)
+
+[node name="CameraPath" type="Path3D" parent="." unique_id=523004438]
+curve = SubResource("Curve3D_t8kri")
+
+[node name="CameraPathFollower" type="PathFollow3D" parent="CameraPath" unique_id=1883458077]
+transform = Transform3D(-3.9503323e-08, -0.27176964, -0.96236235, -1.490116e-08, 0.96236235, -0.27176964, 1, 3.6045114e-09, -4.2066194e-08, -85, 20, 0)
+loop = false
+
+[node name="StairsCamera" type="Camera3D" parent="CameraPath/CameraPathFollower" unique_id=403906145]
+unique_name_in_owner = true
+
+[node name="StairsCameraAnimator" type="AnimationPlayer" parent="." unique_id=263792133]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_cheet")

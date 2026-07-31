@@ -62,6 +62,9 @@ var follow_rock = false
 # variable for stopping the player from rotating while rock kicks
 var y_rotation_hold = 0.0
 
+# holds the reference to purgatory level, when instantiated
+var purgatory = null
+
 ## The 2d array of currently loaded chunks, centered on the rock.
 ## Stores references to instantiated chunks. 
 ## Ordered as z, x. [1,1] is the current center of the grid.
@@ -72,14 +75,20 @@ var _current_chunks = [
 ]	# +z
 	# v
 
+func get_spawn() -> Vector3:
+	var grid: Grid = _current_chunks[1][1]
+	var spawn_position: Vector3 = grid.get_spawn_position()
+	return spawn_position
+
 func _regular_idle_actions() -> void:
 	camera_pan_state = 0
 	rock_camera.make_current()
 	%UIAnimator.play("idle_float")
-	$PanTimer.start(30)	
+	$PanTimer.start(30)
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
 func _event_handler(state: GameManager.gamestates, cause: String) -> void:
+	$PanTimer.stop()
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
@@ -93,6 +102,7 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 				await ascender.ascension_complete
 				_load_purgatory()
 				$UI.show()
+				$UI/KickingMenu/KicksRemainingPurgatory.show()
 				
 				# go back to regular idle state stuff
 				_regular_idle_actions()
@@ -141,6 +151,9 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			walk_camera.global_position = midpoint + (right * 7.5) + Vector3(0.0, 3.0, 0.0)
 			walk_camera.look_at(midpoint)
 			walk_camera.make_current()
+		GameManager.gamestates.ROCK_PERFECTED:
+			if GameManager.DEBUG:
+				print("MAIN: Kicks remaining at 0! Commence the forever sequence!")
 
 
 # handle camera and state transition when rock goes out of bounds.
@@ -209,7 +222,7 @@ func _load_purgatory() -> void:
 	_empty_level_chunks()
 	
 	# instantiate purgatory
-	var purgatory = _purgatory.instantiate()
+	purgatory = _purgatory.instantiate()
 	self.add_child(purgatory)
 	
 	# teleport player and rock
@@ -330,11 +343,6 @@ func _on_grid_position_changed(shift) -> void:
 	
 	_current_chunks[1][1].add_collision_to_multimeshes()
 
-func _get_spawn() -> Vector3:
-	var grid: Grid = _current_chunks[1][1]
-	var spawn_position: Vector3 = grid.get_spawn_position()
-	return spawn_position
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -354,7 +362,7 @@ func _ready() -> void:
 	_current_chunks[1][1].add_collision_to_multimeshes()
 	
 	# Spawn rock and player at a random location in park. 
-	var spawn_position = _get_spawn()
+	var spawn_position = get_spawn()
 	var random_y = deg_to_rad(randf_range(0.0, 360.0))
 	
 	rock.linear_velocity = Vector3.ZERO
@@ -402,6 +410,7 @@ func _ready() -> void:
 		"SCORING",
 		"ROCK_OOB",
 		"MOVE_TO_ROCK",
+		"ROCK_PERFECTED",
 		]
 	)
 
@@ -456,6 +465,7 @@ func _panning_camera() -> void:
 		# sets the pan camera to be current, nothing else to allow slight delay
 		pan_camera.make_current()
 		camera_pan_state = 1
+		$StairsTimer.start(30.0)
 	elif camera_pan_state == 1:
 		
 		# sets the pan camera to properly look at the player
@@ -531,5 +541,27 @@ func _console_set_state(state: String) -> void:
 			GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "Console")
 		"MOVE_TO_ROCK":
 			GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "Console")
+		"ROCK_PERFECTED":
+			GameManager.switch_state_to(GameManager.gamestates.ROCK_PERFECTED, "Console")
 		_:
 			Console.print_line("State not recognized")
+
+
+func _on_stairs_timer_timeout() -> void:
+	if (
+		GameManager.kicks_remaining <= GameManager.purgatory_kick_count and
+		GameManager.kicks_remaining > GameManager.heaven_kick_count
+	):
+		# double check that purgatory is loaded
+		if not purgatory:
+			print("ERROR: tried to go to purgatory stairs camera but no purgatory was found.")
+			return
+		
+		# kick off animation
+		purgatory.stairs_camera_dolly()
+		await purgatory.stairs_camera_finished
+		
+		# go back to rock camera
+		_regular_idle_actions()
+	else:
+		_regular_idle_actions()

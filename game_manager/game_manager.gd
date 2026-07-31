@@ -17,6 +17,7 @@ var DEBUG := OS.is_debug_build()
 var console_open := false
 # Number of kicks, at or below which the player will play in purgatory.
 const purgatory_kick_count = 10000
+const heaven_kick_count = 8000
 
 ## States of the game.
 ## Can be IDLE, CONTRACT, KICKING, ROCK_KICKED, POSTKICK_EVENT, SCORING, or ROCK_OOB
@@ -37,6 +38,8 @@ enum gamestates {
 	ROCK_OOB,
 	## Used when the player is moving to the rock.
 	MOVE_TO_ROCK,
+	## Kicks remaining is 0 and the rock is a perfect sphere.
+	ROCK_PERFECTED,
 }
 
 

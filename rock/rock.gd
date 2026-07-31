@@ -152,6 +152,9 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 			_update_rock()
 		GameManager.gamestates.IDLE:
 			camera_orbiting = true
+		GameManager.gamestates.ROCK_PERFECTED:
+			if GameManager.DEBUG:
+				print("ROCK: I shall transform into an angel rock!")
 		_:
 			%RockKickTrail.hide()
 
