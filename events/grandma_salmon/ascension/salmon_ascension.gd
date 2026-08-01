@@ -7,7 +7,7 @@ signal ascension_complete
 var look_target = null
 var rock = null
 
-func ascension_sequence() -> void:
+func ascension_sequence(go_heaven: bool) -> void:
 	# create camera/make current
 	$AscensionCamera.make_current()
 	
@@ -22,6 +22,14 @@ func ascension_sequence() -> void:
 	# get salmon helper to pick up rock
 	var rock_pos_ref = rock.global_position
 	salmon_helper.snatch_object(rock.get_path())  
+	
+	if go_heaven:
+		# take rock to bottom of stairs and wait before going up
+		var bottom_of_stairs = $"../Purgatory/BottomOfStairs".global_position
+		salmon_helper.move_obj(rock_pos_ref, bottom_of_stairs)
+		await salmon_helper.on_movement_finished
+		rock_pos_ref = rock.global_position
+		await get_tree().create_timer(10.0).timeout
 	
 	# make helper go up while camera looks
 	salmon_helper.move_obj(rock_pos_ref, rock_pos_ref + Vector3(0.0, 100.0, 0.0))
@@ -58,7 +66,10 @@ func _ready() -> void:
 	#_hide_sprite()
 	
 	# run sequence
-	ascension_sequence()
+	if GameManager.kicks_remaining == GameManager.heaven_kick_count:
+		ascension_sequence(true)
+	else:
+		ascension_sequence(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -92,20 +92,34 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 	%UIAnimator.play("RESET")
 	match state:
 		GameManager.gamestates.IDLE:
-			if GameManager.kicks_remaining != GameManager.purgatory_kick_count:
-				_regular_idle_actions()
+			if cause == "player got to rock":
+				# if the player walked to the rock sent the game to idle play
+				# play the correct salmon stuff. This fixes the issue of the game
+				# doing these animations on bootup at 8000 and 10000 kicks
+				if GameManager.kicks_remaining == GameManager.heaven_kick_count:
+					# salmon to heaven sequence
+					$UI.hide()
+					await get_tree().create_timer(5.0).timeout
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					$UI.show()
+					_regular_idle_actions()
+				elif GameManager.kicks_remaining == GameManager.purgatory_kick_count:
+					# do salmon purgatory sequence
+					$UI.hide()
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					_load_purgatory()
+					$UI.show()
+					$UI/KickingMenu/KicksRemainingPurgatory.show()
+					
+					# go back to regular idle state stuff
+					_regular_idle_actions()
 			else:
-				# do salmon purgatory sequence
-				$UI.hide()
-				var ascender = salmon_ascender.instantiate()
-				self.add_child(ascender)
-				await ascender.ascension_complete
-				_load_purgatory()
-				$UI.show()
-				$UI/KickingMenu/KicksRemainingPurgatory.show()
-				
-				# go back to regular idle state stuff
 				_regular_idle_actions()
+
 		GameManager.gamestates.CONTRACT:
 			
 			# Pan timer stops so that the panning camera doesn't keep moving

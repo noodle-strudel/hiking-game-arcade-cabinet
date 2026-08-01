@@ -28,6 +28,7 @@ var _to: Vector3
 
 # wrapper function of sorts to enable salmon grandma movement
 func move_obj(from: Vector3, to: Vector3) -> void:
+	_t = 0.0
 	_from = from
 	_to = to
 	_moving = true
