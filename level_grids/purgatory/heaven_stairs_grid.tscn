@@ -38,3 +38,5 @@ texture = SubResource("ViewportTexture_bexch")
 
 [node name="rock_kicking_heaven_gate" parent="." unique_id=1420451879 instance=ExtResource("4_rt1nr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
+
+[editable path="rock_kicking_heaven_gate"]

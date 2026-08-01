@@ -14,6 +14,10 @@ sky_material = SubResource("ProceduralSkyMaterial_3t3dr")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_2o6nn")
+reflected_light_source = 2
 fog_enabled = true
-fog_light_color = Color(0.8432896, 0.8405044, 0.66704834, 1)
-fog_sky_affect = 0.2
+fog_light_color = Color(0.84313726, 0.8392157, 0.6666667, 1)
+fog_density = 0.005
+fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_saturation = 0.9

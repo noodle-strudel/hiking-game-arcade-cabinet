@@ -1,7 +1,7 @@
 extends Grid
 class_name HeavenStairsGrid
 
-@onready var gate_collision := $"rock_kicking_heaven_gate/heaven_gates_armature/Skeleton3D/@StaticBody3D@24976"
+@onready var gate_collision := $rock_kicking_heaven_gate/rock_kicking_heaven_gate_collision
 @onready var gate_anim := $rock_kicking_heaven_gate/AnimationPlayer
 
 var purgatory_kicks = GameManager.kicks_remaining - 8000
