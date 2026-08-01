@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxekbqhhcn8o4" path="res://level_grids/purgatory/heaven_stairs_grid.gd" id="1_11yik"]
 [ext_resource type="PackedScene" uid="uid://ceiqgn5tw0xv4" path="res://level_grids/purgatory/rock_kicking_heaven_stairs_ground.tscn" id="2_um1ff"]
-[ext_resource type="PackedScene" uid="uid://d0dlxteywr352" path="res://level_grids/purgatory/rock_kicking_heaven_gate.tscn" id="3_kqlbp"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="3_kqlbp"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="3_kqlbp"]
+[ext_resource type="PackedScene" uid="uid://d0dlxteywr352" path="res://level_grids/purgatory/rock_kicking_heaven_gate.tscn" id="4_rt1nr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_bexch"]
 viewport_path = NodePath("SignHelper/SubViewport")
@@ -17,9 +17,6 @@ script = ExtResource("1_11yik")
 
 [node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=1250885066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 13, 0)
-
-[node name="rock_kicking_heaven_gate" parent="." unique_id=1420451879 instance=ExtResource("3_kqlbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 
 [node name="SignHelper" type="Node3D" parent="." unique_id=1030991141]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -92.214, 4.7, 58.201)
@@ -39,4 +36,5 @@ text = "Mostlys"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.704025)
 texture = SubResource("ViewportTexture_bexch")
 
-[editable path="rock_kicking_heaven_gate"]
+[node name="rock_kicking_heaven_gate" parent="." unique_id=1420451879 instance=ExtResource("4_rt1nr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)

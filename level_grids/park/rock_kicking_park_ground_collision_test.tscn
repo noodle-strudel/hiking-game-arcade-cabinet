@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c16qek8r8qyiv"]
+
+[ext_resource type="PackedScene" uid="uid://gdd3wnxvjy8a" path="res://level_grids/park/glb/rock_kicking_park_ground_collision_test.glb" id="1_xeata"]
+
+[node name="rock_kicking_park_ground_collision_test" unique_id=1847298478 instance=ExtResource("1_xeata")]
+
+[node name="GroundIntactCollision" parent="." index="0" unique_id=1980474613]
+collision_layer = 4
+collision_mask = 3
