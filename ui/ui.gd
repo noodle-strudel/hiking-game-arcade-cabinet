@@ -14,9 +14,8 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
 var _start_time := 0.0
 var game_over_text_scroll := false
-var spinstep := 1
-var spin_letters := false
-var select_rock := false
+var spinstep := 0
+var spin_letters := true
 
 # list of rock names, rock name tracker, rock name total
 var rock_names = [
@@ -68,7 +67,7 @@ func _process(delta: float) -> void:
 		%GameOverText.position.y -= delta * game_over_text_scroll_speed
 	
 	# Handle the letter spinner
-	elif spin_letters:
+	if %LetterSpinner.visible and spin_letters:
 		match spinstep:
 			1:
 				%Letter1.text = _random_uppercase()
@@ -93,13 +92,13 @@ func _process(delta: float) -> void:
 				# wait 2 seconds before continuing to rock select
 				await get_tree().create_timer(2).timeout
 				spin_letters = false
-				spinstep = 1
+				spinstep = 0
 				%LetterSpinner.visible = false
 				$RockSelect.visible = true
-				select_rock = true
 			
 			# rock select
-	elif select_rock:
+	if $RockSelect.visible:
+		
 		# left and right make new name
 		if !GameManager.console_open:
 			if Input.is_action_just_pressed("joystick_left"):
@@ -119,18 +118,18 @@ func _process(delta: float) -> void:
 				await get_tree().create_timer(0.1).timeout
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 				"contract signed")
-				select_rock = false
-	else:
-		# hide the contract after it is signed and go to the letter spinner
-		if (
-			GameManager.state == GameManager.gamestates.CONTRACT and
-			Input.is_action_just_pressed("confirm") and
-			!GameManager.console_open
-		):
-			$ContractMenu/ContractContainer.hide()
-			%LetterSpinner.show()
-			spin_letters = true
+				spin_letters = true
 
+# hide the contract after it is signed and go to the letter spinner
+func _input(event: InputEvent) -> void:
+	if (
+		spin_letters and
+		GameManager.state == GameManager.gamestates.CONTRACT and
+		event.is_action_pressed("confirm") and
+		!GameManager.console_open
+	):
+		$ContractMenu/ContractContainer.hide()
+		%LetterSpinner.show()
 
 # used for letter spinner. Returns a random uppercase character.
 func _random_uppercase() -> String:
@@ -138,12 +137,12 @@ func _random_uppercase() -> String:
 
 # called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
-	var kicks_remaining_str := "KICKS REMAINING: "
+	var kicks_remaining_str = "KICKS REMAINING: "
 	var purgatory_kicks = kick_count - 8000
-	%KicksRemainingLabel.text = (kicks_remaining_bbcode + str(kick_count))
-	%KicksRemainingGameplay.text = (kicks_remaining_str + str(kick_count))
-	%KicksRemainingFancy.text = (str(kick_count))
-	%KicksRemainingPurgatory.text =("UNTIL THE CHANGE: " + str(purgatory_kicks))
+	%KicksRemainingLabel.text = kicks_remaining_bbcode + str(kick_count)
+	%KicksRemainingGameplay.text = kicks_remaining_str + str(kick_count)
+	%KicksRemainingFancy.text = str(kick_count)
+	%KicksRemainingPurgatory.text = "UNTIL THE CHANGE: " + str(purgatory_kicks)
 
 
 # enable and disable UI elements. cause is mostly used for OOB causes
@@ -151,10 +150,6 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
-			# reset state variables
-			spin_letters = false
-			select_rock = false
-			
 			$IdleMenu.show()
 			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
@@ -198,9 +193,6 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(1.5).timeout
 			$OOBCenterContainer.hide()
-		GameManager.gamestates.ROCK_PERFECTED:
-			if GameManager.DEBUG:
-				print("UI: Show text that pops up when kicks_remaning <= 0")
 
 # Scoring sequence function
 func _scoring_sequence() -> void:

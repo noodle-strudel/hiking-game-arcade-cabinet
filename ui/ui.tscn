@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bsbtpp84pdo2k"]
 
 [ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui/ui.gd" id="1_nb4k0"]
-[ext_resource type="Texture2D" uid="uid://bsbkr7210x8ro" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
-[ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://cavvtwru615jf" path="res://ui/branding/Lodomo Logo No BG.png" id="2_ks8t7"]
+[ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
 [ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
@@ -33,8 +33,6 @@
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
 metadata/_custom_type_script = "uid://cmn35te5b4bu2"
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_bi8hs"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -71,6 +69,8 @@ _data = {
 &"RESET": SubResource("Animation_bi8hs"),
 &"swing_subtitle": SubResource("Animation_hrmpd")
 }
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bi8hs"]
 
 [sub_resource type="Animation" id="Animation_rkf1o"]
 length = 0.001
@@ -194,21 +194,11 @@ position = Vector2(1809.4144, 951.0002)
 scale = Vector2(0.1171875, 0.1171875)
 texture = ExtResource("3_wl5ax")
 
-[node name="KickRocksTitle" type="TextureRect" parent="IdleMenu" unique_id=1775985413]
-layout_mode = 0
-offset_left = 632.0
-offset_top = 88.0
-offset_right = 1328.0
-offset_bottom = 304.0
-texture = ExtResource("4_k48q6")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
-offset_left = 1726.4144
+offset_left = 1718.4144
 offset_top = 784.0
-offset_right = 1904.4144
+offset_right = 1896.4144
 offset_bottom = 889.0
 theme = ExtResource("4_vkava")
 theme_override_fonts/font = ExtResource("5_bi8hs")
@@ -229,20 +219,6 @@ text = "Cabinet artwork
 Made by
 Mike Bennett "
 
-[node name="KevinMacleodCredits" type="Label" parent="IdleMenu" unique_id=1387012563]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 400.0
-offset_bottom = 153.0
-theme = ExtResource("4_vkava")
-theme_override_fonts/font = ExtResource("5_bi8hs")
-theme_override_font_sizes/font_size = 12
-text = "\"Crossing the Divide\" Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/"
-autowrap_mode = 2
-
 [node name="KicksRemainingLabel" type="RichTextLabel" parent="IdleMenu" unique_id=1492290210]
 unique_name_in_owner = true
 layout_mode = 0
@@ -257,7 +233,10 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[ghost fade=0.7 span=-10][outline_size=10] KICKS REMAINING: "
 scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
 horizontal_alignment = 1
+justification_flags = 0
 custom_effects = [SubResource("RichTextEffect_x7jpl")]
 
 [node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
@@ -272,21 +251,6 @@ theme_override_font_sizes/font_size = 120
 text = "[INSERT TITLE]"
 horizontal_alignment = 1
 
-[node name="PressAnyButton" type="RichTextLabel" parent="IdleMenu" unique_id=1645504431]
-layout_mode = 0
-offset_left = 552.0
-offset_top = 320.0
-offset_right = 1368.0
-offset_bottom = 400.0
-theme_override_fonts/normal_font = ExtResource("5_bo1jx")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave][outline_size=10]PRESS ANY BUTTON"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-custom_effects = [SubResource("RichTextEffect_bi8hs")]
-
 [node name="TitleBG" type="ColorRect" parent="IdleMenu" unique_id=2010918473]
 visible = false
 z_index = -1
@@ -298,7 +262,7 @@ offset_bottom = 480.0
 color = Color(0, 0, 0, 0.1882353)
 
 [node name="SubtitlePivot" type="Node2D" parent="IdleMenu" unique_id=1440264362]
-position = Vector2(1496, 512)
+position = Vector2(1512, 536)
 
 [node name="Subtitle" type="Label" parent="IdleMenu/SubtitlePivot" unique_id=556071282]
 offset_left = -128.0
@@ -308,11 +272,37 @@ offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
+text = "Subtitle!"
 horizontal_alignment = 1
 
 [node name="IdleAnimationPlayer" type="AnimationPlayer" parent="IdleMenu" unique_id=1144452728]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_x7jpl")
+
+[node name="TitleContainer" type="VBoxContainer" parent="IdleMenu" unique_id=219538779]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 1600.0
+offset_bottom = 680.0
+alignment = 1
+
+[node name="KickRocksTitle" type="TextureRect" parent="IdleMenu/TitleContainer" unique_id=1775985413]
+layout_mode = 2
+texture = ExtResource("4_k48q6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="PressAnyButton" type="RichTextLabel" parent="IdleMenu/TitleContainer" unique_id=1645504431]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave][outline_size=10]PRESS ANY BUTTON"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+custom_effects = [SubResource("RichTextEffect_bi8hs")]
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
 visible = false
@@ -432,19 +422,27 @@ text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="KicksRemainingGameplay" type="Label" parent="KickingMenu" unique_id=1256247876]
-unique_name_in_owner = true
+[node name="KicksRemainingContainer" type="CenterContainer" parent="KickingMenu" unique_id=1147461668]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 1920.0
+offset_bottom = 224.0
+
+[node name="KicksRemainingGameplay" type="Label" parent="KickingMenu/KicksRemainingContainer" unique_id=1256247876]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 140
 text = "Plabolnbar!"
+horizontal_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
 
 [node name="Kickbar" type="TextureProgressBar" parent="KickingMenu" unique_id=487345547]
 unique_name_in_owner = true
@@ -470,18 +468,19 @@ process_mode = 3
 stream = SubResource("AudioStreamRandomizer_mf2ns")
 bus = &"SFX"
 
-[node name="KicksRemainingPurgatory" type="Label" parent="KickingMenu" unique_id=672734483]
-unique_name_in_owner = true
-visible = false
+[node name="PurgKicksRemainingContainer" type="CenterContainer" parent="KickingMenu" unique_id=471830323]
 layout_mode = 0
-offset_left = -601.0
-offset_top = 878.0
-offset_right = 1173.0
-offset_bottom = 1065.0
+offset_top = 893.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="KicksRemainingPurgatory" type="Label" parent="KickingMenu/PurgKicksRemainingContainer" unique_id=672734483]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 100
 text = "I can't handle the pressure."
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
 visible = false
@@ -497,7 +496,6 @@ pitch_scale = 0.86
 bus = &"SFX"
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
