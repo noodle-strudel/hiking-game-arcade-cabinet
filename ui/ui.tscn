@@ -210,46 +210,51 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="LodomoLogoNoBg" type="Sprite2D" parent="IdleMenu" unique_id=1974129174]
-position = Vector2(1809.4144, 1044)
-scale = Vector2(0.026353605, 0.026353603)
+position = Vector2(1790.8676, 1031.8124)
+scale = Vector2(0.03174035, 0.03174035)
 texture = ExtResource("2_ks8t7")
 
 [node name="RCKLogo" type="Sprite2D" parent="IdleMenu" unique_id=929290594]
-position = Vector2(1809.4144, 951.0002)
-scale = Vector2(0.1171875, 0.1171875)
+position = Vector2(1794.9999, 907.99994)
+scale = Vector2(0.16934998, 0.16934998)
 texture = ExtResource("3_wl5ax")
 
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
-offset_left = 1718.4144
-offset_top = 784.0
-offset_right = 1896.4144
-offset_bottom = 889.0
+offset_left = 1672.0
+offset_top = 672.0
+offset_right = 1904.0
+offset_bottom = 810.0
 theme = ExtResource("4_vkava")
+theme_override_colors/font_outline_color = Color(0.13725491, 0.12941177, 0.23921569, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "PSU
 CS Capstone
 Spring/Summer '26"
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="CabinetArtCredits" type="Label" parent="IdleMenu" unique_id=1621690979]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 968.0
-offset_right = 170.0
-offset_bottom = 1073.0
+offset_top = 920.0
+offset_right = 240.0
+offset_bottom = 1064.0
 theme = ExtResource("4_vkava")
+theme_override_colors/font_outline_color = Color(0.13725491, 0.12941177, 0.23921569, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "Cabinet artwork
 Made by
 Mike Bennett "
+vertical_alignment = 2
 
 [node name="KicksRemainingLabel" type="RichTextLabel" parent="IdleMenu" unique_id=1492290210]
 unique_name_in_owner = true
@@ -528,6 +533,7 @@ pitch_scale = 0.86
 bus = &"SFX"
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
