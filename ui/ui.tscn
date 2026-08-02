@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
-[ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/resources/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/resources/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Texture2D" uid="uid://3mqwme5wqchk" path="res://ui/redarrow.png" id="10_0avjw"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/resources/letter_spinner_theme.tres" id="10_diyc5"]
@@ -21,18 +20,17 @@
 [ext_resource type="AudioStream" uid="uid://cfithcpao02bg" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
-[ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
 [ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
-[ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 [ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
 [ext_resource type="AudioStream" uid="uid://cv12s1lxk6s" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
 [ext_resource type="Texture2D" uid="uid://b1vio02ukyhhw" path="res://ui/cloud/cloud_small1.png" id="25_6cxyx"]
-[ext_resource type="Texture2D" uid="uid://c76i2b7ohlw5l" path="res://ui/rock_select/rock2D.png" id="26_fgtw6"]
 [ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
 [ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
 [ext_resource type="Texture2D" uid="uid://cuaujnf0dsxdk" path="res://ui/cloud/cloud_xtralarge2.png" id="28_1bm0a"]
+[ext_resource type="Texture2D" uid="uid://dmsqv248rf5cm" path="res://ui/rock_select/arrow.png" id="31_2lccl"]
+[ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
@@ -186,6 +184,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhu8p"]
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
 default_font_size = 40
@@ -197,6 +203,151 @@ variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
 [sub_resource type="FontVariation" id="FontVariation_diyc5"]
 base_font = ExtResource("5_bo1jx")
 variation_transform = Transform2D(1, 0.125, 0, 1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_2lccl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6cxyx"]
+resource_name = "idle_float"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowRight:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.0666667, 0.9478749, 18.47258, -0.9000001, -1.0514832, 0.9000001, 1.0514832, 0, -1.1333334, 1.9993572, 0, 0),
+"times": PackedFloat32Array(0, 2.2666667, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 3, 0),
+"points": PackedFloat32Array(0, -1.0333333, 3.2580545, 1.0333333, -3.2580545, -15.875843, -1.0333335, 0.35049438, 1.0333335, -0.35049438, 0, -0.9333334, -0.103607416, 0, 0),
+"times": PackedFloat32Array(0, 2.3666666, 5)
+}
+
+[sub_resource type="Animation" id="Animation_p762i"]
+resource_name = "select_left"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-400, 0, 0, 0.067, 385.457, 0, -0.033, 33.371, 0.2, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-200, 0, 0, 0.033333335, 235.96515, 0, -0.034008767, 24.17103, 0.03333333, -23.690975),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_3hdvn"]
+resource_name = "select_right"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(200, 0, 0, 0.033, -235.965, 0, 0, -24.171055, 0, 23.691),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(400, 0, 0, 0.067, -385.457, 0, -0.03333333, -32.437603, 0.2, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3hx3"]
+_data = {
+&"RESET": SubResource("Animation_2lccl"),
+&"idle_float": SubResource("Animation_6cxyx"),
+&"select_left": SubResource("Animation_p762i"),
+&"select_right": SubResource("Animation_3hdvn")
+}
 
 [node name="UI" type="Control" unique_id=593103497]
 process_mode = 3
@@ -210,6 +361,7 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -605,7 +757,7 @@ offset_left = 376.0
 offset_top = 496.0
 offset_right = 1544.0
 offset_bottom = 848.0
-theme_override_styles/panel = ExtResource("9_diyc5")
+theme_override_styles/panel = SubResource("StyleBoxTexture_hhu8p")
 
 [node name="GameOverText" type="Node2D" parent="ScoreMenu" unique_id=1607665622]
 unique_name_in_owner = true
@@ -678,34 +830,40 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RockSelect" type="Control" parent="." unique_id=1040165911]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Light" type="Sprite2D" parent="RockSelect" unique_id=1155343369]
+visible = false
 position = Vector2(1008.5, 469.75)
 scale = Vector2(1.2345455, 1.1371882)
 texture = ExtResource("18_x7nxp")
 
-[node name="LeftArrow" type="Sprite2D" parent="RockSelect" unique_id=609268752]
-position = Vector2(500, 500)
-texture = ExtResource("19_3lbto")
-
-[node name="RightArrow" type="Sprite2D" parent="RockSelect" unique_id=665876310]
-position = Vector2(1500, 500)
-texture = ExtResource("20_c3fg2")
-
 [node name="RockName" type="Label" parent="RockSelect" unique_id=594532141]
 layout_mode = 0
-offset_left = 530.0
 offset_top = 732.0
-offset_right = 1467.0
+offset_right = 1920.0
 offset_bottom = 932.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "Digi-Christosphere"
+horizontal_alignment = 1
 
-[node name="RockSprite" type="Sprite2D" parent="RockSelect" unique_id=1278966036]
-position = Vector2(1055, 555)
-texture = ExtResource("26_fgtw6")
+[node name="RockSelectAnimator" type="AnimationPlayer" parent="RockSelect" unique_id=62070159]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_a3hx3")
+autoplay = &"idle_float"
+
+[node name="ArrowLeft" type="Sprite2D" parent="RockSelect" unique_id=1622003237]
+position = Vector2(512, 448)
+texture = ExtResource("31_2lccl")
+
+[node name="ArrowRight" type="Sprite2D" parent="RockSelect" unique_id=1124346568]
+position = Vector2(1408, 448)
+texture = ExtResource("31_2lccl")
+flip_h = true
+
+[node name="DigiChristosphereSprite" type="Sprite2D" parent="RockSelect" unique_id=988311823]
+position = Vector2(946, 448)
+texture = ExtResource("32_6cxyx")
