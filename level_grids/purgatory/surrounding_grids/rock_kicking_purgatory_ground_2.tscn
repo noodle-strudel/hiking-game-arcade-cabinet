@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://bdseq5q6b8op7"]
 
 [ext_resource type="PackedScene" uid="uid://bmamwcd1ln50b" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_2.glb" id="1_ivsu8"]
+[ext_resource type="PackedScene" uid="uid://cdesygoirh254" path="res://level_grids/purgatory/surrounding_grids/rock_kicking_purgatory_ground_2_collision.tscn" id="2_jgb0r"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ivsu8"]
-size = Vector3(500, 3.2120361, 500)
+[sub_resource type="BoxShape3D" id="BoxShape3D_qx7kp"]
+size = Vector3(71.93293, 26.081207, 71.33116)
 
-[node name="rock_kicking_purgatory_ground_2" unique_id=344492048 instance=ExtResource("1_ivsu8")]
+[node name="rock_kicking_purgatory_ground_2" unique_id=1588584458 instance=ExtResource("1_ivsu8")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=42824983]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=794999756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.440613, 0)
-shape = SubResource("BoxShape3D_ivsu8")
-
-[node name="Disk" parent="." index="11" unique_id=1307549077]
-transform = Transform3D(-0.70213944, 0, -0.7120395, 0, 1, 0, 0.7120395, 0, -0.70213944, 174.61423, 5.608013, -212.7662)
-
-[node name="AnimationPlayer" parent="." index="12" unique_id=611649779]
+[node name="AnimationPlayer" parent="." index="11" unique_id=1533335103]
 autoplay = &"video_disk_levitate"
+
+[node name="rock_kicking_purgatory_ground_2_collision" parent="." index="12" unique_id=1493479384 instance=ExtResource("2_jgb0r")]
+
+[node name="TapedOffRegion" type="StaticBody3D" parent="." index="13" unique_id=750104589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.602, 0, 215.0813)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TapedOffRegion" index="0" unique_id=135466691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5975037, 6.1720123, -0.89907837)
+shape = SubResource("BoxShape3D_qx7kp")

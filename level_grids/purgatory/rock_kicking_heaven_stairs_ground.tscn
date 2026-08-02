@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1gmsl"]
 size = Vector3(500, 10.182495, 500)
 
-[node name="rock_kicking_heaven_stairs_ground" unique_id=257232089 instance=ExtResource("1_cl6fo")]
+[node name="rock_kicking_heaven_stairs_ground" unique_id=997344821 instance=ExtResource("1_cl6fo")]
 
 [node name="rock_kicking_heaven_stairs_stairs_collision" parent="." index="7" unique_id=1710628151 instance=ExtResource("2_1gmsl")]
 

@@ -87,13 +87,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
 [node name="Purgatory2Grid" parent="LevelSegments" unique_id=1844927662 instance=ExtResource("3_v8757")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, -500)
 
-[node name="Purgatory2Grid2" parent="LevelSegments" unique_id=1119662220 instance=ExtResource("3_v8757")]
+[node name="Purgatory2Grid2" parent="LevelSegments" unique_id=1871098232 instance=ExtResource("3_v8757")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, -500)
 
-[node name="Purgatory2Grid3" parent="LevelSegments" unique_id=1734457104 instance=ExtResource("3_v8757")]
+[node name="Purgatory2Grid3" parent="LevelSegments" unique_id=1642409642 instance=ExtResource("3_v8757")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, 500)
 
-[node name="Purgatory2Grid4" parent="LevelSegments" unique_id=880115643 instance=ExtResource("3_v8757")]
+[node name="Purgatory2Grid4" parent="LevelSegments" unique_id=619754767 instance=ExtResource("3_v8757")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 500)
 
 [node name="WorldBounds" type="StaticBody3D" parent="." unique_id=138385476]
