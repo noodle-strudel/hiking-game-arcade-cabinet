@@ -2,7 +2,7 @@ extends Node3D
 
 signal stairs_camera_finished
 
-@onready var stairs_camera := $StairsCamera
+@onready var stairs_camera := %StairsCamera
 
 func stairs_camera_dolly() -> void:
 	%StairsCameraAnimator.play("ascend_stairs")

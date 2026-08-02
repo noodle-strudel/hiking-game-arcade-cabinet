@@ -17,6 +17,7 @@ signal on_movement_finished
 # gives a jumping look during lerp
 @export var movement_curve: Curve
 @export var speed: float = 0.4
+@export var heaven_curve: Curve
 
 # multiplier to the y axis
 const Y_MULTIPLIER = 2
@@ -25,12 +26,14 @@ var _moving: bool = false
 var _t: float = 0.0
 var _from: Vector3
 var _to: Vector3
+var _step: int
 
 # wrapper function of sorts to enable salmon grandma movement
-func move_obj(from: Vector3, to: Vector3) -> void:
+func move_obj(from: Vector3, to: Vector3, step: int = 0) -> void:
 	_t = 0.0
 	_from = from
 	_to = to
+	_step = step
 	_moving = true
 
 func snatch_object(obj: NodePath) -> void:
@@ -52,8 +55,11 @@ func _physics_process(delta: float) -> void:
 		_t += delta * speed
 		global_position = _from.lerp(_to, _t)
 		
-		# sample the curve at the t point to get the height
-		global_position.y += movement_curve.sample(_t) * Y_MULTIPLIER
+		# sample the right curve at the t point to get the height
+		if _step == 1:
+			global_position.y += heaven_curve.sample(_t) * Y_MULTIPLIER
+		else:
+			global_position.y += movement_curve.sample(_t) * Y_MULTIPLIER
 		if _t > 1.00:
 			_moving = false
 			on_movement_finished.emit()

@@ -24,16 +24,20 @@ func ascension_sequence(go_heaven: bool) -> void:
 	salmon_helper.snatch_object(rock.get_path())  
 	
 	if go_heaven:
-		# take rock to bottom of stairs and wait before going up
+		# take rock to bottom of stairs and wait then go up to heaven
 		var bottom_of_stairs = $"../Purgatory/BottomOfStairs".global_position
+		var top_of_stairs = $"../Purgatory/TopOfStairs".global_position
 		salmon_helper.move_obj(rock_pos_ref, bottom_of_stairs)
 		await salmon_helper.on_movement_finished
 		rock_pos_ref = rock.global_position
-		await get_tree().create_timer(10.0).timeout
-	
+		await get_tree().create_timer(5.0).timeout
+		#$"../Purgatory/LevelSegments/HeavenStairsGrid/GateOpenCamera".make_current()
+		salmon_helper.move_obj(rock_pos_ref, top_of_stairs, 1)
+		await salmon_helper.on_movement_finished
+	else:
 	# make helper go up while camera looks
-	salmon_helper.move_obj(rock_pos_ref, rock_pos_ref + Vector3(0.0, 100.0, 0.0))
-	await salmon_helper.on_movement_finished
+		salmon_helper.move_obj(rock_pos_ref, rock_pos_ref + Vector3(0.0, 100.0, 0.0))
+		await salmon_helper.on_movement_finished
 	
 	# drop rock
 	rock.linear_velocity = Vector3.ZERO

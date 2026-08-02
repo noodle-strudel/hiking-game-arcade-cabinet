@@ -138,3 +138,6 @@ libraries/ = SubResource("AnimationLibrary_cheet")
 
 [node name="BottomOfStairs" type="Marker3D" parent="." unique_id=584899619]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 1, 0)
+
+[node name="TopOfStairs" type="Marker3D" parent="." unique_id=1808894333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 605.41656, 207.05507, 0)
