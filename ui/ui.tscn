@@ -133,7 +133,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.1, 50, 100, -0.20000002, -14, 0.2, -14, 0, -0.1, 50, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1, 50, 100, -0.2, -14, 0.2, -14, 0, -0.1, 50, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 1.2)
 }
 
@@ -540,7 +540,7 @@ offset_right = 1664.0
 offset_bottom = 677.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
-text = "KICKS REMAINING:"
+text = "KICKS REMAINING"
 horizontal_alignment = 1
 
 [node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]

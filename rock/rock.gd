@@ -75,10 +75,8 @@ func wink_at_camera(camera: Camera3D) -> void:
 func play_kick(critical: bool) -> void:
 	if critical:
 		$CriticalHitPlayer.play()
-		print("Critical kick sound")
 	else:
 		$KickSoundPlayer.play()
-		print("Normal kick sound")
 
 """Rock's Functions"""
 

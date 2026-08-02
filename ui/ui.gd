@@ -12,6 +12,12 @@ extends Control
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
+# kickbar power threshold to get a critical kick
+@export var crit_threshold: float = 97.0
+
+# length of time to pause the graphics on a critical kick
+@export var hitstop_length: float = 0.3
+
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep := 1
@@ -37,7 +43,8 @@ var menu_subtitles = [
 	"Kick Rocks!",
 	"Stone Punting!",
 	"Make this rock ROUND!",
-	"You have been\nsummoned to kick\nthis sacred stone..."
+	"You have been\nsummoned to kick\nthis sacred stone...",
+	"Plabolnbar!"
 ]
 
 # Picks a randome sibtitle for the menu.
@@ -169,19 +176,21 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.pause()
 			$KickingMenu.show()
 			ui_camera.apply_shake(0.1)
-			if %Kickbar.value >= 97.0:
+			
+			if %Kickbar.value >= crit_threshold:
 				if GameManager.DEBUG:
 					print("critical kick!")
 				%Kickbar.value = 200.0
 				
 				# add juice
 				get_tree().paused = true
+				await get_tree().create_timer(hitstop_length).timeout
 				ui_camera.apply_shake(2)
 				$"../Rock".play_kick(true) # critical kick sound
 				get_tree().paused = false
 				
 				# wow sound effect
-				await get_tree().create_timer(0.5).timeout
+				await get_tree().create_timer(0.7).timeout
 				$KickingMenu/WowPlayer.play()
 			else:
 				$"../Rock".play_kick(false) # normal kick sound
