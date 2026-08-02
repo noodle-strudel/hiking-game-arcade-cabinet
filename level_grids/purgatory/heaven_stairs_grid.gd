@@ -16,7 +16,7 @@ func open_gates() -> void:
 func _ready() -> void:
 	super()
 	purgatory_kicks = GameManager.kicks_remaining - GameManager.heaven_kick_count
-	$SignHelper/SubViewport/SignText.text = "Until\nthe change:\n" + str(purgatory_kicks)
+	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
