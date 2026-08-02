@@ -19,10 +19,9 @@ height = 85.54587
 radius = 31.572266
 height = 120.01367
 
-[node name="rock_kicking_park_ground_final" unique_id=628980596 instance=ExtResource("1_v3cmg")]
+[node name="rock_kicking_park_ground_final" unique_id=1624154924 instance=ExtResource("1_v3cmg")]
 
 [node name="PlayerLakeBarriers" type="StaticBody3D" parent="." index="5" unique_id=2048207281]
-visible = false
 collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerLakeBarriers" index="0" unique_id=717573519]
@@ -45,5 +44,4 @@ transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.
 shape = SubResource("CapsuleShape3D_ruhub")
 debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
 
-[node name="rock_kicking_park_ground_collision" parent="." index="6" unique_id=1306554932 instance=ExtResource("2_ur3tk")]
-visible = false
+[node name="rock_kicking_park_ground_collision" parent="." index="6" unique_id=936558518 instance=ExtResource("2_ur3tk")]
