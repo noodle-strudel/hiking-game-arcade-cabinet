@@ -25,4 +25,4 @@ func _process(delta: float) -> void:
 
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	purgatory_kicks = kick_count - GameManager.heaven_kick_count
-	$SignHelper/SubViewport/SignText.text = "Until\nthe change:\n" + str(purgatory_kicks)
+	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
