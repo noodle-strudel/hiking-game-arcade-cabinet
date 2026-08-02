@@ -28,7 +28,11 @@
 [ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
 [ext_resource type="AudioStream" uid="uid://cv12s1lxk6s" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
+[ext_resource type="Texture2D" uid="uid://b1vio02ukyhhw" path="res://ui/cloud/cloud_small1.png" id="25_6cxyx"]
 [ext_resource type="Texture2D" uid="uid://c76i2b7ohlw5l" path="res://ui/rock_select/rock2D.png" id="26_fgtw6"]
+[ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
+[ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
+[ext_resource type="Texture2D" uid="uid://cuaujnf0dsxdk" path="res://ui/cloud/cloud_xtralarge2.png" id="28_1bm0a"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
@@ -153,6 +157,34 @@ stream_2/stream = ExtResource("17_co7pv")
 stream_3/stream = ExtResource("19_bw7v0")
 stream_4/stream = ExtResource("21_br2v7")
 stream_5/stream = ExtResource("23_k48q6")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qu0m5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_6cxyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p762i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3hx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_3hdvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1bm0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
@@ -501,75 +533,68 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
+[node name="ScoreElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1054340771]
 unique_name_in_owner = true
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+position = Vector2(939, 296)
+sprite_frames = SubResource("SpriteFrames_qu0m5")
+autoplay = "default"
+frame_progress = 0.5320598
 
 [node name="ScoreLabel" type="Label" parent="ScoreMenu/ScoreElem" unique_id=1329148394]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 144.0
-offset_right = 1392.0
-offset_bottom = 309.0
+offset_left = -224.0
+offset_top = -119.0
+offset_right = 218.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 110
 text = "SCORE"
 horizontal_alignment = 1
 
 [node name="RoundScore" type="Label" parent="ScoreMenu/ScoreElem" unique_id=864323069]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 320.0
-offset_right = 1664.0
-offset_bottom = 524.0941
+offset_left = -231.0
+offset_top = 18.0
+offset_right = 227.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 110
 text = "27"
 horizontal_alignment = 1
 
-[node name="ScoreBG" type="Panel" parent="ScoreMenu/ScoreElem" unique_id=1365707913]
-z_index = -1
-layout_mode = 0
-offset_left = 696.0
-offset_top = 128.0
-offset_right = 1224.0
-offset_bottom = 480.0
-theme_override_styles/panel = ExtResource("9_diyc5")
-
-[node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
+[node name="KicksRemainingElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1009214846]
 unique_name_in_owner = true
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+position = Vector2(936, 680)
+sprite_frames = SubResource("SpriteFrames_a3hx3")
+autoplay = "default"
+frame = 1
+frame_progress = 0.3179784
 
 [node name="KicksRemainingLabel" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=1254226915]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 512.0
-offset_right = 1664.0
-offset_bottom = 677.0
+offset_left = -488.0
+offset_top = -128.0
+offset_right = 500.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 110
 text = "KICKS REMAINING:"
 horizontal_alignment = 1
 
 [node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 256.0
-offset_top = 688.0
-offset_right = 1664.0
-offset_bottom = 892.0941
+offset_left = -479.0
+offset_top = 21.0
+offset_right = 469.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 110
 text = "999999"
 horizontal_alignment = 1
 
 [node name="KicksRemainingBG" type="Panel" parent="ScoreMenu/KicksRemainingElem" unique_id=725896772]
 z_index = -1
-layout_mode = 0
 offset_left = 376.0
 offset_top = 496.0
 offset_right = 1544.0
