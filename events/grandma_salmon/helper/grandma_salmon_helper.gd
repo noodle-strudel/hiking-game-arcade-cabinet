@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 		
 		# sample the right curve at the t point to get the height
 		if _step == 1:
+			speed = 0.2
 			global_position.y += heaven_curve.sample(_t) * Y_MULTIPLIER
 		else:
 			global_position.y += movement_curve.sample(_t) * Y_MULTIPLIER
