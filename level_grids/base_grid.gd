@@ -16,9 +16,9 @@ var spawn_points: Array[Marker3D]
 
 # Randomly chooses 1 of the 3 random spawn locations.
 func get_spawn_position() -> Vector3:
-	var marker = spawn_points.pick_random()
-	if marker == null:
+	if !spawn_points:
 		return Vector3(0.0, 1.0, 0.0)
+	var marker = spawn_points.pick_random()
 	if GameManager.DEBUG:
 		print("Spawn: ", marker.name)
 	return marker.global_position

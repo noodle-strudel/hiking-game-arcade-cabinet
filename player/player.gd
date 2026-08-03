@@ -18,7 +18,7 @@ extends CharacterBody3D
 var current_y_rotation: float = 0.0
 var current_x_rotation: float = 0.0
 
-var rock: Node = null
+var rock: Node3D = null
 var bar: Node = null
 
 var kick_deviance: float = 0.5
@@ -100,9 +100,25 @@ func _physics_process(delta: float) -> void:
 			if GameManager.DEBUG:
 				print("fetched value " + str(multiplier) + " from kickbar")
 		_kick_rock(multiplier)
-		
 	# Fall
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	# player vision follows the rock.
+	if locked_rotation and GameManager.state == GameManager.gamestates.ROCK_KICKED:
+		# pull player camera up
+		if position.angle_to(rock.position) > current_x_rotation:
+			current_x_rotation +=\
+				(position.angle_to(rock.position) - current_x_rotation) / 25
+				
+		# pull player camera down
+		elif current_x_rotation > position.angle_to(rock.position):
+			current_x_rotation -=\
+				(current_x_rotation - position.angle_to(rock.position)) / 15
+		
+		# hold player camera on rock
+		else:
+			current_x_rotation = position.angle_to(rock.position)
 
 func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	$RockTeeSpringArm/TeePos.remote_path = ""
@@ -110,6 +126,10 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 	match state:
 		GameManager.gamestates.KICKING: 
 			locked_rotation = false
+		GameManager.gamestates.ROCK_KICKED:
+			await get_tree().process_frame
+			if GameManager.critical_kick:
+				$CameraPivot/PlayerCamera.apply_shake(1)
 		GameManager.gamestates.ROCK_OOB:
 			await get_tree().create_timer(0.1).timeout
 			if rock:
@@ -123,7 +143,9 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 func _go_to_rock() -> void:
 	var tween = create_tween()
 	if rock:
-		var goal_posiiton = rock.global_position + Vector3(0.0, 0.0, 1.0)
+		# Player will walk to the side of the rock closest to the player
+		var goal_posiiton = rock.global_position +\
+			(global_position.direction_to(rock.global_position) * Vector3.FORWARD)
 		
 		legs.play_run()
 		

@@ -162,6 +162,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
+			GameManager.critical_kick = false
 			# reset state variables
 			spin_letters = false
 			select_rock = false
@@ -185,6 +186,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				if GameManager.DEBUG:
 					print("critical kick!")
 				%Kickbar.value = 200.0
+				GameManager.critical_kick = true
 				
 				# add juice
 				get_tree().paused = true

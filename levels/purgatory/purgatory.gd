@@ -12,6 +12,11 @@ func stairs_camera_dolly() -> void:
 func open_gates() -> void:
 	$LevelSegments/HeavenStairsGrid.open_gates()
 
+func get_spawn_position() -> Vector3:
+	var spawn = $SpawnPoints.get_children().pick_random()
+	return spawn.global_position
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

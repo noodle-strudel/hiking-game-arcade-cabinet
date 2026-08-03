@@ -2,2043 +2,3935 @@
 
 [ext_resource type="PackedScene" uid="uid://nkug2pyahwrg" path="res://level_grids/park/glb/rock_kicking_park_ground_collision.glb" id="1_nujlp"]
 
-[node name="rock_kicking_park_ground_collision" unique_id=1306554932 instance=ExtResource("1_nujlp")]
+[node name="rock_kicking_park_ground_collision" unique_id=417582683 instance=ExtResource("1_nujlp")]
 
-[node name="GroundCollision" parent="." index="0" unique_id=1648911358]
+[node name="GroundIntactNoTrees_001" parent="." index="0" unique_id=1657040683]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_001" parent="." index="1" unique_id=1433276135]
+[node name="GroundIntactNoTrees_002" parent="." index="1" unique_id=433241557]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_002" parent="." index="2" unique_id=1810012299]
+[node name="GroundIntactNoTrees_003" parent="." index="2" unique_id=1379174690]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_003" parent="." index="3" unique_id=342872932]
+[node name="GroundIntactNoTrees_004" parent="." index="3" unique_id=152483688]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_004" parent="." index="4" unique_id=1140453107]
+[node name="GroundIntactNoTrees_005" parent="." index="4" unique_id=1601292970]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_005" parent="." index="5" unique_id=1770519556]
+[node name="GroundIntactNoTrees_006" parent="." index="5" unique_id=1498642922]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_006" parent="." index="6" unique_id=1079943200]
+[node name="GroundIntactNoTrees_007" parent="." index="6" unique_id=1258049204]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_007" parent="." index="7" unique_id=727359501]
+[node name="GroundIntactNoTrees_008" parent="." index="7" unique_id=1440758955]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_008" parent="." index="8" unique_id=1063072979]
+[node name="GroundIntactNoTrees_009" parent="." index="8" unique_id=1023200854]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_009" parent="." index="9" unique_id=1269126398]
+[node name="GroundIntactNoTrees_010" parent="." index="9" unique_id=1544975653]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_010" parent="." index="10" unique_id=1252831782]
+[node name="GroundIntactNoTrees_011" parent="." index="10" unique_id=1759938784]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_011" parent="." index="11" unique_id=1513719733]
+[node name="GroundIntactNoTrees_012" parent="." index="11" unique_id=1151427867]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_012" parent="." index="12" unique_id=1294855606]
+[node name="GroundIntactNoTrees_013" parent="." index="12" unique_id=1508552929]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_013" parent="." index="13" unique_id=713456076]
+[node name="GroundIntactNoTrees_014" parent="." index="13" unique_id=153765767]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_014" parent="." index="14" unique_id=1579671537]
+[node name="GroundIntactNoTrees_015" parent="." index="14" unique_id=1979288109]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_015" parent="." index="15" unique_id=187115910]
+[node name="GroundIntactNoTrees_016" parent="." index="15" unique_id=315023994]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_016" parent="." index="16" unique_id=960314643]
+[node name="GroundIntactNoTrees_017" parent="." index="16" unique_id=354421905]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_017" parent="." index="17" unique_id=1915538058]
+[node name="GroundIntactNoTrees_018" parent="." index="17" unique_id=657555649]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_018" parent="." index="18" unique_id=1369062316]
+[node name="GroundIntactNoTrees_019" parent="." index="18" unique_id=1384458589]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_019" parent="." index="19" unique_id=1294075644]
+[node name="GroundIntactNoTrees_020" parent="." index="19" unique_id=1681406920]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_020" parent="." index="20" unique_id=726488231]
+[node name="GroundIntactNoTrees_021" parent="." index="20" unique_id=1385718789]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_021" parent="." index="21" unique_id=1526399808]
+[node name="GroundIntactNoTrees_022" parent="." index="21" unique_id=571728361]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_022" parent="." index="22" unique_id=1693435081]
+[node name="GroundIntactNoTrees_023" parent="." index="22" unique_id=1004601900]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_023" parent="." index="23" unique_id=1803692785]
+[node name="GroundIntactNoTrees_024" parent="." index="23" unique_id=1221913227]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_024" parent="." index="24" unique_id=1186779830]
+[node name="GroundIntactNoTrees_025" parent="." index="24" unique_id=302983612]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_025" parent="." index="25" unique_id=226043526]
+[node name="GroundIntactNoTrees_026" parent="." index="25" unique_id=1984423124]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_026" parent="." index="26" unique_id=1273918855]
+[node name="GroundIntactNoTrees_027" parent="." index="26" unique_id=2045974478]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_027" parent="." index="27" unique_id=1183462788]
+[node name="GroundIntactNoTrees_028" parent="." index="27" unique_id=1197295871]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_028" parent="." index="28" unique_id=581345701]
+[node name="GroundIntactNoTrees_029" parent="." index="28" unique_id=1894296678]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_029" parent="." index="29" unique_id=468740276]
+[node name="GroundIntactNoTrees_030" parent="." index="29" unique_id=2059810500]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_030" parent="." index="30" unique_id=1222300897]
+[node name="GroundIntactNoTrees_031" parent="." index="30" unique_id=535647348]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_031" parent="." index="31" unique_id=1645227319]
+[node name="GroundIntactNoTrees_032" parent="." index="31" unique_id=84004834]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_032" parent="." index="32" unique_id=655759469]
+[node name="GroundIntactNoTrees_033" parent="." index="32" unique_id=267434457]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_033" parent="." index="33" unique_id=1951186471]
+[node name="GroundIntactNoTrees_034" parent="." index="33" unique_id=2131319734]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_034" parent="." index="34" unique_id=1981783831]
+[node name="GroundIntactNoTrees_035" parent="." index="34" unique_id=486011208]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_035" parent="." index="35" unique_id=388001591]
+[node name="GroundIntactNoTrees_036" parent="." index="35" unique_id=870571105]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_036" parent="." index="36" unique_id=1957544858]
+[node name="GroundIntactNoTrees_037" parent="." index="36" unique_id=952149606]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_037" parent="." index="37" unique_id=395615954]
+[node name="GroundIntactNoTrees_038" parent="." index="37" unique_id=322355994]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_038" parent="." index="38" unique_id=133455409]
+[node name="GroundIntactNoTrees_039" parent="." index="38" unique_id=1284125282]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_039" parent="." index="39" unique_id=150715357]
+[node name="GroundIntactNoTrees_040" parent="." index="39" unique_id=1938394570]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_040" parent="." index="40" unique_id=2120999501]
+[node name="GroundIntactNoTrees_041" parent="." index="40" unique_id=1070568735]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_041" parent="." index="41" unique_id=1440825489]
+[node name="GroundIntactNoTrees_042" parent="." index="41" unique_id=710180356]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_042" parent="." index="42" unique_id=1175236807]
+[node name="GroundIntactNoTrees_043" parent="." index="42" unique_id=253320901]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_043" parent="." index="43" unique_id=2024520056]
+[node name="GroundIntactNoTrees_044" parent="." index="43" unique_id=17014436]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_044" parent="." index="44" unique_id=1333105530]
+[node name="GroundIntactNoTrees_045" parent="." index="44" unique_id=2072081815]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_045" parent="." index="45" unique_id=1265810079]
+[node name="GroundIntactNoTrees_046" parent="." index="45" unique_id=525162076]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_046" parent="." index="46" unique_id=2105348650]
+[node name="GroundIntactNoTrees_047" parent="." index="46" unique_id=748826490]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_047" parent="." index="47" unique_id=1690058621]
+[node name="GroundIntactNoTrees_048" parent="." index="47" unique_id=820593607]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_048" parent="." index="48" unique_id=1463600231]
+[node name="GroundIntactNoTrees_049" parent="." index="48" unique_id=189494200]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_049" parent="." index="49" unique_id=444468526]
+[node name="GroundIntactNoTrees_050" parent="." index="49" unique_id=182577869]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_050" parent="." index="50" unique_id=160733067]
+[node name="GroundIntactNoTrees_051" parent="." index="50" unique_id=1862786166]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_051" parent="." index="51" unique_id=1700674053]
+[node name="GroundIntactNoTrees_052" parent="." index="51" unique_id=2083112930]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_052" parent="." index="52" unique_id=1517595546]
+[node name="GroundIntactNoTrees_053" parent="." index="52" unique_id=1554146039]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_053" parent="." index="53" unique_id=1524142000]
+[node name="GroundIntactNoTrees_054" parent="." index="53" unique_id=1890832539]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_054" parent="." index="54" unique_id=795245877]
+[node name="GroundIntactNoTrees_055" parent="." index="54" unique_id=1007234852]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_055" parent="." index="55" unique_id=113205485]
+[node name="GroundIntactNoTrees_056" parent="." index="55" unique_id=2113969344]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_056" parent="." index="56" unique_id=311433695]
+[node name="GroundIntactNoTrees_057" parent="." index="56" unique_id=965562839]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_057" parent="." index="57" unique_id=1447978197]
+[node name="GroundIntactNoTrees_058" parent="." index="57" unique_id=468012474]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_058" parent="." index="58" unique_id=1912085176]
+[node name="GroundIntactNoTrees_059" parent="." index="58" unique_id=930817534]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_059" parent="." index="59" unique_id=958182448]
+[node name="GroundIntactNoTrees_060" parent="." index="59" unique_id=591601088]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_060" parent="." index="60" unique_id=133026955]
+[node name="GroundIntactNoTrees_061" parent="." index="60" unique_id=112920493]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_061" parent="." index="61" unique_id=1972365816]
+[node name="GroundIntactNoTrees_062" parent="." index="61" unique_id=1155196998]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_062" parent="." index="62" unique_id=1635806386]
+[node name="GroundIntactNoTrees_063" parent="." index="62" unique_id=55475454]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_063" parent="." index="63" unique_id=1893885566]
+[node name="GroundIntactNoTrees_064" parent="." index="63" unique_id=2068771614]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_064" parent="." index="64" unique_id=1808383503]
+[node name="GroundIntactNoTrees_065" parent="." index="64" unique_id=2006164063]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_065" parent="." index="65" unique_id=1062231395]
+[node name="GroundIntactNoTrees_066" parent="." index="65" unique_id=899874239]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_066" parent="." index="66" unique_id=963403198]
+[node name="GroundIntactNoTrees_067" parent="." index="66" unique_id=988361376]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_067" parent="." index="67" unique_id=1144285022]
+[node name="GroundIntactNoTrees_068" parent="." index="67" unique_id=1865745843]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_068" parent="." index="68" unique_id=865620038]
+[node name="GroundIntactNoTrees_069" parent="." index="68" unique_id=1216514045]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_069" parent="." index="69" unique_id=1110965385]
+[node name="GroundIntactNoTrees_070" parent="." index="69" unique_id=188126714]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_070" parent="." index="70" unique_id=1052238156]
+[node name="GroundIntactNoTrees_071" parent="." index="70" unique_id=176892399]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_071" parent="." index="71" unique_id=1686678820]
+[node name="GroundIntactNoTrees_072" parent="." index="71" unique_id=1012804837]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_072" parent="." index="72" unique_id=1811652302]
+[node name="GroundIntactNoTrees_073" parent="." index="72" unique_id=1527016178]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_073" parent="." index="73" unique_id=2042781111]
+[node name="GroundIntactNoTrees_074" parent="." index="73" unique_id=1386803921]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_074" parent="." index="74" unique_id=1647278546]
+[node name="GroundIntactNoTrees_075" parent="." index="74" unique_id=442352519]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_075" parent="." index="75" unique_id=1580625111]
+[node name="GroundIntactNoTrees_076" parent="." index="75" unique_id=739257968]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_076" parent="." index="76" unique_id=1766562346]
+[node name="GroundIntactNoTrees_077" parent="." index="76" unique_id=9068418]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_077" parent="." index="77" unique_id=1051382932]
+[node name="GroundIntactNoTrees_078" parent="." index="77" unique_id=657861835]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_078" parent="." index="78" unique_id=638801573]
+[node name="GroundIntactNoTrees_079" parent="." index="78" unique_id=1878148200]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_079" parent="." index="79" unique_id=429400805]
+[node name="GroundIntactNoTrees_080" parent="." index="79" unique_id=1891790563]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_080" parent="." index="80" unique_id=1701729745]
+[node name="GroundIntactNoTrees_081" parent="." index="80" unique_id=31663247]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_081" parent="." index="81" unique_id=1596712385]
+[node name="GroundIntactNoTrees_082" parent="." index="81" unique_id=1798300962]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_082" parent="." index="82" unique_id=266394865]
+[node name="GroundIntactNoTrees_083" parent="." index="82" unique_id=42247488]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_083" parent="." index="83" unique_id=1927938926]
+[node name="GroundIntactNoTrees_084" parent="." index="83" unique_id=1394040437]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_084" parent="." index="84" unique_id=1885894230]
+[node name="GroundIntactNoTrees_085" parent="." index="84" unique_id=1397468470]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_085" parent="." index="85" unique_id=2001947708]
+[node name="GroundIntactNoTrees_086" parent="." index="85" unique_id=319502256]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_086" parent="." index="86" unique_id=157943265]
+[node name="GroundIntactNoTrees_087" parent="." index="86" unique_id=1732535383]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_087" parent="." index="87" unique_id=1173389242]
+[node name="GroundIntactNoTrees_088" parent="." index="87" unique_id=1045592441]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_088" parent="." index="88" unique_id=172030186]
+[node name="GroundIntactNoTrees_089" parent="." index="88" unique_id=569610276]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_089" parent="." index="89" unique_id=494764953]
+[node name="GroundIntactNoTrees_090" parent="." index="89" unique_id=1108177237]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_090" parent="." index="90" unique_id=1598840938]
+[node name="GroundIntactNoTrees_091" parent="." index="90" unique_id=625053675]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_091" parent="." index="91" unique_id=1143688198]
+[node name="GroundIntactNoTrees_092" parent="." index="91" unique_id=834155887]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_092" parent="." index="92" unique_id=721798655]
+[node name="GroundIntactNoTrees_093" parent="." index="92" unique_id=1825638679]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_093" parent="." index="93" unique_id=2052072607]
+[node name="GroundIntactNoTrees_094" parent="." index="93" unique_id=1342744394]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_094" parent="." index="94" unique_id=1593190249]
+[node name="GroundIntactNoTrees_095" parent="." index="94" unique_id=232017628]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_095" parent="." index="95" unique_id=2013737394]
+[node name="GroundIntactNoTrees_096" parent="." index="95" unique_id=1902923733]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_096" parent="." index="96" unique_id=343673113]
+[node name="GroundIntactNoTrees_097" parent="." index="96" unique_id=1064452487]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_097" parent="." index="97" unique_id=322137172]
+[node name="GroundIntactNoTrees_098" parent="." index="97" unique_id=368130358]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_098" parent="." index="98" unique_id=535232773]
+[node name="GroundIntactNoTrees_099" parent="." index="98" unique_id=547178979]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_099" parent="." index="99" unique_id=1495450993]
+[node name="GroundIntactNoTrees_100" parent="." index="99" unique_id=1630306294]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_100" parent="." index="100" unique_id=1910995975]
+[node name="GroundIntactNoTrees_101" parent="." index="100" unique_id=1977629757]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_101" parent="." index="101" unique_id=1840195483]
+[node name="GroundIntactNoTrees_102" parent="." index="101" unique_id=1525955344]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_102" parent="." index="102" unique_id=978725410]
+[node name="GroundIntactNoTrees_103" parent="." index="102" unique_id=1808677515]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_103" parent="." index="103" unique_id=13879889]
+[node name="GroundIntactNoTrees_104" parent="." index="103" unique_id=468576140]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_104" parent="." index="104" unique_id=518771069]
+[node name="GroundIntactNoTrees_105" parent="." index="104" unique_id=1249205511]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_105" parent="." index="105" unique_id=2081400168]
+[node name="GroundIntactNoTrees_106" parent="." index="105" unique_id=2059386992]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_106" parent="." index="106" unique_id=1636797371]
+[node name="GroundIntactNoTrees_107" parent="." index="106" unique_id=293003434]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_107" parent="." index="107" unique_id=610697864]
+[node name="GroundIntactNoTrees_108" parent="." index="107" unique_id=1528755240]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_108" parent="." index="108" unique_id=291381082]
+[node name="GroundIntactNoTrees_109" parent="." index="108" unique_id=1349164]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_109" parent="." index="109" unique_id=1420547534]
+[node name="GroundIntactNoTrees_110" parent="." index="109" unique_id=208717643]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_110" parent="." index="110" unique_id=1066541771]
+[node name="GroundIntactNoTrees_111" parent="." index="110" unique_id=1332753186]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_111" parent="." index="111" unique_id=110058850]
+[node name="GroundIntactNoTrees_112" parent="." index="111" unique_id=1862193387]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_112" parent="." index="112" unique_id=133849038]
+[node name="GroundIntactNoTrees_113" parent="." index="112" unique_id=1468379086]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_113" parent="." index="113" unique_id=1604260452]
+[node name="GroundIntactNoTrees_114" parent="." index="113" unique_id=1395015222]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_114" parent="." index="114" unique_id=92027911]
+[node name="GroundIntactNoTrees_115" parent="." index="114" unique_id=503375280]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_115" parent="." index="115" unique_id=136509082]
+[node name="GroundIntactNoTrees_116" parent="." index="115" unique_id=149294581]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_116" parent="." index="116" unique_id=1144231385]
+[node name="GroundIntactNoTrees_117" parent="." index="116" unique_id=490727317]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_117" parent="." index="117" unique_id=1182127379]
+[node name="GroundIntactNoTrees_118" parent="." index="117" unique_id=250023116]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_118" parent="." index="118" unique_id=234469345]
+[node name="GroundIntactNoTrees_119" parent="." index="118" unique_id=2113213834]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_119" parent="." index="119" unique_id=1070015414]
+[node name="GroundIntactNoTrees_120" parent="." index="119" unique_id=866665839]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_120" parent="." index="120" unique_id=87033378]
+[node name="GroundIntactNoTrees_121" parent="." index="120" unique_id=1417662328]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_121" parent="." index="121" unique_id=676952806]
+[node name="GroundIntactNoTrees_122" parent="." index="121" unique_id=1357251550]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_122" parent="." index="122" unique_id=2082486316]
+[node name="GroundIntactNoTrees_123" parent="." index="122" unique_id=639774655]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_123" parent="." index="123" unique_id=206417824]
+[node name="GroundIntactNoTrees_124" parent="." index="123" unique_id=894060922]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_124" parent="." index="124" unique_id=1832606287]
+[node name="GroundIntactNoTrees_125" parent="." index="124" unique_id=1966850101]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_125" parent="." index="125" unique_id=853049562]
+[node name="GroundIntactNoTrees_126" parent="." index="125" unique_id=280148491]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_126" parent="." index="126" unique_id=457520105]
+[node name="GroundIntactNoTrees_127" parent="." index="126" unique_id=882150968]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_127" parent="." index="127" unique_id=2011204888]
+[node name="GroundIntactNoTrees_128" parent="." index="127" unique_id=648900354]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_128" parent="." index="128" unique_id=79788540]
+[node name="GroundIntactNoTrees_129" parent="." index="128" unique_id=1754215378]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_129" parent="." index="129" unique_id=362176628]
+[node name="GroundIntactNoTrees_130" parent="." index="129" unique_id=1362083154]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_130" parent="." index="130" unique_id=1455241302]
+[node name="GroundIntactNoTrees_131" parent="." index="130" unique_id=1771879127]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_131" parent="." index="131" unique_id=575916566]
+[node name="GroundIntactNoTrees_132" parent="." index="131" unique_id=223050865]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_132" parent="." index="132" unique_id=555089599]
+[node name="GroundIntactNoTrees_133" parent="." index="132" unique_id=89067707]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_133" parent="." index="133" unique_id=1136772516]
+[node name="GroundIntactNoTrees_134" parent="." index="133" unique_id=419652331]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_134" parent="." index="134" unique_id=1186882690]
+[node name="GroundIntactNoTrees_135" parent="." index="134" unique_id=211382096]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_135" parent="." index="135" unique_id=1175208807]
+[node name="GroundIntactNoTrees_136" parent="." index="135" unique_id=357291506]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_136" parent="." index="136" unique_id=147844426]
+[node name="GroundIntactNoTrees_137" parent="." index="136" unique_id=184745225]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_137" parent="." index="137" unique_id=1791418440]
+[node name="GroundIntactNoTrees_138" parent="." index="137" unique_id=551716455]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_138" parent="." index="138" unique_id=1762154729]
+[node name="GroundIntactNoTrees_139" parent="." index="138" unique_id=53900053]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_139" parent="." index="139" unique_id=865972360]
+[node name="GroundIntactNoTrees_140" parent="." index="139" unique_id=1639382441]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_140" parent="." index="140" unique_id=189824732]
+[node name="GroundIntactNoTrees_141" parent="." index="140" unique_id=224235698]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_141" parent="." index="141" unique_id=1987736915]
+[node name="GroundIntactNoTrees_142" parent="." index="141" unique_id=1794911188]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_142" parent="." index="142" unique_id=1255493491]
+[node name="GroundIntactNoTrees_143" parent="." index="142" unique_id=671562985]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_143" parent="." index="143" unique_id=2113300206]
+[node name="GroundIntactNoTrees_144" parent="." index="143" unique_id=208022820]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_144" parent="." index="144" unique_id=253548451]
+[node name="GroundIntactNoTrees_145" parent="." index="144" unique_id=1345157639]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_145" parent="." index="145" unique_id=58012608]
+[node name="GroundIntactNoTrees_146" parent="." index="145" unique_id=1953047160]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_146" parent="." index="146" unique_id=1599407070]
+[node name="GroundIntactNoTrees_147" parent="." index="146" unique_id=1852588241]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_147" parent="." index="147" unique_id=98614809]
+[node name="GroundIntactNoTrees_148" parent="." index="147" unique_id=2134057393]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_148" parent="." index="148" unique_id=2020490110]
+[node name="GroundIntactNoTrees_149" parent="." index="148" unique_id=280346450]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_149" parent="." index="149" unique_id=748793077]
+[node name="GroundIntactNoTrees_150" parent="." index="149" unique_id=1355315762]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_150" parent="." index="150" unique_id=1010383549]
+[node name="GroundIntactNoTrees_151" parent="." index="150" unique_id=107024373]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_151" parent="." index="151" unique_id=68249766]
+[node name="GroundIntactNoTrees_152" parent="." index="151" unique_id=133303998]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_152" parent="." index="152" unique_id=1798362018]
+[node name="GroundIntactNoTrees_153" parent="." index="152" unique_id=945369746]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_153" parent="." index="153" unique_id=1933056061]
+[node name="GroundIntactNoTrees_154" parent="." index="153" unique_id=997083609]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_154" parent="." index="154" unique_id=2040575645]
+[node name="GroundIntactNoTrees_155" parent="." index="154" unique_id=22581821]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_155" parent="." index="155" unique_id=2100351024]
+[node name="GroundIntactNoTrees_156" parent="." index="155" unique_id=393231592]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_156" parent="." index="156" unique_id=447547262]
+[node name="GroundIntactNoTrees_157" parent="." index="156" unique_id=1427358514]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_157" parent="." index="157" unique_id=1111725659]
+[node name="GroundIntactNoTrees_158" parent="." index="157" unique_id=565224865]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_158" parent="." index="158" unique_id=464563447]
+[node name="GroundIntactNoTrees_159" parent="." index="158" unique_id=361928424]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_159" parent="." index="159" unique_id=535130804]
+[node name="GroundIntactNoTrees_160" parent="." index="159" unique_id=1988841140]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_160" parent="." index="160" unique_id=280062783]
+[node name="GroundIntactNoTrees_161" parent="." index="160" unique_id=1243711935]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_161" parent="." index="161" unique_id=642566573]
+[node name="GroundIntactNoTrees_162" parent="." index="161" unique_id=2100785152]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_162" parent="." index="162" unique_id=634286164]
+[node name="GroundIntactNoTrees_163" parent="." index="162" unique_id=1943623714]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_163" parent="." index="163" unique_id=1997400176]
+[node name="GroundIntactNoTrees_164" parent="." index="163" unique_id=1978285469]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_164" parent="." index="164" unique_id=1831242565]
+[node name="GroundIntactNoTrees_165" parent="." index="164" unique_id=1641050802]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_165" parent="." index="165" unique_id=643287090]
+[node name="GroundIntactNoTrees_166" parent="." index="165" unique_id=2071314]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_166" parent="." index="166" unique_id=1263226232]
+[node name="GroundIntactNoTrees_167" parent="." index="166" unique_id=205791162]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_167" parent="." index="167" unique_id=480169146]
+[node name="GroundIntactNoTrees_168" parent="." index="167" unique_id=1560192476]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_168" parent="." index="168" unique_id=585093959]
+[node name="GroundIntactNoTrees_169" parent="." index="168" unique_id=1677804392]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_169" parent="." index="169" unique_id=165634824]
+[node name="GroundIntactNoTrees_170" parent="." index="169" unique_id=1411690424]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_170" parent="." index="170" unique_id=1866182621]
+[node name="GroundIntactNoTrees_171" parent="." index="170" unique_id=2061323901]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_171" parent="." index="171" unique_id=755584704]
+[node name="GroundIntactNoTrees_172" parent="." index="171" unique_id=699078250]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_172" parent="." index="172" unique_id=1249794766]
+[node name="GroundIntactNoTrees_173" parent="." index="172" unique_id=1107902595]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_173" parent="." index="173" unique_id=1466558597]
+[node name="GroundIntactNoTrees_174" parent="." index="173" unique_id=1574718491]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_174" parent="." index="174" unique_id=1753532592]
+[node name="GroundIntactNoTrees_175" parent="." index="174" unique_id=1420956721]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_175" parent="." index="175" unique_id=441973568]
+[node name="GroundIntactNoTrees_176" parent="." index="175" unique_id=948454886]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_176" parent="." index="176" unique_id=591415479]
+[node name="GroundIntactNoTrees_177" parent="." index="176" unique_id=757888306]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_177" parent="." index="177" unique_id=710214612]
+[node name="GroundIntactNoTrees_178" parent="." index="177" unique_id=1941786734]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_178" parent="." index="178" unique_id=1285724815]
+[node name="GroundIntactNoTrees_179" parent="." index="178" unique_id=1229746419]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_179" parent="." index="179" unique_id=278009578]
+[node name="GroundIntactNoTrees_180" parent="." index="179" unique_id=899448497]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_180" parent="." index="180" unique_id=1186544278]
+[node name="GroundIntactNoTrees_181" parent="." index="180" unique_id=3084284]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_181" parent="." index="181" unique_id=1455725758]
+[node name="GroundIntactNoTrees_182" parent="." index="181" unique_id=1115283750]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_182" parent="." index="182" unique_id=1447951786]
+[node name="GroundIntactNoTrees_183" parent="." index="182" unique_id=2081310765]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_183" parent="." index="183" unique_id=306508650]
+[node name="GroundIntactNoTrees_184" parent="." index="183" unique_id=1484320288]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_184" parent="." index="184" unique_id=1507648431]
+[node name="GroundIntactNoTrees_185" parent="." index="184" unique_id=95928172]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_185" parent="." index="185" unique_id=1907520429]
+[node name="GroundIntactNoTrees_186" parent="." index="185" unique_id=1206805211]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_186" parent="." index="186" unique_id=1639172350]
+[node name="GroundIntactNoTrees_187" parent="." index="186" unique_id=1253840800]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_187" parent="." index="187" unique_id=516916934]
+[node name="GroundIntactNoTrees_188" parent="." index="187" unique_id=575046607]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_188" parent="." index="188" unique_id=1352625773]
+[node name="GroundIntactNoTrees_189" parent="." index="188" unique_id=1624098067]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_189" parent="." index="189" unique_id=327019559]
+[node name="GroundIntactNoTrees_190" parent="." index="189" unique_id=1712765551]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_190" parent="." index="190" unique_id=2000624594]
+[node name="GroundIntactNoTrees_191" parent="." index="190" unique_id=135282899]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_191" parent="." index="191" unique_id=1830322971]
+[node name="GroundIntactNoTrees_192" parent="." index="191" unique_id=240247996]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_192" parent="." index="192" unique_id=950455625]
+[node name="GroundIntactNoTrees_193" parent="." index="192" unique_id=1328329561]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_193" parent="." index="193" unique_id=325803054]
+[node name="GroundIntactNoTrees_194" parent="." index="193" unique_id=2061963354]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_194" parent="." index="194" unique_id=125165969]
+[node name="GroundIntactNoTrees_195" parent="." index="194" unique_id=981135923]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_195" parent="." index="195" unique_id=1441688194]
+[node name="GroundIntactNoTrees_196" parent="." index="195" unique_id=2029200197]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_196" parent="." index="196" unique_id=773425205]
+[node name="GroundIntactNoTrees_197" parent="." index="196" unique_id=353609179]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_197" parent="." index="197" unique_id=624442304]
+[node name="GroundIntactNoTrees_198" parent="." index="197" unique_id=1397501208]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_198" parent="." index="198" unique_id=1556186104]
+[node name="GroundIntactNoTrees_199" parent="." index="198" unique_id=297530869]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_199" parent="." index="199" unique_id=1785722181]
+[node name="GroundIntactNoTrees_200" parent="." index="199" unique_id=742008767]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_200" parent="." index="200" unique_id=1176103087]
+[node name="GroundIntactNoTrees_201" parent="." index="200" unique_id=1213370485]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_201" parent="." index="201" unique_id=1373780550]
+[node name="GroundIntactNoTrees_202" parent="." index="201" unique_id=525679587]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_202" parent="." index="202" unique_id=1869765340]
+[node name="GroundIntactNoTrees_203" parent="." index="202" unique_id=429042280]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_203" parent="." index="203" unique_id=718206053]
+[node name="GroundIntactNoTrees_204" parent="." index="203" unique_id=142275271]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_204" parent="." index="204" unique_id=194781063]
+[node name="GroundIntactNoTrees_205" parent="." index="204" unique_id=1944571067]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_205" parent="." index="205" unique_id=2133717969]
+[node name="GroundIntactNoTrees_206" parent="." index="205" unique_id=1465432164]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_206" parent="." index="206" unique_id=1444760759]
+[node name="GroundIntactNoTrees_207" parent="." index="206" unique_id=1519582284]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_207" parent="." index="207" unique_id=2092098035]
+[node name="GroundIntactNoTrees_208" parent="." index="207" unique_id=1270527926]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_208" parent="." index="208" unique_id=999698459]
+[node name="GroundIntactNoTrees_209" parent="." index="208" unique_id=1641404714]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_209" parent="." index="209" unique_id=1748685989]
+[node name="GroundIntactNoTrees_210" parent="." index="209" unique_id=971142159]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_210" parent="." index="210" unique_id=2125274793]
+[node name="GroundIntactNoTrees_211" parent="." index="210" unique_id=2117209724]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_211" parent="." index="211" unique_id=276125112]
+[node name="GroundIntactNoTrees_212" parent="." index="211" unique_id=1140927809]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_212" parent="." index="212" unique_id=170960427]
+[node name="GroundIntactNoTrees_213" parent="." index="212" unique_id=1426015921]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_213" parent="." index="213" unique_id=123769715]
+[node name="GroundIntactNoTrees_214" parent="." index="213" unique_id=1442973459]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_214" parent="." index="214" unique_id=1435999245]
+[node name="GroundIntactNoTrees_215" parent="." index="214" unique_id=1458238352]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_215" parent="." index="215" unique_id=472683137]
+[node name="GroundIntactNoTrees_216" parent="." index="215" unique_id=602383167]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_216" parent="." index="216" unique_id=844314618]
+[node name="GroundIntactNoTrees_217" parent="." index="216" unique_id=403444463]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_217" parent="." index="217" unique_id=257453296]
+[node name="GroundIntactNoTrees_218" parent="." index="217" unique_id=892985407]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_218" parent="." index="218" unique_id=313997806]
+[node name="GroundIntactNoTrees_219" parent="." index="218" unique_id=1395357638]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_219" parent="." index="219" unique_id=1139565085]
+[node name="GroundIntactNoTrees_220" parent="." index="219" unique_id=1705396754]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_220" parent="." index="220" unique_id=554615483]
+[node name="GroundIntactNoTrees_221" parent="." index="220" unique_id=896068729]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_221" parent="." index="221" unique_id=1961268061]
+[node name="GroundIntactNoTrees_222" parent="." index="221" unique_id=1234171741]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_222" parent="." index="222" unique_id=1557148980]
+[node name="GroundIntactNoTrees_223" parent="." index="222" unique_id=1958971165]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_223" parent="." index="223" unique_id=383535781]
+[node name="GroundIntactNoTrees_224" parent="." index="223" unique_id=1824650649]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_224" parent="." index="224" unique_id=2106846514]
+[node name="GroundIntactNoTrees_225" parent="." index="224" unique_id=1370060537]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_225" parent="." index="225" unique_id=1000764569]
+[node name="GroundIntactNoTrees_226" parent="." index="225" unique_id=570345485]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_226" parent="." index="226" unique_id=1067435842]
+[node name="GroundIntactNoTrees_227" parent="." index="226" unique_id=195490068]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_227" parent="." index="227" unique_id=478223660]
+[node name="GroundIntactNoTrees_228" parent="." index="227" unique_id=1833669717]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_228" parent="." index="228" unique_id=808755083]
+[node name="GroundIntactNoTrees_229" parent="." index="228" unique_id=1457619311]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_229" parent="." index="229" unique_id=1439049584]
+[node name="GroundIntactNoTrees_230" parent="." index="229" unique_id=554550713]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_230" parent="." index="230" unique_id=588724673]
+[node name="GroundIntactNoTrees_231" parent="." index="230" unique_id=1789218796]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_231" parent="." index="231" unique_id=1087244607]
+[node name="GroundIntactNoTrees_232" parent="." index="231" unique_id=1681383333]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_232" parent="." index="232" unique_id=1112469835]
+[node name="GroundIntactNoTrees_233" parent="." index="232" unique_id=183144957]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_233" parent="." index="233" unique_id=212654555]
+[node name="GroundIntactNoTrees_234" parent="." index="233" unique_id=1962226301]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_234" parent="." index="234" unique_id=1432740593]
+[node name="GroundIntactNoTrees_235" parent="." index="234" unique_id=160107424]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_235" parent="." index="235" unique_id=1661799489]
+[node name="GroundIntactNoTrees_236" parent="." index="235" unique_id=766700124]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_236" parent="." index="236" unique_id=24270732]
+[node name="GroundIntactNoTrees_237" parent="." index="236" unique_id=638757503]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_237" parent="." index="237" unique_id=2139185413]
+[node name="GroundIntactNoTrees_238" parent="." index="237" unique_id=480754199]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_238" parent="." index="238" unique_id=641492126]
+[node name="GroundIntactNoTrees_239" parent="." index="238" unique_id=784712]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_239" parent="." index="239" unique_id=1885632615]
+[node name="GroundIntactNoTrees_240" parent="." index="239" unique_id=864479099]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_240" parent="." index="240" unique_id=2082756068]
+[node name="GroundIntactNoTrees_241" parent="." index="240" unique_id=1378783005]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_241" parent="." index="241" unique_id=1145263886]
+[node name="GroundIntactNoTrees_242" parent="." index="241" unique_id=1149555637]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_242" parent="." index="242" unique_id=2132469415]
+[node name="GroundIntactNoTrees_243" parent="." index="242" unique_id=2069480331]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_243" parent="." index="243" unique_id=1879929269]
+[node name="GroundIntactNoTrees_244" parent="." index="243" unique_id=307868915]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_244" parent="." index="244" unique_id=1005398910]
+[node name="GroundIntactNoTrees_245" parent="." index="244" unique_id=630483599]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_245" parent="." index="245" unique_id=346213418]
+[node name="GroundIntactNoTrees_246" parent="." index="245" unique_id=630291720]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_246" parent="." index="246" unique_id=2142869999]
+[node name="GroundIntactNoTrees_247" parent="." index="246" unique_id=1619944797]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_247" parent="." index="247" unique_id=1635365759]
+[node name="GroundIntactNoTrees_248" parent="." index="247" unique_id=841778052]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_248" parent="." index="248" unique_id=368604498]
+[node name="GroundIntactNoTrees_249" parent="." index="248" unique_id=299745380]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_249" parent="." index="249" unique_id=6986706]
+[node name="GroundIntactNoTrees_250" parent="." index="249" unique_id=8201501]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_250" parent="." index="250" unique_id=983419117]
+[node name="GroundIntactNoTrees_251" parent="." index="250" unique_id=1157969291]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_251" parent="." index="251" unique_id=1219378153]
+[node name="GroundIntactNoTrees_252" parent="." index="251" unique_id=1775113048]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_252" parent="." index="252" unique_id=1603329381]
+[node name="GroundIntactNoTrees_253" parent="." index="252" unique_id=1670705307]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_253" parent="." index="253" unique_id=1683351538]
+[node name="GroundIntactNoTrees_254" parent="." index="253" unique_id=1610458695]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_254" parent="." index="254" unique_id=1934381348]
+[node name="GroundIntactNoTrees_255" parent="." index="254" unique_id=602104973]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_255" parent="." index="255" unique_id=2076117538]
+[node name="GroundIntactNoTrees_256" parent="." index="255" unique_id=1434151684]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_256" parent="." index="256" unique_id=760715998]
+[node name="GroundIntactNoTrees_257" parent="." index="256" unique_id=680406039]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_257" parent="." index="257" unique_id=680984276]
+[node name="GroundIntactNoTrees_258" parent="." index="257" unique_id=204029400]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_258" parent="." index="258" unique_id=1561774973]
+[node name="GroundIntactNoTrees_259" parent="." index="258" unique_id=23310581]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_259" parent="." index="259" unique_id=279745261]
+[node name="GroundIntactNoTrees_260" parent="." index="259" unique_id=361163971]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_260" parent="." index="260" unique_id=703465441]
+[node name="GroundIntactNoTrees_261" parent="." index="260" unique_id=1079058764]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_261" parent="." index="261" unique_id=1355171739]
+[node name="GroundIntactNoTrees_262" parent="." index="261" unique_id=700086990]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_262" parent="." index="262" unique_id=1137357669]
+[node name="GroundIntactNoTrees_263" parent="." index="262" unique_id=1185731558]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_263" parent="." index="263" unique_id=855387056]
+[node name="GroundIntactNoTrees_264" parent="." index="263" unique_id=2113691717]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_264" parent="." index="264" unique_id=1720811898]
+[node name="GroundIntactNoTrees_265" parent="." index="264" unique_id=329051678]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_265" parent="." index="265" unique_id=1923946525]
+[node name="GroundIntactNoTrees_266" parent="." index="265" unique_id=972573418]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_266" parent="." index="266" unique_id=57637452]
+[node name="GroundIntactNoTrees_267" parent="." index="266" unique_id=1072486910]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_267" parent="." index="267" unique_id=737638100]
+[node name="GroundIntactNoTrees_268" parent="." index="267" unique_id=439239971]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_268" parent="." index="268" unique_id=1712132950]
+[node name="GroundIntactNoTrees_269" parent="." index="268" unique_id=1872000799]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_269" parent="." index="269" unique_id=1458512533]
+[node name="GroundIntactNoTrees_270" parent="." index="269" unique_id=1463946868]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_270" parent="." index="270" unique_id=626298259]
+[node name="GroundIntactNoTrees_271" parent="." index="270" unique_id=640824323]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_271" parent="." index="271" unique_id=440296444]
+[node name="GroundIntactNoTrees_272" parent="." index="271" unique_id=966986055]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_272" parent="." index="272" unique_id=1243164391]
+[node name="GroundIntactNoTrees_273" parent="." index="272" unique_id=1205999202]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_273" parent="." index="273" unique_id=1142046861]
+[node name="GroundIntactNoTrees_274" parent="." index="273" unique_id=1141934610]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_274" parent="." index="274" unique_id=1951393607]
+[node name="GroundIntactNoTrees_275" parent="." index="274" unique_id=532406282]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_275" parent="." index="275" unique_id=1730986323]
+[node name="GroundIntactNoTrees_276" parent="." index="275" unique_id=108340822]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_276" parent="." index="276" unique_id=1466168952]
+[node name="GroundIntactNoTrees_277" parent="." index="276" unique_id=1081897167]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_277" parent="." index="277" unique_id=1859515719]
+[node name="GroundIntactNoTrees_278" parent="." index="277" unique_id=1523867303]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_278" parent="." index="278" unique_id=250970510]
+[node name="GroundIntactNoTrees_279" parent="." index="278" unique_id=1529663104]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_279" parent="." index="279" unique_id=1661404336]
+[node name="GroundIntactNoTrees_280" parent="." index="279" unique_id=981184106]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_280" parent="." index="280" unique_id=1519787808]
+[node name="GroundIntactNoTrees_281" parent="." index="280" unique_id=58010912]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_281" parent="." index="281" unique_id=748793580]
+[node name="GroundIntactNoTrees_282" parent="." index="281" unique_id=1246160522]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_282" parent="." index="282" unique_id=778961502]
+[node name="GroundIntactNoTrees_283" parent="." index="282" unique_id=1647870300]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_283" parent="." index="283" unique_id=1335597117]
+[node name="GroundIntactNoTrees_284" parent="." index="283" unique_id=163664779]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_284" parent="." index="284" unique_id=1488215920]
+[node name="GroundIntactNoTrees_285" parent="." index="284" unique_id=1835846102]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_285" parent="." index="285" unique_id=1526839334]
+[node name="GroundIntactNoTrees_286" parent="." index="285" unique_id=1121129209]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_286" parent="." index="286" unique_id=879300751]
+[node name="GroundIntactNoTrees_287" parent="." index="286" unique_id=941749790]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_287" parent="." index="287" unique_id=172313016]
+[node name="GroundIntactNoTrees_288" parent="." index="287" unique_id=2126309939]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_288" parent="." index="288" unique_id=962982252]
+[node name="GroundIntactNoTrees_289" parent="." index="288" unique_id=904097746]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_289" parent="." index="289" unique_id=1322731725]
+[node name="GroundIntactNoTrees_290" parent="." index="289" unique_id=1398750686]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_290" parent="." index="290" unique_id=740816125]
+[node name="GroundIntactNoTrees_291" parent="." index="290" unique_id=1008477066]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_291" parent="." index="291" unique_id=1710047943]
+[node name="GroundIntactNoTrees_292" parent="." index="291" unique_id=1934420357]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_292" parent="." index="292" unique_id=760469963]
+[node name="GroundIntactNoTrees_293" parent="." index="292" unique_id=2126180060]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_293" parent="." index="293" unique_id=1378256686]
+[node name="GroundIntactNoTrees_294" parent="." index="293" unique_id=562743005]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_294" parent="." index="294" unique_id=560014154]
+[node name="GroundIntactNoTrees_295" parent="." index="294" unique_id=87427372]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_295" parent="." index="295" unique_id=814904032]
+[node name="GroundIntactNoTrees_296" parent="." index="295" unique_id=203778183]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_296" parent="." index="296" unique_id=242744473]
+[node name="GroundIntactNoTrees_297" parent="." index="296" unique_id=1851676005]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_297" parent="." index="297" unique_id=1831926766]
+[node name="GroundIntactNoTrees_298" parent="." index="297" unique_id=1631800669]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_298" parent="." index="298" unique_id=2045608346]
+[node name="GroundIntactNoTrees_299" parent="." index="298" unique_id=160262666]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_299" parent="." index="299" unique_id=1784251955]
+[node name="GroundIntactNoTrees_300" parent="." index="299" unique_id=489294378]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_300" parent="." index="300" unique_id=1633263855]
+[node name="GroundIntactNoTrees_301" parent="." index="300" unique_id=1595644798]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_301" parent="." index="301" unique_id=1123709342]
+[node name="GroundIntactNoTrees_302" parent="." index="301" unique_id=526248942]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_302" parent="." index="302" unique_id=1565229064]
+[node name="GroundIntactNoTrees_303" parent="." index="302" unique_id=1058760870]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_303" parent="." index="303" unique_id=1408536691]
+[node name="GroundIntactNoTrees_304" parent="." index="303" unique_id=1550977276]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_304" parent="." index="304" unique_id=123088262]
+[node name="GroundIntactNoTrees_305" parent="." index="304" unique_id=318980975]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_305" parent="." index="305" unique_id=1843721024]
+[node name="GroundIntactNoTrees_306" parent="." index="305" unique_id=1026367236]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_306" parent="." index="306" unique_id=1318784130]
+[node name="GroundIntactNoTrees_307" parent="." index="306" unique_id=193497590]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_307" parent="." index="307" unique_id=421001352]
+[node name="GroundIntactNoTrees_308" parent="." index="307" unique_id=912338151]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_308" parent="." index="308" unique_id=101132120]
+[node name="GroundIntactNoTrees_309" parent="." index="308" unique_id=1582474570]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_309" parent="." index="309" unique_id=2100042687]
+[node name="GroundIntactNoTrees_310" parent="." index="309" unique_id=160692140]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_310" parent="." index="310" unique_id=300982830]
+[node name="GroundIntactNoTrees_311" parent="." index="310" unique_id=1286391024]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_311" parent="." index="311" unique_id=1172152361]
+[node name="GroundIntactNoTrees_312" parent="." index="311" unique_id=329604074]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_312" parent="." index="312" unique_id=860960200]
+[node name="GroundIntactNoTrees_313" parent="." index="312" unique_id=1222127313]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_313" parent="." index="313" unique_id=593050699]
+[node name="GroundIntactNoTrees_314" parent="." index="313" unique_id=1516566383]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_314" parent="." index="314" unique_id=1433099949]
+[node name="GroundIntactNoTrees_315" parent="." index="314" unique_id=1541572346]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_315" parent="." index="315" unique_id=194559457]
+[node name="GroundIntactNoTrees_316" parent="." index="315" unique_id=505213650]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_316" parent="." index="316" unique_id=1146652073]
+[node name="GroundIntactNoTrees_317" parent="." index="316" unique_id=1957787177]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_317" parent="." index="317" unique_id=1202849777]
+[node name="GroundIntactNoTrees_318" parent="." index="317" unique_id=764060933]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_318" parent="." index="318" unique_id=1641607610]
+[node name="GroundIntactNoTrees_319" parent="." index="318" unique_id=895041430]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_319" parent="." index="319" unique_id=2098416964]
+[node name="GroundIntactNoTrees_320" parent="." index="319" unique_id=1226380479]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_320" parent="." index="320" unique_id=519886528]
+[node name="GroundIntactNoTrees_321" parent="." index="320" unique_id=814953075]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_321" parent="." index="321" unique_id=1751072757]
+[node name="GroundIntactNoTrees_322" parent="." index="321" unique_id=690955816]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_322" parent="." index="322" unique_id=1131452992]
+[node name="GroundIntactNoTrees_323" parent="." index="322" unique_id=693470980]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_323" parent="." index="323" unique_id=1508479680]
+[node name="GroundIntactNoTrees_324" parent="." index="323" unique_id=1068781243]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_324" parent="." index="324" unique_id=1115661978]
+[node name="GroundIntactNoTrees_325" parent="." index="324" unique_id=831950288]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_325" parent="." index="325" unique_id=1556878114]
+[node name="GroundIntactNoTrees_326" parent="." index="325" unique_id=1237947933]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_326" parent="." index="326" unique_id=1720352584]
+[node name="GroundIntactNoTrees_327" parent="." index="326" unique_id=1522779130]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_327" parent="." index="327" unique_id=938205914]
+[node name="GroundIntactNoTrees_328" parent="." index="327" unique_id=82581623]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_328" parent="." index="328" unique_id=1161271914]
+[node name="GroundIntactNoTrees_329" parent="." index="328" unique_id=252458733]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_329" parent="." index="329" unique_id=685901383]
+[node name="GroundIntactNoTrees_330" parent="." index="329" unique_id=1023070185]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_330" parent="." index="330" unique_id=678565493]
+[node name="GroundIntactNoTrees_331" parent="." index="330" unique_id=1823082828]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_331" parent="." index="331" unique_id=1136673409]
+[node name="GroundIntactNoTrees_332" parent="." index="331" unique_id=439933602]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_332" parent="." index="332" unique_id=622512774]
+[node name="GroundIntactNoTrees_333" parent="." index="332" unique_id=539989940]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_333" parent="." index="333" unique_id=1831364089]
+[node name="GroundIntactNoTrees_334" parent="." index="333" unique_id=107418490]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_334" parent="." index="334" unique_id=562966506]
+[node name="GroundIntactNoTrees_335" parent="." index="334" unique_id=957794631]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_335" parent="." index="335" unique_id=209911393]
+[node name="GroundIntactNoTrees_336" parent="." index="335" unique_id=1945657788]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_336" parent="." index="336" unique_id=863092720]
+[node name="GroundIntactNoTrees_337" parent="." index="336" unique_id=628439806]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_337" parent="." index="337" unique_id=1338291555]
+[node name="GroundIntactNoTrees_338" parent="." index="337" unique_id=1887666696]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_338" parent="." index="338" unique_id=1909090541]
+[node name="GroundIntactNoTrees_339" parent="." index="338" unique_id=956149663]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_339" parent="." index="339" unique_id=1419859780]
+[node name="GroundIntactNoTrees_340" parent="." index="339" unique_id=886382935]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_340" parent="." index="340" unique_id=929739061]
+[node name="GroundIntactNoTrees_341" parent="." index="340" unique_id=1527713206]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_341" parent="." index="341" unique_id=1122148094]
+[node name="GroundIntactNoTrees_342" parent="." index="341" unique_id=1465770833]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_342" parent="." index="342" unique_id=1926301240]
+[node name="GroundIntactNoTrees_343" parent="." index="342" unique_id=1259538527]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_343" parent="." index="343" unique_id=1687259472]
+[node name="GroundIntactNoTrees_344" parent="." index="343" unique_id=877174415]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_344" parent="." index="344" unique_id=2122293343]
+[node name="GroundIntactNoTrees_345" parent="." index="344" unique_id=1459018935]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_345" parent="." index="345" unique_id=957409206]
+[node name="GroundIntactNoTrees_346" parent="." index="345" unique_id=1582897407]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_346" parent="." index="346" unique_id=10879954]
+[node name="GroundIntactNoTrees_347" parent="." index="346" unique_id=1235040630]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_347" parent="." index="347" unique_id=292509330]
+[node name="GroundIntactNoTrees_348" parent="." index="347" unique_id=1494706531]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_348" parent="." index="348" unique_id=1340827888]
+[node name="GroundIntactNoTrees_349" parent="." index="348" unique_id=880896586]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_349" parent="." index="349" unique_id=1963556802]
+[node name="GroundIntactNoTrees_350" parent="." index="349" unique_id=1733687542]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_350" parent="." index="350" unique_id=1195871527]
+[node name="GroundIntactNoTrees_351" parent="." index="350" unique_id=1969701727]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_351" parent="." index="351" unique_id=1503730263]
+[node name="GroundIntactNoTrees_352" parent="." index="351" unique_id=376297189]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_352" parent="." index="352" unique_id=527350828]
+[node name="GroundIntactNoTrees_353" parent="." index="352" unique_id=2015202456]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_353" parent="." index="353" unique_id=1584423540]
+[node name="GroundIntactNoTrees_354" parent="." index="353" unique_id=415140182]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_354" parent="." index="354" unique_id=1718767917]
+[node name="GroundIntactNoTrees_355" parent="." index="354" unique_id=1343016404]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_355" parent="." index="355" unique_id=1871347340]
+[node name="GroundIntactNoTrees_356" parent="." index="355" unique_id=649272122]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_356" parent="." index="356" unique_id=216447237]
+[node name="GroundIntactNoTrees_357" parent="." index="356" unique_id=958866443]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_357" parent="." index="357" unique_id=656509005]
+[node name="GroundIntactNoTrees_358" parent="." index="357" unique_id=2027826789]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_358" parent="." index="358" unique_id=871988370]
+[node name="GroundIntactNoTrees_359" parent="." index="358" unique_id=1724883161]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_359" parent="." index="359" unique_id=2012035849]
+[node name="GroundIntactNoTrees_360" parent="." index="359" unique_id=1164410047]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_360" parent="." index="360" unique_id=225070788]
+[node name="GroundIntactNoTrees_361" parent="." index="360" unique_id=1403369541]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_361" parent="." index="361" unique_id=854736646]
+[node name="GroundIntactNoTrees_362" parent="." index="361" unique_id=234096991]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_362" parent="." index="362" unique_id=275452352]
+[node name="GroundIntactNoTrees_363" parent="." index="362" unique_id=696159301]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_363" parent="." index="363" unique_id=607268667]
+[node name="GroundIntactNoTrees_364" parent="." index="363" unique_id=591143938]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_364" parent="." index="364" unique_id=936400276]
+[node name="GroundIntactNoTrees_365" parent="." index="364" unique_id=984165593]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_365" parent="." index="365" unique_id=1222248719]
+[node name="GroundIntactNoTrees_366" parent="." index="365" unique_id=342726411]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_366" parent="." index="366" unique_id=2060808759]
+[node name="GroundIntactNoTrees_367" parent="." index="366" unique_id=1722819711]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_367" parent="." index="367" unique_id=1012908849]
+[node name="GroundIntactNoTrees_368" parent="." index="367" unique_id=1385972278]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_368" parent="." index="368" unique_id=294604430]
+[node name="GroundIntactNoTrees_369" parent="." index="368" unique_id=1777941455]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_369" parent="." index="369" unique_id=566486975]
+[node name="GroundIntactNoTrees_370" parent="." index="369" unique_id=134094747]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_370" parent="." index="370" unique_id=437013186]
+[node name="GroundIntactNoTrees_371" parent="." index="370" unique_id=1101603246]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_371" parent="." index="371" unique_id=1452164358]
+[node name="GroundIntactNoTrees_372" parent="." index="371" unique_id=1207112275]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_372" parent="." index="372" unique_id=971431678]
+[node name="GroundIntactNoTrees_373" parent="." index="372" unique_id=836167981]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_373" parent="." index="373" unique_id=2100390074]
+[node name="GroundIntactNoTrees_374" parent="." index="373" unique_id=246828238]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_374" parent="." index="374" unique_id=1370465399]
+[node name="GroundIntactNoTrees_375" parent="." index="374" unique_id=645696215]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_375" parent="." index="375" unique_id=1387463273]
+[node name="GroundIntactNoTrees_376" parent="." index="375" unique_id=785114892]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_376" parent="." index="376" unique_id=801496580]
+[node name="GroundIntactNoTrees_377" parent="." index="376" unique_id=1672242053]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_377" parent="." index="377" unique_id=1411200052]
+[node name="GroundIntactNoTrees_378" parent="." index="377" unique_id=44144746]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_378" parent="." index="378" unique_id=1917021332]
+[node name="GroundIntactNoTrees_379" parent="." index="378" unique_id=1462188344]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_379" parent="." index="379" unique_id=1695910417]
+[node name="GroundIntactNoTrees_380" parent="." index="379" unique_id=404669602]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_380" parent="." index="380" unique_id=2126595019]
+[node name="GroundIntactNoTrees_381" parent="." index="380" unique_id=1267963550]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_381" parent="." index="381" unique_id=1457458213]
+[node name="GroundIntactNoTrees_382" parent="." index="381" unique_id=441413397]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_382" parent="." index="382" unique_id=1965114564]
+[node name="GroundIntactNoTrees_383" parent="." index="382" unique_id=702785945]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_383" parent="." index="383" unique_id=166843236]
+[node name="GroundIntactNoTrees_384" parent="." index="383" unique_id=1095970107]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_384" parent="." index="384" unique_id=944477749]
+[node name="GroundIntactNoTrees_385" parent="." index="384" unique_id=358476619]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_385" parent="." index="385" unique_id=374688756]
+[node name="GroundIntactNoTrees_386" parent="." index="385" unique_id=911562562]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_386" parent="." index="386" unique_id=458966882]
+[node name="GroundIntactNoTrees_387" parent="." index="386" unique_id=2027825711]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_387" parent="." index="387" unique_id=1362614860]
+[node name="GroundIntactNoTrees_388" parent="." index="387" unique_id=1606286453]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_388" parent="." index="388" unique_id=2050715229]
+[node name="GroundIntactNoTrees_389" parent="." index="388" unique_id=2036070347]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_389" parent="." index="389" unique_id=1313596103]
+[node name="GroundIntactNoTrees_390" parent="." index="389" unique_id=1718753883]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_390" parent="." index="390" unique_id=1330480066]
+[node name="GroundIntactNoTrees_391" parent="." index="390" unique_id=552187835]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_391" parent="." index="391" unique_id=2083060262]
+[node name="GroundIntactNoTrees_392" parent="." index="391" unique_id=285950251]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_392" parent="." index="392" unique_id=264538587]
+[node name="GroundIntactNoTrees_393" parent="." index="392" unique_id=56421789]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_393" parent="." index="393" unique_id=730925588]
+[node name="GroundIntactNoTrees_394" parent="." index="393" unique_id=1438415132]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_394" parent="." index="394" unique_id=1751477872]
+[node name="GroundIntactNoTrees_395" parent="." index="394" unique_id=94376373]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_395" parent="." index="395" unique_id=270246543]
+[node name="GroundIntactNoTrees_396" parent="." index="395" unique_id=216233200]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_396" parent="." index="396" unique_id=1852015122]
+[node name="GroundIntactNoTrees_397" parent="." index="396" unique_id=1374739035]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_397" parent="." index="397" unique_id=1897846500]
+[node name="GroundIntactNoTrees_398" parent="." index="397" unique_id=116790601]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_398" parent="." index="398" unique_id=570974825]
+[node name="GroundIntactNoTrees_399" parent="." index="398" unique_id=6834490]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_399" parent="." index="399" unique_id=1714050087]
+[node name="GroundIntactNoTrees_400" parent="." index="399" unique_id=270784091]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_400" parent="." index="400" unique_id=323126540]
+[node name="GroundIntactNoTrees_401" parent="." index="400" unique_id=255173346]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_401" parent="." index="401" unique_id=1443922314]
+[node name="GroundIntactNoTrees_402" parent="." index="401" unique_id=784935044]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_402" parent="." index="402" unique_id=474669305]
+[node name="GroundIntactNoTrees_403" parent="." index="402" unique_id=1077257795]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_403" parent="." index="403" unique_id=1600376821]
+[node name="GroundIntactNoTrees_404" parent="." index="403" unique_id=1124232641]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_404" parent="." index="404" unique_id=1212653848]
+[node name="GroundIntactNoTrees_405" parent="." index="404" unique_id=1541806850]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_405" parent="." index="405" unique_id=640683195]
+[node name="GroundIntactNoTrees_406" parent="." index="405" unique_id=260846118]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_406" parent="." index="406" unique_id=931420210]
+[node name="GroundIntactNoTrees_407" parent="." index="406" unique_id=1600100269]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_407" parent="." index="407" unique_id=1933964371]
+[node name="GroundIntactNoTrees_408" parent="." index="407" unique_id=2032721188]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_408" parent="." index="408" unique_id=1563553257]
+[node name="GroundIntactNoTrees_409" parent="." index="408" unique_id=1708932737]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_409" parent="." index="409" unique_id=481414969]
+[node name="GroundIntactNoTrees_410" parent="." index="409" unique_id=761826502]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_410" parent="." index="410" unique_id=1822138636]
+[node name="GroundIntactNoTrees_411" parent="." index="410" unique_id=1201864798]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_411" parent="." index="411" unique_id=1113276614]
+[node name="GroundIntactNoTrees_412" parent="." index="411" unique_id=249905718]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_412" parent="." index="412" unique_id=1166597225]
+[node name="GroundIntactNoTrees_413" parent="." index="412" unique_id=830885635]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_413" parent="." index="413" unique_id=2146471368]
+[node name="GroundIntactNoTrees_414" parent="." index="413" unique_id=2056693250]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_414" parent="." index="414" unique_id=2146500492]
+[node name="GroundIntactNoTrees_415" parent="." index="414" unique_id=1507628692]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_415" parent="." index="415" unique_id=915197235]
+[node name="GroundIntactNoTrees_416" parent="." index="415" unique_id=1944208810]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_416" parent="." index="416" unique_id=1594401835]
+[node name="GroundIntactNoTrees_417" parent="." index="416" unique_id=232266135]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_417" parent="." index="417" unique_id=1268281396]
+[node name="GroundIntactNoTrees_418" parent="." index="417" unique_id=1365620705]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_418" parent="." index="418" unique_id=1641908503]
+[node name="GroundIntactNoTrees_419" parent="." index="418" unique_id=428487285]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_419" parent="." index="419" unique_id=1014906151]
+[node name="GroundIntactNoTrees_420" parent="." index="419" unique_id=787737304]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_420" parent="." index="420" unique_id=1456319171]
+[node name="GroundIntactNoTrees_421" parent="." index="420" unique_id=1616175403]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_421" parent="." index="421" unique_id=2085287714]
+[node name="GroundIntactNoTrees_422" parent="." index="421" unique_id=215581813]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_422" parent="." index="422" unique_id=120852665]
+[node name="GroundIntactNoTrees_423" parent="." index="422" unique_id=1078402320]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_423" parent="." index="423" unique_id=729923456]
+[node name="GroundIntactNoTrees_424" parent="." index="423" unique_id=1346841939]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_424" parent="." index="424" unique_id=126666138]
+[node name="GroundIntactNoTrees_425" parent="." index="424" unique_id=488400875]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_425" parent="." index="425" unique_id=303456087]
+[node name="GroundIntactNoTrees_426" parent="." index="425" unique_id=241462222]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_426" parent="." index="426" unique_id=214177939]
+[node name="GroundIntactNoTrees_427" parent="." index="426" unique_id=2021057452]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_427" parent="." index="427" unique_id=1969325988]
+[node name="GroundIntactNoTrees_428" parent="." index="427" unique_id=888683772]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_428" parent="." index="428" unique_id=1161873736]
+[node name="GroundIntactNoTrees_429" parent="." index="428" unique_id=963976373]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_429" parent="." index="429" unique_id=924104661]
+[node name="GroundIntactNoTrees_430" parent="." index="429" unique_id=588274092]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_430" parent="." index="430" unique_id=319206202]
+[node name="GroundIntactNoTrees_431" parent="." index="430" unique_id=895220393]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_431" parent="." index="431" unique_id=1576269911]
+[node name="GroundIntactNoTrees_432" parent="." index="431" unique_id=1300239543]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_432" parent="." index="432" unique_id=816722153]
+[node name="GroundIntactNoTrees_433" parent="." index="432" unique_id=1127244364]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_433" parent="." index="433" unique_id=86424785]
+[node name="GroundIntactNoTrees_434" parent="." index="433" unique_id=1974003719]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_434" parent="." index="434" unique_id=674758181]
+[node name="GroundIntactNoTrees_435" parent="." index="434" unique_id=1781144411]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_435" parent="." index="435" unique_id=1325516827]
+[node name="GroundIntactNoTrees_436" parent="." index="435" unique_id=1043776678]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_436" parent="." index="436" unique_id=327363857]
+[node name="GroundIntactNoTrees_437" parent="." index="436" unique_id=967728234]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_437" parent="." index="437" unique_id=820636948]
+[node name="GroundIntactNoTrees_438" parent="." index="437" unique_id=545291561]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_438" parent="." index="438" unique_id=1499120644]
+[node name="GroundIntactNoTrees_439" parent="." index="438" unique_id=901021062]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_439" parent="." index="439" unique_id=1287206605]
+[node name="GroundIntactNoTrees_440" parent="." index="439" unique_id=2037357068]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_440" parent="." index="440" unique_id=1680396123]
+[node name="GroundIntactNoTrees_441" parent="." index="440" unique_id=976833159]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_441" parent="." index="441" unique_id=1373756571]
+[node name="GroundIntactNoTrees_442" parent="." index="441" unique_id=1779244423]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_442" parent="." index="442" unique_id=601772521]
+[node name="GroundIntactNoTrees_443" parent="." index="442" unique_id=1295722394]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_443" parent="." index="443" unique_id=1010683729]
+[node name="GroundIntactNoTrees_444" parent="." index="443" unique_id=354784440]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_444" parent="." index="444" unique_id=587371578]
+[node name="GroundIntactNoTrees_445" parent="." index="444" unique_id=1604509378]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_445" parent="." index="445" unique_id=1769203838]
+[node name="GroundIntactNoTrees_446" parent="." index="445" unique_id=1527188216]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_446" parent="." index="446" unique_id=67907527]
+[node name="GroundIntactNoTrees_447" parent="." index="446" unique_id=1264047273]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_447" parent="." index="447" unique_id=1626159160]
+[node name="GroundIntactNoTrees_448" parent="." index="447" unique_id=1998727855]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_448" parent="." index="448" unique_id=2122069670]
+[node name="GroundIntactNoTrees_449" parent="." index="448" unique_id=2058599858]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_449" parent="." index="449" unique_id=1828620616]
+[node name="GroundIntactNoTrees_450" parent="." index="449" unique_id=1206161797]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_450" parent="." index="450" unique_id=452867658]
+[node name="GroundIntactNoTrees_451" parent="." index="450" unique_id=1495782960]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_451" parent="." index="451" unique_id=483755745]
+[node name="GroundIntactNoTrees_452" parent="." index="451" unique_id=964570212]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_452" parent="." index="452" unique_id=1612672596]
+[node name="GroundIntactNoTrees_453" parent="." index="452" unique_id=67534617]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_453" parent="." index="453" unique_id=593491929]
+[node name="GroundIntactNoTrees_454" parent="." index="453" unique_id=1113222047]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_454" parent="." index="454" unique_id=350215355]
+[node name="GroundIntactNoTrees_455" parent="." index="454" unique_id=86219181]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_455" parent="." index="455" unique_id=388079691]
+[node name="GroundIntactNoTrees_456" parent="." index="455" unique_id=2005246081]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_456" parent="." index="456" unique_id=221731681]
+[node name="GroundIntactNoTrees_457" parent="." index="456" unique_id=607634375]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_457" parent="." index="457" unique_id=1511376588]
+[node name="GroundIntactNoTrees_458" parent="." index="457" unique_id=1748131083]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_458" parent="." index="458" unique_id=392354070]
+[node name="GroundIntactNoTrees_459" parent="." index="458" unique_id=869238969]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_459" parent="." index="459" unique_id=404658862]
+[node name="GroundIntactNoTrees_460" parent="." index="459" unique_id=1998280833]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_460" parent="." index="460" unique_id=82565230]
+[node name="GroundIntactNoTrees_461" parent="." index="460" unique_id=1908284773]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_461" parent="." index="461" unique_id=479774696]
+[node name="GroundIntactNoTrees_462" parent="." index="461" unique_id=350835839]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_462" parent="." index="462" unique_id=621172120]
+[node name="GroundIntactNoTrees_463" parent="." index="462" unique_id=1084389797]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_463" parent="." index="463" unique_id=306350111]
+[node name="GroundIntactNoTrees_464" parent="." index="463" unique_id=754946686]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_464" parent="." index="464" unique_id=218079381]
+[node name="GroundIntactNoTrees_465" parent="." index="464" unique_id=1080845507]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_465" parent="." index="465" unique_id=992264198]
+[node name="GroundIntactNoTrees_466" parent="." index="465" unique_id=366100844]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_466" parent="." index="466" unique_id=1476394439]
+[node name="GroundIntactNoTrees_467" parent="." index="466" unique_id=490009977]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_467" parent="." index="467" unique_id=1033997468]
+[node name="GroundIntactNoTrees_468" parent="." index="467" unique_id=112726597]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_468" parent="." index="468" unique_id=1320779958]
+[node name="GroundIntactNoTrees_469" parent="." index="468" unique_id=1771626302]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_469" parent="." index="469" unique_id=1720989366]
+[node name="GroundIntactNoTrees_470" parent="." index="469" unique_id=1488423122]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_470" parent="." index="470" unique_id=2092210997]
+[node name="GroundIntactNoTrees_471" parent="." index="470" unique_id=2093097982]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_471" parent="." index="471" unique_id=1369741138]
+[node name="GroundIntactNoTrees_472" parent="." index="471" unique_id=739100279]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_472" parent="." index="472" unique_id=1034701193]
+[node name="GroundIntactNoTrees_473" parent="." index="472" unique_id=2017831633]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_473" parent="." index="473" unique_id=1247820759]
+[node name="GroundIntactNoTrees_474" parent="." index="473" unique_id=1737497289]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_474" parent="." index="474" unique_id=1702290803]
+[node name="GroundIntactNoTrees_475" parent="." index="474" unique_id=2057893809]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_475" parent="." index="475" unique_id=568059810]
+[node name="GroundIntactNoTrees_476" parent="." index="475" unique_id=439245921]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_476" parent="." index="476" unique_id=627385855]
+[node name="GroundIntactNoTrees_477" parent="." index="476" unique_id=1878256753]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_477" parent="." index="477" unique_id=666616228]
+[node name="GroundIntactNoTrees_478" parent="." index="477" unique_id=1621112844]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_478" parent="." index="478" unique_id=1427709835]
+[node name="GroundIntactNoTrees_479" parent="." index="478" unique_id=1724151455]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_479" parent="." index="479" unique_id=95095563]
+[node name="GroundIntactNoTrees_480" parent="." index="479" unique_id=2010945542]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_480" parent="." index="480" unique_id=2093603728]
+[node name="GroundIntactNoTrees_481" parent="." index="480" unique_id=1404509014]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" parent="GroundCollision_480" index="0" unique_id=146058156]
+[node name="CollisionShape3D" parent="GroundIntactNoTrees_481" index="0" unique_id=1732117317]
 debug_color = Color(0.8797163, 0.25869852, 0.53309566, 1)
 
-[node name="GroundCollision_481" parent="." index="481" unique_id=1298946555]
+[node name="GroundIntactNoTrees_482" parent="." index="481" unique_id=185754870]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" parent="GroundCollision_481" index="0" unique_id=1514255646]
+[node name="CollisionShape3D" parent="GroundIntactNoTrees_482" index="0" unique_id=217981609]
 debug_color = Color(0.87058824, 0.30588236, 0.44705883, 0.9019608)
 
-[node name="GroundCollision_482" parent="." index="482" unique_id=469839477]
+[node name="GroundIntactNoTrees_483" parent="." index="482" unique_id=529039486]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" parent="GroundCollision_482" index="0" unique_id=1593639152]
+[node name="CollisionShape3D" parent="GroundIntactNoTrees_483" index="0" unique_id=1095975629]
 debug_color = Color(0.81, 0.32399997, 0.61560017, 1)
 
-[node name="GroundCollision_483" parent="." index="483" unique_id=450410984]
+[node name="GroundIntactNoTrees_484" parent="." index="483" unique_id=1904374972]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_484" parent="." index="484" unique_id=172192207]
+[node name="GroundIntactNoTrees_485" parent="." index="484" unique_id=460693748]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_485" parent="." index="485" unique_id=714303675]
+[node name="GroundIntactNoTrees_486" parent="." index="485" unique_id=315529008]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_486" parent="." index="486" unique_id=1964402607]
+[node name="GroundIntactNoTrees_487" parent="." index="486" unique_id=2052089588]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_487" parent="." index="487" unique_id=1324822611]
+[node name="GroundIntactNoTrees_488" parent="." index="487" unique_id=285879883]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_488" parent="." index="488" unique_id=1948296006]
+[node name="GroundIntactNoTrees_489" parent="." index="488" unique_id=1062922974]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_489" parent="." index="489" unique_id=832783422]
+[node name="GroundIntactNoTrees_490" parent="." index="489" unique_id=1333607475]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_490" parent="." index="490" unique_id=1810938855]
+[node name="GroundIntactNoTrees_491" parent="." index="490" unique_id=780265930]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_491" parent="." index="491" unique_id=2123081225]
+[node name="GroundIntactNoTrees_492" parent="." index="491" unique_id=231525605]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_492" parent="." index="492" unique_id=1687030556]
+[node name="GroundIntactNoTrees_493" parent="." index="492" unique_id=296775620]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_493" parent="." index="493" unique_id=1126394827]
+[node name="GroundIntactNoTrees_494" parent="." index="493" unique_id=2039872324]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_494" parent="." index="494" unique_id=1284619722]
+[node name="GroundIntactNoTrees_495" parent="." index="494" unique_id=1598349924]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_495" parent="." index="495" unique_id=288785480]
+[node name="GroundIntactNoTrees_496" parent="." index="495" unique_id=1425263815]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_496" parent="." index="496" unique_id=1480420576]
+[node name="GroundIntactNoTrees_497" parent="." index="496" unique_id=1552505948]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_497" parent="." index="497" unique_id=1734299143]
+[node name="GroundIntactNoTrees_498" parent="." index="497" unique_id=867850638]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_498" parent="." index="498" unique_id=1149355683]
+[node name="GroundIntactNoTrees_499" parent="." index="498" unique_id=2130409758]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_499" parent="." index="499" unique_id=1401762886]
+[node name="GroundIntactNoTrees_500" parent="." index="499" unique_id=1171579670]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_500" parent="." index="500" unique_id=1382909000]
+[node name="GroundIntactNoTrees_501" parent="." index="500" unique_id=2088721754]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_501" parent="." index="501" unique_id=1642038458]
+[node name="GroundIntactNoTrees_502" parent="." index="501" unique_id=1876656822]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_502" parent="." index="502" unique_id=234523719]
+[node name="GroundIntactNoTrees_503" parent="." index="502" unique_id=1101584987]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" parent="GroundCollision_502" index="0" unique_id=817570765]
+[node name="CollisionShape3D" parent="GroundIntactNoTrees_503" index="0" unique_id=824926423]
 debug_color = Color(0.88, 0.2904, 0.44762653, 1)
 
-[node name="GroundCollision_503" parent="." index="503" unique_id=1583750220]
+[node name="GroundIntactNoTrees_504" parent="." index="503" unique_id=1729458625]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" parent="GroundCollision_503" index="0" unique_id=1841938401]
+[node name="CollisionShape3D" parent="GroundIntactNoTrees_504" index="0" unique_id=782585285]
 debug_color = Color(0.8784314, 0.23921569, 0.5803922, 1)
 
-[node name="GroundCollision_504" parent="." index="504" unique_id=15539730]
+[node name="GroundIntactNoTrees_505" parent="." index="504" unique_id=1171835178]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
-[node name="GroundCollision_505" parent="." index="505" unique_id=123895608]
+[node name="GroundIntactNoTrees_506" parent="." index="505" unique_id=1092738673]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_507" parent="." index="506" unique_id=1536917778]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_508" parent="." index="507" unique_id=1823512277]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_509" parent="." index="508" unique_id=844233812]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_510" parent="." index="509" unique_id=939341221]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_511" parent="." index="510" unique_id=2059174305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_512" parent="." index="511" unique_id=838501198]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_513" parent="." index="512" unique_id=1261192071]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_514" parent="." index="513" unique_id=1539554692]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_515" parent="." index="514" unique_id=662336802]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_516" parent="." index="515" unique_id=1811672616]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_517" parent="." index="516" unique_id=1347920544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_518" parent="." index="517" unique_id=1048827061]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_519" parent="." index="518" unique_id=573881116]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_520" parent="." index="519" unique_id=461282027]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_521" parent="." index="520" unique_id=1914575771]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_522" parent="." index="521" unique_id=1935416903]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_523" parent="." index="522" unique_id=1195634573]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_524" parent="." index="523" unique_id=751607048]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_525" parent="." index="524" unique_id=1081723120]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_526" parent="." index="525" unique_id=1835998079]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_527" parent="." index="526" unique_id=745312541]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_528" parent="." index="527" unique_id=2032346943]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_529" parent="." index="528" unique_id=571830051]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_530" parent="." index="529" unique_id=475688873]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_531" parent="." index="530" unique_id=846960785]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_532" parent="." index="531" unique_id=69635856]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_533" parent="." index="532" unique_id=496163577]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_534" parent="." index="533" unique_id=593026889]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_535" parent="." index="534" unique_id=810075819]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_536" parent="." index="535" unique_id=1038088610]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_537" parent="." index="536" unique_id=68175269]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_538" parent="." index="537" unique_id=166402254]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_539" parent="." index="538" unique_id=1867218162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_540" parent="." index="539" unique_id=1604394202]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_541" parent="." index="540" unique_id=1617343971]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_542" parent="." index="541" unique_id=1552652373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_543" parent="." index="542" unique_id=194883277]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_544" parent="." index="543" unique_id=1739919831]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_545" parent="." index="544" unique_id=15377082]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_546" parent="." index="545" unique_id=824903113]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_547" parent="." index="546" unique_id=1061621743]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_548" parent="." index="547" unique_id=1516706603]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_549" parent="." index="548" unique_id=1172347606]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_550" parent="." index="549" unique_id=662505053]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_551" parent="." index="550" unique_id=1785144350]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_552" parent="." index="551" unique_id=2021294004]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_553" parent="." index="552" unique_id=224344838]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_554" parent="." index="553" unique_id=1036393153]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_555" parent="." index="554" unique_id=1888138718]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_556" parent="." index="555" unique_id=1590801728]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_557" parent="." index="556" unique_id=668603136]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_558" parent="." index="557" unique_id=711119650]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_559" parent="." index="558" unique_id=2093611568]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_560" parent="." index="559" unique_id=1946647158]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_561" parent="." index="560" unique_id=153206334]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_562" parent="." index="561" unique_id=1184845655]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_563" parent="." index="562" unique_id=261568374]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_564" parent="." index="563" unique_id=168784842]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_565" parent="." index="564" unique_id=1767757662]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_566" parent="." index="565" unique_id=1417999358]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_567" parent="." index="566" unique_id=915585073]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_568" parent="." index="567" unique_id=130909166]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_569" parent="." index="568" unique_id=109014538]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_570" parent="." index="569" unique_id=565056181]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_571" parent="." index="570" unique_id=54016600]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_572" parent="." index="571" unique_id=581908279]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_573" parent="." index="572" unique_id=370852570]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_574" parent="." index="573" unique_id=505494812]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_575" parent="." index="574" unique_id=223991334]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_576" parent="." index="575" unique_id=1993047383]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_577" parent="." index="576" unique_id=575993398]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_578" parent="." index="577" unique_id=673204350]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_579" parent="." index="578" unique_id=621056876]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_580" parent="." index="579" unique_id=124255932]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_581" parent="." index="580" unique_id=794325560]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_582" parent="." index="581" unique_id=1243514586]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_583" parent="." index="582" unique_id=1179769024]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_584" parent="." index="583" unique_id=703595605]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_585" parent="." index="584" unique_id=55202023]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_586" parent="." index="585" unique_id=1606492082]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_587" parent="." index="586" unique_id=1221379340]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_588" parent="." index="587" unique_id=438136544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_589" parent="." index="588" unique_id=828473759]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_590" parent="." index="589" unique_id=1444744286]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_591" parent="." index="590" unique_id=703703501]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_592" parent="." index="591" unique_id=479234503]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_593" parent="." index="592" unique_id=206155513]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_594" parent="." index="593" unique_id=1521591630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_595" parent="." index="594" unique_id=219771957]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_596" parent="." index="595" unique_id=1543228318]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_597" parent="." index="596" unique_id=449838004]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_598" parent="." index="597" unique_id=977732133]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_599" parent="." index="598" unique_id=821544070]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_600" parent="." index="599" unique_id=1846527265]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_601" parent="." index="600" unique_id=490578424]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_602" parent="." index="601" unique_id=1487826109]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_603" parent="." index="602" unique_id=1627064984]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_604" parent="." index="603" unique_id=1050265551]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_605" parent="." index="604" unique_id=880812708]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_606" parent="." index="605" unique_id=1307980391]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_607" parent="." index="606" unique_id=496670685]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_608" parent="." index="607" unique_id=765241807]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_609" parent="." index="608" unique_id=1349453433]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_610" parent="." index="609" unique_id=1233550058]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_611" parent="." index="610" unique_id=1866558264]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_612" parent="." index="611" unique_id=1049106832]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_613" parent="." index="612" unique_id=403729508]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_614" parent="." index="613" unique_id=1933331273]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_615" parent="." index="614" unique_id=958808169]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_616" parent="." index="615" unique_id=2036957141]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_617" parent="." index="616" unique_id=2109382682]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_618" parent="." index="617" unique_id=237869815]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_619" parent="." index="618" unique_id=1098955231]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_620" parent="." index="619" unique_id=88079571]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_621" parent="." index="620" unique_id=1552448516]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_622" parent="." index="621" unique_id=557138276]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_623" parent="." index="622" unique_id=951405922]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_624" parent="." index="623" unique_id=1692522378]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_625" parent="." index="624" unique_id=1934044920]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_626" parent="." index="625" unique_id=628626027]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_627" parent="." index="626" unique_id=1037457478]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_628" parent="." index="627" unique_id=1161460676]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_629" parent="." index="628" unique_id=1582433401]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_630" parent="." index="629" unique_id=873024110]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_631" parent="." index="630" unique_id=520667439]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_632" parent="." index="631" unique_id=54244810]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_633" parent="." index="632" unique_id=349063882]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_634" parent="." index="633" unique_id=2084213232]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_635" parent="." index="634" unique_id=1275836968]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_636" parent="." index="635" unique_id=327233803]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_637" parent="." index="636" unique_id=895910191]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_638" parent="." index="637" unique_id=1447822594]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_639" parent="." index="638" unique_id=1363003810]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_640" parent="." index="639" unique_id=279483912]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_641" parent="." index="640" unique_id=841271624]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_642" parent="." index="641" unique_id=659617564]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_643" parent="." index="642" unique_id=2072715778]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_644" parent="." index="643" unique_id=1016243902]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_645" parent="." index="644" unique_id=921158342]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_646" parent="." index="645" unique_id=2117442020]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_647" parent="." index="646" unique_id=908591863]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_648" parent="." index="647" unique_id=1890716112]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_649" parent="." index="648" unique_id=1286253517]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_650" parent="." index="649" unique_id=1821101777]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_651" parent="." index="650" unique_id=1492842369]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_652" parent="." index="651" unique_id=777786208]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_653" parent="." index="652" unique_id=1586169600]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_654" parent="." index="653" unique_id=943132863]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_655" parent="." index="654" unique_id=1043846359]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_656" parent="." index="655" unique_id=185868806]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_657" parent="." index="656" unique_id=277369483]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_658" parent="." index="657" unique_id=2000625953]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_659" parent="." index="658" unique_id=1564407030]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_660" parent="." index="659" unique_id=112285508]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_661" parent="." index="660" unique_id=151972415]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_662" parent="." index="661" unique_id=289658991]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_663" parent="." index="662" unique_id=1596885363]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_664" parent="." index="663" unique_id=1766461969]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_665" parent="." index="664" unique_id=1357910916]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_666" parent="." index="665" unique_id=714734609]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_667" parent="." index="666" unique_id=324194283]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_668" parent="." index="667" unique_id=1065963402]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_669" parent="." index="668" unique_id=1122302016]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_670" parent="." index="669" unique_id=1609435326]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_671" parent="." index="670" unique_id=1526697816]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_672" parent="." index="671" unique_id=938823362]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_673" parent="." index="672" unique_id=1993830745]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_674" parent="." index="673" unique_id=1866164575]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_675" parent="." index="674" unique_id=607240943]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_676" parent="." index="675" unique_id=99626590]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_677" parent="." index="676" unique_id=8948149]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_678" parent="." index="677" unique_id=472584791]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_679" parent="." index="678" unique_id=685345102]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_680" parent="." index="679" unique_id=1318224730]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_681" parent="." index="680" unique_id=1891902990]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_682" parent="." index="681" unique_id=1162241083]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_683" parent="." index="682" unique_id=372170483]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_684" parent="." index="683" unique_id=297630202]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_685" parent="." index="684" unique_id=1505588505]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_686" parent="." index="685" unique_id=1874985761]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_687" parent="." index="686" unique_id=1773177586]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_688" parent="." index="687" unique_id=123116877]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_689" parent="." index="688" unique_id=135646098]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_690" parent="." index="689" unique_id=635500636]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_691" parent="." index="690" unique_id=639328135]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_692" parent="." index="691" unique_id=1496256674]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_693" parent="." index="692" unique_id=1725450907]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_694" parent="." index="693" unique_id=2004389362]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_695" parent="." index="694" unique_id=731558016]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_696" parent="." index="695" unique_id=436974795]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_697" parent="." index="696" unique_id=1952578195]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_698" parent="." index="697" unique_id=210644046]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_699" parent="." index="698" unique_id=914757715]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_700" parent="." index="699" unique_id=1602107261]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_701" parent="." index="700" unique_id=2033999298]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_702" parent="." index="701" unique_id=603128553]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_703" parent="." index="702" unique_id=1719860486]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_704" parent="." index="703" unique_id=626204161]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_705" parent="." index="704" unique_id=848055286]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_706" parent="." index="705" unique_id=1588645736]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_707" parent="." index="706" unique_id=1351786496]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_708" parent="." index="707" unique_id=438824144]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_709" parent="." index="708" unique_id=853952706]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_710" parent="." index="709" unique_id=187688866]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_711" parent="." index="710" unique_id=733401425]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_712" parent="." index="711" unique_id=1933080461]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_713" parent="." index="712" unique_id=1545112056]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_714" parent="." index="713" unique_id=1338029128]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_715" parent="." index="714" unique_id=1761935460]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_716" parent="." index="715" unique_id=726657387]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_717" parent="." index="716" unique_id=1316141503]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_718" parent="." index="717" unique_id=91180516]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_719" parent="." index="718" unique_id=2091736764]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_720" parent="." index="719" unique_id=1921569501]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_721" parent="." index="720" unique_id=2146798705]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_722" parent="." index="721" unique_id=804956971]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_723" parent="." index="722" unique_id=1082670045]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_724" parent="." index="723" unique_id=493231710]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_725" parent="." index="724" unique_id=1402883121]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_726" parent="." index="725" unique_id=54007985]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_727" parent="." index="726" unique_id=877362895]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_728" parent="." index="727" unique_id=1098863163]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_729" parent="." index="728" unique_id=2105271817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_730" parent="." index="729" unique_id=8514047]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_731" parent="." index="730" unique_id=1123120488]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_732" parent="." index="731" unique_id=634459255]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_733" parent="." index="732" unique_id=1720434535]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_734" parent="." index="733" unique_id=1129680794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_735" parent="." index="734" unique_id=498192227]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_736" parent="." index="735" unique_id=1419588355]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_737" parent="." index="736" unique_id=1977525011]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_738" parent="." index="737" unique_id=1957988505]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_739" parent="." index="738" unique_id=687918605]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_740" parent="." index="739" unique_id=1867502619]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_741" parent="." index="740" unique_id=896944622]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_742" parent="." index="741" unique_id=1430585311]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_743" parent="." index="742" unique_id=646150650]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_744" parent="." index="743" unique_id=77747921]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_745" parent="." index="744" unique_id=561237340]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_746" parent="." index="745" unique_id=1942774533]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_747" parent="." index="746" unique_id=441800480]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_748" parent="." index="747" unique_id=863937916]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_749" parent="." index="748" unique_id=2022720889]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_750" parent="." index="749" unique_id=33903167]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_751" parent="." index="750" unique_id=6805798]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_752" parent="." index="751" unique_id=1558178742]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_753" parent="." index="752" unique_id=1694321034]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_754" parent="." index="753" unique_id=455739307]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_755" parent="." index="754" unique_id=623328676]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_756" parent="." index="755" unique_id=1572204763]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_757" parent="." index="756" unique_id=1071973743]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_758" parent="." index="757" unique_id=1001858532]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_759" parent="." index="758" unique_id=506351615]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_760" parent="." index="759" unique_id=224877431]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_761" parent="." index="760" unique_id=972606068]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_762" parent="." index="761" unique_id=1319808473]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_763" parent="." index="762" unique_id=762121140]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_764" parent="." index="763" unique_id=1947929694]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_765" parent="." index="764" unique_id=71969809]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_766" parent="." index="765" unique_id=2136503099]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_767" parent="." index="766" unique_id=498767692]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_768" parent="." index="767" unique_id=1609845348]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_769" parent="." index="768" unique_id=766002906]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_770" parent="." index="769" unique_id=891654093]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_771" parent="." index="770" unique_id=981538211]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_772" parent="." index="771" unique_id=27056064]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_773" parent="." index="772" unique_id=167406882]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_774" parent="." index="773" unique_id=568641140]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_775" parent="." index="774" unique_id=183144020]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_776" parent="." index="775" unique_id=1998957822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_777" parent="." index="776" unique_id=708451538]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_778" parent="." index="777" unique_id=316935853]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_779" parent="." index="778" unique_id=1363903118]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_780" parent="." index="779" unique_id=1433348292]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_781" parent="." index="780" unique_id=1333957536]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_782" parent="." index="781" unique_id=349583781]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_783" parent="." index="782" unique_id=1560097229]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_784" parent="." index="783" unique_id=214109198]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_785" parent="." index="784" unique_id=791623907]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_786" parent="." index="785" unique_id=565552394]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_787" parent="." index="786" unique_id=1155640418]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_788" parent="." index="787" unique_id=1926699631]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_789" parent="." index="788" unique_id=572386131]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_790" parent="." index="789" unique_id=816724198]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_791" parent="." index="790" unique_id=66756255]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_792" parent="." index="791" unique_id=1308519996]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_793" parent="." index="792" unique_id=1369213278]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_794" parent="." index="793" unique_id=191292618]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_795" parent="." index="794" unique_id=1641683849]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_796" parent="." index="795" unique_id=1573839659]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_797" parent="." index="796" unique_id=1882936231]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_798" parent="." index="797" unique_id=493125965]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_799" parent="." index="798" unique_id=866729144]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_800" parent="." index="799" unique_id=572963579]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_801" parent="." index="800" unique_id=977526107]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_802" parent="." index="801" unique_id=1278131684]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_803" parent="." index="802" unique_id=1250591887]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_804" parent="." index="803" unique_id=1918319534]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_805" parent="." index="804" unique_id=126935904]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_806" parent="." index="805" unique_id=83700525]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_807" parent="." index="806" unique_id=1628819652]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_808" parent="." index="807" unique_id=2110642677]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_809" parent="." index="808" unique_id=290209260]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_810" parent="." index="809" unique_id=841742866]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_811" parent="." index="810" unique_id=2067233718]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_812" parent="." index="811" unique_id=2028903897]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_813" parent="." index="812" unique_id=1984076629]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_814" parent="." index="813" unique_id=1806128997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_815" parent="." index="814" unique_id=1444093341]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_816" parent="." index="815" unique_id=799750373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_817" parent="." index="816" unique_id=402672469]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_818" parent="." index="817" unique_id=887072434]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_819" parent="." index="818" unique_id=1792002759]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_820" parent="." index="819" unique_id=1822274789]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_821" parent="." index="820" unique_id=1982757629]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_822" parent="." index="821" unique_id=1369167455]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_823" parent="." index="822" unique_id=19309444]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_824" parent="." index="823" unique_id=764121335]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_825" parent="." index="824" unique_id=1516998013]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_826" parent="." index="825" unique_id=1149081165]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_827" parent="." index="826" unique_id=1101442450]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_828" parent="." index="827" unique_id=698105538]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_829" parent="." index="828" unique_id=110239788]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_830" parent="." index="829" unique_id=1272267617]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_831" parent="." index="830" unique_id=620570818]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_832" parent="." index="831" unique_id=444759880]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_833" parent="." index="832" unique_id=459470972]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_834" parent="." index="833" unique_id=1129743717]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_835" parent="." index="834" unique_id=1423711004]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_836" parent="." index="835" unique_id=1559365670]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_837" parent="." index="836" unique_id=1360534822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_838" parent="." index="837" unique_id=1533063414]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_839" parent="." index="838" unique_id=602989166]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_840" parent="." index="839" unique_id=1815361175]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_841" parent="." index="840" unique_id=2136046356]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_842" parent="." index="841" unique_id=1262805831]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_843" parent="." index="842" unique_id=887360139]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_844" parent="." index="843" unique_id=640897338]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_845" parent="." index="844" unique_id=22289159]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_846" parent="." index="845" unique_id=329621150]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_847" parent="." index="846" unique_id=1665878935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_848" parent="." index="847" unique_id=1147679491]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_849" parent="." index="848" unique_id=1412237291]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_850" parent="." index="849" unique_id=381712385]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_851" parent="." index="850" unique_id=202674677]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_852" parent="." index="851" unique_id=1556066329]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_853" parent="." index="852" unique_id=1287351239]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_854" parent="." index="853" unique_id=151450000]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_855" parent="." index="854" unique_id=618953262]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_856" parent="." index="855" unique_id=1528776040]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_857" parent="." index="856" unique_id=1121496147]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_858" parent="." index="857" unique_id=1240361770]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_859" parent="." index="858" unique_id=682344301]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_860" parent="." index="859" unique_id=1091820069]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_861" parent="." index="860" unique_id=659613409]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_862" parent="." index="861" unique_id=1212532217]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_863" parent="." index="862" unique_id=710103849]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_864" parent="." index="863" unique_id=1633904624]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_865" parent="." index="864" unique_id=1665864794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_866" parent="." index="865" unique_id=2062293990]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_867" parent="." index="866" unique_id=1337725967]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_868" parent="." index="867" unique_id=280788366]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_869" parent="." index="868" unique_id=633231556]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_870" parent="." index="869" unique_id=126900915]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_871" parent="." index="870" unique_id=1934899730]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_872" parent="." index="871" unique_id=721061318]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_873" parent="." index="872" unique_id=1993458893]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_874" parent="." index="873" unique_id=1407161721]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_875" parent="." index="874" unique_id=1277858955]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_876" parent="." index="875" unique_id=401306630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_877" parent="." index="876" unique_id=2125678829]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_878" parent="." index="877" unique_id=1018594402]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_879" parent="." index="878" unique_id=240540347]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_880" parent="." index="879" unique_id=481704029]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_881" parent="." index="880" unique_id=658972814]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_882" parent="." index="881" unique_id=1617414212]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_883" parent="." index="882" unique_id=1434480734]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_884" parent="." index="883" unique_id=976320356]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_885" parent="." index="884" unique_id=1915022503]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_886" parent="." index="885" unique_id=2031454442]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_887" parent="." index="886" unique_id=1921335910]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_888" parent="." index="887" unique_id=1650891978]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_889" parent="." index="888" unique_id=511001610]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_890" parent="." index="889" unique_id=267510784]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_891" parent="." index="890" unique_id=1484569330]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_892" parent="." index="891" unique_id=54226529]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_893" parent="." index="892" unique_id=1581087314]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_894" parent="." index="893" unique_id=1805588724]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_895" parent="." index="894" unique_id=1009477504]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_896" parent="." index="895" unique_id=1365223248]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_897" parent="." index="896" unique_id=2055616923]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_898" parent="." index="897" unique_id=1282683184]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_899" parent="." index="898" unique_id=983893115]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_900" parent="." index="899" unique_id=987352528]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_901" parent="." index="900" unique_id=1362555292]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_902" parent="." index="901" unique_id=1004188935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_903" parent="." index="902" unique_id=1093217819]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_904" parent="." index="903" unique_id=1474184260]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_905" parent="." index="904" unique_id=62719204]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_906" parent="." index="905" unique_id=191829323]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_907" parent="." index="906" unique_id=578118720]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_908" parent="." index="907" unique_id=2066595788]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_909" parent="." index="908" unique_id=540154179]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_910" parent="." index="909" unique_id=445999934]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_911" parent="." index="910" unique_id=2129331443]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_912" parent="." index="911" unique_id=1383894174]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_913" parent="." index="912" unique_id=1878906291]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_914" parent="." index="913" unique_id=97508388]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_915" parent="." index="914" unique_id=1422974677]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_916" parent="." index="915" unique_id=1904706260]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_917" parent="." index="916" unique_id=2021042130]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_918" parent="." index="917" unique_id=1063364819]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_919" parent="." index="918" unique_id=911076668]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_920" parent="." index="919" unique_id=1438515179]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_921" parent="." index="920" unique_id=426443540]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_922" parent="." index="921" unique_id=1429114054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_923" parent="." index="922" unique_id=202720296]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_924" parent="." index="923" unique_id=886929750]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_925" parent="." index="924" unique_id=1197579661]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_926" parent="." index="925" unique_id=361409957]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_927" parent="." index="926" unique_id=872447627]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_928" parent="." index="927" unique_id=457843220]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_929" parent="." index="928" unique_id=1982880969]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_930" parent="." index="929" unique_id=1878039373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_931" parent="." index="930" unique_id=1636052278]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_932" parent="." index="931" unique_id=1050236757]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_933" parent="." index="932" unique_id=1749903403]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_934" parent="." index="933" unique_id=1188542164]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_935" parent="." index="934" unique_id=1529730369]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_936" parent="." index="935" unique_id=977966764]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_937" parent="." index="936" unique_id=386621565]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_938" parent="." index="937" unique_id=683057663]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_939" parent="." index="938" unique_id=777870795]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_940" parent="." index="939" unique_id=230576043]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_941" parent="." index="940" unique_id=2074696760]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_942" parent="." index="941" unique_id=285612764]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_943" parent="." index="942" unique_id=1631304848]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_944" parent="." index="943" unique_id=883565156]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_945" parent="." index="944" unique_id=688887149]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_946" parent="." index="945" unique_id=14019442]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_947" parent="." index="946" unique_id=885306953]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_948" parent="." index="947" unique_id=632608659]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_949" parent="." index="948" unique_id=1043000241]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_950" parent="." index="949" unique_id=2082897333]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_951" parent="." index="950" unique_id=1885109894]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_952" parent="." index="951" unique_id=1838327262]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_953" parent="." index="952" unique_id=1978929448]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_954" parent="." index="953" unique_id=1359606467]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_955" parent="." index="954" unique_id=2015623748]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_956" parent="." index="955" unique_id=884464326]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_957" parent="." index="956" unique_id=2056648073]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_958" parent="." index="957" unique_id=1050546312]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_959" parent="." index="958" unique_id=162664126]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_960" parent="." index="959" unique_id=1101800912]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_961" parent="." index="960" unique_id=1987074440]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_962" parent="." index="961" unique_id=239326759]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_963" parent="." index="962" unique_id=1882565031]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_964" parent="." index="963" unique_id=573433240]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_965" parent="." index="964" unique_id=1230355997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_966" parent="." index="965" unique_id=386089401]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_967" parent="." index="966" unique_id=664272584]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_968" parent="." index="967" unique_id=1180626476]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_969" parent="." index="968" unique_id=1380924826]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_970" parent="." index="969" unique_id=2089346001]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_971" parent="." index="970" unique_id=841166075]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_972" parent="." index="971" unique_id=1869651333]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_973" parent="." index="972" unique_id=1053631305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_974" parent="." index="973" unique_id=440673484]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_975" parent="." index="974" unique_id=1898160261]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_976" parent="." index="975" unique_id=964514231]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_977" parent="." index="976" unique_id=658440412]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_978" parent="." index="977" unique_id=1250497520]
+collision_layer = 4
+collision_mask = 3
+
+[node name="GroundIntactNoTrees_979" parent="." index="978" unique_id=1289140137]
+collision_layer = 4
+collision_mask = 3
