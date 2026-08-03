@@ -12,9 +12,19 @@ func _process(delta: float) -> void:
 
 
 func _event_function() -> void:
+	# Access UI kickbar
+	var main_scene = get_tree().current_scene
+	var ui = main_scene.get_node("UI")
+	var kickbar = ui.get_node("%Kickbar")
+	
+	# delay the ow sfx if it's a critical kick
+	if kickbar.value >= ui.crit_threshold:
+		await get_tree().create_timer(ui.hitstop_length).timeout
+
 	# Unpauses so the ow happens as rock is moving.
 	get_tree().paused = false
 	$OuchPlayer.play()
+	
 	# Timer to let the ouch play before being freed by event cleanup.
 	await get_tree().create_timer(1).timeout
 	
