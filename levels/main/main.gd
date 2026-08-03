@@ -111,8 +111,6 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 					_load_heaven()
 					$UI.show()
 					
-					# go back to regular idle
-					_regular_idle_actions()
 				elif GameManager.kicks_remaining == GameManager.purgatory_kick_count:
 					# do salmon purgatory sequence
 					$UI.hide()
@@ -121,10 +119,10 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 					await ascender.ascension_complete
 					_load_purgatory()
 					$UI.show()
-					$UI/KickingMenu/KicksRemainingPurgatory.show()
+					$UI/KickingMenu/KickingMenu/PurgKicksRemainingContainer.show()
 					
-					# go back to regular idle state stuff
-					_regular_idle_actions()
+				# go back to regular idle state stuff
+				_regular_idle_actions()
 			else:
 				_regular_idle_actions()
 		GameManager.gamestates.CONTRACT:
@@ -236,9 +234,10 @@ func _load_heaven_environment() -> void:
 
 func _load_heaven_sun() -> void:
 	# Change sun
-	$MainDirectionalLight3D.queue_free()
-	var sun = _heaven_sun.instantiate()
-	add_child(sun)
+	if get_node_or_null("MainDirectionalLight3D"):
+		$MainDirectionalLight3D.queue_free()
+		var sun = _heaven_sun.instantiate()
+		add_child(sun)
 
 # replaces all chunks in _current_chunks with the none chunk. 
 # do not use if not in purgatory/heaven state.
@@ -270,8 +269,10 @@ func _load_purgatory() -> void:
 func _load_heaven() -> void:
 	# spawn in the initial heaven grid after being taken up by grandma salmon
 	# frees purgatory first _empty_level_chunks does not work for purgatory
-	purgatory.queue_free()
+	if purgatory:
+		purgatory.queue_free()
 	_load_heaven_environment()
+	_load_heaven_sun()
 	for z in range(-1, 2, 1):
 		for x in range(-1, 2, 1):
 			# instantiate
@@ -432,10 +433,9 @@ func _ready() -> void:
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 	
 	# load purgatory if under kick threshold
-	if ( 
-		GameManager.kicks_remaining <= GameManager.purgatory_kick_count and 
-		GameManager.kicks_remaining > GameManager.heaven_kick_count
-	):
+	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
+		_load_heaven()
+	elif GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
 		_load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
