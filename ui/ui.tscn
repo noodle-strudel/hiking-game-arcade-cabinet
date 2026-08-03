@@ -5,11 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://da8722fiptj32" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
-[ext_resource type="StyleBox" uid="uid://b0wxswdi3y84d" path="res://ui/resources/test_stylebox2_theme.tres" id="9_diyc5"]
 [ext_resource type="Theme" uid="uid://cfbrs0b2018fc" path="res://ui/resources/letter_spinner_title_theme.tres" id="9_os0ka"]
 [ext_resource type="Texture2D" uid="uid://3mqwme5wqchk" path="res://ui/redarrow.png" id="10_0avjw"]
 [ext_resource type="Theme" uid="uid://ch2gxx5ye1o18" path="res://ui/resources/letter_spinner_theme.tres" id="10_diyc5"]
@@ -21,20 +20,20 @@
 [ext_resource type="AudioStream" uid="uid://cfithcpao02bg" path="res://sound/rock_wow/rock_wow_yb.wav" id="17_co7pv"]
 [ext_resource type="Texture2D" uid="uid://baycmbhwcap3f" path="res://ui/kickbar/kickbar_foot_fill.png" id="18_3lbto"]
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
-[ext_resource type="Texture2D" uid="uid://b5kq25jvwpfqb" path="res://ui/rock_select/arrow_left.png" id="19_3lbto"]
 [ext_resource type="AudioStream" uid="uid://vqmfq2fq5kf6" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
-[ext_resource type="Texture2D" uid="uid://3e7d3eg57iq3" path="res://ui/rock_select/arrow_right.png" id="20_c3fg2"]
 [ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
-[ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="21_rkf1o"]
 [ext_resource type="AudioStream" uid="uid://cv12s1lxk6s" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
-[ext_resource type="Texture2D" uid="uid://c76i2b7ohlw5l" path="res://ui/rock_select/rock2D.png" id="26_fgtw6"]
+[ext_resource type="Texture2D" uid="uid://b1vio02ukyhhw" path="res://ui/cloud/cloud_small1.png" id="25_6cxyx"]
+[ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
+[ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
+[ext_resource type="Texture2D" uid="uid://cuaujnf0dsxdk" path="res://ui/cloud/cloud_xtralarge2.png" id="28_1bm0a"]
+[ext_resource type="Texture2D" uid="uid://dmsqv248rf5cm" path="res://ui/rock_select/arrow.png" id="31_2lccl"]
+[ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_x7jpl"]
 script = ExtResource("6_hrmpd")
 metadata/_custom_type_script = "uid://cmn35te5b4bu2"
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_bi8hs"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -71,6 +70,8 @@ _data = {
 &"RESET": SubResource("Animation_bi8hs"),
 &"swing_subtitle": SubResource("Animation_hrmpd")
 }
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bi8hs"]
 
 [sub_resource type="Animation" id="Animation_rkf1o"]
 length = 0.001
@@ -134,7 +135,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.1, 50, 100, -0.20000002, -14, 0.2, -14, 0, -0.1, 50, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1, 50, 100, -0.2, -14, 0.2, -14, 0, -0.1, 50, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 1.2)
 }
 
@@ -154,6 +155,42 @@ stream_3/stream = ExtResource("19_bw7v0")
 stream_4/stream = ExtResource("21_br2v7")
 stream_5/stream = ExtResource("23_k48q6")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qu0m5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_6cxyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p762i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3hx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_3hdvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1bm0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhu8p"]
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
 [sub_resource type="Theme" id="Theme_bi8hs"]
 default_font = ExtResource("6_ay4pc")
 default_font_size = 40
@@ -165,6 +202,151 @@ variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
 [sub_resource type="FontVariation" id="FontVariation_diyc5"]
 base_font = ExtResource("5_bo1jx")
 variation_transform = Transform2D(1, 0.125, 0, 1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_2lccl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6cxyx"]
+resource_name = "idle_float"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowRight:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.0666667, 0.9478749, 18.47258, -0.9000001, -1.0514832, 0.9000001, 1.0514832, 0, -1.1333334, 1.9993572, 0, 0),
+"times": PackedFloat32Array(0, 2.2666667, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 3, 0),
+"points": PackedFloat32Array(0, -1.0333333, 3.2580545, 1.0333333, -3.2580545, -15.875843, -1.0333335, 0.35049438, 1.0333335, -0.35049438, 0, -0.9333334, -0.103607416, 0, 0),
+"times": PackedFloat32Array(0, 2.3666666, 5)
+}
+
+[sub_resource type="Animation" id="Animation_p762i"]
+resource_name = "select_left"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-400, 0, 0, 0.067, 385.457, 0, -0.033, 33.371, 0.2, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-200, 0, 0, 0.033333335, 235.96515, 0, -0.034008767, 24.17103, 0.03333333, -23.690975),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_3hdvn"]
+resource_name = "select_right"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DigiChristosphereSprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(200, 0, 0, 0.033, -235.965, 0, 0, -24.171055, 0, 23.691),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(400, 0, 0, 0.067, -385.457, 0, -0.03333333, -32.437603, 0.2, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3hx3"]
+_data = {
+&"RESET": SubResource("Animation_2lccl"),
+&"idle_float": SubResource("Animation_6cxyx"),
+&"select_left": SubResource("Animation_p762i"),
+&"select_right": SubResource("Animation_3hdvn")
+}
 
 [node name="UI" type="Control" unique_id=593103497]
 process_mode = 3
@@ -178,78 +360,58 @@ script = ExtResource("1_nb4k0")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="LodomoLogoNoBg" type="Sprite2D" parent="IdleMenu" unique_id=1974129174]
-position = Vector2(1809.4144, 1044)
-scale = Vector2(0.026353605, 0.026353603)
+position = Vector2(1790.8676, 1031.8124)
+scale = Vector2(0.03174035, 0.03174035)
 texture = ExtResource("2_ks8t7")
 
 [node name="RCKLogo" type="Sprite2D" parent="IdleMenu" unique_id=929290594]
-position = Vector2(1809.4144, 951.0002)
-scale = Vector2(0.1171875, 0.1171875)
+position = Vector2(1794.9999, 907.99994)
+scale = Vector2(0.16934998, 0.16934998)
 texture = ExtResource("3_wl5ax")
-
-[node name="KickRocksTitle" type="TextureRect" parent="IdleMenu" unique_id=1775985413]
-layout_mode = 0
-offset_left = 632.0
-offset_top = 88.0
-offset_right = 1328.0
-offset_bottom = 304.0
-texture = ExtResource("4_k48q6")
-expand_mode = 1
-stretch_mode = 4
 
 [node name="CapstoneTeamCredits" type="Label" parent="IdleMenu" unique_id=1925607913]
 layout_mode = 0
-offset_left = 1726.4144
-offset_top = 784.0
-offset_right = 1904.4144
-offset_bottom = 889.0
+offset_left = 1672.0
+offset_top = 672.0
+offset_right = 1904.0
+offset_bottom = 810.0
 theme = ExtResource("4_vkava")
+theme_override_colors/font_outline_color = Color(0.13725491, 0.12941177, 0.23921569, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "PSU
 CS Capstone
 Spring/Summer '26"
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="CabinetArtCredits" type="Label" parent="IdleMenu" unique_id=1621690979]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 968.0
-offset_right = 170.0
-offset_bottom = 1073.0
+offset_top = 920.0
+offset_right = 240.0
+offset_bottom = 1064.0
 theme = ExtResource("4_vkava")
+theme_override_colors/font_outline_color = Color(0.13725491, 0.12941177, 0.23921569, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_bi8hs")
 text = "Cabinet artwork
 Made by
 Mike Bennett "
-
-[node name="KevinMacleodCredits" type="Label" parent="IdleMenu" unique_id=1387012563]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 400.0
-offset_bottom = 153.0
-theme = ExtResource("4_vkava")
-theme_override_fonts/font = ExtResource("5_bi8hs")
-theme_override_font_sizes/font_size = 12
-text = "\"Crossing the Divide\" Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/"
-autowrap_mode = 2
+vertical_alignment = 2
 
 [node name="KicksRemainingLabel" type="RichTextLabel" parent="IdleMenu" unique_id=1492290210]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 208.0
-offset_top = 848.0
-offset_right = 1712.0
-offset_bottom = 985.0
+offset_top = 934.0
+offset_right = 1920.0
+offset_bottom = 1071.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0.2784314, 0.2509804, 1)
 theme_override_fonts/normal_font = ExtResource("5_bo1jx")
@@ -257,7 +419,10 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[ghost fade=0.7 span=-10][outline_size=10] KICKS REMAINING: "
 scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
 horizontal_alignment = 1
+justification_flags = 0
 custom_effects = [SubResource("RichTextEffect_x7jpl")]
 
 [node name="Title" type="Label" parent="IdleMenu" unique_id=1706239579]
@@ -272,21 +437,6 @@ theme_override_font_sizes/font_size = 120
 text = "[INSERT TITLE]"
 horizontal_alignment = 1
 
-[node name="PressAnyButton" type="RichTextLabel" parent="IdleMenu" unique_id=1645504431]
-layout_mode = 0
-offset_left = 552.0
-offset_top = 320.0
-offset_right = 1368.0
-offset_bottom = 400.0
-theme_override_fonts/normal_font = ExtResource("5_bo1jx")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave][outline_size=10]PRESS ANY BUTTON"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-custom_effects = [SubResource("RichTextEffect_bi8hs")]
-
 [node name="TitleBG" type="ColorRect" parent="IdleMenu" unique_id=2010918473]
 visible = false
 z_index = -1
@@ -298,7 +448,8 @@ offset_bottom = 480.0
 color = Color(0, 0, 0, 0.1882353)
 
 [node name="SubtitlePivot" type="Node2D" parent="IdleMenu" unique_id=1440264362]
-position = Vector2(1496, 512)
+z_index = 2
+position = Vector2(1512, 452)
 
 [node name="Subtitle" type="Label" parent="IdleMenu/SubtitlePivot" unique_id=556071282]
 offset_left = -128.0
@@ -308,11 +459,42 @@ offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("5_bi8hs")
 theme_override_font_sizes/font_size = 36
+text = "Subtitle!"
 horizontal_alignment = 1
 
 [node name="IdleAnimationPlayer" type="AnimationPlayer" parent="IdleMenu" unique_id=1144452728]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_x7jpl")
+
+[node name="TitleContainer" type="VBoxContainer" parent="IdleMenu" unique_id=219538779]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 32.0
+offset_right = 1600.0
+offset_bottom = 912.0
+alignment = 1
+
+[node name="KickRocksTitle" type="TextureRect" parent="IdleMenu/TitleContainer" unique_id=1775985413]
+layout_mode = 2
+texture = ExtResource("4_k48q6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Container" type="Control" parent="IdleMenu/TitleContainer" unique_id=1408510648]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PressAnyButton" type="RichTextLabel" parent="IdleMenu/TitleContainer" unique_id=1645504431]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave][outline_size=10]PRESS ANY BUTTON"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+custom_effects = [SubResource("RichTextEffect_bi8hs")]
 
 [node name="ContractMenu" type="Control" parent="." unique_id=594308252]
 visible = false
@@ -432,19 +614,27 @@ text = "Press Confirm Thrice."
 horizontal_alignment = 1
 
 [node name="KickingMenu" type="Control" parent="." unique_id=245014388]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="KicksRemainingGameplay" type="Label" parent="KickingMenu" unique_id=1256247876]
-unique_name_in_owner = true
+[node name="KicksRemainingContainer" type="CenterContainer" parent="KickingMenu" unique_id=1147461668]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 1920.0
+offset_bottom = 224.0
+
+[node name="KicksRemainingGameplay" type="Label" parent="KickingMenu/KicksRemainingContainer" unique_id=1256247876]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 140
 text = "Plabolnbar!"
+horizontal_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
 
 [node name="Kickbar" type="TextureProgressBar" parent="KickingMenu" unique_id=487345547]
 unique_name_in_owner = true
@@ -470,31 +660,19 @@ process_mode = 3
 stream = SubResource("AudioStreamRandomizer_mf2ns")
 bus = &"SFX"
 
-[node name="KicksRemainingPurgatory" type="Label" parent="KickingMenu" unique_id=672734483]
-unique_name_in_owner = true
-visible = false
+[node name="PurgKicksRemainingContainer" type="CenterContainer" parent="KickingMenu" unique_id=471830323]
 layout_mode = 0
-offset_left = -601.0
-offset_top = 878.0
-offset_right = 1173.0
-offset_bottom = 1065.0
+offset_top = 893.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="KicksRemainingPurgatory" type="Label" parent="KickingMenu/PurgKicksRemainingContainer" unique_id=672734483]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 100
 text = "I can't handle the pressure."
-horizontal_alignment = 2
-
-[node name="RockKickedMenu" type="Control" parent="." unique_id=101221830]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_lock_ = true
-
-[node name="CriticalHitPlayer" type="AudioStreamPlayer" parent="RockKickedMenu" unique_id=514299503]
-unique_name_in_owner = true
-stream = ExtResource("21_rkf1o")
-pitch_scale = 0.86
-bus = &"SFX"
+horizontal_alignment = 1
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
 visible = false
@@ -503,80 +681,73 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="ScoreElem" type="Control" parent="ScoreMenu" unique_id=2018481739]
+[node name="ScoreElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1054340771]
 unique_name_in_owner = true
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+position = Vector2(939, 296)
+sprite_frames = SubResource("SpriteFrames_qu0m5")
+autoplay = "default"
+frame_progress = 0.5320598
 
 [node name="ScoreLabel" type="Label" parent="ScoreMenu/ScoreElem" unique_id=1329148394]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 144.0
-offset_right = 1392.0
-offset_bottom = 309.0
+offset_left = -224.0
+offset_top = -119.0
+offset_right = 218.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 110
 text = "SCORE"
 horizontal_alignment = 1
 
 [node name="RoundScore" type="Label" parent="ScoreMenu/ScoreElem" unique_id=864323069]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 320.0
-offset_right = 1664.0
-offset_bottom = 524.0941
+offset_left = -231.0
+offset_top = 18.0
+offset_right = 227.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 110
 text = "27"
 horizontal_alignment = 1
 
-[node name="ScoreBG" type="Panel" parent="ScoreMenu/ScoreElem" unique_id=1365707913]
-z_index = -1
-layout_mode = 0
-offset_left = 696.0
-offset_top = 128.0
-offset_right = 1224.0
-offset_bottom = 480.0
-theme_override_styles/panel = ExtResource("9_diyc5")
-
-[node name="KicksRemainingElem" type="Control" parent="ScoreMenu" unique_id=273707774]
+[node name="KicksRemainingElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1009214846]
 unique_name_in_owner = true
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+position = Vector2(936, 680)
+sprite_frames = SubResource("SpriteFrames_a3hx3")
+autoplay = "default"
+frame = 1
+frame_progress = 0.3179784
 
 [node name="KicksRemainingLabel" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=1254226915]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 512.0
-offset_right = 1664.0
-offset_bottom = 677.0
+offset_left = -488.0
+offset_top = -128.0
+offset_right = 500.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 120
-text = "KICKS REMAINING:"
+text = "KICKS REMAINING"
 horizontal_alignment = 1
 
 [node name="KicksRemainingFancy" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=792945473]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 256.0
-offset_top = 688.0
-offset_right = 1664.0
-offset_bottom = 892.0941
+offset_left = -479.0
+offset_top = 21.0
+offset_right = 469.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bo1jx")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 110
 text = "999999"
 horizontal_alignment = 1
 
 [node name="KicksRemainingBG" type="Panel" parent="ScoreMenu/KicksRemainingElem" unique_id=725896772]
 z_index = -1
-layout_mode = 0
 offset_left = 376.0
 offset_top = 496.0
 offset_right = 1544.0
 offset_bottom = 848.0
-theme_override_styles/panel = ExtResource("9_diyc5")
+theme_override_styles/panel = SubResource("StyleBoxTexture_hhu8p")
 
 [node name="GameOverText" type="Node2D" parent="ScoreMenu" unique_id=1607665622]
 unique_name_in_owner = true
@@ -655,28 +826,35 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Light" type="Sprite2D" parent="RockSelect" unique_id=1155343369]
+visible = false
 position = Vector2(1008.5, 469.75)
 scale = Vector2(1.2345455, 1.1371882)
 texture = ExtResource("18_x7nxp")
 
-[node name="LeftArrow" type="Sprite2D" parent="RockSelect" unique_id=609268752]
-position = Vector2(500, 500)
-texture = ExtResource("19_3lbto")
-
-[node name="RightArrow" type="Sprite2D" parent="RockSelect" unique_id=665876310]
-position = Vector2(1500, 500)
-texture = ExtResource("20_c3fg2")
-
 [node name="RockName" type="Label" parent="RockSelect" unique_id=594532141]
 layout_mode = 0
-offset_left = 530.0
 offset_top = 732.0
-offset_right = 1467.0
+offset_right = 1920.0
 offset_bottom = 932.0
 theme_override_fonts/font = ExtResource("5_bo1jx")
 theme_override_font_sizes/font_size = 100
 text = "Digi-Christosphere"
+horizontal_alignment = 1
 
-[node name="RockSprite" type="Sprite2D" parent="RockSelect" unique_id=1278966036]
-position = Vector2(1055, 555)
-texture = ExtResource("26_fgtw6")
+[node name="RockSelectAnimator" type="AnimationPlayer" parent="RockSelect" unique_id=62070159]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_a3hx3")
+autoplay = &"idle_float"
+
+[node name="ArrowLeft" type="Sprite2D" parent="RockSelect" unique_id=1622003237]
+position = Vector2(512, 448)
+texture = ExtResource("31_2lccl")
+
+[node name="ArrowRight" type="Sprite2D" parent="RockSelect" unique_id=1124346568]
+position = Vector2(1408, 448)
+texture = ExtResource("31_2lccl")
+flip_h = true
+
+[node name="DigiChristosphereSprite" type="Sprite2D" parent="RockSelect" unique_id=988311823]
+position = Vector2(946, 448)
+texture = ExtResource("32_6cxyx")
