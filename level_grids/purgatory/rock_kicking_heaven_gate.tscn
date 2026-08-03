@@ -4,14 +4,20 @@
 
 [node name="rock_kicking_heaven_gate" unique_id=1420451879 instance=ExtResource("1_72ttt")]
 
-[node name="@StaticBody3D@18954" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(153671881) index="1" unique_id=115882643]
+[node name="heaven_gate_exterior" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(1248597319) index="0" unique_id=655142126]
+layers = 512
+
+[node name="@StaticBody3D@18954" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(1248597319) index="1" unique_id=2051554964]
 collision_layer = 4
 collision_mask = 3
 
-[node name="Skeleton3D" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(153671881) index="2" unique_id=104081466]
+[node name="Skeleton3D" parent="heaven_gates_armature" parent_id_path=PackedInt32Array(1248597319) index="2" unique_id=1849085320]
 bones/1/rotation = Quaternion(0.70633274, 3.037892e-06, 3.0312515e-06, 0.70788)
 bones/2/rotation = Quaternion(-0.49945325, -0.50054616, 0.4994588, 0.50054073)
 
-[node name="@StaticBody3D@18955" parent="heaven_gates_armature/Skeleton3D" index="1" unique_id=1072835362]
+[node name="heaven_gates" parent="heaven_gates_armature/Skeleton3D" index="0" unique_id=835666174]
+layers = 512
+
+[node name="@StaticBody3D@18955" parent="heaven_gates_armature/Skeleton3D" index="1" unique_id=573155674]
 collision_layer = 4
 collision_mask = 3

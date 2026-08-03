@@ -93,6 +93,7 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 		GameManager.gamestates.IDLE:
 			# reroll event
 			event_value = _roll_event_rng()
+
 			if GameManager.DEBUG:
 				print("DEBUG: rolled event value ", event_value)
 				if event_value < total_event_count:
