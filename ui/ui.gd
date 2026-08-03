@@ -2,7 +2,9 @@
 extends Control
 
 # variables
-@onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
+@onready var game_over_text_scroll_speed : float = (
+	(%GameOverText/Bottom.global_position.y + 136) / 50.0
+)
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
@@ -11,6 +13,12 @@ extends Control
 
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
+
+# kickbar power threshold to get a critical kick
+@export var crit_threshold: float = 97.0
+
+# length of time to pause the graphics on a critical kick
+@export var hitstop_length: float = 0.3
 
 var _start_time := 0.0
 var game_over_text_scroll := false
@@ -37,7 +45,8 @@ var menu_subtitles = [
 	"Kick Rocks!",
 	"Stone Punting!",
 	"Make this rock ROUND!",
-	"You have been\nsummoned to kick\nthis sacred stone..."
+	"You have been\nsummoned to kick\nthis sacred stone...",
+	"Plabolnbar!"
 ]
 
 # Picks a randome sibtitle for the menu.
@@ -168,10 +177,10 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
 			%KickbarAnimator.pause()
-			$RockKickedMenu.show()
 			$KickingMenu.show()
 			ui_camera.apply_shake(0.1)
-			if %Kickbar.value >= 97.0:
+			
+			if %Kickbar.value >= crit_threshold:
 				if GameManager.DEBUG:
 					print("critical kick!")
 				%Kickbar.value = 200.0
@@ -179,14 +188,16 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				
 				# add juice
 				get_tree().paused = true
+				await get_tree().create_timer(hitstop_length).timeout
 				ui_camera.apply_shake(2)
-				%CriticalHitPlayer.play()
-				await get_tree().create_timer(0.3).timeout
+				$"../Rock".play_kick(true) # critical kick sound
 				get_tree().paused = false
 				
 				# wow sound effect
-				await get_tree().create_timer(0.5).timeout
+				await get_tree().create_timer(0.7).timeout
 				$KickingMenu/WowPlayer.play()
+			else:
+				$"../Rock".play_kick(false) # normal kick sound
 			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
@@ -194,10 +205,20 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBCenterContainer.show()
 			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
 			var tween = get_tree().create_tween()
-			tween.tween_property(%OOBText, "modulate", Color.WHITE, 1).set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(
+				%OOBText,
+				"modulate",
+				Color.WHITE,
+				1
+			).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(4).timeout
 			tween = get_tree().create_tween()
-			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(
+				%OOBText,
+				"modulate",
+				Color.TRANSPARENT,
+				1
+			).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(1.5).timeout
 			$OOBCenterContainer.hide()
 		GameManager.gamestates.ROCK_PERFECTED:
@@ -217,7 +238,7 @@ func _scoring_sequence() -> void:
 	await get_tree().create_timer(1).timeout
 	%KicksRemainingFancy.show()
 	
-	# long, drawn out ending animation #TODO make fancier.
+	# long, drawn out ending animation
 	await get_tree().create_timer(1).timeout
 	%GameOverText.show()
 	game_over_text_scroll = true
@@ -228,7 +249,10 @@ func _scoring_sequence() -> void:
 	# if the game is still in the scoring state
 	if GameManager.state == GameManager.gamestates.SCORING:
 		AudioManager.fade_out_music()
-		GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
+		GameManager.switch_state_to(
+			GameManager.gamestates.MOVE_TO_ROCK,
+			"scoring sequence finished"
+		)
 
 
 func game_over_text_reset() -> void:
