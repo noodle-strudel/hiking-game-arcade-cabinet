@@ -4,7 +4,7 @@ class_name HeavenStairsGrid
 @onready var gate_collision := $"rock_kicking_heaven_gate/heaven_gates_armature/Skeleton3D/@StaticBody3D@24976"
 @onready var gate_anim := $rock_kicking_heaven_gate/AnimationPlayer
 
-var purgatory_kicks = GameManager.kicks_remaining - 8000
+var purgatory_kicks = GameManager.kicks_remaining - GameManager.heaven_kick_count
 
 func open_gates() -> void:
 	gate_anim.play("heaven_gates_open")
@@ -15,8 +15,8 @@ func open_gates() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	purgatory_kicks = GameManager.kicks_remaining - 8000
-	$SignHelper/SubViewport/SignText.text = "Until\nThe Change:\n" + str(purgatory_kicks)
+	purgatory_kicks = GameManager.kicks_remaining - GameManager.heaven_kick_count
+	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
 	GameManager.gamestate_update.connect(_on_switch_state)
 
@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_update_kicks_remaining(kick_count: int) -> void:
-	purgatory_kicks = kick_count - 8000
-	$SignHelper/SubViewport/SignText.text = "Until\nThe Change:\n" + str(purgatory_kicks)
+	purgatory_kicks = kick_count - GameManager.heaven_kick_count
+	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
 
 func _on_switch_state(state: GameManager.gamestates, cause: String) -> void:
 	# when the game gets to idle after hitting 0 purgatory kicks open the gate
