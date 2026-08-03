@@ -2,7 +2,9 @@
 extends Control
 
 # variables
-@onready var game_over_text_scroll_speed : float = ((%GameOverText/Bottom.global_position.y + 136) / 50.0)
+@onready var game_over_text_scroll_speed : float = (
+	(%GameOverText/Bottom.global_position.y + 136) / 50.0
+)
 @onready var game_over_text_reset_pos : Vector2 = %GameOverText.position
 @onready var kicks_remaining_bbcode : String = %KicksRemainingLabel.text
 @onready var db_loaded : Node = get_node_or_null("/root/MainDatabase")
@@ -201,10 +203,20 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBCenterContainer.show()
 			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
 			var tween = get_tree().create_tween()
-			tween.tween_property(%OOBText, "modulate", Color.WHITE, 1).set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(
+				%OOBText,
+				"modulate",
+				Color.WHITE,
+				1
+			).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(4).timeout
 			tween = get_tree().create_tween()
-			tween.tween_property(%OOBText, "modulate", Color.TRANSPARENT, 1).set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(
+				%OOBText,
+				"modulate",
+				Color.TRANSPARENT,
+				1
+			).set_trans(Tween.TRANS_LINEAR)
 			await get_tree().create_timer(1.5).timeout
 			$OOBCenterContainer.hide()
 		GameManager.gamestates.ROCK_PERFECTED:
@@ -224,7 +236,7 @@ func _scoring_sequence() -> void:
 	await get_tree().create_timer(1).timeout
 	%KicksRemainingFancy.show()
 	
-	# long, drawn out ending animation #TODO make fancier.
+	# long, drawn out ending animation
 	await get_tree().create_timer(1).timeout
 	%GameOverText.show()
 	game_over_text_scroll = true
@@ -235,7 +247,10 @@ func _scoring_sequence() -> void:
 	# if the game is still in the scoring state
 	if GameManager.state == GameManager.gamestates.SCORING:
 		AudioManager.fade_out_music()
-		GameManager.switch_state_to(GameManager.gamestates.MOVE_TO_ROCK, "scoring sequence finished")
+		GameManager.switch_state_to(
+			GameManager.gamestates.MOVE_TO_ROCK,
+			"scoring sequence finished"
+		)
 
 
 func game_over_text_reset() -> void:
