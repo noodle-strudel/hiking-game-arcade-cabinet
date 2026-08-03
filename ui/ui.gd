@@ -149,10 +149,10 @@ func _random_uppercase() -> String:
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	var kicks_remaining_str := "KICKS REMAINING: "
 	var purgatory_kicks = kick_count - 8000
-	%KicksRemainingLabel.text = (kicks_remaining_bbcode + str(kick_count))
-	%KicksRemainingGameplay.text = (kicks_remaining_str + str(kick_count))
-	%KicksRemainingFancy.text = (str(kick_count))
-	%KicksRemainingPurgatory.text =("UNTIL THE CHANGE: " + str(purgatory_kicks))
+	%KicksRemainingLabel.text = kicks_remaining_bbcode + str(kick_count)
+	%KicksRemainingGameplay.text = kicks_remaining_str + str(kick_count)
+	%KicksRemainingFancy.text = str(kick_count)
+	%KicksRemainingPurgatory.text = "UNTIL THE CHANGE: " + str(purgatory_kicks)
 
 
 # enable and disable UI elements. cause is mostly used for OOB causes
@@ -163,7 +163,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			# reset state variables
 			spin_letters = false
 			select_rock = false
-			
+
 			$IdleMenu.show()
 			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
@@ -221,7 +221,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBCenterContainer.hide()
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
-				print("UI: Show text that pops up when kicks_remaning <= 0")
+				print("UI: Show text that pops up when kicks_remaining <= 0")
 
 # Scoring sequence function
 func _scoring_sequence() -> void:
