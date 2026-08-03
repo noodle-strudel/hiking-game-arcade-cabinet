@@ -86,7 +86,7 @@ func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> 
 ## Signal handler for when the gamestate changes.
 func _on_change_state(_state: gamestates, _cause: String) -> void:
 	match _state:
-		gamestates.MOVE_TO_ROCK:
+		gamestates.MOVE_TO_ROCK, gamestates.SCORING:
 			%IdleTimer.start()
 
 
