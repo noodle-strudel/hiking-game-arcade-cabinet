@@ -13,8 +13,11 @@ signal gamestate_update(state, cause) # the state has changed. Used for idle as 
 var kicks_remaining := 1000000
 var current_kick_strength := 0.0
 var last_score := 100
+var critical_kick := false
 var DEBUG := OS.is_debug_build()
 var console_open := false
+
+const STARTING_KICKS = 1_000_000
 # Number of kicks, at or below which the player will play in purgatory.
 const purgatory_kick_count = 10000
 const heaven_kick_count = 8000

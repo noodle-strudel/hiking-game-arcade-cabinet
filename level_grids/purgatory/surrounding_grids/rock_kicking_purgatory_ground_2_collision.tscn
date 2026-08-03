@@ -1,0 +1,3541 @@
+[gd_scene format=3 uid="uid://cdesygoirh254"]
+
+[ext_resource type="PackedScene" uid="uid://w47iw61p8rxb" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_2_collision.glb" id="1_cyybt"]
+
+[node name="rock_kicking_purgatory_ground_2_collision" unique_id=1493479384 instance=ExtResource("1_cyybt")]
+
+[node name="Purgatory2GroundCollision" parent="." index="0" unique_id=795585870]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_001" parent="." index="1" unique_id=7636632]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_002" parent="." index="2" unique_id=2068692561]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_003" parent="." index="3" unique_id=599255369]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_004" parent="." index="4" unique_id=1790335408]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_005" parent="." index="5" unique_id=79600321]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_006" parent="." index="6" unique_id=1231414763]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_007" parent="." index="7" unique_id=1954942767]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_008" parent="." index="8" unique_id=1156403380]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_009" parent="." index="9" unique_id=282698822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_010" parent="." index="10" unique_id=1959628446]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_011" parent="." index="11" unique_id=681128945]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_012" parent="." index="12" unique_id=514345559]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_013" parent="." index="13" unique_id=1509806168]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_014" parent="." index="14" unique_id=1367209710]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_015" parent="." index="15" unique_id=1299445636]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_016" parent="." index="16" unique_id=1218318184]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_017" parent="." index="17" unique_id=490945875]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_018" parent="." index="18" unique_id=2050204689]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_019" parent="." index="19" unique_id=981129993]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_020" parent="." index="20" unique_id=1604400191]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_021" parent="." index="21" unique_id=403510508]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_022" parent="." index="22" unique_id=1384552811]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_023" parent="." index="23" unique_id=2025676579]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_024" parent="." index="24" unique_id=179491776]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_025" parent="." index="25" unique_id=1717814561]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_026" parent="." index="26" unique_id=1762010629]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_027" parent="." index="27" unique_id=1243267731]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_028" parent="." index="28" unique_id=188134164]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_029" parent="." index="29" unique_id=2109541181]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_030" parent="." index="30" unique_id=785904726]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_031" parent="." index="31" unique_id=1228435154]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_032" parent="." index="32" unique_id=1963853317]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_033" parent="." index="33" unique_id=769212722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_034" parent="." index="34" unique_id=77754338]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_035" parent="." index="35" unique_id=1111686673]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_036" parent="." index="36" unique_id=2014560438]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_037" parent="." index="37" unique_id=1269670493]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_038" parent="." index="38" unique_id=1604552565]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_039" parent="." index="39" unique_id=1028637082]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_040" parent="." index="40" unique_id=984063205]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_041" parent="." index="41" unique_id=375562612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_042" parent="." index="42" unique_id=1191123367]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_043" parent="." index="43" unique_id=566138168]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_044" parent="." index="44" unique_id=864205161]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_045" parent="." index="45" unique_id=1042639762]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_046" parent="." index="46" unique_id=1323467036]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_047" parent="." index="47" unique_id=1258684573]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_048" parent="." index="48" unique_id=1089578855]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_049" parent="." index="49" unique_id=847626437]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_050" parent="." index="50" unique_id=580477586]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_051" parent="." index="51" unique_id=1713351202]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_052" parent="." index="52" unique_id=332061559]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_053" parent="." index="53" unique_id=365420940]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_054" parent="." index="54" unique_id=1858977233]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_055" parent="." index="55" unique_id=1484994462]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_056" parent="." index="56" unique_id=24322683]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_057" parent="." index="57" unique_id=1718321849]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_058" parent="." index="58" unique_id=777159008]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_059" parent="." index="59" unique_id=1406939525]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_060" parent="." index="60" unique_id=713001604]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_061" parent="." index="61" unique_id=206789066]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_062" parent="." index="62" unique_id=469848780]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_063" parent="." index="63" unique_id=430556930]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_064" parent="." index="64" unique_id=1841726604]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_065" parent="." index="65" unique_id=1538276451]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_066" parent="." index="66" unique_id=851425136]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_067" parent="." index="67" unique_id=1071501168]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_068" parent="." index="68" unique_id=1928172734]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_069" parent="." index="69" unique_id=686511327]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_070" parent="." index="70" unique_id=1919299807]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_071" parent="." index="71" unique_id=521080691]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_072" parent="." index="72" unique_id=1562612823]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_073" parent="." index="73" unique_id=439008443]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_074" parent="." index="74" unique_id=2117822929]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_075" parent="." index="75" unique_id=563488763]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_076" parent="." index="76" unique_id=2060627640]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_077" parent="." index="77" unique_id=527283191]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_078" parent="." index="78" unique_id=656784670]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_079" parent="." index="79" unique_id=2134221952]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_080" parent="." index="80" unique_id=575994272]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_081" parent="." index="81" unique_id=815823962]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_082" parent="." index="82" unique_id=969543153]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_083" parent="." index="83" unique_id=791330694]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_084" parent="." index="84" unique_id=1290945911]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_085" parent="." index="85" unique_id=539677269]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_086" parent="." index="86" unique_id=751404468]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_087" parent="." index="87" unique_id=1284533096]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_088" parent="." index="88" unique_id=738395915]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_089" parent="." index="89" unique_id=191181771]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_090" parent="." index="90" unique_id=108401596]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_091" parent="." index="91" unique_id=1282640960]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_092" parent="." index="92" unique_id=381557293]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_093" parent="." index="93" unique_id=323879258]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_094" parent="." index="94" unique_id=1276647613]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_095" parent="." index="95" unique_id=476942986]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_096" parent="." index="96" unique_id=1351153050]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_097" parent="." index="97" unique_id=1481972310]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_098" parent="." index="98" unique_id=1395695888]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_099" parent="." index="99" unique_id=364524993]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_100" parent="." index="100" unique_id=1572964943]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_101" parent="." index="101" unique_id=634876975]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_102" parent="." index="102" unique_id=1310269260]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_103" parent="." index="103" unique_id=1167357081]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_104" parent="." index="104" unique_id=1074151814]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_105" parent="." index="105" unique_id=1715227016]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_106" parent="." index="106" unique_id=1394171479]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_107" parent="." index="107" unique_id=1440026373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_108" parent="." index="108" unique_id=64607794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_109" parent="." index="109" unique_id=194440731]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_110" parent="." index="110" unique_id=2098786161]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_111" parent="." index="111" unique_id=858264660]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_112" parent="." index="112" unique_id=976803788]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_113" parent="." index="113" unique_id=1579714736]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_114" parent="." index="114" unique_id=313316367]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_115" parent="." index="115" unique_id=1894874492]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_116" parent="." index="116" unique_id=987638224]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_117" parent="." index="117" unique_id=716459025]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_118" parent="." index="118" unique_id=57079135]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_119" parent="." index="119" unique_id=584007828]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_120" parent="." index="120" unique_id=889135071]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_121" parent="." index="121" unique_id=2119074637]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_122" parent="." index="122" unique_id=707442107]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_123" parent="." index="123" unique_id=1541579975]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_124" parent="." index="124" unique_id=159145039]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_125" parent="." index="125" unique_id=1742557545]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_126" parent="." index="126" unique_id=130447087]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_127" parent="." index="127" unique_id=800036612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_128" parent="." index="128" unique_id=1384855482]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_129" parent="." index="129" unique_id=1738101257]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_130" parent="." index="130" unique_id=845781669]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_131" parent="." index="131" unique_id=1985668215]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_132" parent="." index="132" unique_id=1628608170]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_133" parent="." index="133" unique_id=1313006258]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_134" parent="." index="134" unique_id=1320878551]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_135" parent="." index="135" unique_id=168053793]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_136" parent="." index="136" unique_id=573900066]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_137" parent="." index="137" unique_id=1545561388]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_138" parent="." index="138" unique_id=1190522907]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_139" parent="." index="139" unique_id=1920393972]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_140" parent="." index="140" unique_id=1371743891]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_141" parent="." index="141" unique_id=1980765738]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_142" parent="." index="142" unique_id=1657482192]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_143" parent="." index="143" unique_id=34311978]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_144" parent="." index="144" unique_id=423581668]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_145" parent="." index="145" unique_id=1235526701]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_146" parent="." index="146" unique_id=1895082206]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_147" parent="." index="147" unique_id=35461975]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_148" parent="." index="148" unique_id=344329988]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_149" parent="." index="149" unique_id=1788816688]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_150" parent="." index="150" unique_id=1975973433]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_151" parent="." index="151" unique_id=1519258210]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_152" parent="." index="152" unique_id=2140690486]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_153" parent="." index="153" unique_id=892446889]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_154" parent="." index="154" unique_id=311252236]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_155" parent="." index="155" unique_id=1982735567]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_156" parent="." index="156" unique_id=1086009370]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_157" parent="." index="157" unique_id=687655402]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_158" parent="." index="158" unique_id=673114428]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_159" parent="." index="159" unique_id=664342380]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_160" parent="." index="160" unique_id=256816853]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_161" parent="." index="161" unique_id=183766657]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_162" parent="." index="162" unique_id=109508546]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_163" parent="." index="163" unique_id=1339869723]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_164" parent="." index="164" unique_id=1410825532]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_165" parent="." index="165" unique_id=297889298]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_166" parent="." index="166" unique_id=1242419944]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_167" parent="." index="167" unique_id=1398095334]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_168" parent="." index="168" unique_id=1955298763]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_169" parent="." index="169" unique_id=1136095572]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_170" parent="." index="170" unique_id=1818486978]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_171" parent="." index="171" unique_id=1101109862]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_172" parent="." index="172" unique_id=2048310540]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_173" parent="." index="173" unique_id=1916058373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_174" parent="." index="174" unique_id=603772442]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_175" parent="." index="175" unique_id=445131595]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_176" parent="." index="176" unique_id=805742744]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_177" parent="." index="177" unique_id=1542984635]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_178" parent="." index="178" unique_id=1763098748]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_179" parent="." index="179" unique_id=1188321383]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_180" parent="." index="180" unique_id=514315638]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_181" parent="." index="181" unique_id=1471759867]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_182" parent="." index="182" unique_id=1886452314]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_183" parent="." index="183" unique_id=2107948745]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_184" parent="." index="184" unique_id=1063732105]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_185" parent="." index="185" unique_id=892156924]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_186" parent="." index="186" unique_id=471766517]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_187" parent="." index="187" unique_id=758706554]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_188" parent="." index="188" unique_id=785620341]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_189" parent="." index="189" unique_id=1665838216]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_190" parent="." index="190" unique_id=1922634768]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_191" parent="." index="191" unique_id=1197242090]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_192" parent="." index="192" unique_id=957553099]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_193" parent="." index="193" unique_id=1714002101]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_194" parent="." index="194" unique_id=800973827]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_195" parent="." index="195" unique_id=855589724]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_196" parent="." index="196" unique_id=2117768234]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_197" parent="." index="197" unique_id=659388374]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_198" parent="." index="198" unique_id=385611537]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_199" parent="." index="199" unique_id=917058967]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_200" parent="." index="200" unique_id=864421594]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_201" parent="." index="201" unique_id=2021188642]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_202" parent="." index="202" unique_id=1749318848]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_203" parent="." index="203" unique_id=1794255658]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_204" parent="." index="204" unique_id=875758960]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_205" parent="." index="205" unique_id=1432455383]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_206" parent="." index="206" unique_id=1610853709]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_207" parent="." index="207" unique_id=41435946]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_208" parent="." index="208" unique_id=153473792]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_209" parent="." index="209" unique_id=67490009]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_210" parent="." index="210" unique_id=101034736]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_211" parent="." index="211" unique_id=475259284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_212" parent="." index="212" unique_id=129776533]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_213" parent="." index="213" unique_id=1013011041]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_214" parent="." index="214" unique_id=221130122]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_215" parent="." index="215" unique_id=597230222]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_216" parent="." index="216" unique_id=1849092712]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_217" parent="." index="217" unique_id=1811658585]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_218" parent="." index="218" unique_id=323104235]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_219" parent="." index="219" unique_id=527312876]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_220" parent="." index="220" unique_id=770553486]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_221" parent="." index="221" unique_id=1673102756]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_222" parent="." index="222" unique_id=1306180873]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_223" parent="." index="223" unique_id=1445700238]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_224" parent="." index="224" unique_id=856901049]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_225" parent="." index="225" unique_id=763272117]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_226" parent="." index="226" unique_id=1067091476]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_227" parent="." index="227" unique_id=552375761]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_228" parent="." index="228" unique_id=617625065]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_229" parent="." index="229" unique_id=1931320892]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_230" parent="." index="230" unique_id=1165295782]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_231" parent="." index="231" unique_id=2074754150]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_232" parent="." index="232" unique_id=1436056518]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_233" parent="." index="233" unique_id=2008088773]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_234" parent="." index="234" unique_id=2133003358]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_235" parent="." index="235" unique_id=731923967]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_236" parent="." index="236" unique_id=1690025249]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_237" parent="." index="237" unique_id=1546133880]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_238" parent="." index="238" unique_id=1810657290]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_239" parent="." index="239" unique_id=1174370759]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_240" parent="." index="240" unique_id=1590559615]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_241" parent="." index="241" unique_id=1021351078]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_242" parent="." index="242" unique_id=469217182]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_243" parent="." index="243" unique_id=1181265172]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_244" parent="." index="244" unique_id=1055864182]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_245" parent="." index="245" unique_id=1718251478]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_246" parent="." index="246" unique_id=1762267534]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_247" parent="." index="247" unique_id=1687251344]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_248" parent="." index="248" unique_id=816648074]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_249" parent="." index="249" unique_id=2009021165]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_250" parent="." index="250" unique_id=477837622]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_251" parent="." index="251" unique_id=912957268]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_252" parent="." index="252" unique_id=732724697]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_253" parent="." index="253" unique_id=491334507]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_254" parent="." index="254" unique_id=1265892876]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_255" parent="." index="255" unique_id=617525710]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_256" parent="." index="256" unique_id=1217951949]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_257" parent="." index="257" unique_id=892797334]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_258" parent="." index="258" unique_id=328012573]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_259" parent="." index="259" unique_id=385627057]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_260" parent="." index="260" unique_id=1092823020]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_261" parent="." index="261" unique_id=622377983]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_262" parent="." index="262" unique_id=288652215]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_263" parent="." index="263" unique_id=600248643]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_264" parent="." index="264" unique_id=1815011866]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_265" parent="." index="265" unique_id=2005897160]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_266" parent="." index="266" unique_id=533513721]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_267" parent="." index="267" unique_id=81993351]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_268" parent="." index="268" unique_id=301129133]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_269" parent="." index="269" unique_id=1787568952]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_270" parent="." index="270" unique_id=398606012]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_271" parent="." index="271" unique_id=1457282331]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_272" parent="." index="272" unique_id=865236864]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_273" parent="." index="273" unique_id=1424060971]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_274" parent="." index="274" unique_id=591160818]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_275" parent="." index="275" unique_id=2095133477]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_276" parent="." index="276" unique_id=850404612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_277" parent="." index="277" unique_id=27125845]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_278" parent="." index="278" unique_id=2116493281]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_279" parent="." index="279" unique_id=1591180208]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_280" parent="." index="280" unique_id=887364284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_281" parent="." index="281" unique_id=657443981]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_282" parent="." index="282" unique_id=209114488]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_283" parent="." index="283" unique_id=360258303]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_284" parent="." index="284" unique_id=444492288]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_285" parent="." index="285" unique_id=2075762907]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_286" parent="." index="286" unique_id=1399097183]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_287" parent="." index="287" unique_id=951991580]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_288" parent="." index="288" unique_id=453890812]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_289" parent="." index="289" unique_id=1504916494]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_290" parent="." index="290" unique_id=1590351118]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_291" parent="." index="291" unique_id=11392354]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_292" parent="." index="292" unique_id=1844709864]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_293" parent="." index="293" unique_id=1744911419]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_294" parent="." index="294" unique_id=505409673]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_295" parent="." index="295" unique_id=1807549522]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_296" parent="." index="296" unique_id=850562176]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_297" parent="." index="297" unique_id=238201162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_298" parent="." index="298" unique_id=651679575]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_299" parent="." index="299" unique_id=1943305031]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_300" parent="." index="300" unique_id=1059588907]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_301" parent="." index="301" unique_id=965619254]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_302" parent="." index="302" unique_id=817458226]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_303" parent="." index="303" unique_id=47589442]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_304" parent="." index="304" unique_id=664427549]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_305" parent="." index="305" unique_id=200417381]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_306" parent="." index="306" unique_id=570415969]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_307" parent="." index="307" unique_id=1184200973]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_308" parent="." index="308" unique_id=1531393366]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_309" parent="." index="309" unique_id=1792943491]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_310" parent="." index="310" unique_id=1477141449]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_311" parent="." index="311" unique_id=1405878715]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_312" parent="." index="312" unique_id=1928318949]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_313" parent="." index="313" unique_id=119520454]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_314" parent="." index="314" unique_id=831961365]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_315" parent="." index="315" unique_id=923701518]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_316" parent="." index="316" unique_id=375912115]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_317" parent="." index="317" unique_id=1117617347]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_318" parent="." index="318" unique_id=680447881]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_319" parent="." index="319" unique_id=440565246]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_320" parent="." index="320" unique_id=1957529167]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_321" parent="." index="321" unique_id=1114963869]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_322" parent="." index="322" unique_id=1504617434]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_323" parent="." index="323" unique_id=1496498724]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_324" parent="." index="324" unique_id=357559222]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_325" parent="." index="325" unique_id=757057099]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_326" parent="." index="326" unique_id=1574857745]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_327" parent="." index="327" unique_id=252665036]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_328" parent="." index="328" unique_id=1285533724]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_329" parent="." index="329" unique_id=1056595376]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_330" parent="." index="330" unique_id=1989819511]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_331" parent="." index="331" unique_id=449848671]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_332" parent="." index="332" unique_id=240832418]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_333" parent="." index="333" unique_id=20429616]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_334" parent="." index="334" unique_id=371303952]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_335" parent="." index="335" unique_id=180573103]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_336" parent="." index="336" unique_id=237053487]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_337" parent="." index="337" unique_id=1538662025]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_338" parent="." index="338" unique_id=733442775]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_339" parent="." index="339" unique_id=862121463]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_340" parent="." index="340" unique_id=1211827661]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_341" parent="." index="341" unique_id=320658142]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_342" parent="." index="342" unique_id=1595719059]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_343" parent="." index="343" unique_id=89409544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_344" parent="." index="344" unique_id=2108719494]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_345" parent="." index="345" unique_id=1493815740]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_346" parent="." index="346" unique_id=781558050]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_347" parent="." index="347" unique_id=1543773466]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_348" parent="." index="348" unique_id=1634598856]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_349" parent="." index="349" unique_id=1814184787]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_350" parent="." index="350" unique_id=283687237]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_351" parent="." index="351" unique_id=434577162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_352" parent="." index="352" unique_id=1889214272]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_353" parent="." index="353" unique_id=807721785]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_354" parent="." index="354" unique_id=313574466]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_355" parent="." index="355" unique_id=1560870301]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_356" parent="." index="356" unique_id=453689795]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_357" parent="." index="357" unique_id=474901768]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_358" parent="." index="358" unique_id=661474725]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_359" parent="." index="359" unique_id=2128712738]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_360" parent="." index="360" unique_id=1587317070]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_361" parent="." index="361" unique_id=542736611]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_362" parent="." index="362" unique_id=330778954]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_363" parent="." index="363" unique_id=464482829]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_364" parent="." index="364" unique_id=844824148]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_365" parent="." index="365" unique_id=1831570886]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_366" parent="." index="366" unique_id=1720170817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_367" parent="." index="367" unique_id=361003179]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_368" parent="." index="368" unique_id=1447646929]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_369" parent="." index="369" unique_id=453960169]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_370" parent="." index="370" unique_id=456652701]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_371" parent="." index="371" unique_id=1700222225]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_372" parent="." index="372" unique_id=2102185783]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_373" parent="." index="373" unique_id=1918866559]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_374" parent="." index="374" unique_id=2065359021]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_375" parent="." index="375" unique_id=1820168265]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_376" parent="." index="376" unique_id=999329669]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_377" parent="." index="377" unique_id=818450426]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_378" parent="." index="378" unique_id=1222085354]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_379" parent="." index="379" unique_id=1074370035]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_380" parent="." index="380" unique_id=1688007440]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_381" parent="." index="381" unique_id=81281254]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_382" parent="." index="382" unique_id=302927001]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_383" parent="." index="383" unique_id=48260547]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_384" parent="." index="384" unique_id=1879421514]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_385" parent="." index="385" unique_id=552792487]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_386" parent="." index="386" unique_id=981619584]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_387" parent="." index="387" unique_id=1216644640]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_388" parent="." index="388" unique_id=1635448843]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_389" parent="." index="389" unique_id=1996840734]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_390" parent="." index="390" unique_id=1047778206]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_391" parent="." index="391" unique_id=1340800898]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_392" parent="." index="392" unique_id=154656122]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_393" parent="." index="393" unique_id=434167792]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_394" parent="." index="394" unique_id=1320228222]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_395" parent="." index="395" unique_id=894037152]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_396" parent="." index="396" unique_id=1133863043]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_397" parent="." index="397" unique_id=730707915]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_398" parent="." index="398" unique_id=2062515873]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_399" parent="." index="399" unique_id=656578658]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_400" parent="." index="400" unique_id=1119493811]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_401" parent="." index="401" unique_id=1748699346]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_402" parent="." index="402" unique_id=1429935636]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_403" parent="." index="403" unique_id=1581506683]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_404" parent="." index="404" unique_id=1281223418]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_405" parent="." index="405" unique_id=1993548814]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_406" parent="." index="406" unique_id=685284219]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_407" parent="." index="407" unique_id=70830705]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_408" parent="." index="408" unique_id=1408656368]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_409" parent="." index="409" unique_id=565952137]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_410" parent="." index="410" unique_id=956741441]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_411" parent="." index="411" unique_id=1288450449]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_412" parent="." index="412" unique_id=1672584138]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_413" parent="." index="413" unique_id=276048953]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_414" parent="." index="414" unique_id=996405171]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_415" parent="." index="415" unique_id=1412044974]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_416" parent="." index="416" unique_id=1592081400]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_417" parent="." index="417" unique_id=909568503]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_418" parent="." index="418" unique_id=2059588572]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_419" parent="." index="419" unique_id=2107201444]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_420" parent="." index="420" unique_id=1874266077]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_421" parent="." index="421" unique_id=1115368215]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_422" parent="." index="422" unique_id=544288789]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_423" parent="." index="423" unique_id=2079048196]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_424" parent="." index="424" unique_id=908731110]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_425" parent="." index="425" unique_id=462355898]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_426" parent="." index="426" unique_id=1463446794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_427" parent="." index="427" unique_id=991896527]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_428" parent="." index="428" unique_id=674932236]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_429" parent="." index="429" unique_id=17274154]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_430" parent="." index="430" unique_id=1056466585]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_431" parent="." index="431" unique_id=89253573]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_432" parent="." index="432" unique_id=1386230730]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_433" parent="." index="433" unique_id=719137538]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_434" parent="." index="434" unique_id=2059881867]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_435" parent="." index="435" unique_id=201269046]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_436" parent="." index="436" unique_id=2077355630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_437" parent="." index="437" unique_id=591806892]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_438" parent="." index="438" unique_id=1748090758]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_439" parent="." index="439" unique_id=2138672327]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_440" parent="." index="440" unique_id=1358592906]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_441" parent="." index="441" unique_id=1907980639]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_442" parent="." index="442" unique_id=469040480]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_443" parent="." index="443" unique_id=2018604991]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_444" parent="." index="444" unique_id=557918817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_445" parent="." index="445" unique_id=1011146311]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_446" parent="." index="446" unique_id=487951248]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_447" parent="." index="447" unique_id=1638897729]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_448" parent="." index="448" unique_id=1181710045]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_449" parent="." index="449" unique_id=198637402]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_450" parent="." index="450" unique_id=1420377715]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_451" parent="." index="451" unique_id=933153069]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_452" parent="." index="452" unique_id=1865302241]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_453" parent="." index="453" unique_id=1398576938]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_454" parent="." index="454" unique_id=443942316]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_455" parent="." index="455" unique_id=425896520]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_456" parent="." index="456" unique_id=1349566715]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_457" parent="." index="457" unique_id=1997749337]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_458" parent="." index="458" unique_id=244592997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_459" parent="." index="459" unique_id=978002984]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_460" parent="." index="460" unique_id=1366436269]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_461" parent="." index="461" unique_id=2082276307]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_462" parent="." index="462" unique_id=652204322]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_463" parent="." index="463" unique_id=616972664]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_464" parent="." index="464" unique_id=1206287991]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_465" parent="." index="465" unique_id=1143136135]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_466" parent="." index="466" unique_id=1838191337]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_467" parent="." index="467" unique_id=1414863050]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_468" parent="." index="468" unique_id=1072021780]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_469" parent="." index="469" unique_id=619903580]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_470" parent="." index="470" unique_id=349624697]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_471" parent="." index="471" unique_id=798956054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_472" parent="." index="472" unique_id=1656772352]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_473" parent="." index="473" unique_id=1346883677]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_474" parent="." index="474" unique_id=301278405]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_475" parent="." index="475" unique_id=2099875480]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_476" parent="." index="476" unique_id=665471925]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_477" parent="." index="477" unique_id=1452097630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_478" parent="." index="478" unique_id=100752028]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_479" parent="." index="479" unique_id=1352288767]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_480" parent="." index="480" unique_id=523104162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_481" parent="." index="481" unique_id=1228503713]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_482" parent="." index="482" unique_id=1755271040]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_483" parent="." index="483" unique_id=2124122530]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_484" parent="." index="484" unique_id=1268595230]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_485" parent="." index="485" unique_id=971109448]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_486" parent="." index="486" unique_id=1416446563]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_487" parent="." index="487" unique_id=342134171]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_488" parent="." index="488" unique_id=997954764]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_489" parent="." index="489" unique_id=234468620]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_490" parent="." index="490" unique_id=1983561200]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_491" parent="." index="491" unique_id=1241351367]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_492" parent="." index="492" unique_id=846817280]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_493" parent="." index="493" unique_id=48908833]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_494" parent="." index="494" unique_id=267033673]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_495" parent="." index="495" unique_id=404375514]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_496" parent="." index="496" unique_id=2100350773]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_497" parent="." index="497" unique_id=1729870854]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_498" parent="." index="498" unique_id=1163578829]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_499" parent="." index="499" unique_id=913916288]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_500" parent="." index="500" unique_id=1750072490]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_501" parent="." index="501" unique_id=91094324]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_502" parent="." index="502" unique_id=1911869077]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_503" parent="." index="503" unique_id=927979630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_504" parent="." index="504" unique_id=935328694]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_505" parent="." index="505" unique_id=101869820]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_506" parent="." index="506" unique_id=621396822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_507" parent="." index="507" unique_id=1354281563]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_508" parent="." index="508" unique_id=1398387397]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_509" parent="." index="509" unique_id=1543374932]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_510" parent="." index="510" unique_id=1918335726]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_511" parent="." index="511" unique_id=1822274747]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_512" parent="." index="512" unique_id=698614034]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_513" parent="." index="513" unique_id=421867242]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_514" parent="." index="514" unique_id=684792135]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_515" parent="." index="515" unique_id=1867076984]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_516" parent="." index="516" unique_id=1808402826]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_517" parent="." index="517" unique_id=1311118122]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_518" parent="." index="518" unique_id=1293477157]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_519" parent="." index="519" unique_id=1944404785]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_520" parent="." index="520" unique_id=602398697]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_521" parent="." index="521" unique_id=1792811369]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_522" parent="." index="522" unique_id=1397428642]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_523" parent="." index="523" unique_id=522844880]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_524" parent="." index="524" unique_id=411757335]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_525" parent="." index="525" unique_id=549077931]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_526" parent="." index="526" unique_id=79372495]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_527" parent="." index="527" unique_id=1566093032]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_528" parent="." index="528" unique_id=543956271]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_529" parent="." index="529" unique_id=1582795417]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_530" parent="." index="530" unique_id=683286416]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_531" parent="." index="531" unique_id=151215995]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_532" parent="." index="532" unique_id=477374855]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_533" parent="." index="533" unique_id=41681966]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_534" parent="." index="534" unique_id=1144859629]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_535" parent="." index="535" unique_id=1284717994]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_536" parent="." index="536" unique_id=1802877841]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_537" parent="." index="537" unique_id=1851754197]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_538" parent="." index="538" unique_id=2112193123]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_539" parent="." index="539" unique_id=1194450827]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_540" parent="." index="540" unique_id=629578308]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_541" parent="." index="541" unique_id=122872520]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_542" parent="." index="542" unique_id=319895720]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_543" parent="." index="543" unique_id=1609510025]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_544" parent="." index="544" unique_id=1417873976]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_545" parent="." index="545" unique_id=578043762]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_546" parent="." index="546" unique_id=281932553]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_547" parent="." index="547" unique_id=503973737]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_548" parent="." index="548" unique_id=1225234033]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_549" parent="." index="549" unique_id=1606183357]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_550" parent="." index="550" unique_id=733983552]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_551" parent="." index="551" unique_id=1501127485]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_552" parent="." index="552" unique_id=47402779]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_553" parent="." index="553" unique_id=135421221]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_554" parent="." index="554" unique_id=44079569]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_555" parent="." index="555" unique_id=2123278497]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_556" parent="." index="556" unique_id=1578374032]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_557" parent="." index="557" unique_id=1884319258]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_558" parent="." index="558" unique_id=976241514]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_559" parent="." index="559" unique_id=935712871]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_560" parent="." index="560" unique_id=993236195]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_561" parent="." index="561" unique_id=1572728246]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_562" parent="." index="562" unique_id=1267496406]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_563" parent="." index="563" unique_id=1599523207]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_564" parent="." index="564" unique_id=1609936497]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_565" parent="." index="565" unique_id=1706783318]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_566" parent="." index="566" unique_id=1303307015]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_567" parent="." index="567" unique_id=1667755999]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_568" parent="." index="568" unique_id=116420695]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_569" parent="." index="569" unique_id=987296993]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_570" parent="." index="570" unique_id=909616957]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_571" parent="." index="571" unique_id=685801160]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_572" parent="." index="572" unique_id=1879302933]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_573" parent="." index="573" unique_id=829034358]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_574" parent="." index="574" unique_id=1190416941]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_575" parent="." index="575" unique_id=1065035964]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_576" parent="." index="576" unique_id=147807015]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_577" parent="." index="577" unique_id=1633730867]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_578" parent="." index="578" unique_id=1882888917]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_579" parent="." index="579" unique_id=655143304]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_580" parent="." index="580" unique_id=1853541032]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_581" parent="." index="581" unique_id=950936892]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_582" parent="." index="582" unique_id=1201305817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_583" parent="." index="583" unique_id=1297704270]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_584" parent="." index="584" unique_id=1703574555]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_585" parent="." index="585" unique_id=1492000403]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_586" parent="." index="586" unique_id=571898374]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_587" parent="." index="587" unique_id=955130628]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_588" parent="." index="588" unique_id=1737089451]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_589" parent="." index="589" unique_id=486022162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_590" parent="." index="590" unique_id=848201704]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_591" parent="." index="591" unique_id=615943399]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_592" parent="." index="592" unique_id=1033628108]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_593" parent="." index="593" unique_id=1718086478]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_594" parent="." index="594" unique_id=1514859132]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_595" parent="." index="595" unique_id=1279763286]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_596" parent="." index="596" unique_id=328381587]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_597" parent="." index="597" unique_id=189916861]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_598" parent="." index="598" unique_id=302262216]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_599" parent="." index="599" unique_id=1522789892]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_600" parent="." index="600" unique_id=1951928873]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_601" parent="." index="601" unique_id=249424587]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_602" parent="." index="602" unique_id=54790993]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_603" parent="." index="603" unique_id=923596801]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_604" parent="." index="604" unique_id=1094593901]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_605" parent="." index="605" unique_id=976870935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_606" parent="." index="606" unique_id=1884847361]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_607" parent="." index="607" unique_id=2106654844]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_608" parent="." index="608" unique_id=168778610]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_609" parent="." index="609" unique_id=580504935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_610" parent="." index="610" unique_id=25162597]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_611" parent="." index="611" unique_id=1672228559]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_612" parent="." index="612" unique_id=1103242714]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_613" parent="." index="613" unique_id=152924660]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_614" parent="." index="614" unique_id=896765523]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_615" parent="." index="615" unique_id=42035058]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_616" parent="." index="616" unique_id=1224147025]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_617" parent="." index="617" unique_id=593905377]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_618" parent="." index="618" unique_id=1274985518]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_619" parent="." index="619" unique_id=1394617061]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_620" parent="." index="620" unique_id=1341617448]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_621" parent="." index="621" unique_id=1433699566]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_622" parent="." index="622" unique_id=1447423472]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_623" parent="." index="623" unique_id=946990823]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_624" parent="." index="624" unique_id=1914782216]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_625" parent="." index="625" unique_id=1025545215]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_626" parent="." index="626" unique_id=499051684]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_627" parent="." index="627" unique_id=518891728]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_628" parent="." index="628" unique_id=1302231506]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_629" parent="." index="629" unique_id=256147110]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_630" parent="." index="630" unique_id=1996419442]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_631" parent="." index="631" unique_id=1829514122]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_632" parent="." index="632" unique_id=1468893899]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_633" parent="." index="633" unique_id=150655239]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_634" parent="." index="634" unique_id=1031632652]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_635" parent="." index="635" unique_id=1063345296]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_636" parent="." index="636" unique_id=844083845]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_637" parent="." index="637" unique_id=1097567305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_638" parent="." index="638" unique_id=1408386350]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_639" parent="." index="639" unique_id=1839666647]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_640" parent="." index="640" unique_id=178857144]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_641" parent="." index="641" unique_id=1794791134]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_642" parent="." index="642" unique_id=2021038981]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_643" parent="." index="643" unique_id=1974973965]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_644" parent="." index="644" unique_id=570401053]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_645" parent="." index="645" unique_id=1934021441]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_646" parent="." index="646" unique_id=2122493853]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_647" parent="." index="647" unique_id=508778371]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_648" parent="." index="648" unique_id=502662781]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_649" parent="." index="649" unique_id=920716886]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_650" parent="." index="650" unique_id=1967143462]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_651" parent="." index="651" unique_id=1758166677]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_652" parent="." index="652" unique_id=1429995203]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_653" parent="." index="653" unique_id=1086450826]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_654" parent="." index="654" unique_id=1283744313]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_655" parent="." index="655" unique_id=499643038]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_656" parent="." index="656" unique_id=1008821521]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_657" parent="." index="657" unique_id=506894617]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_658" parent="." index="658" unique_id=1258788536]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_659" parent="." index="659" unique_id=1334707138]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_660" parent="." index="660" unique_id=1719997639]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_661" parent="." index="661" unique_id=321636333]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_662" parent="." index="662" unique_id=609536399]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_663" parent="." index="663" unique_id=64515334]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_664" parent="." index="664" unique_id=668865935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_665" parent="." index="665" unique_id=1855274431]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_666" parent="." index="666" unique_id=860368428]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_667" parent="." index="667" unique_id=1165813343]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_668" parent="." index="668" unique_id=81788274]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_669" parent="." index="669" unique_id=67867713]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_670" parent="." index="670" unique_id=577747968]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_671" parent="." index="671" unique_id=438658814]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_672" parent="." index="672" unique_id=1599492833]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_673" parent="." index="673" unique_id=946673872]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_674" parent="." index="674" unique_id=1707501980]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_675" parent="." index="675" unique_id=1373835304]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_676" parent="." index="676" unique_id=1004350866]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_677" parent="." index="677" unique_id=913499319]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_678" parent="." index="678" unique_id=888236496]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_679" parent="." index="679" unique_id=1236717071]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_680" parent="." index="680" unique_id=1519156848]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_681" parent="." index="681" unique_id=162729280]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_682" parent="." index="682" unique_id=1272924101]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_683" parent="." index="683" unique_id=1123457404]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_684" parent="." index="684" unique_id=681264857]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_685" parent="." index="685" unique_id=930421235]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_686" parent="." index="686" unique_id=1868410464]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_687" parent="." index="687" unique_id=810049205]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_688" parent="." index="688" unique_id=1967980997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_689" parent="." index="689" unique_id=215481927]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_690" parent="." index="690" unique_id=12729838]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_691" parent="." index="691" unique_id=1714376360]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_692" parent="." index="692" unique_id=144633678]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_693" parent="." index="693" unique_id=641549927]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_694" parent="." index="694" unique_id=1081615202]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_695" parent="." index="695" unique_id=855323182]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_696" parent="." index="696" unique_id=424995609]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_697" parent="." index="697" unique_id=893112550]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_698" parent="." index="698" unique_id=604316814]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_699" parent="." index="699" unique_id=1704911265]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_700" parent="." index="700" unique_id=1355127448]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_701" parent="." index="701" unique_id=802818453]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_702" parent="." index="702" unique_id=1337890749]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_703" parent="." index="703" unique_id=815432950]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_704" parent="." index="704" unique_id=310156585]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_705" parent="." index="705" unique_id=1433567640]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_706" parent="." index="706" unique_id=172969164]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_707" parent="." index="707" unique_id=520276213]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_708" parent="." index="708" unique_id=153183225]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_709" parent="." index="709" unique_id=921672051]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_710" parent="." index="710" unique_id=726985662]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_711" parent="." index="711" unique_id=1586966219]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_712" parent="." index="712" unique_id=1681641277]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_713" parent="." index="713" unique_id=318561868]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_714" parent="." index="714" unique_id=614787010]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_715" parent="." index="715" unique_id=1397043339]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_716" parent="." index="716" unique_id=192170485]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_717" parent="." index="717" unique_id=1316709772]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_718" parent="." index="718" unique_id=1831652008]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_719" parent="." index="719" unique_id=1342778436]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_720" parent="." index="720" unique_id=1540797861]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_721" parent="." index="721" unique_id=2086600549]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_722" parent="." index="722" unique_id=275635143]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_723" parent="." index="723" unique_id=521460822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_724" parent="." index="724" unique_id=924560253]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_725" parent="." index="725" unique_id=40158920]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_726" parent="." index="726" unique_id=1632019128]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_727" parent="." index="727" unique_id=751886875]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_728" parent="." index="728" unique_id=1041574309]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_729" parent="." index="729" unique_id=1693757073]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_730" parent="." index="730" unique_id=614843765]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_731" parent="." index="731" unique_id=1344455710]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_732" parent="." index="732" unique_id=1134086571]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_733" parent="." index="733" unique_id=152242199]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_734" parent="." index="734" unique_id=1458076923]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_735" parent="." index="735" unique_id=531626601]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_736" parent="." index="736" unique_id=221407161]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_737" parent="." index="737" unique_id=644787532]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_738" parent="." index="738" unique_id=1556494188]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_739" parent="." index="739" unique_id=739286493]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_740" parent="." index="740" unique_id=894350966]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_741" parent="." index="741" unique_id=1748603892]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_742" parent="." index="742" unique_id=1593070317]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_743" parent="." index="743" unique_id=312700031]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_744" parent="." index="744" unique_id=816900783]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_745" parent="." index="745" unique_id=213745543]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_746" parent="." index="746" unique_id=1790506600]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_747" parent="." index="747" unique_id=1975006390]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_748" parent="." index="748" unique_id=29545225]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_749" parent="." index="749" unique_id=854189302]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_750" parent="." index="750" unique_id=1576331158]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_751" parent="." index="751" unique_id=860064881]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_752" parent="." index="752" unique_id=1040597652]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_753" parent="." index="753" unique_id=795745156]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_754" parent="." index="754" unique_id=981260049]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_755" parent="." index="755" unique_id=2080208510]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_756" parent="." index="756" unique_id=403301503]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_757" parent="." index="757" unique_id=170378190]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_758" parent="." index="758" unique_id=263656235]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_759" parent="." index="759" unique_id=923556536]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_760" parent="." index="760" unique_id=1817439852]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_761" parent="." index="761" unique_id=1802107683]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_762" parent="." index="762" unique_id=2136050750]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_763" parent="." index="763" unique_id=1420888794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_764" parent="." index="764" unique_id=145550378]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_765" parent="." index="765" unique_id=403914246]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_766" parent="." index="766" unique_id=483782554]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_767" parent="." index="767" unique_id=972054305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_768" parent="." index="768" unique_id=1607246768]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_769" parent="." index="769" unique_id=337215863]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_770" parent="." index="770" unique_id=865887255]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_771" parent="." index="771" unique_id=2057760683]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_772" parent="." index="772" unique_id=840141509]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_773" parent="." index="773" unique_id=27961256]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_774" parent="." index="774" unique_id=930028448]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_775" parent="." index="775" unique_id=401239014]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_776" parent="." index="776" unique_id=1101894176]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_777" parent="." index="777" unique_id=591922861]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_778" parent="." index="778" unique_id=1330707167]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_779" parent="." index="779" unique_id=624274501]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_780" parent="." index="780" unique_id=31190551]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_781" parent="." index="781" unique_id=1417477187]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_782" parent="." index="782" unique_id=1334505279]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_783" parent="." index="783" unique_id=182114064]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_784" parent="." index="784" unique_id=780853290]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_785" parent="." index="785" unique_id=799938231]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_786" parent="." index="786" unique_id=1074536842]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_787" parent="." index="787" unique_id=1991986778]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_788" parent="." index="788" unique_id=1523632821]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_789" parent="." index="789" unique_id=1265210566]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_790" parent="." index="790" unique_id=1608184099]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_791" parent="." index="791" unique_id=110461352]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_792" parent="." index="792" unique_id=1343133570]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_793" parent="." index="793" unique_id=815713653]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_794" parent="." index="794" unique_id=1086434839]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_795" parent="." index="795" unique_id=983806312]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_796" parent="." index="796" unique_id=472850481]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_797" parent="." index="797" unique_id=1169484220]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_798" parent="." index="798" unique_id=190503446]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_799" parent="." index="799" unique_id=198332284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_800" parent="." index="800" unique_id=828662165]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_801" parent="." index="801" unique_id=1224101788]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_802" parent="." index="802" unique_id=1424249895]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_803" parent="." index="803" unique_id=1608280967]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_804" parent="." index="804" unique_id=1537714952]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_805" parent="." index="805" unique_id=1592228151]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_806" parent="." index="806" unique_id=562470101]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_807" parent="." index="807" unique_id=1746726021]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_808" parent="." index="808" unique_id=1535608790]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_809" parent="." index="809" unique_id=1370157162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_810" parent="." index="810" unique_id=711549176]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_811" parent="." index="811" unique_id=1694000154]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_812" parent="." index="812" unique_id=367418578]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_813" parent="." index="813" unique_id=115360740]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_814" parent="." index="814" unique_id=1339246416]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_815" parent="." index="815" unique_id=388358730]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_816" parent="." index="816" unique_id=643955291]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_817" parent="." index="817" unique_id=1017289552]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_818" parent="." index="818" unique_id=1915023733]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_819" parent="." index="819" unique_id=219505682]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_820" parent="." index="820" unique_id=937176498]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_821" parent="." index="821" unique_id=639055012]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_822" parent="." index="822" unique_id=950472447]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_823" parent="." index="823" unique_id=1294831969]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_824" parent="." index="824" unique_id=1209430469]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_825" parent="." index="825" unique_id=508896233]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_826" parent="." index="826" unique_id=1540357615]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_827" parent="." index="827" unique_id=1938979683]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_828" parent="." index="828" unique_id=527661595]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_829" parent="." index="829" unique_id=2109698701]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_830" parent="." index="830" unique_id=312800708]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_831" parent="." index="831" unique_id=1276108235]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_832" parent="." index="832" unique_id=1928617813]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_833" parent="." index="833" unique_id=907442585]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_834" parent="." index="834" unique_id=948090205]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_835" parent="." index="835" unique_id=626850284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_836" parent="." index="836" unique_id=1590162104]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_837" parent="." index="837" unique_id=1958432025]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_838" parent="." index="838" unique_id=1821637716]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_839" parent="." index="839" unique_id=1686940420]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_840" parent="." index="840" unique_id=222707546]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_841" parent="." index="841" unique_id=1278444727]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_842" parent="." index="842" unique_id=270149661]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_843" parent="." index="843" unique_id=1147788995]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_844" parent="." index="844" unique_id=223138298]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_845" parent="." index="845" unique_id=319293168]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_846" parent="." index="846" unique_id=940699943]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_847" parent="." index="847" unique_id=777663809]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_848" parent="." index="848" unique_id=1829181650]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_849" parent="." index="849" unique_id=1404435642]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_850" parent="." index="850" unique_id=361549439]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_851" parent="." index="851" unique_id=20332707]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_852" parent="." index="852" unique_id=1718756592]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_853" parent="." index="853" unique_id=1901346280]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_854" parent="." index="854" unique_id=1708972519]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_855" parent="." index="855" unique_id=436743501]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_856" parent="." index="856" unique_id=1194652224]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_857" parent="." index="857" unique_id=2025768769]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_858" parent="." index="858" unique_id=1202963031]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_859" parent="." index="859" unique_id=622883190]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_860" parent="." index="860" unique_id=1837851306]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_861" parent="." index="861" unique_id=796446131]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_862" parent="." index="862" unique_id=1789367253]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_863" parent="." index="863" unique_id=2069827830]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_864" parent="." index="864" unique_id=2006672255]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_865" parent="." index="865" unique_id=681994253]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_866" parent="." index="866" unique_id=1234319675]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_867" parent="." index="867" unique_id=744622284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_868" parent="." index="868" unique_id=1314265965]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_869" parent="." index="869" unique_id=1545896612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_870" parent="." index="870" unique_id=1793448757]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_871" parent="." index="871" unique_id=1757183980]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_872" parent="." index="872" unique_id=2117225877]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_873" parent="." index="873" unique_id=800208000]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_874" parent="." index="874" unique_id=1098245289]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_875" parent="." index="875" unique_id=48782549]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_876" parent="." index="876" unique_id=765974357]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_877" parent="." index="877" unique_id=567175485]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_878" parent="." index="878" unique_id=45054883]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_879" parent="." index="879" unique_id=1392603742]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_880" parent="." index="880" unique_id=223625946]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_881" parent="." index="881" unique_id=51587916]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_882" parent="." index="882" unique_id=1050312078]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Purgatory2GroundCollision_883" parent="." index="883" unique_id=755018439]
+collision_layer = 4
+collision_mask = 3

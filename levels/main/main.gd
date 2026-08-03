@@ -13,22 +13,19 @@ signal rock_followcam_activated
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
-	#preload("res://level_grids/heaven/heaven_grid.tscn"),
 	preload("res://level_grids/city/city_grid.tscn"),
-	#preload("res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn")
 ]
 
-## List of scenes that can be instantiated as chunks when the number of kicks go down.
-## Currently unused.
-@onready var _low_kick_level_segments = [
-	preload("res://level_grids/purgatory/heaven_stairs_grid.tscn"),
+## List of scenes that can be instantiated after 8000 kicks remaining
+@onready var _heaven_level_segments = [
+	preload("res://level_grids/heaven/heaven_grid.tscn"),
+	
 ]
 
 # fallback option to keep the chunk code from breaking in extreme circumstances. 
 @onready var _none_level_segment = preload("res://level_grids/none/none_level_grid.tscn")
-
 @onready var _purgatory = preload("res://levels/purgatory/purgatory.tscn")
-
+@onready var _heaven_sun = preload("res://levels/purgatory/heaven_directional_light_3d.tscn")
 @onready var grandma_salmon_helper_scene: PackedScene = preload(
 	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
 )
@@ -36,11 +33,11 @@ signal rock_followcam_activated
 @onready var salmon_ascender := preload("res://events/grandma_salmon/ascension/salmon_ascension.tscn")
 
 # Cameras
-@onready var player_camera = $Player/CameraPivot/PlayerCamera
-@onready var rock = $Rock
-@onready var rock_camera = $Rock/RockCameraPivot/RockCameraArm/RockCamera
-@onready var pan_camera = $PanningCamera
-@onready var walk_camera = $PlayerWalkCamera
+@onready var player_camera := $Player/CameraPivot/PlayerCamera
+@onready var rock := $Rock
+@onready var rock_camera := $Rock/RockCameraPivot/RockCameraArm/RockCamera
+@onready var pan_camera := $PanningCamera
+@onready var walk_camera := $PlayerWalkCamera
 
 # the tween, used for tweening
 @onready var tween: Tween = get_tree().create_tween()
@@ -55,12 +52,17 @@ var _last_grid_position := grid_position.duplicate()
 
 # variable to track what the panning camera should be doing
 var camera_pan_state = 0
+var panning_camera_active = false
+
+# keep track of which camera the camera switcher should switch to on timeout
+var camera_switch_tracker = 0
 
 # variable to track if the rock should be being followed by the player
 var follow_rock = false
 
-# variable for stopping the player from rotating while rock kicks
-var y_rotation_hold = 0.0
+# flag that is true when the player is moving
+var player_moving = false
+
 
 # holds the reference to purgatory level, when instantiated
 var purgatory = null
@@ -76,40 +78,59 @@ var _current_chunks = [
 	# v
 
 func get_spawn() -> Vector3:
+	if purgatory:
+		return purgatory.get_spawn_position()
 	var grid: Grid = _current_chunks[1][1]
 	var spawn_position: Vector3 = grid.get_spawn_position()
 	return spawn_position
 
 func _regular_idle_actions() -> void:
-	camera_pan_state = 0
 	rock_camera.make_current()
 	%UIAnimator.play("idle_float")
-	$PanTimer.start(30)
 
 ## Event handler for gamestate_update. Changes the currently active camera. 
-func _event_handler(state: GameManager.gamestates, cause: String) -> void:
-	$PanTimer.stop()
+func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
+	$IdleIdleTimer.stop()
 	%UIAnimator.play("RESET")
+	player_moving = false
 	match state:
 		GameManager.gamestates.IDLE:
-			if GameManager.kicks_remaining != GameManager.purgatory_kick_count:
+			$IdleIdleTimer.start()
+			if cause == "player got to rock":
+				# if the player walked to the rock sent the game to idle play
+				# play the correct salmon stuff. This fixes the issue of the game
+				# doing these animations on bootup at 8000 and 10000 kicks
+				if GameManager.kicks_remaining == GameManager.heaven_kick_count:
+					# salmon to heaven sequence
+					# 5 second wait is for gates to open
+					$UI.hide()
+					await get_tree().create_timer(5.0).timeout
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					_load_heaven()
+					$UI.show()
+					
+				elif GameManager.kicks_remaining == GameManager.purgatory_kick_count:
+					# do salmon purgatory sequence
+					$UI.hide()
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					_load_purgatory()
+					$UI.show()
+					$UI/KickingMenu/KickingMenu/PurgKicksRemainingContainer.show()
+					
+				# go back to regular idle state stuff
 				_regular_idle_actions()
 			else:
-				# do salmon purgatory sequence
-				$UI.hide()
-				var ascender = salmon_ascender.instantiate()
-				self.add_child(ascender)
-				await ascender.ascension_complete
-				_load_purgatory()
-				$UI.show()
-				$UI/KickingMenu/KicksRemainingPurgatory.show()
-				
-				# go back to regular idle state stuff
 				_regular_idle_actions()
 		GameManager.gamestates.CONTRACT:
 			
 			# Pan timer stops so that the panning camera doesn't keep moving
-			$PanTimer.stop()
+			$IdleIdleTimer.stop()
+			$CameraSwitchTimer.stop()
+			camera_pan_state = 0
 			player_camera.make_current()
 		GameManager.gamestates.KICKING:
 			player_camera.make_current()
@@ -117,8 +138,13 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			
 			# wait a moment before switching camera to rock camera
 			follow_rock = true
-			y_rotation_hold = $Player.current_y_rotation
-			await get_tree().create_timer(0.5).timeout
+			
+			await get_tree().process_frame
+			# if a critical kick occurs, wait a longer time
+			if GameManager.critical_kick:
+				await get_tree().create_timer(0.8).timeout
+			else:
+				await get_tree().create_timer(0.5).timeout
 			follow_rock = false
 			rock_camera.make_current()
 			rock_followcam_activated.emit()
@@ -151,6 +177,7 @@ func _event_handler(state: GameManager.gamestates, cause: String) -> void:
 			walk_camera.global_position = midpoint + (right * 7.5) + Vector3(0.0, 3.0, 0.0)
 			walk_camera.look_at(midpoint)
 			walk_camera.make_current()
+			player_moving = true
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
 				print("MAIN: Kicks remaining at 0! Commence the forever sequence!")
@@ -205,6 +232,13 @@ func _load_heaven_environment() -> void:
 	# switch environment
 	$WorldEnvironment.set_environment(load("res://levels/heaven_environment.tres"))
 
+func _load_heaven_sun() -> void:
+	# Change sun
+	if get_node_or_null("MainDirectionalLight3D"):
+		$MainDirectionalLight3D.queue_free()
+		var sun = _heaven_sun.instantiate()
+		add_child(sun)
+
 # replaces all chunks in _current_chunks with the none chunk. 
 # do not use if not in purgatory/heaven state.
 func _empty_level_chunks() -> void:
@@ -218,6 +252,8 @@ func _load_purgatory() -> void:
 	# switch environment
 	_load_heaven_environment()
 	
+	_load_heaven_sun()
+	
 	# unload level chunks/replace with none
 	_empty_level_chunks()
 	
@@ -226,18 +262,40 @@ func _load_purgatory() -> void:
 	self.add_child(purgatory)
 	
 	# teleport player and rock
-	var spawn_position = purgatory.get_node("Spawnpoint").position
-	rock.position = spawn_position
-	$Player.position = spawn_position + Vector3(0.0, 0.0, 1.0)
+	var init_spawn = purgatory.get_spawn_position()
+	$Player.position = init_spawn + Vector3(0.0, 0.0, 1.0)
+	$Rock.position = init_spawn
+
+func _load_heaven() -> void:
+	# spawn in the initial heaven grid after being taken up by grandma salmon
+	# frees purgatory first _empty_level_chunks does not work for purgatory
+	if purgatory:
+		purgatory.queue_free()
+	_load_heaven_environment()
+	_load_heaven_sun()
+	for z in range(-1, 2, 1):
+		for x in range(-1, 2, 1):
+			# instantiate
+			_current_chunks[z + 1][x + 1] = _instantiate_chunk()
+			# position
+			_current_chunks[z + 1][x + 1].position =\
+					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
+	_current_chunks[1][1].add_collision_to_multimeshes()
+	
+	# Spawn rock and player at a random location in heaven. 
+	var spawn_position = get_spawn()
+	rock.global_position = spawn_position
+	$Player.global_position = spawn_position + Vector3(0.0, 0.0, 1.0)
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
 func _select_level_segment() -> PackedScene:
 	var selected_segment = null
 	
 	# once kicks remaining goes low enough, pick different segments
-	if GameManager.kicks_remaining < GameManager.purgatory_kick_count:
+	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
+		selected_segment = _heaven_level_segments.pick_random()
+	elif GameManager.kicks_remaining < GameManager.purgatory_kick_count:
 		# purgatory functionality has changed. Now exists as static 3x3 grid with bounds
-		#selected_segment = _low_kick_level_segments.pick_random()
 		selected_segment = _none_level_segment
 	else:
 		selected_segment = _level_segments.pick_random()
@@ -347,7 +405,7 @@ func _on_grid_position_changed(shift) -> void:
 func _ready() -> void:
 	
 	# connect signals
-	GameManager.gamestate_update.connect(_event_handler)
+	GameManager.gamestate_update.connect(_on_change_state)
 	grid_position_changed.connect(_on_grid_position_changed)
 	GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
 	
@@ -375,7 +433,9 @@ func _ready() -> void:
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 	
 	# load purgatory if under kick threshold
-	if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
+	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
+		_load_heaven()
+	elif GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
 		_load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
@@ -434,26 +494,15 @@ func _process(_delta: float) -> void:
 				- _last_grid_position[1])
 		grid_position_changed.emit(shift)
 	
-	# player vision follows the rock.
-	if follow_rock:
-		
-		# pull player camera up
-		if $Player.position.angle_to(rock.position) > $Player.current_x_rotation:
-			$Player.current_x_rotation +=\
-				($Player.position.angle_to(rock.position) - $Player.current_x_rotation) / 25
-				
-		# pull player camera down
-		elif $Player.current_x_rotation > $Player.position.angle_to(rock.position):
-			$Player.current_x_rotation -=\
-				($Player.current_x_rotation - $Player.position.angle_to(rock.position)) / 15
-		
-		# hold player camera on rock
-		else:
-			$Player.current_x_rotation = $Player.position.angle_to(rock.position)
-		
-		# stop player from looking left/right
-		$Player.current_y_rotation = y_rotation_hold
+	if player_moving:
+		_camera_follow_player()
 	
+	if panning_camera_active:
+		_panning_camera()
+
+func _camera_follow_player() -> void:
+	walk_camera.look_at($Player.global_position)
+
 # panning camera stuff
 func _panning_camera() -> void:
 	
@@ -461,11 +510,7 @@ func _panning_camera() -> void:
 	# rotation minorly changed every call
 	pan_camera.rotate_y(0.001)
 	if camera_pan_state == 0:
-		
-		# sets the pan camera to be current, nothing else to allow slight delay
-		pan_camera.make_current()
 		camera_pan_state = 1
-		$StairsTimer.start(30.0)
 	elif camera_pan_state == 1:
 		
 		# sets the pan camera to properly look at the player
@@ -496,19 +541,17 @@ func _panning_camera() -> void:
 		if pan_camera.position.x < $Player.position.x - 99 :
 			tween.kill()
 			camera_pan_state = 2
-	
-	# A way to keep the function calling itself
-	$PanTimer.start(0.001)
 
 # Teleport the player to the rock, if you wish to move around by kicking the rock
 # and don't want to wait for the walking this is how
 func _console_teleport() -> void:
 	$Player.position = $Rock.position + Vector3(0.0, 0.0, 1.0)
 
-# Set the kicks remaining, you need to kick the rock to trigger the change
-# so set the number 1 higher than you want
+# Set the kicks remaining, emits decrement signal of the kicks passed in
+# making for easier work on changing loading segments
 func _console_set_kick(kick: String) -> void:
 	GameManager.kicks_remaining = kick.to_int()
+	GameManager.decrement_kicks_remaining.emit(GameManager.kicks_remaining)
 
 # Set the event that is currently active with a number
 # This can be changed to be similar to the state change command but,
@@ -565,3 +608,20 @@ func _on_stairs_timer_timeout() -> void:
 		_regular_idle_actions()
 	else:
 		_regular_idle_actions()
+
+
+func _on_camera_switch_timer_timeout() -> void:
+	if camera_switch_tracker == 0:
+		pan_camera.make_current()
+		camera_switch_tracker = 1
+	elif camera_switch_tracker == 1:
+		camera_switch_tracker = 2
+		_on_stairs_timer_timeout()
+	else:
+		_regular_idle_actions()
+		camera_switch_tracker = 0
+
+
+func _on_idle_idle_timer_timeout() -> void:
+	$CameraSwitchTimer.start()
+	panning_camera_active = true

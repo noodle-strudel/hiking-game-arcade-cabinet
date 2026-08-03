@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmb51gvp00dxr"]
+
+[ext_resource type="Script" uid="uid://buwhsycngxqhs" path="res://player/player_camera.gd" id="1_itl3e"]
+
+[node name="PlayerCamera" type="Camera3D" unique_id=315643319]
+process_mode = 3
+far = 1000.0
+script = ExtResource("1_itl3e")

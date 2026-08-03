@@ -59,7 +59,7 @@ func _ready() -> void:
 	# play idle music on game boot-up
 	play_track(idle_music)
 
-func _on_state_change(state : GameManager.gamestates, _cause:String):
+func _on_state_change(state : GameManager.gamestates, cause:String):
 	# if the background music is playing this stores how far into the
 	# song it is before handling state switch.
 	if music_player.stream == background_music:
@@ -68,7 +68,8 @@ func _on_state_change(state : GameManager.gamestates, _cause:String):
 		# in idle the game fades out whatever is playing before playing idle music
 		# and starting the timeout timer
 		GameManager.gamestates.IDLE:
-			fade_out_music()
+			if "Game booted" not in cause:
+				fade_out_music()
 			await get_tree().create_timer(fade_time).timeout
 			play_track(idle_music)
 			%MusicTimeOut.start()

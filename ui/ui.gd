@@ -11,6 +11,8 @@ extends Control
 @onready var ui_camera := $"../UICamera"
 @onready var subtitle : Label = $IdleMenu/SubtitlePivot/Subtitle
 
+const KICKS_REMAINING_EFFECT = "[ghost fade=0.7 span=-10][outline_size=10]"
+const KICKS_DONE_EFFECT = "[outline_size=10]"
 const OOB_EFFECT_PRE = "[wave amp=100][outline_size=10]"
 const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 
@@ -68,6 +70,14 @@ func _ready() -> void:
 	$IdleMenu.show()
 	_get_random_subtitle()
 	%IdleAnimationPlayer.play("swing_subtitle")
+	if (
+		GameManager.kicks_remaining < GameManager.heaven_kick_count and
+		GameManager.kicks_remaining > GameManager.purgatory_kick_count
+	):
+		$KickingMenu/PurgKicksRemainingContainer.show()
+	else:
+		$KickingMenu/PurgKicksRemainingContainer.hide()
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -148,11 +158,14 @@ func _random_uppercase() -> String:
 # called when signal recieved
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	var kicks_remaining_str := "KICKS REMAINING: "
-	var purgatory_kicks = kick_count - 8000
-	%KicksRemainingLabel.text = (kicks_remaining_bbcode + str(kick_count))
-	%KicksRemainingGameplay.text = (kicks_remaining_str + str(kick_count))
-	%KicksRemainingFancy.text = (str(kick_count))
-	%KicksRemainingPurgatory.text =("UNTIL THE CHANGE: " + str(purgatory_kicks))
+	var purgatory_kicks = kick_count - GameManager.heaven_kick_count
+	var kicks_done = GameManager.STARTING_KICKS - kick_count
+	%KicksRemainingNumLabel.text = KICKS_REMAINING_EFFECT + str(kick_count)
+	%KicksDoneNumLabel.text = KICKS_DONE_EFFECT + str(kicks_done)
+	%KicksRemainingGameplay.text = kicks_remaining_str
+	%KicksRemainingGameplayNum.text = str(kick_count)
+	%KicksRemainingFancy.text = str(kick_count)
+	%KicksRemainingPurgatory.text = "UNTIL HEAVEN: " + str(purgatory_kicks)
 
 
 # enable and disable UI elements. cause is mostly used for OOB causes
@@ -160,10 +173,11 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	match state:
 		GameManager.gamestates.IDLE:
+			GameManager.critical_kick = false
 			# reset state variables
 			spin_letters = false
 			select_rock = false
-			
+
 			$IdleMenu.show()
 			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
@@ -183,12 +197,14 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 				if GameManager.DEBUG:
 					print("critical kick!")
 				%Kickbar.value = 200.0
+				GameManager.critical_kick = true
 				
 				# add juice
+				# critical kick sound
+				$"../Rock".play_kick(true)
+				ui_camera.apply_shake(2)
 				get_tree().paused = true
 				await get_tree().create_timer(hitstop_length).timeout
-				ui_camera.apply_shake(2)
-				$"../Rock".play_kick(true) # critical kick sound
 				get_tree().paused = false
 				
 				# wow sound effect
@@ -199,6 +215,11 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
+			
+			# didn't really know where else to put this so i'll put it here
+			# turn off until heaven kicks when in heaven
+			if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
+				$KickingMenu/PurgKicksRemainingContainer.hide()
 		GameManager.gamestates.ROCK_OOB:
 			$OOBCenterContainer.show()
 			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
@@ -221,7 +242,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$OOBCenterContainer.hide()
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
-				print("UI: Show text that pops up when kicks_remaning <= 0")
+				print("UI: Show text that pops up when kicks_remaining <= 0")
 
 # Scoring sequence function
 func _scoring_sequence() -> void:

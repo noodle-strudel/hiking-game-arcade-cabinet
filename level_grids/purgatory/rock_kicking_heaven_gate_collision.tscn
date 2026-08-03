@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c1cod3tqsw2iw"]
+
+[ext_resource type="PackedScene" uid="uid://dr2gdcw38gn22" path="res://level_grids/purgatory/glbs/rock_kicking_heaven_gate_collision.glb" id="1_r1mfr"]
+
+[node name="rock_kicking_heaven_gate_collision" unique_id=1941854599 instance=ExtResource("1_r1mfr")]
+
+[node name="heaven_gate_exterior" parent="." index="0" unique_id=937185132]
+collision_layer = 4
+collision_mask = 3
+
+[node name="heaven_gates" parent="." index="1" unique_id=237920971]
+collision_layer = 4
+collision_mask = 3
