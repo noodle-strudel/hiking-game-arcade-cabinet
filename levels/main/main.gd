@@ -248,8 +248,9 @@ func _load_purgatory() -> void:
 	self.add_child(purgatory)
 	
 	# teleport player and rock
-	
-	$Player.position = purgatory.get_spawn_position() + Vector3(0.0, 0.0, 1.0)
+	var init_spawn = purgatory.get_spawn_position()
+	$Player.position = init_spawn + Vector3(0.0, 0.0, 1.0)
+	$Rock.position = init_spawn
 
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
 func _select_level_segment() -> PackedScene:

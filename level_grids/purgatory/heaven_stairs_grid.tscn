@@ -40,3 +40,4 @@ texture = SubResource("ViewportTexture_bexch")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
 
 [editable path="rock_kicking_heaven_gate"]
+[editable path="rock_kicking_heaven_gate/rock_kicking_heaven_gate_collision"]
