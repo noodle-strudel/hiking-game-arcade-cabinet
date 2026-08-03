@@ -13,15 +13,13 @@ signal rock_followcam_activated
 ## List of scenes that can be instantiated as chunks
 @onready var _level_segments = [
 	preload("res://level_grids/park/park_grid.tscn"),
-	#preload("res://level_grids/heaven/heaven_grid.tscn"),
 	preload("res://level_grids/city/city_grid.tscn"),
-	#preload("res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.tscn")
 ]
 
-## List of scenes that can be instantiated as chunks when the number of kicks go down.
-## Currently unused.
-@onready var _low_kick_level_segments = [
-	preload("res://level_grids/purgatory/heaven_stairs_grid.tscn"),
+## List of scenes that can be instantiated after 8000 kicks remaining
+@onready var _heaven_level_segments = [
+	preload("res://level_grids/heaven/heaven_grid.tscn"),
+	
 ]
 
 # fallback option to keep the chunk code from breaking in extreme circumstances. 
@@ -98,19 +96,36 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	match state:
 		GameManager.gamestates.IDLE:
 			$IdleIdleTimer.start()
-			if GameManager.kicks_remaining != GameManager.purgatory_kick_count:
-				_regular_idle_actions()
+			if cause == "player got to rock":
+				# if the player walked to the rock sent the game to idle play
+				# play the correct salmon stuff. This fixes the issue of the game
+				# doing these animations on bootup at 8000 and 10000 kicks
+				if GameManager.kicks_remaining == GameManager.heaven_kick_count:
+					# salmon to heaven sequence
+					# 5 second wait is for gates to open
+					$UI.hide()
+					await get_tree().create_timer(5.0).timeout
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					_load_heaven()
+					$UI.show()
+					
+					# go back to regular idle
+					_regular_idle_actions()
+				elif GameManager.kicks_remaining == GameManager.purgatory_kick_count:
+					# do salmon purgatory sequence
+					$UI.hide()
+					var ascender = salmon_ascender.instantiate()
+					self.add_child(ascender)
+					await ascender.ascension_complete
+					_load_purgatory()
+					$UI.show()
+					$UI/KickingMenu/KicksRemainingPurgatory.show()
+					
+					# go back to regular idle state stuff
+					_regular_idle_actions()
 			else:
-				# do salmon purgatory sequence
-				$UI.hide()
-				var ascender = salmon_ascender.instantiate()
-				self.add_child(ascender)
-				await ascender.ascension_complete
-				_load_purgatory()
-				$UI.show()
-				$UI/KickingMenu/KicksRemainingPurgatory.show()
-				
-				# go back to regular idle state stuff
 				_regular_idle_actions()
 		GameManager.gamestates.CONTRACT:
 			
@@ -252,14 +267,34 @@ func _load_purgatory() -> void:
 	$Player.position = init_spawn + Vector3(0.0, 0.0, 1.0)
 	$Rock.position = init_spawn
 
+func _load_heaven() -> void:
+	# spawn in the initial heaven grid after being taken up by grandma salmon
+	# frees purgatory first _empty_level_chunks does not work for purgatory
+	purgatory.queue_free()
+	_load_heaven_environment()
+	for z in range(-1, 2, 1):
+		for x in range(-1, 2, 1):
+			# instantiate
+			_current_chunks[z + 1][x + 1] = _instantiate_chunk()
+			# position
+			_current_chunks[z + 1][x + 1].position =\
+					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
+	_current_chunks[1][1].add_collision_to_multimeshes()
+	
+	# Spawn rock and player at a random location in heaven. 
+	var spawn_position = get_spawn()
+	rock.global_position = spawn_position
+	$Player.global_position = spawn_position + Vector3(0.0, 0.0, 1.0)
+
 # Chooses a new chunk based on current game information. (e.g., kicks_remaining)
 func _select_level_segment() -> PackedScene:
 	var selected_segment = null
 	
 	# once kicks remaining goes low enough, pick different segments
-	if GameManager.kicks_remaining < GameManager.purgatory_kick_count:
+	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
+		selected_segment = _heaven_level_segments.pick_random()
+	elif GameManager.kicks_remaining < GameManager.purgatory_kick_count:
 		# purgatory functionality has changed. Now exists as static 3x3 grid with bounds
-		#selected_segment = _low_kick_level_segments.pick_random()
 		selected_segment = _none_level_segment
 	else:
 		selected_segment = _level_segments.pick_random()
@@ -397,7 +432,10 @@ func _ready() -> void:
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
 	
 	# load purgatory if under kick threshold
-	if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
+	if ( 
+		GameManager.kicks_remaining <= GameManager.purgatory_kick_count and 
+		GameManager.kicks_remaining > GameManager.heaven_kick_count
+	):
 		_load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
@@ -509,10 +547,11 @@ func _panning_camera() -> void:
 func _console_teleport() -> void:
 	$Player.position = $Rock.position + Vector3(0.0, 0.0, 1.0)
 
-# Set the kicks remaining, you need to kick the rock to trigger the change
-# so set the number 1 higher than you want
+# Set the kicks remaining, emits decrement signal of the kicks passed in
+# making for easier work on changing loading segments
 func _console_set_kick(kick: String) -> void:
 	GameManager.kicks_remaining = kick.to_int()
+	GameManager.decrement_kicks_remaining.emit(GameManager.kicks_remaining)
 
 # Set the event that is currently active with a number
 # This can be changed to be similar to the state change command but,

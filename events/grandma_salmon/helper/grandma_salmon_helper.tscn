@@ -16,6 +16,11 @@ _data = [Vector2(0, 0), 0.0, -0.41050455, 0, 0, Vector2(0.49859157, 10), 0.0, 0.
 point_count = 3
 metadata/_snap_count = 20
 
+[sub_resource type="Curve" id="Curve_o2d6c"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2.5, 25), 0.0, 0.0, 0, 0, Vector2(5, 50), 0.0, 0.0, 0, 0, Vector2(7.5, 75), 0.0, 0.0, 0, 0, Vector2(10, 100), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_veemj"]
 animations = [{
 "frames": [{
@@ -66,6 +71,7 @@ viewport_path = NodePath("SubViewport")
 [node name="GrandmaSalmonHelper" type="Node3D" unique_id=1470527940]
 script = ExtResource("1_61jmn")
 movement_curve = SubResource("Curve_bmar1")
+heaven_curve = SubResource("Curve_o2d6c")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1933689996]
 transparent_bg = true
