@@ -36,7 +36,7 @@ func fade_out_music() -> void:
 	# tween allows for fading the sound in and out calling the set volume method
 	# with over the fade time changing from the second value to the 3rd
 	var tween = create_tween()
-	tween.tween_method(set_music_volume, default_volume_db, mute_db, fade_time)
+	tween.tween_method(set_music_volume, _get_music_bus_db(), mute_db, fade_time)
 	
 	# without waiting it would stop without fading out
 	await get_tree().create_timer(fade_time).timeout
@@ -52,6 +52,9 @@ func fade_in_music() -> void:
 func set_music_volume(volume_db: float) -> void:
 	# simple function to allow seting the volume on the music bus
 	AudioServer.set_bus_volume_db(music_bus_idx, volume_db)
+
+func _get_music_bus_db() -> float:
+	return AudioServer.get_bus_volume_db(music_bus_idx)
 
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_state_change)

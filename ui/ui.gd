@@ -27,6 +27,7 @@ var game_over_text_scroll := false
 var spinstep := 1
 var spin_letters := false
 var select_rock := false
+var sign_contract := false
 
 # list of rock names, rock name tracker, rock name total
 var rock_names = [
@@ -50,6 +51,14 @@ var menu_subtitles = [
 	"You have been\nsummoned to kick\nthis sacred stone...",
 	"Plabolnbar!"
 ]
+
+func hide_kicking_ui():
+	$KickingMenu.hide()
+
+func game_over_text_reset() -> void:
+	game_over_text_scroll = false
+	%GameOverText.hide()
+	%GameOverText.position = game_over_text_reset_pos
 
 # Picks a randome sibtitle for the menu.
 func _get_random_subtitle() -> void:
@@ -146,9 +155,15 @@ func _process(delta: float) -> void:
 			Input.is_action_just_pressed("confirm") and
 			!GameManager.console_open
 		):
-			$ContractMenu/ContractContainer.hide()
-			%LetterSpinner.show()
-			spin_letters = true
+			if sign_contract:
+				$ContractMenu/ContractContainer.hide()
+				%LetterSpinner.show()
+				sign_contract = false
+				spin_letters = true
+			else:
+				# when pressing any button at first (when debugging you'll have
+				# to press confirm twice when going into contract
+				sign_contract = true
 
 
 # used for letter spinner. Returns a random uppercase character.
@@ -177,6 +192,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			# reset state variables
 			spin_letters = false
 			select_rock = false
+			sign_contract = false
 
 			$IdleMenu.show()
 			_get_random_subtitle()
@@ -274,12 +290,6 @@ func _scoring_sequence() -> void:
 		)
 
 
-func game_over_text_reset() -> void:
-	game_over_text_scroll = false
-	%GameOverText.hide()
-	%GameOverText.position = game_over_text_reset_pos
-
-
 func _clear_ui() -> void:
 	
 	# hide each menu
@@ -296,6 +306,3 @@ func _clear_ui() -> void:
 	# reset for contract sequence 
 	%Contract.show()
 	%LetterSpinner.hide()
-
-func hide_kicking_ui():
-	$KickingMenu.hide()
