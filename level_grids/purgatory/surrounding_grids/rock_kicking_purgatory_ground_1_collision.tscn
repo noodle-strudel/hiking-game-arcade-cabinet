@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmbe1kosv2j3w"]
+
+[ext_resource type="PackedScene" uid="uid://b34g7n0jnpr8j" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_1_collision.glb" id="1_q23yf"]
+
+[node name="rock_kicking_purgatory_ground_1_collision" unique_id=202271531 instance=ExtResource("1_q23yf")]
+
+[node name="Lamp Post" parent="." index="0" unique_id=1609255329]
+collision_layer = 4
+collision_mask = 3
