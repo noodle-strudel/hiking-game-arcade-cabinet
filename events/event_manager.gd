@@ -63,7 +63,7 @@ enum event_types {
 var known_events := []
 ## chance of event occuring. ranges from 0.0 to 1.0. 
 ## TODO: tune this number before release. 
-var event_chance := 1.0
+var event_chance := 0.1
 ## list of indicies indicating where different event types start
 ## in the full concatenated list known_events. Initialized in _ready().
 ## Event types are informed by event_types.
