@@ -75,13 +75,13 @@ script = ExtResource("1_obhct")
 [node name="Purgatory1Grid" parent="LevelSegments" unique_id=1903450354 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, 0, 0)
 
-[node name="Purgatory1Grid2" parent="LevelSegments" unique_id=619843542 instance=ExtResource("2_t8kri")]
+[node name="Purgatory1Grid2" parent="LevelSegments" unique_id=1030668848 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
 
-[node name="Purgatory1Grid3" parent="LevelSegments" unique_id=148861430 instance=ExtResource("2_t8kri")]
+[node name="Purgatory1Grid3" parent="LevelSegments" unique_id=1018070535 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, 0)
 
-[node name="Purgatory1Grid4" parent="LevelSegments" unique_id=1450469670 instance=ExtResource("2_t8kri")]
+[node name="Purgatory1Grid4" parent="LevelSegments" unique_id=466532368 instance=ExtResource("2_t8kri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
 
 [node name="Purgatory2Grid" parent="LevelSegments" unique_id=1844927662 instance=ExtResource("3_v8757")]
