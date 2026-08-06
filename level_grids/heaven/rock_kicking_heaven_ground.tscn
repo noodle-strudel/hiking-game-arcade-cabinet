@@ -1,16 +1,9 @@
 [gd_scene format=3 uid="uid://b3yffegp20fju"]
 
 [ext_resource type="PackedScene" uid="uid://b37kqty5yl5ck" path="res://level_grids/heaven/glbs/rock_kicking_heaven_ground.glb" id="1_dpfys"]
+[ext_resource type="PackedScene" uid="uid://csnx6g1sfpx73" path="res://level_grids/heaven/rock_kicking_heaven_ground_collision.tscn" id="2_8kph8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dpfys"]
-size = Vector3(500, 1.5, 500)
+[node name="rock_kicking_heaven_ground" unique_id=1122190006 instance=ExtResource("1_dpfys")]
 
-[node name="rock_kicking_heaven_ground" unique_id=72431058 instance=ExtResource("1_dpfys")]
-
-[node name="GroundBoundary" type="StaticBody3D" parent="." index="2" unique_id=1222800252]
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundBoundary" index="0" unique_id=2114824263]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
-shape = SubResource("BoxShape3D_dpfys")
+[node name="rock_kicking_heaven_ground_collision" parent="." index="5" unique_id=106383803 instance=ExtResource("2_8kph8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
