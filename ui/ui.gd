@@ -22,6 +22,16 @@ const OOB_EFFECT_SUF = "[/outline_size][/wave]"
 # length of time to pause the graphics on a critical kick
 @export var hitstop_length: float = 0.3
 
+# sfx
+@export var rock_scroll: AudioStreamWAV
+@export var rock_select: AudioStreamWAV
+@export var contract_sign: AudioStreamWAV
+@export var initials: AudioStreamWAV
+@export var scoring_1: AudioStreamWAV
+@export var scoring_2: AudioStreamWAV
+@export var scoring_3: AudioStreamWAV
+@export var title: AudioStreamWAV
+
 var _start_time := 0.0
 var game_over_text_scroll := false
 var spinstep := 1
@@ -112,6 +122,8 @@ func _process(delta: float) -> void:
 			!GameManager.console_open
 		):
 			spinstep += 1
+			$MenuSFX.set_stream(initials)
+			$MenuSFX.play()
 			if spinstep == 4:
 				# checks to see if the db script is loaded
 				# and sends the initials to the database to be inserted
@@ -135,15 +147,21 @@ func _process(delta: float) -> void:
 				if cur_name < 0:
 					cur_name = name_tot - 1
 				$RockSelect/RockName.text = rock_names[cur_name]
+				$MenuSFX.set_stream(rock_scroll)
+				$MenuSFX.play()
 			elif Input.is_action_just_pressed("joystick_right"):
 				cur_name += 1
 				if cur_name >= name_tot:
 					cur_name = 0
 				$RockSelect/RockName.text = rock_names[cur_name]
+				$MenuSFX.set_stream(rock_scroll)
+				$MenuSFX.play()
 				
 			# enter continues to gameplay
 			elif Input.is_action_just_pressed("confirm"):
 				$RockSelect.visible = false
+				$MenuSFX.set_stream(rock_select)
+				$MenuSFX.play()
 				await get_tree().create_timer(0.1).timeout
 				GameManager.switch_state_to(GameManager.gamestates.KICKING,\
 				"contract signed")
@@ -156,6 +174,8 @@ func _process(delta: float) -> void:
 			!GameManager.console_open
 		):
 			if sign_contract:
+				$MenuSFX.set_stream(contract_sign)
+				$MenuSFX.play()
 				$ContractMenu/ContractContainer.hide()
 				%LetterSpinner.show()
 				sign_contract = false
@@ -198,6 +218,8 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			_get_random_subtitle()
 			%IdleAnimationPlayer.play("swing_subtitle")
 		GameManager.gamestates.CONTRACT:
+			$MenuSFX.set_stream(title)
+			$MenuSFX.play()
 			$ContractMenu.show()
 			$ContractMenu/ContractContainer.show()
 		GameManager.gamestates.KICKING:
@@ -268,10 +290,16 @@ func _scoring_sequence() -> void:
 	$ScoreMenu.show()
 	await get_tree().create_timer(1).timeout
 	%ScoreElem.show()
+	$MenuSFX.set_stream(scoring_1)
+	$MenuSFX.play()
 	await get_tree().create_timer(1).timeout
 	%KicksRemainingElem.show()
+	$MenuSFX.set_stream(scoring_2)
+	$MenuSFX.play()
 	await get_tree().create_timer(1).timeout
 	%KicksRemainingFancy.show()
+	$MenuSFX.set_stream(scoring_3)
+	$MenuSFX.play()
 	
 	# long, drawn out ending animation
 	await get_tree().create_timer(1).timeout
@@ -295,7 +323,8 @@ func _clear_ui() -> void:
 	# hide each menu
 	var menus = get_children()
 	for menu in menus:
-		menu.hide()
+		if menu != $MenuSFX:
+			menu.hide()
 	
 	# reset for scoring sequence
 	%ScoreElem.hide()
