@@ -1,29 +1,26 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
 [ext_resource type="Script" uid="uid://x3lektvp28jy" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Texture2D" uid="uid://bu4bheipqa0yt" path="res://player/shirtzenpants_site.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bmx4hr0mhwfom" path="res://player/legs/rock_kicking_legs.tscn" id="3_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://bmb51gvp00dxr" path="res://player/player_camera.tscn" id="3_yw30f"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g1dw6"]
+points = PackedVector3Array(0.53174603, 2.015873, 0.015873017, -0.5158731, 0.047619104, -0.015873017, -0.5158731, 0.047619104, 0.015873017, -0.5158731, 2.015873, -0.015873017, 0.53174603, 0.047619104, -0.015873017, 0.53174603, 0.047619104, 0.015873017, -0.5158731, 2.015873, 0.015873017, 0.53174603, 2.015873, -0.015873017)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
-albedo_texture = ExtResource("2_rkbax")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oul6g"]
-material = SubResource("StandardMaterial3D_g1dw6")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yw30f"]
+points = PackedVector3Array(0.43647996, 0.015876122, 0.20632747, -0.5158731, -0.015866805, -0.01585126, -0.5158731, -0.015866805, 0.047631484, -0.5158731, 0.04761905, -0.01585126, 0.53174603, -0.015866805, -0.01585126, 0.53174603, 0.04761905, -0.01585126, -0.42050445, -0.015866805, 0.20632747, -0.42050445, 0.015876122, 0.20632747, 0.43647996, -0.015866805, 0.20632747, 0.53174603, 0.04761905, 0.015900984, -0.5158731, 0.04761905, 0.015900984, -0.45219144, 0.015876122, 0.17457522, 0.53174603, -0.015866805, 0.015900984, -0.5158731, 0.015876122, 0.047631484, -0.45219144, -0.015866805, 0.17457522)
 
 [node name="Player" type="CharacterBody3D" unique_id=963069731]
 collision_mask = 28
 script = ExtResource("1_oul6g")
 
-[node name="PlayerCollisionShape" type="CollisionShape3D" parent="." unique_id=2037021631]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_kqu6x")
+[node name="PlayerLegsCollision" type="CollisionShape3D" parent="." unique_id=243307023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, -0.5)
+shape = SubResource("ConvexPolygonShape3D_g1dw6")
 
-[node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=1228324182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_oul6g")
+[node name="PlayerFeetCollision" type="CollisionShape3D" parent="." unique_id=573957593]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.015, -0.5)
+shape = SubResource("ConvexPolygonShape3D_yw30f")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1936895929]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
