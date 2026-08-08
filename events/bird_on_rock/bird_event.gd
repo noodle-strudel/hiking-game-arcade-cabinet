@@ -5,7 +5,7 @@ extends Event
 
 @onready var rock: Node = get_node("/root/Main/Rock")
 @onready var player: Node = get_node("/root/Main/Player")
-@onready var raycast_down: RayCast3D = $BirdBody/Bird/DetectGround
+@onready var raycast: RayCast3D = $BirdBody/Bird/SpawnDetector
 @onready var camera: Camera3D = $BirdCamera
 
 var run_physics: bool = false
@@ -103,6 +103,119 @@ func _process_hop(weight: float) -> void:
 	current_pos.y += curve_height
 	%BirdBody.global_position = current_pos
 
+func _find_valid_spawn() -> Vector3:
+	var fallback_pos: Vector3 = rock.global_position + Vector3(3.0, 50, 0.0)
+	var valid_pos: Vector3 = fallback_pos
+	var found_spot: bool = false
+	var original_target: Vector3 = raycast.target_position
+	var original_mask: int = raycast.collision_mask
+	
+	# Checks a spawn point 20m away at every degree in a circle around the rock
+	# (Does NOT keep checking after finding a valid spawn)
+	for i in range(0, 360, 1):
+		var rad: float = deg_to_rad(i)
+		var offset: Vector3 = Vector3(cos(rad) * 20, 50, sin(rad) * 20)
+		var test_pos: Vector3 = rock.global_position + offset
+		
+		%BirdBody.global_position = test_pos
+		
+		# Check straight down for ground, OOB or building
+		# this reset is so if during the building check it hits the continue
+		# the collision mask would only be buildings
+		raycast.target_position = original_target
+		raycast.collision_mask = original_mask
+		raycast.force_raycast_update()
+		
+		if not raycast.is_colliding():
+			continue 
+		
+		var hit_collider = raycast.get_collider()
+		if hit_collider is CollisionObject3D:
+			# Rejects the spawnpoint if there is a building or OOB below
+			# (collider is first thing ray hits) 
+			if (
+				hit_collider.get_collision_layer_value(7) or 
+				hit_collider.get_collision_layer_value(8)
+			):
+				continue
+		
+		# If the spawn point is above ground then it checks for buildings
+		
+		var ground_pos: Vector3 = raycast.get_collision_point()
+		
+		# Check for buildings in the way from the bird to the rock
+		%BirdBody.global_position = ground_pos + Vector3(0, 0.5, 0)
+		var rock_center: Vector3 = rock.global_position + Vector3(0, 0.5, 0)
+		
+		raycast.target_position = raycast.to_local(rock_center)
+		
+		# Sets the collision mask to only buildings
+		# makes sure ground on a slope doesn't invalidate a spawnpoint
+		raycast.collision_mask = 0
+		raycast.set_collision_mask_value(8, true) # Building
+		raycast.force_raycast_update()
+		
+		if raycast.is_colliding():
+			continue 
+		
+		# If there is no building in the way it checks the path
+		
+		# Check if the path is safe
+		# this checks for gaps in the path (like the lake)
+		# it fixes if the bird spawns safely but the lake is
+		# in the way and it would fall in
+		var distance_to_rock: float = ground_pos.distance_to(rock.global_position)
+		var flat_direction: Vector3 = ground_pos.direction_to(rock.global_position)
+		flat_direction.y = 0 
+		flat_direction = flat_direction.normalized()
+		
+		var path_is_safe: bool = true
+		var step_distance: float = 1.0 
+		var current_dist: float = step_distance
+		
+		while current_dist < distance_to_rock:
+			var check_point: Vector3 = ground_pos + (flat_direction * current_dist)
+			%BirdBody.global_position = check_point + Vector3(0, 25.0, 0)
+			
+			# Reset to the original mask and target as that is what this
+			# segment of the check needs
+			raycast.target_position = original_target
+			raycast.collision_mask = original_mask
+			raycast.force_raycast_update()
+			
+			# Raycast should always collide it does nothing if colliding ground
+			# it sets the path safety to false if it hits OOB and
+			# goes to the next degree to check
+			if raycast.is_colliding():
+				var path_hit = raycast.get_collider()
+				if (
+					path_hit is CollisionObject3D and 
+					path_hit.get_collision_layer_value(7)
+				):
+					path_is_safe = false
+					break
+			# Failsafe if ray is colliding with nothing at all
+			else:
+				path_is_safe = false
+				break
+				
+			current_dist += step_distance
+		
+		if not path_is_safe:
+			continue 
+		
+		# Passed all checks spawn is valid
+		valid_pos = test_pos
+		found_spot = true
+		break
+	
+	# Reset raycast position
+	raycast.target_position = original_target
+	raycast.collision_mask = original_mask
+	
+	if not found_spot:
+		push_warning("Bird Event: No valid spawn, using fallback spawn.")
+	return valid_pos 
 
 func _event_function() -> void:
 	# Define your event code in here.
@@ -111,10 +224,10 @@ func _event_function() -> void:
 	
 	# Bird spawns in the air and warps down to the ground
 	# This is done to avoid spawning already in the ground
-	%BirdBody.position = rock.position + Vector3(20.0, 25.0, 0.0)
-	raycast_down.force_raycast_update()
-	if raycast_down.is_colliding():
-		%BirdBody.position = raycast_down.get_collision_point()
+	%BirdBody.position = _find_valid_spawn()
+	raycast.force_raycast_update()
+	if raycast.is_colliding():
+		%BirdBody.position = raycast.get_collision_point()
 	run_physics = true
 	
 	# Camera logic same as player walk to rock camera
