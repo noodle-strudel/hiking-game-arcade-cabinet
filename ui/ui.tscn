@@ -35,9 +35,14 @@
 [ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
 [ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
 [ext_resource type="Texture2D" uid="uid://cuaujnf0dsxdk" path="res://ui/cloud/cloud_xtralarge2.png" id="28_1bm0a"]
+[ext_resource type="AudioStream" uid="uid://bfsnr0mlk88m5" path="res://sound/end_poem_voice/owen_1.wav" id="28_3hdvn"]
+[ext_resource type="AudioStream" uid="uid://cip8dstni1k2p" path="res://sound/end_poem_voice/owen_2.wav" id="29_1bm0a"]
+[ext_resource type="AudioStream" uid="uid://4d28u5g70840" path="res://sound/end_poem_voice/owen_3.wav" id="30_qu0m5"]
 [ext_resource type="Texture2D" uid="uid://dmsqv248rf5cm" path="res://ui/rock_select/arrow.png" id="31_2lccl"]
+[ext_resource type="AudioStream" uid="uid://b08kssbb2pbi5" path="res://sound/end_poem_voice/owen_4.wav" id="31_a3hx3"]
 [ext_resource type="AudioStream" uid="uid://cw04hqbliiooo" path="res://sound/menu_sounds/rock_scroll.wav" id="31_hhu8p"]
 [ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
+[ext_resource type="AudioStream" uid="uid://mjy7g46pcnqh" path="res://sound/end_poem_voice/owen_5.wav" id="32_limpb"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -206,6 +211,15 @@ default_font_size = 40
 [sub_resource type="FontVariation" id="FontVariation_bi8hs"]
 base_font = ExtResource("6_ay4pc")
 variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ug63i"]
+streams_count = 5
+stream_0/stream = ExtResource("28_3hdvn")
+stream_1/stream = ExtResource("29_1bm0a")
+stream_2/stream = ExtResource("30_qu0m5")
+stream_3/stream = ExtResource("31_a3hx3")
+stream_4/stream = ExtResource("32_limpb")
+stream_4/weight = 2.0
 
 [sub_resource type="FontVariation" id="FontVariation_diyc5"]
 base_font = ExtResource("5_bo1jx")
@@ -376,6 +390,7 @@ title = ExtResource("9_iw6jt")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -602,7 +617,7 @@ theme_override_fonts/font = ExtResource("6_ay4pc")
 theme_override_font_sizes/font_size = 33
 text = "The Official Rulings
 
-You agree hereby that the kick which you are about to commence is to be the first and only kick you will commit upon the rockduring this period of twenty four hours commonly refered to as one day. Any kicks further which you commit to the rock must be, if at all, commenced on a day which occurs after the one which is present?
+You agree hereby that the kick which you are about to commence is to be the first and only kick you will commit upon the rock during this period of twenty four hours, commonly referred to as one day. Any kicks further which you commit to the rock must be, if at all, commenced on a day which occurs after the one which is present?
 
 I AGREE"
 horizontal_alignment = 1
@@ -610,7 +625,7 @@ autowrap_mode = 2
 
 [node name="RedArrow" type="Sprite2D" parent="ContractMenu/ContractContainer" unique_id=1894272422]
 unique_name_in_owner = true
-position = Vector2(0, 864)
+position = Vector2(0, 890)
 texture = ExtResource("10_0avjw")
 
 [node name="ArrowAnimator" type="AnimationPlayer" parent="ContractMenu/ContractContainer" unique_id=794704970]
@@ -722,6 +737,22 @@ horizontal_alignment = 1
 autowrap_trim_flags = 0
 justification_flags = 0
 
+[node name="KickbarLabel" type="RichTextLabel" parent="KickingMenu" unique_id=1585485596]
+layout_mode = 0
+offset_left = 1656.0
+offset_top = 224.0
+offset_right = 1862.0
+offset_bottom = 273.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.99992007, 0.39652932, 0.34012833, 1)
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[outline_size=10]MAX"
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+justification_flags = 0
+
 [node name="Kickbar" type="TextureProgressBar" parent="KickingMenu" unique_id=487345547]
 unique_name_in_owner = true
 editor_description = "Special thanks to my wife, Beatrice Warfel, for the help drawing this. She made excellent concept art. "
@@ -773,6 +804,7 @@ metadata/_edit_lock_ = true
 
 [node name="ScoreElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1054340771]
 unique_name_in_owner = true
+visible = false
 position = Vector2(939, 296)
 sprite_frames = SubResource("SpriteFrames_qu0m5")
 autoplay = "default"
@@ -868,6 +900,7 @@ editor_description = "game over scroll. text size about 40"
 layout_mode = 2
 theme = SubResource("Theme_bi8hs")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.85, 0.595, 0.425, 1)
 theme_override_fonts/italics_font = SubResource("FontVariation_bi8hs")
 bbcode_enabled = true
 text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
@@ -878,11 +911,16 @@ What, it remains, spurred thine pilgrimage to this humble shrine? Didst thee see
 
 To the rock, thine affairs are a meagre sort. Be troubled not by its stoic facade, pilgrim. Despite the firmness of its body and the steadiness of its stance, it remains forever changed by thine hand. Or perhaps, instead, thine foot. However trifling be thine contribution, it stands in turn with each pilgrim’s efforts afore thee, and with each humble kick yet to come. 
 
-Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth."
+[outline_size=10]Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth."
 scroll_active = false
 autowrap_mode = 2
 
+[node name="EndPoemVoice" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1264255973]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_ug63i")
+
 [node name="OOBCenterContainer" type="CenterContainer" parent="." unique_id=846102454]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -912,9 +950,24 @@ vertical_alignment = 1
 
 [node name="RockSelect" type="Control" parent="." unique_id=1040165911]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="RockSelect" unique_id=2109177275]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 132.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_bo1jx")
+theme_override_font_sizes/font_size = 96
+text = "Confirm the Name of the Rock"
+horizontal_alignment = 1
 
 [node name="Light" type="Sprite2D" parent="RockSelect" unique_id=1155343369]
 visible = false
@@ -949,6 +1002,34 @@ flip_h = true
 [node name="DigiChristosphereSprite" type="Sprite2D" parent="RockSelect" unique_id=988311823]
 position = Vector2(946, 448)
 texture = ExtResource("32_6cxyx")
+
+[node name="RockPerfectedMenu" type="Control" parent="." unique_id=96436731]
+visible = false
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.296
+offset_bottom = 0.32000732
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="RockPerfectedMenu" unique_id=1847511561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RockPerfectedMenu/CenterContainer" unique_id=1463877400]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.86276865, 0.66545194, 0.3738294, 1)
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff50 ease=-2.0][wave amp=50.0 freq=5.0 connected=1][outline_size=20]Congratulations!"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="MenuSFX" type="AudioStreamPlayer" parent="." unique_id=152241231]
 stream = ExtResource("31_hhu8p")

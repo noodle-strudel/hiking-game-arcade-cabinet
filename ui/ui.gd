@@ -206,6 +206,7 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 # enable and disable UI elements. cause is mostly used for OOB causes
 func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
+	%EndPoemVoice.stop()
 	match state:
 		GameManager.gamestates.IDLE:
 			GameManager.critical_kick = false
@@ -281,6 +282,8 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
 				print("UI: Show text that pops up when kicks_remaining <= 0")
+				await get_tree().create_timer(8).timeout
+				$RockPerfectedMenu.show()
 
 # Scoring sequence function
 func _scoring_sequence() -> void:
@@ -306,16 +309,25 @@ func _scoring_sequence() -> void:
 	%GameOverText.show()
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
-	await get_tree().create_timer(50).timeout
+	await get_tree().create_timer(40).timeout
+	%EndPoemVoice.play()
+	await get_tree().create_timer(10).timeout
 	
 	# Condition so the state switching and music cutting on the timers only happens
 	# if the game is still in the scoring state
 	if GameManager.state == GameManager.gamestates.SCORING:
 		AudioManager.fade_out_music()
-		GameManager.switch_state_to(
-			GameManager.gamestates.MOVE_TO_ROCK,
-			"scoring sequence finished"
-		)
+		
+		if GameManager.kicks_remaining > 0:
+			GameManager.switch_state_to(
+				GameManager.gamestates.MOVE_TO_ROCK,
+				"scoring sequence finished"
+			)
+		else:
+			GameManager.switch_state_to(
+				GameManager.gamestates.ROCK_PERFECTED,
+				"0 kicks achieved!"
+			)
 
 
 func _clear_ui() -> void:

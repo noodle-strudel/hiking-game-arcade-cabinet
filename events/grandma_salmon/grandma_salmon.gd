@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 
 
 func _event_function() -> void:
+	"""
 	# mouth movement timings
 	await get_tree().create_timer(2.4).timeout
 	%GrandmaHead.pause()
@@ -33,5 +34,6 @@ func _event_function() -> void:
 	await get_tree().create_timer(1.6).timeout
 	%GrandmaHead.pause()
 	await get_tree().create_timer(1.75).timeout
-	
+	"""
+	await $GSSpeech.finished
 	_event_cleanup()

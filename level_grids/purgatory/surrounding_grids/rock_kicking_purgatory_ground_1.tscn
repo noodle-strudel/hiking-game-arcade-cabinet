@@ -5,6 +5,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_xmjby"]
 size = Vector3(500, 1.6245117, 500)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6s66"]
+size = Vector3(18.44751, 0.7383423, 18.151764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i6o6n"]
+size = Vector3(18.44751, 9.337433, 15.523682)
+
 [node name="rock_kicking_purgatory_ground_1" unique_id=1950620308 instance=ExtResource("1_y6s66")]
 
 [node name="Collision" type="StaticBody3D" parent="." index="2" unique_id=1494000459]
@@ -14,3 +20,11 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collision" index="0" unique_id=2136725165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81225586, 0)
 shape = SubResource("BoxShape3D_xmjby")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collision" index="1" unique_id=623127909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.131157, 0.36239624, -168.99904)
+shape = SubResource("BoxShape3D_y6s66")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Collision" index="2" unique_id=1281637831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.131157, 5.465708, -168.99904)
+shape = SubResource("BoxShape3D_i6o6n")
