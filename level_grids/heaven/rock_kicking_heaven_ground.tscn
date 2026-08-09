@@ -6,4 +6,3 @@
 [node name="rock_kicking_heaven_ground" unique_id=1122190006 instance=ExtResource("1_dpfys")]
 
 [node name="rock_kicking_heaven_ground_collision" parent="." index="5" unique_id=106383803 instance=ExtResource("2_8kph8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)

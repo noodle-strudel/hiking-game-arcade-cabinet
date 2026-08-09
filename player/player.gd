@@ -190,3 +190,7 @@ func _kick_rock(multiplier := kick_multiplier) -> void:
 		
 		# Play kick animation
 		legs.play_kick()
+		
+		await get_tree().create_timer(1).timeout
+		locked_rotation = false
+		current_x_rotation = 0.0
