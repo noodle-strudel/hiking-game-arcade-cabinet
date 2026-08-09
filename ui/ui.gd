@@ -186,6 +186,7 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 # enable and disable UI elements. cause is mostly used for OOB causes
 func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
+	%EndPoemVoice.stop()
 	match state:
 		GameManager.gamestates.IDLE:
 			GameManager.critical_kick = false
@@ -280,7 +281,9 @@ func _scoring_sequence() -> void:
 	%GameOverText.show()
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
-	await get_tree().create_timer(50).timeout
+	await get_tree().create_timer(40).timeout
+	%EndPoemVoice.play()
+	await get_tree().create_timer(10).timeout
 	
 	# Condition so the state switching and music cutting on the timers only happens
 	# if the game is still in the scoring state
