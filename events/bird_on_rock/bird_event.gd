@@ -228,7 +228,6 @@ func _event_function() -> void:
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		%BirdBody.position = raycast.get_collision_point()
-	run_physics = true
 	
 	# Camera logic same as player walk to rock camera
 	# gives a side angle while the bird is hopping to the rock
@@ -240,7 +239,8 @@ func _event_function() -> void:
 	camera.look_at(midpoint)
 	camera.fov = 90.0
 	camera.make_current()
-	
+	%Bird.look_at(rock.global_position, Vector3.UP)
+	run_physics = true
 	# timer for the event it takes about 15-20 seconds to get to the rock
 	# the rest is how long it stays and can be adjusted
 	await $StopTimer.timeout
