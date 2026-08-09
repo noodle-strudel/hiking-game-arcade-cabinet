@@ -71,7 +71,7 @@ func _decrement_kicks_remaining() -> void:
 
 ## Signal handler for the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
-	if state != gamestates.IDLE:
+	if state != gamestates.IDLE and state != gamestates.ROCK_PERFECTED:
 		_switch_state(gamestates.IDLE)
 
 
@@ -88,6 +88,8 @@ func _on_change_state(_state: gamestates, _cause: String) -> void:
 	match _state:
 		gamestates.MOVE_TO_ROCK, gamestates.SCORING:
 			%IdleTimer.start()
+		gamestates.ROCK_PERFECTED:
+			%IdleTimer.stop()
 
 
 ## Enables use of number keys 1-5 to set the game state. 

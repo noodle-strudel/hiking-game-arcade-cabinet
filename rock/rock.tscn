@@ -14,6 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://47fsvy2bv60d" path="res://sound/wink_ding.wav" id="12_ekxie"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="13_5sx86"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5sx86"]
+friction = 2.0
+rough = true
+bounce = 0.1
+
 [sub_resource type="QuadMesh" id="QuadMesh_8h60t"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t0tji"]
@@ -27,10 +32,454 @@ stream_3/stream = ExtResource("7_ekxie")
 stream_4/stream = ExtResource("8_5sx86")
 stream_5/stream = ExtResource("9_8bl0y")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sx86"]
+albedo_color = Color(0.77841216, 0.72953045, 0.56307966, 1)
+metallic = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5sx86"]
+material = SubResource("StandardMaterial3D_5sx86")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="Animation" id="Animation_8bl0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RockHalo_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RockHalo_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RockHalo_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RockHalo_4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RockHalo_5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RockHalo_6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RockHalo_7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RockHalo_8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RockHalo_9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RockHalo_10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RockHalo_11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RockHalo_12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RockHalo_13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("RockHalo_14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("RockHalo_15:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("RockHalo_16:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath(".:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("RockGlow:light_energy")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5sx86"]
+resource_name = "show_halo"
+length = 2.0
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RockHalo_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RockHalo_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RockHalo_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RockHalo_4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RockHalo_5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RockHalo_6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RockHalo_7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.875),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RockHalo_8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RockHalo_9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RockHalo_10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RockHalo_11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RockHalo_12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RockHalo_13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("RockHalo_14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("RockHalo_15:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.875),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("RockHalo_16:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("RockGlow:light_energy")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bl0y"]
+_data = {
+&"RESET": SubResource("Animation_8bl0y"),
+&"show_halo": SubResource("Animation_5sx86")
+}
+
 [node name="Rock" type="RigidBody3D" unique_id=659760540]
 process_mode = 1
 collision_layer = 2
 collision_mask = 396
+physics_material_override = SubResource("PhysicsMaterial_5sx86")
 continuous_cd = true
 script = ExtResource("1_74c8a")
 
@@ -108,3 +557,94 @@ process_mode = 3
 stream = ExtResource("13_5sx86")
 pitch_scale = 0.86
 bus = &"SFX"
+
+[node name="PerfectedRockForm" type="Node3D" parent="." unique_id=1979668295]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0)
+top_level = true
+
+[node name="RockHalo_1" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=591688777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001727581, 0.2517324, 0.25709748)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_2" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=2089084596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11246073, 0.2517324, 0.2371194)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_3" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=353687303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20797294, 0.2517324, 0.17235814)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_4" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=1386754263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2645821, 0.2517324, 0.08404346)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_5" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=1381295710]
+transform = Transform3D(0.99994147, 0, 0.01082083, 0, 1, 0, -0.01082083, 0, 0.99994147, -0.28814042, 0.2517324, -0.014104828)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_6" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=987916516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.264891, 0.2517324, -0.10587996)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_7" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=305858411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21124251, 0.2517324, -0.18904077)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_8" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=813965146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12023434, 0.2517324, -0.24398087)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_9" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=67761543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25148267, -0.257)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_10" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=892422362]
+transform = Transform3D(0.9999567, 4.066239e-10, 0.009302471, -4.066239e-10, 1, -1.8915217e-12, -0.009302471, -1.8915217e-12, 0.9999567, 0.121301964, 0.2517324, -0.24758889)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_11" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=491863169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20512205, 0.2517324, -0.18682985)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_12" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=1002458490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25328898, 0.2517324, -0.10937754)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_13" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=1536685021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287546, 0.2517324, -0.014104828)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_14" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=1759830286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265, 0.25148267, 0.084)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_15" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=2044534812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21501541, 0.2517324, 0.16981839)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="RockHalo_16" type="MeshInstance3D" parent="PerfectedRockForm" unique_id=673227946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11784601, 0.2517324, 0.24156493)
+visible = false
+mesh = SubResource("SphereMesh_5sx86")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PerfectedRockForm" unique_id=460417178]
+libraries/ = SubResource("AnimationLibrary_8bl0y")
+
+[node name="RockGlow" type="OmniLight3D" parent="PerfectedRockForm" unique_id=1906345829]
+transform = Transform3D(1, 0, 0, 0, 0.98480785, 0.1736482, 0, -0.1736482, 0.98480785, 0, 0, 0)
+light_energy = 0.0

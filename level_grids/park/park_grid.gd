@@ -13,17 +13,32 @@ class_name ParkGrid
 
 @onready var water_hand_scene: PackedScene = preload("res://events/water_hand/water_hand.tscn")
 
+@onready var scarf_scene: PackedScene = preload("res://level_grids/park/trees/scarf.tscn")
+
+
 var event_rng = RandomNumberGenerator.new()
+
+
+func spawn_scarf() -> void:
+	var spawn_rng = [_roll_scarf_rng(), _roll_scarf_rng()]
+	for i in spawn_rng:
+		var scarf_instance := scarf_scene.instantiate()
+		var tree_transform = deciduous_tree_multimesh.get_instance_transform(i)
+		add_child(scarf_instance)
+		scarf_instance.set_transform(tree_transform)
+
 
 # returns a random number for water hand determination
 func _roll_event_rng() -> int:
 	return event_rng.randi_range(1, 10)
-	
+
+func _roll_scarf_rng() -> int:
+	return event_rng.randi_range(0, deciduous_tree_multimesh.instance_count)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	#_make_trees_point_up()
-	#_save_convex_from_concave($rock_kicking_park_ground_new/StaticBody3D/CollisionShape3D.shape)
+	spawn_scarf()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
