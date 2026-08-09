@@ -15,6 +15,10 @@ var end_pos: Vector3
 var hop_timer: float = 0.0
 var hop_duration: float = 0.5
 
+const ground_collision_layer := 3
+const OOB_collision_layer := 7
+const building_collision_layer := 8
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
@@ -43,6 +47,9 @@ func _physics_process(delta: float) -> void:
 			if %BirdBody.is_on_floor():
 				var floor_normal = %BirdBody.get_floor_normal()
 				%Bird.quaternion = Quaternion(Vector3.UP, floor_normal)
+				var rock_xz_pos = rock.global_position
+				rock_xz_pos.y = %BirdBody.global_position.y
+				%Bird.look_at(rock_xz_pos, Vector3.UP)
 			
 			# Moving in x and z directions
 			%BirdBody.velocity.x = move_toward(
@@ -134,8 +141,8 @@ func _find_valid_spawn() -> Vector3:
 			# Rejects the spawnpoint if there is a building or OOB below
 			# (collider is first thing ray hits) 
 			if (
-				hit_collider.get_collision_layer_value(7) or 
-				hit_collider.get_collision_layer_value(8)
+				hit_collider.get_collision_layer_value(OOB_collision_layer) or 
+				hit_collider.get_collision_layer_value(building_collision_layer)
 			):
 				continue
 		
@@ -144,15 +151,15 @@ func _find_valid_spawn() -> Vector3:
 		var ground_pos: Vector3 = raycast.get_collision_point()
 		
 		# Check for buildings in the way from the bird to the rock
-		%BirdBody.global_position = ground_pos + Vector3(0, 0.5, 0)
-		var rock_center: Vector3 = rock.global_position + Vector3(0, 0.5, 0)
+		%BirdBody.global_position = ground_pos + Vector3(0, 0.09, 0)
+		var rock_center: Vector3 = rock.global_position + Vector3(0, 0.09, 0)
 		
 		raycast.target_position = raycast.to_local(rock_center)
 		
 		# Sets the collision mask to only buildings
 		# makes sure ground on a slope doesn't invalidate a spawnpoint
 		raycast.collision_mask = 0
-		raycast.set_collision_mask_value(8, true) # Building
+		raycast.set_collision_mask_value(building_collision_layer, true)
 		raycast.force_raycast_update()
 		
 		if raycast.is_colliding():
@@ -190,7 +197,7 @@ func _find_valid_spawn() -> Vector3:
 				var path_hit = raycast.get_collider()
 				if (
 					path_hit is CollisionObject3D and 
-					path_hit.get_collision_layer_value(7)
+					path_hit.get_collision_layer_value(OOB_collision_layer)
 				):
 					path_is_safe = false
 					break
@@ -239,7 +246,6 @@ func _event_function() -> void:
 	camera.look_at(midpoint)
 	camera.fov = 90.0
 	camera.make_current()
-	%Bird.look_at(rock.global_position, Vector3.UP)
 	run_physics = true
 	# timer for the event it takes about 15-20 seconds to get to the rock
 	# the rest is how long it stays and can be adjusted
