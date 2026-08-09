@@ -32,6 +32,8 @@ signal rock_followcam_activated
 
 @onready var salmon_ascender := preload("res://events/grandma_salmon/ascension/salmon_ascension.tscn")
 
+@onready var lintball := preload("res://events/lintball/lintball.tscn")
+
 # Cameras
 @onready var player_camera := $Player/CameraPivot/PlayerCamera
 @onready var rock := $Rock
@@ -400,6 +402,9 @@ func _on_grid_position_changed(shift) -> void:
 						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
 	
 	_current_chunks[1][1].add_collision_to_multimeshes()
+	
+	# try to spawn the lint ball on the current grid
+	_lint_ball_spawn_check(_current_chunks[1][1])
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -625,3 +630,15 @@ func _on_camera_switch_timer_timeout() -> void:
 func _on_idle_idle_timer_timeout() -> void:
 	$CameraSwitchTimer.start()
 	panning_camera_active = true
+
+func _lint_ball_spawn_check(current_chunk: Node3D) -> void:
+	# get random position for the ball to spawn
+	var spawnpoint: Vector3 = current_chunk.get_spawn_position()
+	
+	# add the ball as a child of the current chunk
+	# (so it will be culled if left behind)
+	var ball := lintball.instantiate()
+	current_chunk.add_child(ball)
+	
+	# position the ball
+	ball.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
