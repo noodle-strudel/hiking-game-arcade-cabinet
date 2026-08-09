@@ -14,6 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://cetss05fwsbe3" path="res://sound/wink_ding.wav" id="12_ekxie"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="13_5sx86"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5sx86"]
+friction = 2.0
+rough = true
+bounce = 0.1
+
 [sub_resource type="QuadMesh" id="QuadMesh_8h60t"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t0tji"]
@@ -474,6 +479,7 @@ _data = {
 process_mode = 1
 collision_layer = 2
 collision_mask = 12
+physics_material_override = SubResource("PhysicsMaterial_5sx86")
 continuous_cd = true
 script = ExtResource("1_74c8a")
 
