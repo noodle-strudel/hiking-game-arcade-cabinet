@@ -1,0 +1,2825 @@
+[gd_scene format=3 uid="uid://csnx6g1sfpx73"]
+
+[ext_resource type="PackedScene" uid="uid://dlpwq7wc0ut0u" path="res://level_grids/heaven/glbs/rock_kicking_heaven_ground_collision.glb" id="1_bkd1c"]
+
+[node name="rock_kicking_heaven_ground_collision" unique_id=1276286042 instance=ExtResource("1_bkd1c")]
+
+[node name="HeavenGroundCollision" parent="." index="0" unique_id=2126503528]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_001" parent="." index="1" unique_id=938070689]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_002" parent="." index="2" unique_id=1930973687]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_003" parent="." index="3" unique_id=1963272523]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_004" parent="." index="4" unique_id=318005502]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_005" parent="." index="5" unique_id=813798921]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_006" parent="." index="6" unique_id=1633892068]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_007" parent="." index="7" unique_id=1081549480]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_008" parent="." index="8" unique_id=397434672]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_009" parent="." index="9" unique_id=1319518430]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_010" parent="." index="10" unique_id=460736347]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_011" parent="." index="11" unique_id=1900869782]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_012" parent="." index="12" unique_id=295928054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_013" parent="." index="13" unique_id=1646094606]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_014" parent="." index="14" unique_id=2140020506]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_015" parent="." index="15" unique_id=2083004919]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_016" parent="." index="16" unique_id=214868032]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_017" parent="." index="17" unique_id=1782413088]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_018" parent="." index="18" unique_id=21492226]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_019" parent="." index="19" unique_id=1492542203]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_020" parent="." index="20" unique_id=433032415]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_021" parent="." index="21" unique_id=28968557]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_022" parent="." index="22" unique_id=253574395]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_023" parent="." index="23" unique_id=696583539]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_024" parent="." index="24" unique_id=2051360940]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_025" parent="." index="25" unique_id=1104617241]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_026" parent="." index="26" unique_id=515883389]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_027" parent="." index="27" unique_id=616267669]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_028" parent="." index="28" unique_id=11859846]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_029" parent="." index="29" unique_id=2133085303]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_030" parent="." index="30" unique_id=2109767946]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_031" parent="." index="31" unique_id=1244840919]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_032" parent="." index="32" unique_id=706005682]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_033" parent="." index="33" unique_id=1757287049]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_034" parent="." index="34" unique_id=1567851513]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_035" parent="." index="35" unique_id=1187107922]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_036" parent="." index="36" unique_id=2051327522]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_037" parent="." index="37" unique_id=122489758]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_038" parent="." index="38" unique_id=1000299891]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_039" parent="." index="39" unique_id=477900451]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_040" parent="." index="40" unique_id=1215729219]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_041" parent="." index="41" unique_id=1207261471]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_042" parent="." index="42" unique_id=1581785120]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_043" parent="." index="43" unique_id=2045910314]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_044" parent="." index="44" unique_id=784788980]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_045" parent="." index="45" unique_id=1240605194]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_046" parent="." index="46" unique_id=1991689727]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_047" parent="." index="47" unique_id=1667873603]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_048" parent="." index="48" unique_id=556614722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_049" parent="." index="49" unique_id=1905742722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_050" parent="." index="50" unique_id=1468304866]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_051" parent="." index="51" unique_id=1241532153]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_052" parent="." index="52" unique_id=1186637037]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_053" parent="." index="53" unique_id=786170584]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_054" parent="." index="54" unique_id=1197178281]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_055" parent="." index="55" unique_id=783406282]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_056" parent="." index="56" unique_id=128725867]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_057" parent="." index="57" unique_id=292181246]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_058" parent="." index="58" unique_id=998002157]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_059" parent="." index="59" unique_id=638982001]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_060" parent="." index="60" unique_id=66164214]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_061" parent="." index="61" unique_id=163574976]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_062" parent="." index="62" unique_id=2050467196]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_063" parent="." index="63" unique_id=959675456]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_064" parent="." index="64" unique_id=1016700400]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_065" parent="." index="65" unique_id=1236276608]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_066" parent="." index="66" unique_id=57187627]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_067" parent="." index="67" unique_id=1653242305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_068" parent="." index="68" unique_id=221063630]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_069" parent="." index="69" unique_id=1205539869]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_070" parent="." index="70" unique_id=445999460]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_071" parent="." index="71" unique_id=1465393969]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_072" parent="." index="72" unique_id=43471080]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_073" parent="." index="73" unique_id=250564838]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_074" parent="." index="74" unique_id=1071059836]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_075" parent="." index="75" unique_id=1350827794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_076" parent="." index="76" unique_id=692640069]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_077" parent="." index="77" unique_id=2119611637]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_078" parent="." index="78" unique_id=1235095494]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_079" parent="." index="79" unique_id=1160745354]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_080" parent="." index="80" unique_id=824845094]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_081" parent="." index="81" unique_id=780754803]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_082" parent="." index="82" unique_id=1910297243]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_083" parent="." index="83" unique_id=1111178304]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_084" parent="." index="84" unique_id=1725600054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_085" parent="." index="85" unique_id=446616580]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_086" parent="." index="86" unique_id=1840036964]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_087" parent="." index="87" unique_id=137982212]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_088" parent="." index="88" unique_id=954648704]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_089" parent="." index="89" unique_id=1244172543]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_090" parent="." index="90" unique_id=1273630629]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_091" parent="." index="91" unique_id=1460874540]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_092" parent="." index="92" unique_id=1853406494]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_093" parent="." index="93" unique_id=1832832424]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_094" parent="." index="94" unique_id=1068377303]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_095" parent="." index="95" unique_id=1159438558]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_096" parent="." index="96" unique_id=1888111099]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_097" parent="." index="97" unique_id=2021813350]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_098" parent="." index="98" unique_id=1910813500]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_099" parent="." index="99" unique_id=520313153]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_100" parent="." index="100" unique_id=1113834976]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_101" parent="." index="101" unique_id=60005901]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_102" parent="." index="102" unique_id=1889018537]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_103" parent="." index="103" unique_id=785316746]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_104" parent="." index="104" unique_id=1455616780]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_105" parent="." index="105" unique_id=517643013]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_106" parent="." index="106" unique_id=2036735020]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_107" parent="." index="107" unique_id=1802617772]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_108" parent="." index="108" unique_id=1570678310]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_109" parent="." index="109" unique_id=1864208100]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_110" parent="." index="110" unique_id=835788786]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_111" parent="." index="111" unique_id=2019261158]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_112" parent="." index="112" unique_id=1063243817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_113" parent="." index="113" unique_id=650870341]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_114" parent="." index="114" unique_id=603079188]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_115" parent="." index="115" unique_id=355334769]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_116" parent="." index="116" unique_id=1789832815]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_117" parent="." index="117" unique_id=1979725535]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_118" parent="." index="118" unique_id=2070372493]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_119" parent="." index="119" unique_id=1876205026]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_120" parent="." index="120" unique_id=1157921193]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_121" parent="." index="121" unique_id=1251528817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_122" parent="." index="122" unique_id=1907900330]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_123" parent="." index="123" unique_id=1375485202]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_124" parent="." index="124" unique_id=307851792]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_125" parent="." index="125" unique_id=624266396]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_126" parent="." index="126" unique_id=534870839]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_127" parent="." index="127" unique_id=2036660028]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_128" parent="." index="128" unique_id=1590979083]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_129" parent="." index="129" unique_id=1683350993]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_130" parent="." index="130" unique_id=453289553]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_131" parent="." index="131" unique_id=971854823]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_132" parent="." index="132" unique_id=1374277211]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_133" parent="." index="133" unique_id=1080252851]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_134" parent="." index="134" unique_id=976079548]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_135" parent="." index="135" unique_id=887230117]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_136" parent="." index="136" unique_id=977705973]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_137" parent="." index="137" unique_id=162979313]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_138" parent="." index="138" unique_id=2118890453]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_139" parent="." index="139" unique_id=1074855864]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_140" parent="." index="140" unique_id=1864592537]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_141" parent="." index="141" unique_id=1338480046]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_142" parent="." index="142" unique_id=124030314]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_143" parent="." index="143" unique_id=1463925713]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_144" parent="." index="144" unique_id=458173840]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_145" parent="." index="145" unique_id=819421828]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_146" parent="." index="146" unique_id=1348137670]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_147" parent="." index="147" unique_id=1413829738]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_148" parent="." index="148" unique_id=1768854024]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_149" parent="." index="149" unique_id=1469676254]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_150" parent="." index="150" unique_id=417849433]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_151" parent="." index="151" unique_id=1593294634]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_152" parent="." index="152" unique_id=105693306]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_153" parent="." index="153" unique_id=1859378760]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_154" parent="." index="154" unique_id=553933604]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_155" parent="." index="155" unique_id=2142358042]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_156" parent="." index="156" unique_id=2045930767]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_157" parent="." index="157" unique_id=277935810]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_158" parent="." index="158" unique_id=1783658737]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_159" parent="." index="159" unique_id=1440678100]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_160" parent="." index="160" unique_id=1826341287]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_161" parent="." index="161" unique_id=496759939]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_162" parent="." index="162" unique_id=2052722443]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_163" parent="." index="163" unique_id=97799825]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_164" parent="." index="164" unique_id=954197568]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_165" parent="." index="165" unique_id=562592241]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_166" parent="." index="166" unique_id=1633099925]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_167" parent="." index="167" unique_id=1099450453]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_168" parent="." index="168" unique_id=166638067]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_169" parent="." index="169" unique_id=1309124439]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_170" parent="." index="170" unique_id=945294749]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_171" parent="." index="171" unique_id=44890962]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_172" parent="." index="172" unique_id=1089624357]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_173" parent="." index="173" unique_id=678927336]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_174" parent="." index="174" unique_id=96052022]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_175" parent="." index="175" unique_id=1457052595]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_176" parent="." index="176" unique_id=1080126649]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_177" parent="." index="177" unique_id=275856354]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_178" parent="." index="178" unique_id=962695961]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_179" parent="." index="179" unique_id=1761582473]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_180" parent="." index="180" unique_id=1919763386]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_181" parent="." index="181" unique_id=492980375]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_182" parent="." index="182" unique_id=1100191105]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_183" parent="." index="183" unique_id=1540095207]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_184" parent="." index="184" unique_id=1794639037]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_185" parent="." index="185" unique_id=2136670091]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_186" parent="." index="186" unique_id=431482768]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_187" parent="." index="187" unique_id=1815052033]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_188" parent="." index="188" unique_id=1259129243]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_189" parent="." index="189" unique_id=1096851041]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_190" parent="." index="190" unique_id=2135278406]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_191" parent="." index="191" unique_id=1481434487]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_192" parent="." index="192" unique_id=1187742106]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_193" parent="." index="193" unique_id=911059297]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_194" parent="." index="194" unique_id=453702057]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_195" parent="." index="195" unique_id=652166184]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_196" parent="." index="196" unique_id=1244820767]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_197" parent="." index="197" unique_id=30913686]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_198" parent="." index="198" unique_id=2090642123]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_199" parent="." index="199" unique_id=867674285]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_200" parent="." index="200" unique_id=2061509951]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_201" parent="." index="201" unique_id=1350828378]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_202" parent="." index="202" unique_id=313922462]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_203" parent="." index="203" unique_id=1270555984]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_204" parent="." index="204" unique_id=1456412251]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_205" parent="." index="205" unique_id=823491237]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_206" parent="." index="206" unique_id=1645415087]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_207" parent="." index="207" unique_id=655838159]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_208" parent="." index="208" unique_id=1306765438]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_209" parent="." index="209" unique_id=948190007]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_210" parent="." index="210" unique_id=91187898]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_211" parent="." index="211" unique_id=698038221]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_212" parent="." index="212" unique_id=1020098702]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_213" parent="." index="213" unique_id=479899312]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_214" parent="." index="214" unique_id=2071683323]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_215" parent="." index="215" unique_id=847611437]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_216" parent="." index="216" unique_id=1244206061]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_217" parent="." index="217" unique_id=1489306029]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_218" parent="." index="218" unique_id=937078612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_219" parent="." index="219" unique_id=1953619437]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_220" parent="." index="220" unique_id=820578828]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_221" parent="." index="221" unique_id=936392835]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_222" parent="." index="222" unique_id=2116038312]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_223" parent="." index="223" unique_id=766119391]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_224" parent="." index="224" unique_id=1774411325]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_225" parent="." index="225" unique_id=871342331]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_226" parent="." index="226" unique_id=1652628470]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_227" parent="." index="227" unique_id=124152682]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_228" parent="." index="228" unique_id=822559405]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_229" parent="." index="229" unique_id=2002061089]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_230" parent="." index="230" unique_id=39974670]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_231" parent="." index="231" unique_id=590517928]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_232" parent="." index="232" unique_id=1148476331]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_233" parent="." index="233" unique_id=1233076236]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_234" parent="." index="234" unique_id=1292764485]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_235" parent="." index="235" unique_id=582694686]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_236" parent="." index="236" unique_id=61649628]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_237" parent="." index="237" unique_id=1942193757]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_238" parent="." index="238" unique_id=482034299]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_239" parent="." index="239" unique_id=1207757460]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_240" parent="." index="240" unique_id=1446961958]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_241" parent="." index="241" unique_id=1800926059]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_242" parent="." index="242" unique_id=1134083946]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_243" parent="." index="243" unique_id=600899504]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_244" parent="." index="244" unique_id=1038874638]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_245" parent="." index="245" unique_id=230336370]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_246" parent="." index="246" unique_id=380982728]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_247" parent="." index="247" unique_id=380568311]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_248" parent="." index="248" unique_id=99739975]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_249" parent="." index="249" unique_id=190354046]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_250" parent="." index="250" unique_id=1166183828]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_251" parent="." index="251" unique_id=1802337224]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_252" parent="." index="252" unique_id=1051770589]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_253" parent="." index="253" unique_id=1152633238]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_254" parent="." index="254" unique_id=1834586669]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_255" parent="." index="255" unique_id=2037055147]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_256" parent="." index="256" unique_id=1386295699]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_257" parent="." index="257" unique_id=422055753]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_258" parent="." index="258" unique_id=1101699890]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_259" parent="." index="259" unique_id=494271078]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_260" parent="." index="260" unique_id=1000406919]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_261" parent="." index="261" unique_id=1905305882]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_262" parent="." index="262" unique_id=813748976]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_263" parent="." index="263" unique_id=920326832]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_264" parent="." index="264" unique_id=1575749714]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_265" parent="." index="265" unique_id=1585342747]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_266" parent="." index="266" unique_id=577969130]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_267" parent="." index="267" unique_id=1901473402]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_268" parent="." index="268" unique_id=1925971489]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_269" parent="." index="269" unique_id=360425354]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_270" parent="." index="270" unique_id=1868536351]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_271" parent="." index="271" unique_id=1388720261]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_272" parent="." index="272" unique_id=1462549401]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_273" parent="." index="273" unique_id=259507398]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_274" parent="." index="274" unique_id=613163920]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_275" parent="." index="275" unique_id=1287076436]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_276" parent="." index="276" unique_id=106835073]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_277" parent="." index="277" unique_id=391809807]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_278" parent="." index="278" unique_id=178628706]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_279" parent="." index="279" unique_id=1658131444]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_280" parent="." index="280" unique_id=1687905226]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_281" parent="." index="281" unique_id=1764784635]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_282" parent="." index="282" unique_id=850190320]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_283" parent="." index="283" unique_id=2101893816]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_284" parent="." index="284" unique_id=1109125086]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_285" parent="." index="285" unique_id=1385572042]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_286" parent="." index="286" unique_id=1407869705]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_287" parent="." index="287" unique_id=1381389664]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_288" parent="." index="288" unique_id=1769449055]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_289" parent="." index="289" unique_id=1504782688]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_290" parent="." index="290" unique_id=473401310]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_291" parent="." index="291" unique_id=1461162094]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_292" parent="." index="292" unique_id=196613276]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_293" parent="." index="293" unique_id=1293318679]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_294" parent="." index="294" unique_id=1192856426]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_295" parent="." index="295" unique_id=760320544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_296" parent="." index="296" unique_id=336684395]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_297" parent="." index="297" unique_id=201889743]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_298" parent="." index="298" unique_id=857625178]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_299" parent="." index="299" unique_id=853370617]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_300" parent="." index="300" unique_id=786196058]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_301" parent="." index="301" unique_id=1417117028]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_302" parent="." index="302" unique_id=1037263928]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_303" parent="." index="303" unique_id=1798913926]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_304" parent="." index="304" unique_id=1015146112]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_305" parent="." index="305" unique_id=143403532]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_306" parent="." index="306" unique_id=1465710041]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_307" parent="." index="307" unique_id=804792592]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_308" parent="." index="308" unique_id=1693954131]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_309" parent="." index="309" unique_id=77711754]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_310" parent="." index="310" unique_id=2107479558]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_311" parent="." index="311" unique_id=1444261659]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_312" parent="." index="312" unique_id=2101918371]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_313" parent="." index="313" unique_id=218217947]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_314" parent="." index="314" unique_id=1988863139]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_315" parent="." index="315" unique_id=1028847494]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_316" parent="." index="316" unique_id=1920832631]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_317" parent="." index="317" unique_id=601318310]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_318" parent="." index="318" unique_id=1968000997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_319" parent="." index="319" unique_id=2024033617]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_320" parent="." index="320" unique_id=1581133032]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_321" parent="." index="321" unique_id=659421355]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_322" parent="." index="322" unique_id=363960239]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_323" parent="." index="323" unique_id=1247515201]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_324" parent="." index="324" unique_id=1716682288]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_325" parent="." index="325" unique_id=1499262395]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_326" parent="." index="326" unique_id=429065636]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_327" parent="." index="327" unique_id=973317909]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_328" parent="." index="328" unique_id=1540602399]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_329" parent="." index="329" unique_id=1994950607]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_330" parent="." index="330" unique_id=931476132]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_331" parent="." index="331" unique_id=1527966053]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_332" parent="." index="332" unique_id=486839274]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_333" parent="." index="333" unique_id=1600580263]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_334" parent="." index="334" unique_id=280379624]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_335" parent="." index="335" unique_id=2090334222]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_336" parent="." index="336" unique_id=1379130738]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_337" parent="." index="337" unique_id=295690775]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_338" parent="." index="338" unique_id=1244537599]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_339" parent="." index="339" unique_id=99976162]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_340" parent="." index="340" unique_id=655958878]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_341" parent="." index="341" unique_id=682578465]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_342" parent="." index="342" unique_id=736816055]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_343" parent="." index="343" unique_id=628342332]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_344" parent="." index="344" unique_id=490146513]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_345" parent="." index="345" unique_id=1430904126]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_346" parent="." index="346" unique_id=912392389]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_347" parent="." index="347" unique_id=1539913431]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_348" parent="." index="348" unique_id=1880747022]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_349" parent="." index="349" unique_id=335769463]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_350" parent="." index="350" unique_id=1245010749]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_351" parent="." index="351" unique_id=896314991]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_352" parent="." index="352" unique_id=1635326006]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_353" parent="." index="353" unique_id=299460975]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_354" parent="." index="354" unique_id=148022187]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_355" parent="." index="355" unique_id=1784573447]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_356" parent="." index="356" unique_id=1076353705]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_357" parent="." index="357" unique_id=1296489908]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_358" parent="." index="358" unique_id=736979147]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_359" parent="." index="359" unique_id=1622416935]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_360" parent="." index="360" unique_id=196082654]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_361" parent="." index="361" unique_id=289211928]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_362" parent="." index="362" unique_id=967421588]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_363" parent="." index="363" unique_id=387083271]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_364" parent="." index="364" unique_id=1105543871]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_365" parent="." index="365" unique_id=2003474364]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_366" parent="." index="366" unique_id=1434031896]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_367" parent="." index="367" unique_id=2089462058]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_368" parent="." index="368" unique_id=1694400473]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_369" parent="." index="369" unique_id=797137207]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_370" parent="." index="370" unique_id=1148904140]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_371" parent="." index="371" unique_id=972642136]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_372" parent="." index="372" unique_id=1156802461]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_373" parent="." index="373" unique_id=1679905917]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_374" parent="." index="374" unique_id=457231511]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_375" parent="." index="375" unique_id=1486416278]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_376" parent="." index="376" unique_id=177144102]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_377" parent="." index="377" unique_id=1866633455]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_378" parent="." index="378" unique_id=917240790]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_379" parent="." index="379" unique_id=984715360]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_380" parent="." index="380" unique_id=647128952]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_381" parent="." index="381" unique_id=1505131419]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_382" parent="." index="382" unique_id=1226510195]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_383" parent="." index="383" unique_id=966641570]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_384" parent="." index="384" unique_id=274858684]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_385" parent="." index="385" unique_id=153351349]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_386" parent="." index="386" unique_id=441622997]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_387" parent="." index="387" unique_id=897081466]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_388" parent="." index="388" unique_id=906128612]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_389" parent="." index="389" unique_id=1094204610]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_390" parent="." index="390" unique_id=590268567]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_391" parent="." index="391" unique_id=746786529]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_392" parent="." index="392" unique_id=1472723194]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_393" parent="." index="393" unique_id=2012062678]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_394" parent="." index="394" unique_id=620752150]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_395" parent="." index="395" unique_id=1219715078]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_396" parent="." index="396" unique_id=1170343722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_397" parent="." index="397" unique_id=143935125]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_398" parent="." index="398" unique_id=2055205221]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_399" parent="." index="399" unique_id=1182315031]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_400" parent="." index="400" unique_id=1274098957]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_401" parent="." index="401" unique_id=1494958285]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_402" parent="." index="402" unique_id=581067749]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_403" parent="." index="403" unique_id=868536]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_404" parent="." index="404" unique_id=1277306117]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_405" parent="." index="405" unique_id=583433327]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_406" parent="." index="406" unique_id=2103219970]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_407" parent="." index="407" unique_id=796524932]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_408" parent="." index="408" unique_id=314147126]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_409" parent="." index="409" unique_id=608272546]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_410" parent="." index="410" unique_id=1315279661]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_411" parent="." index="411" unique_id=1062255436]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_412" parent="." index="412" unique_id=1618426483]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_413" parent="." index="413" unique_id=1366746891]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_414" parent="." index="414" unique_id=298287373]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_415" parent="." index="415" unique_id=706822090]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_416" parent="." index="416" unique_id=1680366076]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_417" parent="." index="417" unique_id=874022573]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_418" parent="." index="418" unique_id=131649662]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_419" parent="." index="419" unique_id=916798544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_420" parent="." index="420" unique_id=1956273419]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_421" parent="." index="421" unique_id=1299839578]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_422" parent="." index="422" unique_id=1352757808]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_423" parent="." index="423" unique_id=346093073]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_424" parent="." index="424" unique_id=1440586390]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_425" parent="." index="425" unique_id=76416011]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_426" parent="." index="426" unique_id=885513238]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_427" parent="." index="427" unique_id=746382104]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_428" parent="." index="428" unique_id=450057285]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_429" parent="." index="429" unique_id=2123551822]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_430" parent="." index="430" unique_id=976906541]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_431" parent="." index="431" unique_id=556981571]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_432" parent="." index="432" unique_id=1656636170]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_433" parent="." index="433" unique_id=1417862981]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_434" parent="." index="434" unique_id=515669265]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_435" parent="." index="435" unique_id=1906253563]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_436" parent="." index="436" unique_id=237653618]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_437" parent="." index="437" unique_id=1343758734]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_438" parent="." index="438" unique_id=1790020432]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_439" parent="." index="439" unique_id=706932105]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_440" parent="." index="440" unique_id=100135224]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_441" parent="." index="441" unique_id=1254005596]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_442" parent="." index="442" unique_id=471852326]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_443" parent="." index="443" unique_id=1340296926]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_444" parent="." index="444" unique_id=1665587580]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_445" parent="." index="445" unique_id=1182390156]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_446" parent="." index="446" unique_id=236817129]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_447" parent="." index="447" unique_id=2113794879]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_448" parent="." index="448" unique_id=549732671]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_449" parent="." index="449" unique_id=1061510882]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_450" parent="." index="450" unique_id=909994682]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_451" parent="." index="451" unique_id=1535542192]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_452" parent="." index="452" unique_id=1711208203]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_453" parent="." index="453" unique_id=205523257]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_454" parent="." index="454" unique_id=1363140450]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_455" parent="." index="455" unique_id=523266658]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_456" parent="." index="456" unique_id=533341362]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_457" parent="." index="457" unique_id=88340855]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_458" parent="." index="458" unique_id=369887176]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_459" parent="." index="459" unique_id=2064445853]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_460" parent="." index="460" unique_id=1746830943]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_461" parent="." index="461" unique_id=515251028]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_462" parent="." index="462" unique_id=1097451357]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_463" parent="." index="463" unique_id=219700363]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_464" parent="." index="464" unique_id=204836726]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_465" parent="." index="465" unique_id=951121582]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_466" parent="." index="466" unique_id=1087545721]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_467" parent="." index="467" unique_id=548103817]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_468" parent="." index="468" unique_id=1602959274]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_469" parent="." index="469" unique_id=1312129698]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_470" parent="." index="470" unique_id=1411376301]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_471" parent="." index="471" unique_id=8295296]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_472" parent="." index="472" unique_id=1066985327]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_473" parent="." index="473" unique_id=1005208181]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_474" parent="." index="474" unique_id=117155904]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_475" parent="." index="475" unique_id=1172283350]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_476" parent="." index="476" unique_id=1066626549]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_477" parent="." index="477" unique_id=1852854544]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_478" parent="." index="478" unique_id=2109564462]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_479" parent="." index="479" unique_id=203095319]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_480" parent="." index="480" unique_id=1833394376]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_481" parent="." index="481" unique_id=831639410]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_482" parent="." index="482" unique_id=267667749]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_483" parent="." index="483" unique_id=2048505610]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_484" parent="." index="484" unique_id=1424530120]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_485" parent="." index="485" unique_id=1902995745]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_486" parent="." index="486" unique_id=2035960722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_487" parent="." index="487" unique_id=1467838751]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_488" parent="." index="488" unique_id=61025551]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_489" parent="." index="489" unique_id=1274433937]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_490" parent="." index="490" unique_id=1337890214]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_491" parent="." index="491" unique_id=1592828337]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_492" parent="." index="492" unique_id=171393110]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_493" parent="." index="493" unique_id=1428043391]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_494" parent="." index="494" unique_id=880494777]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_495" parent="." index="495" unique_id=1748185539]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_496" parent="." index="496" unique_id=1182209081]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_497" parent="." index="497" unique_id=1715495305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_498" parent="." index="498" unique_id=217171714]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_499" parent="." index="499" unique_id=1836290071]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_500" parent="." index="500" unique_id=2094746074]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_501" parent="." index="501" unique_id=1109645120]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_502" parent="." index="502" unique_id=2048659151]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_503" parent="." index="503" unique_id=588026039]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_504" parent="." index="504" unique_id=1468203681]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_505" parent="." index="505" unique_id=1551335324]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_506" parent="." index="506" unique_id=347667512]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_507" parent="." index="507" unique_id=2092512559]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_508" parent="." index="508" unique_id=226172175]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_509" parent="." index="509" unique_id=607019806]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_510" parent="." index="510" unique_id=1415054221]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_511" parent="." index="511" unique_id=994252772]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_512" parent="." index="512" unique_id=798010729]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_513" parent="." index="513" unique_id=1505055370]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_514" parent="." index="514" unique_id=1839999661]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_515" parent="." index="515" unique_id=191669724]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_516" parent="." index="516" unique_id=844377648]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_517" parent="." index="517" unique_id=1666610948]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_518" parent="." index="518" unique_id=855285723]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_519" parent="." index="519" unique_id=889759781]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_520" parent="." index="520" unique_id=738902324]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_521" parent="." index="521" unique_id=1053332485]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_522" parent="." index="522" unique_id=358525878]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_523" parent="." index="523" unique_id=1807972654]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_524" parent="." index="524" unique_id=769068887]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_525" parent="." index="525" unique_id=2116613687]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_526" parent="." index="526" unique_id=442385775]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_527" parent="." index="527" unique_id=2054275940]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_528" parent="." index="528" unique_id=699060026]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_529" parent="." index="529" unique_id=2066552445]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_530" parent="." index="530" unique_id=432689116]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_531" parent="." index="531" unique_id=1018338840]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_532" parent="." index="532" unique_id=1599436707]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_533" parent="." index="533" unique_id=587202847]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_534" parent="." index="534" unique_id=1563007536]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_535" parent="." index="535" unique_id=2012299742]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_536" parent="." index="536" unique_id=1377805495]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_537" parent="." index="537" unique_id=678799631]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_538" parent="." index="538" unique_id=987256540]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_539" parent="." index="539" unique_id=280592380]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_540" parent="." index="540" unique_id=1991192772]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenGroundCollision_541" parent="." index="541" unique_id=1485675365]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision" parent="." index="542" unique_id=1562358225]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_001" parent="." index="543" unique_id=1039814794]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_002" parent="." index="544" unique_id=1289189200]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_003" parent="." index="545" unique_id=909573685]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_004" parent="." index="546" unique_id=1726102206]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_005" parent="." index="547" unique_id=1581067475]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_006" parent="." index="548" unique_id=1852193765]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_007" parent="." index="549" unique_id=1287051148]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_008" parent="." index="550" unique_id=872536900]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_009" parent="." index="551" unique_id=1198730345]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_010" parent="." index="552" unique_id=369755947]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_011" parent="." index="553" unique_id=962327738]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_012" parent="." index="554" unique_id=1732772222]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_013" parent="." index="555" unique_id=1168066752]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_014" parent="." index="556" unique_id=1594647188]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_015" parent="." index="557" unique_id=152606223]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_016" parent="." index="558" unique_id=1088989183]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_017" parent="." index="559" unique_id=1880845868]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_018" parent="." index="560" unique_id=775122742]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_019" parent="." index="561" unique_id=1664740068]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_020" parent="." index="562" unique_id=1191309108]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_021" parent="." index="563" unique_id=511043962]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_022" parent="." index="564" unique_id=119152096]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_023" parent="." index="565" unique_id=635124945]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_024" parent="." index="566" unique_id=411580122]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_025" parent="." index="567" unique_id=1537296417]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_026" parent="." index="568" unique_id=1655008232]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_027" parent="." index="569" unique_id=874223736]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_028" parent="." index="570" unique_id=1661964884]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_029" parent="." index="571" unique_id=1870816885]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_030" parent="." index="572" unique_id=1244018820]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_031" parent="." index="573" unique_id=2115177411]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_032" parent="." index="574" unique_id=989253829]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_033" parent="." index="575" unique_id=1722744917]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_034" parent="." index="576" unique_id=495596261]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_035" parent="." index="577" unique_id=1537261003]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_036" parent="." index="578" unique_id=942181709]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_037" parent="." index="579" unique_id=1017256835]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_038" parent="." index="580" unique_id=550629577]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_039" parent="." index="581" unique_id=1858407832]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_040" parent="." index="582" unique_id=237259465]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_041" parent="." index="583" unique_id=1214854044]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_042" parent="." index="584" unique_id=1345589047]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_043" parent="." index="585" unique_id=1441507941]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_044" parent="." index="586" unique_id=1042958191]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_045" parent="." index="587" unique_id=640025644]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_046" parent="." index="588" unique_id=1362611106]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_047" parent="." index="589" unique_id=1907436207]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_048" parent="." index="590" unique_id=2006413925]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_049" parent="." index="591" unique_id=732203188]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_050" parent="." index="592" unique_id=1479383841]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_051" parent="." index="593" unique_id=1915882558]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_052" parent="." index="594" unique_id=112471851]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_053" parent="." index="595" unique_id=1033066950]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_054" parent="." index="596" unique_id=1508378989]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_055" parent="." index="597" unique_id=1615559693]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_056" parent="." index="598" unique_id=778823601]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_057" parent="." index="599" unique_id=1855148928]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_058" parent="." index="600" unique_id=746937183]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_059" parent="." index="601" unique_id=365733230]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_060" parent="." index="602" unique_id=2026429568]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_061" parent="." index="603" unique_id=1012932533]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_062" parent="." index="604" unique_id=1153874330]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_063" parent="." index="605" unique_id=1247719320]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_064" parent="." index="606" unique_id=435652145]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_065" parent="." index="607" unique_id=155464968]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_066" parent="." index="608" unique_id=593975508]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_067" parent="." index="609" unique_id=83445799]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_068" parent="." index="610" unique_id=1484883949]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_069" parent="." index="611" unique_id=81801825]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_070" parent="." index="612" unique_id=703271063]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_071" parent="." index="613" unique_id=699456253]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_072" parent="." index="614" unique_id=1622030282]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_073" parent="." index="615" unique_id=1832059326]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_074" parent="." index="616" unique_id=289699493]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_075" parent="." index="617" unique_id=1733889893]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_076" parent="." index="618" unique_id=1716084238]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_077" parent="." index="619" unique_id=1723387280]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_078" parent="." index="620" unique_id=197077798]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_079" parent="." index="621" unique_id=1273666156]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_080" parent="." index="622" unique_id=2035556159]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_081" parent="." index="623" unique_id=765452585]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_082" parent="." index="624" unique_id=1459441834]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_083" parent="." index="625" unique_id=297159623]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_084" parent="." index="626" unique_id=524979553]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_085" parent="." index="627" unique_id=1171108011]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_086" parent="." index="628" unique_id=2007440767]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_087" parent="." index="629" unique_id=1245726166]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_088" parent="." index="630" unique_id=2125015488]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_089" parent="." index="631" unique_id=427825740]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_090" parent="." index="632" unique_id=2036045054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_091" parent="." index="633" unique_id=2004384704]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_092" parent="." index="634" unique_id=874907208]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_093" parent="." index="635" unique_id=1082795488]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_094" parent="." index="636" unique_id=1262744097]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_095" parent="." index="637" unique_id=1446460395]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_096" parent="." index="638" unique_id=1719970781]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_097" parent="." index="639" unique_id=465078607]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_098" parent="." index="640" unique_id=1626771944]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_099" parent="." index="641" unique_id=823515343]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_100" parent="." index="642" unique_id=93872968]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_101" parent="." index="643" unique_id=1320937689]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_102" parent="." index="644" unique_id=2133260525]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_103" parent="." index="645" unique_id=1274777012]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_104" parent="." index="646" unique_id=1424140765]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_105" parent="." index="647" unique_id=1042209285]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_106" parent="." index="648" unique_id=1383385251]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_107" parent="." index="649" unique_id=175512300]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_108" parent="." index="650" unique_id=1201764272]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_109" parent="." index="651" unique_id=1316708517]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_110" parent="." index="652" unique_id=171873450]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_111" parent="." index="653" unique_id=1374328660]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_112" parent="." index="654" unique_id=604972838]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_113" parent="." index="655" unique_id=389553452]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_114" parent="." index="656" unique_id=223803322]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_115" parent="." index="657" unique_id=973597640]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_116" parent="." index="658" unique_id=1792416305]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_117" parent="." index="659" unique_id=2014478900]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_118" parent="." index="660" unique_id=959509193]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_119" parent="." index="661" unique_id=1062895070]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_120" parent="." index="662" unique_id=1624628420]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_121" parent="." index="663" unique_id=828537982]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_122" parent="." index="664" unique_id=203203515]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_123" parent="." index="665" unique_id=1101993443]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_124" parent="." index="666" unique_id=1119363317]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_125" parent="." index="667" unique_id=1922225401]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_126" parent="." index="668" unique_id=317506946]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_127" parent="." index="669" unique_id=427036722]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_128" parent="." index="670" unique_id=1516836769]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_129" parent="." index="671" unique_id=1855906065]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_130" parent="." index="672" unique_id=1589368628]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_131" parent="." index="673" unique_id=155192054]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_132" parent="." index="674" unique_id=868921116]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_133" parent="." index="675" unique_id=639341274]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_134" parent="." index="676" unique_id=749668195]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_135" parent="." index="677" unique_id=2020315247]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_136" parent="." index="678" unique_id=2127821470]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_137" parent="." index="679" unique_id=1429343901]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_138" parent="." index="680" unique_id=65283255]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_139" parent="." index="681" unique_id=501957521]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_140" parent="." index="682" unique_id=362877213]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_141" parent="." index="683" unique_id=11647680]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_142" parent="." index="684" unique_id=72380563]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_143" parent="." index="685" unique_id=853044375]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_144" parent="." index="686" unique_id=835247115]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_145" parent="." index="687" unique_id=36673550]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_146" parent="." index="688" unique_id=1492003694]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_147" parent="." index="689" unique_id=157487616]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_148" parent="." index="690" unique_id=1923819386]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_149" parent="." index="691" unique_id=600795257]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_150" parent="." index="692" unique_id=1550096439]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_151" parent="." index="693" unique_id=1611849957]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_152" parent="." index="694" unique_id=1257003490]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_153" parent="." index="695" unique_id=855272701]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_154" parent="." index="696" unique_id=1037022029]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_155" parent="." index="697" unique_id=456991743]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_156" parent="." index="698" unique_id=1537629984]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_157" parent="." index="699" unique_id=1658898165]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_158" parent="." index="700" unique_id=639204790]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_159" parent="." index="701" unique_id=1285376491]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_160" parent="." index="702" unique_id=1730714406]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_161" parent="." index="703" unique_id=913034129]
+collision_layer = 4
+collision_mask = 3
+
+[node name="HeavenPathCollision_162" parent="." index="704" unique_id=1459859907]
+collision_layer = 4
+collision_mask = 3

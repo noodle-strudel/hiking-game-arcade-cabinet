@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://3yduj250t35d"]
 
-[ext_resource type="Texture2D" uid="uid://bg31wkeeorqa6" path="res://ui/scroll/scroll_ninebox_tall.png" id="1_luysr"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="1_nanb0"]
+[ext_resource type="Texture2D" uid="uid://opeh8set1ch2" path="res://ui/scroll/scroll_ninebox_tall.png" id="1_luysr"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="1_nanb0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcgtf"]
 texture = ExtResource("1_luysr")

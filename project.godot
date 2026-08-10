@@ -137,7 +137,10 @@ start={
 3d_physics/layer_4="trees"
 3d_physics/layer_5="player_barrier"
 3d_physics/layer_6="bird"
-3d_physics/layer_7="lint_ball"
+3d_physics/layer_7="OOB"
+3d_physics/layer_8="buildings"
+3d_physics/layer_9="Lake"
+3d_physics/layer_10="lint_ball"
 
 [physics]
 

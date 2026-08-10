@@ -121,7 +121,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 					await ascender.ascension_complete
 					_load_purgatory()
 					$UI.show()
-					$UI/KickingMenu/KickingMenu/PurgKicksRemainingContainer.show()
+					$UI/KickingMenu/PurgKicksRemainingContainer.show()
 					
 				# go back to regular idle state stuff
 				_regular_idle_actions()
@@ -412,7 +412,12 @@ func _ready() -> void:
 	# connect signals
 	GameManager.gamestate_update.connect(_on_change_state)
 	grid_position_changed.connect(_on_grid_position_changed)
-	GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
+	
+	if GameManager.kicks_remaining <= 0:
+		# kinda broken right now when it does this...
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_PERFECTED, "already perfect")
+	else:
+		GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
 	
 	# load the first grid
 	for z in range(-1, 2, 1):

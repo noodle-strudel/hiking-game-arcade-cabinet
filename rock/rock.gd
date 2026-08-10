@@ -19,6 +19,9 @@ signal descending
 # for the camera angle to follow the rock direction
 @export var camera_follow_threshold: float = 0.025
 
+# rock's material
+@onready var rock_material = preload("res://rock/rock_material.tres")
+
 var camera_orbiting: bool = true
 var camera_follow_rock: bool = true
 
@@ -80,6 +83,7 @@ func play_kick(critical: bool) -> void:
 
 """Rock's Functions"""
 
+
 func get_trajectory() -> Vector3:
 	return position - last_rock_pos
 
@@ -95,6 +99,31 @@ func camera_follow(switch: bool) -> void:
 		$RockCameraPivot.look_at(last_pre_rock_camera_heading + $RockCameraPivot.position)
 	else:
 		camera_follow_rock = false
+
+# behavior of the rock when the rock becomes perfected (0 kicks remaining)
+func _rock_ascension():
+	# make the rock unaffected by gravity
+	freeze = true
+	
+	# ascend dramatically
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "global_position", global_position + Vector3.UP * 10, 5).set_ease(Tween.EASE_IN_OUT)
+	
+	# create the halo when that's done
+	tween.tween_callback(func():
+		$PerfectedRockForm/AnimationPlayer.play("show_halo")
+	)
+	await get_tree().create_timer(5).timeout
+	
+	# when it's done ascending, start glowing alongside the halo creation
+	tween = get_tree().create_tween()
+	tween.tween_property(rock_material, "emission_energy_multiplier", 1.0, 2)
+	await $PerfectedRockForm/AnimationPlayer.animation_finished
+	
+	print("gain realistic eyes, mouth")
+	await get_tree().create_timer(1).timeout
+	camera_orbiting = true
+	
 
 # interpolates the entire shape of the rock;
 # vertices that start further out are biased to interpolate faster at first
@@ -143,6 +172,9 @@ func _update_rock() -> void:
 
 	$CurrentRockCollision.shape.set_points(current_rock_vertices)
 	$CurrentRockMesh.mesh = _set_color_mesh(current_rock_vertices)
+	
+	# re-set the material since it resets each time the mesh changes
+	$CurrentRockMesh.mesh.set("surface_0/material", rock_material)
 
 func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void:
 	camera_orbiting = false
@@ -162,6 +194,7 @@ func _on_change_state(new_state: GameManager.gamestates, _cause: String) -> void
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
 				print("ROCK: I shall transform into an angel rock!")
+				_rock_ascension()
 		_:
 			%RockKickTrail.hide()
 
@@ -215,6 +248,7 @@ func _physics_process(_delta: float) -> void:
 		# update set rock camera pivot and rock eyes, and update last rock position
 		$RockCameraPivot.position = self.position
 		$RockEyes.position = self.position
+		$PerfectedRockForm.position = self.position
 
 		# if rock camera is not orbiting and is moving at or faster than threshold speed,
 		# trail rock camera behind rock, with smoothing

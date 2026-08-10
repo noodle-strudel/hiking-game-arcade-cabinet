@@ -2,23 +2,45 @@
 
 [ext_resource type="Script" uid="uid://cc0stayb0d3ru" path="res://events/grandma_salmon/grandma_salmon.gd" id="1_m3kgo"]
 [ext_resource type="Texture2D" uid="uid://clatxilrji2dv" path="res://events/grandma_salmon/grandma_head/grandma_head0.png" id="2_1v3kd"]
+[ext_resource type="AudioStream" uid="uid://bswlo57yrdadv" path="res://sound/grandma_salmon_voice/gsam_3.wav" id="2_daif0"]
 [ext_resource type="Texture2D" uid="uid://dfbya2jyi4oy" path="res://events/grandma_salmon/salmon_body.png" id="2_rusq1"]
 [ext_resource type="Texture2D" uid="uid://c4mxlu8v2lyae" path="res://events/grandma_salmon/grandma_head/grandma_head1.png" id="3_rusq1"]
+[ext_resource type="AudioStream" uid="uid://cjqugtgpctjnd" path="res://sound/grandma_salmon_voice/gsam_4.wav" id="3_yip2j"]
 [ext_resource type="Texture2D" uid="uid://bxbncrba2r5iu" path="res://events/grandma_salmon/grandma_head/grandma_head2.png" id="4_7en0j"]
+[ext_resource type="AudioStream" uid="uid://c6c14k57lh3uu" path="res://sound/grandma_salmon_voice/gsam_6.wav" id="4_nea6b"]
 [ext_resource type="Texture2D" uid="uid://chg2erqf1vv1a" path="res://events/grandma_salmon/grandma_head/grandma_head3.png" id="5_jnirr"]
+[ext_resource type="AudioStream" uid="uid://4j3t48q1us1o" path="res://sound/grandma_salmon_voice/gsam_7.wav" id="5_uktlh"]
 [ext_resource type="Texture2D" uid="uid://bghc4pi1337fc" path="res://events/grandma_salmon/grandma_head/grandma_head4.png" id="6_2ayfw"]
+[ext_resource type="AudioStream" uid="uid://cxncvy1qdfcjd" path="res://sound/grandma_salmon_voice/gsam_9.wav" id="6_6d030"]
 [ext_resource type="Texture2D" uid="uid://8hfs3plneagy" path="res://events/grandma_salmon/grandma_head/grandma_head5.png" id="7_bt3g1"]
+[ext_resource type="AudioStream" uid="uid://cdparmn8cyjt3" path="res://sound/grandma_salmon_voice/gsam_11.wav" id="7_urk1g"]
 [ext_resource type="Texture2D" uid="uid://c5mgohwd4utgg" path="res://events/grandma_salmon/grandma_head/grandma_head6.png" id="8_c2g7d"]
-[ext_resource type="AudioStream" uid="uid://w8o5ut4leosk" path="res://sound/grandma_salmon_character_test.wav" id="10_7en0j"]
-[ext_resource type="Texture2D" uid="uid://0njgjlaqx052" path="res://events/grandma_salmon/salmon_tail/salmon_tail0.png" id="11_vw4a5"]
-[ext_resource type="Texture2D" uid="uid://dx3humufnqi4n" path="res://events/grandma_salmon/salmon_tail/salmon_tail1.png" id="12_x5ohi"]
-[ext_resource type="Texture2D" uid="uid://c2ht21tx74sd" path="res://events/grandma_salmon/salmon_tail/salmon_tail2.png" id="13_66up2"]
-[ext_resource type="Texture2D" uid="uid://dcs1xgr6oyh68" path="res://events/grandma_salmon/salmon_tail/salmon_tail3.png" id="14_d1nto"]
-[ext_resource type="Texture2D" uid="uid://bqep1vfsu18td" path="res://events/grandma_salmon/salmon_tail/salmon_tail4.png" id="15_p6v5m"]
-[ext_resource type="Texture2D" uid="uid://y8rk1ia5cqn1" path="res://events/grandma_salmon/salmon_tail/salmon_tail6.png" id="16_4mpdw"]
-[ext_resource type="Texture2D" uid="uid://ch3cckwx6uyq0" path="res://events/grandma_salmon/salmon_tail/salmon_tail5.png" id="17_t6bc6"]
-[ext_resource type="Texture2D" uid="uid://fxwxadj5it00" path="res://events/grandma_salmon/salmon_tail/salmon_tail7.png" id="18_u7pru"]
-[ext_resource type="Texture2D" uid="uid://bfv1o370pcmjb" path="res://events/grandma_salmon/salmon_tail/salmon_tail8.png" id="19_4cgve"]
+[ext_resource type="AudioStream" uid="uid://bi7nsig3pfn6t" path="res://sound/grandma_salmon_voice/gsam_12.wav" id="8_pnt70"]
+[ext_resource type="AudioStream" uid="uid://bwhkhwxpipgtx" path="res://sound/grandma_salmon_voice/gsam_14.wav" id="9_ofodv"]
+[ext_resource type="AudioStream" uid="uid://ddduifc6i48io" path="res://sound/grandma_salmon_voice/gsam_17.wav" id="10_roxsa"]
+[ext_resource type="AudioStream" uid="uid://jhc0r6bbfr2b" path="res://sound/grandma_salmon_voice/gsam_18.wav" id="11_7sq0m"]
+[ext_resource type="Texture2D" uid="uid://b1uku11o41173" path="res://events/grandma_salmon/salmon_tail/salmon_tail0.png" id="11_vw4a5"]
+[ext_resource type="Texture2D" uid="uid://bst43ls10ygrx" path="res://events/grandma_salmon/salmon_tail/salmon_tail1.png" id="12_x5ohi"]
+[ext_resource type="Texture2D" uid="uid://v8lwksgw6ohb" path="res://events/grandma_salmon/salmon_tail/salmon_tail2.png" id="13_66up2"]
+[ext_resource type="Texture2D" uid="uid://dsf12krvuv507" path="res://events/grandma_salmon/salmon_tail/salmon_tail3.png" id="14_d1nto"]
+[ext_resource type="Texture2D" uid="uid://dsor57jrxx1s6" path="res://events/grandma_salmon/salmon_tail/salmon_tail4.png" id="15_p6v5m"]
+[ext_resource type="Texture2D" uid="uid://bcvaxtpd40f6l" path="res://events/grandma_salmon/salmon_tail/salmon_tail6.png" id="16_4mpdw"]
+[ext_resource type="Texture2D" uid="uid://ce71hhghc2xi3" path="res://events/grandma_salmon/salmon_tail/salmon_tail5.png" id="17_t6bc6"]
+[ext_resource type="Texture2D" uid="uid://b80me4fj0unps" path="res://events/grandma_salmon/salmon_tail/salmon_tail7.png" id="18_u7pru"]
+[ext_resource type="Texture2D" uid="uid://c7elpcir0qgwo" path="res://events/grandma_salmon/salmon_tail/salmon_tail8.png" id="19_4cgve"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7a7nx"]
+streams_count = 10
+stream_0/stream = ExtResource("2_daif0")
+stream_1/stream = ExtResource("3_yip2j")
+stream_2/stream = ExtResource("4_nea6b")
+stream_3/stream = ExtResource("5_uktlh")
+stream_4/stream = ExtResource("6_6d030")
+stream_5/stream = ExtResource("7_urk1g")
+stream_6/stream = ExtResource("8_pnt70")
+stream_7/stream = ExtResource("9_ofodv")
+stream_8/stream = ExtResource("10_roxsa")
+stream_9/stream = ExtResource("11_7sq0m")
 
 [sub_resource type="Animation" id="Animation_7en0j"]
 length = 0.001
@@ -160,7 +182,7 @@ script = ExtResource("1_m3kgo")
 metadata/_custom_type_script = "uid://rdvxw5w1g4li"
 
 [node name="GSSpeech" type="AudioStreamPlayer" parent="." unique_id=317227279]
-stream = ExtResource("10_7en0j")
+stream = SubResource("AudioStreamRandomizer_7a7nx")
 autoplay = true
 
 [node name="GSCanvas" type="CanvasLayer" parent="." unique_id=1697597644]
