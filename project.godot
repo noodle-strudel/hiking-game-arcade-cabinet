@@ -140,6 +140,7 @@ start={
 3d_physics/layer_7="OOB"
 3d_physics/layer_8="buildings"
 3d_physics/layer_9="Lake"
+3d_physics/layer_10="lint_ball"
 
 [physics]
 
