@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dsr37f67t67fg"]
+
+[ext_resource type="PackedScene" uid="uid://b0yn2gism8wfm" path="res://events/largest_pants/glb/pants.glb" id="1_2f5aa"]
+[ext_resource type="PackedScene" uid="uid://crw0oox6kdkfd" path="res://events/largest_pants/pants_col.tscn" id="2_xou1l"]
+
+[node name="pants" unique_id=863157705 instance=ExtResource("1_2f5aa")]
+
+[node name="BackPocket1" parent="." index="0" unique_id=627349499]
+transform = Transform3D(0.48787224, 0, 0, 0, -0.0003587692, -0.044779878, 0, 0.6229841, -2.5788204e-05, -0.978254, -0.5128052, 0.67457634)
+
+[node name="BackPocket2" parent="." index="1" unique_id=903537224]
+transform = Transform3D(0.48787224, 0, 0, 0, -0.0003587692, -0.044779878, 0, 0.6229841, -2.5788204e-05, 0.978254, -0.5128052, 0.67457634)
+
+[node name="Button" parent="." index="2" unique_id=1835806440]
+transform = Transform3D(0.08162454, 0, 0, 0, 0.038657106, -4.7017304e-05, 0, 2.2267239e-05, 0.08162452, 0, 0.4877689, -0.39560452)
+
+[node name="PantLoop1" parent="." index="3" unique_id=1185151878]
+transform = Transform3D(-4.2238075e-09, 0, 0.040103517, -0.096629426, 7.451759e-05, -1.75298e-09, -5.5656194e-05, -0.12937629, -1.0098163e-12, -1.87166, -0.24688911, -0.37008056)
+
+[node name="PantLoop2" parent="." index="4" unique_id=1290133608]
+transform = Transform3D(-4.2238075e-09, 0, 0.040103517, -0.096629426, 7.451759e-05, -1.75298e-09, -5.5656194e-05, -0.12937629, -1.0098163e-12, -1.8716557, 0.23680067, -0.36980197)
+
+[node name="PantLoop3" parent="." index="5" unique_id=2008289009]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -1.5054367, -0.5083983, -0.37023118)
+
+[node name="PantLoop4" parent="." index="6" unique_id=529680560]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -0.9945698, -0.5083983, -0.37023118)
+
+[node name="PantLoop5" parent="." index="7" unique_id=1720615205]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -0.4656723, -0.5083983, -0.37023118)
+
+[node name="PantLoop6" parent="." index="8" unique_id=1435536176]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 0.40580648, -0.5083983, -0.37023118)
+
+[node name="PantLoop7" parent="." index="9" unique_id=390319688]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 0.967739, -0.5083983, -0.37023118)
+
+[node name="PantLoop8" parent="." index="10" unique_id=1369069478]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 1.481632, -0.5083983, -0.37023118)
+
+[node name="PantLoop9" parent="." index="11" unique_id=652006179]
+transform = Transform3D(-4.2238075e-09, 0, 0.040103517, -0.096629426, 7.451759e-05, -1.75298e-09, -5.5656194e-05, -0.12937629, -1.0098163e-12, 1.87166, -0.24688554, -0.37609085)
+
+[node name="PantLoop10" parent="." index="12" unique_id=353151279]
+transform = Transform3D(-4.2238075e-09, 0, 0.040103517, -0.096629426, 7.451759e-05, -1.75298e-09, -5.5656194e-05, -0.12937629, -1.0098163e-12, 1.87166, 0.23680425, -0.37581226)
+
+[node name="PantLoop11" parent="." index="13" unique_id=735775519]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -1.5054367, 0.49830985, -0.36965135)
+
+[node name="PantLoop12" parent="." index="14" unique_id=489929519]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -0.9945698, 0.49830985, -0.36965135)
+
+[node name="PantLoop13" parent="." index="15" unique_id=1378351055]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, -0.4656723, 0.49830985, -0.36965135)
+
+[node name="PantLoop14" parent="." index="16" unique_id=961033653]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 0.47191867, 0.49830985, -0.36965135)
+
+[node name="PantLoop15" parent="." index="17" unique_id=1414392874]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 0.9587447, 0.49830985, -0.36965135)
+
+[node name="PantLoop16" parent="." index="18" unique_id=2065342124]
+transform = Transform3D(0.09662944, 0, 0, 0, 7.451759e-05, 0.040103506, 0, -0.1293763, 2.3098644e-05, 1.481632, 0.49830985, -0.36965135)
+
+[node name="Pants" parent="." index="19" unique_id=1906558861]
+transform = Transform3D(1, 0, 0, 0, 0.0005759755, 0.9999998, 0, -0.9999998, 0.0005759755, 0, -0.0066666603, 2.4471083)
+
+[node name="Zipper" parent="." index="20" unique_id=474300564]
+transform = Transform3D(0.11538832, 3.0568202e-08, 0, -5.8101917e-12, 0.0002013953, -0.027360497, 1.00875654e-08, -0.34965944, -1.5758978e-05, 0, 0.49847984, 0.06557762)
+
+[node name="pants_col" parent="." index="21" unique_id=1971161357 instance=ExtResource("2_xou1l")]
+transform = Transform3D(1, 0, 0, 0, 0.0005759755, 0.9999998, 0, -0.9999998, 0.0005759755, 0, -0.0066666603, 2.4471083)
