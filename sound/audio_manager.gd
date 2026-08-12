@@ -66,7 +66,7 @@ func _ready() -> void:
 	
 	# set the bgm to loop
 	background_music_park.loop_mode = AudioStreamWAV.LOOP_FORWARD
-	background_music_park.loop_end = 3656801 # length in samples - 1k
+	background_music_park.loop_end = 3656801 # length in samples - 1
 	
 	# play idle music on game boot-up
 	play_track(idle_music)
