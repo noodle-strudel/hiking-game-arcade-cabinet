@@ -141,6 +141,8 @@ func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
 
 # Function that makes the player move to the rock after scoring
 func _go_to_rock() -> void:
+	$PlayerLegsCollision.set_deferred("disabled", true)
+	$PlayerFeetCollision.set_deferred("disabled", true)
 	var tween = create_tween()
 	if rock:
 		# Player will walk to the side of the rock closest to the player
@@ -159,6 +161,8 @@ func _go_to_rock() -> void:
 		# Lambda function to stop the walk animation and switch to the idle state.
 		tween.tween_callback(func():
 			legs.stop_run()
+			$PlayerLegsCollision.set_deferred("disabled", false)
+			$PlayerFeetCollision.set_deferred("disabled", false)
 			GameManager.switch_state_to(GameManager.gamestates.IDLE, "player got to rock")
 		)
 
