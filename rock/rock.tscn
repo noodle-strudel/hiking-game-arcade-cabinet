@@ -566,6 +566,7 @@ stream = SubResource("AudioStreamRandomizer_4035w")
 
 [node name="RockEyes" parent="." unique_id=1613886241 instance=ExtResource("11_5ohwm")]
 process_mode = 3
+visible = false
 
 [node name="WinkSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=112929771]
 process_mode = 3

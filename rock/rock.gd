@@ -132,7 +132,8 @@ func _rock_ascension():
 	tween.tween_property(rock_material, "emission_energy_multiplier", 1.0, 2)
 	await $PerfectedRockForm/AnimationPlayer.animation_finished
 	
-	print("gain realistic eyes, mouth")
+	$RockEyes/AnimationPlayer.play("perfected")
+	$RockEyes.show()
 	await get_tree().create_timer(1).timeout
 	camera_orbiting = true
 	

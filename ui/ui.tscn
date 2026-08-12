@@ -7,11 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://781osfs7cjcw" path="res://sound/menu_sounds/contract_sign.wav" id="4_6cxyx"]
 [ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="AudioStream" uid="uid://dct4lu4k71aj" path="res://sound/menu_sounds/initials.wav" id="5_p762i"]
 [ext_resource type="AudioStream" uid="uid://e42pkxse67jv" path="res://sound/menu_sounds/scoring_1.wav" id="6_a3hx3"]
-[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="AudioStream" uid="uid://cbvycqoroo47" path="res://sound/menu_sounds/scoring_2.wav" id="7_limpb"]
 [ext_resource type="AudioStream" uid="uid://cmmjmt63jlm6x" path="res://sound/menu_sounds/scoring_3.wav" id="8_ug63i"]
@@ -35,14 +35,14 @@
 [ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
 [ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
 [ext_resource type="Texture2D" uid="uid://cuaujnf0dsxdk" path="res://ui/cloud/cloud_xtralarge2.png" id="28_1bm0a"]
-[ext_resource type="AudioStream" uid="uid://bfsnr0mlk88m5" path="res://sound/end_poem_voice/owen_1.wav" id="28_3hdvn"]
-[ext_resource type="AudioStream" uid="uid://cip8dstni1k2p" path="res://sound/end_poem_voice/owen_2.wav" id="29_1bm0a"]
-[ext_resource type="AudioStream" uid="uid://4d28u5g70840" path="res://sound/end_poem_voice/owen_3.wav" id="30_qu0m5"]
+[ext_resource type="AudioStream" uid="uid://dgqhbymab8l23" path="res://sound/end_poem_voice/owen_1.wav" id="28_3hdvn"]
+[ext_resource type="AudioStream" uid="uid://b5pyy54w6j2mx" path="res://sound/end_poem_voice/owen_2.wav" id="29_1bm0a"]
+[ext_resource type="AudioStream" uid="uid://mjl5mdq5xvmx" path="res://sound/end_poem_voice/owen_3.wav" id="30_qu0m5"]
 [ext_resource type="Texture2D" uid="uid://dmsqv248rf5cm" path="res://ui/rock_select/arrow.png" id="31_2lccl"]
-[ext_resource type="AudioStream" uid="uid://b08kssbb2pbi5" path="res://sound/end_poem_voice/owen_4.wav" id="31_a3hx3"]
+[ext_resource type="AudioStream" uid="uid://bwqlh53esi5st" path="res://sound/end_poem_voice/owen_4.wav" id="31_a3hx3"]
 [ext_resource type="AudioStream" uid="uid://cw04hqbliiooo" path="res://sound/menu_sounds/rock_scroll.wav" id="31_hhu8p"]
 [ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
-[ext_resource type="AudioStream" uid="uid://mjy7g46pcnqh" path="res://sound/end_poem_voice/owen_5.wav" id="32_limpb"]
+[ext_resource type="AudioStream" uid="uid://c7xsql0v75pvs" path="res://sound/end_poem_voice/owen_5.wav" id="32_limpb"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -390,7 +390,6 @@ title = ExtResource("9_iw6jt")
 metadata/_edit_lock_ = true
 
 [node name="IdleMenu" type="Control" parent="." unique_id=1152302751]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -536,7 +535,7 @@ theme_override_colors/font_outline_color = Color(1, 0.2784314, 0.2509804, 1)
 theme_override_fonts/normal_font = ExtResource("5_bo1jx")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[ghost fade=0.7 span=-10][outline_size=10] 1000000"
+text = "[ghost fade=0.7 span=-10][outline_size=10]1000000"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -1006,18 +1005,23 @@ texture = ExtResource("32_6cxyx")
 [node name="RockPerfectedMenu" type="Control" parent="." unique_id=96436731]
 visible = false
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.296
-offset_bottom = 0.32000732
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="RockPerfectedMenu" unique_id=1847511561]
+[node name="CenterContainer" type="VBoxContainer" parent="RockPerfectedMenu" unique_id=1080566866]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control3" type="Control" parent="RockPerfectedMenu/CenterContainer" unique_id=675540473]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RockPerfectedMenu/CenterContainer" unique_id=1463877400]
 custom_minimum_size = Vector2(0, 150)
@@ -1029,7 +1033,46 @@ bbcode_enabled = true
 text = "[pulse freq=1.0 color=#ffffff50 ease=-2.0][wave amp=50.0 freq=5.0 connected=1][outline_size=20]Congratulations!"
 fit_content = true
 autowrap_mode = 0
+horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="RockPerfectedMenu/CenterContainer" unique_id=1274445629]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RockPerfectedMenu/CenterContainer" unique_id=820621408]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="RockPerfectedMenu/CenterContainer/HBoxContainer" unique_id=1003607553]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.86276865, 0.66545194, 0.3738294, 1)
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff50 ease=-2.0][wave amp=50.0 freq=5.0 connected=1][outline_size=20]The rock is "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="RockPerfectedMenu/CenterContainer/HBoxContainer" unique_id=387415906]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.86276865, 0.66545194, 0.3738294, 1)
+theme_override_fonts/normal_font = ExtResource("5_bo1jx")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff50 ease=-2.0][wave amp=50.0 freq=5.0 connected=1][outline_size=20]*.+Perfected *.+"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="RockPerfectedMenu/CenterContainer" unique_id=859857619]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
 
 [node name="MenuSFX" type="AudioStreamPlayer" parent="." unique_id=152241231]
 stream = ExtResource("31_hhu8p")
