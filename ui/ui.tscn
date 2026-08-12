@@ -43,7 +43,9 @@
 [ext_resource type="AudioStream" uid="uid://cw04hqbliiooo" path="res://sound/menu_sounds/rock_scroll.wav" id="31_hhu8p"]
 [ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
 [ext_resource type="AudioStream" uid="uid://c7xsql0v75pvs" path="res://sound/end_poem_voice/owen_5.wav" id="32_limpb"]
+[ext_resource type="Script" uid="uid://ecsgnxlq5a5p" path="res://ui/credits/credit_column.gd" id="41_l1w2y"]
 [ext_resource type="PackedScene" uid="uid://ly314e0ye6e2" path="res://ui/credits/credit.tscn" id="41_ov2ix"]
+[ext_resource type="PackedScene" uid="uid://cjrtwf5emubha" path="res://ui/credits/credit_spacer.tscn" id="43_mpvo8"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -221,6 +223,99 @@ stream_2/stream = ExtResource("30_qu0m5")
 stream_3/stream = ExtResource("31_a3hx3")
 stream_4/stream = ExtResource("32_limpb")
 stream_4/weight = 2.0
+
+[sub_resource type="Animation" id="Animation_ov2ix"]
+resource_name = "credits"
+length = 40.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("L1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("R1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("L2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("R2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("L3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("R3")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1w2y"]
+_data = {
+&"credits": SubResource("Animation_ov2ix")
+}
 
 [sub_resource type="FontVariation" id="FontVariation_diyc5"]
 base_font = ExtResource("5_bo1jx")
@@ -929,44 +1024,50 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="L1" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=61854818]
-visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
-[node name="Lorenzo" parent="ScoreMenu/Credits/L1" unique_id=1636544482 instance=ExtResource("41_ov2ix")]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L1" unique_id=595569440]
+layout_mode = 2
+
+[node name="Lorenzo" parent="ScoreMenu/Credits/L1/VBoxContainer" unique_id=1636544482 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Sponsored By
-Lorenzo D. Moon
-"
+Lorenzo D. Moon"
 
 [node name="R1" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=641730637]
-visible = false
 layout_mode = 0
 offset_left = 1600.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
-[node name="Shirtzenpantz" parent="ScoreMenu/Credits/R1" unique_id=728336056 instance=ExtResource("41_ov2ix")]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R1" unique_id=1912893592]
+layout_mode = 2
+
+[node name="Shirtzenpantz" parent="ScoreMenu/Credits/R1/VBoxContainer" unique_id=728336056 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Game Concept by
 Ethan and Owen
-of Shirtzenpantz
-"
+of Shirtzenpantz"
 
 [node name="L2" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1804276286]
-visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L2" unique_id=1695098364]
 layout_mode = 2
 
 [node name="PSU" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=1904538339 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
-text = "The PSU Dev Team Is:
- "
+text = "The PSU Dev Team Is:"
+
+[node name="CreditSpacer" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=557516189 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
 
 [node name="Yollaine" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=843359474 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
@@ -974,30 +1075,33 @@ text = "Yollaine Brooks
 Team Lead,
 3D Artist,
 Assistant Programmer,
-QA Tester By Proxy
-"
+QA Tester By Proxy"
+
+[node name="CreditSpacer2" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=386395975 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
 
 [node name="Melody" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=2043287986 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Melody Warfel
 Systems Programmer,
-Artist, Writer
-"
+Artist, Writer"
+
+[node name="CreditSpacer3" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=2111540012 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
 
 [node name="Alice" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=1520265014 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Alice Loeb
 Level Designer,
 5th Strongest
-Programmer
-"
+Programmer"
 
 [node name="R2" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=213771278]
-visible = false
 layout_mode = 0
 offset_left = 1600.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R2" unique_id=1152388443]
 layout_mode = 2
@@ -1009,16 +1113,20 @@ Audio Engineer,
 SFX Designer,
 Soundtrack Artist,
 Graphic Artist,
-Programmer
-"
+Programmer"
+
+[node name="CreditSpacer4" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=207674839 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
 
 [node name="Michael" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1813871105 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Michael Karam
 Programmer,
 Earl of Database,
-Voice of The Rock
-"
+Voice of The Rock"
+
+[node name="CreditSpacer5" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1582212860 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
 
 [node name="Aiden" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1634525729 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
@@ -1028,37 +1136,43 @@ Software Engineer,
 QA Tester,
 Absolute Baller,
  Black Belt 😎
- "
+"
 
 [node name="L3" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1417027396]
-visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
-[node name="Mike" parent="ScoreMenu/Credits/L3" unique_id=893369472 instance=ExtResource("41_ov2ix")]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L3" unique_id=35579384]
+layout_mode = 2
+
+[node name="Mike" parent="ScoreMenu/Credits/L3/VBoxContainer" unique_id=893369472 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Cabinet Artwork by
-Mike Bennett
- "
+Mike Bennett"
 
 [node name="R3" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1773228013]
-visible = false
 layout_mode = 0
 offset_left = 1600.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
 
-[node name="SpecialThanks" parent="ScoreMenu/Credits/R3" unique_id=1600141461 instance=ExtResource("41_ov2ix")]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R3" unique_id=290492884]
+layout_mode = 2
+
+[node name="SpecialThanks" parent="ScoreMenu/Credits/R3/VBoxContainer" unique_id=1600141461 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Special Thanks
 
 Monty Ozark
 
-Bea Warfel
-"
+Bea Warfel "
 
 [node name="CreditsAnimator" type="AnimationPlayer" parent="ScoreMenu/Credits" unique_id=1789218436]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_l1w2y")
 
 [node name="OOBCenterContainer" type="CenterContainer" parent="." unique_id=846102454]
 visible = false
