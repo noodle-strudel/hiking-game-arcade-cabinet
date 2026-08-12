@@ -309,7 +309,23 @@ func _scoring_sequence() -> void:
 	%GameOverText.show()
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
-	await get_tree().create_timer(40).timeout
+	await get_tree().create_timer(38).timeout
+	
+	# duck music for voice
+	var music_bus_idx = AudioServer.get_bus_index("Music")
+	var music_bus_vol = AudioServer.get_bus_volume_db(music_bus_idx)
+	var set_music_volume = func(volume_db: float) -> void:
+		AudioServer.set_bus_volume_db(music_bus_idx, volume_db)
+	
+	var tween_duck = create_tween()
+	tween_duck.tween_method(
+		set_music_volume,
+		music_bus_vol,
+		music_bus_vol - 9,
+		0.4
+	)
+	
+	await get_tree().create_timer(0.4).timeout
 	%EndPoemVoice.play()
 	await get_tree().create_timer(10).timeout
 	
