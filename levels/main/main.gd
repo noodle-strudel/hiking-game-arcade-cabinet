@@ -654,7 +654,7 @@ func _lint_ball_spawn_check(current_chunk: Node3D) -> void:
 	ball.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
 	
 func _largest_pants_spawn_check(current_chunk: Node3D) -> void:
-	# get random position for the ball to spawn
+	# get random position for the pants to spawn
 	var spawnpoint: Vector3 = current_chunk.get_spawn_position()
 	
 	# add the pants as a child of the current chunk
