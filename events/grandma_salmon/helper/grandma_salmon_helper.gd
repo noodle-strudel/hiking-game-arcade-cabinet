@@ -52,6 +52,9 @@ func release_object() -> void:
 	if $RockSnatch.remote_path:
 		$RockSnatch.set_remote_node("")
 
+func play_talk_anim() -> void:
+	$SubViewport/GrandmaSalmonSprite/GrandmaHead.play("default")
+
 func get_snatcher_pos() -> Vector3:
 	return $RockSnatch.global_position
 

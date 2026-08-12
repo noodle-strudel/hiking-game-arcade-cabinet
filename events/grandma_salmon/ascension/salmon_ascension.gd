@@ -31,11 +31,20 @@ func ascension_sequence(go_heaven: bool) -> void:
 		await salmon_helper.on_movement_finished
 		rock_pos_ref = rock.global_position
 		await get_tree().create_timer(5.0).timeout
-		#$"../Purgatory/LevelSegments/HeavenStairsGrid/GateOpenCamera".make_current()
+		
+		# Fight for happiness! plays to motivate the player
+		$GrandmaQuoteSFX.play()
+		$GrandmaSalmonHelper.play_talk_anim()
+		
+		$"../Purgatory/LevelSegments/HeavenStairsGrid/GateOpenCamera".make_current()
 		salmon_helper.move_obj(rock_pos_ref, top_of_stairs, 1)
 		await salmon_helper.on_movement_finished
 	else:
-	# make helper go up while camera looks
+		# make helper go up while camera looks
+		
+		# Fight for happiness! plays to motivate the player
+		$GrandmaQuoteSFX.play()
+		$GrandmaSalmonHelper.play_talk_anim()
 		salmon_helper.move_obj(rock_pos_ref, rock_pos_ref + Vector3(0.0, 100.0, 0.0))
 		await salmon_helper.on_movement_finished
 	

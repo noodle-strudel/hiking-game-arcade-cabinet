@@ -88,7 +88,6 @@ texture = ExtResource("2_o2d6c")
 position = Vector2(170.09998, 154)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_veemj")
-autoplay = "default"
 
 [node name="GrandmaSalmon3D" type="Sprite3D" parent="." unique_id=230725349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.265737, 0)

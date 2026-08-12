@@ -16,6 +16,7 @@ func _event_function() -> void:
 	var main_scene = get_tree().current_scene
 	var ui = main_scene.get_node("UI")
 	var kickbar = ui.get_node("%Kickbar")
+	var rock = main_scene.get_node("Rock")
 	
 	# delay the ow sfx if it's a critical kick
 	if kickbar.value >= ui.crit_threshold:
@@ -25,8 +26,12 @@ func _event_function() -> void:
 	get_tree().paused = false
 	$OuchPlayer.play()
 	
-	# Timer to let the ouch play before being freed by event cleanup.
-	await get_tree().create_timer(1).timeout
+	# toggle the rock's angry sprite
+	rock.rock_anger_toggle(true)
+
+	# Timer to let the ouch and angry sprite play before being freed by event cleanup.
+	await get_tree().create_timer(3).timeout
+	rock.rock_anger_toggle(false)
 	
 	# Do not remove. Defined in event_base.gd
 	_event_cleanup()
