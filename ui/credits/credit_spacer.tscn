@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cjrtwf5emubha"]
+
+[ext_resource type="Theme" uid="uid://d0odew836h8os" path="res://ui/resources/credit_theme.tres" id="1_ot4aa"]
+
+[node name="CreditSpacer" type="Label" unique_id=557516189]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ot4aa")
+text = " "
+autowrap_trim_flags = 0
+justification_flags = 131

@@ -33,6 +33,7 @@ signal rock_followcam_activated
 @onready var salmon_ascender := preload("res://events/grandma_salmon/ascension/salmon_ascension.tscn")
 
 @onready var lintball := preload("res://events/lintball/lintball.tscn")
+@onready var largest_pants := preload("res://events/largest_pants/pants.tscn")
 
 # Cameras
 @onready var player_camera := $Player/CameraPivot/PlayerCamera
@@ -403,8 +404,12 @@ func _on_grid_position_changed(shift) -> void:
 	
 	_current_chunks[1][1].add_collision_to_multimeshes()
 	
-	# try to spawn the lint ball on the current grid
-	_lint_ball_spawn_check(_current_chunks[1][1])
+	# Try to spawn the lint ball or largest pants on the current grid
+	var rand = randi_range(1, 2)
+	if rand == 1:
+		_lint_ball_spawn_check(_current_chunks[1][1])
+	else:
+		_largest_pants_spawn_check(_current_chunks[1][1])
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -647,3 +652,15 @@ func _lint_ball_spawn_check(current_chunk: Node3D) -> void:
 	
 	# position the ball
 	ball.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
+	
+func _largest_pants_spawn_check(current_chunk: Node3D) -> void:
+	# get random position for the pants to spawn
+	var spawnpoint: Vector3 = current_chunk.get_spawn_position()
+	
+	# add the pants as a child of the current chunk
+	# (so it will be culled if left behind)
+	var pants := largest_pants.instantiate()
+	current_chunk.add_child(pants)
+	
+	# position the pants 
+	pants.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
