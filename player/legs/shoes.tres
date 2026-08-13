@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b03e6fgwu65nl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85rxn"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.18039216, 0.12156863, 0.09803922, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "shoes"
+next_pass = SubResource("StandardMaterial3D_85rxn")
+cull_mode = 2
+albedo_color = Color(0.4113892, 0.25070617, 0.15899862, 1)
+roughness = 0.5
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(0.18039216, 0.12156863, 0.09803922, 1)
