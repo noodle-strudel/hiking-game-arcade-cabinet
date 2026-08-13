@@ -14,7 +14,7 @@ const default_volume_db := -5.0
 const bgm_park_volume_db := -26.0
 const bgm_heaven_volume_db := -16.0
 const bgm_park_len := 3656802
-const bgm_heaven_len := 2972902
+const bgm_heaven_len := 2972903
 
 
 const fade_time := 2.5
