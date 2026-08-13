@@ -13,6 +13,10 @@ const mute_db := -60.0
 const default_volume_db := -5.0
 const bgm_park_volume_db := -26.0
 const bgm_heaven_volume_db := -16.0
+const bgm_park_len := 3656802
+const bgm_heaven_len := 2972902
+
+
 const fade_time := 2.5
 
 # plays the specified track passed in when called with AudioManager.play_track()
@@ -72,10 +76,10 @@ func _ready() -> void:
 	
 	# set both bgms to loop
 	background_music_park.loop_mode = AudioStreamWAV.LOOP_FORWARD
-	background_music_park.loop_end = 3656801 # length in samples - 1
+	background_music_park.loop_end = bgm_park_len - 1
 	
 	background_music_heaven.loop_mode = AudioStreamWAV.LOOP_FORWARD
-	background_music_heaven.loop_end = 2972902 # length in samples - 1
+	background_music_heaven.loop_end = bgm_heaven_len - 1
 	
 	# play idle music on game boot-up
 	play_track(idle_music)
