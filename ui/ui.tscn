@@ -43,6 +43,9 @@
 [ext_resource type="AudioStream" uid="uid://cw04hqbliiooo" path="res://sound/menu_sounds/rock_scroll.wav" id="31_hhu8p"]
 [ext_resource type="Texture2D" uid="uid://tjlkabvofom" path="res://ui/rock_select/digi-christosphere_sprite.png" id="32_6cxyx"]
 [ext_resource type="AudioStream" uid="uid://c7xsql0v75pvs" path="res://sound/end_poem_voice/owen_5.wav" id="32_limpb"]
+[ext_resource type="Script" uid="uid://ecsgnxlq5a5p" path="res://ui/credits/credit_column.gd" id="41_l1w2y"]
+[ext_resource type="PackedScene" uid="uid://ly314e0ye6e2" path="res://ui/credits/credit.tscn" id="41_ov2ix"]
+[ext_resource type="PackedScene" uid="uid://cjrtwf5emubha" path="res://ui/credits/credit_spacer.tscn" id="43_mpvo8"]
 
 [sub_resource type="Animation" id="Animation_bi8hs"]
 length = 0.001
@@ -220,6 +223,99 @@ stream_2/stream = ExtResource("30_qu0m5")
 stream_3/stream = ExtResource("31_a3hx3")
 stream_4/stream = ExtResource("32_limpb")
 stream_4/weight = 2.0
+
+[sub_resource type="Animation" id="Animation_ov2ix"]
+resource_name = "credits"
+length = 40.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("L1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("R1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("L2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("R2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("L3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("R3")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_credits"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1w2y"]
+_data = {
+&"credits": SubResource("Animation_ov2ix")
+}
 
 [sub_resource type="FontVariation" id="FontVariation_diyc5"]
 base_font = ExtResource("5_bo1jx")
@@ -792,7 +888,6 @@ text = "I can't handle the pressure."
 horizontal_alignment = 1
 
 [node name="ScoreMenu" type="Control" parent="." unique_id=1270718379]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -803,7 +898,6 @@ metadata/_edit_lock_ = true
 
 [node name="ScoreElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1054340771]
 unique_name_in_owner = true
-visible = false
 position = Vector2(939, 296)
 sprite_frames = SubResource("SpriteFrames_qu0m5")
 autoplay = "default"
@@ -820,6 +914,7 @@ theme_override_font_sizes/font_size = 110
 text = "SCORE:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="RoundScore" type="Label" parent="ScoreMenu/ScoreElem" unique_id=864323069]
 offset_left = -231.0
@@ -832,6 +927,7 @@ theme_override_font_sizes/font_size = 110
 text = "27"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="KicksRemainingElem" type="AnimatedSprite2D" parent="ScoreMenu" unique_id=1009214846]
 unique_name_in_owner = true
@@ -839,6 +935,7 @@ position = Vector2(936, 680)
 sprite_frames = SubResource("SpriteFrames_a3hx3")
 autoplay = "default"
 frame_progress = 0.5967781
+metadata/_edit_lock_ = true
 
 [node name="KicksRemainingLabel" type="Label" parent="ScoreMenu/KicksRemainingElem" unique_id=1254226915]
 offset_left = -504.0
@@ -904,19 +1001,177 @@ theme_override_fonts/italics_font = SubResource("FontVariation_bi8hs")
 bbcode_enabled = true
 text = "At the end of it all, thou failed to persuade the rock to assume its ultimate form. Undeterred by thine efforts, the rock sits, hearty, defiant in the face of mere mortals. The rock was born of this red earth, and stands in quiet company with the dirt, and the sand, and the clay. It rebukes thine fleeting ambitions. Who wouldst thou claim to be? What sovereignty wouldst thee hold over the mighty rock?
 
-Be not disheartened by its pretentions, traveller. ‘Tis a pityable rock. Thou'rt possessed of a power unthinkable to the likes of it. The rock is stalwart, stable, unmoved by time — but not unmoved by thee. Thou’rt mortal, and as such, thou’rt born of fire and flame, and hold command over the song of change itself. ‘Tis a terrible curse, to burn for but a moment in history... but the fire in thy veins is bright and strong. The will to forge, to interrupt, to [i]change[/i], is thine birthright. Cherish that power and foster it in thine heart. A stone can outlast a kingdom — but fire can speak a kingdom into being. Forget not thine voice: If thee can speak forth a story of change, it can be made so. 
+Be not disheartened by its pretentions, traveller. ‘Tis a pityable rock. Thou’rt possessed of a power unthinkable to the likes of it. The rock is stalwart, stable, unmoved by time — but not unmoved by thee. Thou’rt mortal, and as such, thou’rt born of fire and flame, and hold command over the song of change itself. ‘Tis a terrible curse, to burn for but a moment in history... but the fire in thy veins is bright and strong. The will to forge, to interrupt, to [i]change[/i], is thine birthright. Cherish that power and foster it in thine heart. A stone can outlast a kingdom — but fire can speak a kingdom into being. Forget not thine voice: If thee can speak forth a story of change, it can be made so. 
 
 What, it remains, spurred thine pilgrimage to this humble shrine? Didst thee seek truth? Didst thou knoweth already the power of which thou'rt possessed? Didst thou chance upon this place at the behest of fickle fate? Thou’rt urged to ponder the question. In the bright tapestry of thine history, this modest moment will remain. Forget not thine own sway over the story of self. ‘Tis more malleable than one wouldst imagine. 
 
 To the rock, thine affairs are a meagre sort. Be troubled not by its stoic facade, pilgrim. Despite the firmness of its body and the steadiness of its stance, it remains forever changed by thine hand. Or perhaps, instead, thine foot. However trifling be thine contribution, it stands in turn with each pilgrim’s efforts afore thee, and with each humble kick yet to come. 
 
-[outline_size=10]Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth."
+[outline_size=10]Take care, traveller. Wield thine power with kindness, and forget not thy duties to fire and earth.
+"
 scroll_active = false
 autowrap_mode = 2
 
 [node name="EndPoemVoice" type="AudioStreamPlayer" parent="ScoreMenu" unique_id=1264255973]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ug63i")
+
+[node name="Credits" type="Control" parent="ScoreMenu" unique_id=490365036]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="L1" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=61854818]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L1" unique_id=595569440]
+layout_mode = 2
+
+[node name="Lorenzo" parent="ScoreMenu/Credits/L1/VBoxContainer" unique_id=1636544482 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Sponsored By
+Lorenzo D. Moon"
+
+[node name="R1" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=641730637]
+layout_mode = 0
+offset_left = 1600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R1" unique_id=1912893592]
+layout_mode = 2
+
+[node name="Shirtzenpantz" parent="ScoreMenu/Credits/R1/VBoxContainer" unique_id=728336056 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Game Concept by
+Ethan and Owen
+of Shirtzenpantz"
+
+[node name="L2" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1804276286]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L2" unique_id=1695098364]
+layout_mode = 2
+
+[node name="PSU" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=1904538339 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "The PSU Dev Team Is:"
+
+[node name="CreditSpacer" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=557516189 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
+
+[node name="Yollaine" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=843359474 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Yollaine Brooks
+Team Lead,
+3D Artist,
+Assistant Programmer,
+QA Tester By Proxy"
+
+[node name="CreditSpacer2" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=386395975 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
+
+[node name="Melody" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=2043287986 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Melody Warfel
+Systems Programmer,
+Artist, Writer"
+
+[node name="CreditSpacer3" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=2111540012 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
+
+[node name="Alice" parent="ScoreMenu/Credits/L2/VBoxContainer" unique_id=1520265014 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Alice Loeb
+Level Designer,
+5th Strongest
+Programmer"
+
+[node name="R2" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=213771278]
+layout_mode = 0
+offset_left = 1600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R2" unique_id=1152388443]
+layout_mode = 2
+
+[node name="Tristan" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1639779340 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Tristan Young
+Audio Engineer,
+SFX Designer,
+Soundtrack Artist,
+Graphic Artist,
+Programmer"
+
+[node name="CreditSpacer4" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=207674839 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
+
+[node name="Michael" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1813871105 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Michael Karam
+Programmer,
+Earl of Database,
+Voice of The Rock"
+
+[node name="CreditSpacer5" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1582212860 instance=ExtResource("43_mpvo8")]
+layout_mode = 2
+
+[node name="Aiden" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1634525729 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Aiden Russell
+ Programmer,
+Software Engineer,
+QA Tester,
+Absolute Baller,
+ Black Belt 😎
+"
+
+[node name="L3" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1417027396]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/L3" unique_id=35579384]
+layout_mode = 2
+
+[node name="Mike" parent="ScoreMenu/Credits/L3/VBoxContainer" unique_id=893369472 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Cabinet Artwork by
+Mike Bennett"
+
+[node name="R3" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1773228013]
+layout_mode = 0
+offset_left = 1600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("41_l1w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreMenu/Credits/R3" unique_id=290492884]
+layout_mode = 2
+
+[node name="SpecialThanks" parent="ScoreMenu/Credits/R3/VBoxContainer" unique_id=1600141461 instance=ExtResource("41_ov2ix")]
+layout_mode = 2
+text = "Special Thanks
+
+Monty Ozark
+
+Bea Warfel "
+
+[node name="CreditsAnimator" type="AnimationPlayer" parent="ScoreMenu/Credits" unique_id=1789218436]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_l1w2y")
 
 [node name="OOBCenterContainer" type="CenterContainer" parent="." unique_id=846102454]
 visible = false

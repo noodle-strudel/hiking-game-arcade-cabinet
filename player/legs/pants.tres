@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://3yq8s3n8q38c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuk81"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.10980392, 0.13333334, 0.20392157, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "pants"
+next_pass = SubResource("StandardMaterial3D_tuk81")
+cull_mode = 2
+albedo_color = Color(0.19480005, 0.22570129, 0.34176233, 1)
+roughness = 0.5
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(0.10980392, 0.13333334, 0.20392157, 1)
