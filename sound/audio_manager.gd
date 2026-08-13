@@ -2,15 +2,22 @@ extends Node
 
 @export var idle_music: AudioStreamWAV
 @export var game_over_music: AudioStreamWAV
-@export var background_music: AudioStreamMP3
+@export var background_music_park: AudioStreamWAV
+@export var background_music_heaven: AudioStreamWAV
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var music_bus_idx: int = AudioServer.get_bus_index("Music")
 
 var bgm_position := 0.0
 
-const mute_db := -30.0
+const mute_db := -60.0
 const default_volume_db := -5.0
-const fade_time := 3.5
+const bgm_park_volume_db := -26.0
+const bgm_heaven_volume_db := -16.0
+const bgm_park_len := 3656802
+const bgm_heaven_len := 2972903
+
+
+const fade_time := 2.5
 
 # plays the specified track passed in when called with AudioManager.play_track()
 func play_track(track) -> void:
@@ -26,7 +33,8 @@ func play_track(track) -> void:
 	
 	# since the background music pauses and resumes it has to play from the
 	# position in the track from when it last played starts at 0 by default
-	if music_player.stream == background_music:
+	if music_player.stream == background_music_park or\
+			music_player.stream == background_music_heaven:
 		music_player.play(bgm_position)
 	else:
 		music_player.play()
@@ -47,7 +55,14 @@ func fade_in_music() -> void:
 	# the start and end variables
 	set_music_volume(mute_db)
 	var tween = create_tween()
-	tween.tween_method(set_music_volume, mute_db, default_volume_db, fade_time)
+	match music_player.stream:
+		background_music_park:
+			tween.tween_method(set_music_volume, mute_db, bgm_park_volume_db, fade_time)
+		background_music_heaven:
+			tween.tween_method(set_music_volume, mute_db, bgm_heaven_volume_db, fade_time)
+		_:
+			tween.tween_method(set_music_volume, mute_db, default_volume_db, fade_time)
+
 
 func set_music_volume(volume_db: float) -> void:
 	# simple function to allow seting the volume on the music bus
@@ -59,13 +74,21 @@ func _get_music_bus_db() -> float:
 func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_state_change)
 	
+	# set both bgms to loop
+	background_music_park.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	background_music_park.loop_end = bgm_park_len - 1
+	
+	background_music_heaven.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	background_music_heaven.loop_end = bgm_heaven_len - 1
+	
 	# play idle music on game boot-up
 	play_track(idle_music)
 
 func _on_state_change(state : GameManager.gamestates, cause:String):
 	# if the background music is playing this stores how far into the
 	# song it is before handling state switch.
-	if music_player.stream == background_music:
+	if music_player.stream == background_music_park or\
+			music_player.stream == background_music_heaven:
 		bgm_position = music_player.get_playback_position()
 	match state:
 		# in idle the game fades out whatever is playing before playing idle music
@@ -82,11 +105,19 @@ func _on_state_change(state : GameManager.gamestates, cause:String):
 		GameManager.gamestates.CONTRACT, \
 		GameManager.gamestates.KICKING, \
 		GameManager.gamestates.ROCK_OOB:
-			if music_player.stream != background_music:
+			if music_player.stream != background_music_park and\
+					music_player.stream != background_music_heaven:
 				%MusicTimeOut.stop()
 				%MusicTimeOut.timeout.emit()
 				await get_tree().create_timer(fade_time).timeout
-			play_track(background_music)
+			
+			# check if heaven environment is currently being used
+			if get_tree().current_scene.get_node(
+				"WorldEnvironment"
+			).get_environment() == load("res://levels/heaven_environment.tres"):
+				play_track(background_music_heaven)
+			else:
+				play_track(background_music_park)
 		
 		# in any other cases this just makes sure to stop the music
 		# that is currently playing
