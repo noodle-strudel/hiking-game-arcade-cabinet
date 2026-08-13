@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bc1ejppxhquvx" path="res://rock/rock_eyes/rock_eyes.tscn" id="11_5ohwm"]
 [ext_resource type="AudioStream" uid="uid://cetss05fwsbe3" path="res://sound/wink_ding.wav" id="12_ekxie"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="13_5sx86"]
+[ext_resource type="Texture2D" uid="uid://dsvnhln6l280g" path="res://rock/angry_sprite/angry_1.png" id="14_p23la"]
+[ext_resource type="Texture2D" uid="uid://cjdq3omk0bw0x" path="res://rock/angry_sprite/angry_2.png" id="15_niir3"]
+[ext_resource type="Texture2D" uid="uid://du5n5ftnbr84c" path="res://rock/angry_sprite/angry_3.png" id="16_t81lj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5sx86"]
 friction = 2.0
@@ -475,6 +478,23 @@ _data = {
 &"show_halo": SubResource("Animation_5sx86")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtwrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p23la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_niir3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t81lj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Rock" type="RigidBody3D" unique_id=659760540]
 process_mode = 1
 collision_layer = 2
@@ -546,6 +566,7 @@ stream = SubResource("AudioStreamRandomizer_4035w")
 
 [node name="RockEyes" parent="." unique_id=1613886241 instance=ExtResource("11_5ohwm")]
 process_mode = 3
+visible = false
 
 [node name="WinkSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=112929771]
 process_mode = 3
@@ -648,3 +669,15 @@ libraries/ = SubResource("AnimationLibrary_8bl0y")
 [node name="RockGlow" type="OmniLight3D" parent="PerfectedRockForm" unique_id=1906345829]
 transform = Transform3D(1, 0, 0, 0, 0.98480785, 0.1736482, 0, -0.1736482, 0.98480785, 0, 0, 0)
 light_energy = 0.0
+
+[node name="AngrySpritePivot" type="Node3D" parent="." unique_id=822167523]
+top_level = true
+visible = false
+
+[node name="AngrySprite3D" type="AnimatedSprite3D" parent="AngrySpritePivot" unique_id=1858403840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34552538, 0.07178892, -0.170309)
+centered = false
+pixel_size = 0.004
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mtwrf")
+autoplay = "default"

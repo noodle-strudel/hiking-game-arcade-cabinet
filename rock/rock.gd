@@ -25,6 +25,9 @@ signal descending
 var camera_orbiting: bool = true
 var camera_follow_rock: bool = true
 
+# determines if the rock is currently angry (part of ouch event)
+var is_angry: bool = false
+
 # vector arrays for current, starting, and spherical ending rock shapes, respectively
 var current_rock_vertices: PackedVector3Array
 var starting_rock_vertices: PackedVector3Array
@@ -49,6 +52,15 @@ var second_rock_pos: Vector3
 # direction rock camera pivot was pointing to on previous frame before limiting pitch
 # (used to calculate and becomes new pointing direction on each frame)
 var last_pre_rock_camera_heading: Vector3
+
+"""Rock's Angry Emote Control"""
+func rock_anger_toggle(switch: bool) -> void:
+	if switch == true:
+		$AngrySpritePivot.show()
+	else:
+		$AngrySpritePivot.hide()
+	is_angry = switch
+
 
 """Rock's Eyes's Control Functions"""
 
@@ -120,7 +132,8 @@ func _rock_ascension():
 	tween.tween_property(rock_material, "emission_energy_multiplier", 1.0, 2)
 	await $PerfectedRockForm/AnimationPlayer.animation_finished
 	
-	print("gain realistic eyes, mouth")
+	$RockEyes/AnimationPlayer.play("perfected")
+	$RockEyes.show()
 	await get_tree().create_timer(1).timeout
 	camera_orbiting = true
 	
@@ -249,6 +262,10 @@ func _physics_process(_delta: float) -> void:
 		$RockCameraPivot.position = self.position
 		$RockEyes.position = self.position
 		$PerfectedRockForm.position = self.position
+		$AngrySpritePivot.position = self.position
+		
+		if is_angry:
+			$AngrySpritePivot.look_at(get_viewport().get_camera_3d().global_position)
 
 		# if rock camera is not orbiting and is moving at or faster than threshold speed,
 		# trail rock camera behind rock, with smoothing

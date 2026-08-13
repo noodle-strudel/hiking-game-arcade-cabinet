@@ -1,13 +1,5 @@
 [gd_scene format=3 uid="uid://btk8hx8iv5cf6"]
 
-[ext_resource type="PackedScene" uid="uid://cre3m4evrpw6x" path="res://level_grids/park/glb/scarf.glb" id="1_5smwh"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_0k10b"]
-top_radius = 2.717
-height = 100.0
+[ext_resource type="PackedScene" uid="uid://eevl1aoo1bg5" path="res://level_grids/park/glb/scarf.glb" id="1_5smwh"]
 
 [node name="Scarf" unique_id=1485541311 instance=ExtResource("1_5smwh")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1986904275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 97.884, 0)
-mesh = SubResource("CylinderMesh_0k10b")

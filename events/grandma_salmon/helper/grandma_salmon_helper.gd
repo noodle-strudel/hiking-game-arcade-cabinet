@@ -22,10 +22,19 @@ signal on_movement_finished
 # multiplier to the y axis
 const Y_MULTIPLIER = 2
 
+# determines if grandma salmon is moving or not
 var _moving: bool = false
+
+# interpolation step from 0.0 to 1.0 (start to finish)
 var _t: float = 0.0
+
+# starting position
 var _from: Vector3
+
+# ending position
 var _to: Vector3
+
+# type of y-movement
 var _step: int
 
 # wrapper function of sorts to enable salmon grandma movement
@@ -43,6 +52,9 @@ func release_object() -> void:
 	if $RockSnatch.remote_path:
 		$RockSnatch.set_remote_node("")
 
+func play_talk_anim() -> void:
+	$SubViewport/GrandmaSalmonSprite/GrandmaHead.play("default")
+
 func get_snatcher_pos() -> Vector3:
 	return $RockSnatch.global_position
 
@@ -54,6 +66,11 @@ func _physics_process(delta: float) -> void:
 	if _moving:
 		_t += delta * speed
 		global_position = _from.lerp(_to, _t)
+		
+		# angle grandma_salmon to face the camera
+		look_at(get_viewport().get_camera_3d().global_position)
+		rotation.z = 0.0
+		rotation.x = 0.0
 		
 		# sample the right curve at the t point to get the height
 		if _step == 1:
