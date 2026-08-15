@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0wsiphcbx5ot" path="res://levels/main/main_directional_light_3d.tscn" id="3_qy63d"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://ui/ui.tscn" id="4_m1504"]
 [ext_resource type="Script" uid="uid://cnkdbpt5vosf1" path="res://ui/ui_camera.gd" id="7_q42nm"]
+[ext_resource type="Script" uid="uid://ctofxh4c4jkmr" path="res://levels/main/world_generation.gd" id="8_oclhf"]
 
 [sub_resource type="Animation" id="Animation_ifaiv"]
 length = 0.001
@@ -81,17 +82,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68.46544, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 78.612144, -3.4466362)
 contact_monitor = true
 
-[node name="TestCameraPivot" type="Node3D" parent="." unique_id=1217787917]
-editor_description = "NOTE FROM MELODY: I think this can be removed. "
-transform = Transform3D(0.81455106, -0.58009183, 0, 0.58009183, 0.81455106, 0, 0, 0, 1, 0, 66.838974, 0)
-
-[node name="TestCamera" type="Camera3D" parent="TestCameraPivot" unique_id=701578477]
-transform = Transform3D(-4.3711392e-08, -2.9802322e-08, 1.0000002, 0, 1.0000002, 2.9802322e-08, -1, -1.776357e-15, -4.3711392e-08, 16.367886, -0.59585285, -9.536743e-07)
-
-[node name="Marker3D" type="Marker3D" parent="." unique_id=761771399]
-editor_description = "NOTE FROM MELODY: This can be removed. "
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -556)
-
 [node name="OOBTimer" type="Timer" parent="." unique_id=1801968399]
 
 [node name="IdleIdleTimer" type="Timer" parent="." unique_id=684105652]
@@ -121,5 +111,10 @@ script = ExtResource("7_q42nm")
 [node name="PlayerWalkCamera" type="Camera3D" parent="." unique_id=1914187723]
 fov = 100.0
 
+[node name="WorldGeneration" type="Node" parent="." unique_id=934495271]
+script = ExtResource("8_oclhf")
+
 [connection signal="timeout" from="IdleIdleTimer" to="." method="_on_idle_idle_timer_timeout"]
 [connection signal="timeout" from="CameraSwitchTimer" to="." method="_on_camera_switch_timer_timeout"]
+[connection signal="on_load_heaven" from="WorldGeneration" to="." method="_on_world_generation_on_load_heaven"]
+[connection signal="on_load_purgatory" from="WorldGeneration" to="." method="_on_world_generation_on_load_purgatory"]

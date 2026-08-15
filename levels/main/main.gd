@@ -1,39 +1,15 @@
 extends Node
 
-# signal emitted from _process when the rock moves to a new "chunk".
-# shift is a vector2 with the amount the rock has moved
-# e.g., 
-## Emitted when the rock moves to a new chunk. 
-## ex: if the rock has moved to the next chunk in the -z direction,
-## shift will be (0, -1)
-signal grid_position_changed(shift: Vector2i)
 ## used by ui script to hide kicking ui after camera switch
 signal rock_followcam_activated
 
-## List of scenes that can be instantiated as chunks
-@onready var _level_segments = [
-	preload("res://level_grids/park/park_grid.tscn"),
-	preload("res://level_grids/city/city_grid.tscn"),
-]
-
-## List of scenes that can be instantiated after 8000 kicks remaining
-@onready var _heaven_level_segments = [
-	preload("res://level_grids/heaven/heaven_grid.tscn"),
-	
-]
-
 # fallback option to keep the chunk code from breaking in extreme circumstances. 
-@onready var _none_level_segment = preload("res://level_grids/none/none_level_grid.tscn")
-@onready var _purgatory = preload("res://levels/purgatory/purgatory.tscn")
 @onready var _heaven_sun = preload("res://levels/purgatory/heaven_directional_light_3d.tscn")
 @onready var grandma_salmon_helper_scene: PackedScene = preload(
 	"res://events/grandma_salmon/helper/grandma_salmon_helper.tscn"
 )
 
 @onready var salmon_ascender := preload("res://events/grandma_salmon/ascension/salmon_ascension.tscn")
-
-@onready var lintball := preload("res://events/lintball/lintball.tscn")
-@onready var largest_pants := preload("res://events/largest_pants/pants.tscn")
 
 # Cameras
 @onready var player_camera := $Player/CameraPivot/PlayerCamera
@@ -44,14 +20,6 @@ signal rock_followcam_activated
 
 # the tween, used for tweening
 @onready var tween: Tween = get_tree().create_tween()
-
-# Width and breadth of the level segments
-const _grid_x_dimension := 2 * 250.0
-const _grid_z_dimension := 2 * 250.0 
-
-## Current chunk displacement since game was instantiated. Ordered x, z. 
-var grid_position := [0, 0] # x,z
-var _last_grid_position := grid_position.duplicate()
 
 # variable to track what the panning camera should be doing
 var camera_pan_state = 0
@@ -66,26 +34,8 @@ var follow_rock = false
 # flag that is true when the player is moving
 var player_moving = false
 
-
-# holds the reference to purgatory level, when instantiated
-var purgatory = null
-
-## The 2d array of currently loaded chunks, centered on the rock.
-## Stores references to instantiated chunks. 
-## Ordered as z, x. [1,1] is the current center of the grid.
-var _current_chunks = [
-	[null, null, null], # +x->
-	[null, null, null],
-	[null, null, null]
-]	# +z
-	# v
-
 func get_spawn() -> Vector3:
-	if purgatory:
-		return purgatory.get_spawn_position()
-	var grid: Grid = _current_chunks[1][1]
-	var spawn_position: Vector3 = grid.get_spawn_position()
-	return spawn_position
+	return $WorldGeneration.get_spawn()
 
 func _regular_idle_actions() -> void:
 	rock_camera.make_current()
@@ -111,7 +61,9 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 					var ascender = salmon_ascender.instantiate()
 					self.add_child(ascender)
 					await ascender.ascension_complete
-					_load_heaven()
+					_load_heaven_environment()
+					_load_heaven_sun()
+					$WorldGeneration._load_heaven()
 					$UI.show()
 					
 				elif GameManager.kicks_remaining == GameManager.purgatory_kick_count:
@@ -120,7 +72,9 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 					var ascender = salmon_ascender.instantiate()
 					self.add_child(ascender)
 					await ascender.ascension_complete
-					_load_purgatory()
+					_load_heaven_environment()
+					_load_heaven_sun()
+					$WorldGeneration._load_purgatory()
 					$UI.show()
 					$UI/KickingMenu/PurgKicksRemainingContainer.show()
 					
@@ -242,181 +196,11 @@ func _load_heaven_sun() -> void:
 		var sun = _heaven_sun.instantiate()
 		add_child(sun)
 
-# replaces all chunks in _current_chunks with the none chunk. 
-# do not use if not in purgatory/heaven state.
-func _empty_level_chunks() -> void:
-	for chunk_z in range(3):
-		for chunk_x in range(3):
-			_current_chunks[chunk_z][chunk_x].queue_free()
-			_current_chunks[chunk_z][chunk_x] = _none_level_segment.instantiate()
-
-# switches to purgatory.
-func _load_purgatory() -> void:
-	# switch environment
-	_load_heaven_environment()
-	
-	_load_heaven_sun()
-	
-	# unload level chunks/replace with none
-	_empty_level_chunks()
-	
-	# instantiate purgatory
-	purgatory = _purgatory.instantiate()
-	self.add_child(purgatory)
-	
-	# teleport player and rock
-	var init_spawn = purgatory.get_spawn_position()
-	$Player.position = init_spawn + Vector3(0.0, 0.0, 1.0)
-	$Rock.position = init_spawn
-
-func _load_heaven() -> void:
-	# spawn in the initial heaven grid after being taken up by grandma salmon
-	# frees purgatory first _empty_level_chunks does not work for purgatory
-	if purgatory:
-		purgatory.queue_free()
-	_load_heaven_environment()
-	_load_heaven_sun()
-	for z in range(-1, 2, 1):
-		for x in range(-1, 2, 1):
-			# instantiate
-			_current_chunks[z + 1][x + 1] = _instantiate_chunk()
-			# position
-			_current_chunks[z + 1][x + 1].position =\
-					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
-	_current_chunks[1][1].add_collision_to_multimeshes()
-	
-	# Spawn rock and player at a random location in heaven. 
-	var spawn_position = get_spawn()
-	rock.global_position = spawn_position
-	$Player.global_position = spawn_position + Vector3(0.0, 0.0, 1.0)
-
-# Chooses a new chunk based on current game information. (e.g., kicks_remaining)
-func _select_level_segment() -> PackedScene:
-	var selected_segment = null
-	
-	# once kicks remaining goes low enough, pick different segments
-	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
-		selected_segment = _heaven_level_segments.pick_random()
-	elif GameManager.kicks_remaining < GameManager.purgatory_kick_count:
-		# purgatory functionality has changed. Now exists as static 3x3 grid with bounds
-		selected_segment = _none_level_segment
-	else:
-		selected_segment = _level_segments.pick_random()
-	
-	# fallback
-	if selected_segment == null:
-		selected_segment = _none_level_segment
-	
-	return selected_segment
-	
-
-## Chooses a new chunk based on current information, adds it to the tree,
-## and returns the reference. 
-func _instantiate_chunk() -> Node3D:
-	var chunk = _select_level_segment().instantiate()
-	self.add_child(chunk)
-	return chunk
-
-# CHUNK LOADING AND UNLOADING
-# Methodology & Process:
-# All loading and unloading is done using shift to calculate chunk changes. 
-# shift is used to calculate which chunks to unload, which direction to copy from,
-# and what ORDER it needs to iterate over the chunks to avoid copy problems.
-# This way, all loading and unloading code is written once, and works given any
-# direction change. 
-# Steps:
-# 1. Catch unloading side
-# 2. Unload those chunks
-# 3. Copy & move the 9 chunks in the shift direction into their new position in _current_chunks
-#   a. If any are out of range of _current_chunks, instantiate a new chunk
-## Event handler for when the rock moves to a new chunk. 
-## Handles all loading, unloading, and internal organization of chunks. 
-func _on_grid_position_changed(shift) -> void:
-	# reminder: shift is ordered x, z
-	# reminder: _current_chunks subscript order is z, x
-	
-	# used to catch unloading chunks
-	var unloaded_chunks := []
-	
-	# catch unloaded chunks
-	for chunk_z in range(3):
-		# unload indicators: Transformed to go (1, 0, -1) for comparison against shift.
-		# a nonzero z unload indicator means that that chunk will unload if
-		# the shift in the z direction matches that indicator. 
-		# for example, _current_chunks[2][1] has an unload indicator of z=-1, x=0
-		# thus, that chunk (in the positive z direction from the player)
-		# will unload if the rock moves in the negative z direction.
-		var unload_ind_z = -chunk_z + 1
-		for chunk_x in range(3): # 0, 1, 2
-			var unload_ind_x = -chunk_x + 1
-			if (
-				(shift[0] != 0 and shift[0] == unload_ind_x) or
-				(shift[1] != 0 and shift[1] == unload_ind_z)
-			):
-				unloaded_chunks.append(_current_chunks[chunk_z][chunk_x])
-	
-	# unload old chunks
-	for chunk in unloaded_chunks:
-		chunk.queue_free()
-	
-	# determine step ranges (directionality matters)
-	# directionality matters, because copy order matters (to not overwrite).
-	var z_range := range(0, 3, 1) # default case (no shift in z direction)
-	if shift[1]:
-		# defines chunk copy-order to be reversed if needed
-		# in short, chooses (0,1,2) or (2,1,0)
-		z_range = range((1 - shift[1]),(1 + (2 * shift[1])),(shift[1]))
-	var x_range := range(0, 3, 1) # default case (no shift in x direction)
-	if shift[0]:
-		# defines chunk copy-order to be reversed if needed
-		x_range = range((1 - shift[0]),(1 + (2 * shift[0])),(shift[0]))
-		
-	# iterates over _current_chunks, and pulls the new chunk over from the
-	# given shift information (diagonals work)
-	for chunk_z in z_range:
-		for chunk_x in x_range:
-			
-			# calculate coordinates of the target chunk (the one that needs to be copied)
-			var target_chunk_coord_x = chunk_x + shift[0]
-			var target_chunk_coord_z = chunk_z + shift[1]
-			
-			# bounds check
-			var in_bounds = true
-			if target_chunk_coord_x < 0 or target_chunk_coord_x >= 3:
-				in_bounds = false
-			if target_chunk_coord_z < 0 or target_chunk_coord_z >= 3:
-				in_bounds = false
-			
-			if in_bounds:
-				# if in bounds, copy existing chunk over
-				_current_chunks[chunk_z][chunk_x] =\
-						_current_chunks[target_chunk_coord_z][target_chunk_coord_x]
-			else:
-				# otherwise, instantiate a new chunk
-				var new_chunk = _instantiate_chunk()
-				_current_chunks[chunk_z][chunk_x] = new_chunk
-				
-				# position the instantiated chunk where it is supposed to appear
-				new_chunk.position = Vector3(
-						(grid_position[0] + chunk_x - 1) * _grid_x_dimension,
-						0.0,
-						(grid_position[1] + chunk_z - 1) * _grid_z_dimension)
-	
-	_current_chunks[1][1].add_collision_to_multimeshes()
-	
-	# Try to spawn the lint ball or largest pants on the current grid
-	var rand = randi_range(1, 2)
-	if rand == 1:
-		_lint_ball_spawn_check(_current_chunks[1][1])
-	else:
-		_largest_pants_spawn_check(_current_chunks[1][1])
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	# connect signals
 	GameManager.gamestate_update.connect(_on_change_state)
-	grid_position_changed.connect(_on_grid_position_changed)
 	
 	if GameManager.kicks_remaining <= 0:
 		# kinda broken right now when it does this...
@@ -424,17 +208,7 @@ func _ready() -> void:
 	else:
 		GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
 	
-	# load the first grid
-	for z in range(-1, 2, 1):
-		for x in range(-1, 2, 1):
-			# instantiate
-			_current_chunks[z + 1][x + 1] = _instantiate_chunk()
-			# position
-			_current_chunks[z + 1][x + 1].position =\
-					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
-	_current_chunks[1][1].add_collision_to_multimeshes()
-	
-	# Spawn rock and player at a random location in park. 
+	# Spawn rock and player at a random location in the current grid.
 	var spawn_position = get_spawn()
 	var random_y = deg_to_rad(randf_range(0.0, 360.0))
 	
@@ -446,12 +220,6 @@ func _ready() -> void:
 	if GameManager.DEBUG:
 		print("Spawn direction degrees: ", rad_to_deg($Player.current_y_rotation))
 	$Player.global_position = spawn_position + Vector3(0, 0, 3)
-	
-	# load purgatory if under kick threshold
-	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
-		_load_heaven()
-	elif GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
-		_load_purgatory()
 	
 	# Console commands that allow us to do many things and adding more is very easy
 	Console.pause_enabled = true
@@ -492,23 +260,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	# handle grid position
-	_last_grid_position = grid_position.duplicate()
-	grid_position[0] = floor( ($Rock.position.x/(_grid_x_dimension)) + (0.5) )
-	grid_position[1] = floor( ($Rock.position.z/(_grid_z_dimension)) + (0.5) )
-	
-	#print("x: ",grid_position[0],", y: ", grid_position[1])
-	# if the coordinate has changed
-	if (
-		_last_grid_position[0] != grid_position[0] or
-		_last_grid_position[1] != grid_position[1]
-	):
-		_current_chunks[1][1].remove_collisions_from_multimeshes()
-		
-		var shift = Vector2i(grid_position[0] - _last_grid_position[0], grid_position[1]\
-				- _last_grid_position[1])
-		grid_position_changed.emit(shift)
-	
 	if player_moving:
 		_camera_follow_player()
 	
@@ -611,13 +362,13 @@ func _on_stairs_timer_timeout() -> void:
 		GameManager.kicks_remaining > GameManager.heaven_kick_count
 	):
 		# double check that purgatory is loaded
-		if not purgatory:
+		if not $WorldGeneration.purgatory:
 			print("ERROR: tried to go to purgatory stairs camera but no purgatory was found.")
 			return
 		
 		# kick off animation
-		purgatory.stairs_camera_dolly()
-		await purgatory.stairs_camera_finished
+		$WorldGeneration.purgatory.stairs_camera_dolly()
+		await $WorldGeneration.purgatory.stairs_camera_finished
 		
 		# go back to rock camera
 		_regular_idle_actions()
@@ -641,26 +392,20 @@ func _on_idle_idle_timer_timeout() -> void:
 	$CameraSwitchTimer.start()
 	panning_camera_active = true
 
-func _lint_ball_spawn_check(current_chunk: Node3D) -> void:
-	# get random position for the ball to spawn
-	var spawnpoint: Vector3 = current_chunk.get_spawn_position()
-	
-	# add the ball as a child of the current chunk
-	# (so it will be culled if left behind)
-	var ball := lintball.instantiate()
-	current_chunk.add_child(ball)
-	
-	# position the ball
-	ball.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
-	
-func _largest_pants_spawn_check(current_chunk: Node3D) -> void:
-	# get random position for the pants to spawn
-	var spawnpoint: Vector3 = current_chunk.get_spawn_position()
-	
-	# add the pants as a child of the current chunk
-	# (so it will be culled if left behind)
-	var pants := largest_pants.instantiate()
-	current_chunk.add_child(pants)
-	
-	# position the pants 
-	pants.position = spawnpoint + Vector3(0.0, 10.0, 0.0)
+
+func _on_world_generation_on_load_heaven() -> void:
+	_load_heaven_environment()
+	_load_heaven_sun()
+	# Spawn rock and player at a random location in heaven. 
+	var spawn_position = get_spawn()
+	rock.global_position = spawn_position
+	$Player.global_position = spawn_position + Vector3(0.0, 0.0, 1.0)
+
+
+func _on_world_generation_on_load_purgatory() -> void:
+	_load_heaven_environment()
+	_load_heaven_sun()
+	# teleport player and rock
+	var init_spawn = $WorldGeneration.purgatory.get_spawn_position()
+	$Player.position = init_spawn + Vector3(0.0, 0.0, 1.0)
+	$Rock.position = init_spawn
