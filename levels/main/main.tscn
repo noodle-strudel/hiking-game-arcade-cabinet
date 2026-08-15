@@ -116,5 +116,6 @@ script = ExtResource("8_oclhf")
 
 [connection signal="timeout" from="IdleIdleTimer" to="." method="_on_idle_idle_timer_timeout"]
 [connection signal="timeout" from="CameraSwitchTimer" to="." method="_on_camera_switch_timer_timeout"]
+[connection signal="grid_position_changed" from="WorldGeneration" to="WorldGeneration" method="_on_grid_position_changed"]
 [connection signal="on_load_heaven" from="WorldGeneration" to="." method="_on_world_generation_on_load_heaven"]
 [connection signal="on_load_purgatory" from="WorldGeneration" to="." method="_on_world_generation_on_load_purgatory"]
