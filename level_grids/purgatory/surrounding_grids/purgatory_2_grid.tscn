@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://djwghxa35n41r"]
 
 [ext_resource type="PackedScene" uid="uid://bdseq5q6b8op7" path="res://level_grids/purgatory/surrounding_grids/rock_kicking_purgatory_ground_2.tscn" id="1_myiqe"]
+[ext_resource type="Script" uid="uid://cn6jkewu4jxd7" path="res://level_grids/purgatory/surrounding_grids/purgatory_2_grid.gd" id="1_o6xhg"]
 
 [node name="Purgatory2Grid" type="Node3D" unique_id=1844927662]
+script = ExtResource("1_o6xhg")
 
 [node name="rock_kicking_purgatory_ground_2" parent="." unique_id=182392870 instance=ExtResource("1_myiqe")]
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1249081078]
+
+[node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=431470369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.43146, 2.9585934, 0)
