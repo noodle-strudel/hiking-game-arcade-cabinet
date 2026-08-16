@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
 [ext_resource type="AudioStream" uid="uid://5j63st1210h8" path="res://sound/sploosh/sploosh_irl.wav" id="12_d31dc"]
 [ext_resource type="AudioStream" uid="uid://cdvs6fsd3puel" path="res://sound/sploosh/sploosh_voice.wav" id="13_pelwe"]
+[ext_resource type="PackedScene" uid="uid://53j3fku35kui" path="res://level_grids/park/shed/shed.tscn" id="14_pelwe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -450,6 +451,15 @@ debug_fill = false
 [node name="LakeSplooshSFX" type="AudioStreamPlayer" parent="." unique_id=559710098]
 stream = SubResource("AudioStreamRandomizer_hmyo0")
 bus = &"SFX"
+
+[node name="Shed" parent="." unique_id=1544518163 instance=ExtResource("14_pelwe")]
+transform = Transform3D(1.4654934, 0, -0.6167893, 0, 1.59, 0, 0.6167893, 0, 1.4654934, 166.60408, 4.1108055, -54.405556)
+
+[node name="Shed2" parent="." unique_id=1756312671 instance=ExtResource("14_pelwe")]
+transform = Transform3D(-1.5211883, 0, -0.46269426, 0, 1.59, 0, 0.46269426, 0, -1.5211883, 98.526, 2, 202.739)
+
+[node name="Shed3" parent="." unique_id=706463172 instance=ExtResource("14_pelwe")]
+transform = Transform3D(-0.8396985, 0, 1.3501875, 0, 1.59, 0, -1.3501875, 0, -0.8396985, -111.784, 7.667, 58.487)
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]
