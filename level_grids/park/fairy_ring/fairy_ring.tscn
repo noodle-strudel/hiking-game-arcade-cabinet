@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://tpt2wxy4kuh2"]
+
+[ext_resource type="PackedScene" uid="uid://bl8rjfy6bsjuy" path="res://level_grids/park/glb/mushroom/fairy_ring1.glb" id="1_xaeh6"]
+
+[node name="FairyRing" unique_id=1524153903 instance=ExtResource("1_xaeh6")]
