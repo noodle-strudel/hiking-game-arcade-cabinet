@@ -5,8 +5,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dxshtqlhhr2gd" path="res://level_grids/park/rock_kicking_ground_just_lake_border_mesh.tres" id="3_ur3tk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v3cmg"]
-radius = 46.15088
-height = 126.22461
+radius = 50.240234
+height = 128.82861
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur3tk"]
 radius = 35.500977

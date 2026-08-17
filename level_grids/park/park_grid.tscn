@@ -342,16 +342,16 @@ ExtResource("7_6jgka"): ExtResource("8_u01r7")
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1980193487 instance=ExtResource("7_odci8")]
 
 [node name="CollisionShape3D" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="0" unique_id=717573519]
-transform = Transform3D(0.86450297, -0.5026277, -2.1970553e-08, 0, -4.371138e-08, 1, -0.5026277, -0.86450297, -3.7788624e-08, 0, -1.527298e-05, -104.72201)
+transform = Transform3D(0.86450297, -0.5026277, -2.1970553e-08, 0, -4.371138e-08, 1, -0.5026277, -0.86450297, -3.7788624e-08, 93.23763, -1.5216068e-05, -103.59642)
 
 [node name="CollisionShape3D2" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="1" unique_id=902914103]
-transform = Transform3D(0.79955906, -0.60058784, -2.6252525e-08, -1.7856924e-15, -4.3711385e-08, 1, -0.60058784, -0.79955906, -3.4949824e-08, 0, -1.4869578e-05, 168.81848)
+transform = Transform3D(0.79955906, -0.60058784, -2.6252525e-08, -1.7856924e-15, -4.3711385e-08, 1, -0.60058784, -0.79955906, -3.4949824e-08, -164.0332, -1.4869578e-05, 168.81848)
 
 [node name="CollisionShape3D3" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="2" unique_id=2013356899]
-transform = Transform3D(0.98124236, -0.19277892, -8.426639e-09, -1.992615e-15, -4.371138e-08, 1, -0.19277892, -0.98124236, -4.2891457e-08, 0, -1.5365407e-05, 121.8034)
+transform = Transform3D(0.98124236, -0.19277892, -8.426639e-09, -1.992615e-15, -4.371138e-08, 1, -0.19277892, -0.98124236, -4.2891457e-08, -200.26141, -1.5365407e-05, 121.8034)
 
 [node name="CollisionShape3D4" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="3" unique_id=2089681079]
-transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.371138e-08, 1, 0.31871116, -0.9478521, -4.143192e-08, 0, -1.5372045e-05, -5.253171)
+transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.371138e-08, 1, 0.31871116, -0.9478521, -4.143192e-08, -189.69482, -1.5372045e-05, -5.253171)
 
 [node name="rock_kicking_park_ground_collision" parent="rock_kicking_park_ground_final" index="6" unique_id=936558518]
 metadata/_edit_lock_ = true
