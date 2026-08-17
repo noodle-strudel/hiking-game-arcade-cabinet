@@ -21,6 +21,30 @@ stream_0/stream = ExtResource("8_323mu")
 stream_0/weight = 2.0
 stream_1/stream = ExtResource("9_gmqke")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvpgx"]
+radius = 31.012207
+height = 97.88818
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_323mu"]
+radius = 40.904785
+height = 95.344955
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmqke"]
+radius = 24.771973
+height = 65.38837
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tfo6"]
+radius = 27.87207
+height = 67.66553
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dxqa5"]
+radius = 34.706055
+height = 141.29321
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yuq35"]
+radius = 31.889648
+height = 114.165535
+
 [node name="HeavenGrid" type="Node3D" unique_id=1660421812 node_paths=PackedStringArray("object_collisions_node")]
 script = ExtResource("1_2vwia")
 object_collisions_node = NodePath("ObjectStaticBodies")
@@ -74,6 +98,44 @@ debug_fill = false
 [node name="LakeSplooshSFX" type="AudioStreamPlayer" parent="." unique_id=1397201056]
 stream = SubResource("AudioStreamRandomizer_5tfo6")
 bus = &"SFX"
+
+[node name="PlayerLakeBarriers" type="StaticBody3D" parent="." unique_id=362509800]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=774273882]
+transform = Transform3D(0.99698824, -0.077554286, -2.2363718e-08, 1.8580549e-08, -4.950249e-08, 1, -0.077554286, -0.99698824, -4.79124e-08, 184.14058, -1.547168e-05, -146.6991)
+shape = SubResource("CapsuleShape3D_uvpgx")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=1080712841]
+transform = Transform3D(0.10034427, 0.99495304, 4.349076e-08, -1.7856924e-15, -4.3711385e-08, 1, 0.99495304, -0.10034427, -4.3861936e-09, 79.89328, -1.4710745e-05, -192.39691)
+shape = SubResource("CapsuleShape3D_323mu")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=252351832]
+transform = Transform3D(-0.26456323, -0.9643685, -4.2153875e-08, -1.992615e-15, -4.371138e-08, 1, -0.9643685, 0.26456323, 1.156443e-08, -63.07529, -1.5935844e-05, -2.98269)
+shape = SubResource("CapsuleShape3D_gmqke")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=483284639]
+transform = Transform3D(0.5485852, 0.8360947, 3.6546844e-08, -3.1249044e-15, -4.3711378e-08, 1, 0.8360947, -0.5485852, -2.3979418e-08, -42.56276, -1.4938655e-05, 35.334854)
+shape = SubResource("CapsuleShape3D_5tfo6")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=2020272830]
+transform = Transform3D(0.9982594, -0.0589754, -2.5779006e-09, -3.1249044e-15, -4.3711378e-08, 1, -0.0589754, -0.9982594, -4.363529e-08, 185.23083, -1.3329472e-05, 64.35886)
+shape = SubResource("CapsuleShape3D_dxqa5")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=1138543693]
+transform = Transform3D(0.9957118, -0.09250967, -4.04373e-09, -3.1249044e-15, -4.3711378e-08, 1, -0.09250967, -0.9957118, -4.3523926e-08, -63.91216, -1.348722e-05, 144.08974)
+shape = SubResource("CapsuleShape3D_yuq35")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="PlayerLakeBarriers" unique_id=1068582190]
+transform = Transform3D(0.3882395, 0.92155844, 4.028258e-08, -3.1249044e-15, -4.3711378e-08, 1, 0.92155844, -0.3882395, -1.6970485e-08, -186.73225, -1.3568591e-05, 207.01854)
+shape = SubResource("CapsuleShape3D_yuq35")
+debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
 
 [connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]
 [connection signal="body_entered" from="LakeBarrier" to="." method="_on_lake_barrier_body_entered"]

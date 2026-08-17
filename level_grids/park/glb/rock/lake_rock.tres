@@ -1,15 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://baki0w6dym6vb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs2fx"]
-albedo_color = Color(0.66656864, 0.6665687, 0.6665685, 1)
-metallic = 0.3
-metallic_specular = 1.0
-roughness = 0.8
-emission_enabled = true
-emission = Color(0.8618483, 0.8199951, 0.4225142, 1)
-emission_energy_multiplier = 0.0
-stencil_flags = 2
-stencil_color = Color(0.21770102, 0.21770105, 0.21770105, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o7e23"]
 _surfaces = [{
