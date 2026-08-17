@@ -56,3 +56,9 @@ func _on_score_insert(state : GameManager.gamestates, _cause : String) -> void:
 		else:
 			print("rows affected:", res["affected_rows"])
 			print("Last Inserted ID:", res["last_insert_id"])
+			$PingTimer.start(3600)
+
+# Sends a ping to the server every hour to keep connection alive
+func _on_ping_timer_timeout() -> void:
+	kick_db.ping_srvr()
+	$PingTimer.start(3600)
