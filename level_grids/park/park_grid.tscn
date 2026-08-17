@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://camnwnfcs5hak" path="res://level_grids/park/rocks/lake_rock_collision.tscn" id="8_u01r7"]
 [ext_resource type="AudioStream" uid="uid://5j63st1210h8" path="res://sound/sploosh/sploosh_irl.wav" id="12_d31dc"]
 [ext_resource type="AudioStream" uid="uid://cdvs6fsd3puel" path="res://sound/sploosh/sploosh_voice.wav" id="13_pelwe"]
-[ext_resource type="PackedScene" uid="uid://53j3fku35kui" path="res://level_grids/park/shed/shed.tscn" id="14_pelwe"]
-[ext_resource type="PackedScene" uid="uid://tpt2wxy4kuh2" path="res://level_grids/park/fairy_ring/fairy_ring.tscn" id="15_hmyo0"]
 [ext_resource type="PackedScene" uid="uid://o3ug3u7joo3d" path="res://level_grids/park/rocks/lake_rock.tscn" id="14_pelwe"]
+[ext_resource type="PackedScene" uid="uid://tpt2wxy4kuh2" path="res://level_grids/park/fairy_ring/fairy_ring.tscn" id="15_hmyo0"]
+[ext_resource type="PackedScene" uid="uid://53j3fku35kui" path="res://level_grids/park/shed/shed.tscn" id="17_5ko4c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -341,9 +341,6 @@ ExtResource("7_6jgka"): ExtResource("8_u01r7")
 
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1980193487 instance=ExtResource("7_odci8")]
 
-[node name="rock_kicking_park_ground_collision" parent="rock_kicking_park_ground_final" index="6" unique_id=936558518]
-metadata/_edit_lock_ = true
-
 [node name="CollisionShape3D" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="0" unique_id=717573519]
 transform = Transform3D(0.86450297, -0.5026277, -2.1970553e-08, 0, -4.371138e-08, 1, -0.5026277, -0.86450297, -3.7788624e-08, 0, -1.527298e-05, -104.72201)
 
@@ -355,6 +352,9 @@ transform = Transform3D(0.98124236, -0.19277892, -8.426639e-09, -1.992615e-15, -
 
 [node name="CollisionShape3D4" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="3" unique_id=2089681079]
 transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.371138e-08, 1, 0.31871116, -0.9478521, -4.143192e-08, 0, -1.5372045e-05, -5.253171)
+
+[node name="rock_kicking_park_ground_collision" parent="rock_kicking_park_ground_final" index="6" unique_id=936558518]
+metadata/_edit_lock_ = true
 
 [node name="MultiMeshes" type="Node3D" parent="." unique_id=233172872]
 
@@ -479,13 +479,13 @@ debug_fill = false
 stream = SubResource("AudioStreamRandomizer_hmyo0")
 bus = &"SFX"
 
-[node name="Shed" parent="." unique_id=1544518163 instance=ExtResource("14_pelwe")]
+[node name="Shed3" parent="." unique_id=1544518163 instance=ExtResource("17_5ko4c")]
 transform = Transform3D(1.4654934, 0, -0.6167893, 0, 1.59, 0, 0.6167893, 0, 1.4654934, 166.60408, 4.1108055, -54.405556)
 
-[node name="Shed2" parent="." unique_id=1756312671 instance=ExtResource("14_pelwe")]
+[node name="Shed" parent="." unique_id=1567438503 instance=ExtResource("17_5ko4c")]
 transform = Transform3D(-1.5211883, 0, -0.46269426, 0, 1.59, 0, 0.46269426, 0, -1.5211883, 98.526, 2, 202.739)
 
-[node name="Shed3" parent="." unique_id=706463172 instance=ExtResource("14_pelwe")]
+[node name="Shed2" parent="." unique_id=1951140999 instance=ExtResource("17_5ko4c")]
 transform = Transform3D(-0.8396985, 0, 1.3501875, 0, 1.59, 0, -1.3501875, 0, -0.8396985, -111.784, 7.667, 58.487)
 
 [node name="FairyRings" type="Node3D" parent="." unique_id=2033618763]

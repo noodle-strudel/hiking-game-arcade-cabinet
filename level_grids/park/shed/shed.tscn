@@ -3,6 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://0u8dulyt3y5d" path="res://level_grids/park/glb/shed/shed.glb" id="1_ei7vw"]
 [ext_resource type="PackedScene" uid="uid://cyxxar7rw76nd" path="res://level_grids/park/shed/shed_col.tscn" id="2_5vjv2"]
 
-[node name="shed" unique_id=1544518163 instance=ExtResource("1_ei7vw")]
+[node name="Shed" unique_id=1544518163 instance=ExtResource("1_ei7vw")]
 
 [node name="shed_col" parent="." index="2" unique_id=769692490 instance=ExtResource("2_5vjv2")]
