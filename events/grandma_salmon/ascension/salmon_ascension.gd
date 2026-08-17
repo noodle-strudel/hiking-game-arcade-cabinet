@@ -25,8 +25,8 @@ func ascension_sequence(go_heaven: bool) -> void:
 	
 	if go_heaven:
 		# take rock to bottom of stairs and wait then go up to heaven
-		var bottom_of_stairs = $"../Purgatory/BottomOfStairs".global_position
-		var top_of_stairs = $"../Purgatory/TopOfStairs".global_position
+		var bottom_of_stairs = $"../WorldGeneration/Purgatory/BottomOfStairs".global_position
+		var top_of_stairs = $"../WorldGeneration/Purgatory/TopOfStairs".global_position
 		salmon_helper.move_obj(rock_pos_ref, bottom_of_stairs)
 		await salmon_helper.on_movement_finished
 		rock_pos_ref = rock.global_position
@@ -36,7 +36,7 @@ func ascension_sequence(go_heaven: bool) -> void:
 		$GrandmaQuoteSFX.play()
 		$GrandmaSalmonHelper.play_talk_anim()
 		
-		$"../Purgatory/LevelSegments/HeavenStairsGrid/GateOpenCamera".make_current()
+		$"../WorldGeneration/Purgatory/LevelSegments/HeavenStairsGrid/GateOpenCamera".make_current()
 		salmon_helper.move_obj(rock_pos_ref, top_of_stairs, 1)
 		await salmon_helper.on_movement_finished
 	else:
