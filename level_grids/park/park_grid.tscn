@@ -10,11 +10,14 @@
 [ext_resource type="MultiMesh" uid="uid://b8hgibuowkqa3" path="res://level_grids/park/trees/deciduous_sparse_multimesh.tres" id="5_83o32"]
 [ext_resource type="PackedScene" uid="uid://de0cqgfuv80fn" path="res://level_grids/park/trees/deciduous_tree_collision_body.tscn" id="5_dcs0m"]
 [ext_resource type="PackedScene" uid="uid://bks51bjfps7db" path="res://level_grids/park/rock_kicking_park_flower.tscn" id="7_1caeb"]
+[ext_resource type="MultiMesh" uid="uid://bqw1rxst55ghk" path="res://level_grids/park/rocks/lake_rock_multi_mesh.tres" id="7_6jgka"]
 [ext_resource type="PackedScene" uid="uid://chq1boetvfray" path="res://level_grids/park/rock_kicking_park_ground_final.tscn" id="7_odci8"]
+[ext_resource type="PackedScene" uid="uid://camnwnfcs5hak" path="res://level_grids/park/rocks/lake_rock_collision.tscn" id="8_u01r7"]
 [ext_resource type="AudioStream" uid="uid://5j63st1210h8" path="res://sound/sploosh/sploosh_irl.wav" id="12_d31dc"]
 [ext_resource type="AudioStream" uid="uid://cdvs6fsd3puel" path="res://sound/sploosh/sploosh_voice.wav" id="13_pelwe"]
 [ext_resource type="PackedScene" uid="uid://53j3fku35kui" path="res://level_grids/park/shed/shed.tscn" id="14_pelwe"]
 [ext_resource type="PackedScene" uid="uid://tpt2wxy4kuh2" path="res://level_grids/park/fairy_ring/fairy_ring.tscn" id="15_hmyo0"]
+[ext_resource type="PackedScene" uid="uid://o3ug3u7joo3d" path="res://level_grids/park/rocks/lake_rock.tscn" id="14_pelwe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwyx4"]
 resource_name = "grass"
@@ -332,13 +335,26 @@ object_collisions_node = NodePath("TreeStaticBodies")
 mulmesh_col_dict = Dictionary[MultiMesh, PackedScene]({
 ExtResource("3_odci8"): ExtResource("3_4niwr"),
 ExtResource("4_4niwr"): ExtResource("5_dcs0m"),
-ExtResource("5_83o32"): ExtResource("5_dcs0m")
+ExtResource("5_83o32"): ExtResource("5_dcs0m"),
+ExtResource("7_6jgka"): ExtResource("8_u01r7")
 })
 
 [node name="rock_kicking_park_ground_final" parent="." unique_id=1980193487 instance=ExtResource("7_odci8")]
 
 [node name="rock_kicking_park_ground_collision" parent="rock_kicking_park_ground_final" index="6" unique_id=936558518]
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="0" unique_id=717573519]
+transform = Transform3D(0.86450297, -0.5026277, -2.1970553e-08, 0, -4.371138e-08, 1, -0.5026277, -0.86450297, -3.7788624e-08, 0, -1.527298e-05, -104.72201)
+
+[node name="CollisionShape3D2" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="1" unique_id=902914103]
+transform = Transform3D(0.79955906, -0.60058784, -2.6252525e-08, -1.7856924e-15, -4.3711385e-08, 1, -0.60058784, -0.79955906, -3.4949824e-08, 0, -1.4869578e-05, 168.81848)
+
+[node name="CollisionShape3D3" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="2" unique_id=2013356899]
+transform = Transform3D(0.98124236, -0.19277892, -8.426639e-09, -1.992615e-15, -4.371138e-08, 1, -0.19277892, -0.98124236, -4.2891457e-08, 0, -1.5365407e-05, 121.8034)
+
+[node name="CollisionShape3D4" parent="rock_kicking_park_ground_final/PlayerLakeBarriers" parent_id_path=PackedInt32Array(1980193487, 2048207281) index="3" unique_id=2089681079]
+transform = Transform3D(0.9478521, 0.31871116, 1.3931298e-08, -1.992615e-15, -4.371138e-08, 1, 0.31871116, -0.9478521, -4.143192e-08, 0, -1.5372045e-05, -5.253171)
 
 [node name="MultiMeshes" type="Node3D" parent="." unique_id=233172872]
 
@@ -371,6 +387,9 @@ multimesh = SubResource("MultiMesh_1caeb")
 [node name="FlowersOnTrees" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1322457597]
 multimesh = SubResource("MultiMesh_d31dc")
 
+[node name="RocksNearLakes" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=921007740]
+multimesh = ExtResource("7_6jgka")
+
 [node name="MeshReferences" type="Node3D" parent="." unique_id=772147818]
 
 [node name="tree_1" parent="MeshReferences" unique_id=302701205 instance=ExtResource("2_nh41s")]
@@ -385,6 +404,10 @@ visible = false
 visible = false
 
 [node name="DaisyFlower" parent="MeshReferences" unique_id=1557794057 instance=ExtResource("7_1caeb")]
+visible = false
+
+[node name="LakeRock" parent="MeshReferences" unique_id=790810414 instance=ExtResource("14_pelwe")]
+visible = false
 
 [node name="TreeStaticBodies" type="Node3D" parent="." unique_id=587983899]
 
@@ -494,3 +517,4 @@ transform = Transform3D(0.19994102, -0.005668015, -0.0011246226, 0.0047265408, 0
 [editable path="MeshReferences/tree_2"]
 [editable path="MeshReferences/rock_kicking_park_grass"]
 [editable path="MeshReferences/DaisyFlower"]
+[editable path="MeshReferences/LakeRock"]

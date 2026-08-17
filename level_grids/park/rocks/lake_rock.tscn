@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://o3ug3u7joo3d"]
+
+[ext_resource type="ArrayMesh" uid="uid://baki0w6dym6vb" path="res://level_grids/park/glb/rock/lake_rock.tres" id="1_d3rxt"]
+
+[node name="LakeRock" type="Node3D" unique_id=790810414]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=176929166]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = ExtResource("1_d3rxt")
