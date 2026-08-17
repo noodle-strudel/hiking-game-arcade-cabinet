@@ -94,6 +94,10 @@ func _save_convex_from_concave(concave: ConcavePolygonShape3D) -> void:
 func _on_oob_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell through the ground...")
+	
+	# failsafe to just reload the entire game
+	if body.name == "Player":
+		get_tree().reload_current_scene()
 
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
