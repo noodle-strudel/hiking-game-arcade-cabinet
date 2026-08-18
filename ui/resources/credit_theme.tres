@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://d0odew836h8os"]
+
+[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="1_5wqo7"]
+
+[resource]
+default_font = ExtResource("1_5wqo7")
+default_font_size = 30
+Label/constants/outline_size = 5

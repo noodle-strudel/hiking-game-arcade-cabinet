@@ -309,6 +309,7 @@ func _scoring_sequence() -> void:
 	%GameOverText.show()
 	game_over_text_scroll = true
 	AudioManager.play_track(AudioManager.game_over_music)
+  %CreditsAnimator.play("credits")
 	await get_tree().create_timer(38).timeout
 	
 	# duck music for voice

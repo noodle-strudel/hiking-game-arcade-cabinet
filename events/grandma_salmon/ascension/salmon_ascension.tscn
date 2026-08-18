@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccp2hh73iswfo" path="res://events/grandma_salmon/ascension/salmon_ascension.gd" id="1_bqwpo"]
 [ext_resource type="PackedScene" uid="uid://bly5dxci5r8ix" path="res://events/grandma_salmon/helper/grandma_salmon_helper.tscn" id="2_g8673"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_soa1f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxtrs"]
-albedo_color = Color(1, 0, 0, 1)
+[ext_resource type="AudioStream" uid="uid://dikm0134a2ipr" path="res://sound/grandma_salmon_voice/gsam_8.wav" id="3_soa1f"]
 
 [sub_resource type="Animation" id="Animation_g8673"]
 length = 0.001
@@ -103,10 +99,8 @@ cull_mask = 1048063
 [node name="Marker3D" type="Marker3D" parent="GrandmaSalmonHelper" unique_id=554836171]
 gizmo_extents = 3.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GrandmaSalmonHelper" unique_id=1693332407]
-visible = false
-mesh = SubResource("BoxMesh_soa1f")
-surface_material_override/0 = SubResource("StandardMaterial3D_kxtrs")
-
 [node name="SalmonAnimator" type="AnimationPlayer" parent="." unique_id=550154841]
 libraries/ = SubResource("AnimationLibrary_kxtrs")
+
+[node name="GrandmaQuoteSFX" type="AudioStreamPlayer" parent="." unique_id=171679976]
+stream = ExtResource("3_soa1f")
