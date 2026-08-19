@@ -1,5 +1,6 @@
 extends Event
 
+@onready var rock_material = preload("res://rock/rock_material.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,9 +31,15 @@ func _event_function() -> void:
 	# show eyes
 	rock_eyes.show()
 	
+	# turn off xray for rock so it doesn't interfere with eyes
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_DISABLED
+	
 	# Have the rock wink.
 	await rock.wink_at_camera(rock_camera)
 	rock_eyes.hide()
+	
+	# turn xray back on after event
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_XRAY
 	
 	# Do not remove. Defined in event_base.gd.
 	_event_cleanup()
