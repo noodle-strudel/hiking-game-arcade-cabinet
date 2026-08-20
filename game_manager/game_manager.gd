@@ -81,7 +81,7 @@ func _on_idle_timer_timeout() -> void:
 
 ## switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> void:
-	if state == gamestates.ROCK_KICKED:
+	if state == gamestates.POSTKICK_EVENT:
 		_decrement_kicks_remaining()
 	state = target_state
 	gamestate_update.emit(state, cause)
