@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d28tt78ehhhcb"]
 
 [ext_resource type="PackedScene" uid="uid://ci0ocm0dammql" path="res://level_grids/purgatory/surrounding_grids/glb/rock_kicking_purgatory_ground_1.glb" id="1_y6s66"]
+[ext_resource type="PackedScene" uid="uid://dmbe1kosv2j3w" path="res://level_grids/purgatory/surrounding_grids/rock_kicking_purgatory_ground_1_collision.tscn" id="2_xmjby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xmjby"]
 size = Vector3(500, 1.6245117, 500)
@@ -11,7 +12,7 @@ size = Vector3(18.44751, 0.7383423, 18.151764)
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6o6n"]
 size = Vector3(18.44751, 9.337433, 15.523682)
 
-[node name="rock_kicking_purgatory_ground_1" unique_id=1950620308 instance=ExtResource("1_y6s66")]
+[node name="rock_kicking_purgatory_ground_1" unique_id=1547265012 instance=ExtResource("1_y6s66")]
 
 [node name="Collision" type="StaticBody3D" parent="." index="2" unique_id=1494000459]
 collision_layer = 4
@@ -28,3 +29,5 @@ shape = SubResource("BoxShape3D_y6s66")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Collision" index="2" unique_id=1281637831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.131157, 5.465708, -168.99904)
 shape = SubResource("BoxShape3D_i6o6n")
+
+[node name="rock_kicking_purgatory_ground_1_collision" parent="." index="21" unique_id=202271531 instance=ExtResource("2_xmjby")]

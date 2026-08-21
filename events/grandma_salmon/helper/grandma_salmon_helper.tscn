@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bly5dxci5r8ix"]
 
 [ext_resource type="Script" uid="uid://cmi0q2x1ofadw" path="res://events/grandma_salmon/helper/grandma_salmon_helper.gd" id="1_61jmn"]
-[ext_resource type="Texture2D" uid="uid://rc1colb3psq5" path="res://events/grandma_salmon/salmon_body_old.png" id="2_o2d6c"]
+[ext_resource type="Texture2D" uid="uid://bqda2d3hnehp8" path="res://events/grandma_salmon/salmon_body_old.png" id="2_o2d6c"]
 [ext_resource type="Texture2D" uid="uid://clatxilrji2dv" path="res://events/grandma_salmon/grandma_head/grandma_head0.png" id="3_4ht0q"]
 [ext_resource type="Texture2D" uid="uid://c4mxlu8v2lyae" path="res://events/grandma_salmon/grandma_head/grandma_head1.png" id="4_4dl2w"]
 [ext_resource type="Texture2D" uid="uid://bxbncrba2r5iu" path="res://events/grandma_salmon/grandma_head/grandma_head2.png" id="5_qkcbg"]

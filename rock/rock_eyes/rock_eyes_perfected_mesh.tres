@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://bqr5qipxwudn2"]
 
-[ext_resource type="Texture2D" uid="uid://retivlxbweso" path="res://rock/rock_eyes/rock_eyes_perfected.png" id="1_ulcjl"]
+[ext_resource type="Texture2D" uid="uid://dvtgj03eclepp" path="res://rock/rock_eyes/rock_eyes_perfected.png" id="1_ulcjl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2fhv"]
 resource_name = "rock_eyes"

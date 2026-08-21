@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
 [ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_ur3tk"]
+[ext_resource type="ArrayMesh" uid="uid://dxshtqlhhr2gd" path="res://level_grids/park/rock_kicking_ground_just_lake_border_mesh.tres" id="3_ur3tk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v3cmg"]
-radius = 46.15088
-height = 126.22461
+radius = 50.240234
+height = 128.82861
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur3tk"]
 radius = 35.500977
@@ -45,3 +46,7 @@ shape = SubResource("CapsuleShape3D_ruhub")
 debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
 
 [node name="rock_kicking_park_ground_collision" parent="." index="6" unique_id=936558518 instance=ExtResource("2_ur3tk")]
+
+[node name="RockKickingGroundJustLakeBorderMesh" type="MeshInstance3D" parent="." index="8" unique_id=472956851]
+visible = false
+mesh = ExtResource("3_ur3tk")
