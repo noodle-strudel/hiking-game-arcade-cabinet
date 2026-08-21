@@ -7,11 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://781osfs7cjcw" path="res://sound/menu_sounds/contract_sign.wav" id="4_6cxyx"]
 [ext_resource type="Texture2D" uid="uid://dlde71dkoa5k2" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="AudioStream" uid="uid://dct4lu4k71aj" path="res://sound/menu_sounds/initials.wav" id="5_p762i"]
 [ext_resource type="AudioStream" uid="uid://e42pkxse67jv" path="res://sound/menu_sounds/scoring_1.wav" id="6_a3hx3"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="AudioStream" uid="uid://cbvycqoroo47" path="res://sound/menu_sounds/scoring_2.wav" id="7_limpb"]
 [ext_resource type="AudioStream" uid="uid://cmmjmt63jlm6x" path="res://sound/menu_sounds/scoring_3.wav" id="8_ug63i"]
@@ -180,7 +180,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_p762i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -194,7 +194,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_1bm0a")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]

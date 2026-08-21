@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://byjp861kr5qkp" path="res://rock/rock.gd" id="1_74c8a"]
 [ext_resource type="Shape3D" uid="uid://da5rftwrgbjns" path="res://rock/rock_start1.tres" id="2_74c8a"]
 [ext_resource type="PackedScene" uid="uid://c7nmf134bw5ud" path="res://rock/trail/rock_kick_trail.tscn" id="4_8h60t"]
-[ext_resource type="AudioStream" uid="uid://cv5w0nhx5fvoh" path="res://sound/rock_kicks/rock_kick_1.wav" id="4_s8qyk"]
-[ext_resource type="AudioStream" uid="uid://c8lxs7k86af4s" path="res://sound/rock_kicks/rock_kick_2.wav" id="5_8h60t"]
+[ext_resource type="AudioStream" uid="uid://d7k4wqrf03sb" path="res://sound/rock_kicks/rock_kick_1.wav" id="4_s8qyk"]
+[ext_resource type="AudioStream" uid="uid://6uhjq51ibein" path="res://sound/rock_kicks/rock_kick_2.wav" id="5_8h60t"]
 [ext_resource type="Shape3D" uid="uid://dqgcufyoo3fal" path="res://rock/rock_sphere.tres" id="5_t0tji"]
-[ext_resource type="AudioStream" uid="uid://bkqofjw7wcdro" path="res://sound/rock_kicks/rock_kick_3.wav" id="6_5ohwm"]
-[ext_resource type="AudioStream" uid="uid://dvk08cj235rah" path="res://sound/rock_kicks/rock_kick_4.wav" id="7_ekxie"]
-[ext_resource type="AudioStream" uid="uid://b8ebf0gs8kga0" path="res://sound/rock_kicks/rock_kick_5.wav" id="8_5sx86"]
-[ext_resource type="AudioStream" uid="uid://x8yi5d37j3pt" path="res://sound/rock_kicks/rock_kick_6.wav" id="9_8bl0y"]
+[ext_resource type="AudioStream" uid="uid://6cihuxabm0nj" path="res://sound/rock_kicks/rock_kick_3.wav" id="6_5ohwm"]
+[ext_resource type="AudioStream" uid="uid://cpwdwe0rgen34" path="res://sound/rock_kicks/rock_kick_4.wav" id="7_ekxie"]
+[ext_resource type="AudioStream" uid="uid://oxq2icaawnm2" path="res://sound/rock_kicks/rock_kick_5.wav" id="8_5sx86"]
+[ext_resource type="AudioStream" uid="uid://crad6tsxp2vdc" path="res://sound/rock_kicks/rock_kick_6.wav" id="9_8bl0y"]
 [ext_resource type="PackedScene" uid="uid://bc1ejppxhquvx" path="res://rock/rock_eyes/rock_eyes.tscn" id="11_5ohwm"]
-[ext_resource type="AudioStream" uid="uid://cetss05fwsbe3" path="res://sound/wink_ding.wav" id="12_ekxie"]
+[ext_resource type="AudioStream" uid="uid://47fsvy2bv60d" path="res://sound/wink_ding.wav" id="12_ekxie"]
 [ext_resource type="AudioStream" uid="uid://bc5owmxbomvky" path="res://sound/rock_kick_critical/rock_kick_critical.wav" id="13_5sx86"]
-[ext_resource type="Texture2D" uid="uid://dsvnhln6l280g" path="res://rock/angry_sprite/angry_1.png" id="14_p23la"]
-[ext_resource type="Texture2D" uid="uid://cjdq3omk0bw0x" path="res://rock/angry_sprite/angry_2.png" id="15_niir3"]
-[ext_resource type="Texture2D" uid="uid://du5n5ftnbr84c" path="res://rock/angry_sprite/angry_3.png" id="16_t81lj"]
+[ext_resource type="Texture2D" uid="uid://dmoxecibrgwnb" path="res://rock/angry_sprite/angry_1.png" id="14_p23la"]
+[ext_resource type="Texture2D" uid="uid://b5kew0p0o4pmc" path="res://rock/angry_sprite/angry_2.png" id="15_niir3"]
+[ext_resource type="Texture2D" uid="uid://chhuq8f7nny47" path="res://rock/angry_sprite/angry_3.png" id="16_t81lj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5sx86"]
 friction = 2.0
@@ -490,7 +490,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_t81lj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 12.0
 }]
@@ -523,7 +523,7 @@ scale_amount_max = 0.2
 color = Color(0.60959077, 0.38774705, 0.05775708, 1)
 
 [node name="RockCameraArm" type="SpringArm3D" parent="RockCameraPivot" unique_id=799520743]
-collision_mask = 141
+collision_mask = 140
 spring_length = 2.5
 margin = 0.1
 

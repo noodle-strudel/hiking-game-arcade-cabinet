@@ -304,31 +304,35 @@ func _scoring_sequence() -> void:
 	$MenuSFX.set_stream(scoring_3)
 	$MenuSFX.play()
 	
-	# long, drawn out ending animation
 	await get_tree().create_timer(1).timeout
-	%GameOverText.show()
-	game_over_text_scroll = true
-	AudioManager.play_track(AudioManager.game_over_music)
-	%CreditsAnimator.play("credits")
-	await get_tree().create_timer(38).timeout
 	
-	# duck music for voice
-	var music_bus_idx = AudioServer.get_bus_index("Music")
-	var music_bus_vol = AudioServer.get_bus_volume_db(music_bus_idx)
-	var set_music_volume = func(volume_db: float) -> void:
-		AudioServer.set_bus_volume_db(music_bus_idx, volume_db)
+	if GameManager.kicks_remaining > 0:
+		# long, drawn out ending animation
+		%GameOverText.show()
+		game_over_text_scroll = true
+		AudioManager.play_track(AudioManager.game_over_music)
+		%CreditsAnimator.play("credits")
+		await get_tree().create_timer(38).timeout
 	
-	var tween_duck = create_tween()
-	tween_duck.tween_method(
-		set_music_volume,
-		music_bus_vol,
-		music_bus_vol - 9,
-		0.4
-	)
+		# duck music for voice
+		var music_bus_idx = AudioServer.get_bus_index("Music")
+		var music_bus_vol = AudioServer.get_bus_volume_db(music_bus_idx)
+		var set_music_volume = func(volume_db: float) -> void:
+			AudioServer.set_bus_volume_db(music_bus_idx, volume_db)
 	
-	await get_tree().create_timer(0.4).timeout
-	%EndPoemVoice.play()
-	await get_tree().create_timer(10).timeout
+		var tween_duck = create_tween()
+		tween_duck.tween_method(
+			set_music_volume,
+			music_bus_vol,
+			music_bus_vol - 9,
+			0.4
+		)
+	
+		await get_tree().create_timer(0.4).timeout
+		%EndPoemVoice.play()
+		await get_tree().create_timer(9).timeout
+
+	await get_tree().create_timer(1).timeout
 	
 	# Condition so the state switching and music cutting on the timers only happens
 	# if the game is still in the scoring state
