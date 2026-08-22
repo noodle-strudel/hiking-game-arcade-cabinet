@@ -326,7 +326,7 @@ size = Vector3(156.71487, 6.9086914, 111.80638)
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hmyo0"]
 streams_count = 2
 stream_0/stream = ExtResource("12_d31dc")
-stream_0/weight = 2.0
+stream_0/weight = 9.0
 stream_1/stream = ExtResource("13_pelwe")
 
 [node name="ParkGrid" type="Node3D" unique_id=891737648 node_paths=PackedStringArray("object_collisions_node")]
