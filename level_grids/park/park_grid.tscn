@@ -324,6 +324,7 @@ size = Vector3(156.71487, 6.9086914, 89.29925)
 size = Vector3(156.71487, 6.9086914, 111.80638)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hmyo0"]
+playback_mode = 1
 streams_count = 2
 stream_0/stream = ExtResource("12_d31dc")
 stream_0/weight = 9.0
