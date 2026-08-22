@@ -21,6 +21,9 @@ signal rock_followcam_activated
 # the tween, used for tweening
 @onready var tween: Tween = get_tree().create_tween()
 
+# how much to smooth the walk camera angle 
+@export var walk_camera_smoothing := 0.95
+
 # variable to track what the panning camera should be doing
 var camera_pan_state = 0
 var panning_camera_active = false
@@ -33,6 +36,8 @@ var follow_rock = false
 
 # flag that is true when the player is moving
 var player_moving = false
+
+var last_walk_camera_angle = Vector3()
 
 func get_spawn() -> Vector3:
 	return $WorldGeneration.get_spawn()
@@ -267,7 +272,11 @@ func _process(_delta: float) -> void:
 		_panning_camera()
 
 func _camera_follow_player() -> void:
+	last_walk_camera_angle = walk_camera.rotation
 	walk_camera.look_at($Player.global_position)
+	walk_camera.rotation =\
+		last_walk_camera_angle * walk_camera_smoothing +\
+		walk_camera.rotation * (1 - walk_camera_smoothing)
 
 # panning camera stuff
 func _panning_camera() -> void:
