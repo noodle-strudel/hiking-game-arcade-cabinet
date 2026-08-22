@@ -1169,7 +1169,9 @@ text = "Special Thanks
 
 Monty Ozark
 
-Bea Warfel "
+Bea Warfel
+
+Joseph \"Userminusone\" Sheasby"
 
 [node name="CreditsAnimator" type="AnimationPlayer" parent="ScoreMenu/Credits" unique_id=1789218436]
 unique_name_in_owner = true
