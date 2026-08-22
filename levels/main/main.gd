@@ -37,7 +37,7 @@ var follow_rock = false
 # flag that is true when the player is moving
 var player_moving = false
 
-var last_walk_camera_angle = Vector3()
+var walk_camera_look_at = Vector3()
 
 func get_spawn() -> Vector3:
 	return $WorldGeneration.get_spawn()
@@ -129,6 +129,7 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_OOB:
 			_handle_oob(cause)
 		GameManager.gamestates.MOVE_TO_ROCK:
+			walk_camera_look_at = $Player.global_position
 			var midpoint = ($Player.global_position + $Rock.global_position) / 2.0
 			var walk_direction = $Player.global_position\
 					.direction_to($Rock.global_position)
@@ -272,11 +273,12 @@ func _process(_delta: float) -> void:
 		_panning_camera()
 
 func _camera_follow_player() -> void:
-	last_walk_camera_angle = walk_camera.rotation
-	walk_camera.look_at($Player.global_position)
-	walk_camera.rotation =\
-		last_walk_camera_angle * walk_camera_smoothing +\
-		walk_camera.rotation * (1 - walk_camera_smoothing)
+	walk_camera.look_at(walk_camera_look_at)
+	
+	walk_camera_look_at = $Player.global_position.lerp(
+		walk_camera_look_at,
+		walk_camera_smoothing
+	)
 
 # panning camera stuff
 func _panning_camera() -> void:
