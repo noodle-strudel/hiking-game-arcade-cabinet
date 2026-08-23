@@ -3,6 +3,7 @@ extends Event
 @export var movement_curve: Curve
 @export var speed: float = 1.5
 
+@onready var main: Node = get_node("/root/Main")
 @onready var rock: Node = get_node("/root/Main/Rock")
 @onready var player: Node = get_node("/root/Main/Player")
 @onready var raycast: RayCast3D = $BirdBody/Bird/SpawnDetector
@@ -252,6 +253,7 @@ func _event_function() -> void:
 	await $StopTimer.timeout
 	
 	player.show()
+	main.rock_camera.make_current()
 	
 	# Do not remove. Defined in event_base.gd
 	_event_cleanup()
