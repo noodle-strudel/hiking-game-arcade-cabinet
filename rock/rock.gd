@@ -117,6 +117,9 @@ func _rock_ascension():
 	# make the rock unaffected by gravity
 	freeze = true
 	
+	# turns off the rock xray so it doesn't interfere with the eyes and mouth
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_DISABLED
+	
 	# ascend dramatically
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", global_position + Vector3.UP * 10, 5).set_ease(Tween.EASE_IN_OUT)
