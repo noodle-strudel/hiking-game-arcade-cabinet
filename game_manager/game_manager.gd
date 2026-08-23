@@ -71,13 +71,17 @@ func _decrement_kicks_remaining() -> void:
 
 ## Signal handler for the cabinet going to IDLE mode.
 func _on_idle_timer_timeout() -> void:
-	if state != gamestates.IDLE and state != gamestates.ROCK_PERFECTED:
+	if (
+		state != gamestates.IDLE and 
+		state != gamestates.ROCK_PERFECTED and 
+		state != gamestates.ROCK_KICKED
+	):
 		_switch_state(gamestates.IDLE)
 
 
 ## switches the current state and emits an update signal. 
 func _switch_state(target_state: GameManager.gamestates, cause: String = "") -> void:
-	if state == gamestates.ROCK_KICKED:
+	if state == gamestates.POSTKICK_EVENT:
 		_decrement_kicks_remaining()
 	state = target_state
 	gamestate_update.emit(state, cause)

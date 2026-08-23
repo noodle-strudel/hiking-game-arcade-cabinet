@@ -1,5 +1,6 @@
 extends Event
 
+@onready var rock_material = preload("res://rock/rock_material.tres")
 @onready var rock: Node = get_node("/root/Main/Rock")
 @onready var rock_trail: Node = rock.get_node("%RockKickTrail")
 @onready var main: Node = get_node("/root/Main")
@@ -87,6 +88,9 @@ func _event_function() -> void:
 	camera.fov = 30
 	camera.global_position = $Ufo.global_position + Vector3(75, 75, -75)
 	
+	# turn off xray so the rock is not seen through the ufo when flying away
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_DISABLED
+	
 	# Ufo and rock both move to the same random spawn point in the current grid
 	var tween_away = create_tween()
 	tween_away.tween_property(
@@ -112,8 +116,10 @@ func _event_function() -> void:
 	# rock falls for a little bit, then the camera switches back
 	await get_tree().create_timer(0.8).timeout
 	main.rock_camera.make_current()
-	
 	await get_tree().create_timer(2.25).timeout
+	
+  # turn xray back on after event
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_XRAY
 	
 	# Do not remove. Defined in event_base.gd
 	_event_cleanup()
