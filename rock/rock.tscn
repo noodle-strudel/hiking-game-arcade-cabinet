@@ -523,12 +523,13 @@ scale_amount_max = 0.2
 color = Color(0.60959077, 0.38774705, 0.05775708, 1)
 
 [node name="RockCameraArm" type="SpringArm3D" parent="RockCameraPivot" unique_id=799520743]
-collision_mask = 141
+collision_mask = 140
 spring_length = 2.5
 margin = 0.1
 
 [node name="RockCamera" type="Camera3D" parent="RockCameraPivot/RockCameraArm" unique_id=1064253504]
 unique_name_in_owner = true
+v_offset = 0.125
 current = true
 fov = 45.0
 far = 1000.0

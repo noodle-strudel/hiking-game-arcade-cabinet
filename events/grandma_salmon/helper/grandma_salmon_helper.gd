@@ -54,6 +54,9 @@ func release_object() -> void:
 
 func play_talk_anim() -> void:
 	$SubViewport/GrandmaSalmonSprite/GrandmaHead.play("default")
+	
+func play_tail_anim() -> void:
+	$SubViewport/GrandmaSalmonSprite/GrandmaHead.play("default")
 
 func get_snatcher_pos() -> Vector3:
 	return $RockSnatch.global_position
