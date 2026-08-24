@@ -45,6 +45,7 @@ func ascension_sequence(go_heaven: bool) -> void:
 		# Fight for happiness! plays to motivate the player
 		$GrandmaQuoteSFX.play()
 		$GrandmaSalmonHelper.play_talk_anim()
+		
 		salmon_helper.move_obj(rock_pos_ref, rock_pos_ref + Vector3(0.0, 100.0, 0.0))
 		await salmon_helper.on_movement_finished
 	

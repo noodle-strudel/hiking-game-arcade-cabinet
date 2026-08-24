@@ -5,13 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://dqeubqiyyo6yo" path="res://sound/menu_sounds/rock_select.wav" id="3_2lccl"]
 [ext_resource type="Texture2D" uid="uid://c7fkat3sbefk5" path="res://ui/branding/rkc_logo.png" id="3_wl5ax"]
 [ext_resource type="AudioStream" uid="uid://781osfs7cjcw" path="res://sound/menu_sounds/contract_sign.wav" id="4_6cxyx"]
-[ext_resource type="Texture2D" uid="uid://dq61nlldvo7ei" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
+[ext_resource type="Texture2D" uid="uid://dlde71dkoa5k2" path="res://ui/kick_rocks_title_with_subtitle.png" id="4_k48q6"]
 [ext_resource type="Theme" uid="uid://dw65amm7b6ol0" path="res://ui/resources/splash_theme.tres" id="4_vkava"]
-[ext_resource type="FontFile" uid="uid://di4it5dygp7gg" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
-[ext_resource type="FontFile" uid="uid://c803jcuxqr50v" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
+[ext_resource type="FontFile" uid="uid://7yj45oy00qmn" path="res://fonts/Madras-regular.otf" id="5_bi8hs"]
+[ext_resource type="FontFile" uid="uid://6wq84a2lmxw7" path="res://fonts/ConnectionII.otf" id="5_bo1jx"]
 [ext_resource type="AudioStream" uid="uid://dct4lu4k71aj" path="res://sound/menu_sounds/initials.wav" id="5_p762i"]
 [ext_resource type="AudioStream" uid="uid://e42pkxse67jv" path="res://sound/menu_sounds/scoring_1.wav" id="6_a3hx3"]
-[ext_resource type="FontFile" uid="uid://b7i1ktsdg0jjf" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
+[ext_resource type="FontFile" uid="uid://cqgmjl08m2ws6" path="res://fonts/Century-regular.otf" id="6_ay4pc"]
 [ext_resource type="Script" uid="uid://cmn35te5b4bu2" path="res://ui/custom_font_effects/ghost_effect.gd" id="6_hrmpd"]
 [ext_resource type="AudioStream" uid="uid://cbvycqoroo47" path="res://sound/menu_sounds/scoring_2.wav" id="7_limpb"]
 [ext_resource type="AudioStream" uid="uid://cmmjmt63jlm6x" path="res://sound/menu_sounds/scoring_3.wav" id="8_ug63i"]
@@ -29,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://b2uyeewv4lbxy" path="res://ui/rock_select/light_rays.png" id="18_x7nxp"]
 [ext_resource type="AudioStream" uid="uid://c5eu7levnxlva" path="res://sound/rock_wow/wow_ty.wav" id="19_bw7v0"]
 [ext_resource type="Theme" uid="uid://3yduj250t35d" path="res://ui/scroll/scroll_theme.tres" id="20_bw7v0"]
-[ext_resource type="AudioStream" uid="uid://civpjnpe56v8s" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
-[ext_resource type="AudioStream" uid="uid://cv12s1lxk6s" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
+[ext_resource type="AudioStream" uid="uid://i7tacus8qmt3" path="res://sound/rock_wow/rock_wow_ar.wav" id="21_br2v7"]
+[ext_resource type="AudioStream" uid="uid://dlshfre5dt7g6" path="res://sound/rock_wow/rock_wow_mw.wav" id="23_k48q6"]
 [ext_resource type="Texture2D" uid="uid://b1vio02ukyhhw" path="res://ui/cloud/cloud_small1.png" id="25_6cxyx"]
 [ext_resource type="Texture2D" uid="uid://de4o62em1rtbf" path="res://ui/cloud/cloud_small2.png" id="26_p762i"]
 [ext_resource type="Texture2D" uid="uid://uuq6gbh6ql4g" path="res://ui/cloud/cloud_xtralarge1.png" id="27_3hdvn"]
@@ -576,9 +576,9 @@ libraries/ = SubResource("AnimationLibrary_x7jpl")
 [node name="TitleContainer" type="VBoxContainer" parent="IdleMenu" unique_id=219538779]
 layout_mode = 0
 offset_left = 320.0
-offset_top = 32.0
+offset_top = 24.0
 offset_right = 1600.0
-offset_bottom = 1064.0
+offset_bottom = 1056.0
 alignment = 1
 
 [node name="KickRocksTitle" type="TextureRect" parent="IdleMenu/TitleContainer" unique_id=1775985413]
@@ -1169,7 +1169,11 @@ text = "Special Thanks
 
 Monty Ozark
 
-Bea Warfel "
+Bea Warfel
+
+Joseph
+\"Userminusone\"
+Sheasby"
 
 [node name="CreditsAnimator" type="AnimationPlayer" parent="ScoreMenu/Credits" unique_id=1789218436]
 unique_name_in_owner = true

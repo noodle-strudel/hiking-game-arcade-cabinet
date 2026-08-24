@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cyxxar7rw76nd"]
+
+[ext_resource type="PackedScene" uid="uid://c3a5bqljixy15" path="res://level_grids/park/glb/shed/shed_col.glb" id="1_fbry8"]
+
+[node name="shed_col" unique_id=2135093221 instance=ExtResource("1_fbry8")]
+
+[node name="Knob" parent="." index="0" unique_id=1197396362]
+collision_layer = 128
+collision_mask = 515
+
+[node name="Shed" parent="." index="1" unique_id=332641377]
+collision_layer = 128
+collision_mask = 515

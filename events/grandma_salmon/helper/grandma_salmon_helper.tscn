@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bly5dxci5r8ix"]
 
 [ext_resource type="Script" uid="uid://cmi0q2x1ofadw" path="res://events/grandma_salmon/helper/grandma_salmon_helper.gd" id="1_61jmn"]
-[ext_resource type="Texture2D" uid="uid://bqda2d3hnehp8" path="res://events/grandma_salmon/salmon_body_old.png" id="2_o2d6c"]
+[ext_resource type="Texture2D" uid="uid://dfbya2jyi4oy" path="res://events/grandma_salmon/salmon_body.png" id="2_o2d6c"]
 [ext_resource type="Texture2D" uid="uid://clatxilrji2dv" path="res://events/grandma_salmon/grandma_head/grandma_head0.png" id="3_4ht0q"]
 [ext_resource type="Texture2D" uid="uid://c4mxlu8v2lyae" path="res://events/grandma_salmon/grandma_head/grandma_head1.png" id="4_4dl2w"]
 [ext_resource type="Texture2D" uid="uid://bxbncrba2r5iu" path="res://events/grandma_salmon/grandma_head/grandma_head2.png" id="5_qkcbg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bghc4pi1337fc" path="res://events/grandma_salmon/grandma_head/grandma_head4.png" id="7_sbfrw"]
 [ext_resource type="Texture2D" uid="uid://8hfs3plneagy" path="res://events/grandma_salmon/grandma_head/grandma_head5.png" id="8_sxw3e"]
 [ext_resource type="Texture2D" uid="uid://c5mgohwd4utgg" path="res://events/grandma_salmon/grandma_head/grandma_head6.png" id="9_yexh5"]
+[ext_resource type="Texture2D" uid="uid://0njgjlaqx052" path="res://events/grandma_salmon/salmon_tail/salmon_tail0.png" id="10_2knaa"]
 
 [sub_resource type="Curve" id="Curve_bmar1"]
 _limits = [0.0, 10.0, 0.0, 1.0]
@@ -68,6 +69,45 @@ animations = [{
 [sub_resource type="ViewportTexture" id="ViewportTexture_0a0ec"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="Animation" id="Animation_2knaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SalmonTail3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oovhv"]
+resource_name = "salmon_tail"
+length = 0.8
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SalmonTail3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.6981317, 0, 0), Vector3(0.6981317, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dsq1"]
+_data = {
+&"RESET": SubResource("Animation_2knaa"),
+&"salmon_tail": SubResource("Animation_oovhv")
+}
+
 [node name="GrandmaSalmonHelper" type="Node3D" unique_id=1470527940]
 script = ExtResource("1_61jmn")
 movement_curve = SubResource("Curve_bmar1")
@@ -80,7 +120,7 @@ size = Vector2i(350, 1080)
 [node name="GrandmaSalmonSprite" type="Node2D" parent="SubViewport" unique_id=357428462]
 
 [node name="SalmonBody" type="Sprite2D" parent="SubViewport/GrandmaSalmonSprite" unique_id=1942030945]
-position = Vector2(170.09998, 648)
+position = Vector2(170.1, 570)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_o2d6c")
 
@@ -94,3 +134,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.265737, 0)
 texture = SubResource("ViewportTexture_0a0ec")
 
 [node name="RockSnatch" type="RemoteTransform3D" parent="." unique_id=93840008]
+
+[node name="SalmonTail3D" type="Sprite3D" parent="." unique_id=1706069950]
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 1.59, 0)
+offset = Vector2(-4, -100)
+texture = ExtResource("10_2knaa")
+
+[node name="TailMovement" type="AnimationPlayer" parent="." unique_id=392816527]
+libraries/ = SubResource("AnimationLibrary_2dsq1")
+autoplay = &"salmon_tail"

@@ -4,3 +4,9 @@
 
 [node name="MainDatabase" type="Node" unique_id=339406212]
 script = ExtResource("1_ft8s5")
+
+[node name="PingTimer" type="Timer" parent="." unique_id=526276846]
+wait_time = 3600.0
+autostart = true
+
+[connection signal="timeout" from="PingTimer" to="." method="_on_ping_timer_timeout"]
