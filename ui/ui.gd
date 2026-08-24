@@ -282,8 +282,10 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.ROCK_PERFECTED:
 			if GameManager.DEBUG:
 				print("UI: Show text that pops up when kicks_remaining <= 0")
-				await get_tree().create_timer(8).timeout
-				$RockPerfectedMenu.show()
+			await get_tree().create_timer(8).timeout
+			$RockPerfectedMenu.show()
+			$ScoreMenu.show()
+			%CreditsAnimator.play("credits")
 
 # Scoring sequence function
 func _scoring_sequence() -> void:
