@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfqt0k2oo5cgr" path="res://level_grids/park/glb/rock_kicking_park_ground_final_wip.glb" id="1_v3cmg"]
 [ext_resource type="PackedScene" uid="uid://8rtmytv2ns1c" path="res://level_grids/park/rock_kicking_park_ground_collision.tscn" id="2_ur3tk"]
 [ext_resource type="ArrayMesh" uid="uid://dxshtqlhhr2gd" path="res://level_grids/park/rock_kicking_ground_just_lake_border_mesh.tres" id="3_ur3tk"]
+[ext_resource type="PackedScene" uid="uid://b07viwet688bl" path="res://level_grids/park/glb/rock_kicking_park_ground_complete.glb" id="4_m2pyc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v3cmg"]
 radius = 50.240234
@@ -21,6 +22,9 @@ radius = 31.572266
 height = 120.01367
 
 [node name="rock_kicking_park_ground_final" unique_id=1624154924 instance=ExtResource("1_v3cmg")]
+
+[node name="GroundIntactTrees" parent="." index="2" unique_id=395420333]
+visible = false
 
 [node name="PlayerLakeBarriers" type="StaticBody3D" parent="." index="5" unique_id=2048207281]
 collision_layer = 16
@@ -47,6 +51,11 @@ debug_color = Color(0.7197782, 0.025140189, 0.37020764, 0.9647059)
 
 [node name="rock_kicking_park_ground_collision" parent="." index="6" unique_id=936558518 instance=ExtResource("2_ur3tk")]
 
+[node name="GroundIntactNoTrees" parent="." index="7" unique_id=1977083799]
+visible = false
+
 [node name="RockKickingGroundJustLakeBorderMesh" type="MeshInstance3D" parent="." index="8" unique_id=472956851]
 visible = false
 mesh = ExtResource("3_ur3tk")
+
+[node name="rock_kicking_park_ground_complete" parent="." index="9" unique_id=1334698248 instance=ExtResource("4_m2pyc")]
