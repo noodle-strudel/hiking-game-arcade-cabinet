@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://co61f7smaggob" path="res://level_grids/purgatory/surrounding_grids/purgatory_1_grid.gd" id="1_1f3ks"]
 [ext_resource type="PackedScene" uid="uid://d28tt78ehhhcb" path="res://level_grids/purgatory/surrounding_grids/rock_kicking_purgatory_ground_1.tscn" id="2_a4eee"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f3ks"]
+size = Vector3(500, 54.3339, 500)
+
 [node name="Purgatory1Grid" type="Node3D" unique_id=1903450354]
 script = ExtResource("1_1f3ks")
 
@@ -12,3 +15,14 @@ script = ExtResource("1_1f3ks")
 
 [node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=1406750254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9585934, 162.71284)
+
+[node name="OOBBarrier" type="Area3D" parent="." unique_id=1343200735]
+collision_layer = 64
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=924669812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
+shape = SubResource("BoxShape3D_1f3ks")
+
+[connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]

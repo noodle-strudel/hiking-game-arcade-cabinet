@@ -8,6 +8,9 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_bexch"]
 viewport_path = NodePath("SignHelper/SubViewport")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rt1nr"]
+size = Vector3(500, 54.3339, 500)
+
 [node name="HeavenStairsGrid" type="Node3D" unique_id=1881476687]
 script = ExtResource("1_11yik")
 
@@ -42,3 +45,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
 [node name="GateOpenCamera" type="Camera3D" parent="." unique_id=837130284]
 transform = Transform3D(-0.0020796275, -0.11835197, -0.9929695, -0.0002478701, 0.9929717, -0.11835171, 0.9999978, 0, -0.002094347, -88.76086, 63.14488, 1.3299408)
 fov = 90.0
+
+[node name="OOBBarrier" type="Area3D" parent="." unique_id=1667710697]
+collision_layer = 64
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=234245840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
+shape = SubResource("BoxShape3D_rt1nr")
+
+[connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]

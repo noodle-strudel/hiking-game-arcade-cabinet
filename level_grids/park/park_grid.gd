@@ -15,6 +15,8 @@ class_name ParkGrid
 
 @onready var scarf_scene: PackedScene = preload("res://level_grids/park/trees/scarf.tscn")
 
+# loaded in to manipulate its stencil mode
+@onready var rock_material = preload("res://rock/rock_material.tres")
 
 var event_rng = RandomNumberGenerator.new()
 
@@ -40,10 +42,12 @@ func _ready() -> void:
 	super()
 	grid_variety = "Park"
 	spawn_scarf()
+	GameManager.gamestate_update.connect(_on_change_state)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
+	if state == GameManager.gamestates.KICKING:
+		$OOBBarrier.set_deferred("monitoring", true)
+		$LakeBarrier.set_deferred("monitoring", true)
 
 func _space_out_trees() -> void:
 	# conifer trees
@@ -126,7 +130,7 @@ func _on_lake_hand_barrier_body_entered(body: Node3D) -> void:
 	
 	$LakeBarrier.set_monitoring(false)
 	if body.name == "Rock":
-		
+		rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_DISABLED
 		var result = _create_water_hand(body)
 		if result:
 			_handle_water_hand_event(body, result)
@@ -192,6 +196,7 @@ func _handle_water_hand_event(body: Node3D, result: Dictionary) -> void:
 	water_hand_instance.release_object()
 	body.linear_velocity = Vector3.ZERO
 	await get_tree().create_timer(2).timeout
+	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_XRAY
 	
 	# reset rock's collisions so it can interact with the world again
 	body.collision_mask = rock_col_mask_reset

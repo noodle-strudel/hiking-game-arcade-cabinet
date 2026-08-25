@@ -110,7 +110,7 @@ size = Vector3(40, 62, 40)
 size = Vector3(18.826141, 36.68036, 25.624619)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qgvea"]
-size = Vector3(7.0421143, 5.8974, 17.937012)
+size = Vector3(7.0421143, 6.7309265, 17.937012)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_27mux"]
 size = Vector3(6.783203, 2.7207642, 18.672852)
@@ -118,10 +118,14 @@ size = Vector3(6.783203, 2.7207642, 18.672852)
 [sub_resource type="BoxShape3D" id="BoxShape3D_taloh"]
 size = Vector3(6.89624, 2.9781494, 10.649048)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_boj6u"]
+size = Vector3(500, 54.3339, 500)
+
 [node name="CityGrid" type="Node3D" unique_id=728285244]
 script = ExtResource("1_pwxke")
 
 [node name="rock_kicking_city_ground" parent="." unique_id=947447146 instance=ExtResource("2_4tptt")]
+metadata/_edit_lock_ = true
 
 [node name="TownhouseCollisions" type="Node3D" parent="." unique_id=749799169]
 
@@ -197,31 +201,31 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.06
 shape = SubResource("BoxShape3D_qnrwn")
 
 [node name="ConiferTrees" type="Node3D" parent="ParkingLotCollisions/ParkingLot" unique_id=854657627]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2935429, 1.1882725, 0.38053894)
 
 [node name="ConiferTreeCollisionBody" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=1113645493 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.259857, 0, -33)
 
 [node name="ConiferTreeCollisionBody2" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=423323206 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5109472, 0, -33)
 
 [node name="ConiferTreeCollisionBody3" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=709816147 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -33)
 
 [node name="ConiferTreeCollisionBody4" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=582648343 instance=ExtResource("3_qnrwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -13)
 
 [node name="ConiferTreeCollisionBody5" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=1360792916 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.72799, 0, 16.483566)
 
 [node name="ConiferTreeCollisionBody6" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=2101741996 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.71775, 0, 36)
 
 [node name="ConiferTreeCollisionBody7" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=1374011391 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 36)
 
 [node name="ConiferTreeCollisionBody8" parent="ParkingLotCollisions/ParkingLot/ConiferTrees" unique_id=2036953639 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.716866, 0, 36.251495)
 
 [node name="ParkingLot2" type="StaticBody3D" parent="ParkingLotCollisions" unique_id=1147995354]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -90.02756, 0, -91.9971)
@@ -241,30 +245,31 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.06
 shape = SubResource("BoxShape3D_qnrwn")
 
 [node name="ConiferTrees" type="Node3D" parent="ParkingLotCollisions/ParkingLot2" unique_id=147039104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3203316, 0)
 
 [node name="ConiferTreeCollisionBody" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=336874189 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.535645, 0, -32.571507)
 
 [node name="ConiferTreeCollisionBody2" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=1490018309 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8542786, 0, -32.40081)
 
 [node name="ConiferTreeCollisionBody3" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=523515486 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.999992, 0, -32.491158)
 
 [node name="ConiferTreeCollisionBody4" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=747692337 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.393097, 0, -12.758995)
 
 [node name="ConiferTreeCollisionBody5" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=415415814 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.469692, 0, 16.999992)
 
 [node name="ConiferTreeCollisionBody6" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=1586146303 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.42598, 0, 36.357094)
 
 [node name="ConiferTreeCollisionBody7" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=744603916 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.160721, 0, 36.609665)
 
 [node name="ConiferTreeCollisionBody8" parent="ParkingLotCollisions/ParkingLot2/ConiferTrees" unique_id=1143403248 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 36.724472)
 
 [node name="ParkingLot3" type="StaticBody3D" parent="ParkingLotCollisions" unique_id=699371672]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 185.85378, 0, -91.82106)
@@ -284,31 +289,31 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.06
 shape = SubResource("BoxShape3D_qnrwn")
 
 [node name="ConiferTrees" type="Node3D" parent="ParkingLotCollisions/ParkingLot3" unique_id=1770676640]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.3108711, 0)
 
 [node name="ConiferTreeCollisionBody" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=2141048440 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.743652, 0, -32.5851)
 
 [node name="ConiferTreeCollisionBody2" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=769472351 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9187622, 0, -32.431366)
 
 [node name="ConiferTreeCollisionBody3" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=1808804209 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.568634, 0, -32.45845)
 
 [node name="ConiferTreeCollisionBody4" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=140891205 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.355465, 0, -12.871094)
 
 [node name="ConiferTreeCollisionBody5" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=244123559 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.140617, 0, 16.742188)
 
 [node name="ConiferTreeCollisionBody6" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=1998457793 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.042969, 0, 36.269516)
 
 [node name="ConiferTreeCollisionBody7" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=1600351948 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.355461, 0, 36.3125)
 
 [node name="ConiferTreeCollisionBody8" parent="ParkingLotCollisions/ParkingLot3/ConiferTrees" unique_id=314711209 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.09765, 0, 36.44139)
 
 [node name="ParkingLot4" type="StaticBody3D" parent="ParkingLotCollisions" unique_id=1931475496]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 183.85349, 0, 186.22205)
@@ -328,31 +333,31 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.06
 shape = SubResource("BoxShape3D_qnrwn")
 
 [node name="ConiferTrees" type="Node3D" parent="ParkingLotCollisions/ParkingLot4" unique_id=1800886288]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5597763, -3)
 
 [node name="ConiferTreeCollisionBody" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=2042687358 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.423813, 0, -33.662216)
 
 [node name="ConiferTreeCollisionBody2" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=2002107882 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756775, 0, -33.648666)
 
 [node name="ConiferTreeCollisionBody3" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=1697012768 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33.504517)
 
 [node name="ConiferTreeCollisionBody4" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=1710435303 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.725266, 0, -14.12767)
 
 [node name="ConiferTreeCollisionBody5" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=760019042 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.522476, 0, 15.846802)
 
 [node name="ConiferTreeCollisionBody6" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=315196240 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.598373, 0, 35.11534)
 
 [node name="ConiferTreeCollisionBody7" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=739429821 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9690857, 0, 35.238922)
 
 [node name="ConiferTreeCollisionBody8" parent="ParkingLotCollisions/ParkingLot4/ConiferTrees" unique_id=1437167035 instance=ExtResource("3_qnrwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.938187, 0, 35.4861)
 
 [node name="GasStationCollisions" type="Node3D" parent="." unique_id=163653677]
 
@@ -892,11 +897,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, 187)
 collision_layer = 128
 
 [node name="Cart" type="CollisionShape3D" parent="FoodCartsCollisions/FoodCartsPivot/FoodCarts" unique_id=1089667350]
-transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, -10.844208, 4.506567, -29.440918)
+transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, -10.844208, 4.9233303, -29.440918)
 shape = SubResource("BoxShape3D_qgvea")
 
 [node name="Cart2" type="CollisionShape3D" parent="FoodCartsCollisions/FoodCartsPivot/FoodCarts" unique_id=1139542067]
-transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, -31.94226, 4.506567, -29.440918)
+transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, -31.94226, 4.842204, -29.440918)
 shape = SubResource("BoxShape3D_qgvea")
 
 [node name="Cart3" type="CollisionShape3D" parent="FoodCartsCollisions/FoodCartsPivot/FoodCarts" unique_id=908603657]
@@ -904,7 +909,7 @@ transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.84468
 shape = SubResource("BoxShape3D_qgvea")
 
 [node name="Cart4" type="CollisionShape3D" parent="FoodCartsCollisions/FoodCartsPivot/FoodCarts" unique_id=802564799]
-transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, 31.397812, 4.506567, -29.440918)
+transform = Transform3D(0.8446831, 0, 0.5352667, 0, 1, 0, -0.5352667, 0, 0.8446831, 31.397812, 4.9533052, -29.440918)
 shape = SubResource("BoxShape3D_qgvea")
 
 [node name="CarCollision" type="StaticBody3D" parent="." unique_id=1860458360]
@@ -929,3 +934,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -21, 0, 160)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -165, 0, 116)
 
 [node name="ConiferTreeCollisionBody" parent="LargeConifer" unique_id=1752935553 instance=ExtResource("3_qnrwn")]
+
+[node name="OOBBarrier" type="Area3D" parent="." unique_id=1409686296]
+collision_layer = 64
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=568884162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
+shape = SubResource("BoxShape3D_boj6u")
+
+[connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]

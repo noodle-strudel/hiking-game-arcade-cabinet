@@ -209,7 +209,6 @@ func _ready() -> void:
 	GameManager.gamestate_update.connect(_on_change_state)
 	
 	if GameManager.kicks_remaining <= 0:
-		# kinda broken right now when it does this...
 		GameManager.switch_state_to(GameManager.gamestates.ROCK_PERFECTED, "already perfect")
 	else:
 		GameManager.switch_state_to(GameManager.gamestates.IDLE, "Game booted")
