@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://cyxxar7rw76nd"]
 
-[ext_resource type="PackedScene" uid="uid://c3a5bqljixy15" path="res://level_grids/park/glb/shed/shed_col.glb" id="1_fbry8"]
+[ext_resource type="PackedScene" uid="uid://ccmx8jgumvnw8" path="res://level_grids/park/glb/shed/shed_col.glb" id="1_fbry8"]
 
 [node name="shed_col" unique_id=2135093221 instance=ExtResource("1_fbry8")]
 
-[node name="Knob" parent="." index="0" unique_id=1197396362]
+[node name="Door_001" parent="." index="0" unique_id=611205848]
 collision_layer = 128
-collision_mask = 515
+collision_mask = 3
 
-[node name="Shed" parent="." index="1" unique_id=332641377]
+[node name="Roof_002" parent="." index="1" unique_id=702459633]
 collision_layer = 128
-collision_mask = 515
+collision_mask = 3
+
+[node name="ShedBody_001" parent="." index="2" unique_id=1436490963]
+collision_layer = 128
+collision_mask = 3
+
+[node name="Window_001" parent="." index="3" unique_id=1854313482]
+collision_layer = 128
+collision_mask = 3
+
+[node name="Knob_002" parent="." index="4" unique_id=747643594]
+collision_layer = 128
+collision_mask = 3

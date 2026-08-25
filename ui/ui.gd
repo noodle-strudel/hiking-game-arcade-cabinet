@@ -86,16 +86,18 @@ func _ready() -> void:
 	_on_update_kicks_remaining(GameManager.kicks_remaining) #TODO: more elegant solution.
 	
 	_clear_ui()
-	$IdleMenu.show()
-	_get_random_subtitle()
-	%IdleAnimationPlayer.play("swing_subtitle")
-	if (
-		GameManager.kicks_remaining < GameManager.heaven_kick_count and
-		GameManager.kicks_remaining > GameManager.purgatory_kick_count
-	):
-		$KickingMenu/PurgKicksRemainingContainer.show()
-	else:
-		$KickingMenu/PurgKicksRemainingContainer.hide()
+	
+	if GameManager.kicks_remaining > 0:
+		$IdleMenu.show()
+		_get_random_subtitle()
+		%IdleAnimationPlayer.play("swing_subtitle")
+		if (
+			GameManager.kicks_remaining < GameManager.heaven_kick_count and
+			GameManager.kicks_remaining > GameManager.purgatory_kick_count
+		):
+			$KickingMenu/PurgKicksRemainingContainer.show()
+		else:
+			$KickingMenu/PurgKicksRemainingContainer.hide()
 		
 
 
@@ -207,6 +209,7 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 	_clear_ui()
 	%EndPoemVoice.stop()
+	$KickingMenu/PurgKicksRemainingContainer.hide()
 	match state:
 		GameManager.gamestates.IDLE:
 			GameManager.critical_kick = false
@@ -225,6 +228,11 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 			$ContractMenu/ContractContainer.show()
 		GameManager.gamestates.KICKING:
 			$KickingMenu.show()
+			if (
+				GameManager.kicks_remaining > GameManager.heaven_kick_count and
+				GameManager.kicks_remaining <= GameManager.purgatory_kick_count
+			):
+				$KickingMenu/PurgKicksRemainingContainer.show()
 			%KickbarAnimator.play("RESET")
 			%KickbarAnimator.play("power_modulate")
 		GameManager.gamestates.ROCK_KICKED:
@@ -255,10 +263,6 @@ func _on_change_state(state: GameManager.gamestates, cause: String) -> void:
 		GameManager.gamestates.SCORING:
 			_scoring_sequence()
 			
-			# didn't really know where else to put this so i'll put it here
-			# turn off until heaven kicks when in heaven
-			if GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
-				$KickingMenu/PurgKicksRemainingContainer.hide()
 		GameManager.gamestates.ROCK_OOB:
 			$OOBCenterContainer.show()
 			%OOBText.text = OOB_EFFECT_PRE + cause + OOB_EFFECT_SUF
