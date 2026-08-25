@@ -132,13 +132,13 @@ func _on_state_change(state : GameManager.gamestates, cause:String):
 				play_track(background_music_heaven)
 			elif get_tree().current_scene.get_node(
 				"WorldGeneration"
-			).center_grid_type() == "City":
+			).get_center_grid() is CityGrid:
 				play_track(background_music_city)
 			else:
 				play_track(background_music_park)
 		
 		GameManager.gamestates.ROCK_PERFECTED:
-			await get_tree().create_timer(0.455)
+			await get_tree().create_timer(0.455).timeout
 			play_track(rock_perfected_music)
 			
 		# in any other cases this just makes sure to stop the music
