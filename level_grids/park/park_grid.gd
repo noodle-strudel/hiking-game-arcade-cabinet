@@ -38,6 +38,7 @@ func _roll_scarf_rng() -> int:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	grid_variety = "Park"
 	spawn_scarf()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

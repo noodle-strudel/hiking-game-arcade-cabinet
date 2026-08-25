@@ -5,6 +5,7 @@ class_name HeavenGrid
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	grid_variety = "Heaven"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

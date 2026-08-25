@@ -56,6 +56,9 @@ func get_spawn() -> Vector3:
 	var spawn_position: Vector3 = grid.get_spawn_position()
 	return spawn_position
 
+func center_grid_type() -> String:
+	return _current_chunks[1][1].grid_variety
+
 # replaces all chunks in _current_chunks with the none chunk. 
 # do not use if not in purgatory/heaven state.
 func _empty_level_chunks() -> void:
