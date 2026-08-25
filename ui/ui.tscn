@@ -1118,6 +1118,7 @@ Audio Engineer,
 SFX Designer,
 Soundtrack Artist,
 Graphic Artist,
+Rock Engineer,
 Programmer"
 
 [node name="CreditSpacer4" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=207674839 instance=ExtResource("43_mpvo8")]
@@ -1136,11 +1137,11 @@ layout_mode = 2
 [node name="Aiden" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1634525729 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Aiden Russell
- Programmer,
+Programmer,
 Software Engineer,
 QA Tester,
 Absolute Baller,
- Black Belt 😎
+Black Belt 😎
 "
 
 [node name="L3" type="CenterContainer" parent="ScoreMenu/Credits" unique_id=1417027396]
