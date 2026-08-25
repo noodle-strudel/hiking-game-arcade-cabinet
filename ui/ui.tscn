@@ -1113,6 +1113,7 @@ layout_mode = 2
 [node name="Tristan" parent="ScoreMenu/Credits/R2/VBoxContainer" unique_id=1639779340 instance=ExtResource("41_ov2ix")]
 layout_mode = 2
 text = "Tristan Young
+(a.k.a. Tristan Bay)
 Audio Engineer,
 SFX Designer,
 Soundtrack Artist,

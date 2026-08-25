@@ -339,9 +339,8 @@ func _scoring_sequence() -> void:
 	# Condition so the state switching and music cutting on the timers only happens
 	# if the game is still in the scoring state
 	if GameManager.state == GameManager.gamestates.SCORING:
-		AudioManager.fade_out_music()
-		
 		if GameManager.kicks_remaining > 0:
+			AudioManager.fade_out_music()
 			GameManager.switch_state_to(
 				GameManager.gamestates.MOVE_TO_ROCK,
 				"scoring sequence finished"
