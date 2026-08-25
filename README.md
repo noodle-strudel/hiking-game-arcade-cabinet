@@ -1,28 +1,35 @@
-Placeholder text! Kick rocks!!!!!!!
+# Kick Rocks!
+## The World's First Official Rock Erosion by Means of Podiatric Impact Simulator 
 
-## MariaDB
+## MariaDB Integration
 
 ### Installation
-Mariadb ver 10.11? unless changed when installing on new system
-Port set to 3306 (I believe this happens during setup)
+- MariaDB Version 10.11 or higher.
+- Port set to 3306 (believed to happen during setup).
 
 ### Root Setup
-When setting up the root@localhost user for the database the password must be left blank, do so like this:
-```mysql
-alter user root@localhost identified by '';
+After initially setting up root with a password, it must be removed. For some reason when setting up the database access in Godot, there must be a password, and the user in MariaDB must have no password. If the user has a password, it will not connect the game to the server, even if the passwords match. **The only combination we have found to work is a password on Godot and no password in the server.**
+
+After initial setup, remove the password from root. Log into MariaDB using root and the password you gave it:
 ```
-For some reason when setting up the database access in Godot there must be a password, and the user in MariaDB must have no password. If the user has a password it will not connect the game to the server even if the passwords match. The only combination we have found to work is a password on Godot and no password in the server.
+mariadb -u root -p
+```
+Then, enter the following command to remove the password:
+```mysql
+ALTER USER root@localhost IDENTIFIED BY '';
+```
+
 ### Setup Database
 To recreate the database, open the MariaDB terminal with this command if not already open:
 ```
 mariadb -u root -p
 ```
-and use these commands to make the database and table:
+Log into root and use these commands to make the database and table:
 ```mysql
 CREATE DATABASE kicks_db;
 ```
 ```
-USE kicks_db
+USE kicks_db;
 ```
 ```mysql
 CREATE TABLE kicks (
@@ -32,6 +39,6 @@ CREATE TABLE kicks (
   initials varchar(3)
 );
 ```
+
 ### Issues Encountered with MariaDB
 The main issue encountered was the aforementioned password weirdness with the game not being able to access the server unless the server password was blank.
-#### NOTE TO DELETE: I'm sorry I couldn't think of any issues we ran into, the only stuff was like the addon not playing nice with windows and the double addition which was a completely separate bug in the game and neither of those are related to MariaDB and would fit better in other things besides the readme
