@@ -16,6 +16,7 @@ func open_gates() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	grid_variety = "Purgatory"
 	purgatory_kicks = GameManager.kicks_remaining - GameManager.heaven_kick_count
 	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)

@@ -14,6 +14,10 @@ var modifying_multimeshes: bool = false
 # Array of spawn points where the rock can spawn when the game boots up.
 var spawn_points: Array[Marker3D]
 
+# String specifying which type of grid it is
+# (to avoid messy script-defined class checking code)
+var grid_variety: String
+
 # Randomly chooses 1 of the 3 random spawn locations.
 func get_spawn_position() -> Vector3:
 	if !spawn_points:

@@ -5,18 +5,21 @@
 [ext_resource type="AudioStream" uid="uid://bpp6t3jpo58sg" path="res://sound/rock_gameover.wav" id="3_5f358"]
 [ext_resource type="AudioStream" uid="uid://bxe07jt4knoum" path="res://sound/about_to_kick_park.wav" id="4_38hvt"]
 [ext_resource type="AudioStream" uid="uid://8h3xqcxyceaf" path="res://sound/about_to_kick_heaven.wav" id="5_n4yx8"]
+[ext_resource type="AudioStream" uid="uid://bg1q0sygvtrcb" path="res://sound/about_to_kick_city.wav" id="5_outou"]
+[ext_resource type="AudioStream" uid="uid://krl4xn37ac6a" path="res://sound/rock_perfected.wav" id="7_l5lx2"]
 
 [node name="AudioManager" type="Node" unique_id=1267904737]
 script = ExtResource("1_s2nsv")
 idle_music = ExtResource("2_5f358")
 game_over_music = ExtResource("3_5f358")
 background_music_park = ExtResource("4_38hvt")
+background_music_city = ExtResource("5_outou")
 background_music_heaven = ExtResource("5_n4yx8")
+rock_perfected_music = ExtResource("7_l5lx2")
 
 [node name="MusicTimeOut" type="Timer" parent="." unique_id=433671395]
 unique_name_in_owner = true
 wait_time = 43.25
-autostart = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1004960369]
 bus = &"Music"
