@@ -21,10 +21,6 @@ func _ready() -> void:
 	GameManager.decrement_kicks_remaining.connect(_on_update_kicks_remaining)
 	GameManager.gamestate_update.connect(_on_switch_state)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_update_kicks_remaining(kick_count: int) -> void:
 	purgatory_kicks = kick_count - GameManager.heaven_kick_count
 	$SignHelper/SubViewport/SignText.text = "Until\nheaven:\n" + str(purgatory_kicks)
@@ -32,11 +28,22 @@ func _on_update_kicks_remaining(kick_count: int) -> void:
 func _on_switch_state(state: GameManager.gamestates, cause: String) -> void:
 	# when the game gets to idle after hitting 0 purgatory kicks open the gate
 	# having the cause means it will only happen after player walks to rock
+	if state == GameManager.gamestates.KICKING:
+		$OOBBarrier.set_deferred("monitoring", true)
+	
 	if (
 		purgatory_kicks == 0 and
 		state == GameManager.gamestates.IDLE and
 		cause == "player got to rock"
 	):
 		$GateOpenCamera.make_current()
-		await get_tree().create_timer(1.0)
 		open_gates()
+
+func _on_oob_barrier_body_entered(body: Node3D) -> void:
+	if body.name == "Rock":
+		GameManager.switch_state_to(GameManager.gamestates.ROCK_OOB, "The rock fell through the ground...")
+	
+	# failsafe to just reload the entire game
+	if body.name == "Player":
+		get_tree().reload_current_scene()
+	$OOBBarrier.set_deferred("monitoring", false)

@@ -99,8 +99,7 @@ func _load_purgatory() -> void:
 	purgatory = _purgatory.instantiate()
 	self.add_child(purgatory)
 	emit_signal("on_load_purgatory")
-	
-	
+
 
 func _load_heaven() -> void:
 	# spawn in the initial heaven grid after being taken up by grandma salmon
@@ -116,30 +115,28 @@ func _load_heaven() -> void:
 			_current_chunks[z + 1][x + 1].position =\
 					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
 	_current_chunks[1][1].add_collision_to_multimeshes()
-	
+	await get_tree().process_frame
 	emit_signal("on_load_heaven")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	grid_position_changed.connect(_on_grid_position_changed)
 	
-	# load the first grid
-	for z in range(-1, 2, 1):
-		for x in range(-1, 2, 1):
-			# instantiate
-			_current_chunks[z + 1][x + 1] = _instantiate_chunk()
-			# position
-			_current_chunks[z + 1][x + 1].position =\
-					Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
-	_current_chunks[1][1].add_collision_to_multimeshes()
-	
-	
-	await get_tree().process_frame
 	# load purgatory if under kick threshold
 	if GameManager.kicks_remaining <= GameManager.heaven_kick_count:
 		_load_heaven()
 	elif GameManager.kicks_remaining <= GameManager.purgatory_kick_count:
 		_load_purgatory()
+	else:
+		# load the first grid
+		for z in range(-1, 2, 1):
+			for x in range(-1, 2, 1):
+				# instantiate
+				_current_chunks[z + 1][x + 1] = _instantiate_chunk()
+				# position
+				_current_chunks[z + 1][x + 1].position =\
+						Vector3(x * _grid_x_dimension, 0.0, z * _grid_z_dimension)
+	_current_chunks[1][1].add_collision_to_multimeshes()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

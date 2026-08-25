@@ -118,6 +118,9 @@ size = Vector3(6.783203, 2.7207642, 18.672852)
 [sub_resource type="BoxShape3D" id="BoxShape3D_taloh"]
 size = Vector3(6.89624, 2.9781494, 10.649048)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_boj6u"]
+size = Vector3(500, 54.3339, 500)
+
 [node name="CityGrid" type="Node3D" unique_id=728285244]
 script = ExtResource("1_pwxke")
 
@@ -931,3 +934,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -21, 0, 160)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -165, 0, 116)
 
 [node name="ConiferTreeCollisionBody" parent="LargeConifer" unique_id=1752935553 instance=ExtResource("3_qnrwn")]
+
+[node name="OOBBarrier" type="Area3D" parent="." unique_id=1409686296]
+collision_layer = 64
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OOBBarrier" unique_id=568884162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.406, 0)
+shape = SubResource("BoxShape3D_boj6u")
+
+[connection signal="body_entered" from="OOBBarrier" to="." method="_on_oob_barrier_body_entered"]

@@ -5,12 +5,12 @@ class_name HeavenGrid
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	GameManager.gamestate_update.connect(_on_change_state)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func _on_change_state(state: GameManager.gamestates, _cause: String) -> void:
+	if state == GameManager.gamestates.KICKING:
+		$OOBBarrier.set_deferred("monitoring", true)
+		$LakeBarrier.set_deferred("monitoring", true)
 
 func _on_oob_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
@@ -19,11 +19,14 @@ func _on_oob_barrier_body_entered(body: Node3D) -> void:
 	# failsafe to just reload the entire game
 	if body.name == "Player":
 		get_tree().reload_current_scene()
+	$OOBBarrier.set_deferred("monitoring", false)
 
 
 func _on_lake_barrier_body_entered(body: Node3D) -> void:
 	if body.name == "Rock":
 		$LakeSplooshSFX.play()
+		$OOBBarrier.set_deferred("monitoring", false)
+		$LakeBarrier.set_deferred("monitoring", false)
 		
 		# ensure the rock doesn't trigger other area2ds during this.
 		# NOTE: For some reason making the barriers not monitoring only works
@@ -38,3 +41,4 @@ func _on_lake_barrier_body_entered(body: Node3D) -> void:
 		# reset rock's collisions so it can interact with the world again
 		body.collision_mask = rock_col_mask_reset
 		body.collision_layer = rock_col_layer_reset
+		

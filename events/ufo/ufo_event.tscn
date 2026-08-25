@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdweoj053bxt6" path="res://events/ufo/ufo_event.gd" id="1_6sgvp"]
 [ext_resource type="PackedScene" uid="uid://c02v8i408fi1l" path="res://events/ufo/ufo.tscn" id="2_rnyb2"]
-[ext_resource type="AudioStream" uid="uid://b51b80x3hvwfm" path="res://sound/ufo_sound.wav" id="3_rnyb2"]
+[ext_resource type="AudioStream" uid="uid://7qflfl2fpgux" path="res://sound/ufo_sound.wav" id="3_rnyb2"]
 
 [node name="UfoEvent" type="Node3D" unique_id=1591942990]
 process_mode = 3

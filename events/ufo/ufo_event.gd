@@ -118,7 +118,7 @@ func _event_function() -> void:
 	main.rock_camera.make_current()
 	await get_tree().create_timer(2.25).timeout
 	
-  # turn xray back on after event
+	# turn xray back on after event
 	rock_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_XRAY
 	
 	# Do not remove. Defined in event_base.gd
