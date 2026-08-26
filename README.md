@@ -1,6 +1,6 @@
 # Kick Rocks!
 ## The World's First Official Rock Erosion by Means of Podiatric Impact Simulator 
-
+Kick Rocks! is an arcade game whose physical location will be in the Downtown Portland Shirtzenpantz store by the end of 2026. The goal of the game is to kick a rock until it becomes a sphere, but you must sign a contact before you play that agrees you can only kick it once a day.
 ## MariaDB Integration
 
 ### Installation
