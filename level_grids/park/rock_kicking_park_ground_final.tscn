@@ -58,4 +58,4 @@ visible = false
 visible = false
 mesh = ExtResource("3_ur3tk")
 
-[node name="rock_kicking_park_ground_complete" parent="." index="9" unique_id=1334698248 instance=ExtResource("4_m2pyc")]
+[node name="rock_kicking_park_ground_complete" parent="." index="9" unique_id=604165727 instance=ExtResource("4_m2pyc")]
